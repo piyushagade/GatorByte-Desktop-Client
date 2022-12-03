@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Serial Monitor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Open+Sans&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel='stylesheet' href="../css/main.css">
+    <link rel='stylesheet' href="../css/animation.css">
+    <link rel='stylesheet' href="../css/loader.css">
+    <link rel='stylesheet' href="../css/spinner.css">
+
+    <script src='../js/lib/jquery.min.js' onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <script src='../js/lib/multiline.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js'></script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css'/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous"/>
+</head>
+<body style="padding: 0px; background: transparent !important; overflow-x: hidden; ">
+
+    <div class="container" style="overflow-x: hidden; max-width: unset; margin: 0px; border-radius: 4px; padding: 10px 14px 10px 14px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; cursor: pointer; overflow: hidden;">
+        
+        <!--! Top menu -->
+        <div class="menu-buttons-div row shadow-heavy" style="backdrop-filter: blur(8px); padding: 2px 4px 0 4px; background: #222222AA; border-radius: 20px; z-index: 1; font-size: 11px; position: absolute; top: 8px; right: 10px; margin: 0px 0px 12px 0px; color: #AAA; pointer-events: all;">
+
+            <!-- Move -->
+            <div class="col-auto" style=" -webkit-app-region: drag; float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
+                <i class="fas fa-arrows-alt" style="color: #DDDDDD; font-size: 13px;"></i>
+            </div>
+
+            <!-- Close -->
+            <div class="col-auto close-button" style="border-radius: 20px; padding: 6px 8px; cursor: pointer;">
+                <i class="fas fa-times" style="color: #DDDDDD; font-size: 13px;"></i>
+            </div>
+        </div>
+        
+        <!--! Home page / Device selector area -->
+        <div class="row scrollbar-style device-selector-panel" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: auto; cursor: default;">
+            <div class="col">
+
+                <div class="row device-list-row">
+                    
+                    <!-- Header -->
+                    <div class="col-12 shadow" style="padding: 10px 12px; margin-right: 6px; background: #252525;">
+                        <p style="color: #aaaaaa; font-size: 18px; text-align: justify; margin-bottom: 0px;">Activate trial</p>
+                        <p style="color: #888888; font-size: 13px; text-align: justify; margin-bottom: 0px;">Please fill out the following form to activate a 30-day trial. The app will have full functionality during this period.</p>
+                    </div>
+                    
+                    <!-- Activation form -->
+                    <div class="col-12 shadow" style="padding: 10px 12px; margin-right: 6px; margin-top: 8px; background: #d3c612;">
+                        <div class="row">
+                            <div class="col">
+                                <p style="color: #222222; font-size: 15px; text-align: justify; margin-bottom: 4px;">Enter your email for verification</p>
+                                <input class="user-email-input mousetrap" type="text" style="width: 100%; border: 0; outline: 0; background: #f7f7f7f0; color: #151515; padding: 8px 14px; font-size: 14px;" placeholder="johnny.dough@mail.com">
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="action-buttons" style="margin: 10px 0 0 0; display: inline-flex;">
+                            <div class="begin-trial-button" style="padding: 4px 8px; font-size: 13px; color: #AAA; background: #1d1d1d; width: fit-content; margin-right: 6px;">Begin trial</div>
+                            <div class="close-button" style="padding: 4px 8px; font-size: 13px; color: #AAA; background: #353535; width: fit-content; margin-right: 6px;">Nevermind</div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits list -->
+                    <div class="col-12 shadow" style="padding: 10px 12px;margin-right: 6px;margin-top: 8px;background: #ffffff63;">
+                        <div class="row">
+                            <div class="col">
+                                <p style="color: #000000;font-size: 15px;text-align: justify;margin-bottom: 8px;">Benefits of activating the app</p>
+                                <div class="benefits-list-div">
+                                    <ol style="list-style-type: decimal;padding-left: 20px;font-size: 14px;color: #171717;">
+                                        <li>Open multiple serial monitors simultaneouly.</li>
+                                        <li>Remotely monitor and send commands to devices connected to a computer over the web.</li>
+                                        <li>Create custom hooks, and custom actions when the app encounters a prefix or suffix in the serial data.</li>
+                                        <li>No limitations on number of commands that can be sent to devices.</li>
+                                        <li>Future updates</li>
+                                        <li>Help the developer with his motorcycle's maintenance.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+<script src="../js/functions.js"></script>
+<script src='../js/keyshortcuts.js'></script>
+<script type="text/javascript">
+    setInterval(function () {
+        update_window_dimensions(false);
+    }, 100)
+    
+    function update_window_dimensions() {
+        $(".device-selector-panel").height($(".container").height() - 10);
+    }
+
+    const { remote, ipcRenderer } = require('electron');
+    var win = remote.getCurrentWindow(); 
+    var machineid = null;
+
+    ipcRenderer.on('machineid-information-push', (event, data) => {
+        machineid = data.machineid;
+        console.log("Machine ID: " + machineid);
+    });
+
+    $(".close-button").off('click').click(function () {
+        win.close();
+    });
+
+    $(".begin-trial-button").off('click').click(function () {
+        $.ajax({
+            type: "POST",
+            url: "https://api.piyushagade.xyz/v1/app/cereal/license/trial/activate",
+            data: {
+                "user-email": $(".user-email-input").val(),
+                "machine-id": machineid
+            },
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
+
+</script>
+
+</html>

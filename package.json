@@ -1,0 +1,47 @@
+{
+  "name": "GatorByte",
+  "abbreviation": "GDC",
+  "version": "1.0.0",
+  "description": "A modern desktop client for GatorByte, a serial monitor, and more!",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always",
+    "rebuild": "electron-rebuild -f -w electron-acrylic-window"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piyushagade/GatorByte-GDC.git"
+  },
+  "keywords": [
+    "GatorByte",
+    "Electron",
+    "Serial",
+    "GDC"
+  ],
+  "author": "Piyush Agade",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^7.1.0",
+    "electron-builder": "^22.1.0",
+    "electron-rebuild": "^1.11.0"
+  },
+  "dependencies": {
+    "data-table": "^2.0.0",
+    "electron-acrylic-window": "^0.5.11",
+    "electron-dl": "^3.5.0",
+    "electron-drag": "^2.0.0",
+    "electron-request": "^1.8.1",
+    "electron-settings": "^4.0.2",
+    "electron-updater": "^4.2.0",
+    "electron-util": "^0.17.2",
+    "electron-window-state": "^5.0.3",
+    "moment": "^2.29.4",
+    "node-gyp": "^9.3.0",
+    "node-machine-id": "^1.1.12",
+    "python-shell": "^1.0.8",
+    "serialport": "^10.5.0",
+    "shelljs": "^0.8.3"
+  }
+}

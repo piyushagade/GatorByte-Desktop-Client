@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400');
+
+* {
+    font-family: "Exo";
+}
+
+body {
+    background-color: transparent;
+    font-size: 13px;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.content {
+    color: #bbb;
+}
+
+.shadow-heavy {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.13);
+}
+
+.greyed {
+    opacity: 0.4;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shadow-really-heavy {
+    box-shadow: 0 3px 6px rgba(0, 39, 1, 0.36), 0 3px 16px rgba(24, 2, 1, 0.33);
+}
+
+.status-bar-item {
+    transition: 0.1s all ease-in;
+}
+
+.status-bar-item:hover {
+    background: #96969688 !important;
+}
+
+.device-selector-list-item {
+    transition: 0.1s all ease-in;
+}
+
+.device-selector-list-item:hover {
+    background: #adadad88 !important;
+}
+
+.scrollbar-style::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    background-color: #F5F5F500;
+    -webkit-app-region: no-drag;
+}
+
+.scrollbar-style::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F500;
+    -webkit-app-region: no-drag;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+    background-color: #66666666;
+    border: 0px solid #66666666;
+    -webkit-app-region: no-drag;
+}
+
+
+.horizontal-center {
+    display: block;
+    margin: auto auto;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.tb {
+    border: 1px solid blue;
+}
+
+.tr {
+    border: 1px solid red;
+}
+
+.tg {
+    border: 1px solid green;
+}
+
+.rotate-animation {
+    animation: sand-timer-rotate 3s ease infinite;
+}
+
+
+.skeleton {
+    animation: skeleton-loading 2s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: #222222;
+    }
+
+    50% {
+        background-color: #303030;
+    }
+
+    100% {
+        background-color: #242424;
+    }
+}
+
+.skeleton-image {
+    width: 40%;
+    height: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-logo-one {
+    width: 120px;
+    height: 80px;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-text-zero {
+    width: 0;
+    height: 0.7rem;
+    opacity: 0;
+}
+
+.skeleton-text-zero {
+    width: 40%;
+    height: 0.7rem;
+}
+
+.skeleton-text-two {
+    width: 75%;
+    height: 0.7rem;
+}
+
+.skeleton-text-three {
+    width: 85%;
+    height: 2rem;
+}
+
+.skeleton-text-four {
+    width: 28%;
+    height: 0.7rem;
+}
+
+.skeleton-text-five {
+    width: 50%;
+    height: 0.7rem;
+}
+
+.skeleton-footer {
+    width: 30%;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
