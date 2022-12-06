@@ -74,6 +74,10 @@ function ipcsubapp(){
         self.ipcr.on('ipc/full-functionality-locked-notification/push', (event, response) => {
             self.a.ui.show_functionality_locked_overlay(response);
         });
+
+        self.ipcr.on('ipc/save-file/response', (event, response) => {
+            self.a.uidownloadfiles.on_file_save_response(response);
+        });
         
         return self;
     }
@@ -202,7 +206,7 @@ function ipcsubapp(){
 
     self.process_new_serial_data = function (event, arg) {
         if(typeof arg.data == "string" && arg.data.length == 0) return;
-            
+
         // Distinguish lines
         if (arg.data.indexOf("#!cereal-special-string#line-break##") == -1) global.states.linecomplete = false;
         else global.states.linecomplete = true;
@@ -885,33 +889,6 @@ function ipcsubapp(){
         $(".gb-registered-to").text("pagade@ufl.edu");
         $(".gb-port-path").text(global.port.path);
 
-        // Close port button listeners
-        $(".connected-device-disconnect-button").removeClass("hidden");
-        $(".connected-device-disconnect-button")
-            .off("click").click(function () {
-                global.states.follow = false;
-                $(".waiting-for-device-notification").addClass("hidden");
-                $(".share-online-overlay").addClass("hidden");
-                $(".session").remove();
-                $(".serial-monitor .skeleton-div").removeClass("hidden");
-
-                self.ipcr.send('close-port-request', {
-                    path: global.port.path,
-                    baud: global.port.baud,
-                    windowid: global.states.windowid
-                });
-
-                // TODO: Leave room in SocketIO
-
-                if (!$(".command-input-div").hasClass("hidden")) self.a.ui.toggle_command_input_ui("hide");
-            })
-            .off("mouseenter").mouseenter(function () {
-                $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background", "#e06253");
-            })
-            .off("mouseleave").mouseleave(function () {
-                $(".status-bar-div .device-status-indicator").css("background", $(".status-bar-div .device-status-indicator").attr("prev-background-color") || "#1c65ca");
-            });
-
         // Broadcast the port information to all live share clients
         self.a.sck.on_port_selected(response); 
     }
@@ -988,11 +965,12 @@ function ipcsubapp(){
                 self.pwrsv.stop(global.states.powersaveid);
             }
 
-            $(".home-panel").removeClass("hidden");
-            $(".serial-monitor").addClass("hidden");
+            // Show device selector panel
+            $(".panel").addClass("hidden");
+            $(".device-selector-panel").removeClass("hidden");
+            $(".home-panel").removeAttr("first-load-done");
 
             $(".connected-device-port").text("N/A").attr("title", "");
-            $(".connected-device-disconnect-button").addClass("hidden");
             setTimeout(() => { $(".connected-device-port").parent().css("background", "#444"); }, 100);
             $(".device-selector-panel .device-list-row").removeClass("hidden");
             

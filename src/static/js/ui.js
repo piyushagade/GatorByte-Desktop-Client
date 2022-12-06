@@ -127,6 +127,12 @@ function uisubapp(){
 
     self.listeners = function () {
 
+        // Go back panel button
+        $(".go-back-panel-button").off("click").click(function () {
+            $(".panel").addClass("hidden");
+            $("." + $(this).attr("target-panel")).removeClass("hidden");
+        });
+
         // Go home panel button
         $(".go-home-panel").off("click").click(function () {
             $(".panel").addClass("hidden");
@@ -171,6 +177,33 @@ function uisubapp(){
             global.states.compactmode = true;
             $(".status-bar-div").fadeOut(400);
         });
+
+        // Close port button listeners
+        $(".connected-device-disconnect-button").removeClass("hidden");
+        $(".connected-device-disconnect-button")
+            .off("click").click(function () {
+                global.states.follow = false;
+                $(".waiting-for-device-notification").addClass("hidden");
+                $(".share-online-overlay").addClass("hidden");
+                $(".session").remove();
+                $(".serial-monitor .skeleton-div").removeClass("hidden");
+
+                self.ipcr.send('close-port-request', {
+                    path: global.port.path,
+                    baud: global.port.baud,
+                    windowid: global.states.windowid
+                });
+
+                // TODO: Leave room in SocketIO
+
+                if (!$(".command-input-div").hasClass("hidden")) self.a.ui.toggle_command_input_ui("hide");
+            })
+            .off("mouseenter").mouseenter(function () {
+                $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background", "#e06253");
+            })
+            .off("mouseleave").mouseleave(function () {
+                $(".status-bar-div .device-status-indicator").css("background", $(".status-bar-div .device-status-indicator").attr("prev-background-color") || "#1c65ca");
+            });
     }
 
     self.toggle_command_input_ui = function (targetstate) {

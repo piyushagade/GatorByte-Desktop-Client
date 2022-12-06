@@ -70,10 +70,240 @@
               </div>
         </div>
         
+        <!--! Download files -->
+        <div class="row scrollbar-style panel download-files-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+            
+            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            
+            <div class="col">
+                <div class="row">
+                    
+                    <!-- Header -->
+                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
+                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
+                        </div>
+                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                        
+                    <!-- Files list -->
+                    <div class="col-12" style="margin-bottom: 10px;">
+                        
+                        <div class="row" style="margin: 0;">
+                            <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 2px;font-size: 12px;font-weight: normal;">
+                                Select a file from the list below to download a file to your computer. This process may take time to complete, so kindly be patient.
+                            </p>
+                        </div>
+
+                        <div class="row download-files-list" style="position: relative; margin: 0;margin-top: 10px;background: #17171744;border-radius: 2px;padding: 10px;">
+                            
+                            <!-- Loading spinner -->
+                            <div class="spinner-div hiddenz" style="overflow-y: auto; height: 100px; width: 100%;position: relative;">
+                                <div class="absolute-center" style="margin-left: 0; margin-top: -5px;">
+                                    <svg class="spinner" viewBox="0 0 50 50">
+                                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+            
+            <!-- File options -->
+            <div class="col-12 file-options-parent hidden" state="no-file-selected" style="position: absolute; bottom: 8px; left: 8px; width: auto;">
+                
+                <div class="file-options-home" style="background: #eeecece8;border-radius: 2px; padding: 10px; height: 50px; display: inline-flex; width: auto; width: max-content;">
+                    <div class="truncate" style="padding: 4px 8px; max-width: 160px;">
+                        <i class="fa-regular fa-file"></i>
+                        <span class="filename" style="font-size: 13px;color: #0c0c0c;border-radius: 4px;margin: 0 4px;">-</span>
+                    </div>
+                    <div class="shadow-heavy" title="Preview file contents" style="background: #eeececc0; font-size: 18px; color: #444; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div class="shadow-heavy download-file-button" title="Save file to computer" style="background: #eeececc0; font-size: 18px; color: #444; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">
+                        <i class="fa-regular fa-floppy-disk"></i>
+                    </div>
+                    <div class="shadow-heavy" title="Delete file on SD" style="background: #eeececc0; font-size: 18px; color: #444; padding: 2px 8px; border-radius: 4px; margin-right: 0px;">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
+                
+                
+                <div class="file-options-download-information hidden" style="background: #eeecece8;border-radius: 2px; padding: 10px; height: 50px; display: inline-flex; width: auto; width: max-content;">
+                    <div class="truncate" style="padding: 4px 8px; max-width: 160px;">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        <span class="filename" style="font-size: 13px;color: #0c0c0c;border-radius: 4px;margin: 0 4px;"></span>
+                    </div>
+                    <div style="font-size: 13px;padding: 2px 8px;font-weight: bold;border-radius: 4px;margin-right: 8px;margin-top: 5px;">
+                        <span class="download-progress" style="color: #424242;">Starting download</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!--! Sensor calibration -->
+        <div class="row scrollbar-style panel sensor-calibration-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+            
+            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            
+            <div class="col">
+                <div class="row">
+                    
+                    <!-- Header -->
+                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
+                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
+                        </div>
+                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                        
+                    <div class="col-12" style="margin-bottom: 10px;">
+                        
+                        <!-- Sensors list -->
+                        <div class="row sensor-list" style="margin: 0;">
+                            
+                            <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 12px;font-weight: normal;">
+                                Here you can calibrate the sensors on your GatorByte and sync the on-board Real-time Clock (RTC). Select an option from below to get started.
+                            </p>
+                            
+                            <!-- pH sensor -->
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ph" style="padding: 4px 10px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;height: 32px;">
+                                <p style="color: #040404;margin-bottom: 0;">pH</p>
+                            </div>
+                            
+                            <!-- EC sensor -->
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ec" style="padding: 4px 10px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;height: 32px;">
+                                <p style="color: #040404;margin-bottom: 0;">EC</p>
+                            </div>
+                            
+                            <!-- DO sensor -->
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="dox" style="padding: 4px 10px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;height: 32px;">
+                                <p style="color: #040404;margin-bottom: 0;">DO</p>
+                            </div>
+                            
+                            <!-- Loading spinner -->
+                            <div class="spinner-div hidden" style="overflow-y: auto; width: 100%;position: relative;">
+                                <div class="absolute-center" style="margin-left: 0; margin-top: -15px;">
+                                    <svg class="spinner" viewBox="0 0 50 50">
+                                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Calibration procedure/information -->
+                        <div class="row calibration-info-parent hidden" style="position: relative;margin: 0;margin-top: 2px;">
+
+                            <div class="col-12" style="font-size: 20px; padding: 0;">
+                                <p style="color: #f19e38;margin-bottom: -4px;">Calibrate <span class="sensor-name">-</span> sensor</p>
+                            </div>
+                            
+                            <div class="col calibration-info-div" style="font-size: 14px; padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
+                                <p style="color: #c4c4c4;margin-bottom: 10px;">You have entered calibration mode for Atlas Scientific <span class="sensor-name">-</span> sensor.</p>
+                                
+                                <!-- Calibration meta info -->
+                                <div class="row calibration-meta-info-div shadow" style="margin: 0; padding: 6px 8px;margin-bottom: 12px;background: #3f3f3f93;border-radius: 2px;">
+                                    
+                                    <div class="col-auto calibration-meta-info-item" type="last-calibrated" style="padding: 0; margin: 4px 6px;">
+                                        <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Last calibrated</p>
+                                        <p style="color: #dfdfdf;margin-bottom: 0;">Unknown</p>
+                                    </div>
+                                    
+                                    <div class="col-auto calibration-meta-info-item" type="current-status" style="padding: 0; margin: 4px 6px;">
+                                        <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Status</p>
+                                        <p style="color: #dfdfdf;margin-bottom: 0;">Recommended</p>
+                                    </div>
+                                </div>
+
+                                <!-- Calibration data info -->
+                                <div class="row calibration-data-info-div shadow" style="position: relative; margin: 0; padding: 6px 8px;margin-bottom: 10px;background: #42424245;border-radius: 2px;">
+                                    
+                                    <!-- Refersh status -->
+                                    <div class="calibration-option rotate-animation" type="status" title="Refresh status" style="position: absolute;top: 10px;right: 12px;">
+                                        <p style="color: #a5a5a5;margin-bottom: 0;"><i class="fa-solid fa-arrows-rotate"></i></p>
+                                    </div>
+
+                                    <div class="col-auto calibration-data-info-item" type="calibrations-found" style="padding: 0; margin: 4px 6px;">
+                                        <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Calibrations found</p>
+                                        <div class="list" style="color: #dfdfdf;margin-top: 8px; margin-bottom: 0; display: inline-flex;">-</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Calibrate button -->
+                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-auto show-calibration-actions-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Calibrate sensor</p>
+                                    </div>
+                                    <div class="col-auto go-back-sensor-list-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Calibration perform -->
+                        <div class="row calibration-perform-parent hidden" style="position: relative;margin: 0;margin-top: 2px;">
+
+                            <div class="col-12" style="font-size: 20px; padding: 0;">
+                                <p style="color: #f19e38;margin-bottom: -4px;">Calibrate <span class="sensor-name">-</span> sensor</p>
+                            </div>
+                            
+                            
+                            <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
+                                <p style="color: #c4c4c4;margin-bottom: 10px;">Let's calibrate the <span class="sensor-name">-</span> sensor.</p>
+                                
+                                <!-- Calibration levels -->
+                                <div class="row calibration-levels-list" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-12" style="padding: 0;">
+                                        <p style="color: #ece9e9;margin-bottom: 6px;">Select calibration level from the list below.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Calibration solutions -->
+                                <div class="row calibration-solutions-list" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-12" style="padding: 0;">
+                                        <p style="color: #ece9e9;margin-bottom: 6px;">Select the value of calibration solution.</p>
+                                    </div>
+                                </div>
+
+                                <hr style="margin: 8px 0;">
+                                <p style="color: #c4c4c4;margin-bottom: 10px;">Please dip the sensor in the calibration solution and stir for ~30 seconds before clicking the button below to apply the calibration.</p>
+                                
+                                <!-- Calibrate button -->
+                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-auto perform-calibration-button shadow-heavy disabled" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Perform</p>
+                                    </div>
+                                    <div class="col-auto calibration-clear-option shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #b53e3eb0;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Clear</p>
+                                    </div>
+                                    <div class="col-auto cancel-calibration-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Dismiss</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!--! Daashboard area -->
         <div class="row scrollbar-style panel dashboard-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
-            <div class="go-home-panel" style="position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
                 <i class="fa-solid fa-arrow-left"></i>
             </div>
             
@@ -98,77 +328,99 @@
 
                         <!-- Sensor readings -->
                         <div class="row" style="margin: 0;">
-                        
+                            
+                            <!-- Loop iteration -->
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #4e4e4e7a; min-width: 90px; opacity: 0.2;">
+                                <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">Iteration</p>
+                                <p class="loop-iteration-text" style="color: #AAAAAA; font-size: 22px; text-align: justify; margin-bottom: 0px;">-</p>
+                            </div>
+
                             <!-- RTD sensor -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
                                 <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">RTD</p>
                                 <p class="sensor-rtd-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
                             </div>
                             
                             <!-- pH sensor -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
                                 <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">pH</p>
                                 <p class="sensor-ph-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
                             </div>
                             
                             <!-- EC sensor -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
                                 <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">EC</p>
                                 <p class="sensor-ec-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
                             </div>
                             
                             <!-- DO sensor -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
                                 <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">DO</p>
                                 <p class="sensor-dox-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
                             </div>
-                        </div>
-                    
-                        <!-- Loop iteration -->
-                        <div class="row" style="margin: 0;">
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 90px;">
-                                <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">Iteration</p>
-                                <p class="loop-iteration-text" style="color: #AAAAAA; font-size: 22px; text-align: justify; margin-bottom: 0px;">-</p>
-                            </div>
-                            
                         </div>
                     </div>
 
                     <div class="col-12 auxillary-information" style="margin-bottom: 10px;">
 
                         <div class="row" style="margin: 0;">
+
+                            <!-- Sleep state -->
+                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-left: 4px solid gray;">
+                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Power status</p>
+                                <p class="power-status-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                            </div>
+
                             <!-- MODEM activity -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-left: 4px solid gray; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">MODEM status</p>
                                 <p class="modem-activity-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
+
+                            <!-- Cellular status -->
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-left: 4px solid gray; opacity: 0.2;">
+                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">IoT status</p>
+                                <p class="cellular-status-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                            </div>
+
+                            <!-- MQTT status -->
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-left: 4px solid gray; opacity: 0.2;">
+                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">MQTT status</p>
+                                <p class="mqtt-status-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                            </div>
+                        </div>
+                    </div>
                             
+                    <div class="col-12 auxillary-information" style="margin-bottom: 10px;">
+
+                        <div class="row" style="margin: 0;">
+
                             <!-- MODEM firmware -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">F/W version</p>
                                 <p class="modem-firmware-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- MODEM IMEI -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">IMEI</p>
                                 <p class="modem-imei-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- SIM ICCID -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">ICCID</p>
                                 <p class="sim-iccid-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
 
                             <!-- Singal strength -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #13120f63; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #13120f63; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Signal (dB)</p>
                                 <p class="cell-rssi-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- COPS -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Operator</p>
                                 <p class="cell-operator-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
@@ -181,25 +433,25 @@
                         <div class="row" style="margin: 0;">
 
                             <!-- Survey ID -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey ID</p>
                                 <p class="survey-id-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- Sleep mode -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep mode</p>
                                 <p class="sleep-mode-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- Sleep duration -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep duration</p>
                                 <p class="sleep-duration-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- Devices list -->
-                            <div class="col-auto" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Devices</p>
                                 <p class="devices-list-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
@@ -213,8 +465,12 @@
         
         <!--! Home area -->
         <div class="row scrollbar-style panel home-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default; overflow-y: auto;">
+            
+            <div class="connected-device-disconnect-button" title="Disconnect GatorByte" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                <i class="fa-solid fa-stop"></i>
+            </div>
+            
             <div class="col">
-
                 <div class="row">
                     
                     <!-- Header -->
@@ -274,6 +530,14 @@
                                 </div>
                             </div>
                             
+                            <!-- Calibrate sensors -->
+                            <div class="col-auto shadow sensor-calibration-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                                    <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-scale-balanced"></i></i></p>
+                                    <p style="font-size: 14px; margin-bottom: 2px;">Calibrate sensors</p>
+                                </div>
+                            </div>
+                            
                             <!-- Download file -->
                             <div class="col-auto shadow download-files-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
                                 <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
@@ -287,6 +551,14 @@
                                 <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-download"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Flash firmware</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Diagnostocs -->
+                            <div class="col-auto shadow diagnostics-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                                    <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-stethoscope"></i></p>
+                                    <p style="font-size: 14px; margin-bottom: 2px;">Device diagnostics</p>
                                 </div>
                             </div>
                             
@@ -326,10 +598,6 @@
         
         <!--! Device selector area -->
         <div class="row scrollbar-style panel device-selector-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: auto; cursor: default;">
-            
-            <div class="go-home-panel" style="position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                <i class="fa-solid fa-arrow-left"></i>
-            </div>
             
             <div class="col">
 
@@ -395,7 +663,7 @@
             </div>
         </div>
         
-        <!--! Serial monitor area -->
+        <!--! Serial monitor panel -->
         <div class="panel serial-monitor content scrollbar-style hidden" style="borderz: 1px solid green; overflow-x: hidden; padding: 6px; margin-top: 6px; overflow-y: auto; line-height: 1.5; margin-bottom: 10px; bottom: 0; height: 100%; cursor: default; font-size: 13px; color: #38dd38;">
             
             <div class="skeleton-div" style="overflow-y: hidden;">
@@ -492,7 +760,7 @@
 
                 <!-- Device/Port information -->
                 <div class="col-auto device-status-indicator" style="display: inline-flex; padding: 4px 10px 2px 10px; margin-right: 0px; transition: all 0.25s ease-in; -webkit-app-region: no-drag; cursor: default; background: #444444;">
-                    <div class="go-home-panel" style="margin-right: 6px; cursor: pointer;"><i class="fas fa-arrow-left" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
+                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; margin-right: 6px; cursor: pointer;"><i class="fas fa-arrow-left" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
                     <div class="connected-device-disconnect-buttonz hidden" style="margin-right: 6px; cursor: pointer;"><i class="fas fa-stop" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
                     <div class="connected-device-port" style="font-size: 12px; color: #FFFFFF; max-width: 80px;">N/A</div>
                 </div>
@@ -688,6 +956,8 @@
 <script src="../js/ui.js"></script>
 <script src="../js/ui-home.js"></script>
 <script src="../js/ui-dashboard.js"></script>
+<script src="../js/ui-download-files.js"></script>
+<script src="../js/ui-sensor-calibration.js"></script>
 <script src="../js/ui-serialmonitor.js"></script>
 <script src="../js/socket.js"></script>
 <script src='../js/keyshortcuts.js'></script>

@@ -184,3 +184,12 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.blur {
+    filter: blur(2px);
+}

@@ -7,7 +7,7 @@ var global = {
     timers: {},
     accessors: {},
     dashboard: {},
-    hook: {}
+    hook: null
 };
 
 var isOutOfBounds = function (elem, options) {
@@ -47,7 +47,9 @@ $(document).ready(function () {
     global.accessors.ui = new uisubapp().init();
     global.accessors.uihome = new uihomesubapp().init();
     global.accessors.uidashboard = new uidashboardsubapp().init();
+    global.accessors.uidownloadfiles = new uidownloadfilessubapp().init();
     global.accessors.uiserialmonitor = new uiserialmonitorsubapp().init();
+    global.accessors.uisensorcalibration = new uisensorcalibrationsubapp().init();
     global.accessors.f = new functionsubapp().init();
     global.accessors.sck = new socketsubapp().init();
 });

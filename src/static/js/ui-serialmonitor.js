@@ -33,8 +33,6 @@ function uiserialmonitorsubapp(){
         });
     }
     
-    
-
     self.addlinetoserialmonitor = function (lineid, line) {
         var sessionid = global.states.sessionid;
 
@@ -58,10 +56,9 @@ function uiserialmonitorsubapp(){
 
         // If the line is a hook
         var hook = self.process_hooks(line.trim());
-        if (!hook) return;
 
         // Show line only if specified hook object
-        if (hook.show) {
+        if (hook && hook.show) {
 
             // Add line to the serial monitor display
             if (line.trim().length > 0) $(".serial-monitor").find(".session[session-id='" + sessionid + "']").find(".line").not(".hook-line").css("color", "#38dd38");
@@ -312,11 +309,12 @@ function uiserialmonitorsubapp(){
             show: true
         }
         let endhook = false;
+        let filedata = line.indexOf("fdl:") > -1;
 
-        // Remove the manually added (in F/W code) line break
-        line = line.replace(/<br>/, "");
+        // Remove the manually added (in the firmware code) line break
+        if (!filedata) line = line.replace(/<br>/, "");
 
-        if (line.indexOf("##CEREAL##") > -1 || global.hook) {
+        if (line.indexOf("##CEREAL##") > -1 || global.hook != undefined) {
 
             // If the incoming hook string has an end-of-line indicator
             if (line.indexOf("#EOF#") != -1) {
@@ -326,7 +324,9 @@ function uiserialmonitorsubapp(){
             // If the string doesn't have a EOF indicator, return previous hook object
             if (!endhook) {
 
-                if (global.hook) global.hook.line += line.replace("##CEREAL##", "");
+                // console.log(global.hook);
+
+                if (global.hook) global.hook.line = (global.hook.line || "") + line.replace("##CEREAL##", "");
                 else global.hook = hook;
 
                 global.hook.category = line.split("::")[0].replace(/<br>/g, "").replace("##CEREAL##", "");
@@ -335,14 +335,19 @@ function uiserialmonitorsubapp(){
 
             // Else figure out the hook object/styling/actions
             else {
+
                 
                 line = line.replace("##CEREAL##", "").replace("#EOF#", "");
                 var brprefix = line.indexOf("::") > -1 ? (line.split("::")[0].startsWith("<br>") ? "<br>": "") : "";
                 var brsuffix = line.indexOf("::") > -1 ? (line.split("::")[1].endsWith("<br>") ? "<br>": "") : "";
-                var category = global.hook ? global.hook.category : (line.indexOf("::") > -1 ? line.split("::")[0] : line).replace(/<br>/g, ""); 
-                var data = ((global.hook ? global.hook.line : "") + brprefix + (line.indexOf("::") > -1 ? line.split("::")[1] : line).replace(category, "") + brsuffix).replace("##CEREAL##", "").replace("#EOF#", "").replace(category + "::", ""); 
+                var category = global.hook && global.hook.category && global.hook.category.left > 0 ? global.hook.category : (line.indexOf("::") > -1 ? line.split("::")[0] : line).replace(/<br>/g, ""); 
+                var data = ((global.hook ? global.hook.line || "" : "") + brprefix + (line.indexOf("::") > -1 ? line.split("::")[1] : line).replace(category, "") + brsuffix).replace("##CEREAL##", "").replace("#EOF#", "").replace(category + "::", ""); 
+                data = data.replace("undefined", "");
 
-                if (category == "data") {
+                // console.log(category);
+                // console.log(data);
+
+                if (category && category == "data") {
                     hook = {
                         line: data,
                         category: category,
@@ -362,7 +367,8 @@ function uiserialmonitorsubapp(){
                         ]
                     }
                 }
-                if (category.indexOf("highlight-") == 0) {
+
+                if (category && category.indexOf("highlight-") == 0) {
                     
                     var highlightcolor = category.split("-")[1];
 
@@ -385,9 +391,44 @@ function uiserialmonitorsubapp(){
                         ]
                     }
                 }
-                if (category.indexOf("gdc-db") == 0) {
+
+                // Dashboard
+                if (category && category.indexOf("gdc-db") == 0) {
 
                     self.a.uidashboard.process_dashboard_items(line);
+                    
+                    hook = {
+                        category: category,
+                        show: false,
+                        line: data,
+                        style: {
+                            "color": "black",
+                            "background": "green"
+                        }
+                    }
+                }
+
+                // SD File list
+                if (category && category.indexOf("gdc-dfl") == 0) {
+
+                    if (filedata) self.a.uidownloadfiles.process_file_download_data(line);
+                    else self.a.uidownloadfiles.list_files(data);
+                    
+                    hook = {
+                        category: category,
+                        show: false,
+                        line: data,
+                        style: {
+                            "color": "black",
+                            "background": "green"
+                        }
+                    }
+                }
+
+                // Sensor calibration
+                if (category && category.indexOf("gdc-cal") == 0) {
+
+                    self.a.uisensorcalibration.process(data);
                     
                     hook = {
                         category: category,
@@ -402,8 +443,10 @@ function uiserialmonitorsubapp(){
             }
 
             // Clear state if EOF encountered; save state otherwise
-            global.hook = endhook ? null : { ...hook };
+            global.hook = endhook ? undefined : { ...hook };
         }
+        else global.hook = undefined;
+
         return hook;
     }
 

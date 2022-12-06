@@ -28,6 +28,7 @@ module.exports = {
         windows: {},
         serports: {},
         windowscount: 0,
+        timers: {},
         tray: null,
         subscription: {},
         trialinactive: null,

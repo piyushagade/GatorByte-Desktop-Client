@@ -1,7 +1,7 @@
 /*
     Includes
 */
-const { app, ipcMain, ipcRenderer, remote, net } = require('electron');
+const { app, ipcMain, ipcRenderer, remote, net, BrowserWindow, dialog } = require('electron');
 app.commandLine.appendSwitch('force_high_performance_gpu');
 var fs = require('fs');
 var settings = require('electron-settings');
@@ -41,7 +41,7 @@ app.on('ready', () => {
     
     // Check for an app update
     i.upd.check(i);
-
+    
 });
 
 app.on('window-all-closed', () => {

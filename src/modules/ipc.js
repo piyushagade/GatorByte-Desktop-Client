@@ -1,5 +1,6 @@
 const { SerialPort } = require('serialport');
 const { BrowserWindow } = require('electron');
+const { dialog } = require('electron');
 const path = require('path');
 var moduleprefix = "i";
 
@@ -234,6 +235,9 @@ module.exports = {
                     var result = connect();
                     if (!result.error && connected) {
                         console.log("\nPort opened: " + port.path + " at " + port.baud + " bps");
+
+                        // Send ping
+                        result.port.write("##CEREAL-GDC-PING##");
                         
                         i.g.var.serports[result.port.settings.path] = result.port;
 
@@ -255,17 +259,29 @@ module.exports = {
                         i.g.var.serports[result.port.settings.path].on('data', function (data) {
 
                             data = new TextDecoder().decode(data);
-                            while (data.indexOf("\r\n") > 0) {
-                                var index = data.indexOf("\r\n");
-                                data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\r\n".length, data.length);
+
+                            // Clear detector timer
+                            if (data.indexOf("##CEREAL-GDC-PONG##") !== -1) {
+                                console.log("PONG detected");
+                                clearInterval(i.g.var.timers.gbdetector);
+                                return;
                             }
-                            while (data.indexOf("\r") > 0) {
-                                var index = data.indexOf("\r");
-                                data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\r".length, data.length);
-                            }
-                            while (data.indexOf("\n") > 0) {
-                                var index = data.indexOf("\n");
-                                data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\n".length, data.length);
+
+                            let filedata = data.indexOf("fdl:") > -1;
+
+                            if (!filedata) {
+                                while (data.indexOf("\r\n") > 0) {
+                                    var index = data.indexOf("\r\n");
+                                    data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\r\n".length, data.length);
+                                }
+                                while (data.indexOf("\r") > 0) {
+                                    var index = data.indexOf("\r");
+                                    data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\r".length, data.length);
+                                }
+                                while (data.indexOf("\n") > 0) {
+                                    var index = data.indexOf("\n");
+                                    data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\n".length, data.length);
+                                }
                             }
 
                             // Send data to renderer
@@ -411,6 +427,60 @@ module.exports = {
             if (os.platform() === 'win32') shell.openExternal(obj.url);
             else if (os.platform() === 'linux') require('child_process').exec('xdg-open ' + obj.url);
 
+        });
+
+        i.ipcm.on('ipc/save-file/request', (event, obj) => {
+            var filedata = obj.filedata;
+            var filename = obj.filename;
+
+            console.log("A request to save file received: " + filename);
+            
+            //renderer.js - renderer process example
+            var window = BrowserWindow.fromId(obj.windowid);
+
+            let options = {
+                window: window,
+                title: "Save the downloaded file",
+                defaultPath: obj.filename,
+                buttonLabel: "Save",
+                filters: [
+                    {
+                        name: 'All Files',
+                        extensions: ['*']
+                    }
+                ]
+            }
+
+            dialog.showSaveDialog(options).then(file => {
+                if (!file.canceled) {
+                    i.fs.writeFile(file.filePath.toString(), obj.filedata, function (err) {
+                        if (err) {
+                            event.sender.send("ipc/save-file/response", {
+                                ...obj,
+                                success: false,
+                                message: "Error saving file"
+                            });
+                            return;   
+                        }
+                        
+                        console.log('File saved.');
+                        event.sender.send("ipc/save-file/response", {
+                            ...obj,
+                            success: true,
+                            message: "Saved successfully"
+                        });
+                    });
+                }
+                else {
+                    event.sender.send("ipc/save-file/response", {
+                        ...obj,
+                        success: false,
+                        message: "Saving file cancelled"
+                    });
+                }
+            }).catch(err => {
+                console.log(err)
+            });
         });
 
         i.ipcm.on('ipc/flash-firmware/request', (event, obj) => {

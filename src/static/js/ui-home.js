@@ -20,40 +20,6 @@ function uihomesubapp(){
         return self;
     }
     
-    self.on_port_disconnected = function () {
-        
-        // Hide status bar icons
-        $(".status-bar-item.show-on-connected").addClass("hidden");
-
-        // Hide line options
-        $(".line-options-overlay").attr("state", "hidden").addClass("hidden");
-        
-    }
-
-    self.on_port_connected = function () {
-
-        // Show status bar icons
-        $(".status-bar-item.show-on-connected").removeClass("hidden");
-
-        // Hide command input
-        if ($(".command-input-div").attr("state") == "hidden") {
-            $(".command-input-div").addClass("hidden").attr("state", "hidden");
-            $(".status-bar-item.input-button").css("background", "transparent");
-            $(".status-bar-item.input-button").find("i").css("color", "#EEE");
-        }
-
-        // Input button listener
-        $(".status-bar-item.input-button").off("click").click(function () {
-            self.toggle_command_input_ui();
-        });
-
-        $(".waiting-for-device-panel").addClass("hidden");
-        $(".device-selector-panel").addClass("hidden");
-
-        global.states.powersaveid = self.pwrsv.start('prevent-app-suspension');
-        if (global.states.powersaveid != undefined) console.log('Power saving turned on');
-    }
-
     self.listeners = function () {
 
         // GatorByte info button
