@@ -191,7 +191,7 @@
                             </div>
                             
                             <!-- Loading spinner -->
-                            <div class="spinner-div hidden" style="overflow-y: auto; width: 100%;position: relative;">
+                            <div class="spinner-div hidden" style="overflow-y: auto; width: 100%; height: 200px; position: relative;">
                                 <div class="absolute-center" style="margin-left: 0; margin-top: -15px;">
                                     <svg class="spinner" viewBox="0 0 50 50">
                                         <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
@@ -652,6 +652,129 @@
             </div>
         </div>
         
+        <!--! Configure GatorByte area -->
+        <div class="row scrollbar-style panel configure-gb-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+            
+            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            
+            <div class="col">
+                <div class="row">
+                    
+                    <!-- Header -->
+                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
+                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
+                        </div>
+                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                        
+                    <!-- Config information -->
+                    <div class="col-12 hidden config-information-parent">
+                        <div class="row">
+                            
+                            <div class="col-12 download-progress" style="margin-bottom: 10px; display: inline-flex;">
+                                <p class="text" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px; opacity: 1;padding: 4px 8px; background: #3d3d3d;">Configuration file does not exists.</p>
+                                <span class="refresh-config-data-button" title="Re-fetch config data" style="font-size: 14px;color: #CCC;margin-top: 5px;margin-left: 5px;"><i class="fa-solid fa-arrows-rotate" ></i></span>
+                            </div>
+
+                            <!--! Survey information -->
+                            <div class="col-12 survey-information-parent" style="margin-bottom: 10px;">
+
+                                <div class="row" style="margin: 0;">
+
+                                    <!-- Survey ID -->
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey ID</p>
+                                        <p class="survey-id-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+
+                                    <!-- Survey date -->
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey date</p>
+                                        <p class="survey-date" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin: 0;">
+                                    <!-- Survey location -->
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey location</p>
+                                        <p class="survey-location" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!--! Device information -->
+                            <div class="col-12 device-information-parent" style="margin-bottom: 10px;">
+
+                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                    
+                                    <!-- Sleep mode -->
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep mode</p>
+                                        <p class="sleep-mode-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                    
+                                    <!-- Sleep duration -->
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep duration</p>
+                                        <p class="sleep-duration-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                </div>
+
+                                <!-- Enabled devices list -->
+                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">Enbaled devices</p>
+                                        <div class="row devices-list" style="margin: 0px;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- States list -->
+                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">States</p>
+                                        <div class="row states-list" style="margin: 0px;"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Real-time configuration -->
+                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">RTC time</p>
+                                        <p style="color: #dadada; font-size: 13px; text-align: justify; margin-bottom: 8px;">Use this to sync the onboard clock's time with your computer's time.</p>
+                                        <p class="row gatorbyte-rtc-time-text" style="margin: 0px; color: #c4d62c; font-size: 15px;"></p>
+                                        
+                                        <div class="col-auto calibrate-rtc-button shadow-heavy" style="padding: 4px 8px;margin-right: 6px;margin-top: 8px;background: #656565;border-radius: 2px;height: 28px;font-size: 14px;width: fit-content;">
+                                            <p style="color: #DDDDDD;margin-bottom: 0;">Sync clocks</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 spinner-parent">
+                        <div class="download-progress" style="margin-bottom: 10px;">
+                            <p class="text" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px;opacity: 1;padding: 4px 8px; background: #3d3d3d;">Configuration file does not exists.</p>
+                        </div>
+
+                        <!-- Loading spinner -->
+                        <div class="spinner-div" style="overflow-y: auto; height: 100px; width: 100%;position: relative;">
+                            <div class="absolute-center" style="margin-left: 0; margin-top: -5px;">
+                                <svg class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!--! Pinned lines overlay -->
         <div class="row pinned-lines-overlay shadow hidden" style="padding: 4px 6px;height: auto;cursor: default;position: relative; margin: 10px;background: #2e311e;border-radius: 4px;">
             <div class="col">
@@ -953,13 +1076,18 @@
 <script src="../js/functions.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/ipc.js"></script>
-<script src="../js/ui.js"></script>
-<script src="../js/ui-home.js"></script>
-<script src="../js/ui-dashboard.js"></script>
-<script src="../js/ui-download-files.js"></script>
-<script src="../js/ui-sensor-calibration.js"></script>
-<script src="../js/ui-serialmonitor.js"></script>
 <script src="../js/socket.js"></script>
+
+<!-- UI JavaScript modules -->
+<script src="../js/ui.js"></script>
+<script src="../js/modules/ui/home.js"></script>
+<script src="../js/modules/ui/dashboard.js"></script>
+<script src="../js/modules/ui/download-files.js"></script>
+<script src="../js/modules/ui/sensor-calibration.js"></script>
+<script src="../js/modules/ui/serialmonitor.js"></script>
+<script src="../js/modules/ui/config-gatorbyte.js"></script>
+
+<!-- Keyboard shortcuts -->
 <script src='../js/keyshortcuts.js'></script>
 
 </html>

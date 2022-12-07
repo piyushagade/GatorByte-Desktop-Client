@@ -43,13 +43,16 @@ var isOutOfBounds = function (elem, options) {
 $(document).ready(function () {
 
     // Init subapps
-    global.accessors.ipc = new ipcsubapp().init();
     global.accessors.ui = new uisubapp().init();
     global.accessors.uihome = new uihomesubapp().init();
     global.accessors.uidashboard = new uidashboardsubapp().init();
     global.accessors.uidownloadfiles = new uidownloadfilessubapp().init();
     global.accessors.uiserialmonitor = new uiserialmonitorsubapp().init();
     global.accessors.uisensorcalibration = new uisensorcalibrationsubapp().init();
+    global.accessors.uiconfiggatorbyte = new uiconfiggatorbytesubapp().init();
+
+    global.accessors.ipc = new ipcsubapp().init();
+    
     global.accessors.f = new functionsubapp().init();
     global.accessors.sck = new socketsubapp().init();
 });

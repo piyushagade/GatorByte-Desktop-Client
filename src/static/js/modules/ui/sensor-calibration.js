@@ -159,6 +159,10 @@ function uisensorcalibrationsubapp(){
                         "ec": {
                             "levels": [
                                 {
+                                    "id": "dry",
+                                    "description": "Dry"
+                                },
+                                {
                                     "id": "low",
                                     "description": "Low-point"
                                 },
@@ -336,6 +340,8 @@ function uisensorcalibrationsubapp(){
             var calibrations = parseInt(line.split(":")[2]);
             var sensor = line.split(":")[1];
             var parent = $(".calibration-info-div[sensor='" + sensor + "']");
+
+            console.log("Calibrations found: " + line);
             
             parent.find(".calibration-option[type='status']").removeClass("rotate-animation");
 
@@ -344,25 +350,67 @@ function uisensorcalibrationsubapp(){
                 <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">No calibration found</div>
             */}));
 
-            if (calibrations >= 4) {
-                parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
-                    <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">High-point</div>
-                */}));
-                calibrations -= 4;
+            if (sensor == "ph") {
+                if (calibrations >= 4) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">High-point</div>
+                    */}));
+                    calibrations -= 4;
+                }
+                if (calibrations >= 2) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Mid-point</div>
+                    */}));
+                    calibrations -= 2;
+                }
+                if (calibrations >= 1) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Low-point</div>
+                    */}));
+                    calibrations -= 1;
+                }
             }
-            if (calibrations >= 2) {
-                parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
-                    <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Mid-point</div>
-                */}));
-                calibrations -= 2;
+            if (sensor == "ec") {
+                if (calibrations >= 8) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">High-point</div>
+                    */}));
+                    calibrations -= 8;
+                }
+                if (calibrations >= 4) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Low</div>
+                    */}));
+                    calibrations -= 4;
+                }
+                if (calibrations >= 2) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Single-point</div>
+                    */}));
+                    calibrations -= 2;
+                }
+                if (calibrations >= 1) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Dry</div>
+                    */}));
+                    calibrations -= 1;
+                }
             }
-            if (calibrations >= 1) {
-                parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
-                    <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Low-point</div>
-                */}));
-                calibrations -= 1;
+            if (sensor == "dox") {
+                if (calibrations >= 2) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Zero</div>
+                    */}));
+                    calibrations -= 2;
+                }
+                if (calibrations >= 1) {
+                    parent.find(".calibration-data-info-item[type='calibrations-found'] .list").append(multiline(function () {/* 
+                        <div style="background: #4e4e4e; padding: 2px 5px; font-size: 12px; margin: 0 4px 4px 0;">Atmospheric</div>
+                    */}));
+                    calibrations -= 1;
+                }
             }
-        
+            
             // Remove blur
             $(".calibration-meta-info-div").removeClass("blur");
             $(".calibration-data-info-div").removeClass("blur");

@@ -425,6 +425,23 @@ function uiserialmonitorsubapp(){
                     }
                 }
 
+                // GatorByte configuration
+                if (category && category.indexOf("gdc-cfg") == 0) {
+
+                    if (filedata) self.a.uiconfiggatorbyte.process_file_download_data(line);
+                    else self.a.uiconfiggatorbyte.process_response(data);
+                    
+                    hook = {
+                        category: category,
+                        show: false,
+                        line: data,
+                        style: {
+                            "color": "black",
+                            "background": "green"
+                        }
+                    }
+                }
+
                 // Sensor calibration
                 if (category && category.indexOf("gdc-cal") == 0) {
 

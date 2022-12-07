@@ -42,21 +42,26 @@ function uidownloadfilessubapp(){
             $(".download-files-panel .spinner-div").removeClass("hidden");
 
             // Send request to get GatorByte to send sd files list
-            var prefix = "##GB##", suffix = "#EOF#";
-            self.ipcr.send('send-command-request', {
-                command: prefix + "files-list:list,/" + suffix,
-                windowid: global.states.windowid,
-                path: global.port.path
-            });
-            self.state = "wait-for-file-list";
+            self.request_file_list("/", 1);
         });
+    }
+
+    self.request_file_list = function (dir, page) {
+        var prefix = "##GB##", suffix = "#EOF#";
+        self.ipcr.send('send-command-request', {
+            command: prefix + "files-list:list," + dir + suffix,
+            windowid: global.states.windowid,
+            path: global.port.path
+        });
+
+        self.state = "wait-for-file-list";
     }
 
     self.list_files = function (line) {
         line = line.replace(/<br>/g, "");
 
         if (self.state == "wait-for-file-list") {
-            if (line.startsWith("file:")) self.update_file_list_ui(line.replace(/result:/, ""));
+            if (line.startsWith("file:")) self.update_file_list_ui(line.replace(/file:/, ""));
         }
         else if (self.state == "wait-on-file-download") {
             
@@ -65,11 +70,10 @@ function uidownloadfilessubapp(){
         }
     }
 
-    self.update_file_list_ui = function (line) {
-        var file = line.replace(/file:/, "");
+    self.update_file_list_ui = function (file) {
 
         // Ignore '/' folder
-        if (file == "/") return;
+        if (file == "/:0") return;
 
         // If file already exists in the list, do not add
         if ($(".download-files-panel .download-files-list .files-list-item[filename='" + file + "']").length == 0) {
@@ -120,7 +124,7 @@ function uidownloadfilessubapp(){
             });
         }
 
-        // On file clicked
+        //! When user clicks on an icon
         $(".download-files-panel .files-list-item").off("click").click(function () {
             var filename = $(this).attr("filename");
             var parent = $(".download-files-panel .file-options-parent");
@@ -138,7 +142,7 @@ function uidownloadfilessubapp(){
                 $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
             }
 
-            // Show file options and select the file
+            //! Show file options and select the file
             else {
                 parent.attr("state", "file-selected").attr("selected-file", filename);
                 
@@ -154,7 +158,7 @@ function uidownloadfilessubapp(){
                 parent.find(".filename").text(filename);
             }
 
-            // Save file button listener (Download file)
+            //! Save file button listener (Download file)
             $(".download-files-panel .file-options-parent .download-file-button").off("click").click(function () {
                 var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
 
@@ -184,8 +188,8 @@ function uidownloadfilessubapp(){
         // Append file data
         self.filedownloaddata += data;
 
-        // Request new data
-        if (data.length > 0) self.request_file_download(self.filedownloadname, self.filedownloadline);
+        // Request next part of the data if available
+        if (data.length > 0) return self.request_file_download(self.filedownloadname, self.filedownloadline);
         
         // On download complete
         else {
@@ -209,8 +213,11 @@ function uidownloadfilessubapp(){
     }
 
     self.request_file_download = function (filename, startingline) {
-        self.sendcommand("download" + ":" + filename + "," + startingline);
-        self.state = "wait-on-file-download";
+
+        return new Promise(function (resolve, reject) {
+            self.sendcommand("download" + ":" + filename + "," + startingline);
+            self.state = "wait-on-file-download";
+        });
     }
 
     self.on_file_save_response = function (data) {
