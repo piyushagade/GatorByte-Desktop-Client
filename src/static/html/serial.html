@@ -93,12 +93,48 @@
                     <div class="col-12" style="margin-bottom: 10px;">
                         
                         <div class="row" style="margin: 0;">
-                            <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 2px;font-size: 12px;font-weight: normal;">
+                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 2px;font-size: 12px;font-weight: normal;">
                                 Select a file from the list below to download a file to your computer. This process may take time to complete, so kindly be patient.
                             </p>
                         </div>
 
-                        <div class="row download-files-list" style="position: relative; margin: 0;margin-top: 10px;background: #17171744;border-radius: 2px;padding: 10px;">
+                        <!-- Top options -->
+                        <div class="row" style="margin: 0; margin-top: 8px;">
+                            
+                            <!-- Refresh list -->
+                            <div class="col-auto refresh-files-list-button"" style="padding: 4px 10px;margin-right: 6px;background: #17171744;border-radius: 2px;height: 28px;">
+                                <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </p>
+                            </div>
+
+                            <!-- File options for selected file -->
+                            <div class="col-auto file-options-parent hidden" state="no-file-selected" style="display: inline-flex; padding: 0;"> 
+                                <div style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
+                                    <p class="download-file-button" title="Save file to computer" style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                        <i class="fa-regular fa-floppy-disk"></i>
+                                    </p>
+                                </div>
+                                
+                                <div style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
+                                    <p class="delete-file-button" title="Delete file on SD" style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Folder information -->
+                            <div class="col-auto" style="padding: 4px 10px;margin-right: 6px;background: #17171744;border-radius: 2px;height: 28px;">
+                                <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                    <i class="fa-solid fa-folder" style="margin-right: 6px;"></i>
+                                    <span>/</span>
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!-- Files -->
+                        <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;background: #17171744;border-radius: 2px;padding: 10px;padding: 12px 14px 4px 14px;">
                             
                             <!-- Loading spinner -->
                             <div class="spinner-div hiddenz" style="overflow-y: auto; height: 100px; width: 100%;position: relative;">
@@ -115,35 +151,16 @@
             </div>
             
             <!-- File options -->
-            <div class="col-12 file-options-parent hidden" state="no-file-selected" style="position: absolute; bottom: 8px; left: 8px; width: auto;">
+            <div class="col-12 file-options-download-information hidden" state="no-file-selected" style="position: absolute; bottom: 8px; left: 8px; width: auto;">
                 
-                <div class="file-options-home" style="background: #eeecece8;border-radius: 2px; padding: 10px; height: 50px; display: inline-flex; width: auto; width: max-content;">
-                    <div class="truncate" style="padding: 4px 8px; max-width: 160px;">
-                        <i class="fa-regular fa-file"></i>
-                        <span class="filename" style="font-size: 13px;color: #0c0c0c;border-radius: 4px;margin: 0 4px;">-</span>
-                    </div>
-                    <div class="shadow-heavy" title="Preview file contents" style="background: #eeececc0; font-size: 18px; color: #444; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <div class="shadow-heavy download-file-button" title="Save file to computer" style="background: #eeececc0; font-size: 18px; color: #444; padding: 2px 8px; border-radius: 4px; margin-right: 8px;">
-                        <i class="fa-regular fa-floppy-disk"></i>
-                    </div>
-                    <div class="shadow-heavy" title="Delete file on SD" style="background: #eeececc0; font-size: 18px; color: #444; padding: 2px 8px; border-radius: 4px; margin-right: 0px;">
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </div>
-                
-                
-                <div class="file-options-download-information hidden" style="background: #eeecece8;border-radius: 2px; padding: 10px; height: 50px; display: inline-flex; width: auto; width: max-content;">
-                    <div class="truncate" style="padding: 4px 8px; max-width: 160px;">
+                <div style="background: #eeecece8;border-radius: 2px;padding: 6px 10px;height: 34px;display: inline-flex;width: auto;width: max-content;">
+                    <div class="truncate" style="margin-right: 6px;">
                         <i class="fa-solid fa-floppy-disk"></i>
-                        <span class="filename" style="font-size: 13px;color: #0c0c0c;border-radius: 4px;margin: 0 4px;"></span>
                     </div>
-                    <div style="font-size: 13px;padding: 2px 8px;font-weight: bold;border-radius: 4px;margin-right: 8px;margin-top: 5px;">
+                    <div style="font-size: 13px;padding: 2px;font-weight: bold;border-radius: 4px;margin-right: 8px;">
                         <span class="download-progress" style="color: #424242;">Starting download</span>
                     </div>
                 </div>
-
             </div>
         </div>
         
@@ -329,34 +346,35 @@
                         <!-- Sensor readings -->
                         <div class="row" style="margin: 0;">
                             
-                            <!-- Loop iteration -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #4e4e4e7a; min-width: 90px; opacity: 0.2;">
-                                <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">Iteration</p>
-                                <p class="loop-iteration-text" style="color: #AAAAAA; font-size: 22px; text-align: justify; margin-bottom: 0px;">-</p>
+                            <!-- Fetch fresh readings -->
+                            <div class="fetch-sensor-readings-button col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #4e4e4e7a; width: 45px; opacity: 0.2;border-radius: 2px;">
+                                <p class="absolute-center" style="color: #AAAAAA; font-size: 22px; text-align: justify; margin-bottom: 0px;">
+                                    <i class="icon fa-solid fa-arrows-rotate"></i>
+                                </p>
                             </div>
 
                             <!-- RTD sensor -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
+                            <div class="col-auto dashboard-item sensor-reading-item shadow" type="rtd" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;border-radius: 2px;">
                                 <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">RTD</p>
-                                <p class="sensor-rtd-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
+                                <p class="sensor-rtd-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 1;">-</p>
                             </div>
                             
                             <!-- pH sensor -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
+                            <div class="col-auto dashboard-item sensor-reading-item shadow" type="ph" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;border-radius: 2px;">
                                 <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">pH</p>
-                                <p class="sensor-ph-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
-                            </div>
-                            
-                            <!-- EC sensor -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
-                                <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">EC</p>
-                                <p class="sensor-ec-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
+                                <p class="sensor-ph-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 1;">-</p>
                             </div>
                             
                             <!-- DO sensor -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px; opacity: 0.2;">
+                            <div class="col-auto dashboard-item sensor-reading-item shadow" type="dox" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;border-radius: 2px;">
                                 <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">DO</p>
-                                <p class="sensor-dox-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 0.68;">-</p>
+                                <p class="sensor-dox-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 1;">-</p>
+                            </div>
+                            
+                            <!-- EC sensor -->
+                            <div class="col-auto dashboard-item sensor-reading-item shadow" type="ec" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #ffffffd1; min-width: 90px;border-radius: 2px;">
+                                <p style="color: #1776d8;font-size: 12px;text-align: justify;margin-bottom: -4px;font-weight: bold;">EC</p>
+                                <p class="sensor-ec-text" style="color: #222222; font-size: 22px; text-align: justify; margin-bottom: 0px; opacity: 1;">-</p>
                             </div>
                         </div>
                     </div>
@@ -398,67 +416,35 @@
                             <!-- MODEM firmware -->
                             <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">F/W version</p>
-                                <p class="modem-firmware-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                <p class="modem-firmware-text truncate" style="max-width: 120px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- MODEM IMEI -->
                             <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">IMEI</p>
-                                <p class="modem-imei-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                <p class="modem-imei-text truncate" style="max-width: 120px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- SIM ICCID -->
                             <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">ICCID</p>
-                                <p class="sim-iccid-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                <p class="sim-iccid-text truncate" style="max-width: 120px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
 
                             <!-- Singal strength -->
                             <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #13120f63; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Signal (dB)</p>
-                                <p class="cell-rssi-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                <p class="cell-rssi-text truncate" style="max-width: 60px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                             <!-- COPS -->
                             <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; opacity: 0.2;">
                                 <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Operator</p>
-                                <p class="cell-operator-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                <p class="cell-operator-text truncate" style="max-width: 80px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                             </div>
                             
                         </div>
                     </div>
-
-                    <div class="col-12 config-information" style="margin-bottom: 10px;">
-
-                        <div class="row" style="margin: 0;">
-
-                            <!-- Survey ID -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey ID</p>
-                                <p class="survey-id-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
-                            </div>
-                            
-                            <!-- Sleep mode -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep mode</p>
-                                <p class="sleep-mode-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
-                            </div>
-                            
-                            <!-- Sleep duration -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep duration</p>
-                                <p class="sleep-duration-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
-                            </div>
-                            
-                            <!-- Devices list -->
-                            <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Devices</p>
-                                <p class="devices-list-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
@@ -686,23 +672,23 @@
                                 <div class="row" style="margin: 0;">
 
                                     <!-- Survey ID -->
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey ID</p>
-                                        <p class="survey-id-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                        <input class="survey-id-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                     </div>
 
                                     <!-- Survey date -->
                                     <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey date</p>
-                                        <p class="survey-date" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                        <p class="survey-date" style="width: 100%; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
                                     </div>
                                 </div>
 
+                                <!-- Survey location -->
                                 <div class="row" style="margin: 0;">
-                                    <!-- Survey location -->
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; width: 100%;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey location</p>
-                                        <p class="survey-location" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                        <input class="survey-location" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                     </div>
                                 </div>
                             </div>
@@ -715,13 +701,18 @@
                                     <!-- Sleep mode -->
                                     <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep mode</p>
-                                        <p class="sleep-mode-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                        <select class="sleep-mode-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                            <option value="shallow" style="color: #222;">Shallow</option>
+                                            <option value="deep" style="color: #222;">Deep</option>
+                                            <option value="reset" style="color: #222;">Reset</option>
+                                            <option value="delay" style="color: #222;">Delay</option>
+                                        </select>
                                     </div>
                                     
                                     <!-- Sleep duration -->
                                     <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep duration</p>
-                                        <p class="sleep-duration-text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep duration (seconds)</p>
+                                        <input class="sleep-duration-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                     </div>
                                 </div>
 

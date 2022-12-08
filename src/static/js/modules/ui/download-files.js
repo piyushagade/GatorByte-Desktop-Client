@@ -8,6 +8,7 @@ function uidownloadfilessubapp(){
     self.pwrsv =  require('electron').remote.powerSaveBlocker;
     self.a = global.accessors;
     self.filedata = "";
+    self.panel = $(".download-files-panel");
 
     self.init = function () {
 
@@ -37,6 +38,28 @@ function uidownloadfilessubapp(){
 
             // Hide file options
             $(".download-files-panel .file-options-parent").addClass("hidden");
+
+            // Hide download information div
+            self.panel.find(".file-options-download-information").addClass("hidden");
+
+            // Show spinner
+            $(".download-files-panel .spinner-div").removeClass("hidden");
+
+            // Send request to get GatorByte to send sd files list
+            self.request_file_list("/", 1);
+        });
+
+        //! Refresh list button listener
+        $(".download-files-panel .refresh-files-list-button").off("click").click(function () {
+            
+            // Clear list
+            $(".download-files-panel .download-files-list .files-list-item").remove();
+
+            // Hide file options
+            $(".download-files-panel .file-options-parent").addClass("hidden");
+
+            // Hide download information div
+            self.panel.find(".file-options-download-information").addClass("hidden");
 
             // Show spinner
             $(".download-files-panel .spinner-div").removeClass("hidden");
@@ -137,7 +160,7 @@ function uidownloadfilessubapp(){
                 // Hide file options div
                 parent.addClass("hidden");
                 parent.find(".file-options-home").removeClass("hidden");
-                parent.find(".file-options-download-information").addClass("hidden");
+                self.panel.find(".file-options-download-information").addClass("hidden");
                 
                 $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
             }
@@ -152,7 +175,7 @@ function uidownloadfilessubapp(){
                 // Show file options div
                 parent.removeClass("hidden");
                 parent.find(".file-options-home").removeClass("hidden");
-                parent.find(".file-options-download-information").addClass("hidden");
+                self.panel.find(".file-options-download-information").addClass("hidden");
 
                 // Setup UI
                 parent.find(".filename").text(filename);
@@ -170,8 +193,8 @@ function uidownloadfilessubapp(){
 
                 // Update UI
                 parent.find(".file-options-home").addClass("hidden");
-                parent.find(".file-options-download-information").removeClass("hidden");
-                parent.find(".file-options-download-information .download-progress").css("color", "#424242").text("Starting download");
+                self.panel.find(".file-options-download-information").removeClass("hidden");
+                self.panel.find(".file-options-download-information .download-progress").css("color", "#424242").text("Starting download");
             });
         });
     }
@@ -183,7 +206,7 @@ function uidownloadfilessubapp(){
         self.filedownloadline += 30;
 
         // Update UI
-        $(".download-files-panel").find(".file-options-download-information .download-progress").css("color", "#904c07").text(self.filedownloadline + " kB downloaded");
+        self.panel.find(".file-options-download-information .download-progress").css("color", "#904c07").text(self.filedownloadline + " kB downloaded");
 
         // Append file data
         self.filedownloaddata += data;
@@ -195,7 +218,7 @@ function uidownloadfilessubapp(){
         else {
 
             // Update UI
-            $(".download-files-panel").find(".file-options-download-information .download-progress").css("color", "#104c09").text("Download complete");
+            self.panel.find(".file-options-download-information .download-progress").css("color", "#104c09").text("Download complete");
 
             self.ipcr.send('ipc/save-file/request', {
                 ...global.port,
@@ -222,10 +245,10 @@ function uidownloadfilessubapp(){
 
     self.on_file_save_response = function (data) {
         if (data.success) {
-            $(".download-files-panel").find(".file-options-download-information .download-progress").css("color", "#104c09").text(data.message);
+            self.panel.find(".file-options-download-information .download-progress").css("color", "#104c09").text(data.message);
         }
         else {
-            $(".download-files-panel").find(".file-options-download-information .download-progress").css("color", "#904c07").text(data.message);
+            self.panel.find(".file-options-download-information .download-progress").css("color", "#904c07").text(data.message);
         }
 
         setTimeout(() => {
@@ -233,7 +256,7 @@ function uidownloadfilessubapp(){
 
             // Update UI
             parent.find(".file-options-home").removeClass("hidden");
-            parent.find(".file-options-download-information").addClass("hidden");
-        }, 2000);
+            self.panel.find(".file-options-download-information").addClass("hidden");
+        }, 5000);
     }
 }

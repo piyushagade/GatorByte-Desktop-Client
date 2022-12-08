@@ -204,19 +204,19 @@ function uiconfiggatorbytesubapp() {
         var allstates = ["online", "dummy", "log-to-sd", "use-gps", "use-bl"];
         
         // Survey information
-        self.panel.find(".survey-information-parent").find(".survey-id-text").text(data.survey["id"]);
+        self.panel.find(".survey-information-parent").find(".survey-id-text").val(data.survey["id"]);
         self.panel.find(".survey-information-parent").find(".survey-date").text(data.survey["date"]);
-        self.panel.find(".survey-information-parent").find(".survey-location").text(data.survey["location"]);
+        self.panel.find(".survey-information-parent").find(".survey-location").val(data.survey["location"]);
         
         // Sleep information
-        self.panel.find(".device-information-parent").find(".sleep-mode-text").text(data.device["sleep"].split(",")[0]);
-        self.panel.find(".device-information-parent").find(".sleep-duration-text").text(data.device["sleep"].split(",")[1]);
+        self.panel.find(".device-information-parent").find(".sleep-mode-text").val(data.device["sleep"].split(",")[0]);0
+        self.panel.find(".device-information-parent").find(".sleep-duration-text").val(parseInt(data.device["sleep"].split(",")[1] / 1000));
         
         // Devices list
         self.panel.find(".device-information-parent").find(".devices-list .devices-list-item").remove();
         alldevices.forEach(function (device, di) {
             self.panel.find(".device-information-parent").find(".devices-list").append(multiline(function () {/* 
-                <div class="col-auto devices-list-item shadow disabled" device="{{devicename}}" style="margin: 0 6px 6px 0; padding: 2px 6px; background: #e6e6e6; color: #222222; font-size: 12px;">
+                <div class="col-auto devices-list-item shadow disabled" device="{{devicename}}" style="margin: 0 6px 6px 0;padding: 2px 6px;background: #e6e6e6;color: #505050;font-size: 12px;font-weight: bold;">
                     {{devicename}}
                 </div>
             */}, {
@@ -226,14 +226,14 @@ function uiconfiggatorbytesubapp() {
 
         // Show enabled devices
         data.device["devices"].split(",").forEach(function (device, di) {
-            self.panel.find(".devices-list-item[device='" + device.trim() + "']").removeClass("disabled");
+            self.panel.find(".devices-list-item[device='" + device.trim() + "']").removeClass("disabled").addClass("enabled");
         });
         
         // States list
         self.panel.find(".device-information-parent").find(".states-list .states-list-item").remove();
         allstates.forEach(function (state, si) {
             self.panel.find(".device-information-parent").find(".states-list").append(multiline(function () {/* 
-                <div class="col-auto states-list-item shadow disabled" state="{{state}}" style="margin: 0 6px 6px 0; padding: 2px 6px; background: #e6e6e6; color: #222; font-size: 12px;">
+                <div class="col-auto states-list-item shadow disabled" state="{{state}}" style="margin: 0 6px 6px 0;padding: 2px 6px;background: #e6e6e6;color: #505050;font-size: 12px;font-weight: bold;">
                     {{state}}
                 </div>
             */}, {
@@ -243,7 +243,7 @@ function uiconfiggatorbytesubapp() {
 
         // Show enabled states
         Object.keys(data.state).forEach(function (state, di) {
-            if (data.state[state] == "true") self.panel.find(".states-list-item[state='" + state.trim() + "']").removeClass("disabled");
+            if (data.state[state] == "true") self.panel.find(".states-list-item[state='" + state.trim() + "']").removeClass("disabled").addClass("enabled");
         });
     }
 

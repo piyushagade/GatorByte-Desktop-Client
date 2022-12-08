@@ -7,6 +7,7 @@ function uidashboardsubapp(){
     self.ipcr = require('electron').ipcRenderer;
     self.pwrsv =  require('electron').remote.powerSaveBlocker;
     self.a = global.accessors;
+    self.panel = $(".dashboard-panel");
 
 
     self.init = function () {
@@ -20,6 +21,15 @@ function uidashboardsubapp(){
 
         return self;
     }
+
+    self.sendcommand = function (command) {
+
+        self.ipcr.send('send-command-request', {
+            command: command,
+            windowid: global.states.windowid,
+            path: global.port.path
+        });
+    }
     
     self.listeners = function () {
 
@@ -31,10 +41,33 @@ function uidashboardsubapp(){
             // Send request to get GatorByte to send sd files list
             var prefix = "##GB##", suffix = "#EOF#";
             self.ipcr.send('send-command-request', {
-                command: prefix + "dashboard" + suffix,
+                command: prefix + "dashboard:enter" + suffix,
                 windowid: global.states.windowid,
                 path: global.port.path
             });
+        });
+
+        // Fetch sensor readings
+        self.panel.find(".fetch-sensor-readings-button").off("click").click(function () {
+
+            // Update UI
+            $(this).find(".icon").addClass("rotate-animation");
+            self.panel.find(".sensor-reading-item").addClass("disabled");
+            
+            // Send request to GatorByte (fetch sensor readings)
+            self.sendcommand("fsr:all");
+        });
+
+        // Fetch sensor reading individually
+        self.panel.find(".sensor-reading-item").off("click").click(function () {
+            var sensor = $(this).attr("type");
+
+            // Update UI
+            self.panel.find(".fetch-sensor-readings-button").find(".icon").addClass("rotate-animation");
+            $(this).addClass("disabled");
+            
+            // Send request to GatorByte (fetch sensor readings)
+            self.sendcommand("fsr:" + sensor);
         });
     }
     
@@ -45,27 +78,31 @@ function uidashboardsubapp(){
         var key = line.split("=")[0].trim().toLowerCase();
         var value = line.split("=")[1];
 
-        // Get data from storage
-        var data = self.f.b64_to_json(localStorage.getItem("dashboard/data") || self.f.json_to_b64({}));
-        
-        // Initialize global object if not done already
-        if (data && data[global.port.pnpId]) global.dashboard = data;
-        else global.dashboard[global.port.pnpId] = global.dashboard[global.port.pnpId] || {};
+        if (key == "fsr") self.process_sensor_readings(value);
+        else {
 
-        // Set key and value in global object
-        global.dashboard[global.port.pnpId][key] = value;
+            // Get data from storage
+            var data = self.f.b64_to_json(localStorage.getItem("dashboard/data") || self.f.json_to_b64({}));
+            
+            // Initialize global object if not done already
+            if (data && data[global.port.pnpId]) global.dashboard = data;
+            else global.dashboard[global.port.pnpId] = global.dashboard[global.port.pnpId] || {};
 
-        // Update storage
-        localStorage.setItem("dashboard/data", self.f.json_to_b64(global.dashboard));
+            // Set key and value in global object
+            global.dashboard[global.port.pnpId][key] = value;
 
-        // Update items in the dashboard
-        self.update_dashboard_item({
-            fresh: true,
-            key: key, 
-            value: value
-        });
+            // Update storage
+            localStorage.setItem("dashboard/data", self.f.json_to_b64(global.dashboard));
 
-        self.on_dashboard_item_update(key)
+            // Update items in the dashboard
+            self.update_dashboard_item({
+                fresh: true,
+                key: key, 
+                value: value
+            });
+
+            self.on_dashboard_item_update(key);
+        }
     }
 
     self.update_dashboard_item = function (args) {
@@ -168,30 +205,38 @@ function uidashboardsubapp(){
         }
         if (fresh && key == "ph") {
             var el = parent.find(".sensor-ph-text");
-            el.text(value).css("opacity", 1);
+            el.text(value);
+            
+            self.panel.find(".sensor-reading-item[type='ph']").removeClass("disabled");     
             parent.find(".last-updated-timestamp").text("Last updated: " + moment(moment.now()).format("LLL"));
+            self.panel.find(".fetch-sensor-readings-button").find(".icon").removeClass("rotate-animation");
         }
         if (fresh && key == "rtd") {
             var el = parent.find(".sensor-rtd-text");
-            el.text(value).css("opacity", 1);
+            el.text(value);
+            
+            self.panel.find(".sensor-reading-item[type='rtd']").removeClass("disabled");            
             parent.find(".last-updated-timestamp").text("Last updated: " + moment(moment.now()).format("LLL"));
+            self.panel.find(".fetch-sensor-readings-button").find(".icon").removeClass("rotate-animation");
         }
         if (fresh && key == "ec") {
             var el = parent.find(".sensor-ec-text");
-            el.text(value).css("opacity", 1);
+            el.text(value);
+            
+            self.panel.find(".sensor-reading-item[type='ec']").removeClass("disabled");     
             parent.find(".last-updated-timestamp").text("Last updated: " + moment(moment.now()).format("LLL"));
+            self.panel.find(".fetch-sensor-readings-button").find(".icon").removeClass("rotate-animation");
         }
         if (fresh && key == "dox") {
             var el = parent.find(".sensor-dox-text");
-            el.text(value).css("opacity", 1);
+            el.text(value);
+            
+            self.panel.find(".sensor-reading-item[type='dox']").removeClass("disabled");     
             parent.find(".last-updated-timestamp").text("Last updated: " + moment(moment.now()).format("LLL"));
+            self.panel.find(".fetch-sensor-readings-button").find(".icon").removeClass("rotate-animation");
         }
         if (fresh && key == "loopiteration") {
             var el = parent.find(".loop-iteration-text");
-            parent.find(".sensor-rtd-text").css("opacity", 0.5);
-            parent.find(".sensor-ph-text").css("opacity", 0.5);
-            parent.find(".sensor-ec-text").css("opacity", 0.5);
-            parent.find(".sensor-dox-text").css("opacity", 0.5);
             parent.find(".loop-iteration-text").text(value);
         }
         if (key == "config-devices") {
@@ -442,5 +487,9 @@ function uidashboardsubapp(){
         global.timers.dashboarditemupdate = setTimeout(function () {
             if (el) el.css("color", el.attr("og-color"));
         }, 2000);
+    }
+    
+    self.process_sensor_readings = function (values) {
+        console.log(values);
     }
 }
