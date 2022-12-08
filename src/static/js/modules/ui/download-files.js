@@ -33,39 +33,24 @@ function uidownloadfilessubapp(){
             $(".download-files-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             
-            // Clear list
-            $(".download-files-panel .download-files-list .files-list-item").remove();
-
-            // Hide file options
-            $(".download-files-panel .file-options-parent").addClass("hidden");
-
-            // Hide download information div
-            self.panel.find(".file-options-download-information").addClass("hidden");
-
-            // Show spinner
-            $(".download-files-panel .spinner-div").removeClass("hidden");
-
             // Send request to get GatorByte to send sd files list
-            self.request_file_list("/", 1);
+            self.open_directory("/");
         });
 
         //! Refresh list button listener
         $(".download-files-panel .refresh-files-list-button").off("click").click(function () {
             
             // Clear list
-            $(".download-files-panel .download-files-list .files-list-item").remove();
+            self.panel.find(".download-files-list .files-list-item").remove();
 
             // Hide file options
             $(".download-files-panel .file-options-parent").addClass("hidden");
-
-            // Hide download information div
-            self.panel.find(".file-options-download-information").addClass("hidden");
 
             // Show spinner
             $(".download-files-panel .spinner-div").removeClass("hidden");
 
             // Send request to get GatorByte to send sd files list
-            self.request_file_list("/", 1);
+            self.request_file_list(self.currentfoldername, 1);
         });
     }
 
@@ -97,7 +82,7 @@ function uidownloadfilessubapp(){
 
         // Ignore '/' folder
         if (file == "/:0") return;
-
+        
         // If file already exists in the list, do not add
         if ($(".download-files-panel .download-files-list .files-list-item[filename='" + file + "']").length == 0) {
 
@@ -123,7 +108,7 @@ function uidownloadfilessubapp(){
                 var extensioncolors = ["#c74b0f", "green", "#962020", "#1969cc"];
                 
                 $(".download-files-panel .download-files-list").append(multiline(function () {/* 
-                    <div class="col-auto files-list-item shadow-heavy" filename="{{filename}}" style="text-align: center;position: relative;padding: 6px 8px;margin-right: 10px;margin-bottom: 10px;height: 100px;width: 85px;background: #ffffff1f;border-radius: 4px;">
+                    <div class="col-auto files-list-item shadow-heavy" filename="{{filename}}" filetype="{{filetype}}" style="text-align: center;position: relative;padding: 6px 8px;margin-right: 10px;margin-bottom: 10px;height: 100px;width: 85px;background: #ffffff1f;border-radius: 4px;">
                         <div style="color: #f1f1f1;font-size: 36px;">
                             {{fileicon}}
                             <div style="color: #ffffff;font-size: 10px;position: absolute;top: 6px;left: 5px;margin: auto auto;background: {{filecolor}};padding: 0px 2px;border-radius: 2px;">
@@ -139,8 +124,8 @@ function uidownloadfilessubapp(){
                     </div>
                 */}, {
                     fileicon: isfolder ? '<i class="fa-solid fa-folder"></i>' : '<i class="fa-solid fa-file-lines"></i>',
-                    filename: filename,
-                    filesize: filesize,
+                    filename: isfolder ? "/" + filename.replace("/", "") : filename,
+                    filesize: isfolder ? "N/A" : filesize,
                     filetype: extension.substring(0, 3),
                     filecolor: extensioncolors[knownextensions.indexOf(extension.substring(0, 3))]
                 }));
@@ -150,52 +135,90 @@ function uidownloadfilessubapp(){
         //! When user clicks on an icon
         $(".download-files-panel .files-list-item").off("click").click(function () {
             var filename = $(this).attr("filename");
-            var parent = $(".download-files-panel .file-options-parent");
+            var filetype = $(this).attr("filetype");
 
-            // Hide the file options
-            if (parent.attr("state") == "file-selected" && filename == parent.attr("selected-file")) {
-                parent.attr("state", "no-file-selected").attr("selected-file", "");
-                parent.find(".filename").text("-");
+            if (filetype != "DIR") {
+                var parent = $(".download-files-panel .file-options-parent");
 
-                // Hide file options div
-                parent.addClass("hidden");
-                parent.find(".file-options-home").removeClass("hidden");
-                self.panel.find(".file-options-download-information").addClass("hidden");
-                
-                $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                // Hide the file options
+                if ($(this).hasClass("selected")) {
+                    parent.attr("state", "no-file-selected").attr("selected-file", "");
+                    parent.find(".filename").text("-");
+
+                    // Hide file options div
+                    parent.addClass("hidden");
+                    parent.find(".file-options-home").removeClass("hidden");
+                    self.panel.find(".file-options-download-information").addClass("hidden");
+                    
+                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                }
+
+                //! Show file options and select the file
+                else {
+                    parent.attr("state", "file-selected").attr("selected-file", filename);
+                    
+                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                    $(this).css("background", "#355377").addClass("selected");
+
+                    // Show file options div
+                    parent.removeClass("hidden");
+                    parent.find(".file-options-home").removeClass("hidden");
+                    self.panel.find(".file-options-download-information").addClass("hidden");
+
+                    // Setup UI
+                    parent.find(".filename").text(filename);
+                }
+
+                //! Save file button listener (Download file)
+                $(".download-files-panel .file-options-parent .download-file-button").off("click").click(function () {
+                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+
+                    // Send download request
+                    self.filedownloadname = filename;
+                    self.filedownloaddata = "";
+                    self.filedownloadline = 0;
+                    self.request_file_download(self.filedownloadname, self.filedownloadline);
+
+                    // Update UI
+                    parent.find(".file-options-home").addClass("hidden");
+                    self.panel.find(".file-options-download-information").removeClass("hidden");
+                    self.panel.find(".file-options-download-information .download-progress").css("color", "#424242").text("Starting download");
+                });
             }
 
-            //! Show file options and select the file
-            else {
-                parent.attr("state", "file-selected").attr("selected-file", filename);
-                
-                $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
-                $(this).css("background", "#355377").addClass("selected");
+            else if (filetype == "DIR") {
 
-                // Show file options div
-                parent.removeClass("hidden");
-                parent.find(".file-options-home").removeClass("hidden");
-                self.panel.find(".file-options-download-information").addClass("hidden");
+                if ($(this).hasClass("selected")) {
+                    $(this).attr("state", "no-file-selected").attr("selected-file", "");
 
-                // Setup UI
-                parent.find(".filename").text(filename);
+                    self.panel.find(".file-options-download-information").addClass("hidden");
+                    
+                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                }
+
+                //! Show file options and select the file
+                else {
+                    $(this).attr("state", "file-selected").attr("selected-file", filename);
+                    
+                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                    $(this).css("background", "#355377").addClass("selected");
+
+                    self.panel.find(".file-options-download-information").addClass("hidden");
+                }
             }
+        });
 
-            //! Save file button listener (Download file)
-            $(".download-files-panel .file-options-parent .download-file-button").off("click").click(function () {
-                var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+        //! When user dblclicks on a folder
+        $(".download-files-panel .files-list-item").off("dblclick").dblclick(function () {
+            var foldername = "/" + $(this).attr("filename").replace("/", "");
+            var filetype = $(this).attr("filetype");
 
-                // Send download request
-                self.filedownloadname = filename;
-                self.filedownloaddata = "";
-                self.filedownloadline = 0;
-                self.request_file_download(self.filedownloadname, self.filedownloadline);
 
-                // Update UI
-                parent.find(".file-options-home").addClass("hidden");
-                self.panel.find(".file-options-download-information").removeClass("hidden");
-                self.panel.find(".file-options-download-information .download-progress").css("color", "#424242").text("Starting download");
-            });
+            if (filetype == "DIR") {
+                console.log("Directory clicked: " + foldername);
+
+                self.open_directory(foldername);
+            }
         });
     }
 
@@ -258,5 +281,37 @@ function uidownloadfilessubapp(){
             parent.find(".file-options-home").removeClass("hidden");
             self.panel.find(".file-options-download-information").addClass("hidden");
         }, 5000);
+    }
+
+    self.open_directory = function (foldername) {
+
+        // Show/hide go up button
+        if (foldername != "/") self.panel.find(".go-up-button").removeClass("hidden");
+        else if (foldername == "/") self.panel.find(".go-up-button").addClass("hidden");
+
+        // Setup behaviour of "go up" button
+        if (foldername != "/")
+            self.panel.find(".go-up-button").attr("target-folder", self.currentfoldername).off("click").click(function () {
+                self.open_directory($(this).attr("target-folder"));
+            });
+
+        if (self.currentfoldername != foldername) self.currentfoldername = foldername;
+
+        // Clear list
+        self.panel.find(".download-files-list .files-list-item").remove();
+
+        // Hide file options
+        $(".download-files-panel .file-options-parent").addClass("hidden");
+
+        // Hide download information div
+        self.panel.find(".file-options-download-information").addClass("hidden");
+
+        // Show spinner
+        $(".download-files-panel .spinner-div").removeClass("hidden");
+
+        self.panel.find(".directory-name-text").text(foldername);
+
+        // Send request to get GatorByte to send sd files list
+        self.request_file_list(foldername, 1);
     }
 }
