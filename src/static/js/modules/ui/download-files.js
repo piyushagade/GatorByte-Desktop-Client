@@ -138,16 +138,12 @@ function uidownloadfilessubapp(){
             var filetype = $(this).attr("filetype");
 
             if (filetype != "DIR") {
-                var parent = $(".download-files-panel .file-options-parent");
 
-                // Hide the file options
+                // Hide the file options if already shown
                 if ($(this).hasClass("selected")) {
-                    parent.attr("state", "no-file-selected").attr("selected-file", "");
-                    parent.find(".filename").text("-");
 
                     // Hide file options div
-                    parent.addClass("hidden");
-                    parent.find(".file-options-home").removeClass("hidden");
+                    self.panel.find(".file-options-parent").addClass("hidden");
                     self.panel.find(".file-options-download-information").addClass("hidden");
                     
                     $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
@@ -155,18 +151,13 @@ function uidownloadfilessubapp(){
 
                 //! Show file options and select the file
                 else {
-                    parent.attr("state", "file-selected").attr("selected-file", filename);
                     
                     $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
                     $(this).css("background", "#355377").addClass("selected");
 
                     // Show file options div
-                    parent.removeClass("hidden");
-                    parent.find(".file-options-home").removeClass("hidden");
+                    self.panel.find(".file-options-parent").removeClass("hidden");
                     self.panel.find(".file-options-download-information").addClass("hidden");
-
-                    // Setup UI
-                    parent.find(".filename").text(filename);
                 }
 
                 //! Save file button listener (Download file)
@@ -187,6 +178,9 @@ function uidownloadfilessubapp(){
             }
 
             else if (filetype == "DIR") {
+                
+                // Hide file options div
+                self.panel.find(".file-options-parent").addClass("hidden");
 
                 if ($(this).hasClass("selected")) {
                     $(this).attr("state", "no-file-selected").attr("selected-file", "");

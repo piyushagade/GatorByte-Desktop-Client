@@ -61,6 +61,77 @@ function uiconfiggatorbytesubapp() {
             
             
         });
+
+        // Survey ID change listener
+        self.panel.find(".survey-id-text").off("keyup").on("keyup", self.f.debounce(function() {
+            var value = $(this).val();
+            if (value && value.length > 3) self.configobject["survey"]["id"] = $(this).val();
+            else {
+                $(this).css("border-bottom", "1px solid red");
+                setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
+            }
+
+            // Update config data
+            self.config_obj_to_string();
+
+        }, 150));
+
+        // Survey location change listener
+        self.panel.find(".survey-location-text").off("keyup").on("keyup", self.f.debounce(function() {
+            var value = $(this).val();
+            if (value && value.length > 3) self.configobject["survey"]["location"] = $(this).val();
+            else {
+                $(this).css("border-bottom", "1px solid red");
+                setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
+            }
+
+            // Update config data
+            self.config_obj_to_string();
+
+        }, 150));
+
+        // Sleep duration change listener
+        self.panel.find(".sleep-duration-text").off("keyup").on("keyup", self.f.debounce(function() {
+            var sleepmode = self.panel.find(".sleep-mode-text").val()
+            var value = $(this).val();
+            if (value && value.length > 3 && !isNaN(parseInt(value))) self.configobject["device"]["sleep"] = sleepmode + "," + $(this).val();
+            else {
+                $(this).css("border-bottom", "1px solid red");
+                setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
+            }
+
+            // Update config data
+            self.config_obj_to_string();
+
+        }, 150));
+
+        // Device click listener
+        self.panel.find(".devices-list-item").off("click").on("click", function() {
+            var enabled = $(this).hasClass("enabled");
+
+            if (enabled) {
+                $(this).removeClass("enabled").css("opacity", "0.4");
+                
+                var device = $(this).text().trim();
+                var devices = self.configobject["device"]["devices"].split(",");
+                var filtered = devices.filter(function(item){ 
+                    return device != item; 
+                });
+                self.configobject["device"]["devices"] = filtered.join(",");
+            }
+            else {
+                $(this).addClass("enabled").css("opacity", "1");
+
+                var devices = self.configobject["device"]["devices"].split(",");
+                var device = $(this).text().trim();
+                devices.push(device);
+                self.configobject["device"]["devices"] = devices.join(",");
+            }
+
+            // Update config data
+            self.config_obj_to_string();
+
+        });
     }
 
     self.process_file_download_data = function (data) {
@@ -69,9 +140,6 @@ function uiconfiggatorbytesubapp() {
         data = data.replace(/<br>/g, "\n").replace(/gdc-cfg::fdl:/, "");
 
         self.filedownloadline += 30;
-
-        // // Update UI
-        // $(".download-files-panel").find(".file-options-download-information .download-progress").css("color", "#904c07").text(self.filedownloadline + " kB downloaded");
 
         // Append file data
         self.filedownloaddata += data;
@@ -168,18 +236,19 @@ function uiconfiggatorbytesubapp() {
         self.configobject = {};
         var currentcategory = null;
         var erroroccured = false;
+        var indentation = "    ";
         self.configdata.split("\n").forEach(function (line, li) {
 
             try {
                 // If the line is a category
-                if (!line.startsWith(" ")) {
+                if (!line.startsWith(indentation)) {
                     var category = line;
                     currentcategory = category.trim();
                     self.configobject[currentcategory] = {};
                 }
                 
                 // If the line is a sub category and key value pair 
-                else if (line.startsWith("    ") && line.indexOf(":") >= 0) {
+                else if (line.startsWith(indentation) && line.indexOf(":") >= 0) {
                     var key = line.trim().split(":")[0].trim().replace(/ /g, "-");
                     var value = line.trim().split(":")[1].trim();
 
@@ -195,6 +264,23 @@ function uiconfiggatorbytesubapp() {
         currentcategory = null;
 
         if (!erroroccured) self.update_panel_ui();
+
+    }
+
+    self.config_obj_to_string = function () {
+        var string = "";
+        var indentation = "    ";
+        Object.keys(self.configobject).forEach(function (key, ki) {
+            string += key;
+            string += "\n";
+
+            Object.keys(self.configobject[key]).forEach(function (subkey, ski) {
+                string += indentation + subkey + ":" + self.configobject[key][subkey];
+                string += "\n";
+            });
+        });
+
+        self.configdata = string;
     }
 
     self.update_panel_ui = function () {
@@ -206,7 +292,7 @@ function uiconfiggatorbytesubapp() {
         // Survey information
         self.panel.find(".survey-information-parent").find(".survey-id-text").val(data.survey["id"]);
         self.panel.find(".survey-information-parent").find(".survey-date").text(data.survey["date"]);
-        self.panel.find(".survey-information-parent").find(".survey-location").val(data.survey["location"]);
+        self.panel.find(".survey-information-parent").find(".survey-location-text").val(data.survey["location"]);
         
         // Sleep information
         self.panel.find(".device-information-parent").find(".sleep-mode-text").val(data.device["sleep"].split(",")[0]);0
@@ -216,7 +302,7 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".device-information-parent").find(".devices-list .devices-list-item").remove();
         alldevices.forEach(function (device, di) {
             self.panel.find(".device-information-parent").find(".devices-list").append(multiline(function () {/* 
-                <div class="col-auto devices-list-item shadow disabled" device="{{devicename}}" style="margin: 0 6px 6px 0;padding: 2px 6px;background: #e6e6e6;color: #505050;font-size: 12px;font-weight: bold;">
+                <div class="col-auto devices-list-item shadow" device="{{devicename}}" style="margin: 0 6px 6px 0;padding: 2px 6px;background: #e6e6e6;color: #505050;font-size: 12px;font-weight: bold; opacity: 0.4;">
                     {{devicename}}
                 </div>
             */}, {
@@ -226,7 +312,7 @@ function uiconfiggatorbytesubapp() {
 
         // Show enabled devices
         data.device["devices"].split(",").forEach(function (device, di) {
-            self.panel.find(".devices-list-item[device='" + device.trim() + "']").removeClass("disabled").addClass("enabled");
+            self.panel.find(".devices-list-item[device='" + device.trim() + "']").css("opacity", "1").addClass("enabled");
         });
         
         // States list
@@ -245,6 +331,9 @@ function uiconfiggatorbytesubapp() {
         Object.keys(data.state).forEach(function (state, di) {
             if (data.state[state] == "true") self.panel.find(".states-list-item[state='" + state.trim() + "']").removeClass("disabled").addClass("enabled");
         });
+
+        // Update listeners
+        self.listeners();
     }
 
     self.process_response = function (response) {

@@ -7,7 +7,7 @@ function uisensorcalibrationsubapp(){
     self.ipcr = require('electron').ipcRenderer;
     self.pwrsv =  require('electron').remote.powerSaveBlocker;
     self.a = global.accessors;
-
+    self.panel = $(".sensor-calibration-panel");
 
     self.init = function () {
 
@@ -21,8 +21,17 @@ function uisensorcalibrationsubapp(){
 
         // Dashboard big button
         $(".home-panel .sensor-calibration-button").off("click").click(function () {
-            $(".sensor-calibration-panel").removeClass("hidden");
+            self.panel.removeClass("hidden");
             $(".home-panel").addClass("hidden");
+            
+            // Reset states
+            self.state = "";
+            self.selectedsensor = null;
+            
+            // UI update
+            self.panel.find(".sensor-list").removeClass("hidden");
+            self.panel.find(".calibration-info-parent").addClass("hidden");
+            self.panel.find(".calibration-perform-parent").addClass("hidden");
             
             // Send request to get GatorByte to send sd files list
             var prefix = "##GB##", suffix = "#EOF#";
@@ -34,7 +43,7 @@ function uisensorcalibrationsubapp(){
         });
         
         // Select sensor from the sensor list
-        $(".sensor-calibration-panel .sensor-list .calibrate-sensor-item").off("click").click(function () {
+        self.panel.find(".sensor-list .calibrate-sensor-item").off("click").click(function () {
             var sensor = $(this).attr("name");
             
             // Send request to get GatorByte to send sd files list
@@ -44,14 +53,16 @@ function uisensorcalibrationsubapp(){
 
             $(".calibration-info-div").attr("sensor", sensor);
             $(".calibration-perform-div").attr("sensor", sensor);
-            $(".sensor-calibration-panel .sensor-list .spinner-div").removeClass("hidden");
+
+            // Show spinner
+            self.panel.find("sensor-list .spinner-div").removeClass("hidden");
             
             // Add blur
-            $(".calibration-meta-info-div").addClass("blur");
-            $(".calibration-data-info-div").addClass("blur");
-            
+            self.panel.find(".calibration-meta-info-div").addClass("blur");
+            self.panel.find(".calibration-data-info-div").addClass("blur");
+
             // Set sensor name in GUI
-            $(".sensor-calibration-panel").find(".sensor-name").text(sensor);
+            self.panel.find(".sensor-name").text(sensor);
         });
     }
 
@@ -87,24 +98,27 @@ function uisensorcalibrationsubapp(){
                 var parent = $(".calibration-info-div[sensor='" + sensor + "']");
                 
                 // UI update
-                $(".sensor-calibration-panel .sensor-list").addClass("hidden");
-                $(".sensor-calibration-panel .calibration-info-parent").removeClass("hidden");
+                self.panel.find(".sensor-list").addClass("hidden");
+                self.panel.find(".calibration-info-parent").removeClass("hidden");
 
                 // Show calibration perform UI
                 parent.find(".go-back-sensor-list-button").off("click").click(function () {
-                    $(".sensor-calibration-panel .calibration-info-parent").addClass("hidden");
-                    $(".sensor-calibration-panel .sensor-list").removeClass("hidden");
+                    self.panel.find(".calibration-info-parent").addClass("hidden");
+                    self.panel.find(".sensor-list").removeClass("hidden");
                 });
 
                 // Show calibration perform UI
                 parent.find(".show-calibration-actions-button").off("click").click(function () {
-                    $(".sensor-calibration-panel .calibration-info-parent").addClass("hidden");
-                    $(".sensor-calibration-panel .calibration-perform-parent").removeClass("hidden");
+                    self.panel.find(".calibration-info-parent").addClass("hidden");
+                    self.panel.find(".calibration-perform-parent").removeClass("hidden");
 
                     var newparent = $(".calibration-perform-div[sensor='" + sensor + "']");
 
                     var options = { 
                         "ph": {
+                            "messages" : {
+                                "mid": "Caution: Mid-point calibration clears all other calibrations."
+                            },
                             "levels": [
                                 {
                                     "id": "mid",
@@ -145,16 +159,7 @@ function uisensorcalibrationsubapp(){
                                     "description": "Zero solution"
                                 }
                             ],
-                            "solutions": [
-                                {
-                                    "id": "0",
-                                    "description": "Zero"
-                                },
-                                {
-                                    "id": "saturated",
-                                    "description": "Saturated"
-                                }
-                            ]
+                            "solutions": []
                         },
                         "ec": {
                             "levels": [
@@ -224,17 +229,26 @@ function uisensorcalibrationsubapp(){
                         });
     
                         // Show calibration solution options
-                        options[sensor].solutions.forEach(function (solution, si) {
-                            newparent.find(".calibration-solutions-list").append(multiline(function () {/* 
-                                <div class="col-auto calibration-solution-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
-                                    <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
-                                </div>
-                            */}, {
-                                "option": solution.id,
-                                "description": solution.description
-                            }));
-                        });
+                        if (options[sensor].solutions.length == 0) {
+                            newparent.find(".calibration-solutions-list").addClass("hidden");
+                        }
+                        else {
+                            newparent.find(".calibration-solutions-list").removeClass("hidden");
+                            options[sensor].solutions.forEach(function (solution, si) {
+                                newparent.find(".calibration-solutions-list").append(multiline(function () {/* 
+                                    <div class="col-auto calibration-solution-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
+                                        <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
+                                    </div>
+                                */}, {
+                                    "option": solution.id,
+                                    "description": solution.description
+                                }));
+                            });
+                        }
                     });
+
+                    // Disable Perform button
+                    shouldenableperformbutton();
     
                     // Click listeners
                     newparent.find(".calibration-level-option").off("click").on("click", function () {
@@ -261,8 +275,8 @@ function uisensorcalibrationsubapp(){
                         $(".calibration-data-info-div").addClass("blur");
                         
                         // Show info screen and hide perform screen
-                        $(".sensor-calibration-panel .calibration-info-parent").removeClass("hidden");
-                        $(".sensor-calibration-panel .calibration-perform-parent").addClass("hidden");
+                        self.panel.find(".calibration-info-parent").removeClass("hidden");
+                        self.panel.find(".calibration-perform-parent").addClass("hidden");
                     });
 
                     // Perform calibration button click handler
@@ -279,20 +293,20 @@ function uisensorcalibrationsubapp(){
                         $(".calibration-data-info-div").addClass("blur");
 
                         // Show info screen and hide perform screen
-                        $(".sensor-calibration-panel .calibration-info-parent").removeClass("hidden");
-                        $(".sensor-calibration-panel .calibration-perform-parent").addClass("hidden");
+                        self.panel.find(".calibration-info-parent").removeClass("hidden");
+                        self.panel.find(".calibration-perform-parent").addClass("hidden");
                     });
 
                     // Cancel calibration button click handler
                     newparent.find(".cancel-calibration-button").off("click").on("click", function () {
                         // Show info screen and hide perform screen
-                        $(".sensor-calibration-panel .calibration-info-parent").removeClass("hidden");
-                        $(".sensor-calibration-panel .calibration-perform-parent").addClass("hidden");
+                        self.panel.find(".calibration-info-parent").removeClass("hidden");
+                        self.panel.find(".calibration-perform-parent").addClass("hidden");
                     });
     
                     // Enable/disable perform calibration buttons
                     function shouldenableperformbutton () {
-                        if (newparent.find(".calibration-level-option.active").length > 0 && newparent.find(".calibration-solution-option.active").length > 0) {
+                        if (newparent.find(".calibration-level-option.active").length > 0 && (options[sensor].solutions.length == 0 || (options[sensor].solutions.length > 0 && newparent.find(".calibration-solution-option.active").length > 0))) {
                             newparent.find(".perform-calibration-button").removeClass("disabled");         
                         }
                         else {
@@ -319,7 +333,7 @@ function uisensorcalibrationsubapp(){
                 self.update_cal_status_ui(line);
 
                 // Hide spinner
-                $(".sensor-calibration-panel .sensor-list .spinner-div").addClass("hidden");
+                self.panel.find(".sensor-list .spinner-div").addClass("hidden");
                 
                 var parent = $(".calibration-info-div[sensor='" + sensor + "']")
                 parent.removeClass("hidden");
