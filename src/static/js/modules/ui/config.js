@@ -402,6 +402,14 @@ function uiconfiggatorbytesubapp() {
                 time: moment(timestamp).format("hh:mm a").toUpperCase()
             }));
 
+            // Update RTC sync status
+            if (Math.abs(timestamp - moment.now()) > 1 * 60 * 1000) {
+                self.panel.find(".rtc-sync-status").text("The RTC clock is out of sync. Please use the 'Sync RTC' button to sync the clocks.").css("color", "orange");
+            }
+            else {
+                self.panel.find(".rtc-sync-status").text("The clocks are in sync. No action required.").css("color", "green");
+            }
+
             // Sync RTC time
             self.panel.find(".calibrate-rtc-button").off("click").click(function () {
                 var offset = self.timezone();

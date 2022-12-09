@@ -9,6 +9,7 @@ function uidownloadfilessubapp(){
     self.a = global.accessors;
     self.filedata = "";
     self.panel = $(".download-files-panel");
+    self.currentfoldername = "/";
 
     self.init = function () {
 
@@ -168,10 +169,12 @@ function uidownloadfilessubapp(){
                     self.filedownloadname = filename;
                     self.filedownloaddata = "";
                     self.filedownloadline = 0;
-                    self.request_file_download(self.filedownloadname, self.filedownloadline);
+
+                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
+                    self.request_file_download(filepath, self.filedownloadline);
 
                     // Update UI
-                    parent.find(".file-options-home").addClass("hidden");
+                    self.parent.find(".file-options-home").addClass("hidden");
                     self.panel.find(".file-options-download-information").removeClass("hidden");
                     self.panel.find(".file-options-download-information .download-progress").css("color", "#424242").text("Starting download");
                 });

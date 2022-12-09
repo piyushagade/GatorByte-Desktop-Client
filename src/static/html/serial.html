@@ -251,12 +251,12 @@
                                     
                                     <div class="col-auto calibration-meta-info-item" type="last-calibrated" style="padding: 0; margin: 4px 6px;">
                                         <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Last calibrated</p>
-                                        <p style="color: #dfdfdf;margin-bottom: 0;">Unknown</p>
+                                        <p class="lpi-item last-calibrated-date-text blur" style="color: #dfdfdf;margin-bottom: 0;">Unknown</p>
                                     </div>
                                     
                                     <div class="col-auto calibration-meta-info-item" type="current-status" style="padding: 0; margin: 4px 6px;">
                                         <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Status</p>
-                                        <p style="color: #dfdfdf;margin-bottom: 0;">Recommended</p>
+                                        <p class="lpi-item calibration-recommendation-text blur" style="color: #dfdfdf;margin-bottom: 0;">Recommended</p>
                                     </div>
                                 </div>
 
@@ -681,7 +681,16 @@
                             
                             <div class="col-12 download-progress" style="margin-bottom: 10px; display: inline-flex;">
                                 <p class="text" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px; opacity: 1;padding: 4px 8px; background: #3d3d3d;">Configuration file does not exists.</p>
-                                <span class="refresh-config-data-button" title="Re-fetch config data" style="font-size: 14px;color: #CCC;margin-top: 5px;margin-left: 5px;"><i class="fa-solid fa-arrows-rotate" ></i></span>
+                                
+                                <!-- Re-fetch config data from SD -->
+                                <div class="refresh-config-data-button shadow" title="Re-fetch config data from GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </div>
+                                
+                                <!-- Upload config data to SD -->
+                                <div class="upload-config-data-button shadow" title="Upload config data to GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
+                                    <i class="fa-solid fa-upload"></i>
+                                </div>
                             </div>
 
                             <!--! Survey information -->
@@ -800,6 +809,7 @@
                                             </div>
                                         </div>
                                         
+                                        <p class="rtc-sync-status" style="font-weight: bold; color: #888; font-size: 12px; text-align: justify; margin-bottom: 8px;"></p>
                                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 8px;">Click on 'Fetch RTC' to get the latest time from the RTC on the GatorByte.</p>
                                         
                                         <div class="row" style="margin: 0 0 0px;">
@@ -1143,9 +1153,9 @@
 <script src="../js/modules/ui/home.js"></script>
 <script src="../js/modules/ui/dashboard.js"></script>
 <script src="../js/modules/ui/download-files.js"></script>
-<script src="../js/modules/ui/sensor-calibration.js"></script>
+<script src="../js/modules/ui/calibration.js"></script>
 <script src="../js/modules/ui/serialmonitor.js"></script>
-<script src="../js/modules/ui/config-gatorbyte.js"></script>
+<script src="../js/modules/ui/config.js"></script>
 
 <!-- Keyboard shortcuts -->
 <script src='../js/keyshortcuts.js'></script>
