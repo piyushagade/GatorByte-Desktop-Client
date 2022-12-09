@@ -41,7 +41,7 @@ function uidashboardsubapp(){
             // Send request to get GatorByte to send sd files list
             var prefix = "##GB##", suffix = "#EOF#";
             self.ipcr.send('send-command-request', {
-                command: prefix + "dashboard:enter" + suffix,
+                command: prefix + "db:enter" + suffix,
                 windowid: global.states.windowid,
                 path: global.port.path
             });

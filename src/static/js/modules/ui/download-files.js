@@ -58,7 +58,7 @@ function uidownloadfilessubapp(){
     self.request_file_list = function (dir, page) {
         var prefix = "##GB##", suffix = "#EOF#";
         self.ipcr.send('send-command-request', {
-            command: prefix + "files-list:list," + dir + suffix,
+            command: prefix + "fl:list," + dir + suffix,
             windowid: global.states.windowid,
             path: global.port.path
         });
@@ -174,7 +174,7 @@ function uidownloadfilessubapp(){
                     self.request_file_download(filepath, self.filedownloadline);
 
                     // Update UI
-                    self.parent.find(".file-options-home").addClass("hidden");
+                    self.panel.find(".file-options-home").addClass("hidden");
                     self.panel.find(".file-options-download-information").removeClass("hidden");
                     self.panel.find(".file-options-download-information .download-progress").css("color", "#424242").text("Starting download");
                 });
@@ -258,7 +258,7 @@ function uidownloadfilessubapp(){
     self.request_file_download = function (filename, startingline) {
 
         return new Promise(function (resolve, reject) {
-            self.sendcommand("download" + ":" + filename + "," + startingline);
+            self.sendcommand("dl" + ":" + filename + "," + startingline);
             self.state = "wait-on-file-download";
         });
     }

@@ -264,6 +264,12 @@ module.exports = {
                             // Clear detector timer
                             if (data.indexOf("##CEREAL-GDC-PONG##") !== -1) {
                                 console.log("PONG detected");
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/pong-received-notification/push", {
+                                        path: result.port.settings.path,
+                                        pnpId: result.port.settings.pnpId
+                                    });
+                                })
                                 clearInterval(i.g.var.timers.gbdetector);
                                 return;
                             }

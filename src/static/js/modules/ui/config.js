@@ -150,6 +150,8 @@ function uiconfiggatorbytesubapp() {
 
         // Replace prefix with nothing and <br> with \n
         data = data.replace(/<br>/g, "\n").replace(/gdc-cfg::fdl:/, "");
+        
+        self.panel.find(".download-status").removeClass("hidden").find(".text").text(self.filedownloadline + " kB downloaded");
 
         self.filedownloadline += 30;
 
@@ -157,7 +159,10 @@ function uiconfiggatorbytesubapp() {
         self.filedownloaddata += data;
 
         // Request next part of the data if available
-        if (data.length > 0) return self.request_file_download(self.filedownloadname, self.filedownloadline);
+        if (data.length > 0) {
+            self.panel.find(".download-status").removeClass("hidden").find(".text").text(self.filedownloadline + " kB downloaded");
+            return self.request_file_download(self.filedownloadname, self.filedownloadline);
+        }
         
         // On download complete
         else {
@@ -174,7 +179,7 @@ function uiconfiggatorbytesubapp() {
 
             // If config data successfully downloaded
             else {
-                
+                self.panel.find(".download-status").removeClass("hidden").find(".text").text("Download complete");
                 self.configdata = self.filedownloaddata;
                 self.on_config_data_acquired(false);
             }

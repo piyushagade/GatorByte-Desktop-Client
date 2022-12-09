@@ -82,6 +82,15 @@ function ipcsubapp(){
         self.ipcr.on("ipc/config-data-get/response", (event, response) => {
             self.a.uiconfiggatorbyte.setconfigdata(response.configobject);
         });
+
+        self.ipcr.on("ipc/pong-received-notification/push", (event, response) => {
+            if (global.port && global.port.path == response.path) {
+                console.log("PONG received");
+                $(".device-not-available-overlay").addClass("hidden");
+                $(".waiting-for-pong-overlay").addClass("hidden");
+                $(".home-panel").removeClass("disabled").removeClass("blur");
+            }
+        });
         
         return self;
     }
@@ -587,8 +596,11 @@ function ipcsubapp(){
             var baud = response.baud;
 
             // Set up UI elements
-            if ($(".home-panel").attr("first-load-done") != "true") $(".home-panel").removeClass("hidden").attr("first-load-done", "true");
+            if ($(".home-panel").attr("first-load-done") != "true") $(".home-panel").removeClass("disabled").removeClass("hidden").attr("first-load-done", "true");
             $(".waiting-for-device-notification").addClass("hidden");
+            $(".device-not-available-overlay").addClass("hidden");
+            $(".waiting-for-pong-overlay").removeClass("hidden");
+            $(".home-panel").addClass("disabled").addClass("blur");
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#1c65ca");
             $(".status-bar-div .device-status-indicator .connected-device-port").text(response.path);
             $(".follow-device-button").attr("state", "true").css("background", "#005c8a");
@@ -870,7 +882,7 @@ function ipcsubapp(){
             $(".update-mode-overlay .stage-2").addClass("hidden");
         }
         
-        // If port is not avaialble (device not connected to the PC)
+        // If port is not avaialble (but device not connected to the PC)
         else {
             console.log("Port not available. Waiting on " + response.path);
             global.port = response;
@@ -881,9 +893,15 @@ function ipcsubapp(){
             $(".connected-device-port").text(response.path).attr("title", response.path + " at " + response.baud + " bps");
 
             $(".show-on-connected").addClass("hidden");
-            $(".waiting-for-device-notification").removeClass("hidden");
+            $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
+            $(".device-not-available-overlay").removeClass("hidden");
+            $(".waiting-for-pong-overlay").addClass("hidden");
+            
+            // Hide all panels
+            $(".panel").addClass("hidden");
+
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
-        
+            $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
             // $(".home-panel").addClass("hidden");
             // $(".serial-monitor").removeClass("hidden");
         }
@@ -911,8 +929,15 @@ function ipcsubapp(){
             console.log("Disconnected port " + (global.port.path || global.quickconnectport.path) + ". Waiting for reconnection.");
 
             $(".waiting-for-device-notification").removeClass("hidden");
+            $(".device-not-available-overlay").removeClass("hidden");
+
+            // Hide all panels
+            $(".panel").addClass("hidden");
+            
+            $(".waiting-for-pong-overlay").addClass("hidden");
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text((global.port.path || global.quickconnectport.path));
+            $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
         }
         
         /* 
@@ -923,9 +948,15 @@ function ipcsubapp(){
             // Set connection state
             global.states.connected = false;
 
-            $(".home-panel").addClass("hidden");
+            $(".home-panel").addClass("hidden").removeClass("blur");
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
+            $(".device-not-available-overlay").removeClass("hidden");
+            
+            // Hide all panels
+            $(".panel").addClass("hidden");
+
+            $(".waiting-for-pong-overlay").addClass("hidden");
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text(global.port.path);
 
@@ -973,6 +1004,7 @@ function ipcsubapp(){
             $(".panel").addClass("hidden");
             $(".device-selector-panel").removeClass("hidden");
             $(".home-panel").removeAttr("first-load-done");
+            $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
 
             $(".connected-device-port").text("N/A").attr("title", "");
             setTimeout(() => { $(".connected-device-port").parent().css("background", "#444"); }, 100);

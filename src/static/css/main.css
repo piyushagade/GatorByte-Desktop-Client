@@ -193,3 +193,12 @@ body {
 .blur {
     filter: blur(2px);
 }
+.blur-light {
+    filter: blur(1px);
+}
+.blur-medium {
+    filter: blur(5px);
+}
+.blur-heavy {
+    filter: blur(10px);
+}
