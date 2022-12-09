@@ -40,7 +40,7 @@ function uiconfiggatorbytesubapp() {
             $(".configure-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             
-            // Send request to get GatorByte to send sd files list
+            // Send request to get GatorByte to enter cofig state
             var prefix = "##GB##", suffix = "#EOF#";
             self.ipcr.send('send-command-request', {
                 command: prefix + "cfgb" + suffix,
@@ -48,18 +48,19 @@ function uiconfiggatorbytesubapp() {
                 path: global.port.path
             });
 
-            // Get config data from SD card
-            if (!self.configdata) {
-                self.request_file_download(self.filedownloadname, self.filedownloadline);
-                
-                // Update UI
-                self.panel.find(".spinner-parent").removeClass("hidden");
-                self.panel.find(".config-information-parent").addClass("hidden");
-                self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Acquiring configuration from your GatorByte");
-            }
-            else self.on_config_data_acquired(true);
-            
-            
+            // Get config data from main process
+            self.ipcr.send("ipc/config-data-get/request", {
+                port: global.port
+            });
+
+            // Show UTC time
+            self.show_utctime();
+        });
+
+        // Get RTC time
+        self.panel.find(".get-rtc-button").off("click").click(function () {
+            self.show_rtctime();
+            self.show_utctime();
         });
 
         // Survey ID change listener
@@ -71,8 +72,8 @@ function uiconfiggatorbytesubapp() {
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
             }
 
-            // Update config data
-            self.config_obj_to_string();
+            // Save config data to main process
+            self.save_config_in_storage();
 
         }, 150));
 
@@ -85,8 +86,8 @@ function uiconfiggatorbytesubapp() {
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
             }
 
-            // Update config data
-            self.config_obj_to_string();
+            // Save config data to main process
+            self.save_config_in_storage();
 
         }, 150));
 
@@ -100,8 +101,8 @@ function uiconfiggatorbytesubapp() {
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
             }
 
-            // Update config data
-            self.config_obj_to_string();
+            // Save config data to main process
+            self.save_config_in_storage();
 
         }, 150));
 
@@ -128,10 +129,21 @@ function uiconfiggatorbytesubapp() {
                 self.configobject["device"]["devices"] = devices.join(",");
             }
 
-            // Update config data
-            self.config_obj_to_string();
+            // Save config data to main process
+            self.save_config_in_storage();
 
         });
+    }
+
+    self.show_utctime = function () {
+        if (self.panel.hasClass("hidden")) clearInterval(self.timers.utctimeupdate);
+        var time = moment(moment.now()).format("MM/DD/YY hh:mm a");
+        self.panel.find(".utc-time-text").text(time).attr("title", moment.now());
+    }
+
+    self.show_rtctime = function () {
+        if (self.panel.hasClass("hidden")) clearInterval(self.timers.utctimeupdate);
+        self.sendcommand("rtc:get");
     }
 
     self.process_file_download_data = function (data) {
@@ -184,10 +196,12 @@ function uiconfiggatorbytesubapp() {
 
     self.on_config_data_acquired = function (stale) {
 
+        if (stale) self.panel.find(".download-progress").find(".text").css("background", "#a2660b").text("Using saved configuration data");
+        else self.panel.find(".download-progress").find(".text").css("background", "#104c09").text("Configuration sync complete");
+            
         // Update UI
         self.panel.find(".spinner-parent").addClass("hidden");
         self.panel.find(".config-information-parent").removeClass("hidden");
-        self.panel.find(".download-progress").find(".text").css("background", "#104c09").text("Configuration sync complete");
         self.panel.find(".download-progress").find(".refresh-config-data-button").off("click").click(function () {
             
             // Reset global variables
@@ -201,16 +215,29 @@ function uiconfiggatorbytesubapp() {
             self.panel.find(".spinner-parent").removeClass("hidden");
             self.panel.find(".config-information-parent").addClass("hidden");
             self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Fetching configuration from your GatorByte");
-        })
+        });
 
         // Get RTC time
-        self.sendcommand("rtc:get");
+        self.show_rtctime();
 
         // Process config data and update UI
         self.process_config_data();
+
+        // Save config data to main process
+        self.save_config_in_storage();
+    }
+
+    self.save_config_in_storage = function () {
+        
+        self.ipcr.send("ipc/config-data-save/request", {
+            port: global.port,
+            configobject: self.configobject
+        });
     }
 
     self.process_config_data = function () {
+
+        if (!self.configdata) return;
 
         /*
             device
@@ -236,7 +263,7 @@ function uiconfiggatorbytesubapp() {
         self.configobject = {};
         var currentcategory = null;
         var erroroccured = false;
-        var indentation = "    ";
+        var indentation = " ";
         self.configdata.split("\n").forEach(function (line, li) {
 
             try {
@@ -267,27 +294,53 @@ function uiconfiggatorbytesubapp() {
 
     }
 
-    self.config_obj_to_string = function () {
+    self.objecttostring = function (object) {
+        if (!object) return;
+        
         var string = "";
         var indentation = "    ";
-        Object.keys(self.configobject).forEach(function (key, ki) {
+        Object.keys(object).forEach(function (key, ki) {
             string += key;
             string += "\n";
 
-            Object.keys(self.configobject[key]).forEach(function (subkey, ski) {
-                string += indentation + subkey + ":" + self.configobject[key][subkey];
+            Object.keys(object[key]).forEach(function (subkey, ski) {
+                string += indentation + subkey + ":" + object[key][subkey];
                 string += "\n";
             });
         });
 
-        self.configdata = string;
+        return string;
+    }
+
+    self.setconfigdata = function (object) {
+        
+        if (!object) {
+            self.getconfigdatafromsd();
+            self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Fetching configuration from your GatorByte");
+        }
+        else {
+            self.configobject = { ...object };
+            self.configdata = self.objecttostring(self.configobject);
+            self.on_config_data_acquired(true);
+        }
+    }
+
+    self.getconfigdatafromsd = function () {
+        
+        // Get config data from SD card
+        self.request_file_download(self.filedownloadname, 0);
+        
+        // Update UI
+        self.panel.find(".spinner-parent").removeClass("hidden");
+        self.panel.find(".config-information-parent").addClass("hidden");
     }
 
     self.update_panel_ui = function () {
 
         var data = self.configobject;
+
         var alldevices = ["mcu", "sd", "rtc", "booster", "rgb", "aht", "gps", "bl", "rgb", "ph", "rtd", "dox", "ec", "ph", "rain", "uss", "turbidity"];
-        var allstates = ["online", "dummy", "log-to-sd", "use-gps", "use-bl"];
+        var allstates = ["realtime"];
         
         // Survey information
         self.panel.find(".survey-information-parent").find(".survey-id-text").val(data.survey["id"]);
@@ -295,8 +348,8 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".survey-information-parent").find(".survey-location-text").val(data.survey["location"]);
         
         // Sleep information
-        self.panel.find(".device-information-parent").find(".sleep-mode-text").val(data.device["sleep"].split(",")[0]);0
-        self.panel.find(".device-information-parent").find(".sleep-duration-text").val(parseInt(data.device["sleep"].split(",")[1] / 1000));
+        self.panel.find(".device-information-parent").find(".sleep-mode-text").val(data.sleep["mode"]);
+        self.panel.find(".device-information-parent").find(".sleep-duration-text").val(parseInt(data.sleep["duration"]) / 1000);
         
         // Devices list
         self.panel.find(".device-information-parent").find(".devices-list .devices-list-item").remove();
@@ -328,9 +381,7 @@ function uiconfiggatorbytesubapp() {
         });
 
         // Show enabled states
-        Object.keys(data.state).forEach(function (state, di) {
-            if (data.state[state] == "true") self.panel.find(".states-list-item[state='" + state.trim() + "']").removeClass("disabled").addClass("enabled");
-        });
+        if (data.survey.realtime == "true") self.panel.find(".states-list-item[state='online']").removeClass("disabled").addClass("enabled");
 
         // Update listeners
         self.listeners();
@@ -343,21 +394,38 @@ function uiconfiggatorbytesubapp() {
             response = response.replace(/rtc:/g, "");
 
             var timestamp = parseInt(response) * 1000;
-            self.panel.find(".device-information-parent").find(".gatorbyte-rtc-time-text").html(multiline(function () {/* 
-                <span style="margin-right: 8px;">{{date}}</span>
+            self.panel.find(".gatorbyte-rtc-time-text").attr("title", timestamp).html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{date}}</span>
                 <span>{{time}}</span>
             */}, {
-                date: moment(timestamp).format("MM/DD/YYYY"),
-                time: moment(timestamp).format("hh:mm:ss a").toUpperCase()
+                date: moment(timestamp).format("MM/DD/YY"),
+                time: moment(timestamp).format("hh:mm a").toUpperCase()
             }));
 
             // Sync RTC time
-            self.panel.find(".device-information-parent").find(".calibrate-rtc-button").off("click").click(function () {
-                var date = moment(moment.now()).format("MMM-DD-YYYY");
-                var time = moment(moment.now()).format("HH-mm-ss");
+            self.panel.find(".calibrate-rtc-button").off("click").click(function () {
+                var offset = self.timezone();
+                var date = moment(moment.now() - offset).format("MMM-DD-YYYY");
+                var time = moment(moment.now() - offset).format("HH-mm-ss");
                 self.sendcommand("rtc:sync" + date + time);
+                setTimeout(() => {
+                    self.show_rtctime();
+                }, 1500);
             });
         }
         
+    }
+
+    self.timezone = function () {
+        var MyDate = new Date();
+        var MyString = MyDate.toTimeString();
+        var MyOffset = MyString.slice(12,17);
+
+        var sign = MyOffset.indexOf("-") == 0 ? -1 : 1;
+        var hours = parseInt(MyOffset.slice(1, 3));
+        var minutes = parseInt(MyOffset.slice(3, 5));
+
+        var milliseconds = sign * (hours * 3600 + minutes * 60) * 1000;
+        return milliseconds;
     }
 }

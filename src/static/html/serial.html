@@ -14,10 +14,19 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
+    <!-- Matrix animation background -->
     <script src='../js/lib/matrix.js'></script>
+    
+    <!-- Multiline -->
     <script src='../js/lib/multiline.js'></script>
+    
+    <!-- Mousescroll -->
     <script src='../js/lib/mousescroll.js'></script>
+    
+    <!-- Mousetrap -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js'></script>
+
+    <!-- MomentJS -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js'></script>
 
     <!-- Base64 -->
@@ -26,9 +35,11 @@
     <!-- SocketIO -->
     <script src="https://api.piyushagade.xyz/socket.io/socket.io.js"></script>
     
+    <!-- Bootstrap -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css'/>
 
+    <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous"/>
 </head>
 <body style="padding: 0px; background: transparent !important; overflow-x: hidden; overflow-y: hidden;">
@@ -675,8 +686,9 @@
 
                             <!--! Survey information -->
                             <div class="col-12 survey-information-parent" style="margin-bottom: 10px;">
-
-                                <div class="row" style="margin: 0;">
+                                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Survey information</p>
+                                    
+                                <div class="row" style="margin: 0px;">
 
                                     <!-- Survey ID -->
                                     <div class="col dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
@@ -700,10 +712,11 @@
                                 </div>
                             </div>
                             
-                            <!--! Device information -->
+                            <!--! Sleep -->
                             <div class="col-12 device-information-parent" style="margin-bottom: 10px;">
+                                <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Sleep configuration</p>
 
-                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                <div class="row" style="margin: 0; margin-top: 6px;">
                                     
                                     <!-- Sleep mode -->
                                     <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
@@ -718,13 +731,39 @@
                                     
                                     <!-- Sleep duration -->
                                     <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep duration (seconds)</p>
-                                        <input class="sleep-duration-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px; width: auto;">Sampling interval (seconds)</p>
+                                        <input class="sleep-duration-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; width: 100px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--! Data -->
+                            <div class="col-12 data-information-parent" style="margin-bottom: 10px;">  
+                                <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Sensors configuration</p>
+                                
+                                <div class="row" style="margin: 0; margin-top: 6px;">
+                                    
+                                    <!-- Data mode -->
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 70px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Data mode</p>
+                                        <select class="data-mode-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                            <option value="read" style="color: #222;">Read</option>
+                                            <option value="dummy" style="color: #222;">Dummy</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Sensor read mode -->
+                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Read sensors until</p>
+                                        <select class="sensor-read-mode-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                            <option value="stability" style="color: #222;">Stability</option>
+                                            <option value="fixed" style="color: #222;">Fixed</option>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <!-- Enabled devices list -->
-                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                <div class="row hidden" style="margin: 0; margin-top: 10px;">
                                     <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">Enbaled devices</p>
                                         <div class="row devices-list" style="margin: 0px;"></div>
@@ -732,22 +771,45 @@
                                 </div>
 
                                 <!-- States list -->
-                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                <div class="row hidden" style="margin: 0; margin-top: 10px;">
                                     <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">States</p>
                                         <div class="row states-list" style="margin: 0px;"></div>
                                     </div>
                                 </div>
+                            </div>
+
+                            
+                            <!--! Real-time clock configuration -->
+                            <div class="col-12 data-information-parent" style="margin-bottom: 10px;">  
+                                <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Realtime clock (RTC) synchronization</p>
                                 
-                                <!-- Real-time configuration -->
-                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                <div class="row" style="margin: 0; margin-top: 6px;">
                                     <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">RTC time</p>
-                                        <p style="color: #dadada; font-size: 13px; text-align: justify; margin-bottom: 8px;">Use this to sync the onboard clock's time with your computer's time.</p>
-                                        <p class="row gatorbyte-rtc-time-text" style="margin: 0px; color: #c4d62c; font-size: 15px;"></p>
+                                        <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">Use this to sync the onboard clock's time with your computer's time.</p>
                                         
-                                        <div class="col-auto calibrate-rtc-button shadow-heavy" style="padding: 4px 8px;margin-right: 6px;margin-top: 8px;background: #656565;border-radius: 2px;height: 28px;font-size: 14px;width: fit-content;">
-                                            <p style="color: #DDDDDD;margin-bottom: 0;">Sync clocks</p>
+                                        <div class="row" style="margin: 0 0 10px;">
+                                            <div class="col-auto" style="padding: 6px 10px; background:  #44444422; margin: 0 6px 6px 0;">
+                                                <p style="color: #747474; font-size: 12px; text-align: justify; margin-bottom: 0px;">Computer time</p>
+                                                <p class="utc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                                            </div>
+                                            
+                                            <div class="col-auto" style="padding: 6px 10px; background:  #44444422; margin: 0 6px 6px 0;">
+                                                <p style="color: #747474; font-size: 12px; text-align: justify; margin-bottom: 0px;">GatorByte time</p>
+                                                <p class="gatorbyte-rtc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 8px;">Click on 'Fetch RTC' to get the latest time from the RTC on the GatorByte.</p>
+                                        
+                                        <div class="row" style="margin: 0 0 0px;">
+                                            <div class="col-auto get-rtc-button shadow-heavy" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #414141;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Fetch RTC</p>
+                                            </div>
+
+                                            <div class="col-auto calibrate-rtc-button shadow-heavy" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #1b5782;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Sync RTC</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

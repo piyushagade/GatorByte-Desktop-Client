@@ -12,6 +12,7 @@ module.exports = {
 
         // Create persistent storage files
         if(!i.fs.existsSync(path.join(storagedir, "alldevices"))) i.fs.writeFileSync(path.join(storagedir, "alldevices"), "[]", "utf8");
+        if(!i.fs.existsSync(path.join(storagedir, "config"))) i.fs.writeFileSync(path.join(storagedir, "config"), "[]", "utf8");
 
         /* 
             - Window operations
@@ -510,6 +511,56 @@ module.exports = {
                 // Open port
             });
 
+        });
+        
+        i.ipcm.on('ipc/config-data-get/request', (event, obj) => {
+            
+            var configobject = null;
+            var pnpId = obj.port.pnpId;
+
+            var data = JSON.parse(i.fs.readFileSync(path.join(storagedir, "config"), "utf8"));
+            data.forEach(function (item, ii) {
+                if (item.pnpId == pnpId) {
+                    configobject = item.configobject;
+                    pnpId = item.pnpId;
+                }
+            });
+
+            event.sender.send("ipc/config-data-get/response", {
+                pnpId: pnpId,
+                configobject: configobject
+            });
+        });
+        
+        i.ipcm.on('ipc/config-data-save/request', (event, obj) => {
+            var configobject = obj.configobject;
+            var pnpId = obj.port.pnpId;
+
+            var data = JSON.parse(i.fs.readFileSync(path.join(storagedir, "config"), "utf8"));
+            var found = false;
+            data.forEach(function (item, ii) {
+                if (item.pnpId == pnpId) found = true;
+            });
+
+            // Update object
+            if (found) {
+                data.forEach(function (item, ii) {
+                    if (item.pnpId == pnpId) {
+                        item.configobject = configobject;
+                    }
+                });
+            }
+            
+            // Add object
+            else {
+                data.push({
+                    configobject: configobject,
+                    pnpId: pnpId
+                });
+            }
+
+            // Write to storage
+            i.fs.writeFileSync(path.join(storagedir, "config"), JSON.stringify(data), "utf8");
         });
     }
 }

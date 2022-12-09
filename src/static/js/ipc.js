@@ -78,6 +78,10 @@ function ipcsubapp(){
         self.ipcr.on('ipc/save-file/response', (event, response) => {
             self.a.uidownloadfiles.on_file_save_response(response);
         });
+
+        self.ipcr.on("ipc/config-data-get/response", (event, response) => {
+            self.a.uiconfiggatorbyte.setconfigdata(response.configobject);
+        });
         
         return self;
     }
