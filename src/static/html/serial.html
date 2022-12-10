@@ -46,10 +46,10 @@
 
     <canvas style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; opacity: 0.0;"></canvas>
 
-    <div class="container" state="transparent" style="overflow: hidden; max-width: unset; margin: 0px; border-radius: 0px; padding: 10px 14px 10px 14px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; cursor: default;">
+    <div class="container" state="transparent" style="overflow: hidden; max-width: unset; margin: 0px; border-radius: 0px; padding: 10px 14px 10px 14px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; cursor: default; -webkit-app-region: no-drag; ">
         
         <!--! Top menu -->
-        <div class="menu-buttons-div row" style="padding: 2px 4px 0 4px;background: #6262626b; backdrop-filter: blur(4px); border-radius: 0px;z-index: 1;font-size: 11px;position: absolute;top: 8px;right: 10px;margin: 0px 0px 12px 0px;color: #AAA;pointer-events: all; z-index: 2;">
+        <div class="menu-buttons-div row" style="-webkit-app-region: no-drag; padding: 2px 4px 0 4px;background: #6262626b; backdrop-filter: blur(4px); border-radius: 0px;z-index: 1;font-size: 11px;position: absolute;top: 8px;right: 10px;margin: 0px 0px 12px 0px;color: #AAA;pointer-events: all; z-index: 2;">
 
             <!-- Always on top -->
             <!-- <div class="col-auto" style="float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
@@ -62,7 +62,7 @@
             </div>
 
             <!-- Move -->
-            <div class="col-auto" style=" -webkit-app-region: drag; float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
+            <div class="col-auto" style="-webkit-app-region: drag; float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
                 <i class="fas fa-arrows-alt" style="color: #DDDDDD; font-size: 13px;"></i>
             </div>
 
@@ -83,21 +83,21 @@
         
         <!--! Download files -->
         <div class="row scrollbar-style panel download-files-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
-            
-            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            
             <div class="col">
                 <div class="row">
                     
                     <!-- Header -->
                     <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                    
+                    <!-- Back button -->
+                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                        <i class="fa-solid fa-arrow-left"></i>
                     </div>
                         
                     <!-- Files list -->
@@ -185,20 +185,21 @@
         <!--! Sensor calibration -->
         <div class="row scrollbar-style panel sensor-calibration-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
-            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            
             <div class="col">
                 <div class="row">
                     
                     <!-- Header -->
                     <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                    
+                    <!-- Back button -->
+                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                        <i class="fa-solid fa-arrow-left"></i>
                     </div>
                         
                     <div class="col-12" style="margin-bottom: 10px;">
@@ -338,20 +339,21 @@
         <!--! Daashboard area -->
         <div class="row scrollbar-style panel dashboard-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
-            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            
             <div class="col">
                 <div class="row">
                     
                     <!-- Header -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                    <div class="col-12" style="-webkit-app-region: drag; padding: 10px 12px; margin-right: 6px; background: transparent;">
+                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                    
+                    <!-- Back button -->
+                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                        <i class="fa-solid fa-arrow-left"></i>
                     </div>
                         
                     <div class="col-12 sensor-information" style="margin-bottom: 10px;">
@@ -470,20 +472,21 @@
         <!--! Home area -->
         <div class="row scrollbar-style panel home-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default; overflow-y: auto;">
             
-            <div class="connected-device-disconnect-button" title="Disconnect GatorByte" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                <i class="fa-solid fa-stop"></i>
-            </div>
-            
             <div class="col">
                 <div class="row">
                     
                     <!-- Header -->
                     <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                    
+                    <!-- Back button -->
+                    <div class="connected-device-disconnect-button" title="Disconnect GatorByte" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                        <i class="fa-solid fa-stop"></i>
                     </div>
                     
                     <!-- Update notification -->
@@ -609,8 +612,8 @@
                     
                     <!-- Header -->
                     <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
@@ -659,20 +662,21 @@
         <!--! Configure GatorByte area -->
         <div class="row scrollbar-style panel configure-gb-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
-            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 32px;left: 32px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            
             <div class="col">
                 <div class="row">
                     
                     <!-- Header -->
                     <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;-webkit-app-region: no-drag;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;-webkit-app-region: no-drag;pointer-events: none;/* margin-bottom: 14px; */">
+                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+                    
+                    <!-- Back button -->
+                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                        <i class="fa-solid fa-arrow-left"></i>
                     </div>
                         
                     <!-- Config options -->
@@ -959,7 +963,7 @@
 
                 <!-- Device/Port information -->
                 <div class="col-auto device-status-indicator" style="display: inline-flex; padding: 4px 10px 2px 10px; margin-right: 0px; transition: all 0.25s ease-in; -webkit-app-region: no-drag; cursor: default; background: #444444;">
-                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-text-stroke: black;-webkit-text-stroke-width: thin; margin-right: 6px; cursor: pointer;"><i class="fas fa-arrow-left" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
+                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; margin-right: 6px; cursor: pointer;"><i class="fas fa-arrow-left" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
                     <div class="connected-device-disconnect-buttonz hidden" style="margin-right: 6px; cursor: pointer;"><i class="fas fa-stop" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
                     <div class="connected-device-port" style="font-size: 12px; color: #FFFFFF; max-width: 80px;">N/A</div>
                 </div>

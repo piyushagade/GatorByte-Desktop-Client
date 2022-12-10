@@ -1004,7 +1004,7 @@ function ipcsubapp(){
             $(".panel").addClass("hidden");
             $(".device-selector-panel").removeClass("hidden");
             $(".home-panel").removeAttr("first-load-done");
-            $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
+            $(".home-panel").addClass("disabled").addClass("hidden").addClass("blur");
 
             $(".connected-device-port").text("N/A").attr("title", "");
             setTimeout(() => { $(".connected-device-port").parent().css("background", "#444"); }, 100);
