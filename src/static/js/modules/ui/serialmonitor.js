@@ -344,9 +344,6 @@ function uiserialmonitorsubapp(){
                 var data = ((global.hook ? global.hook.line || "" : "") + brprefix + (line.indexOf("::") > -1 ? line.split("::")[1] : line).replace(category, "") + brsuffix).replace("##CEREAL##", "").replace("#EOF#", "").replace(category + "::", ""); 
                 data = data.replace("undefined", "");
 
-                // console.log(category);
-                // console.log(data);
-
                 if (category && category == "data") {
                     hook = {
                         line: data,

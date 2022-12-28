@@ -205,25 +205,28 @@
                     <div class="col-12" style="margin-bottom: 10px;">
                         
                         <!-- Sensors list -->
-                        <div class="row sensor-list" style="margin: 0;">
+                        <div class="row sensor-list shadow" style="margin: 0; background: #1d1b12; border-radius: 2px; padding: 4px 10px;">
                             
-                            <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 12px;font-weight: normal;">
-                                Here you can calibrate the sensors on your GatorByte and sync the on-board Real-time Clock (RTC). Select an option from below to get started.
+                            <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                                Select a sensor from the list below below to get started.
                             </p>
                             
                             <!-- pH sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ph" style="padding: 4px 10px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;height: 32px;">
-                                <p style="color: #040404;margin-bottom: 0;">pH</p>
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ph" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
+                                <p style="color: #363636;margin-bottom: 0; font-size: 12px;">Atlas Scientific</p>
+                                <p style="color: #101010;margin-bottom: 0;font-size: 20px;text-align: center;margin-top: -2px;">pH</p>
                             </div>
                             
                             <!-- EC sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ec" style="padding: 4px 10px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;height: 32px;">
-                                <p style="color: #040404;margin-bottom: 0;">EC</p>
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ec" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
+                                <p style="color: #363636;margin-bottom: 0; font-size: 12px;">Atlas Scientific</p>
+                                <p style="color: #101010;margin-bottom: 0;font-size: 20px;text-align: center;margin-top: -2px;">EC</p>
                             </div>
                             
                             <!-- DO sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="dox" style="padding: 4px 10px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;height: 32px;">
-                                <p style="color: #040404;margin-bottom: 0;">DO</p>
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="dox" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
+                                <p style="color: #363636;margin-bottom: 0; font-size: 12px;">Atlas Scientific</p>
+                                <p style="color: #101010;margin-bottom: 0;font-size: 20px;text-align: center;margin-top: -2px;">DO</p>
                             </div>
                             
                             <!-- Loading spinner -->
@@ -296,38 +299,113 @@
                             </div>
                             
                             
-                            <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
-                                <p style="color: #c4c4c4;margin-bottom: 10px;">Let's calibrate the <span class="sensor-name">-</span> sensor.</p>
+                            <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
                                 
-                                <!-- Calibration levels -->
-                                <div class="row calibration-levels-list" style="margin: 0; margin-top: 10px;">
+                                <div class="row shadow calibration-stabalization-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
                                     <div class="col-12" style="padding: 0;">
-                                        <p style="color: #ece9e9;margin-bottom: 6px;">Select calibration level from the list below.</p>
+                                        <p style="color: #bbbbbb;margin-bottom: 6px;">Before we perform the calibration on the <span class="sensor-name">ph</span> sensor, we need to ensure the readings are stable. Click on the button below to fetch continous readings.</p>
                                     </div>
-                                </div>
-                                
-                                <!-- Calibration solutions -->
-                                <div class="row calibration-solutions-list" style="margin: 0; margin-top: 10px;">
-                                    <div class="col-12" style="padding: 0;">
-                                        <p style="color: #ece9e9;margin-bottom: 6px;">Select the value of calibration solution.</p>
+
+                                    <div class="col-auto start-continous-readings-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;">
+                                        <p style="color: #2e2e2e;margin-bottom: 0;">Get readings</p>
+                                    </div>
+
+                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
+                                    </div>
+
+                                    <div class="col-12 continous-readings-div" style="margin: 0;margin-top: 4px;padding: 4px 8px;border-radius: 2px;">
+                                        
+                                        <div class="row" style="margin: 0px -8px;">
+                                            <div class="col-12" style="padding: 0;">
+                                                <p style="color: #bbbbbb;margin-bottom: 6px;">Please wait for the readings below to stabalize. Once the readings are stable, you can proceed to the next step.</p>
+                                            </div>
+                                            
+                                            <!-- Number -->
+                                            <div class="col-auto number-continous-readings shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #4b4b4b;border-radius: 2px;">
+                                                <p style="color: #a8a8a8;margin-bottom: 0; font-size: 12px;">Count</p>
+                                                <p class="text" style="color: #d8d8d8;margin-bottom: 0; font-size: 16px;font-weight: bold;margin-top: -4px;">-</p>
+                                            </div>
+                                            
+                                            <!-- Previous reading -->
+                                            <div class="col-auto previous-continous-readings shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #c9c9c9;border-radius: 2px;">
+                                                <p style="color: #474747;margin-bottom: 0; font-size: 12px;">Previous</p>
+                                                <p class="text" style="color: #212121;margin-bottom: 0;font-size: 16px;font-weight: bold;margin-top: -4px;">-</p>
+                                            </div>
+
+                                            <!-- Latest reading -->
+                                            <div class="col-auto latest-continous-readings shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #c9c9c9;border-radius: 2px;">
+                                                <p style="color: #474747;margin-bottom: 0; font-size: 12px;">Latest</p>
+                                                <p class="text" style="color: #212121;margin-bottom: 0;font-size: 16px;font-weight: bold;margin-top: -4px;">-</p>
+                                            </div>
+
+                                            <!-- Delta -->
+                                            <div class="col-auto delta-continous-readings shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #c9c9c9;border-radius: 2px;">
+                                                <p style="color: #474747;margin-bottom: 0; font-size: 12px;">Delta</p>
+                                                <p class="text" style="color: #212121;margin-bottom: 0;font-size: 16px;font-weight: bold;margin-top: -4px;">-</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Proceed button -->
+                                        <!-- <div class="row" style="margin: 0px -8px;">
+                                            <div class="col-auto show-calibration-options-button shadow-heavy disabled" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Proceed</p>
+                                            </div>
+                                        </div> -->
+
                                     </div>
                                 </div>
 
-                                <hr style="margin: 8px 0;">
-                                <p style="color: #c4c4c4;margin-bottom: 10px;">Please dip the sensor in the calibration solution and stir for ~30 seconds before clicking the button below to apply the calibration.</p>
-                                
-                                <!-- Calibrate button -->
-                                <div class="row" style="margin: 0; margin-top: 10px;">
-                                    <div class="col-auto perform-calibration-button shadow-heavy disabled" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
-                                        <p style="color: #DDDDDD;margin-bottom: 0;">Perform</p>
+                                <div class="row shadow calibration-stabalization-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
+                                    <div class="col-12" style="padding: 0;">
+                                        <p style="color: #bbbbbb;margin-bottom: 6px;">You can alternatively skip the next step and go directly to the calibration step.</p>
                                     </div>
-                                    <div class="col-auto calibration-clear-option shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #b53e3eb0;border-radius: 2px;height: 28px;">
-                                        <p style="color: #DDDDDD;margin-bottom: 0;">Clear</p>
+
+                                    <div class="col-auto show-calibration-options-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Proceed to calibration</p>
                                     </div>
-                                    <div class="col-auto cancel-calibration-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
-                                        <p style="color: #DDDDDD;margin-bottom: 0;">Dismiss</p>
+                                    
+                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
                                     </div>
                                 </div>
+                                
+                                <!-- Calibration options -->
+                                <div class="row shadow calibration-options-div hidden" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 0px 2px 8px 2px;border-radius: 2px;">
+                                    <div class="col">
+
+                                        <!-- Calibration levels -->
+                                        <div class="row calibration-levels-list" style="margin: 0; margin-top: 10px;">
+                                            <div class="col-12" style="padding: 0;">
+                                                <p style="color: #ece9e9;margin-bottom: 6px;">Select the calibration level.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Calibration solutions -->
+                                        <div class="row calibration-solutions-list" style="margin: 0; margin-top: 10px;">
+                                            <div class="col-12" style="padding: 0;">
+                                                <p style="color: #ece9e9;margin-bottom: 6px;">Select the value of calibration solution.</p>
+                                            </div>
+                                        </div>
+
+                                        <hr style="margin: 8px 0;">
+                                        <p style="color: #c4c4c4;margin-bottom: 10px;">Please dip the sensor in the calibration solution and stir for ~30 seconds before clicking the button below to apply the calibration.</p>
+                                        
+                                        <!-- Calibrate button -->
+                                        <div class="row" style="margin: 0; margin-top: 10px;">
+                                            <div class="col-auto perform-calibration-button shadow-heavy disabled" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Perform</p>
+                                            </div>
+                                            <div class="col-auto calibration-clear-option shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #b53e3eb0;border-radius: 2px;height: 28px;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Clear</p>
+                                            </div>
+                                            <div class="col-auto cancel-calibration-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Dismiss</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
                             
                         </div>

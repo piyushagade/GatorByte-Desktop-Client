@@ -632,6 +632,13 @@ function ipcsubapp(){
                 if (global.states.sharedonline) self.a.sck.share_state();
             });
 
+            // Send ping to device
+            self.ipcr.send('send-command-request', {
+                command: "gdc-ping",
+                windowid: global.states.windowid,
+                path: global.port.path
+            });
+
             $(".auto-scroll-button").off("click").click(function () {
                 if ($(this).attr("state") == "false" || $(this).attr("state") == "paused") {
                     self.a.ui.toggleautoscroll("on");

@@ -23,6 +23,8 @@ module.exports = {
             var windowid = obj.windowid;
             var path = obj.path;
 
+            console.log(obj);
+
             console.log("\nClosing window with ID: " + windowid);
             var window = BrowserWindow.fromId(windowid);
             if (window) window.close();
@@ -260,6 +262,10 @@ module.exports = {
                         i.g.var.serports[result.port.settings.path].on('data', function (data) {
 
                             data = new TextDecoder().decode(data);
+
+                            // Log data to file
+                            if (!i.fs.existsSync(path.join(storagedir, "seriallog"))) i.fs.mkdirSync(path.join(storagedir, "seriallog"));
+                            i.fs.appendFileSync(path.join(storagedir, "seriallog", result.port.settings.path), data, "utf8");
 
                             // Clear detector timer
                             if (data.indexOf("##CEREAL-GDC-PONG##") !== -1) {

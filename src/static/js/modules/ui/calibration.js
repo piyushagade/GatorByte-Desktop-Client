@@ -53,6 +53,10 @@ function uisensorcalibrationsubapp(){
 
             $(".calibration-info-div").attr("sensor", sensor);
             $(".calibration-perform-div").attr("sensor", sensor);
+            $(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+
+            self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+            self.panel.find(".calibration-options-div").addClass("hidden");
 
             // Show spinner
             self.panel.find("sensor-list .spinner-div").removeClass("hidden");
@@ -110,6 +114,7 @@ function uisensorcalibrationsubapp(){
                 // Get last calibration last perform info
                 self.sendcommand(sensor + ":lpi");
                 self.state = "wait-on-lpi";
+
             }
 
             if (self.state == "wait-on-status") {
@@ -133,6 +138,7 @@ function uisensorcalibrationsubapp(){
             }
         }
 
+        // If the response is last performed calibration information
         if (line.indexOf("lpi:") != -1) {
             
             var sensor = self.selectedsensor;
@@ -153,7 +159,7 @@ function uisensorcalibrationsubapp(){
                 self.panel.find(".calibration-recommendation-text").text("Recommended");
             }
 
-            // Show calibration perform UI
+            // Show calibration perform UI (also, continuous readings UI)
             parent.find(".show-calibration-actions-button").off("click").click(function () {
                 self.panel.find(".calibration-info-parent").addClass("hidden");
                 self.panel.find(".calibration-perform-parent").removeClass("hidden");
@@ -308,6 +314,12 @@ function uisensorcalibrationsubapp(){
                     $(this).css("opacity", "1").addClass("active");
                     shouldenableperformbutton();
                 });
+                
+                // Show sensor calibration status UI
+                self.panel.find(".go-back-sensor-calibration-status-button").off("click").click(function () {
+                    self.panel.find(".calibration-info-parent").removeClass("hidden");
+                    self.panel.find(".calibration-perform-parent").addClass("hidden");
+                });
 
                 // Clear calibration button click handler
                 newparent.find(".calibration-clear-option").off("click").on("click", function () {
@@ -325,6 +337,9 @@ function uisensorcalibrationsubapp(){
                     // Show info screen and hide perform screen
                     self.panel.find(".calibration-info-parent").removeClass("hidden");
                     self.panel.find(".calibration-perform-parent").addClass("hidden");
+                    
+                    self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+                    self.panel.find(".calibration-options-div").addClass("hidden");
                 });
 
                 // Perform calibration button click handler
@@ -344,6 +359,9 @@ function uisensorcalibrationsubapp(){
                     // Show info screen and hide perform screen
                     self.panel.find(".calibration-info-parent").removeClass("hidden");
                     self.panel.find(".calibration-perform-parent").addClass("hidden");
+                    
+                    self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+                    self.panel.find(".calibration-options-div").addClass("hidden");
                 });
 
                 // Cancel calibration button click handler
@@ -351,6 +369,9 @@ function uisensorcalibrationsubapp(){
                     // Show info screen and hide perform screen
                     self.panel.find(".calibration-info-parent").removeClass("hidden");
                     self.panel.find(".calibration-perform-parent").addClass("hidden");
+                    
+                    self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+                    self.panel.find(".calibration-options-div").addClass("hidden");
                 });
 
                 // Enable/disable perform calibration buttons
@@ -362,6 +383,32 @@ function uisensorcalibrationsubapp(){
                         newparent.find(".perform-calibration-button").addClass("disabled");        
                     }
                 }
+
+                // Get continuous readings
+                newparent.find(".start-continous-readings-button").off("click").on("click", function () {
+                    $(this).css("opacity", "0.3").addClass("disabled");
+                    newparent.find(".show-calibration-options-button").css("opacity", "0.3").addClass("disabled");
+                    
+                    // Send request to GB for continuous readings
+                    self.sendcommand(sensor + ":cread");
+                    parent.find(".continuous-read-status-div").addClass("rotate-animation");
+                });
+
+                self.panel.find(".show-calibration-options-button").off("click").click(function () {
+                    self.panel.find(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+                    
+                    self.panel.find(".calibration-stabalization-div").addClass("hidden");
+                    self.panel.find(".calibration-options-div").removeClass("hidden");
+                });
+
+                // // Skip continuous readings
+                // newparent.find(".skip-continous-readings-button").off("click").on("click", function () {
+                //     self.panel.find(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+                //     self.panel.find(".show-calibration-options-button").css("opacity", "0.3").addClass("disabled");
+                    
+                //     self.panel.find(".calibration-stabalization-div").addClass("hidden");
+                //     self.panel.find(".calibration-options-div").removeClass("hidden");
+                // });
                 
             });
 
@@ -373,6 +420,36 @@ function uisensorcalibrationsubapp(){
             // Add blur
             $(".calibrations-found-item").addClass("blur");
             $(".lpi-item").addClass("blur");
+        }
+
+        // If the response is continuous readings
+        if (line.indexOf("cread:") != -1) {
+            var sensor = self.selectedsensor;
+            line = line.replace("cread:", "");
+
+            // Get payload
+            var count = parseInt(line.split(":")[0]) + 1;
+            var reading = parseInt(line.split(":")[1]);
+
+            if (count == 1) {
+                self.deltacontinousreading = self.previouscontinuousreading ? self.previouscontinuousreading - reading : 0;
+                self.previouscontinuousreading = reading;
+            }
+            else if (count == 30) {
+                delete self.deltacontinousreading;
+                delete self.previouscontinuousreading;
+
+                self.panel.find(".continuous-read-status-div").addClass("rotate-animation");
+                self.panel.find(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+                self.panel.find(".show-calibration-options-button").css("opacity", "1").removeClass("disabled");
+            }
+
+            self.panel.find(".number-continous-readings .text").text(count);
+            
+            self.panel.find(".previous-continous-readings .text").text(self.previouscontinuousreading);
+            self.panel.find(".latest-continous-readings .text").text(reading);
+            self.panel.find(".delta-continous-readings .text").text(self.deltacontinousreading);
+
         }
     }
 
