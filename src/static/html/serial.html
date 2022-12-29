@@ -92,7 +92,6 @@
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
                     
                     <!-- Back button -->
@@ -105,7 +104,7 @@
                         
                         <div class="row" style="margin: 0;">
                             <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 2px;font-size: 12px;font-weight: normal;">
-                                Select a file from the list below to download a file to your computer. This process may take time to complete, so kindly be patient.
+                                Select a file from the list below to download a file to your computer. Downloading may take time to complete, so kindly be patient.
                             </p>
                         </div>
 
@@ -195,7 +194,6 @@
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
                     
                     <!-- Back button -->
@@ -205,8 +203,20 @@
                         
                     <div class="col-12" style="margin-bottom: 10px;">
                         
-                        <!-- Sensors list -->
+                        <!-- Sensors list description -->
                         <div class="row sensor-list shadow" style="margin: 0; background: #1d1b12; border-radius: 2px; padding: 4px 10px;">
+                            
+                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                                The sensors on the GatorByte need to be calibrated regularly. At minimum, we recommend validation of the sennsor readings against standard solutions before a survey.
+                            </p>
+                            
+                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                                The GatorByte stores the last date of calibration on the SD card and makes a recommendation regarding the calibration. Please see sensor manufacturer's recommendations for sensor maintainence.
+                            </p>
+                        </div>
+                        
+                        <!-- Sensors list -->
+                        <div class="row sensor-list shadow" style="margin: 10px 0 0 0; background: #304448; border-radius: 2px; padding: 4px 10px;">
                             
                             <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
                                 Select a sensor from the list below below to get started.
@@ -214,20 +224,17 @@
                             
                             <!-- pH sensor -->
                             <div class="col-auto calibrate-sensor-item shadow-heavy" name="ph" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
-                                <p style="color: #363636;margin-bottom: 0; font-size: 12px;">Atlas Scientific</p>
-                                <p style="color: #101010;margin-bottom: 0;font-size: 20px;text-align: center;margin-top: -2px;">pH</p>
+                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">pH</p>
                             </div>
                             
                             <!-- EC sensor -->
                             <div class="col-auto calibrate-sensor-item shadow-heavy" name="ec" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
-                                <p style="color: #363636;margin-bottom: 0; font-size: 12px;">Atlas Scientific</p>
-                                <p style="color: #101010;margin-bottom: 0;font-size: 20px;text-align: center;margin-top: -2px;">EC</p>
+                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">EC</p>
                             </div>
                             
                             <!-- DO sensor -->
                             <div class="col-auto calibrate-sensor-item shadow-heavy" name="dox" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
-                                <p style="color: #363636;margin-bottom: 0; font-size: 12px;">Atlas Scientific</p>
-                                <p style="color: #101010;margin-bottom: 0;font-size: 20px;text-align: center;margin-top: -2px;">DO</p>
+                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">DO</p>
                             </div>
                             
                             <!-- Loading spinner -->
@@ -359,7 +366,7 @@
 
                                 <div class="row shadow calibration-stabalization-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
                                     <div class="col-12" style="padding: 0;">
-                                        <p style="color: #bbbbbb;margin-bottom: 6px;">You can alternatively skip the next step and go directly to the calibration step.</p>
+                                        <p style="color: #bbbbbb;margin-bottom: 6px;">You can alternatively skip stabilization step and go directly to the calibration step.</p>
                                     </div>
 
                                     <div class="col-auto show-calibration-options-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
@@ -427,7 +434,6 @@
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
                     
                     <!-- Back button -->
@@ -435,7 +441,7 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </div>
                         
-                    <div class="col-12 sensor-information" style="margin-bottom: 10px;">
+                    <div class="col-12 sensor-information" style="margin-bottom: 10px; margin-top: -8px;">
                         
                         <!-- Last updated timestamp -->
                         <div class="row" style="margin: 0;">
@@ -555,12 +561,11 @@
                 <div class="row">
                     
                     <!-- Header -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
+                    <div class="col-12" style="margin-bottom: -20px; padding: 10px 12px; margin-right: 6px; background: transparent;">
                         <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
                     
                     <!-- Back button -->
@@ -589,7 +594,7 @@
                     </div>
                     
                     <!-- Big buttons -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; margin-top: 8px;">
+                    <div class="col-12" style="padding: 10px 12px 0 12px;margin-right: 6px;margin-top: 8px;background: #2f2f2f;">
                         <div class="row" style="margin: 0;">
                             
                             <!-- Dashboard -->
@@ -658,9 +663,14 @@
 
                         </div>
                     </div>
-                    
+
+                    <!-- Documentation -->
+                    <div class="col-12" style="background: #383838;padding: 10px 12px;margin-right: 6px;margin-bottom: 10px;">
+                        <p style="color: #adadad;font-size: 12px;text-align: justify;margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
+                    </div>
+
                     <!-- Inactive subscription notifcation -->
-                    <div class="col-12 shadow-heavy inactive-subscription-notification hidden" style="padding: 10px 12px; margin-right: 6px; margin-top: 8px; background: #d3c612; max-width: 500px;;">
+                    <div class="col-12 shadow-heavy inactive-subscription-notification hidden" style="padding: 10px 12px; margin-right: 6px; background: #d3c612; max-width: 500px;">
                         <div class="row">
                             <div class="col">
                                 <span class="status-message"></span>
@@ -695,7 +705,6 @@
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
                     
                     <!-- Quick connect button -->
@@ -750,7 +759,6 @@
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
                     
                     <!-- Back button -->
@@ -1309,7 +1317,8 @@
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
-                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            <div class="reconnect-button hidden" style="padding: 4px 8px; font-size: 13px; color: #eaeaea; background: #2d68a0; width: fit-content; margin-right: 6px; margin-top: 0px;">Quick connect</div>
+                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
                 </div>

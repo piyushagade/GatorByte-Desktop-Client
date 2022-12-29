@@ -30,7 +30,7 @@ app.on('ready', () => {
     i.sub.validate(i)
         .then(function () {
             i.w.create.serial(i);
-            setTimeout(() => { i.sub.validate(i); }, 100); 
+            setTimeout(() => { i.sub.validate(i); }, 250); 
         });
 
     // Check subscription data every 1 minute

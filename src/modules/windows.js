@@ -50,16 +50,18 @@ module.exports = {
             win.on('show', () => {
 
                 // Push bootstrap information
-                win.webContents.send('bootstrap-information-push', {
-                    remoteurl: i.g.LIVE_SHARE_URL,
-                    appname: i.g.APP_NAME,
-                    appversion: i.g.APP_VERSION,
-                    machineid: i.g.var.machineid,
-                    fullfunctionality: i.g.var.fullfunctionality,
-                    windowid: win.id,
-                    windowscountid: BrowserWindow.getAllWindows().length,
-                    quickconnectport: i.s.getSync("quickconnect-" + "windowid-" + BrowserWindow.getAllWindows().length)
-                });
+                setTimeout(() => {
+                    win.webContents.send('bootstrap-information-push', {
+                        remoteurl: i.g.LIVE_SHARE_URL,
+                        appname: i.g.APP_NAME,
+                        appversion: i.g.APP_VERSION,
+                        machineid: i.g.var.machineid,
+                        fullfunctionality: i.g.var.fullfunctionality,
+                        windowid: win.id,
+                        windowscountid: BrowserWindow.getAllWindows().length,
+                        quickconnectport: i.s.getSync("quickconnect-" + "windowid-" + BrowserWindow.getAllWindows().length)
+                    });
+                }, 250);
                     
                 // Push subscription information to the window
                 i.sub.setui(i);
