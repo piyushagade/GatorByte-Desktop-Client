@@ -176,7 +176,8 @@ function uidownloadfilessubapp(){
                     // Update UI
                     self.panel.find(".file-options-home").addClass("hidden");
                     self.panel.find(".file-options-download-information").removeClass("hidden");
-                    self.panel.find(".file-options-download-information .download-progress").css("color", "#424242").text("Starting download");
+                    self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
+                    self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Starting download");
                 });
             }
 
@@ -226,7 +227,8 @@ function uidownloadfilessubapp(){
         self.filedownloadline += 30;
 
         // Update UI
-        self.panel.find(".file-options-download-information .download-progress").css("color", "#904c07").text(self.filedownloadline + " kB downloaded");
+        self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
+        self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(self.filedownloadline + " kB downloaded");
 
         // Append file data
         self.filedownloaddata += data;
@@ -238,7 +240,8 @@ function uidownloadfilessubapp(){
         else {
 
             // Update UI
-            self.panel.find(".file-options-download-information .download-progress").css("color", "#104c09").text("Download complete");
+            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
+            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Download complete");
 
             self.ipcr.send('ipc/save-file/request', {
                 ...global.port,
@@ -265,10 +268,12 @@ function uidownloadfilessubapp(){
 
     self.on_file_save_response = function (data) {
         if (data.success) {
-            self.panel.find(".file-options-download-information .download-progress").css("color", "#104c09").text(data.message);
+            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
+            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
         }
         else {
-            self.panel.find(".file-options-download-information .download-progress").css("color", "#904c07").text(data.message);
+            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c5160eeb").removeClass("rotate-animation");
+            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
         }
 
         setTimeout(() => {

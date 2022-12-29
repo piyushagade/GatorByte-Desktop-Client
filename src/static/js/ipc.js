@@ -91,6 +91,28 @@ function ipcsubapp(){
                 $(".home-panel").removeClass("disabled").removeClass("blur");
             }
         });
+
+        self.ipcr.on("ipc/flash-firmware/response", (event, response) => {
+            if (response.status == "success") {
+                console.log("Flashing successful");
+                var parent = $(".flash-firmware-overlay");
+
+                parent.find(".flash-in-progress-notification-div").slideUp(100);
+                setTimeout(() => { parent.find(".flash-in-progress-notification-div").addClass("hidden");}, 100);
+                parent.find(".flash-success-div").removeClass("hidden").slideUp(0).slideDown(200);
+                parent.find(".flash-failure-div").addClass("hidden");
+            }
+
+            else  {
+                console.log("Flashing failed");
+                var parent = $(".flash-firmware-overlay");
+
+                parent.find(".flash-in-progress-notification-div").slideUp(100);
+                setTimeout(() => { parent.find(".flash-in-progress-notification-div").addClass("hidden");}, 100);
+                parent.find(".flash-failure-div").removeClass("hidden").slideUp(0).slideDown(200);
+                parent.find(".flash-success-div").addClass("hidden");
+            }
+        });
         
         return self;
     }
@@ -785,70 +807,43 @@ function ipcsubapp(){
             });
 
             // Enter upload mode
-            $(".enter-upload-mode-button")
-                .off("click").click(function () {
-                    global.states.follow = true;
-                    global.states.upload = true;
-                    global.states.connected = false;
+            $(".enter-upload-mode-button").off("click").click(function () {
+                global.states.follow = true;
+                global.states.upload = true;
+                global.states.connected = false;
 
-                    // Set UI
-                    $(".update-mode-overlay .stage-1").addClass("hidden");
-                    $(".update-mode-overlay .stage-2").removeClass("hidden");
-                    $(".update-mode-overlay .stage-2").find(".delay-text").text((global.states.uploaddelay) + " seconds");
+                // Set UI
+                $(".update-mode-overlay .stage-1").addClass("hidden");
+                $(".update-mode-overlay .stage-2").removeClass("hidden");
+                $(".update-mode-overlay .stage-2").find(".delay-text").text((global.states.uploaddelay) + " seconds");
 
-                    var uploaddelay = global.states.uploaddelay;
-                    var counter = uploaddelay;
+                var uploaddelay = global.states.uploaddelay;
+                var counter = uploaddelay;
 
-                    global.timers.waitingforuploadcounter = setInterval(() => {
-                        $(".update-mode-overlay .stage-2").find(".delay-text").text((--counter) + " seconds");
-                    }, 1000);
+                global.timers.waitingforuploadcounter = setInterval(() => {
+                    $(".update-mode-overlay .stage-2").find(".delay-text").text((--counter) + " seconds");
+                }, 1000);
 
-                    global.timers.waitingforuploadcounterclear = setTimeout(() => {
-                        clearInterval(global.timers.waitingforuploadcounter);
-                    }, global.states.uploaddelay * 1000);
+                global.timers.waitingforuploadcounterclear = setTimeout(() => {
+                    clearInterval(global.timers.waitingforuploadcounter);
+                }, global.states.uploaddelay * 1000);
 
-                    // Add 5 seconds
-                    $(".update-mode-overlay .add-time-button").off("click").click(function () {
-                        
-                        // If functionality is locked
-                        if (!global.states.subscription["computed-states"]["full-functionality"]) {
-                            self.a.ui.show_functionality_locked_overlay({
-                                "code": "add-time-to-upload-delay"
-                            });
-                            return;
-                        }
+                // Add 5 seconds
+                $(".update-mode-overlay .add-time-button").off("click").click(function () {
+                    
+                    // If functionality is locked
+                    if (!global.states.subscription["computed-states"]["full-functionality"]) {
+                        self.a.ui.show_functionality_locked_overlay({
+                            "code": "add-time-to-upload-delay"
+                        });
+                        return;
+                    }
 
-                        // Add 6 seconds (so that it look like 5 to the user in the UI) to the counter
-                        counter += 6;
+                    // Add 6 seconds (so that it look like 5 to the user in the UI) to the counter
+                    counter += 6;
 
-                        if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
-                        global.timers.waitingforupload = setTimeout(() => {
-                            console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
-                            self.ipcr.send('open-port-request', {
-                                path: global.port.path,
-                                baud: global.port.baud,
-                                windowid: global.states.windowid,
-                                ...global.port
-                            });
-                        
-                            // Clear intervals
-                            if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
-                            if (global.timers.waitingforuploadcounter) clearInterval(global.timers.waitingforuploadcounter);
-                            if (global.timers.waitingforuploadcounterclear) clearInterval(global.timers.waitingforuploadcounterclear);
-                        }, counter * 1000);
-
-                        if (global.timers.waitingforuploadcounterclear) clearTimeout(global.timers.waitingforuploadcounterclear);
-                        global.timers.waitingforuploadcounterclear = setTimeout(() => {
-                            clearInterval(global.timers.waitingforuploadcounter);
-                        }, counter * 1000);
-                    });
-
-                    // Connect right now
-                    $(".update-mode-overlay .connect-now-button").off("click").click(function () {
-                        counter += 0;
-                        if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
-                        if (global.timers.waitingforuploadcounterclear) clearTimeout(global.timers.waitingforuploadcounterclear);
-
+                    if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
+                    global.timers.waitingforupload = setTimeout(() => {
                         console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
                         self.ipcr.send('open-port-request', {
                             path: global.port.path,
@@ -856,18 +851,44 @@ function ipcsubapp(){
                             windowid: global.states.windowid,
                             ...global.port
                         });
-                    });
+                    
+                        // Clear intervals
+                        if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
+                        if (global.timers.waitingforuploadcounter) clearInterval(global.timers.waitingforuploadcounter);
+                        if (global.timers.waitingforuploadcounterclear) clearInterval(global.timers.waitingforuploadcounterclear);
+                    }, counter * 1000);
 
-                    // Close the port
-                    self.ipcr.send('close-port-request', {
+                    if (global.timers.waitingforuploadcounterclear) clearTimeout(global.timers.waitingforuploadcounterclear);
+                    global.timers.waitingforuploadcounterclear = setTimeout(() => {
+                        clearInterval(global.timers.waitingforuploadcounter);
+                    }, counter * 1000);
+                });
+
+                // Connect right now
+                $(".update-mode-overlay .connect-now-button").off("click").click(function () {
+                    counter += 0;
+                    if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
+                    if (global.timers.waitingforuploadcounterclear) clearTimeout(global.timers.waitingforuploadcounterclear);
+
+                    console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
+                    self.ipcr.send('open-port-request', {
                         path: global.port.path,
                         baud: global.port.baud,
-                        windowid: global.states.windowid
+                        windowid: global.states.windowid,
+                        ...global.port
                     });
-
-                    // Share state with the live share clients
-                    if (global.states.sharedonline) self.a.sck.on_port_upload_mode();
                 });
+
+                // Close the port
+                self.ipcr.send('close-port-request', {
+                    path: global.port.path,
+                    baud: global.port.baud,
+                    windowid: global.states.windowid
+                });
+
+                // Share state with the live share clients
+                if (global.states.sharedonline) self.a.sck.on_port_upload_mode();
+            });
 
             // Clear interval for checking port connection    
             clearInterval(global.timers.portsrefresh);

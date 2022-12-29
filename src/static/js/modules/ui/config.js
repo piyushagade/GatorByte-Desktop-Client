@@ -143,7 +143,10 @@ function uiconfiggatorbytesubapp() {
 
     self.show_rtctime = function () {
         if (self.panel.hasClass("hidden")) clearInterval(self.timers.utctimeupdate);
-        self.sendcommand("rtc:get");
+        self.panel.find(".rtc-sync-status").text("Fetching RTC time.").css("color", "#b17200");
+        setTimeout(() => {
+            self.sendcommand("rtc:get");
+        }, self.panel.find(".gatorbyte-rtc-time-text").text() == "-" ? 0 : 1000);
     }
 
     self.process_file_download_data = function (data) {
@@ -409,7 +412,7 @@ function uiconfiggatorbytesubapp() {
 
             // Update RTC sync status
             if (Math.abs(timestamp - moment.now()) > 1 * 60 * 1000) {
-                self.panel.find(".rtc-sync-status").text("The RTC clock is out of sync. Please use the 'Sync RTC' button to sync the clocks.").css("color", "orange");
+                self.panel.find(".rtc-sync-status").text("The RTC clock is out of sync. Please use the 'Sync RTC' button to sync the clocks.").css("color", "#d23512");
             }
             else {
                 self.panel.find(".rtc-sync-status").text("The clocks are in sync. No action required.").css("color", "green");

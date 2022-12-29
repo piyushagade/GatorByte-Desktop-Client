@@ -120,22 +120,23 @@
                             </div>
                             
                             <!-- Refresh list -->
-                            <div class="col-auto refresh-files-list-button" style="padding: 4px 10px;margin-right: 6px;background: #17171744;border-radius: 2px;height: 28px;">
-                                <p title="Refresh the list" style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                            <div class="col-auto refresh-files-list-button" title="Refresh the list" style="padding: 4px 10px;margin-right: 6px;background: #17171744;border-radius: 2px;height: 28px;">
+                                <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                     <i class="fa-solid fa-arrows-rotate"></i>
                                 </p>
                             </div>
 
                             <!-- File options for selected file -->
                             <div class="col-auto file-options-parent hidden" state="no-file-selected" style="display: inline-flex; padding: 0;"> 
-                                <div style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
-                                    <p class="download-file-button" title="Save file to computer" style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                
+                                <div class="download-file-button" title="Save file to computer" style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
+                                    <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                         <i class="fa-regular fa-floppy-disk"></i>
                                     </p>
                                 </div>
                                 
-                                <div style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
-                                    <p class="delete-file-button" title="Delete file on SD" style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                <div class="delete-file-button" title="Delete file on SD" style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
+                                    <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                         <i class="fa-solid fa-trash"></i>
                                     </p>
                                 </div>
@@ -171,9 +172,9 @@
             <!-- File options -->
             <div class="col-12 file-options-download-information hidden" state="no-file-selected" style="position: absolute; bottom: 8px; left: 8px; width: auto;">
                 
-                <div style="background: #eeecece8;border-radius: 2px;padding: 6px 10px;height: 34px;display: inline-flex;width: auto;width: max-content;">
-                    <div class="truncate" style="margin-right: 6px;">
-                        <i class="fa-solid fa-floppy-disk"></i>
+                <div class="shadow-heavy" style="background: #eaeaea;border-radius: 2px;padding: 6px 10px;height: 34px;display: inline-flex;width: auto;width: max-content;">
+                    <div class="truncate" style=" margin-top: -3px; margin-right: 0px; margin-left: -6px;">
+                        <i class="download-progress-icon fa-solid fa-floppy-disk" style="color: rgb(70, 68, 68); padding: 6px;"></i>
                     </div>
                     <div style="font-size: 13px;padding: 2px;font-weight: bold;border-radius: 4px;margin-right: 8px;">
                         <span class="download-progress" style="color: #424242;">Starting download</span>
@@ -1187,7 +1188,7 @@
         </div>
         
         <!--! Device info overlay -->
-        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 0;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: 100%;background: #ffffffe0;backdrop-filter: blur(4px);">
+        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: auto;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
             <div class="col">
 
                 <div class="row" style="margin-top: 0px; cursor: default;">
@@ -1226,39 +1227,112 @@
         </div>
         
         <!--! Flash firmware overlay -->
-        <div class="row flash-firmware-overlay hidden shadow scrollbar-style" style="margin: 0;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: 100%;background: #ffffffe6;backdrop-filter: blur(4px);">
+        <div class="row flash-firmware-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: auto;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
             <div class="col">
 
-                <div class="row" style="margin-top: 0px; cursor: default;">
+                <div class="row file-selection-div" style="margin-top: 0px; cursor: default;">
                     <div class="col-12" style="padding: 4px 6px;">
                         <p>
-                            <span style="font-size: 18px; color: #e86315; margin-right: 8px;"><i class="fa-solid fa-download"></i></span>
+                            <span style="font-size: 18px; color: #d65103; margin-right: 8px;"><i class="fa-solid fa-download"></i></span>
                             <span style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">Flash firmware</span>
                         </p>
                         
-                        <!-- Serial number -->
-                        <p style="font-size: 14px;color: #292929ef;margin-top: -6px;margin-bottom: 8px;font-weight: 400;">
+                        <!-- Message -->
+                        <p style="font-size: 14px;color: #292929ef;margin-top: -10px;margin-bottom: 8px;font-weight: 400;">
                             Select a ".bin" file with GatorByte firmware. Once selected, click on the button below to update the firmware on your GatorByte.
                         </p>
 
-                        <!-- File selector -->
-                        <input class="select-file-input" type="file" accept=".bin" style="display: none;">
-                        
                         <div class="row" style="margin: 0;">
                             <div class="col-auto" style="padding: 0;">
-                                <div class="select-file-button" state="file-select" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #17972c; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
+                                <div class="select-file-button" state="file-select" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
                             </div>
                             <div class="col" style="padding: 0;">
-                                <div class="selected-file-info" style="font-size: 13px; margin-top: 3px; color: #556;">No file selected</div>
+                                <div class="selected-file-info" style="font-size: 13px; margin-top: 4px; color: #556; font-weight: bold;">No file selected</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-12" style="padding: 4px 6px;">
+                    <div class="col-12" style="padding: 0px 6px;">
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
                             <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row flash-in-progress-notification-div hidden" style="margin-top: 0px; cursor: default;">
+                    <div class="col-12" style="padding: 4px 6px;">
+                        <p>
+                            <span style="font-size: 18px; color: #0365d6; margin-right: 8px;"><i class="rotate-animation fa-solid fa-hourglass-start"></i></span>
+                            <span style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">Flashing firmware</span>
+                        </p>
+                        
+                        <!-- Message -->
+                        <p style="font-size: 14px;color: #292929ef;margin-top: -10px;margin-bottom: 8px;font-weight: 400;">
+                            Please wait while the new firmware is being flashed on the GatorByte. This should take a couple seconds.
+                        </p>
+
+                        <div class="row disabled" style="margin: 0; opacity: 0.25">
+                            <div class="col-auto" style="padding: 0;">
+                                <div class="select-file-button" state="file-select" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
+                            </div>
+                            <div class="col" style="padding: 0;">
+                                <div class="selected-file-info" style="font-size: 13px; margin-top: 4px; color: #556; font-weight: bold;">No file selected</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 disabled" style="padding: 0px 6px; opacity: 0.25"">
+
+                        <!-- Action buttons -->
+                        <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
+                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row flash-success-div hidden" style="margin-top: 0px; cursor: default;">
+                    <div class="col-12" style="padding: 4px 6px;">
+                        <p>
+                            <span style="font-size: 18px; color: #01a01b; margin-right: 8px;"><i class="fa-solid fa-check"></i></span>
+                            <span style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">Flash successful</span>
+                        </p>
+                        
+                        <!-- Description -->
+                        <p style="font-size: 14px;color: #292929ef;margin-top: -10px;margin-bottom: 8px;font-weight: 400;">
+                            Your GatorByte has been updated with the new firmware. The device is ready to be used.
+                        </p>
+                    </div>
+                    
+                    <div class="col-12" style="padding: 0px 6px;">
+
+                        <!-- Action buttons -->
+                        <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
+                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row flash-failure-div hidden" style="margin-top: 0px; cursor: default;">
+                    <div class="col-12" style="padding: 4px 6px;">
+                        <p>
+                            <span style="font-size: 18px; color: #f01d40; margin-right: 8px;"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                            <span style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">Flash failed</span>
+                        </p>
+                        
+                        <!-- Description -->
+                        <p style="font-size: 14px;color: #292929ef;margin-top: -10px;margin-bottom: 8px;font-weight: 400;">
+                            An error occurred while updating the GatorByte. Please ensure the device is connected to the computer and try again. If the error persists, please get in touch with the support.
+                        </p>
+                    </div>
+                    
+                    <div class="col-12" style="padding: 0px 6px;">
+
+                        <!-- Action buttons -->
+                        <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
+                            <div class="try-again-button" style="padding: 4px 8px; font-size: 13px; color: rgb(230, 230, 230); background: #0b7ddf; width: fit-content; margin-right: 6px; margin-top: 0px;">Retry</div>
+                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(212, 212, 212); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
                 </div>

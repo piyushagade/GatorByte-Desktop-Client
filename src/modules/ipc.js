@@ -1,10 +1,13 @@
-const { SerialPort } = require('serialport');
+var SerialPort = require('serialport').SerialPort;
 const { BrowserWindow } = require('electron');
 const { dialog } = require('electron');
+const exec = require('child_process').exec;
 const path = require('path');
 var moduleprefix = "i";
+var flashmode = false;
 
 module.exports = {
+    self : {},
     listen: function (i) {
         
         // Get storage directory
@@ -233,11 +236,14 @@ module.exports = {
 
                         return;
                     }
+                    
+                    if (flashmode) return;
 
                     // Open the port
                     var result = connect();
                     if (!result.error && connected) {
-                        console.log("\nPort opened: " + port.path + " at " + port.baud + " bps");
+
+                        console.log("\nPort opened: " + result.port.settings.path + " at " + result.port.settings.baudRate + " bps");
 
                         // Send ping
                         result.port.write("##CEREAL-GDC-PING##");
@@ -257,7 +263,7 @@ module.exports = {
                             }
                             catch (e) {}
                         });
-
+                        
                         // On new data event
                         i.g.var.serports[result.port.settings.path].on('data', function (data) {
 
@@ -497,32 +503,75 @@ module.exports = {
         });
 
         i.ipcm.on('ipc/flash-firmware/request', (event, obj) => {
-            const exec = require('child_process').exec;
-
+            flashmode = true;
             console.log("Flashing firmware: " + obj["filepath"]);
+
+            // Connect at 1200 bps
+            setTimeout(() => {
+                i.g.var.serports[obj.portpath] = new SerialPort({path:  obj.portpath, baudRate: 1200}, { autoOpen: true });
+            }, 3000);
+
+            // Reset to safe mode
+            setTimeout(() => {
+                try { i.g.var.serports[obj.portpath].close(); } catch (e) { }
+            }, 4000);
+
+            // Flash firmware
+            setTimeout(() => {
+                var sep = " ";
+                var quotes = "\"";
+                var tool = path.join(path.dirname(__dirname), "tools", "bossa", "bossac.exe");
+                var arguments = "--write" + sep + "--verify" + sep + "--reset" + sep +  quotes + obj.filepath + quotes;
+
+                // call the function
+                execute(tool + sep + arguments, (output, error) => {
+                    if (error) console.log(error);
+                    else {
+                        flashmode = false;
+                    }
+                });
+            }, 5000);
+
             function execute(command, callback) {
-                exec(command, (error, stdout, stderr) => { 
-                    callback(stdout); 
+                exec(command, (error, stdout, stderr) => {
+                    if (error) {
+                        on_flash_complete(error);
+                    }
+                    if (stderr) {
+                        on_flash_complete(stdout);
+                    }
+                    else {
+                        on_flash_complete(stdout);
+                    }
                 });
             };
 
+            function on_flash_complete  (message) {
+                message = message ? message.toLowerCase() : "";
 
-            // --port COM19 --write --verify --reset firmware.bin
-            var sep = " ";
-            var quotes = "\"";
-            var tool = path.join(path.dirname(__dirname), "tools", "bossa", "bossac.exe");
-            var arguments = "--port" + sep + obj.portpath + sep + "--write" + sep + "--verify" + sep + "--reset" + sep +  quotes + obj.filepath + quotes;
+                if (
+                    message.indexOf("verify successful") > -1 &&
+                    message.indexOf("cpu reset.") > -1
+                ) {
+                    event.sender.send("ipc/flash-firmware/response", {
+                        status: "success"
+                    });
+                    
+                    setTimeout(() => {
+                        delete i.g.var.serports[obj.portpath];
+                        flashmode = false;
+                    }, 4000);
 
-            console.log(tool + sep + arguments);
-            
-            // call the function
-            execute(tool + sep + arguments, (output, error) => {
-                console.log(output);
-                if (error) console.log(error);
-
-                // Open port
-            });
-
+                }
+                else {
+                    event.sender.send("ipc/flash-firmware/response", {
+                        status: "failure",
+                        message: message
+                    });
+                    flashmode = false;
+                    console.log(message);
+                }
+            }
         });
         
         i.ipcm.on('ipc/config-data-get/request', (event, obj) => {
