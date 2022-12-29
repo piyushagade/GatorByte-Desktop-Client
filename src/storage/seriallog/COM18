@@ -6704,3 +6704,37 @@ Initializing RTD OEM module -> Done
 ##CEREAL-GDC-PONG##
 <br>##CEREAL##gdc-db::power=awake#EOF#
 GDC mode enabled
+Initializing SD card module -> SD R/W testInitializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Test file wasn't deleted in previous run. -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 05:35:49 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 05:36:08 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
