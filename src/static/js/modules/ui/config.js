@@ -13,6 +13,7 @@ function uiconfiggatorbytesubapp() {
     self.filedownloadname = "config.ini";
     self.filedownloaddata = "";
     self.filedownloadline = 0;
+    self.fileuploadline = 0;
 
     self.panel = $(".configure-gb-panel");
 
@@ -75,6 +76,9 @@ function uiconfiggatorbytesubapp() {
             // Save config data to main process
             self.save_config_in_storage();
 
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+
         }, 150));
 
         // Survey location change listener
@@ -88,6 +92,9 @@ function uiconfiggatorbytesubapp() {
 
             // Save config data to main process
             self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
 
         }, 150));
 
@@ -103,6 +110,9 @@ function uiconfiggatorbytesubapp() {
 
             // Save config data to main process
             self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
 
         }, 150));
 
@@ -131,6 +141,9 @@ function uiconfiggatorbytesubapp() {
 
             // Save config data to main process
             self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
 
         });
     }
@@ -197,9 +210,35 @@ function uiconfiggatorbytesubapp() {
     self.request_file_download = function (filename, startingline) {
 
         return new Promise(function (resolve, reject) {
-            self.sendcommand("download" + ":" + filename + "," + startingline);
+            self.sendcommand("dl" + ":" + filename + "," + startingline);
             self.state = "wait-on-file-download";
         });
+    }
+
+    // Upload config data to SD card
+    self.request_file_upload = function (startingline) {
+        var datatosend = self.configdata.substring(startingline, startingline + 30).replace(/\n/g, "~").replace(/ /g, "`");
+        
+        // If data is still not fully sent
+        if (datatosend && datatosend.trim().length > 0) {
+            var uploadedbyte = startingline + 30 >= self.configdata.length ? self.configdata.length : startingline + 30;
+            self.panel.find(".download-status").find(".text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
+
+            return new Promise(function (resolve, reject) {
+                self.sendcommand("upl" + ":" + datatosend + "^" + startingline);
+                self.state = "wait-on-file-upload";
+            });
+        }
+
+        // Upload complete
+        else {
+            console.log("Upload complete");
+            self.fileuploadline = 0;
+
+            self.panel.find(".spinner-parent").addClass("hidden");
+            self.panel.find(".config-information-parent").removeClass("hidden");
+            self.on_config_data_acquired();
+        }
     }
 
     self.on_config_data_acquired = function (stale) {
@@ -223,6 +262,18 @@ function uiconfiggatorbytesubapp() {
             self.panel.find(".spinner-parent").removeClass("hidden");
             self.panel.find(".config-information-parent").addClass("hidden");
             self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Fetching configuration from your GatorByte");
+            self.panel.find(".download-status").find(".text").text("Initializing download");
+        });
+        self.panel.find(".download-progress").find(".upload-config-data-button").off("click").click(function () {
+            
+            // Update UI
+            self.panel.find(".spinner-parent").removeClass("hidden");
+            self.panel.find(".config-information-parent").addClass("hidden");
+            self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Uploading configuration");
+            self.panel.find(".download-status").find(".text").text("Initializing upload");
+            
+            // Upload config data to SD card
+            self.request_file_upload(self.fileuploadline);
         });
 
         // Get RTC time
@@ -279,6 +330,7 @@ function uiconfiggatorbytesubapp() {
                 if (!line.startsWith(indentation)) {
                     var category = line;
                     currentcategory = category.trim();
+                    if (currentcategory.length == 0) return;
                     self.configobject[currentcategory] = {};
                 }
                 
@@ -297,21 +349,24 @@ function uiconfiggatorbytesubapp() {
             }
         });
         currentcategory = null;
-
         if (!erroroccured) self.update_panel_ui();
 
     }
 
     self.objecttostring = function (object) {
         if (!object) return;
-        
+
         var string = "";
-        var indentation = "    ";
+        var indentation = " ";
         Object.keys(object).forEach(function (key, ki) {
+            if (!key || key.length == 0) return;
+
             string += key;
             string += "\n";
-
+            
             Object.keys(object[key]).forEach(function (subkey, ski) {
+                if (!subkey || subkey.length == 0) return;
+
                 string += indentation + subkey + ":" + object[key][subkey];
                 string += "\n";
             });
@@ -398,7 +453,14 @@ function uiconfiggatorbytesubapp() {
     self.process_response = function (response) {
         response = response.replace(/<br>/g, "");
 
-        if (response.startsWith("rtc:")) {
+        if (response == "fupl:ack") {
+            self.fileuploadline += 30;
+            
+            // Upload remainder of the config data to SD card
+            self.request_file_upload(self.fileuploadline);
+        }
+
+        else if (response.startsWith("rtc:")) {
             response = response.replace(/rtc:/g, "");
 
             var timestamp = parseInt(response) * 1000;
@@ -429,7 +491,6 @@ function uiconfiggatorbytesubapp() {
                 }, 1500);
             });
         }
-        
     }
 
     self.timezone = function () {

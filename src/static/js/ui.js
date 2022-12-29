@@ -260,7 +260,8 @@ function uisubapp(){
     self.show_functionality_locked_overlay = function (response) {
         var code = response.code;
         var parent = $(".functionality-locked-overlay");
-        parent.removeClass("hidden");
+        parent.removeClass("hidden").slideUp(0).slideDown(150);
+        $(".home-panel").addClass("disabled").addClass("blur");
 
         /* 
             Explaination
@@ -289,7 +290,11 @@ function uisubapp(){
 
         // Dismiss button listener
         parent.find(".dismiss-button").off("click").click(() => {
-            parent.addClass("hidden");
+            parent.slideUp(100);
+            setTimeout(() => {
+                $(".home-panel").removeClass("disabled").removeClass("blur");
+                parent.addClass("hidden");
+            }, 100);
         });
 
         // Unlock pro version listener

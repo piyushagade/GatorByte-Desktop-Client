@@ -7460,3 +7460,2708 @@ Status: 1
 Processed calibration request for level: status
 Status: 1
 <br>##CEREAL##gdc-cal::ack#EOF#
+<br>##CEREAL##gdc-cal::ack#EOF#
+<br>##CEREAL##gdc-cal::lpi:1672297794#EOF#
+1  Low-point calibration found. 
+<br>##CEREAL##gdc-cal::ack#EOF#
+<br>##CEREAL##gdc-cal::result:ph:1#EOF#
+Processed calibration request for level: status
+Status: 1
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:244<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:244<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+ -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 18:00:04 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:244<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672337630#EOF#
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:244<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+##CEREAL##gdc-dfl::fdl:SURVEYID,RTD,PH,DO,EC,LAT,LNG#EOF#
+##CEREAL##gdc-dfl::fdl:,TIMESTAMP,TEMP,RH,GPSATTEMPTS#EOF#
+##CEREAL##gdc-dfl::fdl:,CELLSIGSTR#EOF#
+##CEREAL##gdc-dfl::fdl:#EOF#
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:244<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672338777#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672338886#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672338921#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672339168#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672339269#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672339401#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672339433#EOF#
+ -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:00:13 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340421#EOF#
+0, 0
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340460#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:01:40 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+0, getu
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340509#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340521#EOF#
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:03:37 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340624#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:04:54 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Here 1
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340699#EOF#
+Here 1
+Here 2
+0, data
+Here 1
+Here 1
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340719#EOF#
+Here 1
+##CEREAL##gdc-cfg::fdl:#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:06:07 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Here 1
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340787#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340862#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340865#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340869#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340872#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340874#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672340877#EOF#
+Here 1
+Here 2
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:08:34 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Here 1
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341170#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341173#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341182#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:4<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+Here 1
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341193#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Here 1
+Here 1.5
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341197#EOF#
+Here 1
+Here 2
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:17:09 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341434#EOF#
+Here 1
+Here 1.5
+0, config.ini
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Here 1
+Here 1.5
+0,  onfi
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341438#EOF#
+Here 1
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341524#EOF#
+Here 1
+Here 1.5
+0, config.ini
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Here 1
+Here 1.5
+0,  onfi
+##CEREAL##gdc-cfg::fdl:#EOF#
+Here 1
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341528#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:20:26 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341633#EOF#
+dl:config.ini,0
+0,  onfig.ini
+##CEREAL##gdc-cfg::fdl:#EOF#
+dl:config.ini,0
+0,  onfig.ini
+##CEREAL##gdc-cfg::fdl:#EOF#
+dl:config.ini,0
+0,  onfig.ini
+##CEREAL##gdc-cfg::fdl:#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 633 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:23:51 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341840#EOF#
+dl:config.ini,0
+0, config.ini
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30, config.ini
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341844#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:25:29 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341941#EOF#
+dl:config.ini,0
+0,config.ini
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672341945#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:27:31 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342067#EOF#
+dl:config.ini,0
+0,config.ini
+Here 1
+Here 2
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+Here 1
+Here 2
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342070#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:28:48 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:getdl:config.ini,0
+0,getdl:config.ini
+Here 1
+Here 2
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342158#EOF#
+dl:config.ini,0
+0,config.ini
+Here 1
+Here 1.5
+Here 1.5
+Here 1.5
+Here 1.5
+Here 2
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+Here 1
+Here 1.5
+Here 1.5
+Here 1.5
+Here 1.5
+Here 2
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342164#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:30:21 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342226#EOF#
+dl:config.ini,0
+0,config.ini
+Here 1
+d
+a
+t
+a
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+Here 1
+d
+a
+t
+a
+
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342231#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:32:00 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342329#EOF#
+dl:config.ini,0
+0,config.ini
+Here 1
+30
+data
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+Here 1
+30
+data
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672342333#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 19:32:59 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345097#EOF#
+dl:config.ini,0
+0,config.ini
+Here 1
+1
+data
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+Here 1
+1
+data
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345103#EOF#
+
+rtc:getdl:config.ini,0
+0,getdl:config.ini
+Here 1
+1
+
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345188#EOF#
+dl:config.ini,0
+0,config.ini
+Here 1
+1
+data
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+Here 1
+1
+data
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345194#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:21:45 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:getdl:config.ini,0
+0,getdl:config.ini
+
+
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345332#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 322 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:24:10 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:getdl:config.ini,0
+0,getdl:config.ini
+Result:
+
+
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345825#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:31:32 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345908#EOF#
+dl:config.ini,0
+0,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,30
+30,config.ini
+Filename:
+config.ini
+Result:
+
+
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+rtc:get
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345913#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:33:07 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+dl:config.ini,0rtc:get
+0,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672345993#EOF#
+dl:config.ini,30
+30,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,60
+60,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,90
+90,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,120
+120,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,150
+150,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,180
+180,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,210
+210,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,240
+240,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,270
+270,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,300
+300,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,330
+330,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,360
+360,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,390
+390,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,420
+420,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,450
+450,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,480
+480,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,510
+510,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,540
+540,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,570
+570,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,600
+600,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,630
+630,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,660
+660,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,690
+690,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,720
+720,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,750
+750,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+dl:config.ini,780
+780,config.ini
+Filename:
+config.ini
+Result:
+data
+
+data
+
+##CEREAL##gdc-cfg::fdl:data#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Config file not found.
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:35:13 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Config file not found.
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:36:18 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+
+rtc:getdl:config.ini,0
+0,getdl:config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346196#EOF#
+
+dl:config.ini,0rtc:get
+0,config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346215#EOF#
+dl:config.ini,0
+0,config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+dl:config.ini,0
+0,config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+dl:config.ini,0
+0,config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+dl:config.ini,0
+0,config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+dl:config.ini,0
+0,config.ini
+
+
+##CEREAL##gdc-cfg::fdl:#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Config file not found.
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 322 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:41:53 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346643#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346649#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Config file not found.
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:45:09 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346714#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346732#EOF#
+<br>##CEREAL##gdc-dfl::file:device uninitiated<br>#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Config file not found.
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:45:55 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346771#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-dfl::file:device uninitiated<br>#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Config file not found.
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 322 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:47:04 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346839#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 633 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:48:07 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346897#EOF#
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:#EOF#
+##CEREAL##gdc-cfg::fdl:stability
+device
+ devices:mc#EOF#
+##CEREAL##gdc-cfg::fdl:u,mem,bl,booster,rtc,aht,gps,a#EOF#
+##CEREAL##gdc-cfg::fdl:cc,ph,rtd,dox,ec
+ id:gb-swb
+#EOF#
+##CEREAL##gdc-cfg::fdl:sleep
+ duration:60000
+ mode:#EOF#
+##CEREAL##gdc-cfg::fdl:shallow
+survey
+ date:11-08-2#EOF#
+##CEREAL##gdc-cfg::fdl:022
+ id:caip-trial
+ location#EOF#
+##CEREAL##gdc-cfg::fdl::CAIP
+ mode:stream
+ realtime#EOF#
+##CEREAL##gdc-cfg::fdl::true#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346912#EOF#
+ -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 20:49:07 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346956#EOF#
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:#EOF#
+##CEREAL##gdc-cfg::fdl:stability
+device
+ devices:mc#EOF#
+##CEREAL##gdc-cfg::fdl:u,mem,bl,booster,rtc,aht,gps,a#EOF#
+##CEREAL##gdc-cfg::fdl:cc,ph,rtd,dox,ec
+ id:gb-swb
+#EOF#
+##CEREAL##gdc-cfg::fdl:sleep
+ duration:60000
+ mode:#EOF#
+##CEREAL##gdc-cfg::fdl:shallow
+survey
+ date:11-08-2#EOF#
+##CEREAL##gdc-cfg::fdl:022
+ id:caip-trial
+ location#EOF#
+##CEREAL##gdc-cfg::fdl::CAIP
+ mode:stream
+ realtime#EOF#
+##CEREAL##gdc-cfg::fdl::true#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672346971#EOF#
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:#EOF#
+##CEREAL##gdc-cfg::fdl:stability
+device
+ devices:mc#EOF#
+##CEREAL##gdc-cfg::fdl:u,mem,bl,booster,rtc,aht,gps,a#EOF#
+##CEREAL##gdc-cfg::fdl:cc,ph,rtd,dox,ec
+ id:gb-swb
+#EOF#
+##CEREAL##gdc-cfg::fdl:sleep
+ duration:60000
+ mode:#EOF#
+##CEREAL##gdc-cfg::fdl:shallow
+survey
+ date:11-08-2#EOF#
+##CEREAL##gdc-cfg::fdl:022
+ id:caip-trial
+ location#EOF#
+##CEREAL##gdc-cfg::fdl::CAIP
+ mode:stream
+ realtime#EOF#
+##CEREAL##gdc-cfg::fdl::true#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672347269#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672347462#EOF#
+Here 2
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 633 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:04:46 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672347893#EOF#
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:#EOF#
+##CEREAL##gdc-cfg::fdl:stability
+device
+ devices:mc#EOF#
+##CEREAL##gdc-cfg::fdl:u,mem,bl,booster,rtc,aht,gps,a#EOF#
+##CEREAL##gdc-cfg::fdl:cc,ph,rtd,dox,ec
+ id:gb-swb
+#EOF#
+##CEREAL##gdc-cfg::fdl:sleep
+ duration:60000
+ mode:#EOF#
+##CEREAL##gdc-cfg::fdl:shallow
+survey
+ date:11-08-2#EOF#
+##CEREAL##gdc-cfg::fdl:022
+ id:caip-trial
+ location#EOF#
+##CEREAL##gdc-cfg::fdl::CAIP
+ mode:stream
+ realtime#EOF#
+##CEREAL##gdc-cfg::fdl::true#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672347908#EOF#
+Here 2
+0, getupl:data
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672347921#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:06:23 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Here 2
+getupl:data
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348012#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348066#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348152#EOF#
+Here 2
+data
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348217#EOF#
+Here 2
+uploaddata
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348353#EOF#
+Here 2
+uploaddata
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348470#EOF#
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:17:37 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348679#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348704#EOF#
+Here 2
+uploaddata
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348824#EOF#
+Here 2
+uploaddata
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:21:22 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672348895#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-dfl::file:config.ini:244<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+##CEREAL##gdc-dfl::fdl:data
+ mode:read
+ readuntil:#EOF#
+##CEREAL##gdc-dfl::fdl:stability
+device
+ devices:mc#EOF#
+##CEREAL##gdc-dfl::fdl:u,mem,bl,booster,rtc,aht,gps,a#EOF#
+##CEREAL##gdc-dfl::fdl:cc,ph,rtd,dox,ec
+ id:gb-swb
+#EOF#
+##CEREAL##gdc-dfl::fdl:sleep
+ duration:60000
+ mode:#EOF#
+##CEREAL##gdc-dfl::fdl:shallow
+survey
+ date:11-08-2#EOF#
+##CEREAL##gdc-dfl::fdl:022
+ id:caip-trial
+ location#EOF#
+##CEREAL##gdc-dfl::fdl::CAIP
+ mode:stream
+ realtime#EOF#
+##CEREAL##gdc-dfl::fdl::true#EOF#
+##CEREAL##gdc-dfl::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672349160#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672349293#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+uploaddata
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:33:52 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672349676#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672349703#EOF#
+Here 2
+datamode:readreaduntil:st
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+abilitydevicedevices:mcu
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+m
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+h
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+duration:60000mode:shallow
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+surveydate:11-08-2022id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+ip-triallocation:CAIPmode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+streamrealtime:true
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672349787#EOF#
+Here 2
+datamode:readreaduntil:st
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+abilitydevicedevices:mcu
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+m
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+h
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+duration:60000mode:shallow
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+surveydate:11-08-2022id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+ip-triallocation:CAIPmode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Here 2
+streamrealtime:true
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:42:58 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350199#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:244<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350236#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350286#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350294#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350336#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+120
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+150
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+180
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+210
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350407#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350412#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:47:42 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350577#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350588#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350664#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+120
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+150
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+180
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+210
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350689#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+0
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+120
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+150
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+180
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+210
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:52:25 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672350751#EOF#
+ -> Failed (code 5) (config-test.ini)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 633 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 21:59:09 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+getupl:datamode:readreaduntil:st
+ -> Failed (code 5) (config-test.ini)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672351168#EOF#
+abilitydevicedevices:mcu
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+m
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+h
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+duration:60000mode:shallow
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+surveydate:11-08-2022id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ip-triallocation:CAIPmode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+streamrealtime:true
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672351687#EOF#
+~data~mode:read~readuntil:st
+ -> Failed (code 4)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ability~device~devices:mcu
+ -> Failed (code 4)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+m
+ -> Failed (code 4)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+h
+ -> Failed (code 4)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+duration:60000~mode:shallow~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+survey~date:11-08-2022~id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ip-trial~location:CAIP~mode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+stream~realtime:true~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:10:32 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672351843#EOF#
+~data~mode:read~readuntil:st
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ability~device~devices:mcu
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+m
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+h
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+duration:60000~mode:shallow~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+survey~date:11-08-2022~id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ip-trial~location:CAIP~mode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+stream~realtime:true~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:15:41 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352153#EOF#
+~data~mode:read~readuntil:st
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ability~device~devices:mcu
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+m
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+h
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+duration:60000~mode:shallow~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+survey~date:11-08-2022~id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ip-trial~location:CAIP~mode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+stream~realtime:true~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352330#EOF#
+~data~`mode:read~`readuntil:st
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ability~device~`devices:mcu
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+m
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+h
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+`duration:60000~`mode:shallow~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+survey~`date:11-08-2022~`id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ip-trial~`location:CAIP~`mode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+stream~`realtime:true~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:20:33 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352444#EOF#
+~data~`mode:read~`readuntil:st
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ability~device~`devices:mcu,me
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+m,bl,booster,rtc,aht,gps,acc,p
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+h,rtd,dox,ec~`id:gb-swb~sleep~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+`duration:60000~`mode:shallow~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+survey~`date:11-08-2022~`id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ip-trial~`location:CAIP~`mode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+stream~`realtime:true~
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:23:07 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352598#EOF#
+
+data
+ mode:read
+ readuntil:st
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ability
+device
+ devices:mcu,me
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+m,bl,booster,rtc,aht,gps,acc,p
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+h,rtd,dox,ec
+ id:gb-swb
+sleep
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ duration:60000
+ mode:shallow
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+survey
+ date:11-08-2022
+ id:ca
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ip-trial
+ location:CAIP
+ mode:
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+stream
+ realtime:true
+
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 631 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:24:40 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352688#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+ -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:28:03 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352888#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352933#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672352958#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353018#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353142#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353189#EOF#
+ -> Failed (code 5) (config-test.ini)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353539#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353740#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353753#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353761#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353774#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353797#EOF#
+ -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:46:07 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672353973#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354007#EOF#
+ -> Failed (code 5) (config-test.ini)
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354022#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:48:54 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354153#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354166#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354174#EOF#
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+##CEREAL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+##CEREAL##gdc-cfg::fdl:m,bl,booster,rtc,aht,gps,acc,p#EOF#
+##CEREAL##gdc-cfg::fdl:h,rtd,dox,ec
+ id:gb-swb
+sleep
+#EOF#
+##CEREAL##gdc-cfg::fdl: duration:60000
+ mode:shallow
+#EOF#
+##CEREAL##gdc-cfg::fdl:survey
+ date:11-08-2022
+ id:ne#EOF#
+##CEREAL##gdc-cfg::fdl:w-trial
+ location:CAIP
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:tream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354189#EOF#
+Initializing Bluetooth module -> Done
+Initializing Buzzer -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 321 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 22:51:30 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354318#EOF#
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+##CEREAL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+##CEREAL##gdc-cfg::fdl:m,bl,booster,rtc,aht,gps,acc,p#EOF#
+##CEREAL##gdc-cfg::fdl:h,rtd,dox,ec
+ id:gb-swb
+sleep
+#EOF#
+##CEREAL##gdc-cfg::fdl: duration:60000
+ mode:shallow
+#EOF#
+##CEREAL##gdc-cfg::fdl:survey
+ date:11-08-2022
+ id:ne#EOF#
+##CEREAL##gdc-cfg::fdl:w-trial
+ location:CAIP
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:tream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354362#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354380#EOF#
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+##CEREAL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+##CEREAL##gdc-cfg::fdl:m,bl,booster,rtc,aht,gps,acc,p#EOF#
+##CEREAL##gdc-cfg::fdl:h,rtd,dox,ec
+ id:gb-swb
+sleep
+#EOF#
+##CEREAL##gdc-cfg::fdl: duration:60000
+ mode:shallow
+#EOF#
+##CEREAL##gdc-cfg::fdl:survey
+ date:11-08-2022
+ id:ne#EOF#
+##CEREAL##gdc-cfg::fdl:w-trial
+ location:CAIP
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:tream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354399#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354411#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354421#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354427#EOF#
+##CEREAL##gdc-cfg::fdl:getupl:data
+ mode:read
+ readu#EOF#
+##CEREAL##gdc-cfg::fdl:ntil:stability
+device
+ devices#EOF#
+##CEREAL##gdc-cfg::fdl::mcu,mem,bl,booster,rtc,aht,gp#EOF#
+##CEREAL##gdc-cfg::fdl:s,acc,ph,rtd,dox,ec
+ id:gb-swb#EOF#
+##CEREAL##gdc-cfg::fdl:
+sleep
+ duration:60000
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:hallow
+survey
+ date:11-08-2022#EOF#
+##CEREAL##gdc-cfg::fdl:
+ id:caip-trial
+ location:CAIP#EOF#
+##CEREAL##gdc-cfg::fdl:
+ mode:stream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672354441#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672355220#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672355240#EOF#
+##CEREAL##gdc-cfg::fdl:device
+ devices:mcu,mem,bl,bo#EOF#
+##CEREAL##gdc-cfg::fdl:oster,rtc,aht,gps,acc,ph,rtd,d#EOF#
+##CEREAL##gdc-cfg::fdl:ox,ec
+ id:gb-swb
+getupl:data
+ #EOF#
+##CEREAL##gdc-cfg::fdl:mode:read
+ readuntil:stability#EOF#
+##CEREAL##gdc-cfg::fdl:
+sleep
+ duration:60000
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:hallow
+survey
+ date:11-08-2022#EOF#
+##CEREAL##gdc-cfg::fdl:
+ id:caip-trial
+ location:CAIP#EOF#
+##CEREAL##gdc-cfg::fdl:
+ mode:stream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672355261#EOF#
