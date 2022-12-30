@@ -407,9 +407,31 @@ function uiconfiggatorbytesubapp() {
         
         // Survey information
         self.panel.find(".survey-information-parent").find(".survey-id-text").val(data.survey["id"]);
-        self.panel.find(".survey-information-parent").find(".survey-date").text(data.survey["date"]);
         self.panel.find(".survey-information-parent").find(".survey-location-text").val(data.survey["location"]);
         
+        self.panel.find(".survey-information-parent").find(".survey-date").val(data.survey["date"]);
+        self.panel.find(".survey-information-parent").find(".survey-date-picker").datetimepicker({
+            datepicker: true,
+            timepicker: false,
+            defaultDate: moment(data.survey["date"], "MM-DD-YYYY").format("YYYY/MM/DD"),
+            onChangeDateTime: function (dp, input) {
+                var date = input.val().split(" ")[0];
+                var timestamp = moment(date + " 12:00AM", "YYYY/MM/DD").valueOf();
+                $(input).find("input").attr("utc", timestamp);
+                $(input).find("input").attr("date", moment(timestamp).format("MM-DD-YYYY"));
+                $(input).find("input").val(moment(timestamp).format("MM-DD-YYYY"));
+
+                // Update the object
+                self.configobject["survey"]["date"] = moment(timestamp).format("MM-DD-YYYY");
+
+                // Save config data to main process
+                self.save_config_in_storage();
+
+                // Update config data
+                self.configdata = self.objecttostring(self.configobject);
+            }
+        });
+
         // Sleep information
         self.panel.find(".device-information-parent").find(".sleep-mode-text").val(data.sleep["mode"]);
         self.panel.find(".device-information-parent").find(".sleep-duration-text").val(parseInt(data.sleep["duration"]) / 1000);

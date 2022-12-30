@@ -10165,3 +10165,311 @@ survey
 ##CEREAL##gdc-cfg::fdl:#EOF#
 Getting RTC time
 <br>##CEREAL##gdc-cfg::rtc:1672355261#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672355282#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672355317#EOF#
+<br>##CEREAL##gdc-cal::ack#EOF#
+<br>##CEREAL##gdc-cal::lpi:1672297794#EOF#
+1  Low-point calibration found. 
+<br>##CEREAL##gdc-cal::ack#EOF#
+<br>##CEREAL##gdc-cal::result:ph:1#EOF#
+
+Status: 1
+Writing data to: /calibration/ph.ini -> File not found -> Write complete -> 176 milliseconds
+<br>##CEREAL##gdc-dfl::file:config.ini:238<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:caip-trial_readings.csv:70<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:backup/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing EEPROM module -> Done
+EEPROM test:  -> Read: 632 milliseconds -> Write: 320 milliseconds
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> December 29th, 2022 at 23:09:38 -> Done
+Initializing accelerometer -> Failed
+Configuring MQTT client -> Done
+Initializing DO OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing RTD OEM module -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672355388#EOF#
+##CEREAL##gdc-cfg::fdl:device
+ devices:mcu,mem,bl,bo#EOF#
+##CEREAL##gdc-cfg::fdl:oster,rtc,aht,gps,acc,ph,rtd,d#EOF#
+##CEREAL##gdc-cfg::fdl:ox,ec
+ id:gb-swb
+getupl:data
+ #EOF#
+##CEREAL##gdc-cfg::fdl:mode:read
+ readuntil:stability#EOF#
+##CEREAL##gdc-cfg::fdl:
+sleep
+ duration:60000
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:hallow
+survey
+ date:11-08-2022#EOF#
+##CEREAL##gdc-cfg::fdl:
+ id:caip-trial
+ location:CAIP#EOF#
+##CEREAL##gdc-cfg::fdl:
+ mode:stream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672358845#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359435#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359439#EOF#
+##CEREAL##gdc-cfg::fdl:device
+ devices:mcu,mem,bl,bo#EOF#
+##CEREAL##gdc-cfg::fdl:oster,rtc,aht,gps,acc,ph,rtd,d#EOF#
+##CEREAL##gdc-cfg::fdl:ox,ec
+ id:gb-swb
+getupl:data
+ #EOF#
+##CEREAL##gdc-cfg::fdl:mode:read
+ readuntil:stability#EOF#
+##CEREAL##gdc-cfg::fdl:
+sleep
+ duration:60000
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:hallow
+survey
+ date:11-08-2022#EOF#
+##CEREAL##gdc-cfg::fdl:
+ id:caip-trial
+ location:CAIP#EOF#
+##CEREAL##gdc-cfg::fdl:
+ mode:stream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359501#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359686#EOF#
+##CEREAL##gdc-cfg::fdl:device
+ devices:mcu,mem,bl,bo#EOF#
+##CEREAL##gdc-cfg::fdl:oster,rtc,aht,gps,acc,ph,rtd,d#EOF#
+##CEREAL##gdc-cfg::fdl:ox,ec
+ id:gb-swb
+getupl:data
+ #EOF#
+##CEREAL##gdc-cfg::fdl:mode:read
+ readuntil:stability#EOF#
+##CEREAL##gdc-cfg::fdl:
+sleep
+ duration:60000
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:hallow
+survey
+ date:11-08-2022#EOF#
+##CEREAL##gdc-cfg::fdl:
+ id:caip-triald
+ location:CAI#EOF#
+##CEREAL##gdc-cfg::fdl:P
+ mode:stream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359707#EOF#
+##CEREAL##gdc-cfg::fdl:device
+ devices:mcu,mem,bl,bo#EOF#
+##CEREAL##gdc-cfg::fdl:oster,rtc,aht,gps,acc,ph,rtd,d#EOF#
+##CEREAL##gdc-cfg::fdl:ox,ec
+ id:gb-swb
+getupl:data
+ #EOF#
+##CEREAL##gdc-cfg::fdl:mode:read
+ readuntil:stability#EOF#
+##CEREAL##gdc-cfg::fdl:
+sleep
+ duration:60000
+ mode:s#EOF#
+##CEREAL##gdc-cfg::fdl:hallow
+survey
+ date:11-08-2022#EOF#
+##CEREAL##gdc-cfg::fdl:
+ id:caip-triald
+ location:CAI#EOF#
+##CEREAL##gdc-cfg::fdl:P
+ mode:stream
+ realtime:true
+#EOF#
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359726#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359743#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672359754#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360025#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360122#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360269#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360378#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360398#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360468#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360551#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360562#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360594#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360620#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360631#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360684#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360712#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360920#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672360981#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361538#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361587#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361706#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361726#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361751#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361775#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361786#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361834#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361860#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361892#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361914#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672361938#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672362043#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672362063#EOF#
+##CEREAL-GDC-PONG##
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672362164#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672362183#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time
+<br>##CEREAL##gdc-cfg::rtc:1672362202#EOF#

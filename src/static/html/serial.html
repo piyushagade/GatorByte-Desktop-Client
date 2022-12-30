@@ -35,6 +35,10 @@
     <!-- SocketIO -->
     <script src="https://api.piyushagade.xyz/socket.io/socket.io.js"></script>
     
+    <!-- Date time -->
+    <script src='../js/lib/datetime.js'></script>
+    <link rel='stylesheet' href='./css/datetime.css'/>
+    
     <!-- Bootstrap -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css'/>
@@ -799,7 +803,16 @@
                                     <!-- Survey date -->
                                     <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey date</p>
-                                        <p class="survey-date" style="width: 100%; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                        <!-- <p class="survey-date" style="width: 100%; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p> -->
+                                        
+                                        <div class="survey-date-picker">
+                                            <div style="position: relative;">
+                                                <input class="ui-input-dark survey-date" placeholder="" data-format="hh:mm" style="max-width: 200px;width: 100px;height: 26px;font-size: 12px;padding: 0 6px;margin: 0;background: transparent;outline: 0;border: 0;border-bottom: 1px solid #444;color: #bbb;"></input>
+                                                <span class="add-on">
+                                                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
