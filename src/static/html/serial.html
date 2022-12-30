@@ -628,7 +628,7 @@
                             <!-- Calibrate sensors -->
                             <div class="col-auto shadow sensor-calibration-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
                                 <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
-                                    <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-scale-balanced"></i></i></p>
+                                    <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-scale-balanced"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Calibrate sensors</p>
                                 </div>
                             </div>
@@ -636,7 +636,7 @@
                             <!-- Download file -->
                             <div class="col-auto shadow download-files-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
                                 <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
-                                    <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-sd-card"></i></i></p>
+                                    <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-sd-card"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">SD card explorer</p>
                                 </div>
                             </div>
@@ -771,19 +771,19 @@
                     </div>
                         
                     <!-- Config options -->
-                    <div class="col-12 hidden config-information-parent">
+                    <div class="col-12 disabled blur config-information-parent">
                         <div class="row">
                             
-                            <div class="col-12 download-progress" style="margin-bottom: 10px; display: inline-flex;">
-                                <p class="text" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px; opacity: 1;padding: 4px 8px; background: #3d3d3d;">Configuration file does not exists.</p>
+                            <div class="col-12" style="margin-bottom: 10px; display: inline-flex;">
+                                <p class="sync-status-heading" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px; opacity: 1;padding: 4px 8px; background: #3d3d3d;">Configuration file does not exists.</p>
                                 
                                 <!-- Re-fetch config data from SD -->
-                                <div class="refresh-config-data-button shadow" title="Re-fetch config data from GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
+                                <div class="refresh-config-data-button shadow" title="Get configuration from GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
                                     <i class="fa-solid fa-arrows-rotate"></i>
                                 </div>
                                 
                                 <!-- Upload config data to SD -->
-                                <div class="upload-config-data-button shadow" title="Upload config data to GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
+                                <div class="upload-config-data-button shadow" title="Upload configuration to GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
                                     <i class="fa-solid fa-upload"></i>
                                 </div>
                             </div>
@@ -928,27 +928,22 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Spinner and download progress -->
-                    <div class="col-12 spinner-parent">
 
-                        <div class="download-progress" style="margin-bottom: 10px;">
-                            <p class="text" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px;opacity: 1;padding: 4px 8px; background: #3d3d3d;">Configuration file does not exists.</p>
-                        </div>
+                </div>
+            </div>
 
-                        <!-- Loading spinner -->
-                        <div class="spinner-div" style="overflow-y: auto; height: 100px; width: 100%;position: relative;">
-                            <div class="absolute-center" style="margin-left: 0; margin-top: -5px;">
-                                <svg class="spinner" viewBox="0 0 50 50">
-                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <div class="download-status" style="width: 100%;text-align: center;">
-                            <p class="text" style="color: #e4e4e4;border-radius: 2px;width: max-content;font-size: 13px;text-align: justify;margin-bottom: 0px;opacity: 1;padding: 4px 8px;text-align: center;width: 100%;">Initializing download</p>
-                        </div>
+            <!-- Sync notification overlay -->
+            <div class="col-12 config-sync-notification-parent hidden shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 4px 10px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+                <div class="col">
 
+                    <div class="row" style="margin-top: 0px; cursor: default;">
+                        <div class="col-12" style="padding: 4px 6px;">
+                            <p>
+                                <span style="font-size: 18px; color: #e86315; margin-right: 8px;"><i class="rotate-animation fa-solid fa-arrows-rotate"></i></span>
+                                <span class="download-status-heading" style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;"></span>
+                            </p>
+                            <p class="download-status-text" style="font-size: 14px;color: #292929ef;margin-top: -6px;margin-bottom: 8px;font-weight: 400;"></p>
+                        </div>
                     </div>
                 </div>
             </div>

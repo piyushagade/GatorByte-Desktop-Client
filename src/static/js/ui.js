@@ -269,7 +269,7 @@ function uisubapp(){
         var explaination = parent.find(".code-explaination");
 
         if (code == "new-window-limit-reached") {
-            explaination.removeClass("hidden").text("The trial version only allows one device to be monitered at a time. PRO version, has no limits.");
+            explaination.removeClass("hidden").text("The trial version only allows one device to be monitored at a time. PRO version, has no limits.");
         }
         else if (code == "live-share") {
             explaination.removeClass("hidden").text("Trial version limits a 'Live share' session to 10-minutes at a time. Please buy PRO to enjoy endless live share sessions.");

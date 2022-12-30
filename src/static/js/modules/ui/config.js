@@ -73,6 +73,9 @@ function uiconfiggatorbytesubapp() {
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
             }
 
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
             // Save config data to main process
             self.save_config_in_storage();
 
@@ -90,6 +93,9 @@ function uiconfiggatorbytesubapp() {
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
             }
 
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
             // Save config data to main process
             self.save_config_in_storage();
 
@@ -97,8 +103,6 @@ function uiconfiggatorbytesubapp() {
             self.configdata = self.objecttostring(self.configobject);
 
         }, 150));
-
-        console.log(self.configobject);
 
         // Sleep duration change listener
         self.panel.find(".sleep-duration-text").off("keyup").on("keyup", self.f.debounce(function() {
@@ -109,7 +113,10 @@ function uiconfiggatorbytesubapp() {
                 $(this).css("border-bottom", "1px solid red");
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
             }
-
+            
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
             // Save config data to main process
             self.save_config_in_storage();
 
@@ -122,6 +129,9 @@ function uiconfiggatorbytesubapp() {
             var sleepmode = self.panel.find(".sleep-mode-text").val();
             self.configobject["sleep"]["mode"] = sleepmode;
 
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
             // Save config data to main process
             self.save_config_in_storage();
 
@@ -134,6 +144,9 @@ function uiconfiggatorbytesubapp() {
             var datamode = self.panel.find(".data-mode-text").val();
             self.configobject["data"]["mode"] = datamode;
 
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
             // Save config data to main process
             self.save_config_in_storage();
 
@@ -145,6 +158,9 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".sensor-read-mode-text").off("change").on("change", function() {
             var readmode = self.panel.find(".sensor-read-mode-text").val();
             self.configobject["data"]["readuntil"] = readmode;
+            
+            // Update flag
+            self.configobject["updateflag"] = true;
 
             // Save config data to main process
             self.save_config_in_storage();
@@ -175,6 +191,9 @@ function uiconfiggatorbytesubapp() {
                 devices.push(device);
                 self.configobject["device"]["devices"] = devices.join(",");
             }
+            
+            // Update flag
+            self.configobject["updateflag"] = true;
 
             // Save config data to main process
             self.save_config_in_storage();
@@ -204,7 +223,7 @@ function uiconfiggatorbytesubapp() {
         // Replace prefix with nothing and <br> with \n
         data = data.replace(/<br>/g, "\n").replace(/gdc-cfg::fdl:/, "");
         
-        self.panel.find(".download-status").removeClass("hidden").find(".text").text(self.filedownloadline + " kB downloaded");
+        self.panel.find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
 
         self.filedownloadline += 30;
 
@@ -213,7 +232,7 @@ function uiconfiggatorbytesubapp() {
 
         // Request next part of the data if available
         if (data.length > 0) {
-            self.panel.find(".download-status").removeClass("hidden").find(".text").text(self.filedownloadline + " kB downloaded");
+            self.panel.find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
             return self.request_file_download(self.filedownloadname, self.filedownloadline);
         }
         
@@ -225,15 +244,22 @@ function uiconfiggatorbytesubapp() {
                 console.log("The config.ini file does not exist on the SD card.");
 
                 // Update UI
-                self.panel.find(".spinner-parent").addClass("hidden");
-                self.panel.find(".config-information-parent").removeClass("hidden");
-                self.panel.find(".download-progress").find(".text").css("background", "#962e38").text("Configuration file does not exist.");
+                // self.panel.find(".spinner-parent").addClass("hidden");
+                // self.panel.find(".config-information-parent").removeClass("hidden");
+                self.panel.find(".config-sync-notification-parent").addClass("hidden");
+                self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
+                
+                self.panel.find(".sync-status-heading").css("background", "#962e38").text("Configuration file does not exist.");
             }
 
             // If config data successfully downloaded
             else {
-                self.panel.find(".download-status").removeClass("hidden").find(".text").text("Download complete");
+                self.panel.find(".download-status-text").removeClass("hidden").text("Download complete");
                 self.configdata = self.filedownloaddata;
+                
+                // Update flag
+                self.configobject["updateflag"] = false;
+
                 self.on_config_data_acquired(false);
             }
 
@@ -259,7 +285,7 @@ function uiconfiggatorbytesubapp() {
         // If data is still not fully sent
         if (datatosend && datatosend.trim().length > 0) {
             var uploadedbyte = startingline + 30 >= self.configdata.length ? self.configdata.length : startingline + 30;
-            self.panel.find(".download-status").find(".text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
+            self.panel.find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
 
             return new Promise(function (resolve, reject) {
                 self.sendcommand("upl" + ":" + datatosend + "^" + startingline);
@@ -271,22 +297,45 @@ function uiconfiggatorbytesubapp() {
         else {
             console.log("Upload complete");
             self.fileuploadline = 0;
+            self.configobject["updateflag"] = false;
 
-            self.panel.find(".spinner-parent").addClass("hidden");
-            self.panel.find(".config-information-parent").removeClass("hidden");
+            // self.panel.find(".spinner-parent").addClass("hidden");
+            // self.panel.find(".config-information-parent").removeClass("hidden");
+            self.panel.find(".config-sync-notification-parent").addClass("hidden");
+            self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
+            
             self.on_config_data_acquired();
+            
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
         }
     }
 
     self.on_config_data_acquired = function (stale) {
 
-        if (stale) self.panel.find(".download-progress").find(".text").css("background", "#a2660b").text("Using saved configuration data");
-        else self.panel.find(".download-progress").find(".text").css("background", "#104c09").text("Configuration sync complete");
+        // Check if the saved configuration was updated and needs to be uploaded
+        if (self.configobject["updateflag"]) {
+            self.panel.find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
+            self.panel.find(".upload-config-data-button").css("background", "#865600");
+        }
+        else {
+            setTimeout(() => {
+                if (stale) self.panel.find(".sync-status-heading").css("background", "#a2660b").text("Using saved configuration data");
+                else self.panel.find(".sync-status-heading").css("background", "#104c09").text("Configuration sync complete");
+
+                $(".upload-config-data-button").css("background", "#333");
+            }, 50);
+        }
             
         // Update UI
-        self.panel.find(".spinner-parent").addClass("hidden");
-        self.panel.find(".config-information-parent").removeClass("hidden");
-        self.panel.find(".download-progress").find(".refresh-config-data-button").off("click").click(function () {
+        // self.panel.find(".spinner-parent").addClass("hidden");
+        // self.panel.find(".config-information-parent").removeClass("hidden");
+        self.panel.find(".config-sync-notification-parent").addClass("hidden");
+        self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
+        self.panel.find(".refresh-config-data-button").off("click").click(function () {
             
             // Reset global variables
             self.filedownloaddata = "";
@@ -296,18 +345,22 @@ function uiconfiggatorbytesubapp() {
             self.request_file_download(self.filedownloadname, self.filedownloadline);
             
             // Update UI
-            self.panel.find(".spinner-parent").removeClass("hidden");
-            self.panel.find(".config-information-parent").addClass("hidden");
-            self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Fetching configuration from your GatorByte");
-            self.panel.find(".download-status").find(".text").text("Initializing download");
+            // self.panel.find(".spinner-parent").removeClass("hidden");
+            // self.panel.find(".config-information-parent").addClass("hidden");
+            self.panel.find(".config-sync-notification-parent").removeClass("hidden");
+            self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
+            self.panel.find(".download-status-heading").text("Downloading configuration");
+            self.panel.find(".download-status-text").text("Initializing download");
         });
-        self.panel.find(".download-progress").find(".upload-config-data-button").off("click").click(function () {
+        self.panel.find(".upload-config-data-button").off("click").click(function () {
             
             // Update UI
-            self.panel.find(".spinner-parent").removeClass("hidden");
-            self.panel.find(".config-information-parent").addClass("hidden");
-            self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Uploading configuration");
-            self.panel.find(".download-status").find(".text").text("Initializing upload");
+            // self.panel.find(".spinner-parent").removeClass("hidden");
+            // self.panel.find(".config-information-parent").addClass("hidden");
+            self.panel.find(".config-sync-notification-parent").removeClass("hidden");
+            self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
+            self.panel.find(".download-status-heading").text("Uploading configuration");
+            self.panel.find(".download-status-text").text("Initializing upload");
             
             // Upload config data to SD card
             self.request_file_upload(self.fileuploadline);
@@ -315,6 +368,8 @@ function uiconfiggatorbytesubapp() {
 
         // Get RTC time
         self.show_rtctime();
+
+        self.configobject["updateflag"] = false;
 
         // Process config data and update UI
         self.process_config_data();
@@ -324,6 +379,10 @@ function uiconfiggatorbytesubapp() {
     }
 
     self.save_config_in_storage = function () {
+
+        // Update UI
+        self.panel.find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
+        self.panel.find(".upload-config-data-button").css("background", "#865600");
         
         self.ipcr.send("ipc/config-data-save/request", {
             port: global.port,
@@ -382,7 +441,7 @@ function uiconfiggatorbytesubapp() {
             catch (e) {
                 erroroccured = true;
                 console.log("Malformed config data on SD card.");
-                self.panel.find(".download-progress").find(".text").css("background", "#962e38").text("Malformed configuration data on SD card.");
+                self.panel.find(".sync-status-heading").css("background", "#962e38").text("Malformed configuration data on SD card.");
             }
         });
         currentcategory = null;
@@ -397,6 +456,7 @@ function uiconfiggatorbytesubapp() {
         var indentation = " ";
         Object.keys(object).forEach(function (key, ki) {
             if (!key || key.length == 0) return;
+            if (key == "updateflag") return;
 
             string += key;
             string += "\n";
@@ -416,7 +476,7 @@ function uiconfiggatorbytesubapp() {
         
         if (!object) {
             self.getconfigdatafromsd();
-            self.panel.find(".download-progress").find(".text").css("background", "#3d3d3d").text("Fetching configuration from your GatorByte");
+            self.panel.find(".sync-status-heading").css("background", "#3d3d3d").text("Fetching GatorByte's configuration.");
         }
         else {
             self.configobject = { ...object };
@@ -431,8 +491,10 @@ function uiconfiggatorbytesubapp() {
         self.request_file_download(self.filedownloadname, 0);
         
         // Update UI
-        self.panel.find(".spinner-parent").removeClass("hidden");
-        self.panel.find(".config-information-parent").addClass("hidden");
+        // self.panel.find(".spinner-parent").removeClass("hidden");
+        // self.panel.find(".config-information-parent").addClass("hidden");
+        self.panel.find(".config-sync-notification-parent").removeClass("hidden");
+        self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
     }
 
     self.update_panel_ui = function () {
@@ -460,6 +522,9 @@ function uiconfiggatorbytesubapp() {
 
                 // Update the object
                 self.configobject["survey"]["date"] = moment(timestamp).format("MM-DD-YYYY");
+
+                // Update flag
+                self.configobject["updateflag"] = true;
 
                 // Save config data to main process
                 self.save_config_in_storage();
