@@ -285,6 +285,8 @@ function uiconfiggatorbytesubapp() {
         // If data is still not fully sent
         if (datatosend && datatosend.trim().length > 0) {
             var uploadedbyte = startingline + 30 >= self.configdata.length ? self.configdata.length : startingline + 30;
+            
+            self.panel.find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.configdata.length) * self.panel.find(".progress").width());
             self.panel.find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
 
             return new Promise(function (resolve, reject) {
@@ -351,6 +353,8 @@ function uiconfiggatorbytesubapp() {
             self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
             self.panel.find(".download-status-heading").text("Downloading configuration");
             self.panel.find(".download-status-text").text("Initializing download");
+            self.panel.find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
+            self.panel.find(".progress").find(".progress-bar").css("width", "100%");
         });
         self.panel.find(".upload-config-data-button").off("click").click(function () {
             
@@ -361,6 +365,8 @@ function uiconfiggatorbytesubapp() {
             self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
             self.panel.find(".download-status-heading").text("Uploading configuration");
             self.panel.find(".download-status-text").text("Initializing upload");
+            self.panel.find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
+            self.panel.find(".progress").find(".progress-bar").css("width", "0px");
             
             // Upload config data to SD card
             self.request_file_upload(self.fileuploadline);
@@ -550,10 +556,10 @@ function uiconfiggatorbytesubapp() {
             }));
         });
 
-        // Show enabled devices
-        data.device["devices"].split(",").forEach(function (device, di) {
-            self.panel.find(".devices-list-item[device='" + device.trim() + "']").css("opacity", "1").addClass("enabled");
-        });
+        // // Show enabled devices
+        // data.device["devices"].split(",").forEach(function (device, di) {
+        //     self.panel.find(".devices-list-item[device='" + device.trim() + "']").css("opacity", "1").addClass("enabled");
+        // });
         
         // States list
         self.panel.find(".device-information-parent").find(".states-list .states-list-item").remove();

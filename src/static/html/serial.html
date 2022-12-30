@@ -39,6 +39,9 @@
     <script src='../js/lib/datetime.js'></script>
     <link rel='stylesheet' href='./css/datetime.css'/>
     
+    <!-- Progressbar -->
+    <link rel='stylesheet' href='./css/progressbar.css'/>
+    
     <!-- Bootstrap -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css'/>
@@ -933,16 +936,17 @@
             </div>
 
             <!-- Sync notification overlay -->
-            <div class="col-12 config-sync-notification-parent hidden shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 4px 10px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+            <div class="col-12 config-sync-notification-parent hiddenz shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 4px 10px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
                 <div class="col">
 
                     <div class="row" style="margin-top: 0px; cursor: default;">
                         <div class="col-12" style="padding: 4px 6px;">
-                            <p>
+                            <p style="margin-bottom: 6px;">
                                 <span style="font-size: 18px; color: #e86315; margin-right: 8px;"><i class="rotate-animation fa-solid fa-arrows-rotate"></i></span>
                                 <span class="download-status-heading" style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;"></span>
                             </p>
-                            <p class="download-status-text" style="font-size: 14px;color: #292929ef;margin-top: -6px;margin-bottom: 8px;font-weight: 400;"></p>
+                            <div class="progress progress-striped"><div class="progress-bar"></div></div>
+                            <p class="download-status-text" style="font-size: 13px;color: #404040ef;margin-top: 4px;margin-bottom: 0px;font-weight: bold;background: #eaeaea;border-radius: 3px;padding: 0px 6px;width: max-content;"></p>
                         </div>
                     </div>
                 </div>
@@ -1203,7 +1207,7 @@
         </div>
         
         <!--! Device info overlay -->
-        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: auto;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
             <div class="col">
 
                 <div class="row" style="margin-top: 0px; cursor: default;">
@@ -1242,7 +1246,7 @@
         </div>
         
         <!--! Flash firmware overlay -->
-        <div class="row flash-firmware-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: auto;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+        <div class="row flash-firmware-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
             <div class="col">
 
                 <div class="row file-selection-div" style="margin-top: 0px; cursor: default;">
@@ -1288,7 +1292,13 @@
                             Please wait while the new firmware is being flashed on the GatorByte. This should take a couple seconds.
                         </p>
 
-                        <div class="row disabled" style="margin: 0; opacity: 0.25">
+                        <div class="row" style="margin: 0;">
+                            <div class="col-12" style="padding: 0;">
+                                <div class="progress progress-striped-infinite"><div class="progress-bar"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="row disabled hidden" style="margin: 0; opacity: 0.25">
                             <div class="col-auto" style="padding: 0;">
                                 <div class="select-file-button" state="file-select" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
                             </div>
@@ -1298,7 +1308,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-12 disabled" style="padding: 0px 6px; opacity: 0.25"">
+                    <div class="col-12 disabled hidden" style="padding: 0px 6px; opacity: 0.25"">
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
