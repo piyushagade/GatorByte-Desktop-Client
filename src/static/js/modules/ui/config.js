@@ -98,11 +98,13 @@ function uiconfiggatorbytesubapp() {
 
         }, 150));
 
+        console.log(self.configobject);
+
         // Sleep duration change listener
         self.panel.find(".sleep-duration-text").off("keyup").on("keyup", self.f.debounce(function() {
-            var sleepmode = self.panel.find(".sleep-mode-text").val()
-            var value = $(this).val();
-            if (value && value.length > 3 && !isNaN(parseInt(value))) self.configobject["device"]["sleep"] = sleepmode + "," + $(this).val();
+            var value = parseInt($(this).val());
+
+            if (value && value >= 3 && !isNaN(parseInt(value))) self.configobject["sleep"]["duration"] = value * 1000;
             else {
                 $(this).css("border-bottom", "1px solid red");
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
@@ -113,8 +115,43 @@ function uiconfiggatorbytesubapp() {
 
             // Update config data
             self.configdata = self.objecttostring(self.configobject);
-
         }, 150));
+
+        // Sleep mode change listener
+        self.panel.find(".sleep-mode-text").off("change").on("change", function() {
+            var sleepmode = self.panel.find(".sleep-mode-text").val();
+            self.configobject["sleep"]["mode"] = sleepmode;
+
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+        });
+
+        // Sensor read mode change listener
+        self.panel.find(".data-mode-text").off("change").on("change", function() {
+            var datamode = self.panel.find(".data-mode-text").val();
+            self.configobject["data"]["mode"] = datamode;
+
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+        });
+
+        // Sensor read until change listener
+        self.panel.find(".sensor-read-mode-text").off("change").on("change", function() {
+            var readmode = self.panel.find(".sensor-read-mode-text").val();
+            self.configobject["data"]["readuntil"] = readmode;
+
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+        });
 
         // Device click listener
         self.panel.find(".devices-list-item").off("click").on("click", function() {
