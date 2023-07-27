@@ -47,6 +47,17 @@ function uidashboardsubapp(){
             });
         });
 
+        // GB lock button
+        $(".home-panel").find(".toggle-gb-lock-button").off("click").click(function () {
+
+            var state = $(this).attr("state") || "lock";
+
+            self.ipcr.send('ipc/toggle-gb-op-lock/request', {
+                state: state,
+                port: global.port
+            });
+        });
+
         // Fetch sensor readings
         self.panel.find(".fetch-sensor-readings-button").off("click").click(function () {
 

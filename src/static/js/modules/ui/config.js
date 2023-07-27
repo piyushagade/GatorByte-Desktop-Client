@@ -14,13 +14,187 @@ function uiconfiggatorbytesubapp() {
     self.filedownloaddata = "";
     self.filedownloadline = 0;
     self.fileuploadline = 0;
+    self.lines_to_send = 30;
+
+    // var alldevices = ["mcu", "sntl", "sd", "fram", "rtc", "booster", "buzzer", "rgb", "aht", "gps", "bl", "rgb", "ph", "rtd", "dox", "ec", "ph", "rain", "uss", "wlev", "relay", "turbidity", "eadc"];
 
     self.panel = $(".configure-gb-panel");
+    self.devices = [
+        {
+            "id": "mcu",
+            "name": "NB1500 MCU",
+            "description": "NB1500 microcontroller",
+            "category": "microcontoller",
+            "test": false
+        },
+        {
+            "id": "bl",
+            "name": "Bluetooth module",
+            "description": "AT-09 Bluetooth module",
+            "category": "communication",
+            "test": false
+        },
+        {
+            "id": "rain",
+            "name": "Rain sensor",
+            "description": "RG-11 optical rain sensor",
+            "category": "sensor",
+            "test": false
+        },
+        {
+            "id": "ph",
+            "name": "pH",
+            "description": "Atlas Scientific pH sensor",
+            "category": "sensor",
+            "calibration": true,
+            "test": false
+        },
+        {
+            "id": "ec",
+            "name": "EC",
+            "description": "Atlas Scientific EC sensor",
+            "category": "sensor",
+            "calibration": true,
+            "test": false
+        },
+        {
+            "id": "dox",
+            "name": "DO",
+            "description": "Atlas Scientific DO sensor",
+            "category": "sensor",
+            "calibration": true,
+            "test": false
+        },
+        {
+            "id": "rtd",
+            "name": "RTD",
+            "description": "Atlas Scientific RTD sensor",
+            "category": "sensor",
+            "calibration": true,
+            "test": false
+        },
+        {
+            "id": "uss",
+            "name": "USS sensor",
+            "description": "Ultrasound distance sensor",
+            "category": "sensor",
+            "test": false
+        },
+        {
+            "id": "gps",
+            "name": "GPS",
+            "description": "Neo-6M GPS module",
+            "category": "peripheral",
+            "test": false
+        },
+        {
+            "id": "wlev",
+            "name": "Water level",
+            "description": "Pressure-based water level sensor",
+            "category": "sensor",
+            "test": false
+        },
+        {
+            "id": "relay",
+            "name": "SPST relay",
+            "description": "SPST relay",
+            "category": "peripheral",
+            "test": true
+        },
+        {
+            "id": "turbidity",
+            "name": "Turbidity",
+            "description": "DFRobot turbidity sensor",
+            "category": "sensor",
+            "test": true
+        },
+        {
+            "id": "eadc",
+            "name": "External ADC",
+            "description": "External ADC",
+            "category": "peripheral",
+            "test": true
+        },
+        {
+            "id": "aht",
+            "name": "AHT10",
+            "description": "AHT10 humidity and temperature sensor",
+            "category": "sensor",
+            "test": true
+        },
+        {
+            "id": "rgb",
+            "name": "RGB LED",
+            "description": "RGB indicator LED",
+            "category": "peripheral",
+            "test": true
+        },
+        {
+            "id": "buzzer",
+            "name": "Buzzer",
+            "description": "Buzzer",
+            "category": "peripheral",
+            "test": true
+        },
+        {
+            "id": "rtc",
+            "name": "RTC",
+            "description": "DS3231 RTC module",
+            "category": "peripheral",
+            "test": true
+        },
+        {
+            "id": "booster",
+            "name": "Booster",
+            "description": "5V booster",
+            "category": "peripheral",
+            "test": false
+        },
+        {
+            "id": "fram",
+            "name": "Flash memory",
+            "description": "W25QX flash memory",
+            "category": "storage",
+            "test": true
+        },
+        {
+            "id": "sd",
+            "name": "Micro-SD",
+            "description": "Micro-SD module",
+            "category": "storage",
+            "test": true
+        },
+        {
+            "id": "mem",
+            "name": "EEPROM",
+            "description": "AT24C EEPROM memory",
+            "category": "storage",
+            "test": true
+        }
+    ];
 
     self.init = function () {
 
         // Start listeners
         self.listeners();
+
+        // Construct base devices list UI
+        
+        var alldevicesnames = self.devices.map(function (device) { return device.name });
+        var alldevicesdescription = self.devices.map(function (device) { return device.description });
+        var alldevices = self.devices.map(function (device) { return device.id });
+        self.panel.find(".devices-information-parent").find(".devices-list .devices-list-item").remove();
+        alldevices.forEach(function (device, di) {
+            self.panel.find(".devices-information-parent").find(".devices-list").append(multiline(function () {/* 
+                <div class="col-auto devices-list-item shadow" device="{{deviceid}}" title="{{devicesdescription}}" style="margin: 0 6px 6px 0;padding: 2px 6px;background: #e6e6e6;color: #505050;font-size: 12px;font-weight: bold; opacity: 0.4;">
+                    {{devicename}}
+                </div>
+            */}, {
+                "deviceid": device.trim(),
+                "devicename": alldevicesnames[di],
+                "devicesdescription": alldevicesdescription[di]
+            }));
+        });
 
         return self;
     }
@@ -49,13 +223,22 @@ function uiconfiggatorbytesubapp() {
                 path: global.port.path
             });
 
+            // Show UTC time
+            self.show_utctime();
+
+            // Get RTC time
+            self.show_rtctime();
+
+            // Get BL information
+            setTimeout(() => {
+                self.sendcommand("bl:getconfig");
+            }, 2000);
+
             // Get config data from main process
             self.ipcr.send("ipc/config-data-get/request", {
                 port: global.port
             });
 
-            // Show UTC time
-            self.show_utctime();
         });
 
         // Get RTC time
@@ -68,6 +251,26 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".survey-id-text").off("keyup").on("keyup", self.f.debounce(function() {
             var value = $(this).val();
             if (value && value.length > 3) self.configobject["survey"]["id"] = $(this).val();
+            else {
+                $(this).css("border-bottom", "1px solid red");
+                setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
+            }
+
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+
+        }, 150));
+
+        // Device ID change listener
+        self.panel.find(".device-id-text").off("keyup").on("keyup", self.f.debounce(function() {
+            var value = $(this).val();
+            if (value && value.length > 3) self.configobject["device"]["id"] = $(this).val();
             else {
                 $(this).css("border-bottom", "1px solid red");
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
@@ -204,9 +407,28 @@ function uiconfiggatorbytesubapp() {
         });
     }
 
+    /*
+        Request config from the main process
+    */
+    self.request_config = function () {
+
+        return new Promise(function (resolve, reject) {
+            // Get config data from main process
+            self.ipcr.send("ipc/config-data-get/request", {
+                port: global.port
+            });
+            
+            setTimeout(() => {
+                resolve(self.configobject);
+            }, 1000);
+        });
+
+    }
+
     self.show_utctime = function () {
         if (self.panel.hasClass("hidden")) clearInterval(self.timers.utctimeupdate);
-        var time = moment(moment.now()).format("MM/DD/YY hh:mm a");
+        var offset = self.timezone();
+        var time = moment(moment.now()).format("MM/DD/YY hh:mm a").toUpperCase();
         self.panel.find(".utc-time-text").text(time).attr("title", moment.now());
     }
 
@@ -215,7 +437,7 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".rtc-sync-status").text("Fetching RTC time.").css("color", "#b17200");
         setTimeout(() => {
             self.sendcommand("rtc:get");
-        }, self.panel.find(".gatorbyte-rtc-time-text").text() == "-" ? 0 : 1000);
+        }, self.panel.find(".gatorbyte-rtc-time-text").text() == "-" ? 100 : 250);
     }
 
     self.process_file_download_data = function (data) {
@@ -225,7 +447,7 @@ function uiconfiggatorbytesubapp() {
         
         self.panel.find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
 
-        self.filedownloadline += 30;
+        self.filedownloadline += self.lines_to_send;
 
         // Append file data
         self.filedownloaddata += data;
@@ -244,23 +466,34 @@ function uiconfiggatorbytesubapp() {
                 console.log("The config.ini file does not exist on the SD card.");
 
                 // Update UI
-                // self.panel.find(".spinner-parent").addClass("hidden");
-                // self.panel.find(".config-information-parent").removeClass("hidden");
                 self.panel.find(".config-sync-notification-parent").addClass("hidden");
                 self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
                 
                 self.panel.find(".sync-status-heading").css("background", "#962e38").text("Configuration file does not exist.");
+
+                // Disable text boxes
+                self.panel.find(".survey-information-parent").find(".survey-id-text").addClass("disabled");
+                self.panel.find(".survey-information-parent").find(".device-id-text").addClass("disabled");
+                self.panel.find(".survey-information-parent").find(".survey-location-text").addClass("disabled");
+                self.panel.find(".survey-information-parent").find(".survey-date").addClass("disabled");
+                self.panel.find(".survey-information-parent").find(".survey-date-picker").addClass("disabled");
+                self.panel.find(".device-information-parent").find(".sleep-mode-text").addClass("disabled");
+                self.panel.find(".device-information-parent").find(".sleep-duration-text").addClass("disabled");
+                self.panel.find(".device-information-parent").find(".data-mode-text").addClass("disabled");
+                self.panel.find(".device-information-parent").find(".sensor-read-mode-text").addClass("disabled");
+            
             }
 
             // If config data successfully downloaded
             else {
                 self.panel.find(".download-status-text").removeClass("hidden").text("Download complete");
                 self.configdata = self.filedownloaddata;
+
+                self.on_config_data_acquired(false);
                 
                 // Update flag
                 self.configobject["updateflag"] = false;
-
-                self.on_config_data_acquired(false);
+                
             }
 
             // Reset global variables
@@ -280,11 +513,11 @@ function uiconfiggatorbytesubapp() {
 
     // Upload config data to SD card
     self.request_file_upload = function (startingline) {
-        var datatosend = self.configdata.substring(startingline, startingline + 30).replace(/\n/g, "~").replace(/ /g, "`");
+        var datatosend = self.configdata.substring(startingline, startingline + self.lines_to_send).replace(/\n/g, "~").replace(/ /g, "`");
         
         // If data is still not fully sent
         if (datatosend && datatosend.trim().length > 0) {
-            var uploadedbyte = startingline + 30 >= self.configdata.length ? self.configdata.length : startingline + 30;
+            var uploadedbyte = startingline + self.lines_to_send >= self.configdata.length ? self.configdata.length : startingline + self.lines_to_send;
             
             self.panel.find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.configdata.length) * self.panel.find(".progress").width());
             self.panel.find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
@@ -319,7 +552,7 @@ function uiconfiggatorbytesubapp() {
     self.on_config_data_acquired = function (stale) {
 
         // Check if the saved configuration was updated and needs to be uploaded
-        if (self.configobject["updateflag"]) {
+        if (self.configobject && self.configobject["updateflag"]) {
             self.panel.find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
             self.panel.find(".upload-config-data-button").css("background", "#865600");
         }
@@ -372,10 +605,7 @@ function uiconfiggatorbytesubapp() {
             self.request_file_upload(self.fileuploadline);
         });
 
-        // Get RTC time
-        self.show_rtctime();
-
-        self.configobject["updateflag"] = false;
+        if (self.configobject) self.configobject["updateflag"] = false;
 
         // Process config data and update UI
         self.process_config_data();
@@ -506,16 +736,16 @@ function uiconfiggatorbytesubapp() {
     self.update_panel_ui = function () {
 
         var data = self.configobject;
-
-        var alldevices = ["mcu", "sd", "rtc", "booster", "rgb", "aht", "gps", "bl", "rgb", "ph", "rtd", "dox", "ec", "ph", "rain", "uss", "turbidity"];
+        
         var allstates = ["realtime"];
         
         // Survey information
-        self.panel.find(".survey-information-parent").find(".survey-id-text").val(data.survey["id"]);
-        self.panel.find(".survey-information-parent").find(".survey-location-text").val(data.survey["location"]);
+        self.panel.find(".survey-information-parent").find(".survey-id-text").removeClass("disabled").val(data.survey["id"]);
+        self.panel.find(".survey-information-parent").find(".device-id-text").removeClass("disabled").val(data.device["id"]);
+        self.panel.find(".survey-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
         
-        self.panel.find(".survey-information-parent").find(".survey-date").val(data.survey["date"]);
-        self.panel.find(".survey-information-parent").find(".survey-date-picker").datetimepicker({
+        self.panel.find(".survey-information-parent").find(".survey-date").removeClass("disabled").val(data.survey["date"]);
+        self.panel.find(".survey-information-parent").find(".survey-date-picker").removeClass("disabled").datetimepicker({
             datepicker: true,
             timepicker: false,
             defaultDate: moment(data.survey["date"], "MM-DD-YYYY").format("YYYY/MM/DD"),
@@ -541,25 +771,13 @@ function uiconfiggatorbytesubapp() {
         });
 
         // Sleep information
-        self.panel.find(".device-information-parent").find(".sleep-mode-text").val(data.sleep["mode"]);
-        self.panel.find(".device-information-parent").find(".sleep-duration-text").val(parseInt(data.sleep["duration"]) / 1000);
-        
-        // Devices list
-        self.panel.find(".device-information-parent").find(".devices-list .devices-list-item").remove();
-        alldevices.forEach(function (device, di) {
-            self.panel.find(".device-information-parent").find(".devices-list").append(multiline(function () {/* 
-                <div class="col-auto devices-list-item shadow" device="{{devicename}}" style="margin: 0 6px 6px 0;padding: 2px 6px;background: #e6e6e6;color: #505050;font-size: 12px;font-weight: bold; opacity: 0.4;">
-                    {{devicename}}
-                </div>
-            */}, {
-                "devicename": device.trim()
-            }));
-        });
+        self.panel.find(".device-information-parent").find(".sleep-mode-text").removeClass("disabled").val(data.sleep["mode"]);
+        self.panel.find(".device-information-parent").find(".sleep-duration-text").removeClass("disabled").val(parseInt(data.sleep["duration"]) / 1000);
 
-        // // Show enabled devices
-        // data.device["devices"].split(",").forEach(function (device, di) {
-        //     self.panel.find(".devices-list-item[device='" + device.trim() + "']").css("opacity", "1").addClass("enabled");
-        // });
+        // Show enabled devices
+        data.device["devices"].split(",").forEach(function (device, di) {
+            self.panel.find(".devices-list-item[device='" + device.trim() + "']").css("opacity", "1").addClass("enabled");
+        });
         
         // States list
         self.panel.find(".device-information-parent").find(".states-list .states-list-item").remove();
@@ -584,30 +802,49 @@ function uiconfiggatorbytesubapp() {
         response = response.replace(/<br>/g, "");
 
         if (response == "fupl:ack") {
-            self.fileuploadline += 30;
+            self.fileuploadline += self.lines_to_send;
             
             // Upload remainder of the config data to SD card
             self.request_file_upload(self.fileuploadline);
         }
 
+        //! RTC responses
         else if (response.startsWith("rtc:")) {
             response = response.replace(/rtc:/g, "");
+            var offset = self.timezone();
 
-            var timestamp = parseInt(response) * 1000;
-            self.panel.find(".gatorbyte-rtc-time-text").attr("title", timestamp).html(multiline(function () {/* 
-                <span style="margin-right: 4px;">{{date}}</span>
-                <span>{{time}}</span>
-            */}, {
-                date: moment(timestamp).format("MM/DD/YY"),
-                time: moment(timestamp).format("hh:mm a").toUpperCase()
-            }));
+            if (response == "not-detected") {
 
-            // Update RTC sync status
-            if (Math.abs(timestamp - moment.now()) > 1 * 60 * 1000) {
-                self.panel.find(".rtc-sync-status").text("The RTC clock is out of sync. Please use the 'Sync RTC' button to sync the clocks.").css("color", "#d23512");
+                self.panel.find(".get-rtc-button").addClass("disabled");
+                self.panel.find(".calibrate-rtc-button").addClass("disabled");
+
+                self.panel.find(".gatorbyte-rtc-time-text").html("Error");
+                self.panel.find(".rtc-sync-status").text("The RTC is either uninitialized or not connected to the GatorByte.").css("color", "#c75353");
             }
+
             else {
-                self.panel.find(".rtc-sync-status").text("The clocks are in sync. No action required.").css("color", "green");
+                
+                self.panel.find(".get-rtc-button").removeClass("disabled");
+                self.panel.find(".calibrate-rtc-button").removeClass("disabled");
+
+                console.log("Received RTC timestamp: " + response)
+
+                var timestamp = parseInt(response) * 1000;
+                self.panel.find(".gatorbyte-rtc-time-text").attr("title", timestamp).html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{date}}</span>
+                    <span>{{time}}</span>
+                */}, {
+                    date: moment(timestamp).format("MM/DD/YY"),
+                    time: moment(timestamp).format("hh:mm a").toUpperCase()
+                }));
+
+                // Update RTC sync status
+                if (Math.abs(timestamp - moment.now()) > 1 * 60 * 1000) {
+                    self.panel.find(".rtc-sync-status").text("The RTC clock is out of sync. Please use the 'Sync RTC' button to sync the clocks.").css("color", "#c75353");
+                }
+                else {
+                    self.panel.find(".rtc-sync-status").text("The clocks are in sync. No action required.").css("color", "green");
+                }
             }
 
             // Sync RTC time
@@ -615,11 +852,55 @@ function uiconfiggatorbytesubapp() {
                 var offset = self.timezone();
                 var date = moment(moment.now() - offset).format("MMM-DD-YYYY");
                 var time = moment(moment.now() - offset).format("HH-mm-ss");
+
+                console.log("Syncing RTC date and time to: "  + date + " " + time);
+
                 self.sendcommand("rtc:sync" + date + time);
                 setTimeout(() => {
                     self.show_rtctime();
-                }, 1500);
+                }, 0);
             });
+        }
+
+        //! BL responses
+        else if (response.startsWith("bl:")) {
+            response = response.replace(/bl:/g, "");
+
+            self.panel.find(".bl-name-text").val("");
+            self.panel.find(".bl-pin-text").val("");
+            
+            if (response == "not-detected") {
+                self.panel.find(".bl-sync-status").removeClass("hidden").text("The AT-09 module is either uninitialized or not connected to the GatorByte.").css("color", "#c75353");
+                self.panel.find(".update-bl-config-button").addClass("disabled").find("p").text("Update");
+                
+                self.panel.find(".bl-name-text").parent().addClass("disabled");
+                self.panel.find(".bl-pin-text").parent().addClass("disabled");
+            }
+            else {
+                self.panel.find(".update-bl-config-button").removeClass("disabled").find("p").text("Update");
+                self.panel.find(".bl-sync-status").addClass("hidden");
+
+                var blname = response.split(";")[0];
+                var blpin = response.split(";")[1];
+
+                console.log("Received BL name and pin: "  + blname + ", " + blpin);
+
+                self.panel.find(".bl-name-text").val(blname).parent().removeClass("disabled");
+                self.panel.find(".bl-pin-text").val(blpin).parent().removeClass("disabled");
+            }
+            
+            // Update BL config
+            self.panel.find(".update-bl-config-button").off("click").click(function () {
+                $(this).addClass("disabled").find("p").html("Updating. Please wait.");
+                
+                var name = self.panel.find(".bl-name-text").val();
+                var pin = self.panel.find(".bl-pin-text").val();
+
+                console.log("Updating BL name and pin: "  + name + ", " + pin);
+
+                self.sendcommand("bl:setconfig" + name + ";" + pin);
+            });
+
         }
     }
 

@@ -32,6 +32,7 @@
     "electron-acrylic-window": "^0.5.11",
     "electron-dl": "^3.5.0",
     "electron-drag": "^2.0.0",
+    "electron-log": "^4.4.8",
     "electron-request": "^1.8.1",
     "electron-settings": "^4.0.2",
     "electron-updater": "^4.2.0",

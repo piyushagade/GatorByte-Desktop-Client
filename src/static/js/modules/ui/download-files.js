@@ -33,6 +33,9 @@ function uidownloadfilessubapp(){
         $(".home-panel .download-files-button").off("click").click(function () {
             $(".download-files-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
+        
+            // Hide previous errors
+            $(".download-files-panel .download-files-list").find(".error-item").remove();
             
             // Send request to get GatorByte to send sd files list
             self.open_directory("/");
@@ -46,6 +49,9 @@ function uidownloadfilessubapp(){
 
             // Hide file options
             $(".download-files-panel .file-options-parent").addClass("hidden");
+
+            // Hide previous errors
+            $(".download-files-panel .download-files-list").find(".error-item").remove();
 
             // Show spinner
             $(".download-files-panel .spinner-div").removeClass("hidden");
@@ -71,11 +77,44 @@ function uidownloadfilessubapp(){
 
         if (self.state == "wait-for-file-list") {
             if (line.startsWith("file:")) self.update_file_list_ui(line.replace(/file:/, ""));
+            else if (line.startsWith("error:")) {
+                var error = line.split(":")[1];
+                self.show_error(error);
+            }
         }
         else if (self.state == "wait-on-file-download") {
             
             // Do nothing
 
+        }
+    }
+
+    self.show_error = function (error) {
+        console.log("Error listing files: " + error);
+
+        if (error == "nodevice") {
+
+            // Hide spinner
+            $(".download-files-panel .spinner-div").addClass("hidden");
+
+            // Hide previous errors
+            $(".download-files-panel .download-files-list").find(".error-item").remove();
+            
+            $(".download-files-panel .download-files-list").append(multiline(function () {/* 
+                <div class="error-item" style="margin-right: 10px; margin-bottom: 10px;">
+                    <div class="shadow-heavy" style="color: #f1f1f1;">
+                        <div style="color: #ffffff;font-size: 13px;padding: 4px 10px;background: #d22e0975;border-radius: 2px;">
+                            SD card module has reported an error.
+                        </div>
+                    </div>
+                    
+                    <div class="shadow-heavy" style="color: #f1f1f1; margin-top: 8px;">
+                        <div style="color: #ffffff;font-size: 13px;padding: 4px 10px;background: #56565675;border-radius: 2px;">
+                            Most likely the SD card is not inserted, or the device has not been initialized in the GatorByte firmware.
+                        </div>
+                    </div>
+                </div>
+            */}));
         }
     }
 
@@ -86,6 +125,9 @@ function uidownloadfilessubapp(){
         
         // If file already exists in the list, do not add
         if ($(".download-files-panel .download-files-list .files-list-item[filename='" + file + "']").length == 0) {
+            
+            // Hide previous errors
+            $(".download-files-panel .download-files-list").find(".error-item").remove();
 
             // Hide spinner
             $(".download-files-panel .spinner-div").addClass("hidden");

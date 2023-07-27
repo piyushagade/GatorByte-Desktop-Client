@@ -52,6 +52,7 @@ module.exports = {
                 // Push bootstrap information
                 setTimeout(() => {
                     win.webContents.send('bootstrap-information-push', {
+                        windowtype: "main-window",
                         remoteurl: i.g.LIVE_SHARE_URL,
                         appname: i.g.APP_NAME,
                         appversion: i.g.APP_VERSION,
@@ -67,6 +68,80 @@ module.exports = {
                 i.sub.setui(i);
 
                 console.log("Created a new window with ID: " + win.id + ", count ID:" + BrowserWindow.getAllWindows().length);
+            });
+
+        
+            win.on('closed', () => {
+                win = null;
+            });
+        
+            return win;
+        },
+        monitor: function (i, data) {
+            let winstate = windowStateKeeper({
+                defaultWidth: 450,
+                defaultHeight: 500,
+                file: "serialmonitorstate.json"
+            });
+            
+            var numberofwindows = BrowserWindow.getAllWindows().length;
+
+            var win = new BrowserWindow({
+                x: winstate.x + (numberofwindows - 1) % 3 * 40,
+                y: winstate.y + (numberofwindows - 1) % 3 * 40,
+                width: winstate.width,
+                height: winstate.height,
+                minWidth: 400,
+                minHeight: 300,
+                transparent: true,
+                vibrancy:  {
+                    theme: "#222222A1",
+                    effect: "acrylic",
+                    useCustomWindowRefreshMethod: false,
+                    disableOnBlur: false
+                },
+                frame: false,
+                icon: './src/static/icons/cereal-icon.ico',
+                maximizable: false,
+                fullscreenable: false,
+                alwaysOnTop: true,
+                webPreferences: { nodeIntegration: true, contextIsolation: false } 
+            });
+            
+            // Manage window state
+            winstate.manage(win);
+        
+            // Load HTML
+            win.loadFile('./src/static/html/serialmonitor.html');
+        
+            // Open the DevTools.
+            if(i.g.SHOW_DEV_TOOLS) win.webContents.openDevTools();
+
+            i.g.var.windows[win.id] = win;
+
+            win.on('show', () => {
+
+                // Push bootstrap information
+                setTimeout(() => {
+                    win.webContents.send('bootstrap-information-push', {
+                        windowtype: "serial-monitor",
+                        remoteurl: i.g.LIVE_SHARE_URL,
+                        appname: i.g.APP_NAME,
+                        appversion: i.g.APP_VERSION,
+                        machineid: i.g.var.machineid,
+                        fullfunctionality: i.g.var.fullfunctionality,
+                        windowid: win.id,
+                        windowscountid: BrowserWindow.getAllWindows().length,
+                        quickconnectport: i.s.getSync("quickconnect-" + "windowid-" + BrowserWindow.getAllWindows().length),
+                        
+                        global: data
+                    });
+                }, 250);
+                    
+                // Push subscription information to the window
+                i.sub.setui(i);
+
+                console.log("Created a new serial monitor window with ID: " + win.id + ", count ID:" + BrowserWindow.getAllWindows().length);
             });
 
         

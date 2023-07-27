@@ -6,7 +6,10 @@ app.commandLine.appendSwitch('force_high_performance_gpu');
 var fs = require('fs');
 var settings = require('electron-settings');
 settings.configure({prettify: true});
+var settingsfile = settings.file();
 const { machineIdSync } = require("node-machine-id");
+const log = require('electron-log');
+var logfile = log.transports.file.getFile();
 
 /*
     Modules
@@ -24,21 +27,27 @@ var i = { app: app, ipcm: ipcMain, ipcr: ipcRenderer, ipc: ipc, fs: fs, s: setti
 */
 app.on('ready', () => {
     i.g.var.machineid = machineIdSync({original: true});
+    
     console.log("Machine ID: " + i.g.var.machineid);
+    console.log("Settings file: " + settingsfile);
     
     // Get subscription/trial (license) information from the server and open serial monitor window
     i.sub.validate(i)
         .then(function () {
-            i.w.create.serial(i);
+            
+            // setTimeout(() => { i.w.create.serial(i); }, 1000); 
             setTimeout(() => { i.sub.validate(i); }, 250); 
         });
 
     // Check subscription data every 1 minute
     setInterval(() => { i.sub.validate(i); }, 60000); 
+    
+    // Create window
+    i.w.create.serial(i); 
 
     // Initialize IPC listeners
     i.ipc.listen(i);
-    
+
     // Check for an app update
     i.upd.check(i);
     
@@ -86,4 +95,41 @@ app.on('before-quit', () => {
     FEATURE Commercial license
 
 
+    electron-packager . GatorByte --platform=win32 --arch=x64 --overwrite --icon="./src/static/icons/cereal-icon.ico" --asar --ignore=".vscode"
+    electron-packager . GatorByte --platform=darwin --arch=x64 --overwrite --icon="./src/static/icons/icon.icns" --asar --ignore="setup"
+
+    npm install --global --production windows-build-tools
+    npm install node-gyp
+    node_modules\.bin\electron-rebuild -w -f serialport
+
+
 */
+
+var console=(function(oldCons){
+    return {
+        log: function(text){
+            log.info(text);
+            
+            var path = require('path');
+            var os = require('os');
+            
+            if (!fs.existsSync(path.join(process.cwd(), "logs"))) fs.mkdirSync(path.join(process.cwd(), "logs"));
+
+            var home = os.homedir ? os.homedir() : process.env.HOME;
+            var data = fs.readFileSync(path.join(home, 'AppData/Roaming') + "/GatorByte/logs/main.log", "utf-8");
+            fs.writeFileSync(path.join(process.cwd(), "logs", "main.log"), data, "utf-8");
+        },
+        info: function (text) {
+            log.info(text);
+            // Your code
+        },
+        warn: function (text) {
+            log.warn(text);
+            // Your code
+        },
+        error: function (text) {
+            log.error(text);
+            // Your code
+        }
+    };
+}(global.console !== undefined ? global.console : window.console));

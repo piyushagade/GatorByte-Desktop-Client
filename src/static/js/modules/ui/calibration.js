@@ -8,6 +8,106 @@ function uisensorcalibrationsubapp(){
     self.pwrsv =  require('electron').remote.powerSaveBlocker;
     self.a = global.accessors;
     self.panel = $(".sensor-calibration-panel");
+    self.options = { 
+        "ph": {
+            "messages" : {
+                "mid": "Caution: Mid-point calibration clears all other calibrations."
+            },
+            "levels": [
+                {
+                    "id": "low",
+                    "description": "Low-point"
+                },
+                {
+                    "id": "mid",
+                    "description": "Mid-point",
+                    "notification": {
+                        "contexttype": "success",
+                        "overlaytype": "dialog",
+                        "heading": "Important note",
+                        "body": "Mid-point calibration will remove Low-point and High-point calibrations. Do you want to proceed?"
+                    }
+                },
+                {
+                    "id": "high",
+                    "description": "High-point"
+                }
+            ],
+            "solutions": [
+                {
+                    "id": "4",
+                    "description": "4.0"
+                },
+                {
+                    "id": "7",
+                    "description": "7.0"
+                },
+                {
+                    "id": "10",
+                    "description": "10.0"
+                }
+            ]
+        },
+        "dox": {
+            "levels": [
+                {
+                    "id": "atm",
+                    "description": "Atmosphere"
+                },
+                {
+                    "id": "zero",
+                    "description": "Zero solution"
+                }
+            ],
+            "solutions": []
+        },
+        "rtd": {
+            "levels": [],
+            "solutions": []
+        },
+        "ec": {
+            "levels": [
+                {
+                    "id": "dry",
+                    "description": "Dry"
+                },
+                {
+                    "id": "low",
+                    "description": "Low-point"
+                },
+                {
+                    "id": "high",
+                    "description": "High-point"
+                }
+            ],
+            "solutions": [
+                {
+                    "id": "100",
+                    "description": "100 uS"
+                },
+                {
+                    "id": "400",
+                    "description": "400 uS"
+                },
+                {
+                    "id": "1410",
+                    "description": "1410 uS"
+                },
+                {
+                    "id": "2000",
+                    "description": "82000 uS"
+                },
+                {
+                    "id": "12800",
+                    "description": "12800 uS"
+                },
+                {
+                    "id": "80000",
+                    "description": "80000 uS"
+                }
+            ]
+        },
+    }
 
     self.init = function () {
 
@@ -40,6 +140,15 @@ function uisensorcalibrationsubapp(){
                 windowid: global.states.windowid,
                 path: global.port.path
             });
+
+            
+            // Get config data
+            global.accessors.uiconfiggatorbyte.request_config().then(function (configdata) {
+                self.configdata = configdata;
+                self.alldevices = global.accessors.uiconfiggatorbyte.devices;
+                self.enableddevices = configdata.device.devices;
+                self.enableddevices = (self.enableddevices || "").split(",");
+            });
         });
         
         // Select sensor from the sensor list
@@ -67,6 +176,14 @@ function uisensorcalibrationsubapp(){
 
             // Set sensor name in GUI
             self.panel.find(".sensor-name").text(sensor);
+        });
+
+        // Update the list of calibrations found
+        self.panel.find(".calibration-status-refresh-button").off("click").click(function () {
+            self.sendcommand(sensor + ":calibrate:status");
+            self.state = "wait-on-result";
+            $(this).addClass("rotate-animation");
+            $(".calibrations-found-item").addClass("blur");
         });
     }
 
@@ -164,156 +281,13 @@ function uisensorcalibrationsubapp(){
                 self.panel.find(".calibration-info-parent").addClass("hidden");
                 self.panel.find(".calibration-perform-parent").removeClass("hidden");
 
+                self.panel.find(".number-continous-readings").find(".text").text("0");
+                self.panel.find(".previous-continous-readings").find(".text").text("-");
+                self.panel.find(".latest-continous-readings").find(".text").text("-");
+                self.panel.find(".delta-continous-readings").find(".text").text("-");
+
                 var sensor = self.selectedsensor;
                 var newparent = $(".calibration-perform-div[sensor='" + sensor + "']");
-
-                var options = { 
-                    "ph": {
-                        "messages" : {
-                            "mid": "Caution: Mid-point calibration clears all other calibrations."
-                        },
-                        "levels": [
-                            {
-                                "id": "mid",
-                                "description": "Mid-point"
-                            },
-                            {
-                                "id": "low",
-                                "description": "Low-point"
-                            },
-                            {
-                                "id": "high",
-                                "description": "High-point"
-                            }
-                        ],
-                        "solutions": [
-                            {
-                                "id": "4",
-                                "description": "4.0"
-                            },
-                            {
-                                "id": "7",
-                                "description": "7.0"
-                            },
-                            {
-                                "id": "10",
-                                "description": "10.0"
-                            }
-                        ]
-                    },
-                    "dox": {
-                        "levels": [
-                            {
-                                "option": "atm",
-                                "description": "Atmosphere"
-                            },
-                            {
-                                "option": "zero",
-                                "description": "Zero solution"
-                            }
-                        ],
-                        "solutions": []
-                    },
-                    "ec": {
-                        "levels": [
-                            {
-                                "id": "dry",
-                                "description": "Dry"
-                            },
-                            {
-                                "id": "low",
-                                "description": "Low-point"
-                            },
-                            {
-                                "id": "high",
-                                "description": "High-point"
-                            }
-                        ],
-                        "solutions": [
-                            {
-                                "option": "100",
-                                "description": "100 uS"
-                            },
-                            {
-                                "option": "400",
-                                "description": "400 uS"
-                            },
-                            {
-                                "option": "1410",
-                                "description": "1410 uS"
-                            },
-                            {
-                                "option": "2000",
-                                "description": "82000 uS"
-                            },
-                            {
-                                "option": "12800",
-                                "description": "12800 uS"
-                            },
-                            {
-                                "option": "80000",
-                                "description": "80000 uS"
-                            },
-                        ]
-                    },
-
-                    
-                }
-
-                // Clear lists
-                newparent.find(".calibration-levels-list .calibration-level-option").remove();
-                newparent.find(".calibration-solutions-list .calibration-solution-option").remove();
-
-                // Create level and solution lists
-                Object.keys(options).forEach(function (sensor, si) {
-
-                    if (sensor != self.selectedsensor) return;
-
-                    // Show calibration levels
-                    options[sensor].levels.forEach(function (level, li) {
-                        newparent.find(".calibration-levels-list").append(multiline(function () {/* 
-                            <div class="col-auto calibration-level-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
-                                <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
-                            </div>
-                        */}, {
-                            "option": level.id,
-                            "description": level.description
-                        }));
-                    });
-
-                    // Show calibration solution options
-                    if (options[sensor].solutions.length == 0) {
-                        newparent.find(".calibration-solutions-list").addClass("hidden");
-                    }
-                    else {
-                        newparent.find(".calibration-solutions-list").removeClass("hidden");
-                        options[sensor].solutions.forEach(function (solution, si) {
-                            newparent.find(".calibration-solutions-list").append(multiline(function () {/* 
-                                <div class="col-auto calibration-solution-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
-                                    <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
-                                </div>
-                            */}, {
-                                "option": solution.id,
-                                "description": solution.description
-                            }));
-                        });
-                    }
-                });
-
-                // Disable Perform button
-                shouldenableperformbutton();
-
-                // Click listeners
-                newparent.find(".calibration-level-option").off("click").on("click", function () {
-                    newparent.find(".calibration-level-option").css("opacity", "0.3").removeClass("active");
-                    $(this).css("opacity", "1").addClass("active");
-                    shouldenableperformbutton();
-                });
-                newparent.find(".calibration-solution-option").off("click").on("click", function () {
-                    newparent.find(".calibration-solution-option").css("opacity", "0.3").removeClass("active");
-                    $(this).css("opacity", "1").addClass("active");
-                    shouldenableperformbutton();
-                });
                 
                 // Show sensor calibration status UI
                 self.panel.find(".go-back-sensor-calibration-status-button").off("click").click(function () {
@@ -323,60 +297,82 @@ function uisensorcalibrationsubapp(){
 
                 // Clear calibration button click handler
                 newparent.find(".calibration-clear-option").off("click").on("click", function () {
-                    shouldenableperformbutton();
+                    
+                    self.a.ui.notification({
+                        "contexttype": "success",
+                        "overlaytype": "dialog",
+                        "heading": "Clear calibration",
+                        "body": "Are you sure you want to clear the calibration?",
+                        "onokay": function () {
+                            shouldenableperformbutton();
 
-                    self.sendcommand(sensor + ":calibrate:clear");
-                    self.state = "wait-on-result";
-                    parent.find(".calibration-option[type='status']").addClass("rotate-animation");
+                            self.sendcommand(sensor + ":calibrate:clear");
+                            self.state = "wait-on-result";
+                            parent.find(".calibration-status-refresh-button").addClass("rotate-animation");
+                            
+                            // Add blur
+                            $(".calibrations-found-item").addClass("blur");
+                            $(".lpi-item").addClass("blur");
+                            // $(".calibration-data-info-div").addClass("blur");
+                            
+                            // Show info screen and hide perform screen
+                            self.panel.find(".calibration-info-parent").removeClass("hidden");
+                            self.panel.find(".calibration-perform-parent").addClass("hidden");
+                            
+                            self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+                            self.panel.find(".calibration-options-div").addClass("hidden");
+                        }
+                    });
                     
-                    // Add blur
-                    $(".calibrations-found-item").addClass("blur");
-                    $(".lpi-item").addClass("blur");
-                    // $(".calibration-data-info-div").addClass("blur");
-                    
-                    // Show info screen and hide perform screen
-                    self.panel.find(".calibration-info-parent").removeClass("hidden");
-                    self.panel.find(".calibration-perform-parent").addClass("hidden");
-                    
-                    self.panel.find(".calibration-stabalization-div").removeClass("hidden");
-                    self.panel.find(".calibration-options-div").addClass("hidden");
                 });
 
                 // Perform calibration button click handler
                 newparent.find(".perform-calibration-button").off("click").on("click", function () {
                     var level = newparent.find(".calibration-level-option.active").attr("type");
                     var solution = newparent.find(".calibration-solution-option.active").attr("type");
+                    var notificationdata = self.f.grep(self.options[sensor].levels, "id", level, true).notification;
+                    if (!solution) solution = -1;
 
-                    self.sendcommand(sensor + ":calibrate:" + level + "," + solution);
-                    self.state = "wait-on-result";
-                    parent.find(".calibration-option[type='status']").addClass("rotate-animation");
                     
-                    // Add blur
-                    $(".calibrations-found-item").addClass("blur");
-                    $(".lpi-item").addClass("blur");
-                    // $(".calibration-data-info-div").addClass("blur");
+                    if (notificationdata) {
+                        notificationdata.onokay = onproceed;
+                        console.log(notificationdata);
+                        self.a.ui.notification(notificationdata);
+                    }
+                    else onproceed();
 
-                    // Show info screen and hide perform screen
-                    self.panel.find(".calibration-info-parent").removeClass("hidden");
-                    self.panel.find(".calibration-perform-parent").addClass("hidden");
-                    
-                    self.panel.find(".calibration-stabalization-div").removeClass("hidden");
-                    self.panel.find(".calibration-options-div").addClass("hidden");
+                    function onproceed () {
+                        self.sendcommand(sensor + ":calibrate:" + level + "," + solution);
+                        self.state = "wait-on-result";
+                        parent.find(".calibration-status-refresh-button").addClass("rotate-animation");
+                        
+                        // Add blur
+                        $(".calibrations-found-item").addClass("blur");
+                        $(".lpi-item").addClass("blur");
+
+                        self.a.ui.notification({
+                            "contexttype": "success",
+                            "overlaytype": "notification",
+                            "hidetimeout": 3000,
+                            "heading": "Calibration done",
+                            "body": "The sensor was sucessfully calibrated to '" + level + "'.",
+                            "onokay": function () {
+                                self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+                                self.panel.find(".calibration-options-div").addClass("hidden");
+                            }
+                        });
+                    }
                 });
 
                 // Cancel calibration button click handler
-                newparent.find(".cancel-calibration-button").off("click").on("click", function () {
-                    // Show info screen and hide perform screen
-                    self.panel.find(".calibration-info-parent").removeClass("hidden");
-                    self.panel.find(".calibration-perform-parent").addClass("hidden");
-                    
+                newparent.find(".back-calibration-button").off("click").on("click", function () {
                     self.panel.find(".calibration-stabalization-div").removeClass("hidden");
                     self.panel.find(".calibration-options-div").addClass("hidden");
                 });
 
                 // Enable/disable perform calibration buttons
                 function shouldenableperformbutton () {
-                    if (newparent.find(".calibration-level-option.active").length > 0 && (options[sensor].solutions.length == 0 || (options[sensor].solutions.length > 0 && newparent.find(".calibration-solution-option.active").length > 0))) {
+                    if (newparent.find(".calibration-level-option.active").length > 0 && (self.options[sensor].solutions.length == 0 || (self.options[sensor].solutions.length > 0 && newparent.find(".calibration-solution-option.active").length > 0))) {
                         newparent.find(".perform-calibration-button").removeClass("disabled");         
                     }
                     else {
@@ -386,11 +382,14 @@ function uisensorcalibrationsubapp(){
 
                 // Get continuous readings
                 newparent.find(".start-continous-readings-button").off("click").on("click", function () {
-                    $(this).css("opacity", "0.3").addClass("disabled");
+                    var count = $(this).attr("count");
+                    $(".start-continous-readings-button").css("opacity", "0.3").addClass("disabled");
                     newparent.find(".show-calibration-options-button").css("opacity", "0.3").addClass("disabled");
+
+                    self.selectedcreadcount = count;
                     
                     // Send request to GB for continuous readings
-                    self.sendcommand(sensor + ":cread");
+                    self.sendcommand(sensor + ":cread:" + self.selectedcreadcount);
                     parent.find(".continuous-read-status-div").addClass("rotate-animation");
                 });
 
@@ -399,6 +398,61 @@ function uisensorcalibrationsubapp(){
                     
                     self.panel.find(".calibration-stabalization-div").addClass("hidden");
                     self.panel.find(".calibration-options-div").removeClass("hidden");
+
+                    // Clear lists
+                    newparent.find(".calibration-levels-list .calibration-level-option").remove();
+                    newparent.find(".calibration-solutions-list .calibration-solution-option").remove();
+
+                    // Create level and solution lists
+                    Object.keys(self.options).forEach(function (sensor, si) {
+
+                        if (sensor != self.selectedsensor) return;
+
+                        // Show calibration levels
+                        self.options[sensor].levels.forEach(function (level, li) {
+                            newparent.find(".calibration-levels-list").append(multiline(function () {/* 
+                                <div class="col-auto calibration-level-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
+                                    <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
+                                </div>
+                            */}, {
+                                "option": level.id,
+                                "description": level.description
+                            }));
+                        });
+
+                        // Show calibration solution options
+                        if (self.options[sensor].solutions.length == 0) {
+                            newparent.find(".calibration-solutions-list").addClass("hidden");
+                        }
+                        else {
+                            newparent.find(".calibration-solutions-list").removeClass("hidden");
+                            self.options[sensor].solutions.forEach(function (solution, si) {
+                                newparent.find(".calibration-solutions-list").append(multiline(function () {/* 
+                                    <div class="col-auto calibration-solution-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
+                                        <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
+                                    </div>
+                                */}, {
+                                    "option": solution.id,
+                                    "description": solution.description
+                                }));
+                            });
+                        }
+                    });
+
+                    // Disable Perform button
+                    shouldenableperformbutton();
+
+                    // Click listeners
+                    newparent.find(".calibration-level-option").off("click").on("click", function () {
+                        newparent.find(".calibration-level-option").css("opacity", "0.3").removeClass("active");
+                        $(this).css("opacity", "1").addClass("active");
+                        shouldenableperformbutton();
+                    });
+                    newparent.find(".calibration-solution-option").off("click").on("click", function () {
+                        newparent.find(".calibration-solution-option").css("opacity", "0.3").removeClass("active");
+                        $(this).css("opacity", "1").addClass("active");
+                        shouldenableperformbutton();
+                    });
                 });
 
                 // // Skip continuous readings
@@ -415,7 +469,7 @@ function uisensorcalibrationsubapp(){
             // Get calibration status
             self.state = "wait-on-status";
             self.sendcommand(sensor + ":calibrate:status");
-            parent.find(".calibration-option[type='status']").addClass("rotate-animation");
+            parent.find(".calibration-status-refresh-button").addClass("rotate-animation");
 
             // Add blur
             $(".calibrations-found-item").addClass("blur");
@@ -429,16 +483,16 @@ function uisensorcalibrationsubapp(){
 
             // Get payload
             var count = parseInt(line.split(":")[0]) + 1;
-            var reading = parseInt(line.split(":")[1]);
+            var reading = parseFloat(line.split(":")[1]);
 
             if (count == 1) {
-                self.deltacontinousreading = self.previouscontinuousreading ? self.previouscontinuousreading - reading : 0;
+                self.deltacontinousreading = 0;
                 self.previouscontinuousreading = reading;
             }
-            else if (count == 30) {
-                delete self.deltacontinousreading;
-                delete self.previouscontinuousreading;
-
+            if (count > 1 && count < self.selectedcreadcount) {
+                self.deltacontinousreading = reading - self.previouscontinuousreading;
+            }
+            else if (count == self.selectedcreadcount) {
                 self.panel.find(".continuous-read-status-div").addClass("rotate-animation");
                 self.panel.find(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
                 self.panel.find(".show-calibration-options-button").css("opacity", "1").removeClass("disabled");
@@ -446,9 +500,12 @@ function uisensorcalibrationsubapp(){
 
             self.panel.find(".number-continous-readings .text").text(count);
             
-            self.panel.find(".previous-continous-readings .text").text(self.previouscontinuousreading);
-            self.panel.find(".latest-continous-readings .text").text(reading);
-            self.panel.find(".delta-continous-readings .text").text(self.deltacontinousreading);
+            self.panel.find(".previous-continous-readings .text").text(parseFloat(self.previouscontinuousreading).toFixed(2));
+            self.panel.find(".latest-continous-readings .text").text(parseFloat(reading).toFixed(2));
+            self.panel.find(".delta-continous-readings .text").text(parseFloat(self.deltacontinousreading).toFixed(3));
+
+            // Set previous reading value
+            if (reading) self.previouscontinuousreading = reading;
 
         }
     }
@@ -461,7 +518,7 @@ function uisensorcalibrationsubapp(){
             var sensor = line.split(":")[1];
             var parent = $(".calibration-info-div[sensor='" + sensor + "']");
 
-            parent.find(".calibration-option[type='status']").removeClass("rotate-animation");
+            parent.find(".calibration-status-refresh-button").removeClass("rotate-animation");
 
             if (calibrations > 0) parent.find(".calibration-data-info-item[type='calibrations-found'] .list").html("");
             else {

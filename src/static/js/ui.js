@@ -184,6 +184,8 @@ function uisubapp(){
             .off("click").click(function () {
                 global.states.follow = false;
                 $(".waiting-for-device-notification").addClass("hidden");
+                $(".device-not-available-overlay").slideUp(100);
+                $(".waiting-for-pong-overlay").slideUp(100);
                 $(".share-online-overlay").addClass("hidden");
                 $(".session").remove();
                 $(".serial-monitor .skeleton-div").removeClass("hidden");
@@ -300,6 +302,95 @@ function uisubapp(){
         // Unlock pro version listener
         parent.find(".unlock-pro-button").off("click").click(() => {
                 
+        });
+    }
+
+    self.notification = function (args) {
+        var parent = $(".notification-overlay");
+
+        /*
+            Context types: 'success', 'error'
+        */
+            var contexttype = args.contexttype || "success";
+
+            /*
+                Set heading icon
+            */
+            if (contexttype == "success") {
+                parent.find(".heading-icon").css("color", "#2b8a04").find("i").removeClass("fa-triangle-exclamation").addClass("fa-check");
+            }
+            else if (contexttype == "error") {
+                parent.find(".heading-icon").css("color", "#d65103").find("i").addClass("fa-triangle-exclamation").removeClass("fa-check");
+            }
+            
+            /*
+                Set heading
+            */
+            parent.find(".heading-text").html(args.heading || "");
+            
+            /*
+                Set body
+            */
+            parent.find(".body").html(args.body || "");
+        
+        /*
+            Overlay types: 'dialog' (with button), 'notification' with timer-based dismissal
+        */
+        var overlaytype = args.overlaytype || "dialog";
+        
+        /*
+            Set overlay type
+        */
+        if (overlaytype == "dialog") {
+            parent.find(".action-buttons").removeClass("hidden");
+            parent.find(".dismiss-button").removeClass("hidden");
+            parent.find(".okay-button").removeClass("hidden");
+        }
+
+        else {
+            parent.find(".action-buttons").addClass("hidden");
+            parent.find(".dismiss-button").addClass("hidden");
+            parent.find(".okay-button").addClass("hidden");
+
+            setTimeout(() => {
+                parent.find(".content-parent").slideUp(100);
+                setTimeout(() => {
+                    parent.addClass("hidden");
+                }, 100);
+                setTimeout(() => {
+                    parent.find(".heading").html("");
+                    parent.find(".body").html("");
+                }, 150);
+
+                if (args.onokay && typeof args.onokay == "function") args.onokay();
+            }, args.hidetimeout || 3000);
+        }
+
+        /*
+            Show overlay
+        */
+        parent.removeClass("hidden").find(".content-parent").slideUp(0).slideDown(150);
+
+        /*
+            Listeners
+        */
+
+        // Dismiss button listener
+        parent.find(".dismiss-button").off("click").click(() => {
+            parent.find(".content-parent").slideUp(100);
+            setTimeout(() => {
+                parent.addClass("hidden");
+                if (args.oncancel && typeof args.oncancel == "function") args.oncancel();
+            }, 100);
+        });
+
+        // Okay button listener
+        parent.find(".okay-button").off("click").click(() => {
+            parent.find(".content-parent").slideUp(100);
+            setTimeout(() => {
+                parent.addClass("hidden");
+                if (args.onokay && typeof args.onokay == "function") args.onokay();
+            }, 100);
         });
     }
 

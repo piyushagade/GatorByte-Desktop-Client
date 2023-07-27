@@ -9,12 +9,13 @@ var flashmode = false;
 module.exports = {
     self : {},
     listen: function (i) {
-        
+
         // Get storage directory
         var storagedir = path.join(path.dirname(__dirname), "storage\\");
 
         // Create persistent storage files
-        if(!i.fs.existsSync(path.join(storagedir, "alldevices"))) i.fs.writeFileSync(path.join(storagedir, "alldevices"), "[]", "utf8");
+        var devicesobject = {}; devicesobject[i.g.var.machineid] = [];
+        if(!i.fs.existsSync(path.join(storagedir, "alldevices"))) i.fs.writeFileSync(path.join(storagedir, "alldevices"), JSON.stringify(devicesobject), "utf8");
         if(!i.fs.existsSync(path.join(storagedir, "config"))) i.fs.writeFileSync(path.join(storagedir, "config"), "[]", "utf8");
 
         /* 
@@ -29,11 +30,18 @@ module.exports = {
             console.log(obj);
 
             console.log("\nClosing window with ID: " + windowid);
-            var window = BrowserWindow.fromId(windowid);
-            if (window) window.close();
-            if (path && i.g.var.serports[path]) {
-                i.g.var.serports[path].close();
-                delete i.g.var.serports[path];
+            try {
+                var window = BrowserWindow.fromId(windowid);
+                if (window) window.close();
+                if (path && i.g.var.serports[path]) {
+                    i.g.var.serports[path].close();
+                    delete i.g.var.serports[path];
+                }
+            }
+            catch (e) {
+                console.log(e);
+                console.log("GDC error: Couldn't close the windowid: " + String(windowid));
+                i.app.exit();
             }
         });
         
@@ -66,7 +74,7 @@ module.exports = {
 
             // Get all devices
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
-            alldevices.forEach(function (device, di) {
+            alldevices[i.g.var.machineid].forEach(function (device, di) {
                 if (data.pnpId == device.pnpId) {
                     device.nickname = data.nickname;
                 }
@@ -87,7 +95,7 @@ module.exports = {
 
             // Get all devices
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
-            alldevices.forEach(function (device, di) {
+            alldevices[i.g.var.machineid].forEach(function (device, di) {
                 if (data.pnpId == device.pnpId) {
                     device.uploaddelay = data.uploaddelay;
                 }
@@ -99,7 +107,7 @@ module.exports = {
 
             // Get all devices
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
-            alldevices.forEach(function (device, di) {
+            alldevices[i.g.var.machineid].forEach(function (device, di) {
                 if (data.pnpId == device.pnpId) {
                     device.baud = data.baud;
                 }
@@ -111,7 +119,7 @@ module.exports = {
 
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
 
-            var filtered = alldevices.filter(function (device) {
+            var filtered = alldevices[i.g.var.machineid].filter(function (device) {
                 return device.favorite == true;
             });
 
@@ -123,7 +131,7 @@ module.exports = {
                 console.log("This feature is not available. Please begin trial, or buy the product.");
             }
             else {
-                alldevices.forEach(function(entry, ei) {
+                alldevices[i.g.var.machineid].forEach(function(entry, ei) {
                     if (entry.pnpId == data.pnpId) {
                         entry.favorite = data.favorite
                     }
@@ -141,21 +149,29 @@ module.exports = {
 
             SerialPort.list()
                 .then(function (ports) {
+
+                    var AUTOCONNECT = true;
+
                     var connecteddevices = [];
                     var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
                     
                     // Filter out non-GatorByte devices
                     var acceptedproductid = ["8055", "0055"];
 
-                    var gatorbytedevices = ports.filter(function (device) { 
+                    var gatorbytedevices = {}; gatorbytedevices[[i.g.var.machineid]] = {};
+                    gatorbytedevices[[i.g.var.machineid]] = ports.filter(function (device) { 
                         return acceptedproductid.indexOf(device.productId) !== -1;
+                        return true;
                     });
+                    
+                    // Write all GB devices to list
+                    i.fs.writeFileSync(path.join(storagedir, "allgbdevices"), JSON.stringify(gatorbytedevices), "utf8");
 
-                    gatorbytedevices.forEach(function (row) {
+                    gatorbytedevices[[i.g.var.machineid]].forEach(function (row) {
 
                         // Check if the port exists in alldevices list
-                        var filtered = alldevices.filter(function (device) {
-                            return device.pnpId == row.pnpId;
+                        var filtered = alldevices[i.g.var.machineid].filter(function (device) {
+                            return device.pnpId && device.pnpId == row.pnpId;
                         });
 
                         // Get attributes from alldevices list for the device and add to the list of connected devices
@@ -169,11 +185,16 @@ module.exports = {
                                 code: filtered[0].code
                             });
 
+                            // TODO: Finish this
+                            if (AUTOCONNECT) {
+
+                            }
+
                         }
 
-                        // If the device didn't exist in the alldevices list, add it to the list
+                        // If the device didn't exist in the alldevices list, add it to the alldevices list
                         if (filtered.length == 0) {
-                            alldevices.push({
+                            alldevices[i.g.var.machineid].push({
                                 ...row,
                                 favorite: false,
                                 nickname: null,
@@ -186,10 +207,10 @@ module.exports = {
                     });
 
                     // Get list of favorited devices
-                    var favorites = alldevices.filter(function (device) { return device.favorite == true; });
+                    var favorites = alldevices[i.g.var.machineid].filter(function (device) { return device.favorite == true; });
 
                     event.sender.send("get-available-ports-response", {
-                        alldevices: alldevices,
+                        alldevices: alldevices[i.g.var.machineid],
                         connecteddevices: connecteddevices,
                         favorites: favorites
                     });
@@ -203,7 +224,9 @@ module.exports = {
 
             // Get port information from alldevices list
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
-            var port = alldevices.filter(function (device) { return device.pnpId == obj.pnpId })[0];
+
+            // Get port metadata
+            var port = alldevices[i.g.var.machineid].filter(function (device) { return device.pnpId != undefined && (device.pnpId == obj.pnpId) })[0];
 
             function connect () {
                 var temp = new SerialPort({path:  port.path, baudRate: parseInt(port.baud)}, { autoOpen: false });
@@ -283,6 +306,18 @@ module.exports = {
                                     });
                                 })
                                 clearInterval(i.g.var.timers.gbdetector);
+                                return;
+                            }
+
+                            // GatorByte is now in GDC mode
+                            if (data.indexOf("##CEREAL-GDC-READY##") !== -1) {
+                                console.log("GB has completed setup");
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/gb-ready-notification/push", {
+                                        path: result.port.settings.path,
+                                        pnpId: result.port.settings.pnpId
+                                    });
+                                })
                                 return;
                             }
 
@@ -371,7 +406,7 @@ module.exports = {
             console.log("Setting live share code for " + data.path + " to: " + data.code);
 
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
-            alldevices.forEach(function(entry, ei) {
+            alldevices[i.g.var.machineid].forEach(function(entry, ei) {
                 var forceupdate = data.forceupdate || !entry.code;
                 if (entry.pnpId == data.pnpId && forceupdate) {
                     entry.code = data.code
@@ -403,7 +438,7 @@ module.exports = {
         */
 
         i.ipcm.on('bootstrap-data-request', (event, data) => {
-            
+
             event.sender.send('bootstrap-information-push', {
                 remoteurl: i.g.LIVE_SHARE_URL,
                 appname: i.g.APP_NAME,
@@ -411,12 +446,14 @@ module.exports = {
                 machineid: i.g.var.machineid,
                 fullfunctionality: i.g.var.fullfunctionality,
                 windowid: data.windowid,
+                windowtype: data.windowtype,
                 windowscountid: BrowserWindow.getAllWindows().length,
                 quickconnectport: i.s.getSync("quickconnect-" + "windowid-" + BrowserWindow.getAllWindows().length)
             });
         });
 
         i.ipcm.on('send-command-request', (event, obj) => {
+
             var command = obj.command;
 
             if (!i.g.var.serports[obj.path]) {
@@ -523,6 +560,8 @@ module.exports = {
                 var tool = path.join(path.dirname(__dirname), "tools", "bossa", "bossac.exe");
                 var arguments = "--write" + sep + "--verify" + sep + "--reset" + sep +  quotes + obj.filepath + quotes;
 
+                console.log(tool + sep + arguments);
+
                 // call the function
                 execute(tool + sep + arguments, (output, error) => {
                     if (error) console.log(error);
@@ -547,7 +586,8 @@ module.exports = {
             };
 
             function on_flash_complete  (message) {
-                message = message ? message.toLowerCase() : "";
+                console.log(message);
+                message = message && typeof message === "string" ? message.toLowerCase() : "";
 
                 if (
                     message.indexOf("verify successful") > -1 &&
@@ -622,6 +662,20 @@ module.exports = {
 
             // Write to storage
             i.fs.writeFileSync(path.join(storagedir, "config"), JSON.stringify(data), "utf8");
+        });
+        
+        i.ipcm.on('ipc/open-serial-monitor/request', (event, obj) => {
+            console.log(obj);
+
+            i.w.create.monitor(i, obj);
+        });
+        
+        i.ipcm.on('ipc/toggle-gb-op-lock/request', (event, obj) => {
+            var state = obj.state;
+            var port = obj.port;
+
+            // Send command to the GatorByte            
+            i.g.var.serports[port.path].write("##CEREAL-GDC-LOCK##");
         });
     }
 }

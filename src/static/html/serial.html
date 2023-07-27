@@ -53,10 +53,10 @@
 
     <canvas style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; pointer-events: none; opacity: 0.0;"></canvas>
 
-    <div class="container" state="transparent" style="overflow: hidden; max-width: unset; margin: 0px; border-radius: 0px; padding: 10px 14px 10px 14px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; cursor: default; -webkit-app-region: no-drag; ">
+    <div class="container" state="transparent" style="overflow: hidden; max-width: unset; margin: 0px; border-radius: 0px; padding: 10px 14px 10px 14px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; cursor: default; -webkit-app-region: no-drag; border: 2px solid #424242;">
         
         <!--! Top menu -->
-        <div class="menu-buttons-div row" style="-webkit-app-region: no-drag; padding: 2px 4px 0 4px;background: #6262626b; backdrop-filter: blur(4px); border-radius: 0px;z-index: 1;font-size: 11px;position: absolute;top: 8px;right: 10px;margin: 0px 0px 12px 0px;color: #AAA;pointer-events: all; z-index: 2;">
+        <div class="menu-buttons-div row" style="-webkit-app-region: no-drag; padding: 2px 4px 0 4px;background: #9c9c9c6b; backdrop-filter: blur(4px); border-radius: 0px;z-index: 1;font-size: 11px;position: absolute;top: 8px;right: 10px;margin: 0px 0px 12px 0px;color: #AAA;pointer-events: all; z-index: 2;">
 
             <!-- Always on top -->
             <!-- <div class="col-auto" style="float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
@@ -64,7 +64,7 @@
             </div> -->
 
             <!-- New window -->
-            <div class="col-auto new-window-button" style="float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
+            <div class="col-auto hidden new-window-button" style="float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
                 <i class="fas fa-plus" style="color: #DDDDDD; font-size: 13px;"></i>
             </div>
 
@@ -211,7 +211,7 @@
                     <div class="col-12" style="margin-bottom: 10px;">
                         
                         <!-- Sensors list description -->
-                        <div class="row sensor-list shadow" style="margin: 0; background: #1d1b12; border-radius: 2px; padding: 4px 10px;">
+                        <div class="row sensor-list shadow" style="margin: 0; background: #443041; border-radius: 2px; padding: 4px 10px;">
                             
                             <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
                                 The sensors on the GatorByte need to be calibrated regularly. At minimum, we recommend validation of the sennsor readings against standard solutions before a survey.
@@ -223,24 +223,29 @@
                         </div>
                         
                         <!-- Sensors list -->
-                        <div class="row sensor-list shadow" style="margin: 10px 0 0 0; background: #304448; border-radius: 2px; padding: 4px 10px;">
+                        <div class="row sensor-list shadow" style="margin: 10px 0 0 0; background: #383838; border-radius: 2px; padding: 4px 10px;">
                             
                             <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
                                 Select a sensor from the list below below to get started.
                             </p>
                             
+                            <!-- RTD sensor -->
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="rtd" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
+                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">RTD</p>
+                            </div>
+
                             <!-- pH sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ph" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ph" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
                                 <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">pH</p>
                             </div>
                             
                             <!-- EC sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ec" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ec" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
                                 <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">EC</p>
                             </div>
                             
                             <!-- DO sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="dox" style="padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px;">
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="dox" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
                                 <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">DO</p>
                             </div>
                             
@@ -266,7 +271,7 @@
                                 <p style="color: #c4c4c4;margin-bottom: 10px;">You have entered calibration mode for Atlas Scientific <span class="sensor-name">-</span> sensor.</p>
                                 
                                 <!-- Calibration meta info -->
-                                <div class="row calibration-meta-info-div shadow" style="margin: 0; padding: 6px 8px;margin-bottom: 12px;background: #3f3f3f93;border-radius: 2px;">
+                                <div class="row calibration-meta-info-div shadow-medium" style="margin: 0; padding: 6px 8px;margin-bottom: 12px;background: #3f3f3f93;border-radius: 2px;">
                                     
                                     <div class="col-auto calibration-meta-info-item" type="last-calibrated" style="padding: 0; margin: 4px 6px;">
                                         <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Last calibrated</p>
@@ -280,10 +285,10 @@
                                 </div>
 
                                 <!-- Calibration data info -->
-                                <div class="row calibration-data-info-div shadow" style="position: relative; margin: 0; padding: 6px 8px;margin-bottom: 10px;background: #42424245;border-radius: 2px;">
+                                <div class="row calibration-data-info-div shadow-medium" style="position: relative; margin: 0; padding: 6px 8px;margin-bottom: 10px;background: #42424245;border-radius: 2px;">
                                     
                                     <!-- Refersh status -->
-                                    <div class="calibration-option rotate-animation" type="status" title="Refresh status" style="position: absolute;top: 10px;right: 12px;">
+                                    <div class="calibration-status-refresh-button" title="Refresh status" style="position: absolute;top: 10px;right: 12px;">
                                         <p style="color: #a5a5a5;margin-bottom: 0;"><i class="fa-solid fa-arrows-rotate"></i></p>
                                     </div>
 
@@ -295,10 +300,10 @@
                                 
                                 <!-- Calibrate button -->
                                 <div class="row" style="margin: 0; margin-top: 10px;">
-                                    <div class="col-auto show-calibration-actions-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                    <div class="col-auto show-calibration-actions-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
                                         <p style="color: #DDDDDD;margin-bottom: 0;">Calibrate sensor</p>
                                     </div>
-                                    <div class="col-auto go-back-sensor-list-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                    <div class="col-auto go-back-sensor-list-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
                                         <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
                                     </div>
                                 </div>
@@ -321,11 +326,23 @@
                                         <p style="color: #bbbbbb;margin-bottom: 6px;">Before we perform the calibration on the <span class="sensor-name">ph</span> sensor, we need to ensure the readings are stable. Click on the button below to fetch continous readings.</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;">
-                                        <p style="color: #2e2e2e;margin-bottom: 0;">Get readings</p>
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="30" title="30 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">30</p>
                                     </div>
 
-                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="10" title="10 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">10</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="5" title="5 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">5</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="1" title="1 reading" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px; width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">1</p>
+                                    </div>
+
+                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
                                         <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
                                     </div>
 
@@ -373,14 +390,14 @@
 
                                 <div class="row shadow calibration-stabalization-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
                                     <div class="col-12" style="padding: 0;">
-                                        <p style="color: #bbbbbb;margin-bottom: 6px;">You can alternatively skip stabilization step and go directly to the calibration step.</p>
+                                        <p style="color: #bbbbbb;margin-bottom: 6px;">Alternatively, you can skip stabilization and go to the calibration step.</p>
                                     </div>
 
-                                    <div class="col-auto show-calibration-options-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                    <div class="col-auto show-calibration-options-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
                                         <p style="color: #DDDDDD;margin-bottom: 0;">Proceed to calibration</p>
                                     </div>
                                     
-                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
+                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
                                         <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
                                     </div>
                                 </div>
@@ -408,14 +425,14 @@
                                         
                                         <!-- Calibrate button -->
                                         <div class="row" style="margin: 0; margin-top: 10px;">
-                                            <div class="col-auto perform-calibration-button shadow-heavy disabled" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
+                                            <div class="col-auto perform-calibration-button shadow-medium disabled" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
                                                 <p style="color: #DDDDDD;margin-bottom: 0;">Perform</p>
                                             </div>
-                                            <div class="col-auto calibration-clear-option shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #b53e3eb0;border-radius: 2px;height: 28px;">
+                                            <div class="col-auto calibration-clear-option shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #b53e3eb0;border-radius: 2px;height: 28px;">
                                                 <p style="color: #DDDDDD;margin-bottom: 0;">Clear</p>
                                             </div>
-                                            <div class="col-auto cancel-calibration-button shadow-heavy" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #282e35;border-radius: 2px;height: 28px;">
-                                                <p style="color: #DDDDDD;margin-bottom: 0;">Dismiss</p>
+                                            <div class="col-auto back-calibration-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
                                             </div>
                                         </div>
                                     </div>
@@ -567,7 +584,7 @@
             <div class="col">
                 <div class="row">
                     
-                    <!-- Header -->
+                    <!--! Header -->
                     <div class="col-12" style="margin-bottom: -20px; padding: 10px 12px; margin-right: 6px; background: transparent;">
                         <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
@@ -575,12 +592,12 @@
                         </div>
                     </div>
                     
-                    <!-- Back button -->
+                    <!--! Back button -->
                     <div class="connected-device-disconnect-button" title="Disconnect GatorByte" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
                         <i class="fa-solid fa-stop"></i>
                     </div>
                     
-                    <!-- Update notification -->
+                    <!--! Update notification -->
                     <div class="col-12 shadow-heavy update-notification hidden" style="padding: 10px 12px; margin-right: 6px; background: #ababab; margin-top: 8px; cursor: pointer;">
                         <p style="color: rgb(29, 29, 29); font-size: 16px; text-align: justify; margin-bottom: -2px;">Cereal v<span class="update-version-text"></span> released!</p>
                         <p style="color: rgb(68, 68, 68); font-size: 12px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
@@ -590,7 +607,7 @@
                         <i class="fa-solid fa-cloud-arrow-down" style="position: absolute; top: 12px; right: 18px; color: #9b5505; font-size: 10px;"></i>
                     </div>
                     
-                    <!-- Update installation notification -->
+                    <!--! Update installation notification -->
                     <div class="col-12 shadow-heavy update-installation-notification hidden" style="padding: 10px 12px; margin-right: 6px; background: #ababab; margin-top: 8px; cursor: pointer;">
                         <p style="color: rgb(29, 29, 29); font-size: 16px; text-align: justify; margin-bottom: -2px;">An update is ready to install</p>
                         <p style="color: rgb(68, 68, 68); font-size: 12px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
@@ -600,69 +617,69 @@
                         <i class="fa-solid fa-cloud-arrow-down" style="position: absolute; top: 12px; right: 18px; color: #069230; font-size: 10px;"></i>
                     </div>
                     
-                    <!-- Big buttons -->
+                    <!--! Big buttons -->
                     <div class="col-12" style="padding: 10px 12px 0 12px;margin-right: 6px;margin-top: 8px;background: #2f2f2f;">
                         <div class="row" style="margin: 0;">
                             
                             <!-- Dashboard -->
-                            <div class="col-auto shadow dashboard-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <div class="col-auto shadow big-button dashboard-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-gauge"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">GatorByte dashboard</p>
                                 </div>
                             </div>
                             
                             <!-- Serial monitor -->
-                            <div class="col-auto shadow serial-monitor-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <div class="col-auto shadow big-button serial-monitor-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-code"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Serial monitor</p>
                                 </div>
                             </div>
                             
                             <!-- Configure GatorByte -->
-                            <div class="col-auto shadow configure-gb-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <div class="col-auto shadow big-button configure-gb-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-gears"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Configure GatorByte</p>
                                 </div>
                             </div>
                             
                             <!-- Calibrate sensors -->
-                            <div class="col-auto shadow sensor-calibration-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <div class="col-auto shadow big-button sensor-calibration-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-scale-balanced"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Calibrate sensors</p>
                                 </div>
                             </div>
                             
                             <!-- Download file -->
-                            <div class="col-auto shadow download-files-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <div class="col-auto shadow big-button download-files-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-sd-card"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">SD card explorer</p>
                                 </div>
                             </div>
                             
-                            <!-- Download file -->
-                            <div class="col-auto shadow flash-firmware-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <!-- Update firmware -->
+                            <div class="col-auto shadow big-button flash-firmware-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-download"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Flash firmware</p>
                                 </div>
                             </div>
                             
-                            <!-- Diagnostocs -->
-                            <div class="col-auto shadow diagnostics-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <!-- Diagnostics -->
+                            <div class="col-auto shadow big-button gb-diagnostics-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-stethoscope"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Device diagnostics</p>
                                 </div>
                             </div>
                             
                             <!-- GatorByte info -->
-                            <div class="col-auto shadow gb-info-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
-                                <div  style="text-align: center; height: 100px; width: 100px;background: #e7e7e7; padding: 0 6px;">
+                            <div class="col-auto shadow big-button gb-info-button" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                                <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-info"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">GatorByte info</p>
                                 </div>
@@ -671,12 +688,23 @@
                         </div>
                     </div>
 
-                    <!-- Documentation -->
+                    <!--! Lock GatorByte's operations -->
+                    <div class="col-12 hidden" style="background: #383838;padding: 10px 12px;margin-right: 6px;margin-bottom: 10px;">
+                        <p style="color: #adadad;font-size: 12px;text-align: justify;margin-bottom: 0px;">Toggle GatorByte's operation will the desktop client is connected to it by clicking on the button below.</p>
+                        <p style="color: #e7e7e7;font-size: 12px;text-align: justify;margin-bottom: 0px;">GatorByte is currently performing it's tasks as usual.</p>
+
+                        <!-- Action buttons -->
+                        <div class="action-buttons" style="margin: 10px 0 0 0; display: inline-flex;">
+                            <div class="toggle-gb-lock-button" state="lock" style="padding: 4px 8px; font-size: 13px; color: #AAA; background: #1d1d1d; width: fit-content; margin-right: 6px; cursor: pointer;">Toggle</div>
+                        </div>
+                    </div>
+
+                    <!--! Documentation -->
                     <div class="col-12" style="background: #383838;padding: 10px 12px;margin-right: 6px;margin-bottom: 10px;">
                         <p style="color: #adadad;font-size: 12px;text-align: justify;margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
 
-                    <!-- Inactive subscription notifcation -->
+                    <!--! Inactive subscription notifcation -->
                     <div class="col-12 shadow-heavy inactive-subscription-notification hidden" style="padding: 10px 12px; margin-right: 6px; background: #d3c612; max-width: 500px;">
                         <div class="row">
                             <div class="col">
@@ -715,14 +743,14 @@
                     </div>
                     
                     <!-- Quick connect button -->
-                    <div class="col-12 shadow-heavy quick-connect-button hidden" style="padding: 10px 12px; margin-right: 6px; background: #073d02; margin-top: 8px; cursor: pointer;">
+                    <div class="col-12 shadow-heavy quick-connect-button hidden">
                         <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Quick connect</p>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">Connect to the <span class="last-device-name">last connected device</span> at <span class="last-device-baud-rate">previously used baud rate</span>.</p>
                         <i class="fa-solid fa-link" style="position: absolute; top: 12px; right: 18px; color: #dae0e5; font-size: 10px;"></i>
                     </div>
                     
                     <!-- List devices button -->
-                    <div class="col-12 shadow-heavy list-devices-button" state="collapsed" style="padding: 10px 12px; margin-right: 6px; margin-top: 8px; background: #363636;">
+                    <div class="col-12 shadow-heavy list-devices-button" state="collapsed">
                         <div class="header" style="position: relative; cursor: pointer;">
                             <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Devices</p>
                             <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">See all your connected and favorited devices.</p>
@@ -791,6 +819,78 @@
                                 </div>
                             </div>
 
+                            <!--! Real-time clock configuration -->
+                            <div class="col-12 data-information-parent" style="margin-bottom: 10px;">  
+                                <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Realtime clock (RTC) synchronization</p>
+                                
+                                <div class="row" style="margin: 0; margin-top: 6px;">
+                                    <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">Use this to sync the GatorByte's clock's time with your computer's time.</p>
+                                        
+                                        <div class="row" style="margin: 0 0 10px;">
+                                            <div class="col-auto" style="padding: 6px 10px; background:  #44444422; margin: 0 6px 6px 0;">
+                                                <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">GMT time</p>
+                                                <p class="utc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                                            </div>
+                                            
+                                            <div class="col-auto" style="padding: 6px 10px; background:  #44444422; margin: 0 6px 6px 0;">
+                                                <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">GatorByte time</p>
+                                                <p class="gatorbyte-rtc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="rtc-sync-status" style="font-weight: bold; color: #888; font-size: 13px; text-align: justify; margin-bottom: 8px;"></p>
+                                        <p style="color: #AAA; font-size: 12px; text-align: justify; margin-bottom: 8px;">Click on 'Fetch RTC' to get the latest time from the RTC on the GatorByte.</p>
+                                        
+                                        <div class="row" style="margin: 0 0 0px;">
+                                            <div class="col-auto get-rtc-button shadow-heavy disabled" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #414141;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Check sync</p>
+                                            </div>
+
+                                            <div class="col-auto calibrate-rtc-button shadow-heavy disabled" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #1b5782;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Sync clock</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--! Bluetooth configuration -->
+                            <div class="col-12 bluetooth-configuration-parent" style="margin-bottom: 10px;">
+                                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Bluetooth configuration</p>
+                                    
+                                <div class="row" style="margin: 0px;">
+                                    
+                                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">The following fields allow you to change the Bluetooth name and PIN of you GatorByte.</p>
+                                        
+                                        <div class="row" style="margin: 0 0 8px;">
+
+                                            <!-- BL name -->
+                                            <div class="col config-item bl-config-item disabled" style="padding: 10px 12px; background:  #44444422; margin: 0 6px 6px 0; min-width: 60px;">
+                                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Bluetooth name</p>
+                                                <input class="bl-name-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                            </div>
+
+                                            <!-- BL PIN -->
+                                            <div class="col config-item bl-config-item disabled" style="padding: 10px 12px; background:  #44444422; margin: 0 6px 6px 0; min-width: 60px;">
+                                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Bluetooth PIN</p>
+                                                <input class="bl-pin-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                            </div>
+
+                                            <p class="bl-sync-status hidden" style="font-weight: bold; color: #888; font-size: 13px; text-align: justify; margin: 4px 0;"></p>
+                                        </div>
+                                        
+                                        <div class="row" style="margin: 0 0 0px;">
+                                            <div class="col-auto update-bl-config-button shadow-heavy disabled" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #1b5782;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                                <p style="color: #DDDDDD;margin-bottom: 0;">Update</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                             <!--! Survey information -->
                             <div class="col-12 survey-information-parent" style="margin-bottom: 10px;">
                                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Survey information</p>
@@ -798,13 +898,29 @@
                                 <div class="row" style="margin: 0px;">
 
                                     <!-- Survey ID -->
-                                    <div class="col dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey ID</p>
                                         <input class="survey-id-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                     </div>
 
+                                    <!-- Device ID -->
+                                    <div class="col config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Device ID</p>
+                                        <input class="device-id-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
+
+                                </div>
+
+                                <div class="row" style="margin: 0;">
+                                    
+                                    <!-- Survey location -->
+                                    <div class="col config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey location</p>
+                                        <input class="survey-location-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
+
                                     <!-- Survey date -->
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey date</p>
                                         
                                         <div class="survey-date-picker">
@@ -817,14 +933,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Survey location -->
-                                <div class="row" style="margin: 0;">
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; width: 100%;">
-                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Survey location</p>
-                                        <input class="survey-location-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
-                                    </div>
-                                </div>
                             </div>
                             
                             <!--! Sleep -->
@@ -834,7 +942,7 @@
                                 <div class="row" style="margin: 0; margin-top: 6px;">
                                     
                                     <!-- Sleep mode -->
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Sleep mode</p>
                                         <select class="sleep-mode-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                             <option value="shallow" style="color: #222;">Shallow</option>
@@ -845,7 +953,7 @@
                                     </div>
                                     
                                     <!-- Sleep duration -->
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px; width: auto;">Sampling interval (seconds)</p>
                                         <input class="sleep-duration-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; width: 100px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                     </div>
@@ -859,7 +967,7 @@
                                 <div class="row" style="margin: 0; margin-top: 6px;">
                                     
                                     <!-- Data mode -->
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 70px;">
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 70px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Data mode</p>
                                         <select class="data-mode-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                             <option value="read" style="color: #222;">Read</option>
@@ -868,7 +976,7 @@
                                     </div>
                                     
                                     <!-- Sensor read mode -->
-                                    <div class="col-auto dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Read sensors until</p>
                                         <select class="sensor-read-mode-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                             <option value="stability" style="color: #222;">Stability</option>
@@ -876,10 +984,14 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
 
+                            
+                            <!--! Devices and states -->
+                            <div class="col-12 devices-information-parent" style="margin-bottom: 10px;">  
                                 <!-- Enabled devices list -->
-                                <div class="row hidden" style="margin: 0; margin-top: 10px;">
-                                    <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                <div class="row" style="margin: 0; margin-top: 10px;">
+                                    <div class="col-12 config-item sd-config-item" type="devices" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">Enbaled devices</p>
                                         <div class="row devices-list" style="margin: 0px;"></div>
                                     </div>
@@ -887,45 +999,9 @@
 
                                 <!-- States list -->
                                 <div class="row hidden" style="margin: 0; margin-top: 10px;">
-                                    <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                    <div class="col-12 config-item sd-config-item" type="states" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 8px;">States</p>
                                         <div class="row states-list" style="margin: 0px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--! Real-time clock configuration -->
-                            <div class="col-12 data-information-parent" style="margin-bottom: 10px;">  
-                                <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Realtime clock (RTC) synchronization</p>
-                                
-                                <div class="row" style="margin: 0; margin-top: 6px;">
-                                    <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                        <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">Use this to sync the onboard clock's time with your computer's time.</p>
-                                        
-                                        <div class="row" style="margin: 0 0 10px;">
-                                            <div class="col-auto" style="padding: 6px 10px; background:  #44444422; margin: 0 6px 6px 0;">
-                                                <p style="color: #747474; font-size: 12px; text-align: justify; margin-bottom: 0px;">Computer time</p>
-                                                <p class="utc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
-                                            </div>
-                                            
-                                            <div class="col-auto" style="padding: 6px 10px; background:  #44444422; margin: 0 6px 6px 0;">
-                                                <p style="color: #747474; font-size: 12px; text-align: justify; margin-bottom: 0px;">GatorByte time</p>
-                                                <p class="gatorbyte-rtc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <p class="rtc-sync-status" style="font-weight: bold; color: #888; font-size: 12px; text-align: justify; margin-bottom: 8px;"></p>
-                                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 8px;">Click on 'Fetch RTC' to get the latest time from the RTC on the GatorByte.</p>
-                                        
-                                        <div class="row" style="margin: 0 0 0px;">
-                                            <div class="col-auto get-rtc-button shadow-heavy" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #414141;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
-                                                <p style="color: #DDDDDD;margin-bottom: 0;">Check sync</p>
-                                            </div>
-
-                                            <div class="col-auto calibrate-rtc-button shadow-heavy" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #1b5782;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
-                                                <p style="color: #DDDDDD;margin-bottom: 0;">Sync RTC</p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -951,6 +1027,63 @@
                     </div>
                 </div>
             </div>
+        </div>
+        
+        <!--! GatorByte diagnostics area -->
+        <div class="row scrollbar-style panel diagnostics-gb-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+            
+            <div class="col">
+                <div class="row">
+                    
+                    <!-- Header -->
+                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
+                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
+                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
+                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Back button -->
+                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                        
+                    <!--- Device peripherals -->
+                    <div class="col-12">
+
+                        <!--! Peripherals -->
+                        <div class="row diagnostics-peripherals-button-parent diagnostics-button-parent" style="background: #f5f5f5b8;padding: 5px 10px;margin-bottom: 12px;border-radius: 2px;">
+                            
+                            <div class="col-12" style="padding: 2px 4px; margin-bottom: 2px;">
+                                <p style="color: #272727;font-size: 14px;text-align: justify;margin-bottom: 0px;line-height: 18px;">
+                                    Click on the button below to test GatorByte's electronic components, modules, and peripherals.
+                                </p>
+                            </div>
+
+                            <div class="col-12" style="padding: 2px 4px; display: inline-flex;">
+                                <div class="start-peripherals-diagnostics-tests-button" style="cursor: pointer; margin-bottom: 2px; margin-top: 2px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffff7a;border-radius: 2px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-car-battery" style="margin-right: 4px;"></i> Start</div>
+                            </div>
+                        </div>
+
+                        <!--! Communications -->
+                        <div class="row diagnostics-communication-button-parent diagnostics-button-parent" style="background: #f5f5f5b8;padding: 5px 10px;margin-bottom: 12px;border-radius: 2px;">
+                            
+                            <div class="col-12" style="padding: 2px 4px; margin-bottom: 2px;">
+                                <p style="color: #272727;font-size: 14px;text-align: justify;margin-bottom: 0px;line-height: 18px;">
+                                    Click below to test cellular communication and connection to the server.
+                                </p>
+                            </div>
+
+                            <div class="col-12" style="padding: 2px 4px; display: inline-flex;">
+                                <div class="start-communication-diagnostics-tests-button" style="cursor: pointer; margin-bottom: 2px; margin-top: 2px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffff7a;border-radius: 2px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-signal" style="margin-right: 4px;"></i> Start</div>
+                            </div>
+                        </div>
+
+                        <div class="row diagnostics-sub-panels-list hidden"></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         
         <!--! Pinned lines overlay -->
@@ -999,9 +1132,9 @@
             <!--! Input panel -->
             <div class="command-input-div row hidden shadow-heavy" state="hidden" style="position: absolute; padding: 0px 4px;background:#e8e8e8ee; border-radius: 0px; height: 36px;margin: 0px 0px 12px;color: rgb(170, 170, 170);pointer-events: all;left: 25px;top: 50px;width: 70%;max-width: 350px;">
                 <div class="move-icon" style="position: absolute;left: 8px;top: 7px;" title="Move the command box">
-                    <i class="fas fa-arrows-alt" style="color: #4c4c4cbd;font-size: 16px;"></i>
+                    <i class="fa-solid fa-terminal" style="color: #1d9ad6bd;font-size: 16px;margin-top: 3px;margin-left: 3px;"></i>
                 </div>
-                <input class="mousetrap" type="text" style="width: 100%; border: 0; outline: 0; background: transparent; color: #151515; padding: 0 14px 0 28px; font-size: 14px;" placeholder="Type command here">
+                <input class="mousetrap" type="text" style="width: 100%;border: 0;outline: 0;background: transparent;color: #545454;padding: 0 14px 0 28px;font-size: 14px;margin-left: 4px;font-weight: bold;" placeholder="Type command here">
                 <div class="status-icon" style="position: absolute; right: 16px; top: 8px;"></div>
             </div>
             
@@ -1112,25 +1245,25 @@
         </div>
         
         <!--! Update mode overlay -->
-        <div class="row update-mode-overlay shadow scrollbar-style hidden" style="margin: 0;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 25px;max-width: 550px;width: 100%;background: #383838d1;backdrop-filter: blur(4px);">
+        <div class="row update-mode-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #dfdfdfeb;border-radius: 4px;">
             <div class="col">
 
                 <div class="row stage-1 enter-upload-mode-button" style="margin-top: 0px; cursor: pointer;">
                     <div class="col-12" style="padding: 4px 6px;">
-                        <p style="font-size: 14px;color: #8bd23e;margin-top: 0px;margin-bottom: 0px;">Click anywhere on this popup to enter 'Upload mode'.</p>
-                        <p style="font-size: 14px; color: #8bd23e; margin-top: 0px; margin-bottom: 6px;">Cereal will close connection to the device so that you can upload your code.</p>
-                        <p style="font-size: 13px; color: #acacac; margin-top: 0px; margin-bottom: 4px;">Cereal will attempt reconnection in <span class="delay-text">10 seconds</span>.</p>
+                        <p style="font-size: 14px;color: #365316;margin-top: 0px;margin-bottom: 0px;">Click anywhere on this popup to enter 'Upload mode'.</p>
+                        <p style="font-size: 14px; color: #365316; margin-top: 0px; margin-bottom: 6px;">The desktop client will close connection to the device so that you can upload your code.</p>
+                        <p style="font-size: 13px; color: #2b2b2b; margin-top: 0px; margin-bottom: 4px;">The desktop client will attempt reconnection in <span class="delay-text">10 seconds</span>.</p>
                     </div>
                 </div>
 
                 <div class="row stage-2 hidden exit-upload-mode-button" style="margin-top: 0px;">
                     <div class="col-12" style="padding: 4px 6px;">
-                        <p style="font-size: 14px; color: #8bd23e; margin-top: 0px; margin-bottom: 0px;">Cereal has been put to in 'Upload mode'.</p>
-                        <p style="font-size: 14px; color: #8bd23e; margin-top: 0px; margin-bottom: 6px;">You can now update the firmware on the device.</p>
-                        <p style="font-size: 13px; color: #acacac; margin-top: 0px; margin-bottom: 4px;">Reconnecting the device in <span class="delay-text">10 seconds</span></p>
+                        <p style="font-size: 14px; color: #365316; margin-top: 0px; margin-bottom: 0px;">The desktop client has been put to in 'Upload mode'.</p>
+                        <p style="font-size: 14px; color: #365316; margin-top: 0px; margin-bottom: 6px;">You can now update the firmware on the device.</p>
+                        <p style="font-size: 13px; color: #2b2b2b; margin-top: 0px; margin-bottom: 4px;">Reconnecting the device in <span class="delay-text">10 seconds</span></p>
                         <div class="action-buttons" style="margin-top: 6px; display: inline-flex;">
-                            <div class="add-time-button" style="padding: 4px 8px; font-size: 13px; color: #AAA; background: #151f46; width: fit-content; margin-right: 6px;" title="Add 5 seconds">+5 seconds</div>
-                            <div class="connect-now-button" style="padding: 4px 8px; font-size: 13px; color: #AAA; background: #1d1d1d; width: fit-content; margin-right: 6px;">Connect now</div>
+                            <div class="add-time-button" style="padding: 4px 8px; font-size: 13px; color: #cecece; background: #233372; width: fit-content; margin-right: 6px;" title="Add 5 seconds">+5 seconds</div>
+                            <div class="connect-now-button" style="padding: 4px 8px; font-size: 13px; color: #cecece; background: #233372; width: fit-content; margin-right: 6px;">Connect now</div>
                         </div>
                     </div>
                 </div>
@@ -1151,6 +1284,9 @@
                     <div class="col-12" style="padding: 4px 6px;">
                         <p style="font-size: 14px;color: #DDDDDD;margin-top: 0px;margin-bottom: 0px;">The GatorByte you wish to connect to is not available yet.</p>
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">Please connect the GatorByte to the computer and ensure the connection is proper.</p>
+                        
+                        <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">To connect to a different device, click below.</p>
+                        <div class="connected-device-disconnect-button" title="Select another device" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
                     </div>
                 </div>
             </div>
@@ -1169,7 +1305,12 @@
                 <div class="row" style="margin-top: 0px;">
                     <div class="col-12" style="padding: 4px 6px;">
                         <p style="font-size: 14px;color: #DDDDDD;margin-top: 0px;margin-bottom: 0px;">The GatorByte is connected. Waiting for it to enter GDC mode.</p>
-                        <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">If nothing changes in the next 30 seconds, please restart the microcontroller and try again.</p>
+                        <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">If nothing changes in the next 60 seconds, please restart the microcontroller.</p>
+                        <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">To connect to a different device, click below.</p>
+                        <div class="connected-device-disconnect-button" title="Select another device" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
+
+                        <p style="font-size: 14px; color: #a7a7a7; margin-top: 8px; margin-bottom: 6px;">Or, if you want to flash GatorByte firmware, please click on the button below.</p>
+                        <div class="flash-firmware-button" title="Flash firmware" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #126b6f; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Flash firmware</div>
                     </div>
                 </div>
             </div>
@@ -1207,30 +1348,75 @@
         </div>
         
         <!--! Device info overlay -->
-        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
-            <div class="col">
+        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px; overflow-y: auto;">
+            <div class="col scrollbar-style" style="overflow-y: auto; max-height: -webkit-fill-available;">
 
                 <div class="row" style="margin-top: 0px; cursor: default;">
                     <div class="col-12" style="padding: 4px 6px;">
-                        <p>
-                            <span style="font-size: 18px; color: #e86315; margin-right: 8px;"><i class="fa-solid fa-info"></i></span>
-                            <span style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">Your GatorByte</span>
-                        </p>
-                        
-                        <!-- Serial number -->
-                        <p style="font-size: 14px;color: #292929ef;margin-top: -6px;margin-bottom: 8px;font-weight: 600;">
-                            S/N: <span class="gb-serial-number" style="color: green;">-</span>
-                        </p>
+                        <span style="font-size: 18px; color: #e86315; margin-right: 8px;"><i class="fa-solid fa-info"></i></span>
+                        <span style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">Your GatorByte</span>
 
-                        <!-- Registered to -->
-                        <p style="font-size: 14px;color: #292929ef;margin-top: -6px;margin-bottom: 8px;font-weight: 600;">
-                            Registered to: <span class="gb-registered-to" style="color: green;">-</span>
-                        </p>
+                        <div class="row" style="margin: 0 10px; padding: 4px 0;">
 
-                        <!-- Path -->
-                        <p style="font-size: 14px;color: #292929ef;margin-top: -6px;margin-bottom: 8px;font-weight: 600;">
-                            Connected on: <span class="gb-port-path" style="color: green;">-</span>
-                        </p>
+                            <!-- Serial number -->
+                            <div class="col-auto" style="padding: 0 4px;">
+                                <div style="padding: 4px 10px;background: white;border-radius: 2px;">
+                                    <p style="font-size: 12px;color: #095f4b;margin-right: 8px;margin-bottom: 4px;font-weight: 600;">S/N</p>
+                                    <p class="gb-serial-number" style="font-size: 15px;color: #4e4e4eef;margin-top: -6px;margin-bottom: 0;font-weight: 600; user-select: all;">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Product ID -->
+                            <div class="col-auto" style="padding: 0 4px;">
+                                <div style="padding: 4px 10px;background: white;border-radius: 2px;">
+                                    <p style="font-size: 12px;color: #095f4b;margin-right: 8px;margin-bottom: 4px;font-weight: 600;">ID</p>
+                                    <p class="gb-product-id" style="font-size: 15px;color: #4e4e4eef;margin-top: -6px;margin-bottom: 0;font-weight: 600; user-select: all;">-</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin: 0 10px; padding: 4px 0;">
+
+                            <!-- Registered to -->
+                            <div class="col-auto" style="padding: 0 4px;">
+                                <div style="padding: 4px 10px;background: white;border-radius: 2px;">
+                                    <p style="font-size: 12px;color: #095f4b;margin-right: 8px;margin-bottom: 4px;font-weight: 600;">Registered to</p>
+                                    <p class="gb-registered-to" style="font-size: 13px;color: #4e4e4eef;margin-top: -6px;margin-bottom: 0;font-weight: 600; user-select: all;">-</p>
+                                </div>
+                            </div>
+
+                            <div class="register-gb-ui shadow hidden" style="margin-bottom: 0;padding: 14px 14px;margin: 8px 4px 0px;background: white;">
+                                <p style="font-size: 13px;color: #5f5f5fef;margin-top: -6px;margin-bottom: 4px;font-weight: bold;">
+                                    Please register your GatorByte device before you use it.
+                                </p>
+    
+                                <p style="color: #000;font-size: 12px;text-align: justify;margin-bottom: 0px;">Registrant's email</p>
+                                <input class="gb-register-email" style="width: 100%;background: transparent;outline: 0;border: 0;border-bottom: 1px solid #bfbebe;color: rgb(32, 32, 32);font-size: 14px;font-weight: bold;text-align: justify;margin-bottom: 0px;padding: 0px 8px;" placeholder="albert.gator@ufl.edu">
+                                <div class="gb-register-button" style="padding: 4px 8px;font-size: 13px;color: rgb(255, 255, 255);background: #732e3a;width: fit-content;margin-right: 6px;margin-top: 10px;">Register now</div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin: 0 10px; padding: 4px 0;">
+
+                            <!-- Product manufacturer -->
+                            <div class="col-auto" style="padding: 0 4px;">
+                                <div style="padding: 4px 10px;background: white;border-radius: 2px;">
+                                    <p style="font-size: 12px;color: #095f4b;margin-right: 8px;margin-bottom: 4px;font-weight: 600;">Manufacturer</p>
+                                    <p class="gb-product-manufacturer" style="font-size: 13px;color: #4e4e4eef;margin-top: -6px;margin-bottom: 0;font-weight: 600; user-select: all;">-</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin: 0 10px; padding: 4px 0;">
+
+                            <!-- Port path -->
+                            <div class="col-auto" style="padding: 0 4px;">
+                                <div style="padding: 4px 10px;background: white;border-radius: 2px;">
+                                    <p style="font-size: 12px;color: #095f4b;margin-right: 8px;margin-bottom: 4px;font-weight: 600;">Connected on</p>
+                                    <p class="gb-port-path" style="font-size: 13px;color: #4e4e4eef;margin-top: -6px;margin-bottom: 0;font-weight: 600; user-select: all;">-</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="col-12" style="padding: 4px 6px;">
@@ -1365,6 +1551,57 @@
                 
             </div>
         </div>
+        
+        <!--! Notification overlay -->
+        <div class="row notification-overlay hidden shadow scrollbar-style" style="position: absolute;left: 0px;bottom: 0px;top: 0px;right: 0px;z-index: 0;background: #232323c9;backdrop-filter: blur(3px);">
+            
+            <div class="content-parent" style="margin: 8px;padding: 10px 6px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 14px;bottom: 0px;max-width: 550px;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;right: 14px;">
+                <div class="col">
+
+                    <div class="row" style="margin-top: 0px; cursor: default;">
+                        <div class="col-12" style="padding: 4px 6px; margin-top: -4px;">
+                            <p>
+                                <span class="heading-icon" style="font-size: 18px; color: #d65103; margin-right: 8px;"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                <span class="heading-text" style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">-</span>
+                            </p>
+                            
+                            <!-- Message -->
+                            <p class="body scrollbar-style" style="font-size: 14px;color: #292929ef;margin-top: -10px;margin-bottom: 0px;font-weight: 400; max-height: 200px; overflow-y: auto;">-</p>
+                        </div>
+                        
+                        <!-- Action buttons -->
+                        <div class="col-12 action-buttons" style="padding: 0px 6px; margin: 2px 0 0 0; display: inline-flex;">
+                            <div class="okay-button" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 6px; margin-top: 0px;">Okay</div>
+                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                        </div>
+                    </div>
+
+                    <div class="row flash-success-div hidden" style="margin-top: 0px; cursor: default;">
+                        <div class="col-12" style="padding: 4px 6px;">
+                            <p>
+                                <span style="font-size: 18px; color: #01a01b; margin-right: 8px;"><i class="fa-solid fa-check"></i></span>
+                                <span style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">Flash successful</span>
+                            </p>
+                            
+                            <!-- Description -->
+                            <p style="font-size: 14px;color: #292929ef;margin-top: -10px;margin-bottom: 8px;font-weight: 400;">
+                                Your GatorByte has been updated with the new firmware. The device is ready to be used.
+                            </p>
+                        </div>
+                        
+                        <div class="col-12" style="padding: 0px 6px;">
+
+                            <!-- Action buttons -->
+                            <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
+                                <div class="reconnect-button hidden" style="padding: 4px 8px; font-size: 13px; color: #eaeaea; background: #2d68a0; width: fit-content; margin-right: 6px; margin-top: 0px;">Quick connect</div>
+                                <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
     </div>
 </body>
@@ -1382,6 +1619,7 @@
 <script src="../js/modules/ui/calibration.js"></script>
 <script src="../js/modules/ui/serialmonitor.js"></script>
 <script src="../js/modules/ui/config.js"></script>
+<script src="../js/modules/ui/diagnostics.js"></script>
 
 <!-- Keyboard shortcuts -->
 <script src='../js/keyshortcuts.js'></script>

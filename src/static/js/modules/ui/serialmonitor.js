@@ -21,15 +21,19 @@ function uiserialmonitorsubapp(){
 
         // Dashboard big button
         $(".home-panel .serial-monitor-button").off("click").click(function () {
-            $(".serial-monitor").removeClass("hidden");
-            $(".home-panel").addClass("hidden");
-        });
-        
 
-        // Close window button
-        $(".home-panel .serial-monitor-button").off("click").click(function () {
-            $(".home-panel").addClass("hidden");
             $(".serial-monitor").removeClass("hidden");
+            $(".home-panel").addClass("hidden");
+
+            // if (global.states.windowtype == "main-window") {
+            //     self.ipcr.send("ipc/open-serial-monitor/request", {
+            //         data: global
+            //     });
+            // }
+            // else {
+            //     $(".serial-monitor").removeClass("hidden");
+            //     $(".home-panel").addClass("hidden");
+            // }
         });
     }
     
@@ -427,6 +431,22 @@ function uiserialmonitorsubapp(){
 
                     if (filedata) self.a.uiconfiggatorbyte.process_file_download_data(line);
                     else self.a.uiconfiggatorbyte.process_response(data);
+                    
+                    hook = {
+                        category: category,
+                        show: false,
+                        line: data,
+                        style: {
+                            "color": "black",
+                            "background": "green"
+                        }
+                    }
+                }
+
+                // GatorByte diagnostics
+                if (category && category.indexOf("gdc-dgn") == 0) {
+
+                    self.a.uidiagnosticsgatorbyte.process_response(data);
                     
                     hook = {
                         category: category,

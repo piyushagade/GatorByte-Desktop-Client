@@ -19,6 +19,10 @@ body {
     color: #bbb;
 }
 
+.shadow-medium {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .shadow-heavy {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 6px 12px rgba(0, 0, 0, 0.13);
 }
@@ -201,4 +205,43 @@ body {
 }
 .blur-heavy {
     filter: blur(10px);
+}
+
+.big-button .content {
+    text-align: center; 
+    height: 100px; 
+    width: 100px;
+    background: rgba(253, 253, 253, 0.76);
+    color: black;
+    padding: 0 6px;
+    transition: 0.2s all ease-in-out;
+}
+
+.big-button .content:hover {
+    background: #e7e7e7;
+}
+
+.quick-connect-button {
+    padding: 10px 12px;
+    margin-right: 6px;
+    background: #073d02;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: 0.2s all ease-in;
+}
+
+.quick-connect-button:hover {
+    background: #094603;
+}
+
+.list-devices-button {
+    padding: 10px 12px; 
+    margin-right: 6px; 
+    margin-top: 8px; 
+    background: #363636;
+    transition: 0.2s all ease-in;
+}
+
+.list-devices-button:hover {
+    background: #3a3a3a;
 }

@@ -85,11 +85,39 @@ function ipcsubapp(){
 
         self.ipcr.on("ipc/pong-received-notification/push", (event, response) => {
             if (global.port && global.port.path == response.path) {
-                console.log("PONG received");
-                $(".device-not-available-overlay").addClass("hidden");
+
+                // Disable buttons that require the GatorByte to be ready (setup complete)
+                $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
+                
+                if ($(".flash-firmware-overlay").hasClass("hidden")) {
+                    $(".device-not-available-overlay").slideUp(50);
+                    $(".home-panel").removeClass("disabled").removeClass("blur");
+                }
+                
+                $(".waiting-for-pong-overlay").slideUp(0);
                 $(".waiting-for-pong-overlay").addClass("hidden");
-                $(".home-panel").removeClass("disabled").removeClass("blur");
+
+                // Flash firmware dismiss button
+                $(".flash-firmware-overlay .dismiss-button").off("click").click(function () {
+                    $(".flash-firmware-overlay").slideUp(200);
+                    setTimeout(() => {
+                        $(".flash-firmware-overlay").addClass("hidden");
+                        
+                        // Remove blur the device selector UI
+                        $(".home-panel").removeClass("blur").removeClass("disabled");
+                        $(".waiting-for-pong-overlay").addClass("hidden").removeClass("blur");
+                        $(".device-selector-panel").addClass("hidden").removeClass("blur");
+                    }, 200);
+                    $(".flash-firmware-overlay .select-file-button").attr("state", "file-select").text("Select file").css("background-color", "#1683c3");
+                });
             }
+        });
+
+        self.ipcr.on("ipc/gb-ready-notification/push", (event, response) => {
+                
+            // Enable buttons that require the GatorByte to be ready (setup complete)
+            $(".home-panel").find(".big-button.requires-device-ready").removeClass("disabled");
+
         });
 
         self.ipcr.on("ipc/flash-firmware/response", (event, response) => {
@@ -118,13 +146,19 @@ function ipcsubapp(){
     }
 
     self.process_bootstrap_data = function (event, data) {
-        
+
+        if (data.windowtype == "serial-monitor") {
+            global.port = data.global.data.port;
+            $(".home-panel .serial-monitor-button").click();
+        }
+                
         // Print info just the first time
         var first = false
         if (!global.states.machineid) first = true;
 
         global.states.machineid = data.machineid;
         global.states.fullfunctionality = data.fullfunctionality;
+        global.states.windowtype = data.windowtype;
         global.states.windowid = data.windowid;
         global.states.windowscountid = data.windowscountid;
         global.states.remoteurl = data.remoteurl;
@@ -165,6 +199,8 @@ function ipcsubapp(){
     }
 
     self.process_subscription_data = function (event, data) {
+
+        return;
 
         global.states.subscription = data;
         var states = global.states.subscription["computed-states"];
@@ -441,6 +477,13 @@ function ipcsubapp(){
                                                     <span class="" style="font-size: 12px; color: #EEE">Cancel</span>
                                                 </div>
                                             </div>
+
+                                            <div class="hidden" style="margin-top: 6px; padding: 2px 10px 4px 10px;">
+                                                <div class="col-auto shadow" style="color: #eee; border-radius: 0px; padding: 0px; margin-right: 10px; margin-bottom: 10px; margin-bottom: 2px; margin-right: 10px;">
+                                                    <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">Or, if you want to flash GatorByte firmware, please click on the button below.</p>
+                                                    <div class="flash-firmware-button" title="Flash firmware" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #58410d; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Flash firmware</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -586,7 +629,8 @@ function ipcsubapp(){
         
         // Get bootstap data and update UI
         self.ipcr.send('bootstrap-data-request', {
-            windowid: global.states.windowid
+            windowid: global.states.windowid,
+            windowtype: global.states.windowtype
         });
 
         // Clear intervals
@@ -620,8 +664,8 @@ function ipcsubapp(){
             // Set up UI elements
             if ($(".home-panel").attr("first-load-done") != "true") $(".home-panel").removeClass("disabled").removeClass("hidden").attr("first-load-done", "true");
             $(".waiting-for-device-notification").addClass("hidden");
-            $(".device-not-available-overlay").addClass("hidden");
-            $(".waiting-for-pong-overlay").removeClass("hidden");
+            $(".device-not-available-overlay").slideUp(100);
+            $(".waiting-for-pong-overlay").slideUp(0).removeClass("hidden").slideDown(150);
             $(".home-panel").addClass("disabled").addClass("blur");
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#1c65ca");
             $(".status-bar-div .device-status-indicator .connected-device-port").text(response.path);
@@ -922,8 +966,8 @@ function ipcsubapp(){
 
             $(".show-on-connected").addClass("hidden");
             $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
-            $(".device-not-available-overlay").removeClass("hidden");
-            $(".waiting-for-pong-overlay").addClass("hidden");
+            $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            $(".waiting-for-pong-overlay").slideUp(0);
             
             // Hide all panels
             $(".panel").addClass("hidden");
@@ -935,9 +979,26 @@ function ipcsubapp(){
         }
 
         // GatorByte info
-        $(".gb-serial-number").text(global.port.serialNumber);
-        $(".gb-registered-to").text("pagade@ufl.edu");
+        $(".gb-serial-number").text(global.port.serialNumber || "-");
+        $(".gb-product-id").text(global.port.productId || "-");
+        $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
         $(".gb-port-path").text(global.port.path);
+
+        $.ajax({
+            url: "https://api.ezbean-lab.com/v3/gatorbyte/device/registration/get",
+            type: "POST",
+            data: '{ "sn": "' + global.port.serialNumber + '" }',
+            success: function (response) {
+                if (response.status == "success") {
+                    $(".gb-registered-to").text(response.payload["REGISTERED_TO"]);
+                    $(".register-gb-ui").addClass("hidden");
+                }
+            },
+            error: function (x, h, r) {
+                $(".gb-registered-to").text("Not registered.");
+                $(".register-gb-ui").removeClass("hidden");
+            }
+        });
 
         // Broadcast the port information to all live share clients
         self.a.sck.on_port_selected(response); 
@@ -957,12 +1018,12 @@ function ipcsubapp(){
             console.log("Disconnected port " + (global.port.path || global.quickconnectport.path) + ". Waiting for reconnection.");
 
             $(".waiting-for-device-notification").removeClass("hidden");
-            $(".device-not-available-overlay").removeClass("hidden");
+            $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
 
             // Hide all panels
             $(".panel").addClass("hidden");
             
-            $(".waiting-for-pong-overlay").addClass("hidden");
+            $(".waiting-for-pong-overlay").slideUp(0);
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text((global.port.path || global.quickconnectport.path));
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
@@ -979,12 +1040,12 @@ function ipcsubapp(){
             $(".home-panel").addClass("hidden").removeClass("blur");
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
-            $(".device-not-available-overlay").removeClass("hidden");
+            $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
             
             // Hide all panels
             $(".panel").addClass("hidden");
 
-            $(".waiting-for-pong-overlay").addClass("hidden");
+            $(".waiting-for-pong-overlay").slideUp(0);
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text(global.port.path);
 
