@@ -1,0 +1,4 @@
+Getting RTC time -> 1690421932
+<br>##CEREAL##gdc-cfg::rtc:1690421932#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
