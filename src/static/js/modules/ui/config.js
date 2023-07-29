@@ -214,6 +214,7 @@ function uiconfiggatorbytesubapp() {
         $(".home-panel .configure-gb-button").off("click").click(function () {
             $(".configure-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
+            $(".gb-config-header").removeClass("hidden");
             
             // Send request to get GatorByte to enter cofig state
             var prefix = "##GB##", suffix = "#EOF#";
@@ -234,11 +235,9 @@ function uiconfiggatorbytesubapp() {
             setTimeout(() => {
                 self.sendcommand("bl:getconfig");
             }, 2000);
-
+            
             // Get config data from main process
-            self.ipcr.send("ipc/config-data-get/request", {
-                port: global.port
-            });
+            self.getconfigfrommainprocess();
 
         });
 
@@ -408,6 +407,13 @@ function uiconfiggatorbytesubapp() {
         });
     }
 
+    // Get config data from main process
+    self.getconfigfrommainprocess = function() {
+        self.ipcr.send("ipc/config-data-get/request", {
+            port: global.port
+        });
+    }
+
     /*
         Request config from the main process
     */
@@ -446,7 +452,7 @@ function uiconfiggatorbytesubapp() {
         // Replace prefix with nothing and <br> with \n
         data = data.replace(/<br>/g, "\n").replace(/gdc-cfg::fdl:/, "");
         
-        self.panel.find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
+        $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
 
         self.filedownloadline += self.lines_to_send;
 
@@ -455,22 +461,27 @@ function uiconfiggatorbytesubapp() {
 
         // Request next part of the data if available
         if (data.length > 0) {
-            self.panel.find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
+            $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
             return self.request_file_download(self.filedownloadname, self.filedownloadline);
         }
         
         // On download complete
         else {
 
+            // Update UI
+            $(".upload-config-data-button").removeClass("disabled");
+            $(".refresh-config-data-button").removeClass("disabled");
+            $(".panel").removeClass("disabled");
+
             // If the file doesn't exist
             if (self.filedownloaddata.length == 0) {
                 console.log("The config.ini file does not exist on the SD card.");
 
                 // Update UI
-                self.panel.find(".config-sync-notification-parent").addClass("hidden");
+                $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
                 self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
                 
-                self.panel.find(".sync-status-heading").css("background", "#962e38").text("Configuration file does not exist.");
+                $(".gb-config-header").find(".sync-status-heading").css("background", "#962e38").text("Configuration file does not exist.");
 
                 // Disable text boxes
                 self.panel.find(".survey-information-parent").find(".survey-id-text").addClass("disabled");
@@ -487,7 +498,7 @@ function uiconfiggatorbytesubapp() {
 
             // If config data successfully downloaded
             else {
-                self.panel.find(".download-status-text").removeClass("hidden").text("Download complete");
+                $(".header-panel").find(".download-status-text").removeClass("hidden").text("Download complete");
                 self.configdata = self.filedownloaddata;
 
                 self.on_config_data_acquired(false);
@@ -520,8 +531,8 @@ function uiconfiggatorbytesubapp() {
         if (datatosend && datatosend.trim().length > 0) {
             var uploadedbyte = startingline + self.lines_to_send >= self.configdata.length ? self.configdata.length : startingline + self.lines_to_send;
             
-            self.panel.find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.configdata.length) * self.panel.find(".progress").width());
-            self.panel.find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
+            $(".header-panel").find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.configdata.length) * self.panel.find(".progress").width());
+            $(".header-panel").find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
 
             return new Promise(function (resolve, reject) {
                 self.sendcommand("upl" + ":" + datatosend + "^" + startingline);
@@ -535,9 +546,13 @@ function uiconfiggatorbytesubapp() {
             self.fileuploadline = 0;
             self.configobject["updateflag"] = false;
 
+            // Update UI
+            $(".upload-config-data-button").removeClass("disabled");
+            $(".refresh-config-data-button").removeClass("disabled");
+            $(".panel").removeClass("disabled");
             // self.panel.find(".spinner-parent").addClass("hidden");
             // self.panel.find(".config-information-parent").removeClass("hidden");
-            self.panel.find(".config-sync-notification-parent").addClass("hidden");
+            $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
             self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
             
             self.on_config_data_acquired();
@@ -554,13 +569,13 @@ function uiconfiggatorbytesubapp() {
 
         // Check if the saved configuration was updated and needs to be uploaded
         if (self.configobject && self.configobject["updateflag"]) {
-            self.panel.find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
-            self.panel.find(".upload-config-data-button").css("background", "#865600");
+            $(".gb-config-header").find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
+            $(".gb-config-header").find(".upload-config-data-button").css("background", "#865600");
         }
         else {
             setTimeout(() => {
-                if (stale) self.panel.find(".sync-status-heading").css("background", "#a2660b").text("Using saved configuration data");
-                else self.panel.find(".sync-status-heading").css("background", "#104c09").text("Configuration sync complete");
+                if (stale) $(".gb-config-header").find(".sync-status-heading").css("background", "#0b63a2").text("Using saved configuration data");
+                else $(".gb-config-header").find(".sync-status-heading").css("background", "#104c09").text("Configuration sync complete");
 
                 $(".upload-config-data-button").css("background", "#333");
             }, 50);
@@ -569,9 +584,11 @@ function uiconfiggatorbytesubapp() {
         // Update UI
         // self.panel.find(".spinner-parent").addClass("hidden");
         // self.panel.find(".config-information-parent").removeClass("hidden");
-        self.panel.find(".config-sync-notification-parent").addClass("hidden");
+        $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
         self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
-        self.panel.find(".refresh-config-data-button").off("click").click(function () {
+
+        //! Download configuration button listener
+        $(".gb-config-header").find(".refresh-config-data-button").off("click").click(function () {
             
             // Reset global variables
             self.filedownloaddata = "";
@@ -581,26 +598,34 @@ function uiconfiggatorbytesubapp() {
             self.request_file_download(self.filedownloadname, self.filedownloadline);
             
             // Update UI
+            $(".upload-config-data-button").addClass("disabled");
+            $(".refresh-config-data-button").addClass("disabled");
+            $(".panel").addClass("disabled");
             // self.panel.find(".spinner-parent").removeClass("hidden");
             // self.panel.find(".config-information-parent").addClass("hidden");
-            self.panel.find(".config-sync-notification-parent").removeClass("hidden");
+            $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
             self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
-            self.panel.find(".download-status-heading").text("Downloading configuration");
-            self.panel.find(".download-status-text").text("Initializing download");
-            self.panel.find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
-            self.panel.find(".progress").find(".progress-bar").css("width", "100%");
+            $(".header-panel").find(".download-status-heading").text("Downloading configuration");
+            $(".header-panel").find(".download-status-text").text("Initializing download");
+            $(".header-panel").find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
+            $(".header-panel").find(".progress").find(".progress-bar").css("width", "100%");
         });
-        self.panel.find(".upload-config-data-button").off("click").click(function () {
-            
+
+        //! Upload config button listener
+        $(".gb-config-header").find(".upload-config-data-button").off("click").click(function () {
+
             // Update UI
+            $(".upload-config-data-button").addClass("disabled");
+            $(".refresh-config-data-button").addClass("disabled");
+            $(".panel").addClass("disabled");
             // self.panel.find(".spinner-parent").removeClass("hidden");
             // self.panel.find(".config-information-parent").addClass("hidden");
-            self.panel.find(".config-sync-notification-parent").removeClass("hidden");
+            $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
             self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
-            self.panel.find(".download-status-heading").text("Uploading configuration");
-            self.panel.find(".download-status-text").text("Initializing upload");
-            self.panel.find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
-            self.panel.find(".progress").find(".progress-bar").css("width", "0px");
+            $(".header-panel").find(".download-status-heading").text("Uploading configuration");
+            $(".header-panel").find(".download-status-text").text("Initializing upload");
+            $(".header-panel").find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
+            $(".header-panel").find(".progress").find(".progress-bar").css("width", "0px");
             
             // Upload config data to SD card
             self.request_file_upload(self.fileuploadline);
@@ -618,8 +643,8 @@ function uiconfiggatorbytesubapp() {
     self.save_config_in_storage = function () {
 
         // Update UI
-        self.panel.find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
-        self.panel.find(".upload-config-data-button").css("background", "#865600");
+        $(".gb-config-header").find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
+        $(".gb-config-header").find(".upload-config-data-button").css("background", "#865600");
         
         self.ipcr.send("ipc/config-data-save/request", {
             port: global.port,
@@ -678,7 +703,7 @@ function uiconfiggatorbytesubapp() {
             catch (e) {
                 erroroccured = true;
                 console.log("Malformed config data on SD card.");
-                self.panel.find(".sync-status-heading").css("background", "#962e38").text("Malformed configuration data on SD card.");
+                $(".gb-config-header").find(".sync-status-heading").css("background", "#962e38").text("Malformed configuration data on SD card.");
             }
         });
         currentcategory = null;
@@ -713,7 +738,7 @@ function uiconfiggatorbytesubapp() {
         
         if (!object) {
             self.getconfigdatafromsd();
-            self.panel.find(".sync-status-heading").css("background", "#3d3d3d").text("Fetching GatorByte's configuration.");
+            $(".gb-config-header").find(".sync-status-heading").css("background", "#3d3d3d").text("Fetching GatorByte's configuration.");
         }
         else {
             self.configobject = { ...object };
@@ -730,7 +755,7 @@ function uiconfiggatorbytesubapp() {
         // Update UI
         // self.panel.find(".spinner-parent").removeClass("hidden");
         // self.panel.find(".config-information-parent").addClass("hidden");
-        self.panel.find(".config-sync-notification-parent").removeClass("hidden");
+        $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
         self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
     }
 

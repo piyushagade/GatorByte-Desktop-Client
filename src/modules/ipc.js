@@ -387,7 +387,7 @@ module.exports = {
                 i.g.var.serports[port.path].close();
                 delete i.g.var.serports[port.path];
             }
-            else {
+            // else {
                 try {
                     event.sender.send("port-disconnected-notification-push ", {
                         port: port.path,
@@ -395,7 +395,7 @@ module.exports = {
                     });
                 }
                 catch (e) {}
-            }
+            // }
 
         });
 

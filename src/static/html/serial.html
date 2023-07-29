@@ -88,23 +88,84 @@
               </div>
         </div>
         
+        <!--! Header -->
+        <div class="scrollbar-style header-panel" style="margin: 0 0; padding: 4px 10px 4px 2px; overflow-x: hidden; cursor: default; overflow-y: hidden;">
+                    
+            <div class="" style="margin-bottom: -20px; padding: 10px 0px; margin-right: 6px; background: transparent;">
+                
+                <!--! Logo -->
+                <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%; background-color: transparent;text-align: center;position: relative; height: fit-content;">
+                    <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
+                    <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
+                </div>
+            
+                <!--! GB configuration -->
+                <div class="gb-config-header hidden" style="margin: 12px 0 6px 0;display: inline-flex;padding: 0;">
+
+                    <!-- Disconnect -->
+                    <div class="connected-device-disconnect-button shadow" title="Disconnect GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
+                        <i class="fa-solid fa-stop"></i>
+                    </div>
+                    
+                    <p class="sync-status-heading" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px; opacity: 1;padding: 4px 8px; background: #3d3d3d;">Using saved configuration.</p>
+                    
+                    <!-- Re-fetch config data from SD -->
+                    <div class="refresh-config-data-button shadow" title="Get configuration from GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    
+                    <!-- Upload config data to SD -->
+                    <div class="upload-config-data-button shadow" title="Upload configuration to GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
+                        <i class="fa-solid fa-upload"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!--! Disconnect button -->
+            <!-- <div class="connected-device-disconnect-button" title="Disconnect GatorByte" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                <i class="fa-solid fa-stop"></i>
+            </div> -->
+            
+            <!--! Back button -->
+            <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag;-webkit-text-stroke: black;-webkit-text-stroke-width: thin;position: absolute;top: 40px;left: 22px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+
+            <!-- Sync notification overlay -->
+            <div class="col-12 config-sync-notification-parent hidden shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 4px 10px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+                <div class="col">
+
+                    <div class="row" style="margin-top: 0px; cursor: default;">
+                        <div class="col-12" style="padding: 4px 6px;">
+                            <p style="margin-bottom: 6px;">
+                                <span style="font-size: 18px; color: #e86315; margin-right: 8px;"><i class="rotate-animation fa-solid fa-arrows-rotate"></i></span>
+                                <span class="download-status-heading" style="font-size: 17px; color: #4e4e4eef; margin-top: -6px; margin-bottom: 8px; font-weight: 600;"></span>
+                            </p>
+                            <div class="progress progress-striped"><div class="progress-bar"></div></div>
+                            <p class="download-status-text" style="font-size: 13px;color: #404040ef;margin-top: 4px;margin-bottom: 0px;font-weight: bold;background: #eaeaea;border-radius: 3px;padding: 0px 6px;width: max-content;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!--! Download files -->
-        <div class="row scrollbar-style panel download-files-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+        <div class="row scrollbar-style panel download-files-panel hidden" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             <div class="col">
                 <div class="row">
                     
                     <!-- Header -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
+                    <!-- <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
                         <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <!-- Back button -->
-                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                    <!-- <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
                         <i class="fa-solid fa-arrow-left"></i>
-                    </div>
+                    </div> -->
                         
                     <!-- Files list -->
                     <div class="col-12" style="margin: -10px 0 10px 0; padding: 0;">
@@ -175,7 +236,7 @@
                         </div>
 
                         <!-- Files -->
-                        <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;background: #101010a6;border-radius: 2px;padding: 10px;padding: 12px 14px 4px 14px;">
+                        <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;border-radius: 2px;padding: 12px 0px 4px 0px;">
                             
                             <!-- Loading spinner -->
                             <div class="spinner-div hiddenz" style="overflow-y: auto; height: 100px; width: 100%;position: relative;">
@@ -206,63 +267,23 @@
         </div>
         
         <!--! Sensor calibration -->
-        <div class="row scrollbar-style panel sensor-calibration-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+        <div class="row scrollbar-style panel sensor-calibration-panel hidden" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
             <div class="col">
                 <div class="row">
                     
-                    <!-- Header -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
-                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
-                        </div>
-                    </div>
-                    
-                    <!-- Back button -->
-                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                        
-                    <div class="col-12" style="margin-bottom: 10px;">
-                        
-                        <!-- Sensors list description -->
-                        <div class="row sensor-list shadow" style="margin: 0; background: #443041; border-radius: 2px; padding: 4px 10px;">
-                            
-                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
-                                The sensors on the GatorByte need to be calibrated regularly. At minimum, we recommend validation of the sennsor readings against standard solutions before a survey.
-                            </p>
-                            
-                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
-                                The GatorByte stores the last date of calibration on the SD card and makes a recommendation regarding the calibration. Please see sensor manufacturer's recommendations for sensor maintainence.
-                            </p>
-                        </div>
+                    <div class="col-12 sensor-list-parent" style="margin-bottom: 10px; padding: 0;">
                         
                         <!-- Sensors list -->
-                        <div class="row sensor-list shadow" style="margin: 10px 0 0 0; background: #383838; border-radius: 2px; padding: 4px 10px;">
+                        <div class="row shadow" style="margin: 0 0 10px 0; background: #383838; border-radius: 2px; padding: 4px 10px;">
                             
                             <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
                                 Select a sensor from the list below below to get started.
                             </p>
-                            
-                            <!-- RTD sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="rtd" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
-                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">RTD</p>
-                            </div>
 
-                            <!-- pH sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ph" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
-                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">pH</p>
-                            </div>
-                            
-                            <!-- EC sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="ec" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
-                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">EC</p>
-                            </div>
-                            
-                            <!-- DO sensor -->
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" name="dox" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
-                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">DO</p>
+                            <!-- List of sensors in the config file that can be calibrated -->
+                            <div class="col-12">
+                                <div class="row calibration-sensor-list"></div>
                             </div>
                             
                             <!-- Loading spinner -->
@@ -276,7 +297,22 @@
 
                         </div>
 
-                        <!-- Calibration procedure/information -->
+                        <!-- Sensors list description -->
+                        <div class="row shadow" style="margin: 0 0 10px 0; background: #443041; border-radius: 2px; padding: 4px 10px;">
+                            
+                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                                We recommend frequent calibration and validation of the sensor readings against standard solutions before a survey.
+                            </p>
+                            
+                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                                The GatorByte stores the last date of calibration on the SD card and makes a recommendation regarding the calibration. Please see sensor manufacturer's recommendations for sensor maintainence.
+                            </p>
+                        </div>
+                    </div>
+                        
+                    <div class="col-12 " style="margin-bottom: 10px; padding: 0;">
+
+                        <!-- Sensor calibration procedure/information -->
                         <div class="row calibration-info-parent hidden" style="position: relative;margin: 0;margin-top: 2px;">
 
                             <div class="col-12" style="font-size: 20px; padding: 0;">
@@ -317,7 +353,7 @@
                                 <!-- Calibrate button -->
                                 <div class="row" style="margin: 0; margin-top: 10px;">
                                     <div class="col-auto show-calibration-actions-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #245da5;border-radius: 2px;height: 28px;">
-                                        <p style="color: #DDDDDD;margin-bottom: 0;">Calibrate sensor</p>
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Next</p>
                                     </div>
                                     <div class="col-auto go-back-sensor-list-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
                                         <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
@@ -327,7 +363,6 @@
                             
                         </div>
 
-                        <!-- Calibration perform -->
                         <div class="row calibration-perform-parent hidden" style="position: relative;margin: 0;margin-top: 2px;">
 
                             <div class="col-12" style="font-size: 20px; padding: 0;">
@@ -337,6 +372,7 @@
                             
                             <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
                                 
+                                <!--! Stabilization div -->
                                 <div class="row shadow calibration-stabalization-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
                                     <div class="col-12" style="padding: 0;">
                                         <p style="color: #bbbbbb;margin-bottom: 6px;">Before we perform the calibration on the <span class="sensor-name">ph</span> sensor, we need to ensure the readings are stable. Click on the button below to fetch continous readings.</p>
@@ -418,7 +454,7 @@
                                     </div>
                                 </div>
                                 
-                                <!-- Calibration options -->
+                                <!--! Calibration options, levels, solutions -->
                                 <div class="row shadow calibration-options-div hidden" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 0px 2px 8px 2px;border-radius: 2px;">
                                     <div class="col">
 
@@ -462,26 +498,13 @@
             </div>
         </div>
         
-        <!--! Daashboard area -->
-        <div class="row scrollbar-style panel dashboard-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+        <!--! Dashboard area -->
+        <div class="row scrollbar-style panel dashboard-panel hidden" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
             <div class="col">
                 <div class="row">
                     
-                    <!-- Header -->
-                    <div class="col-12" style="-webkit-app-region: drag; padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
-                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
-                        </div>
-                    </div>
-                    
-                    <!-- Back button -->
-                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                        
-                    <div class="col-12 sensor-information" style="margin-bottom: 10px; margin-top: -8px;">
+                    <div class="col-12 sensor-information" style="margin-bottom: 10px; margin-top: -8px; padding: 0;">
                         
                         <!-- Last updated timestamp -->
                         <div class="row" style="margin: 0;">
@@ -524,7 +547,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 auxillary-information" style="margin-bottom: 10px;">
+                    <div class="col-12 auxillary-information" style="margin-bottom: 10px; padding: 0;">
 
                         <div class="row" style="margin: 0;">
 
@@ -554,7 +577,7 @@
                         </div>
                     </div>
                             
-                    <div class="col-12 auxillary-information" style="margin-bottom: 10px;">
+                    <div class="col-12 auxillary-information" style="margin-bottom: 10px; padding: 0;">
 
                         <div class="row" style="margin: 0;">
 
@@ -593,25 +616,12 @@
                 </div>
             </div>
         </div>
-        
+
         <!--! Home area -->
-        <div class="row scrollbar-style panel home-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default; overflow-y: auto;">
+        <div class="row scrollbar-style panel home-panel hidden" style="margin: 10px 0; padding: 0px 10px 0px 2px; overflow-x: hidden; cursor: default; overflow-y: auto;">
             
             <div class="col">
                 <div class="row">
-                    
-                    <!--! Header -->
-                    <div class="col-12" style="margin-bottom: -20px; padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
-                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
-                        </div>
-                    </div>
-                    
-                    <!--! Back button -->
-                    <div class="connected-device-disconnect-button" title="Disconnect GatorByte" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                        <i class="fa-solid fa-stop"></i>
-                    </div>
                     
                     <!--! Update notification -->
                     <div class="col-12 shadow-heavy update-notification hidden" style="padding: 10px 12px; margin-right: 6px; background: #ababab; margin-top: 8px; cursor: pointer;">
@@ -639,11 +649,11 @@
                         <p style="color: rgb(68, 68, 68); font-size: 13px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
                             Some options are disabled, but will be enabled once when the process completes.
                         </p>
-                        <i class="fa-solid fa-pause" style="position: absolute; top: 12px; right: 18px; color: black; font-size: 12px;"></i>
+                        <i class="fa-solid fa-pause animate-pulse-opacity" style="position: absolute; top: 12px; right: 18px; color: black; font-size: 12px;"></i>
                     </div>
                     
                     <!--! Big buttons -->
-                    <div class="col-12" style="padding: 10px 12px 0 12px;margin-right: 6px;margin-top: 12px;background: #2f2f2f;">
+                    <div class="col-12" style="padding: 12px 12px;margin-right: 6px;margin-top: 0px;background: #2f2f2f;">
                         <div class="row" style="margin: 0;">
                             
                             <!-- Dashboard -->
@@ -753,29 +763,21 @@
         </div>
         
         <!--! Device selector area -->
-        <div class="row scrollbar-style panel device-selector-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: auto; cursor: default;">
+        <div class="row scrollbar-style panel device-selector-panel hidden" style="margin: 10px 0; padding: 2px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; cursor: default;">
             
             <div class="col">
 
-                <div class="row device-list-row">
-                    
-                    <!-- Header -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
-                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
-                        </div>
-                    </div>
+                <div class="row device-list-row" style="padding: 6px 10px; background: #2b2b2b9e;">
                     
                     <!-- Quick connect button -->
-                    <div class="col-12 shadow-heavy quick-connect-button hidden">
+                    <div class="col-12 shadow-heavy quick-connect-button hidden" style="margin: 5px 0 5px;">
                         <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Quick connect</p>
                         <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">Connect to the <span class="last-device-name">last connected device</span> at <span class="last-device-baud-rate">previously used baud rate</span>.</p>
                         <i class="fa-solid fa-link" style="position: absolute; top: 12px; right: 18px; color: #dae0e5; font-size: 10px;"></i>
                     </div>
                     
                     <!-- List devices button -->
-                    <div class="col-12 shadow-heavy list-devices-button" state="collapsed">
+                    <div class="col-12 shadow-heavy list-devices-button" state="collapsed" style="margin: 5px 0 5px;">
                         <div class="header" style="position: relative; cursor: pointer;">
                             <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Devices</p>
                             <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">See all your connected and favorited devices.</p>
@@ -808,44 +810,17 @@
         </div>
         
         <!--! Configure GatorByte area -->
-        <div class="row scrollbar-style panel configure-gb-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+        <div class="row scrollbar-style panel configure-gb-panel hidden" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
             <div class="col">
                 <div class="row">
                     
-                    <!-- Header -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
-                        <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
-                            <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
-                            <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
-                        </div>
-                    </div>
-                    
-                    <!-- Back button -->
-                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                        
                     <!-- Config options -->
                     <div class="col-12 disabled blur config-information-parent">
                         <div class="row">
                             
-                            <div class="col-12" style="margin-bottom: 10px; display: inline-flex;">
-                                <p class="sync-status-heading" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px; opacity: 1;padding: 4px 8px; background: #3d3d3d;">Configuration file does not exists.</p>
-                                
-                                <!-- Re-fetch config data from SD -->
-                                <div class="refresh-config-data-button shadow" title="Get configuration from GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
-                                    <i class="fa-solid fa-arrows-rotate"></i>
-                                </div>
-                                
-                                <!-- Upload config data to SD -->
-                                <div class="upload-config-data-button shadow" title="Upload configuration to GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
-                                    <i class="fa-solid fa-upload"></i>
-                                </div>
-                            </div>
-
                             <!--! Real-time clock configuration -->
-                            <div class="col-12 data-information-parent" style="margin-bottom: 10px;">  
+                            <div class="col-12 data-information-parent" style="margin-bottom: 10px; padding: 0;">  
                                 <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Realtime clock (RTC) synchronization</p>
                                 
                                 <div class="row" style="margin: 0; margin-top: 6px;">
@@ -1037,7 +1012,7 @@
             </div>
 
             <!-- Sync notification overlay -->
-            <div class="col-12 config-sync-notification-parent hiddenz shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 4px 10px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+            <!-- <div class="col-12 config-sync-notification-parent hiddenz shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 4px 10px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
                 <div class="col">
 
                     <div class="row" style="margin-top: 0px; cursor: default;">
@@ -1051,60 +1026,77 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         
         <!--! GatorByte diagnostics area -->
-        <div class="row scrollbar-style panel diagnostics-gb-panel hidden" style="margin: 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+        <div class="row scrollbar-style panel diagnostics-gb-panel hidden" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
             <div class="col">
                 <div class="row">
                     
                     <!-- Header -->
-                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
+                    <!-- <div class="col-12" style="padding: 10px 12px; margin-right: 6px; background: transparent;">
                         <div class="logo" style="-webkit-app-region: drag; margin-bottom: 6px;width: 100%;height: fit-content;background-color: transparent;text-align: center;position: relative;">
                             <img src="../images/cereal-text.png" style="max-width: 200px;margin: auto auto;pointer-events: none;/* margin-bottom: 14px; */">
                             <p style="color: #646464;font-size: 11px;text-align: center;margin-bottom: 6px;margin-top: -12px;"><span class="version-text" style="position: absolute; top: -5px;">v1.1.0</span></p>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <!-- Back button -->
-                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
+                    <!-- <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; position: absolute;top: 20px;left: 15px;font-size: 26px;color: #FFFFFF;cursor: pointer;z-index: 1;">
                         <i class="fa-solid fa-arrow-left"></i>
-                    </div>
+                    </div> -->
                         
                     <!--- Device peripherals -->
                     <div class="col-12">
 
                         <!--! Peripherals -->
-                        <div class="row diagnostics-peripherals-button-parent diagnostics-button-parent" style="background: #f5f5f5b8;padding: 5px 10px;margin-bottom: 12px;border-radius: 2px;">
+                        <div class="row diagnostics-peripherals-button-parent diagnostics-button-parent shadow-medium" style="background: #585757b8;padding: 5px 10px;margin-bottom: 12px;border-radius: 0px;">
                             
                             <div class="col-12" style="padding: 2px 4px; margin-bottom: 2px;">
-                                <p style="color: #272727;font-size: 14px;text-align: justify;margin-bottom: 0px;line-height: 18px;">
+                                <p style="color: #c5c5c5;font-size: 14px;text-align: justify;margin-bottom: 0px;line-height: 18px;">
                                     Click on the button below to test GatorByte's electronic components, modules, and peripherals.
                                 </p>
                             </div>
 
                             <div class="col-12" style="padding: 2px 4px; display: inline-flex;">
-                                <div class="start-peripherals-diagnostics-tests-button" style="cursor: pointer; margin-bottom: 2px; margin-top: 2px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffff7a;border-radius: 2px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-car-battery" style="margin-right: 4px;"></i> Start</div>
+                                <div class="start-peripherals-diagnostics-tests-button" style="cursor: pointer; margin-bottom: 2px; margin-top: 2px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffffdb;border-radius: 0px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-car-battery" style="margin-right: 4px;"></i> Start</div>
                             </div>
                         </div>
 
                         <!--! Communications -->
-                        <div class="row diagnostics-communication-button-parent diagnostics-button-parent" style="background: #f5f5f5b8;padding: 5px 10px;margin-bottom: 12px;border-radius: 2px;">
+                        <div class="row diagnostics-communication-button-parent diagnostics-button-parent shadow-medium" style="background: #585757b8;padding: 5px 10px;margin-bottom: 12px;border-radius: 0px;">
                             
                             <div class="col-12" style="padding: 2px 4px; margin-bottom: 2px;">
-                                <p style="color: #272727;font-size: 14px;text-align: justify;margin-bottom: 0px;line-height: 18px;">
+                                <p style="color: #c5c5c5;font-size: 14px;text-align: justify;margin-bottom: 0px;line-height: 18px;">
                                     Click below to test cellular communication and connection to the server.
                                 </p>
                             </div>
 
                             <div class="col-12" style="padding: 2px 4px; display: inline-flex;">
-                                <div class="start-communication-diagnostics-tests-button" style="cursor: pointer; margin-bottom: 2px; margin-top: 2px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffff7a;border-radius: 2px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-signal" style="margin-right: 4px;"></i> Start</div>
+                                <div class="start-communication-diagnostics-tests-button" style="cursor: pointer; margin-bottom: 2px; margin-top: 2px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffffdb;border-radius: 0px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-signal" style="margin-right: 4px;"></i> Start</div>
+                            </div>
+                        </div>
+                        
+                        <div class="row diagnostics-sub-panels-list-parent hidden" style="padding: 5px 10px;margin-bottom: 12px;border-radius: 2px;">
+                            
+                            <div class="col-12" style="padding: 2px 4px;">
+                                <p style="color: #c5c5c5;font-size: 14px;text-align: justify;margin-bottom: 8px;line-height: 18px;">
+                                    Only those devices that have been specified in the GatorByte's configuration will be tested. To modify this list, go to <span style="font-weight: bold;"><i class="fa-solid fa-gears"></i> Configure GatorByte</span> via the home page.
+                                </p>
+
+                                <!-- Back button -->
+                                <div class="back-to-diagnostics-home-button" style="cursor: pointer; margin-bottom: 0px; margin-top: 2px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffffdb;border-radius: 2px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-arrow-left" style="margin-right: 4px;"></i> Back</div>
+                            </div>
+
+                            <hr style="height: 1px; border-top: 1px solid #565656; width: 98%; margin: 10px 0;">
+
+                            <div class="col-12" style="padding: 0px; display: inline-flex;">
+                                <div class="row diagnostics-sub-panels-list" style="margin: 0;"></div>
                             </div>
                         </div>
 
-                        <div class="row diagnostics-sub-panels-list hidden"></div>
                     </div>
                 </div>
             </div>
@@ -1123,7 +1115,7 @@
         </div>
         
         <!--! Serial monitor panel -->
-        <div class="panel serial-monitor content scrollbar-style hidden" style="borderz: 1px solid green; overflow-x: hidden; padding: 6px; margin-top: 6px; overflow-y: auto; line-height: 1.5; margin-bottom: 10px; bottom: 0; height: 100%; cursor: default; font-size: 13px; color: #38dd38;">
+        <div class="panel serial-monitor content scrollbar-style hidden" style="background: #151515; borderz: 1px solid green; overflow-x: hidden; padding: 6px; margin-top: 6px; overflow-y: auto; line-height: 1.5; margin-bottom: 10px; bottom: 0; height: 100%; cursor: default; font-size: 13px; color: #38dd38;">
             
             <div class="skeleton-div" style="overflow-y: hidden;">
                 <div class="skeleton skeleton-text skeleton-text-one"></div>

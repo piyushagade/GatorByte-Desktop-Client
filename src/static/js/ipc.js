@@ -88,6 +88,7 @@ function ipcsubapp(){
 
                 // Disable buttons that require the GatorByte to be ready (setup complete)
                 $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
+                $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
                 $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
                 
                 if ($(".flash-firmware-overlay").hasClass("hidden")) {
@@ -118,6 +119,7 @@ function ipcsubapp(){
                 
             // Enable buttons that require the GatorByte to be ready (setup complete)
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
+            $(".gb-config-header").removeClass("disabled"); setheight();
 
             var functions = [];
             $(".home-panel").find(".big-button.requires-device-ready.disabled").each(function (ei, el) {
@@ -672,7 +674,13 @@ function ipcsubapp(){
             var baud = response.baud;
 
             // Set up UI elements
-            if ($(".home-panel").attr("first-load-done") != "true") $(".home-panel").removeClass("disabled").removeClass("hidden").attr("first-load-done", "true");
+            if ($(".home-panel").attr("first-load-done") != "true") {
+                $(".home-panel").removeClass("disabled").removeClass("hidden").attr("first-load-done", "true");
+                $(".gb-config-header").removeClass("hidden"); setheight();
+
+                // Get config state
+                global.accessors.uiconfiggatorbyte.getconfigfrommainprocess();
+            }
             $(".waiting-for-device-notification").addClass("hidden");
             $(".device-not-available-overlay").slideUp(100);
             $(".waiting-for-pong-overlay").slideUp(0).removeClass("hidden").slideDown(150);
@@ -978,6 +986,7 @@ function ipcsubapp(){
             $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
+            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
             $(".waiting-for-pong-overlay").slideUp(0);
             
             // Hide all panels
@@ -985,6 +994,7 @@ function ipcsubapp(){
 
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
+            $(".gb-config-header").removeClass("hidden").addClass("hidden"); setheight();
             // $(".home-panel").addClass("hidden");
             // $(".serial-monitor").removeClass("hidden");
         }
@@ -1039,6 +1049,7 @@ function ipcsubapp(){
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text((global.port.path || global.quickconnectport.path));
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
+            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
         }
         
         /* 
@@ -1050,6 +1061,7 @@ function ipcsubapp(){
             global.states.connected = false;
 
             $(".home-panel").addClass("hidden").removeClass("blur");
+            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
@@ -1107,6 +1119,7 @@ function ipcsubapp(){
             $(".device-selector-panel").removeClass("hidden");
             $(".home-panel").removeAttr("first-load-done");
             $(".home-panel").addClass("disabled").addClass("hidden").addClass("blur");
+            $(".gb-config-header").addClass("hidden"); setheight();
 
             $(".connected-device-port").text("N/A").attr("title", "");
             setTimeout(() => { $(".connected-device-port").parent().css("background", "#444"); }, 100);

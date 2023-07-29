@@ -108,11 +108,6 @@ body {
     border: 1px solid green;
 }
 
-.rotate-animation {
-    animation: sand-timer-rotate 3s ease infinite;
-}
-
-
 .skeleton {
     animation: skeleton-loading 2s linear infinite alternate;
 }

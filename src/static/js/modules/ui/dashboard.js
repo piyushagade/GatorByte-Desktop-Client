@@ -37,6 +37,7 @@ function uidashboardsubapp(){
         $(".home-panel .dashboard-button").off("click").click(function () {
             $(".dashboard-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
+            $(".gb-config-header").removeClass("hidden");
             
             // Send request to get GatorByte to send sd files list
             var prefix = "##GB##", suffix = "#EOF#";

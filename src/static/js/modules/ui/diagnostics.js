@@ -42,11 +42,12 @@ function uidiagnosticsgatorbytesubapp() {
         $(".home-panel .gb-diagnostics-button").off("click").click(function () {
             $(".diagnostics-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
+            $(".gb-config-header").removeClass("hidden"); setheight();
 
             self.initui();
 
             self.panel.find(".diagnostics-button-parent").removeClass("hidden");
-            self.panel.find(".diagnostics-sub-panels-list").addClass("hidden");
+            self.panel.find(".diagnostics-sub-panels-list-parent").addClass("hidden");
             
             // Get config data
             global.accessors.uiconfiggatorbyte.request_config().then(function (configdata) {
@@ -62,9 +63,10 @@ function uidiagnosticsgatorbytesubapp() {
             
             $(".diagnostics-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
+            $(".gb-config-header").addClass("hidden"); setheight();
 
             self.panel.find(".diagnostics-button-parent").addClass("hidden");
-            self.panel.find(".diagnostics-sub-panels-list").removeClass("hidden");
+            self.panel.find(".diagnostics-sub-panels-list-parent").removeClass("hidden");
 
             // Enter diagnostics state
             var prefix = "##GB##", suffix = "#EOF#";
@@ -80,6 +82,28 @@ function uidiagnosticsgatorbytesubapp() {
             }, 250);
             
         });
+
+        // Back button
+        self.panel.find(".back-to-diagnostics-home-button").off("click").click(function () {
+            
+            $(".diagnostics-gb-panel").removeClass("hidden");
+            $(".home-panel").addClass("hidden");
+            $(".gb-config-header").removeClass("hidden"); setheight();
+
+            self.panel.find(".diagnostics-button-parent").removeClass("hidden");
+            self.panel.find(".diagnostics-sub-panels-list-parent").addClass("hidden");
+
+            // Hide test panel items
+            $(".diagnostics-sub-panel-item").addClass("hidden");
+
+            // Enter diagnostics state
+            var prefix = "##GB##", suffix = "#EOF#";
+            self.ipcr.send('send-command-request', {
+                command: prefix + "dgn" + suffix,
+                windowid: global.states.windowid,
+                path: global.port.path
+            });
+        });
     }
 
     self.starttests = function () {
@@ -90,31 +114,35 @@ function uidiagnosticsgatorbytesubapp() {
         var functions = [];
         self.enableddevices.forEach(function (device) {
             functions.push(function () {
-                console.log("Testing device: " + device);
-
-                var devicedata = self.f.grep(self.alldevices, "id", device, true);
-
-                // Return if the device doesn not require testing
-                if (devicedata && devicedata.test == false) return;
-                
-                $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden");
-    
-                self.sendcommand(device);
-                self.setstatus({
-                    ui: "." + device + "-status",
-                    font: "fa-vial",
-                    color: "#555",
-                    message: "Testing"
-                });
+                self.testdevice(device);
             });
             
         });
         
-        self.f.waterfall(functions, 250)
+        self.f.waterfall(functions, 300)
             .then(function() {
                 console.log("All test requests sent");
             });
         
+    }
+
+    self.testdevice = function (device) {
+        console.log("Testing device: " + device);
+
+        var devicedata = self.f.grep(self.alldevices, "id", device, true);
+
+        // Return if the device doesn not require testing
+        if (devicedata && devicedata.test == false) return;
+        
+        $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden");
+
+        self.sendcommand(device);
+        self.setstatus({
+            ui: "." + device + "-status",
+            font: "fa-vial",
+            color: "#555",
+            message: "Testing"
+        });
     }
 
     self.process_response = function (response) {
@@ -484,6 +512,12 @@ function uidiagnosticsgatorbytesubapp() {
                 });
             }
         }
+
+        // Test individual devices click listener
+        $(".diagnostics-sub-panel-item").off("click").click(function () {
+            var deviceid = $(this).attr("type");
+            self.testdevice(deviceid);
+        })
     }
 
     self.setstatus = function (args) {
@@ -506,7 +540,7 @@ function uidiagnosticsgatorbytesubapp() {
         self.panel.find(".diagnostics-sub-panels-list").html(multiline(function() {/* 
             
             <!--! SD -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="sd" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="sd" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Micro SD storage</p>
                 
                 <!-- SD -->
@@ -530,7 +564,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
             
             <!--! FRAM -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="fram" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="fram" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Flash storage</p>
                 
                 <div class="row" style="margin: 0px;">
@@ -554,7 +588,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
             
             <!--! RTC -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="rtc" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="rtc" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Realtime clock</p>
                     
                 <!-- UTC time -->
@@ -584,7 +618,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
             
             <!--! EEPROM -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="mem" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="mem" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">AT24C EEPROM memory</p>
                 
                 <!-- AT24C -->
@@ -609,7 +643,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
             
             <!--! Bluetooth -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="bl" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="bl" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Bluetooth module</p>
                 
                 <!-- AT-09 -->
@@ -634,7 +668,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
             
             <!--! AHT -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="aht" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="aht" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">AHT</p>
                 
                 <div class="row" style="margin: 0px;">
@@ -662,7 +696,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
             
             <!--! Sentinel -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="sntl" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="sntl" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Sentinel</p>
                 
                 <!-- Sentinel -->
@@ -691,7 +725,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
 
             <!--! GPS -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="gps" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="gps" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Neo-6M GPS module</p>
                 
                 <!-- Neo-6M -->
@@ -720,7 +754,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
 
             <!--! EADC -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="eadc" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="eadc" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">ADS1115 external ADC</p>
                 
                 <div class="row" style="margin: 0px;">
@@ -762,7 +796,7 @@ function uidiagnosticsgatorbytesubapp() {
             </div>
 
             <!--! Relay -->
-            <div class="col-auto diagnostics-sub-panel-item hidden" type="eadc" style="margin-bottom: 12px;margin-right: 12px;background: #444444b8;padding: 5px 10px;">
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="relay" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Relay</p>
                 
                 <div class="row" style="margin: 0px;">

@@ -129,7 +129,7 @@ function uisensorcalibrationsubapp(){
             self.selectedsensor = null;
             
             // UI update
-            self.panel.find(".sensor-list").removeClass("hidden");
+            self.panel.find(".sensor-list-parent").removeClass("hidden");
             self.panel.find(".calibration-info-parent").addClass("hidden");
             self.panel.find(".calibration-perform-parent").addClass("hidden");
             
@@ -140,44 +140,86 @@ function uisensorcalibrationsubapp(){
                 windowid: global.states.windowid,
                 path: global.port.path
             });
-
             
+            // Remove previous sensor list items
+            self.panel.find(".calibration-sensor-list").find(".calibrate-sensor-item").remove();
+            self.panel.find(".calibration-sensor-list").find(".empty-notification").remove();
+
             // Get config data
             global.accessors.uiconfiggatorbyte.request_config().then(function (configdata) {
                 self.configdata = configdata;
                 self.alldevices = global.accessors.uiconfiggatorbyte.devices;
                 self.enableddevices = configdata.device.devices;
                 self.enableddevices = (self.enableddevices || "").split(",");
+                self.calibrationdevices = {};
+                var atleastonefound = false;
+
+                self.alldevices.forEach(function (device) {
+
+                    // Check if the device is enabled
+                    if (self.enableddevices.indexOf(device.id) == -1) return;
+
+                    // If found, and allows calibration
+                    if (device.calibration) {
+                        atleastonefound = true;
+                        self.calibrationdevices[device.id] = {...device};
+                        self.calibrationdevices[device.id].calibration = self.options[device.id];
+
+                        // Show item in the sensors list
+                        self.panel.find(".calibration-sensor-list").append(multiline(function () {/* 
+                            <div class="col-auto calibrate-sensor-item shadow-heavy" sensorname="{{sensor.name}}" sensorid="{{sensor.id}}" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
+                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">{{sensor.name}}</p>
+                            </div>
+                        */}, {
+                            "sensor": {
+                                "id": device.id,
+                                "name": device.name
+                            }
+                        }));
+                    }
+                });
+
+                // If no calibrate-able devices/sensors were found
+                if (!atleastonefound) {
+                    self.panel.find(".calibration-sensor-list").append(multiline(function () {/* 
+                        <div class="col-12 empty-notification" style="padding: 2px;margin-right: 6px;margin-bottom: 6px; border-radius: 0px;">
+                            <p style="color: #dcd5d5;margin-bottom: 0;font-size: 14px; margin-top: -2px;">
+                                The GatorByte's configuration doesn't specify any sensors that can be calibrated. If this is unexpected, please ensure that the sensor(s) are enabled in the <span style="font-weight: bold;"><i class="fa-solid fa-gears"></i> Configure GatorByte</span> page.
+                            </p>
+                        </div>
+                    */}));
+                }
+
+                // Select sensor from the sensor list
+                self.panel.find(".sensor-list-parent .calibrate-sensor-item").off("click").click(function () {
+                    var sensorname = $(this).attr("sensorname");
+                    var sensor = $(this).attr("sensorid");
+                    
+                    // Send request to get GatorByte to send sd files list
+                    self.state = "enter";
+                    self.selectedsensor = sensor;
+                    self.sendcommand(sensor + ":enter");
+
+                    $(".calibration-info-div").attr("sensor", sensor);
+                    $(".calibration-perform-div").attr("sensor", sensor);
+                    $(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+
+                    self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+                    self.panel.find(".calibration-options-div").addClass("hidden");
+
+                    // Show spinner
+                    self.panel.find("-parent .spinner-div").removeClass("hidden");
+                    
+                    // Add blur
+                    self.panel.find(".calibrations-found-item").addClass("blur");
+                    // self.panel.find(".calibration-data-info-div").addClass("blur");
+
+                    // Set sensor name in GUI
+                    self.panel.find(".sensor-name").text(sensorname);
+                });
             });
         });
         
-        // Select sensor from the sensor list
-        self.panel.find(".sensor-list .calibrate-sensor-item").off("click").click(function () {
-            var sensor = $(this).attr("name");
-            
-            // Send request to get GatorByte to send sd files list
-            self.state = "enter";
-            self.selectedsensor = sensor;
-            self.sendcommand(sensor + ":enter");
-
-            $(".calibration-info-div").attr("sensor", sensor);
-            $(".calibration-perform-div").attr("sensor", sensor);
-            $(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
-
-            self.panel.find(".calibration-stabalization-div").removeClass("hidden");
-            self.panel.find(".calibration-options-div").addClass("hidden");
-
-            // Show spinner
-            self.panel.find("sensor-list .spinner-div").removeClass("hidden");
-            
-            // Add blur
-            self.panel.find(".calibrations-found-item").addClass("blur");
-            // self.panel.find(".calibration-data-info-div").addClass("blur");
-
-            // Set sensor name in GUI
-            self.panel.find(".sensor-name").text(sensor);
-        });
-
         // Update the list of calibrations found
         self.panel.find(".calibration-status-refresh-button").off("click").click(function () {
             self.sendcommand(sensor + ":calibrate:status");
@@ -219,13 +261,13 @@ function uisensorcalibrationsubapp(){
                 var parent = $(".calibration-info-div[sensor='" + sensor + "']");
                 
                 // UI update
-                self.panel.find(".sensor-list").addClass("hidden");
+                self.panel.find(".sensor-list-parent").addClass("hidden");
                 self.panel.find(".calibration-info-parent").removeClass("hidden");
 
                 // Show sensors list UI
                 parent.find(".go-back-sensor-list-button").off("click").click(function () {
                     self.panel.find(".calibration-info-parent").addClass("hidden");
-                    self.panel.find(".sensor-list").removeClass("hidden");
+                    self.panel.find(".sensor-list-parent").removeClass("hidden");
                 });
 
                 // Get last calibration last perform info
@@ -330,7 +372,7 @@ function uisensorcalibrationsubapp(){
                 newparent.find(".perform-calibration-button").off("click").on("click", function () {
                     var level = newparent.find(".calibration-level-option.active").attr("type");
                     var solution = newparent.find(".calibration-solution-option.active").attr("type");
-                    var notificationdata = self.f.grep(self.options[sensor].levels, "id", level, true).notification;
+                    var notificationdata = self.f.grep(self.calibrationdevices[sensor].calibration.levels, "id", level, true).notification;
                     if (!solution) solution = -1;
 
                     
@@ -372,7 +414,7 @@ function uisensorcalibrationsubapp(){
 
                 // Enable/disable perform calibration buttons
                 function shouldenableperformbutton () {
-                    if (newparent.find(".calibration-level-option.active").length > 0 && (self.options[sensor].solutions.length == 0 || (self.options[sensor].solutions.length > 0 && newparent.find(".calibration-solution-option.active").length > 0))) {
+                    if (newparent.find(".calibration-level-option.active").length > 0 && (self.calibrationdevices[sensor].calibration.solutions.length == 0 || (self.calibrationdevices[sensor].calibration.solutions.length > 0 && newparent.find(".calibration-solution-option.active").length > 0))) {
                         newparent.find(".perform-calibration-button").removeClass("disabled");         
                     }
                     else {
@@ -404,29 +446,34 @@ function uisensorcalibrationsubapp(){
                     newparent.find(".calibration-solutions-list .calibration-solution-option").remove();
 
                     // Create level and solution lists
-                    Object.keys(self.options).forEach(function (sensor, si) {
+                    Object.keys(self.calibrationdevices).forEach(function (sensor, si) {
 
                         if (sensor != self.selectedsensor) return;
 
                         // Show calibration levels
-                        self.options[sensor].levels.forEach(function (level, li) {
-                            newparent.find(".calibration-levels-list").append(multiline(function () {/* 
-                                <div class="col-auto calibration-level-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
-                                    <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
-                                </div>
-                            */}, {
-                                "option": level.id,
-                                "description": level.description
-                            }));
-                        });
+                        if (self.calibrationdevices[sensor].calibration.levels.length == 0) {
+                            newparent.find(".calibration-levels-list").addClass("hidden");
+                        }
+                        else {
+                            self.calibrationdevices[sensor].calibration.levels.forEach(function (level, li) {
+                                newparent.find(".calibration-levels-list").append(multiline(function () {/* 
+                                    <div class="col-auto calibration-level-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
+                                        <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
+                                    </div>
+                                */}, {
+                                    "option": level.id,
+                                    "description": level.description
+                                }));
+                            });
+                        }
 
                         // Show calibration solution options
-                        if (self.options[sensor].solutions.length == 0) {
+                        if (self.calibrationdevices[sensor].calibration.solutions.length == 0) {
                             newparent.find(".calibration-solutions-list").addClass("hidden");
                         }
                         else {
                             newparent.find(".calibration-solutions-list").removeClass("hidden");
-                            self.options[sensor].solutions.forEach(function (solution, si) {
+                            self.calibrationdevices[sensor].calibration.solutions.forEach(function (solution, si) {
                                 newparent.find(".calibration-solutions-list").append(multiline(function () {/* 
                                     <div class="col-auto calibration-solution-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
                                         <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>

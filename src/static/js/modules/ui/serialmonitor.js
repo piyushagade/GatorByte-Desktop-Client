@@ -24,6 +24,7 @@ function uiserialmonitorsubapp(){
 
             $(".serial-monitor").removeClass("hidden");
             $(".home-panel").addClass("hidden");
+            $(".gb-config-header").addClass("hidden");
 
             // if (global.states.windowtype == "main-window") {
             //     self.ipcr.send("ipc/open-serial-monitor/request", {

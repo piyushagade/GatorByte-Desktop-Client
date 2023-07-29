@@ -45,11 +45,18 @@ app.on('ready', () => {
     // Create window
     i.w.create.serial(i); 
 
-    // Initialize IPC listeners
-    i.ipc.listen(i);
+    setTimeout(() => {
+        
+        // Initialize IPC listeners
+        i.ipc.listen(i);
 
-    // Check for an app update
-    i.upd.check(i);
+        // Check for an app update
+        i.upd.check(i);
+    }, 200);
+
+    // setTimeout(() => {
+    //     app.exit();
+    // }, 3000);
     
 });
 

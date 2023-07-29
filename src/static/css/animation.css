@@ -1,3 +1,11 @@
+.animate-pulse-opacity {
+  animation: pulse-opacity 2s ease infinite;
+}
+
+.rotate-animation {
+  animation: sand-timer-rotate 3s ease infinite;
+}
+
 @keyframes marquee {
   0% { left: 0; }
   40% { left: 0 }

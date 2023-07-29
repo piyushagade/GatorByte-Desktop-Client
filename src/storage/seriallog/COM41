@@ -4183,3 +4183,2868 @@ Listing folder: /config
 <br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
 ##CL-GDC-PONG##
 ##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690580491#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:29:.:35#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690580513
+<br>##CL##gdc-cfg::rtc:1690580513#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690580707#EOF#
+<br>##CL##gdc-dgn::aht:true:..:29:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+Getting RTC time -> 1690580725
+<br>##CL##gdc-cfg::rtc:1690580725#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690581343
+<br>##CL##gdc-cfg::rtc:1690581343#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-db::power=awake#EOF#
+<br>##CL##gdc-db::modem=active#EOF#
+<br>##CL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CL##gdc-db::rssi=99#EOF#
+<br>##CL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690581511
+<br>##CL##gdc-cfg::rtc:1690581511#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690581517
+<br>##CL##gdc-cfg::rtc:1690581517#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690581526
+<br>##CL##gdc-cfg::rtc:1690581526#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dgn::rtc:1690582622#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690583433#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690588377
+<br>##CL##gdc-cfg::rtc:1690588377#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:1690588394#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:780:.:776:.:775:.:783#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690588513#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:42#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+ (F/W v1.80) -> Fault counters: 0, 7
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690588855#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:777:.:776:.:774:.:780#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690588996#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:40#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:778#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690589034#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:764:.:768:.:773:.:778#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690589096#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:768:.:773:.:778#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690589156#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:778#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690589254#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690589486#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690589492#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rtc:1690589501#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:0#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690589711#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690589765#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690589882#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690589910#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690589975#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690590206#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690590254#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690590323#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690590381#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:39#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:764:.:768:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690590393#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:39#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:767:.:773:.:775:.:778#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:772:.:776:.:775:.:778#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:770:.:774:.:776:.:778#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:768:.:772:.:775:.:778#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690590603#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:38#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690590641#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:38#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690590680#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:772:.:776#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:767:.:773:.:775:.:778#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:768:.:774:.:776:.:778#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690590744#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:38#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:768:.:774:.:775:.:778#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:770:.:774:.:776:.:778#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690590791#EOF#
+<br>##CL##gdc-dgn::rtc:1690590801#EOF#
+<br>##CL##gdc-dgn::rtc:1690590804#EOF#
+<br>##CL##gdc-dgn::rtc:1690590807#EOF#
+<br>##CL##gdc-dgn::rtc:1690590829#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690590899
+<br>##CL##gdc-cfg::rtc:1690590899#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690590907
+<br>##CL##gdc-cfg::rtc:1690590907#EOF#
+Syncing RTC time -> Jul 29 2023, 00:35:09
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 0:35:9 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690590909
+<br>##CL##gdc-cfg::rtc:1690590909#EOF#
+<br>##CL##gdc-dgn::rtc:1690590916#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:38#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dgn::rtc:1690591097#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:767:.:769:.:772:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690591142#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690591259#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:39#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:767:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690591455#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:38#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:764:.:768:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690591468#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:38#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690593471#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690593506
+<br>##CL##gdc-cfg::rtc:1690593506#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690594039
+<br>##CL##gdc-cfg::rtc:1690594039#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690594420#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: dox:status
+Processed calibration request for: dox
+Level: status
+255 Atmospheric calibration found. Zero D.O. solution found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:dox:255#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: pH:status
+Processed calibration request for: pH
+Level: status
+Device not found in the 'getdevice' function.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: pH:status
+Processed calibration request for: pH
+Level: status
+Device not found in the 'getdevice' function.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: rtd:status
+Processed calibration request for: rtd
+Level: status
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:rtd:0#EOF#
+<br>##CL##gdc-dgn::rtc:1690596517#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+<br>##CL##gdc-dgn::rtc:1690596621#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:37#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690596627#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rtc:1690596633#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690596639#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690596643#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: dox:status
+Processed calibration request for: dox
+Level: status
+255 Atmospheric calibration found. Zero D.O. solution found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:dox:255#EOF#
+Getting RTC time -> 1690596670
+<br>##CL##gdc-cfg::rtc:1690596670#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690597642
+<br>##CL##gdc-cfg::rtc:1690597642#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690597680
+<br>##CL##gdc-cfg::rtc:1690597680#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690597873
+<br>##CL##gdc-cfg::rtc:1690597873#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+<br>##CL##gdc-dgn::rtc:1690597994#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+Getting RTC time -> 1690598022
+<br>##CL##gdc-cfg::rtc:1690598022#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690598076
+<br>##CL##gdc-cfg::rtc:1690598076#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690598130
+<br>##CL##gdc-cfg::rtc:1690598130#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690598136
+<br>##CL##gdc-cfg::rtc:1690598136#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690598151
+<br>##CL##gdc-cfg::rtc:1690598151#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dgn::rtc:1690598395#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:37#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:764:.:768:.:773:.:40959#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690598483#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:37#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:764:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:278<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690599040
+<br>##CL##gdc-cfg::rtc:1690599040#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Syncing RTC time -> Jul 29 2023, 02:50:48
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 2:50:48 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690599048
+<br>##CL##gdc-cfg::rtc:1690599048#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690599162
+<br>##CL##gdc-cfg::rtc:1690599162#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Syncing RTC time -> Jul 29 2023, 02:52:51
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 2:52:51 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690599171
+<br>##CL##gdc-cfg::rtc:1690599171#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690599178#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rtc:1690599185#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:764:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:278<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-db::power=awake#EOF#
+<br>##CL##gdc-db::modem=active#EOF#
+<br>##CL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CL##gdc-db::rssi=99#EOF#
+<br>##CL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690599270
+<br>##CL##gdc-cfg::rtc:1690599270#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690653572#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690653611#EOF#
+<br>##CL##gdc-dgn::rtc:1690653613#EOF#
+<br>##CL##gdc-dgn::rtc:1690653616#EOF#
+<br>##CL##gdc-dgn::rtc:1690653618#EOF#
+<br>##CL##gdc-dgn::rtc:1690653621#EOF#
+<br>##CL##gdc-dgn::rtc:1690653622#EOF#
+<br>##CL##gdc-dgn::rtc:1690653624#EOF#
+<br>##CL##gdc-dgn::rtc:1690653627#EOF#
+<br>##CL##gdc-dgn::rtc:1690653629#EOF#
+<br>##CL##gdc-dgn::rtc:1690653631#EOF#
+<br>##CL##gdc-dgn::rtc:1690653634#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690653701#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:37#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690653733#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+Getting RTC time -> 1690653770
+<br>##CL##gdc-cfg::rtc:1690653770#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+Exception in hasdevice(mem): Device not specified in config.ini.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Exception in hasdevice(rgb): SD module not initialized.
+Exception in hasdevice(rgb): SD module not initialized.
+Exception in hasdevice(rgb): SD module not initialized.
+Exception in hasdevice(rgb): SD module not initialized.
+Configuring MQTT client -> Done
+Exception in hasdevice(rgb): SD module not initialized.
+Initializing Buzzer -> Done
+Exception in hasdevice(rgb): SD module not initialized.
+Exception in hasdevice(rgb): SD module not initialized.
+Initializing Sentinel -> Done
+Exception in hasdevice(rgb): SD module not initialized.
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Initializing AT-09 BL module -> Not detected
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Initializing GPS module -> Not detected
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Initializing EEPROM module -> Done
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Initializing AHT10 sensor -> Done
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Initializing RTC module -> Done
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Initializing ADS1115 module -> Done
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+GDC mode enabled. GatorByte is now locked in this mode.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+Getting RTC time -> Exception in hasdevice(rtc): Device not specified in config.ini.
+not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+Command: bl:getconfigdl:config.ini,0
+Exception in hasdevice(bl): Device not specified in config.ini.
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,rgb,sd,sntl,buzzer,r#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:gb,vst,rain,eadc,relay,bl,boos#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ter,wlev,ph,ec,dox,rtd
+ id:gb-#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:chmd-zero
+sleep
+ duration:3000#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:0
+ mode:shallow
+survey
+ date:0#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:4-19-2023
+ id:gb-lry
+ location#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::Sarasota
+ mode:station
+ realt#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ime:true
+#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(buzzer): Device not specified in config.ini.
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+Exception in hasdevice(rgb): Device not specified in config.ini.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time ->  -> Has device: 0not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+
+Getting RTC time ->  -> Has device: 0not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Device ID: gb-chmd-zero
+Survey ID: gb-lry
+Survey date: 04-19-2023
+Survey location: Sarasota
+Survey mode: station
+Sleep duration: 0 min 30 seconds.
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,ph,ec,dox,rtd,buzzer,rgb
+Getting RTC time ->  -> Has device: 11690657204
+<br>##CL##gdc-cfg::rtc:1690657204#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+ -> Skipped. GDC connected.
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690657734
+<br>##CL##gdc-cfg::rtc:1690657734#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-db::power=awake#EOF#
+<br>##CL##gdc-db::modem=active#EOF#
+<br>##CL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CL##gdc-db::rssi=99#EOF#
+<br>##CL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+Getting RTC time -> 1690657806
+<br>##CL##gdc-cfg::rtc:1690657806#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690657967
+<br>##CL##gdc-cfg::rtc:1690657967#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690658123
+<br>##CL##gdc-cfg::rtc:1690658123#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690658128
+<br>##CL##gdc-cfg::rtc:1690658128#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690658163
+<br>##CL##gdc-cfg::rtc:1690658163#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690660962
+<br>##CL##gdc-cfg::rtc:1690660962#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690661077
+<br>##CL##gdc-cfg::rtc:1690661077#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-dgn::rtc:1690661132#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:35#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:770:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690661145#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:770:.:774:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690661245
+<br>##CL##gdc-cfg::rtc:1690661245#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690662009
+<br>##CL##gdc-cfg::rtc:1690662009#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690662056
+<br>##CL##gdc-cfg::rtc:1690662056#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690662088
+<br>##CL##gdc-cfg::rtc:1690662088#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690662170
+<br>##CL##gdc-cfg::rtc:1690662170#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-db::power=awake#EOF#
+<br>##CL##gdc-db::modem=active#EOF#
+<br>##CL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CL##gdc-db::rssi=99#EOF#
+<br>##CL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690662256
+<br>##CL##gdc-cfg::rtc:1690662256#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690662268
+<br>##CL##gdc-cfg::rtc:1690662268#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+255  Low-point calibration found. Mid-point calibration found. High-point calibration found. 
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:255#EOF#
+Getting RTC time -> 1690662310
+<br>##CL##gdc-cfg::rtc:1690662310#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690663331
+<br>##CL##gdc-cfg::rtc:1690663331#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690663361
+<br>##CL##gdc-cfg::rtc:1690663361#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690663376#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:35#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:764:.:770:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690663408
+<br>##CL##gdc-cfg::rtc:1690663408#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690663429
+<br>##CL##gdc-cfg::rtc:1690663429#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-db::power=awake#EOF#
+<br>##CL##gdc-db::modem=active#EOF#
+<br>##CL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CL##gdc-db::rssi=99#EOF#
+<br>##CL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690663682#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:29:.:35#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:770:.:774:.:778#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690663751#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:774:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690663774#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:35#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:774:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690663806#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:774:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690663882#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:35#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:774:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+Getting RTC time -> 1690663913
+<br>##CL##gdc-cfg::rtc:1690663913#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Syncing RTC time -> Jul 29 2023, 20:51:59
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 20:51:59 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690663919
+<br>##CL##gdc-cfg::rtc:1690663919#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+Getting RTC time -> 1690664183
+<br>##CL##gdc-cfg::rtc:1690664183#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb,ph
+ id:gb-chmd-zero
+sleep#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+ duration:30000
+ mode:shallow#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:
+survey
+ date:04-19-2023
+ id:g#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:b-lry
+ location:Sarasota
+ mode#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl::station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-dgn::rtc:1690664940#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:768:.:774:.:776:.:777#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:773:.:776:.:776:.:777#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690665019
+<br>##CL##gdc-cfg::rtc:1690665019#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690665032
+<br>##CL##gdc-cfg::rtc:1690665032#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time -> 1690665054
+<br>##CL##gdc-cfg::rtc:1690665054#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#

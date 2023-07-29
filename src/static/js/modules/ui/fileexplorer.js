@@ -33,6 +33,7 @@ function uidownloadfilessubapp(){
         $(".home-panel .download-files-button").off("click").click(function () {
             $(".download-files-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
+            $(".gb-config-header").addClass("hidden");
         
             // Hide previous errors
             $(".download-files-panel .download-files-list").find(".error-item").remove();

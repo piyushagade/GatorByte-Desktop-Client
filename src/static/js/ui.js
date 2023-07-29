@@ -131,12 +131,14 @@ function uisubapp(){
         $(".go-back-panel-button").off("click").click(function () {
             $(".panel").addClass("hidden");
             $("." + $(this).attr("target-panel")).removeClass("hidden");
+            if ($(this).attr("target-panel") == "home-panel") $(".gb-config-header").removeClass("hidden"); setheight();
         });
 
         // Go home panel button
         $(".go-home-panel").off("click").click(function () {
             $(".panel").addClass("hidden");
             $(".home-panel").removeClass("hidden");
+            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
         });
 
         // Close window button

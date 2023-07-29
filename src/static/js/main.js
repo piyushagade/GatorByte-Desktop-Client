@@ -56,7 +56,23 @@ $(document).ready(function () {
     
     global.accessors.f = new functionsubapp().init();
     global.accessors.sck = new socketsubapp().init();
+
+    // On window resize
+    setheight();
+    $(window).resize(function() {
+        setheight();
+    });
 });
+
+function setheight() {
+
+    setTimeout(() => {
+        var headerheight = $(".header-panel").height();
+        var bodyheight = parseInt($(".container").css("height"));
+        var panelheight = bodyheight - headerheight - 40;
+        $(".panel").height(panelheight);
+    }, 100);
+}
 
 function on_port_closed() {
 
