@@ -812,36 +812,41 @@ function functionsubapp(){
         })
     }
 
-    self.waterfall = function (tasks) {
+    
+    self.waterfall = function (tasks, delay) {
         return new Promise(function (resolve, reject) {
             if (!tasks) reject(new Error("Tasks array wasn't provided as an argument."));
 
             var counter = 0;
             tasks.forEach(function (task, ti) {
                 
-                //! If the task is a Promise
-                if (task && task.then && typeof task.then == "function") {
-                    task
-                        .then(function () {
-                            counter++;
-                            if (counter == tasks.length) resolve(null);
-                        })
-                        .catch(function (err) {
-                            counter++;
-                            if (counter == tasks.length) resolve(err);
-                        });
-                }
+                setTimeout(() => {
 
-                //! If the task is a function
-                else if (task && typeof task == "function") {
-                    task();
-                    counter++;
-                    if (counter == tasks.length) resolve(null);
-                }
+                    //! If the task is a Promise
+                    if (task && task.then && typeof task.then == "function") {
+                        task
+                            .then(function () {
+                                counter++;
+                                if (counter == tasks.length) resolve(null);
+                            })
+                            .catch(function (err) {
+                                counter++;
+                                if (counter == tasks.length) resolve(err);
+                            });
+                    }
 
-                else {
-                    console.error("Waterfall task is undefined. Ensure task is a function or a Promise.")
-                }
+                    //! If the task is a function
+                    else if (task && typeof task == "function") {
+                        task();
+                        counter++;
+                        if (counter == tasks.length) resolve(null);
+                    }
+
+                    else {
+                        console.error("Waterfall task is undefined. Ensure that the task is a function or a Promise.")
+                    }
+
+                }, delay ? delay * ti : 0);
             })
         })
     }

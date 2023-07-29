@@ -5,7 +5,7 @@ module.exports = {
     SHOW_DEV_TOOLS: false,
 
     APP_NAME: "Cereal",
-    APP_VERSION: "1.1.0",
+    APP_VERSION: "2.0.0",
     APP_ID: "{{a013771f-e172-4230-ac5d-4acf5ef71c14}}",
     PUBLISHER: "Piyush Agade",
     PUBLISHER_SHORT: "Agade",

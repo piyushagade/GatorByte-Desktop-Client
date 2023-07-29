@@ -2,3 +2,4184 @@ Getting RTC time -> 1690421932
 <br>##CEREAL##gdc-cfg::rtc:1690421932#EOF#
 Command: bl:getconfig
 <br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-dfl::error:nodevice#EOF#
+<br>##CEREAL##gdc-dfl::error:nodevice#EOF#
+<br>##CEREAL##gdc-dfl::error:nodevice#EOF#
+Getting RTC time -> 1690423026
+<br>##CEREAL##gdc-cfg::rtc:1690423026#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690423030
+<br>##CEREAL##gdc-cfg::rtc:1690423030#EOF#
+Command: syncJul-27-202301-57-13
+Syncing RTC time -> Jul 27 2023, 01:57:13
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 1:57:13 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+SPLAT!!!
+syncJul-27-202301-57-13
+Getting RTC time -> 1690423034
+<br>##CEREAL##gdc-cfg::rtc:1690423034#EOF#
+Command: syncJul-27-202302-08-54rtc:get
+Syncing RTC time -> Jul 27 2023, 02:08:54
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 2:8:54 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690423734
+<br>##CEREAL##gdc-cfg::rtc:1690423734#EOF#
+Getting RTC time -> 1690423735
+<br>##CEREAL##gdc-cfg::rtc:1690423735#EOF#
+Command: syncJul-27-202302-09-01
+Syncing RTC time -> Jul 27 2023, 02:09:01
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 2:9:1 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+SPLAT!!!
+syncJul-27-202302-09-01
+Getting RTC time -> 1690423742
+<br>##CEREAL##gdc-cfg::rtc:1690423742#EOF#
+Getting RTC time -> 1690423751
+<br>##CEREAL##gdc-cfg::rtc:1690423751#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+Getting RTC time -> 1690423827
+<br>##CEREAL##gdc-cfg::rtc:1690423827#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+Getting RTC time -> 1690423933
+<br>##CEREAL##gdc-cfg::rtc:1690423933#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Command: syncJul-27-202302-12-46rtc:get
+Syncing RTC time -> Jul 27 2023, 02:12:46
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 2:12:46 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690423966
+<br>##CEREAL##gdc-cfg::rtc:1690423966#EOF#
+Getting RTC time -> 1690423978
+<br>##CEREAL##gdc-cfg::rtc:1690423978#EOF#
+Command: syncJul-27-202302-13-06rtc:get
+Syncing RTC time -> Jul 27 2023, 02:13:06
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 2:13:6 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690423986
+<br>##CEREAL##gdc-cfg::rtc:1690423986#EOF#
+dl:config.ini,0
+A request for config file has been received. Filename: /config/config.ini
+ -> SD card absent##CEREAL##gdc-cfg::fdl:#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690424297#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:771:.:773:.:776:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:35#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690424312#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:772:.:773:.:776:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:35#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690424338#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:772:.:773:.:776:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:35#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690424922
+<br>##CEREAL##gdc-cfg::rtc:1690424922#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690425208#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690425282#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:771:.:773:.:776:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+<br>##CEREAL##gdc-dgn::rtc:1690478421#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690478866#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:783:.:780:.:778:.:781#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:38#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690478972#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690479011#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690479262#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690479329#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:771:.:771:.:775:.:778#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:38#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690479382#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690479505#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690479517#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:770:.:771:.:775:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:39#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690479529#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:770:.:771:.:775:.:778#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:39#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690479599#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690479669#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690479684#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:771:.:771:.:775:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:39#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690479956#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:770:.:771:.:775:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690479990#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:770:.:771:.:775:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690480059#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:770:.:771:.:775:.:779#EOF#
+<br>##CEREAL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:38#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Not detected
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+<br>##CEREAL##gdc-dgn::rtc:1690480317#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:775:.:775:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:37#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690480499#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+Getting RTC time -> 1690481022
+<br>##CEREAL##gdc-cfg::rtc:1690481022#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+Getting RTC time -> 1690481364
+<br>##CEREAL##gdc-cfg::rtc:1690481364#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690481371
+<br>##CEREAL##gdc-cfg::rtc:1690481371#EOF#
+Getting RTC time -> 1690481375
+<br>##CEREAL##gdc-cfg::rtc:1690481375#EOF#
+Command: syncJul-27-202318-09-38rtc:get
+Syncing RTC time -> Jul 27 2023, 18:09:38
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 18:9:38 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690481378
+<br>##CEREAL##gdc-cfg::rtc:1690481378#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690481383#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:36#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dfl::error:nodevice#EOF#
+<br>##CEREAL##gdc-db::power=awake#EOF#
+<br>##CEREAL##gdc-db::modem=active#EOF#
+<br>##CEREAL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CEREAL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CEREAL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CEREAL##gdc-db::rssi=99#EOF#
+<br>##CEREAL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690481436#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:28:.:36#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690481451#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:28:.:36#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690481472#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690481526
+<br>##CEREAL##gdc-cfg::rtc:1690481526#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690481535
+<br>##CEREAL##gdc-cfg::rtc:1690481535#EOF#
+Command: syncJul-27-202318-12-25rtc:get
+Syncing RTC time -> Jul 27 2023, 18:12:25
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 18:12:25 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690481545
+<br>##CEREAL##gdc-cfg::rtc:1690481545#EOF#
+Command: syncJul-27-202318-13-05rtc:get
+Syncing RTC time -> Jul 27 2023, 18:13:05
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 18:13:5 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690481585
+<br>##CEREAL##gdc-cfg::rtc:1690481585#EOF#
+Getting RTC time -> 1690481592
+<br>##CEREAL##gdc-cfg::rtc:1690481592#EOF#
+Getting RTC time -> 1690481617
+<br>##CEREAL##gdc-cfg::rtc:1690481617#EOF#
+Getting RTC time -> 1690481623
+<br>##CEREAL##gdc-cfg::rtc:1690481623#EOF#
+Getting RTC time -> 1690481633
+<br>##CEREAL##gdc-cfg::rtc:1690481633#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CEREAL##gdc-dgn::rtc:1690482024#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:38#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CEREAL##gdc-dgn::rtc:1690482159#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:29:.:36#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690482171#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dfl::error:nodevice#EOF#
+Getting RTC time -> 1690482198
+<br>##CEREAL##gdc-cfg::rtc:1690482198#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690482203
+<br>##CEREAL##gdc-cfg::rtc:1690482203#EOF#
+Command: syncJul-27-202318-23-29rtc:get
+Syncing RTC time -> Jul 27 2023, 18:23:29
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 18:23:29 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690482209
+<br>##CEREAL##gdc-cfg::rtc:1690482209#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690482220#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CEREAL##gdc-dgn::rtc:1690482458#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:770:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+ -> Not detected
+##CEREAL-GDC-PONG##
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690482977
+<br>##CEREAL##gdc-cfg::rtc:1690482977#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Command: syncJul-27-202318-36-24rtc:get
+Syncing RTC time -> Jul 27 2023, 18:36:24
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 18:36:24 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690482984
+<br>##CEREAL##gdc-cfg::rtc:1690482984#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690482989#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:37#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CEREAL##gdc-dgn::rtc:1690483304#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:773:.:776:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CEREAL##gdc-dgn::rtc:1690483534#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690484538#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690484796
+<br>##CEREAL##gdc-cfg::rtc:1690484796#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690484810
+<br>##CEREAL##gdc-cfg::rtc:1690484810#EOF#
+Getting RTC time -> 1690484814
+<br>##CEREAL##gdc-cfg::rtc:1690484814#EOF#
+Getting RTC time -> 1690484819
+<br>##CEREAL##gdc-cfg::rtc:1690484819#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Command: syncJul-27-202319-07-05rtc:get
+Syncing RTC time -> Jul 27 2023, 19:07:05
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 19:7:5 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690484825
+<br>##CEREAL##gdc-cfg::rtc:1690484825#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690484836#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:770:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:36#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690484877#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690484890#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:36#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690484956
+<br>##CEREAL##gdc-cfg::rtc:1690484956#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+dl:config.ini,0
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+dl:config.ini,30
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+dl:config.ini,60
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:m,rtc,aht,rgb,sd,sntl,buzzer,r#EOF#
+dl:config.ini,90
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:gb,vst,rain,eadc,relay,Booster#EOF#
+dl:config.ini,120
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:,Water level,Bluetooth module
+#EOF#
+dl:config.ini,150
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl: id:gb-chmd-zero
+sleep
+ durati#EOF#
+dl:config.ini,180
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:on:30000
+ mode:shallow
+survey
+#EOF#
+dl:config.ini,210
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl: date:08-19-2023
+ id:gb-lry
+ l#EOF#
+dl:config.ini,240
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:ocation:Sarasota
+ mode:station#EOF#
+dl:config.ini,270
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:
+ realtime:true
+#EOF#
+dl:config.ini,300
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:#EOF#
+Getting RTC time -> 1690485042
+<br>##CEREAL##gdc-cfg::rtc:1690485042#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690485056#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690486007#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:29:.:38#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690486072#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Processing command: ##GB##cfgb#EOF#
+Processing command: rtc:get
+Getting RTC time -> 1690487214
+<br>##CEREAL##gdc-cfg::rtc:1690487214#EOF#
+Processing command: bl:getconfig
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Processing command: ##GB##dgn#EOF#
+Processing command: memrtc
+Processing command: ahtrgbsd
+Processing command: sntlbuzzerrgb
+Processing command: vst
+Processing command: eadcrelayBooster
+Processing command: WaterlevelBluetoothmodule
+Processing command: ##CEREAL-GDC-PING##gdc-ping
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+Processing command: ##GB##dgn#EOF#
+Processing command: memrtcaht
+Processing command: rgbsd
+Processing command: sntlbuzzerrgb
+Processing command: vsteadc
+Processing command: relayBooster
+Processing command: WaterlevelBluetoothmodule
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Processing command: ##GB##dgn#EOF#
+
+Processing command: memrtcaht
+dgn
+Processing command: rgbsdsntl
+dgn
+Processing command: buzzerrgb
+dgn
+Processing command: vsteadc
+dgn
+Processing command: relayBoosterWaterlevel
+dgn
+Processing command: Bluetoothmodule
+dgn
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Processing command: ##GB##dgn#EOF#
+Current state: None
+Contains RTC: None
+Processing command: memrtcaht
+Current state: dgn
+Processing command: rgbsdsntl
+Current state: dgn
+Processing command: buzzerrgb
+Current state: dgn
+Processing command: vsteadc
+Current state: dgn
+Processing command: relayBoosterWaterlevel
+Current state: dgn
+Processing command: Bluetoothmodule
+Current state: dgn
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Processing command: ##GB##dgn#EOF#memrtc
+Current state: None
+Contains RTC: dgn
+<br>##CEREAL##gdc-dgn::rtc:1690488267#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+Processing command: ahtrgbsd
+Current state: dgn
+Contains RTC: None
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+Processing command: sntlbuzzerrgbvsteadcrelayBoosterWaterlevelBluetoothmodule
+Current state: dgn
+Contains RTC: None
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:773:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+
+Processing command: ##GB##dgn#EOF# -> Current state: None
+
+Processing command: memrtc -> Current state: dgn
+<br>##CEREAL##gdc-dgn::rtc:1690488389#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+
+Processing command: ahtrgbsd -> Current state: dgn
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+
+Processing command: sntlbuzzerrgbvsteadcrelayBoosterWaterlevelBluetoothmodule -> Current state: dgn
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+
+Processing command: ##CEREAL-GDC-PING##gdc-ping -> Current state: dgn
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+
+Processing command: ##GB##dgn#EOF# -> Current state: dgn
+
+Processing command: ##GB##dgn#EOF#memrtcahtrgbsdsntlbuzzerrgbvsteadcrelayBoosterWaterlevelBluetoothmodule -> Current state: dgn
+<br>##CEREAL##gdc-dgn::rtc:1690488444#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+
+Processing command: ##GB##dgn#EOF#memrtcahtrgbsdsntlbuzzerrgbvsteadc -> Current state: dgn
+<br>##CEREAL##gdc-dgn::rtc:1690488477#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+
+Processing command: relayBoosterWaterlevelBluetoothmodule -> Current state: dgn
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CEREAL##gdc-dgn::rtc:1690488610#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:28:.:40#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690488690#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690488712
+<br>##CEREAL##gdc-cfg::rtc:1690488712#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690488832#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:39#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690488881#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:764:.:768:.:772:.:774#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+Getting RTC time -> 1690488942
+<br>##CEREAL##gdc-cfg::rtc:1690488942#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+Getting RTC time -> 1690489114
+<br>##CEREAL##gdc-cfg::rtc:1690489114#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690489231#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:42#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+Getting RTC time -> 1690489244
+<br>##CEREAL##gdc-cfg::rtc:1690489244#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-cfg::fupl:ack#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690489290#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:41#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690489398#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:41#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+Getting RTC time -> 1690489414
+<br>##CEREAL##gdc-cfg::rtc:1690489414#EOF#
+bl:getconfigdl:config.ini,0
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+Command: bl:getconfigdl:config.ini,0
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+dl:config.ini,30
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+dl:config.ini,60
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:m,rtc,aht,rgb,sd,sntl,buzzer,r#EOF#
+dl:config.ini,90
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:gb,vst,rain,eadc,relay,bl,boos#EOF#
+dl:config.ini,120
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:ter,wlev
+ id:gb-chmd-zero
+slee#EOF#
+dl:config.ini,150
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:p
+ duration:30000
+ mode:shallo#EOF#
+dl:config.ini,180
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:w
+survey
+ date:08-19-2023
+ id:#EOF#
+dl:config.ini,210
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:gb-lry
+ location:Sarasota
+ mod#EOF#
+dl:config.ini,240
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:e:station
+ realtime:true
+#EOF#
+dl:config.ini,270
+A request for config file has been received. Filename: /config/config.ini
+##CEREAL##gdc-cfg::fdl:#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690489451#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:771:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+Getting RTC time -> 1690489464
+<br>##CEREAL##gdc-cfg::rtc:1690489464#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690489480#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:40#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:764:.:768:.:771:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690489687
+<br>##CEREAL##gdc-cfg::rtc:1690489687#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Command: syncJul-27-202320-28-13rtc:get
+Syncing RTC time -> Jul 27 2023, 20:28:13
+Syncing RTC to the provided time time -> RTC set to 7/27/2023, 20:28:13 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690489693
+<br>##CEREAL##gdc-cfg::rtc:1690489693#EOF#
+Getting RTC time -> 1690489760
+<br>##CEREAL##gdc-cfg::rtc:1690489760#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690489773#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:764:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+Getting RTC time -> 1690489855
+<br>##CEREAL##gdc-cfg::rtc:1690489855#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-dgn::rtc:1690489900#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:771:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690489916#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:41#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:771:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690489980#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690489997#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:40#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690490066#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:40#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:771:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690490331#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:39#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:764:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690490344#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:765:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690490427#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:763:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690493545
+<br>##CEREAL##gdc-cfg::rtc:1690493545#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690493566#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:28:.:36#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CEREAL##gdc-dfl::fdl:data
+ mode:read
+ readuntil:st#EOF#
+##CEREAL##gdc-dfl::fdl:#EOF#
+##CEREAL##gdc-dfl::fdl:data
+ mode:read
+ readuntil:st#EOF#
+##CEREAL##gdc-dfl::fdl:#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:variables.ini:301<br>#EOF#
+##CEREAL##gdc-dfl::fdl:QUEUE_UPLOAD_INTERVAL:600000
+#EOF#
+##CEREAL##gdc-dfl::fdl:#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+GDC mode enabled. GatorByte is now locked in this mode.
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+##CEREAL-GDC-READY##
+##CEREAL-GDC-PONG##
+<br>##CEREAL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690568424
+<br>##CEREAL##gdc-cfg::rtc:1690568424#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+<br>##CEREAL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CEREAL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690568450#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:42#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:764:.:768:.:771:.:775#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+<br>##CEREAL##gdc-dgn::rtc:1690568484#EOF#
+<br>##CEREAL##gdc-dgn::mem:true#EOF#
+<br>##CEREAL##gdc-dgn::sd:true#EOF#
+<br>##CEREAL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::eadc:true:..:766:.:768:.:772:.:775#EOF#
+<br>##CEREAL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CEREAL##gdc-dgn::relay:true#EOF#
+<br>##CEREAL##gdc-dgn::rgb:true#EOF#
+<br>##CEREAL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690568521
+<br>##CEREAL##gdc-cfg::rtc:1690568521#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+Command: syncJul-28-202318-25-04rtc:get
+Syncing RTC time -> Jul 28 2023, 18:25:04
+Syncing RTC to the provided time time -> RTC set to 7/28/2023, 18:25:4 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690568704
+<br>##CEREAL##gdc-cfg::rtc:1690568704#EOF#
+Command: syncJul-28-202318-25-12rtc:get
+Syncing RTC time -> Jul 28 2023, 18:25:12
+Syncing RTC to the provided time time -> RTC set to 7/28/2023, 18:25:12 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690568712
+<br>##CEREAL##gdc-cfg::rtc:1690568712#EOF#
+Command: syncJul-28-202318-25-17rtc:get
+Syncing RTC time -> Jul 28 2023, 18:25:17
+Syncing RTC to the provided time time -> RTC set to 7/28/2023, 18:25:17 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690568717
+<br>##CEREAL##gdc-cfg::rtc:1690568717#EOF#
+Getting RTC time -> 1690568722
+<br>##CEREAL##gdc-cfg::rtc:1690568722#EOF#
+Command: syncJul-28-202318-27-48rtc:get
+Syncing RTC time -> Jul 28 2023, 18:27:48
+Syncing RTC to the provided time time -> RTC set to 7/28/2023, 18:27:48 -> Done
+<br>##CEREAL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690568868
+<br>##CEREAL##gdc-cfg::rtc:1690568868#EOF#
+Getting RTC time -> 1690568953
+<br>##CEREAL##gdc-cfg::rtc:1690568953#EOF#
+Command: bl:getconfig
+<br>##CEREAL##gdc-cfg::bl:not-detected#EOF#
+##CEREAL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CEREAL-GDC-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test##CL-GDC-PONG##
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690569774
+<br>##CL##gdc-cfg::rtc:1690569774#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+##CL-GDC-PONG##
+##CL-GDC-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Device not found: ioe
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Device not found: ioe
+Device not found: ioe
+Device not found: gdc
+Device not found: gdc
+Configuring MQTT client -> Done
+Device not found: gdc
+Initializing Buzzer -> Done
+Device not found: gdc
+Device not found: gdc
+Initializing SentinelDevice not found: tca
+Device not found: tca
+ -> Done
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: gdc
+Device not found: ioe
+Initializing SD card module -> SD R/W testDevice not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+ -> Done
+Device not found: ioe
+Reading config file from SD -> Skipped. GDC connected.
+Device not found: gdc
+Device not found: ioe
+Device not found: ioe
+Initializing AT-09 BL moduleDevice not found: ioe
+Device not found: ioe
+ -> Not detected
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: ioe
+Device not found: gdc
+Device not found: ioe
+Device not found: ioe
+Initializing GPS module -> Not detected
+Device not found: ioe
+Device not found: ioe
+Device not found: gdc
+Device not found: ioe
+Initializing EEPROM module -> DoneDevice not found: ioe
+Device not found: ioe
+
+Device not found: ioe
+Device not found: gdc
+Initializing AHT10 sensorDevice not found: ioe
+ -> Done
+Device not found: ioe
+Device not found: ioe
+Device not found: gdc
+Device not found: ioe
+Initializing RTC moduleDevice not found: ioe
+Device not found: ioe
+ -> Done
+Device not found: gdc
+Device not found: gdc
+Initializing ADS1115 moduleDevice not found: ioe
+ -> Done
+Device not found: ioe
+Device not found: gdc
+Device not found: ioe
+Device not found: ioe
+Reading USS: Invalid value
+Device not found: ioe
+Device not found: ioe
+Setup complete
+##CL-GB-READY##
+Device not found: gdc
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Device not found: gdc
+Device not found: gdc
+Configuring MQTT client -> Done
+Device not found: gdc
+Initializing Buzzer -> Done
+Device not found: gdc
+Device not found: gdc
+Initializing SentinelDevice not found: tca
+Device not found: tca
+ -> Done
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: tca
+Device not found: gdc
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Device not found: gdc
+Initializing AT-09 BL module -> Not detected
+Device not found: gdc
+Initializing GPS module -> Not detected
+Device not found: gdc
+Initializing EEPROM module -> Done
+Device not found: gdc
+Initializing AHT10 sensor -> Done
+Device not found: gdc
+Initializing RTC module -> Done
+Device not found: gdc
+Device not found: gdc
+Initializing ADS1115 module -> Done
+Device not found: gdc
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+Device not found: gdc
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Device not found: gdc
+Device not found: gdc
+Configuring MQTT client -> Done
+Device not found: gdc
+Initializing Buzzer -> Done
+Device not found: gdc
+Device not found: gdc
+Initializing Sentinel -> Done
+Device not found: gdc
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Device not found: gdc
+Initializing AT-09 BL module -> Not detected
+Device not found: gdc
+Initializing GPS module -> Not detected
+Device not found: gdc
+Initializing EEPROM module -> Done
+Device not found: gdc
+Initializing AHT10 sensor -> Done
+Device not found: gdc
+Initializing RTC module -> Done
+Device not found: gdc
+Device not found: gdc
+Initializing ADS1115 module -> Done
+Device not found: gdc
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+Device not found: gdc
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690570725
+<br>##CL##gdc-cfg::rtc:1690570725#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:1690570743#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:775#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GDC-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690570965#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690571007
+<br>##CL##gdc-cfg::rtc:1690571007#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690571022
+<br>##CL##gdc-cfg::rtc:1690571022#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+Command: bl:getconfigdl:config.ini,0
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,rgb,sd,sntl,buzzer,r#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:gb,vst,rain,eadc,relay,bl,boos#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ter,wlev
+ id:gb-chmd-zero
+slee#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:p
+ duration:30000
+ mode:shallo#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:w
+survey
+ date:08-19-2023
+ id:#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:gb-lry
+ location:Sarasota
+ mod#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:e:station
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-dgn::rtc:1690571090#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:768:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690571115
+<br>##CL##gdc-cfg::rtc:1690571115#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690571152
+<br>##CL##gdc-cfg::rtc:1690571152#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Getting 'none' device: 
+Device not found: none
+Device not found in the function.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Getting 'none' device: 
+Device not found: none
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+:list,/
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+:list,/config
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /c
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+<br>##CL##gdc-dfl::file::883<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GDC-READY##
+##CL-GDC-PONG##
+##CL-GDC-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690572422#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:36#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690572440#EOF#
+<br>##CL##gdc-dgn::aht:true:..:29:.:36#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:769:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690572461
+<br>##CL##gdc-cfg::rtc:1690572461#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /configListing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CL##gdc-dfl::fdl:data
+ mode:read
+ readuntil:st#EOF#
+##CL##gdc-dfl::fdl:#EOF#
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+<br>##CL##gdc-dfl::file::883<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /calibration
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+<br>##CL##gdc-dfl::file::883<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690572612
+<br>##CL##gdc-cfg::rtc:1690572612#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690572649#EOF#
+<br>##CL##gdc-dgn::aht:true:..:29:.:37#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing at folder: /
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+<br>##CL##gdc-dfl::file::883<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690572798#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:29:.:36#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:770:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Listing at folder: /
+List item count: 87
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /
+List item count: 87
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /config
+List item count: 14
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing at folder: /
+List item count: 87
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+List item count: 4
+<br>##CL##gdc-dfl::file::883<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing at folder: /
+List item count: 11
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /config
+List item count: 1
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing at folder: /
+List item count: 11
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+List item count: 1
+<br>##CL##gdc-dfl::file::883<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+File: 
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 11
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: config.ini
+Listing at folder: /config
+List item count: 1
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+File: 
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 11
+<br>##CL##gdc-dfl::file:/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: 
+Listing at folder: /readings
+List item count: 1
+<br>##CL##gdc-dfl::file::883<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: config.ini
+Listing at folder: /config
+List item count: 1
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+List item count: 0
+<br>##CL##gdc-dfl::error:nofile#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+List item count: 0
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing at folder: /readings
+List item count: 0
+<br>##CL##gdc-dfl::error:nofile#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing at folder: /readings
+List item count: 0
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing at folder: /readings
+List item count: 0
+<br>##CL##gdc-dfl::error:nofile#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: firmware.bin
+Listing at folder: /update
+List item count: 1
+<br>##CL##gdc-dfl::file:firmware.bin:185080<br>#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: variables.ini
+Listing at folder: /control
+List item count: 1
+<br>##CL##gdc-dfl::file:variables.ini:301<br>#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+Listing at folder: /
+List item count: 10
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: config.ini
+Listing at folder: /config
+List item count: 1
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: config.ini
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:data
+ mode:read
+ readuntil:st#EOF#
+Downloading file: config.ini
+##CL##gdc-dfl::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: config.ini
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:data
+ mode:read
+ readuntil:st#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:ability
+device
+ devices:mcu,me#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:m,rtc,aht,rgb,sd,sntl,buzzer,r#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:gb,vst,rain,eadc,relay,bl,boos#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:ter,wlev
+ id:gb-chmd-zero
+slee#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:p
+ duration:30000
+ mode:shallo#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:w
+survey
+ date:08-19-2023
+ id:#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:gb-lry
+ location:Sarasota
+ mod#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:e:station
+ realtime:true
+#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:#EOF#
+File: queue
+File: FOUND.001
+File: FOUND.000
+File: calibration
+File: config
+File: debug
+File: logs
+File: readings
+File: control
+File: update
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+File: sent
+File: queue_1.csv
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue_1.csv:136<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:data
+ mode:read
+ readuntil:st#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:ability
+device
+ devices:mcu,me#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:m,rtc,aht,rgb,sd,sntl,buzzer,r#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:gb,vst,rain,eadc,relay,bl,boos#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:ter,wlev
+ id:gb-chmd-zero
+slee#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:p
+ duration:30000
+ mode:shallo#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:w
+survey
+ date:08-19-2023
+ id:#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:gb-lry
+ location:Sarasota
+ mod#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:e:station
+ realtime:true
+#EOF#
+Downloading file: /config/config.ini
+##CL##gdc-dfl::fdl:#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue_1.csv:136<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue_1.csv:136<br>#EOF#
+Removing file: rm:/queue/queue_1.csv
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue_1.csv:136<br>#EOF#
+Removing file: rm:/queue/queue_1.csv
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue_1.csv:136<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:queue_1.csv:136<br>#EOF#
+Removing file: /queue/queue_1.csv
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::error:nofile#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:32397:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:32397:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /queue/sent/
+<br>##CL##gdc-dfl::file:32397:0<br>#EOF#
+Listing folder: /queue/sent/
+<br>##CL##gdc-dfl::file:32397:0<br>#EOF#
+Listing folder: /queue/sent/
+<br>##CL##gdc-dfl::file:32397:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: ///queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: ///queue//sent
+<br>##CL##gdc-dfl::file:32397:0<br>#EOF#
+Listing folder: ///queue//sent////queue
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: ///queue//sent////queue////queue//sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690577007
+<br>##CL##gdc-cfg::rtc:1690577007#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /readings
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing file: /queue/sent
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+ -> Failed (code 4) (/queue/sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+ -> Failed (code 5) (sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+ -> Failed (code 4) (/queue/sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+ -> Failed (code 5) (sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Parent folder: /queue
+ -> Failed (code 5) (sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Parent folder: /queue
+ -> Failed (code 4) ()
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Path: /queue/sent
+Parent folder: /queue
+Folder: sent
+ -> Failed (code 4) (sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Path: /queue/sent
+Parent folder: /queue
+Folder: /sent
+ -> Failed (code 4) (/sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Path: /queue/sent
+Parent folder: /queue
+Folder: /sent
+ -> Failed (code 4) (/sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Path: /queue/sent
+Parent folder: /queue
+Folder: /sent
+ -> Failed (code 4) (/sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Path: /queue/sent
+Parent folder: /queue
+Folder: sent
+ -> Failed (code 4) (sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Skipped. GDC connected.
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Removing folder: /queue/sent
+Path: /queue/sent
+Parent folder: queue
+Folder: sent
+ -> Failed (code 4) (sent)
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /readings
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /control
+<br>##CL##gdc-dfl::file:variables.ini:301<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /update
+<br>##CL##gdc-dfl::file:firmware.bin:185080<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dgn::rtc:1690579889#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:767:.:770:.:773:.:776#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+##CL-GDC-PONG##
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690580348
+<br>##CL##gdc-cfg::rtc:1690580348#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:264<br>#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##

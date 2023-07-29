@@ -59,7 +59,6 @@ function uidiagnosticsgatorbytesubapp() {
 
         // Start diagnostics button
         self.panel.find(".start-peripherals-diagnostics-tests-button").off("click").click(function () {
-            console.log("Starting diagnostics tests.");
             
             $(".diagnostics-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
@@ -76,120 +75,46 @@ function uidiagnosticsgatorbytesubapp() {
             });
 
             // Start diagnostics tests
-            self.starttests();
+            setTimeout(() => {
+                self.starttests();
+            }, 250);
             
         });
     }
 
     self.starttests = function () {
+        console.log("Starting diagnostics tests.");
 
+        if (!self.enableddevices) console.log("Configuration data (enableddevices) not initialized");
+
+        var functions = [];
         self.enableddevices.forEach(function (device) {
+            functions.push(function () {
+                console.log("Testing device: " + device);
 
-            var devicedata = self.f.grep(self.alldevices, "id", device, true);
+                var devicedata = self.f.grep(self.alldevices, "id", device, true);
 
-            // Return if the device doesn not require testing
-            if (devicedata && devicedata.test == false) return;
-            
-            $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden");
-
-            self.sendcommand(device);
-            self.setstatus({
-                ui: "." + device + "-status",
-                font: "fa-vial",
-                color: "#555",
-                message: "Testing"
+                // Return if the device doesn not require testing
+                if (devicedata && devicedata.test == false) return;
+                
+                $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden");
+    
+                self.sendcommand(device);
+                self.setstatus({
+                    ui: "." + device + "-status",
+                    font: "fa-vial",
+                    color: "#555",
+                    message: "Testing"
+                });
             });
-        })
-
-        // // Test RTC
-        // self.sendcommand("rtc");
-        // self.setstatus({
-        //     ui: ".rtc-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
-
-        // // Test EEPROM
-        // self.sendcommand("eeprom");
-        // self.setstatus({
-        //     ui: ".eeprom-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
-
-        // // Test Bluetooth
-        // self.sendcommand("bl");
-        // self.setstatus({
-        //     ui: ".bl-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
+            
+        });
         
-        // // Test AHT
-        // self.sendcommand("aht");
-        // self.setstatus({
-        //     ui: ".aht-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
-
-        // // Test GPS
-        // self.sendcommand("gps");
-        // self.setstatus({
-        //     ui: ".gps-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
+        self.f.waterfall(functions, 250)
+            .then(function() {
+                console.log("All test requests sent");
+            });
         
-        // // Test Sentinel
-        // self.sendcommand("sntl");
-        // self.setstatus({
-        //     ui: ".sntl-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
-        
-        // // Test SD
-        // self.sendcommand("sd");
-        // self.setstatus({
-        //     ui: ".sd-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
-        
-        // // Test FRAM
-        // self.sendcommand("fram");
-        // self.setstatus({
-        //     ui: ".fram-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
-        
-        // // Test EADC
-        // self.sendcommand("eadc");
-        // self.setstatus({
-        //     ui: ".eadc-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
-        
-        // // Test relay
-        // self.sendcommand("relay");
-        // self.setstatus({
-        //     ui: ".relay-status",
-        //     font: "fa-vial",
-        //     color: "#555",
-        //     message: "Testing"
-        // });
     }
 
     self.process_response = function (response) {

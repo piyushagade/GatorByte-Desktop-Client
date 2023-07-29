@@ -116,6 +116,25 @@ function uidownloadfilessubapp(){
                 </div>
             */}));
         }
+        
+        if (error == "nofile") {
+
+            // Hide spinner
+            $(".download-files-panel .spinner-div").addClass("hidden");
+
+            // Hide previous errors
+            $(".download-files-panel .download-files-list").find(".error-item").remove();
+            
+            $(".download-files-panel .download-files-list").append(multiline(function () {/* 
+                <div class="error-item" style="margin-right: 10px; margin-bottom: 10px;">
+                    <div style="color: #f1f1f1; margin-top: 8px;">
+                        <div style="color: #ffffff;font-size: 13px;padding: 4px 10px; border-radius: 2px;">
+                            This folder is empty.
+                        </div>
+                    </div>
+                </div>
+            */}));
+        }
     }
 
     self.update_file_list_ui = function (file) {
@@ -188,6 +207,9 @@ function uidownloadfilessubapp(){
                     // Hide file options div
                     self.panel.find(".file-options-parent").addClass("hidden");
                     self.panel.find(".file-options-download-information").addClass("hidden");
+
+                    // Hide folder options div
+                    self.panel.find(".folder-options-parent").addClass("hidden");
                     
                     $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
                 }
@@ -201,6 +223,9 @@ function uidownloadfilessubapp(){
                     // Show file options div
                     self.panel.find(".file-options-parent").removeClass("hidden");
                     self.panel.find(".file-options-download-information").addClass("hidden");
+                    
+                    // Hide folder options div
+                    self.panel.find(".folder-options-parent").addClass("hidden");
                 }
 
                 //! Save file button listener (Download file)
@@ -221,6 +246,25 @@ function uidownloadfilessubapp(){
                     self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
                     self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Starting download");
                 });
+
+                
+                //! Delete file button listener
+                $(".download-files-panel .file-options-parent .delete-file-button").off("click").click(function () {
+                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+
+                    // Send download request
+                    self.filedownloadname = filename;
+                    self.filedownloaddata = "";
+                    self.filedownloadline = 0;
+
+                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
+                    self.request_file_deletion(filepath);
+
+                    // Update UI
+                    setTimeout(() => {
+                        $(".download-files-panel .refresh-files-list-button").click();
+                    }, 1400);
+                });
             }
 
             else if (filetype == "DIR") {
@@ -228,28 +272,61 @@ function uidownloadfilessubapp(){
                 // Hide file options div
                 self.panel.find(".file-options-parent").addClass("hidden");
 
-                if ($(this).hasClass("selected")) {
-                    $(this).attr("state", "no-file-selected").attr("selected-file", "");
+                // Show folder options div
+                self.panel.find(".folder-options-parent").removeClass("hidden");
 
-                    self.panel.find(".file-options-download-information").addClass("hidden");
-                    
-                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                if ($(this).hasClass("selected")) {
+                    $(this).attr("state", "no-folder-selected").attr("selected-folder", "");
                 }
 
-                //! Show file options and select the file
+                //! Show folder options and select the folder
                 else {
-                    $(this).attr("state", "file-selected").attr("selected-file", filename);
+                    $(this).attr("state", "folder-selected").attr("selected-folder", filename);
                     
                     $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
                     $(this).css("background", "#355377").addClass("selected");
-
-                    self.panel.find(".file-options-download-information").addClass("hidden");
                 }
+
+                //! Save file button listener (Download file)
+                $(".download-files-panel .folder-options-parent .make-directory-button").off("click").click(function () {
+                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+
+                    // Send download request
+                    self.filedownloadname = filename;
+                    self.filedownloaddata = "";
+                    self.filedownloadline = 0;
+
+                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername) + self.filedownloadname;
+                    console.log(filepath);
+
+                    // self.request_file_download(filepath, self.filedownloadline);
+
+                });
+
+                
+                //! Delete file button listener
+                $(".download-files-panel .folder-options-parent .delete-directory-button").off("click").click(function () {
+                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+
+                    // Send download request
+                    self.filedownloadname = filename;
+                    self.filedownloaddata = "";
+                    self.filedownloadline = 0;
+
+                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername) + self.filedownloadname;
+                    self.request_folder_deletion(filepath);
+
+                    // Update UI
+                    setTimeout(() => {
+                        $(".download-files-panel .refresh-files-list-button").click();
+                    }, 1400);
+                });
             }
         });
 
         //! When user dblclicks on a folder
         $(".download-files-panel .files-list-item").off("dblclick").dblclick(function () {
+
             var foldername = "/" + $(this).attr("filename").replace("/", "");
             var filetype = $(this).attr("filetype");
 
@@ -274,9 +351,11 @@ function uidownloadfilessubapp(){
 
         // Append file data
         self.filedownloaddata += data;
+        
+        var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
 
         // Request next part of the data if available
-        if (data.length > 0) return self.request_file_download(self.filedownloadname, self.filedownloadline);
+        if (data.length > 0) return self.request_file_download(filepath, self.filedownloadline);
         
         // On download complete
         else {
@@ -308,6 +387,22 @@ function uidownloadfilessubapp(){
         });
     }
 
+    self.request_file_deletion = function (filename) {
+
+        return new Promise(function (resolve, reject) {
+            self.sendcommand("rm" + ":" + filename);
+            self.state = "wait-for-file-list";
+        });
+    }
+
+    self.request_folder_deletion = function (filename) {
+
+        return new Promise(function (resolve, reject) {
+            self.sendcommand("rmd" + ":" + filename);
+            self.state = "wait-for-file-list";
+        });
+    }
+
     self.on_file_save_response = function (data) {
         if (data.success) {
             self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
@@ -333,9 +428,19 @@ function uidownloadfilessubapp(){
         if (foldername != "/") self.panel.find(".go-up-button").removeClass("hidden");
         else if (foldername == "/") self.panel.find(".go-up-button").addClass("hidden");
 
+        // Hide file options div
+        self.panel.find(".file-options-parent").addClass("hidden");
+
+        // Hide folder options div
+        self.panel.find(".folder-options-parent").addClass("hidden");
+
         // Setup behaviour of "go up" button
         if (foldername != "/")
             self.panel.find(".go-up-button").attr("target-folder", self.currentfoldername).off("click").click(function () {
+                
+                // Hide previous errors
+                $(".download-files-panel .download-files-list").find(".error-item").remove();
+                
                 self.open_directory($(this).attr("target-folder"));
             });
 

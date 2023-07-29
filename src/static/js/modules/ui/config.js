@@ -16,10 +16,24 @@ function uiconfiggatorbytesubapp() {
     self.fileuploadline = 0;
     self.lines_to_send = 30;
 
-    // var alldevices = ["mcu", "sntl", "sd", "fram", "rtc", "booster", "buzzer", "rgb", "aht", "gps", "bl", "rgb", "ph", "rtd", "dox", "ec", "ph", "rain", "uss", "wlev", "relay", "turbidity", "eadc"];
+    // var alldevicesid = ["mcu", "sntl", "sd", "fram", "rtc", "booster", "buzzer", "rgb", "aht", "gps", "bl", "rgb", "ph", "rtd", "dox", "ec", "ph", "rain", "uss", "wlev", "relay", "turbidity", "eadc"];
 
     self.panel = $(".configure-gb-panel");
     self.devices = [
+        {
+            "id": "rgb",
+            "name": "RGB LED",
+            "description": "RGB indicator LED",
+            "category": "peripheral",
+            "test": true
+        },
+        {
+            "id": "buzzer",
+            "name": "Buzzer",
+            "description": "Buzzer",
+            "category": "peripheral",
+            "test": true
+        },
         {
             "id": "mcu",
             "name": "NB1500 MCU",
@@ -123,20 +137,6 @@ function uiconfiggatorbytesubapp() {
             "test": true
         },
         {
-            "id": "rgb",
-            "name": "RGB LED",
-            "description": "RGB indicator LED",
-            "category": "peripheral",
-            "test": true
-        },
-        {
-            "id": "buzzer",
-            "name": "Buzzer",
-            "description": "Buzzer",
-            "category": "peripheral",
-            "test": true
-        },
-        {
             "id": "rtc",
             "name": "RTC",
             "description": "DS3231 RTC module",
@@ -182,15 +182,15 @@ function uiconfiggatorbytesubapp() {
         
         var alldevicesnames = self.devices.map(function (device) { return device.name });
         var alldevicesdescription = self.devices.map(function (device) { return device.description });
-        var alldevices = self.devices.map(function (device) { return device.id });
+        var alldevicesids = self.devices.map(function (device) { return device.id });
         self.panel.find(".devices-information-parent").find(".devices-list .devices-list-item").remove();
-        alldevices.forEach(function (device, di) {
+        alldevicesids.forEach(function (deviceid, di) {
             self.panel.find(".devices-information-parent").find(".devices-list").append(multiline(function () {/* 
                 <div class="col-auto devices-list-item shadow" device="{{deviceid}}" title="{{devicesdescription}}" style="margin: 0 6px 6px 0;padding: 2px 6px;background: #e6e6e6;color: #505050;font-size: 12px;font-weight: bold; opacity: 0.4;">
                     {{devicename}}
                 </div>
             */}, {
-                "deviceid": device.trim(),
+                "deviceid": deviceid.trim(),
                 "devicename": alldevicesnames[di],
                 "devicesdescription": alldevicesdescription[di]
             }));
@@ -230,6 +230,7 @@ function uiconfiggatorbytesubapp() {
             self.show_rtctime();
 
             // Get BL information
+            self.panel.find(".bl-sync-status").addClass("hidden");
             setTimeout(() => {
                 self.sendcommand("bl:getconfig");
             }, 2000);
@@ -379,10 +380,10 @@ function uiconfiggatorbytesubapp() {
             if (enabled) {
                 $(this).removeClass("enabled").css("opacity", "0.4");
                 
-                var device = $(this).text().trim();
+                var deviceid = $(this).attr("device").trim();
                 var devices = self.configobject["device"]["devices"].split(",");
                 var filtered = devices.filter(function(item){ 
-                    return device != item; 
+                    return deviceid != item; 
                 });
                 self.configobject["device"]["devices"] = filtered.join(",");
             }
@@ -390,8 +391,8 @@ function uiconfiggatorbytesubapp() {
                 $(this).addClass("enabled").css("opacity", "1");
 
                 var devices = self.configobject["device"]["devices"].split(",");
-                var device = $(this).text().trim();
-                devices.push(device);
+                var deviceid = $(this).attr("device").trim();
+                devices.push(deviceid);
                 self.configobject["device"]["devices"] = devices.join(",");
             }
             
@@ -843,7 +844,7 @@ function uiconfiggatorbytesubapp() {
                     self.panel.find(".rtc-sync-status").text("The RTC clock is out of sync. Please use the 'Sync RTC' button to sync the clocks.").css("color", "#c75353");
                 }
                 else {
-                    self.panel.find(".rtc-sync-status").text("The clocks are in sync. No action required.").css("color", "green");
+                    self.panel.find(".rtc-sync-status").text("The clocks are in sync. No action required.").css("color", "#8dd21e");
                 }
             }
 

@@ -269,7 +269,7 @@ module.exports = {
                         console.log("\nPort opened: " + result.port.settings.path + " at " + result.port.settings.baudRate + " bps");
 
                         // Send ping
-                        result.port.write("##CEREAL-GDC-PING##");
+                        result.port.write("##CL-GDC-PING##");
                         
                         i.g.var.serports[result.port.settings.path] = result.port;
 
@@ -292,12 +292,14 @@ module.exports = {
 
                             data = new TextDecoder().decode(data);
 
+                            // console.log(data);
+
                             // Log data to file
                             if (!i.fs.existsSync(path.join(storagedir, "seriallog"))) i.fs.mkdirSync(path.join(storagedir, "seriallog"));
                             i.fs.appendFileSync(path.join(storagedir, "seriallog", result.port.settings.path), data, "utf8");
 
                             // Clear detector timer
-                            if (data.indexOf("##CEREAL-GDC-PONG##") !== -1) {
+                            if (data.indexOf("##CL-GDC-PONG##") !== -1) {
                                 console.log("PONG detected");
                                 BrowserWindow.getAllWindows().forEach(function (window, wi) {
                                     window.webContents.send("ipc/pong-received-notification/push", {
@@ -310,7 +312,7 @@ module.exports = {
                             }
 
                             // GatorByte is now in GDC mode
-                            if (data.indexOf("##CEREAL-GDC-READY##") !== -1) {
+                            if (data.indexOf("##CL-GB-READY##") !== -1) {
                                 console.log("GB has completed setup");
                                 BrowserWindow.getAllWindows().forEach(function (window, wi) {
                                     window.webContents.send("ipc/gb-ready-notification/push", {
@@ -675,7 +677,7 @@ module.exports = {
             var port = obj.port;
 
             // Send command to the GatorByte            
-            i.g.var.serports[port.path].write("##CEREAL-GDC-LOCK##");
+            i.g.var.serports[port.path].write("##CL-GDC-LOCK##");
         });
     }
 }

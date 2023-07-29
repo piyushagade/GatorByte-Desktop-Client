@@ -318,7 +318,7 @@ function uiserialmonitorsubapp(){
         // Remove the manually added (in the firmware code) line break
         if (!filedata) line = line.replace(/<br>/, "");
 
-        if (line.indexOf("##CEREAL##") > -1 || global.hook != undefined) {
+        if (line.indexOf("##CL##") > -1 || global.hook != undefined) {
 
             // If the incoming hook string has an end-of-line indicator
             if (line.indexOf("#EOF#") != -1) {
@@ -330,10 +330,10 @@ function uiserialmonitorsubapp(){
 
                 // console.log(global.hook);
 
-                if (global.hook) global.hook.line = (global.hook.line || "") + line.replace("##CEREAL##", "");
+                if (global.hook) global.hook.line = (global.hook.line || "") + line.replace("##CL##", "");
                 else global.hook = hook;
 
-                global.hook.category = line.split("::")[0].replace(/<br>/g, "").replace("##CEREAL##", "");
+                global.hook.category = line.split("::")[0].replace(/<br>/g, "").replace("##CL##", "");
                 return null;
             }
 
@@ -341,11 +341,11 @@ function uiserialmonitorsubapp(){
             else {
 
                 
-                line = line.replace("##CEREAL##", "").replace("#EOF#", "");
+                line = line.replace("##CL##", "").replace("#EOF#", "");
                 var brprefix = line.indexOf("::") > -1 ? (line.split("::")[0].startsWith("<br>") ? "<br>": "") : "";
                 var brsuffix = line.indexOf("::") > -1 ? (line.split("::")[1].endsWith("<br>") ? "<br>": "") : "";
                 var category = global.hook && global.hook.category && global.hook.category.left > 0 ? global.hook.category : (line.indexOf("::") > -1 ? line.split("::")[0] : line).replace(/<br>/g, ""); 
-                var data = ((global.hook ? global.hook.line || "" : "") + brprefix + (line.indexOf("::") > -1 ? line.split("::")[1] : line).replace(category, "") + brsuffix).replace("##CEREAL##", "").replace("#EOF#", "").replace(category + "::", ""); 
+                var data = ((global.hook ? global.hook.line || "" : "") + brprefix + (line.indexOf("::") > -1 ? line.split("::")[1] : line).replace(category, "") + brsuffix).replace("##CL##", "").replace("#EOF#", "").replace(category + "::", ""); 
                 data = data.replace("undefined", "");
 
                 if (category && category == "data") {

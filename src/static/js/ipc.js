@@ -87,6 +87,7 @@ function ipcsubapp(){
             if (global.port && global.port.path == response.path) {
 
                 // Disable buttons that require the GatorByte to be ready (setup complete)
+                $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
                 $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
                 
                 if ($(".flash-firmware-overlay").hasClass("hidden")) {
@@ -116,8 +117,17 @@ function ipcsubapp(){
         self.ipcr.on("ipc/gb-ready-notification/push", (event, response) => {
                 
             // Enable buttons that require the GatorByte to be ready (setup complete)
-            $(".home-panel").find(".big-button.requires-device-ready").removeClass("disabled");
+            $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
 
+            var functions = [];
+            $(".home-panel").find(".big-button.requires-device-ready.disabled").each(function (ei, el) {
+
+                functions.push(function () {
+                    $(el).removeClass("disabled");
+                });
+            });
+            
+            self.f.waterfall(functions, 150);
         });
 
         self.ipcr.on("ipc/flash-firmware/response", (event, response) => {
@@ -967,6 +977,7 @@ function ipcsubapp(){
             $(".show-on-connected").addClass("hidden");
             $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             $(".waiting-for-pong-overlay").slideUp(0);
             
             // Hide all panels
@@ -1019,6 +1030,7 @@ function ipcsubapp(){
 
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
 
             // Hide all panels
             $(".panel").addClass("hidden");
@@ -1041,6 +1053,7 @@ function ipcsubapp(){
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             
             // Hide all panels
             $(".panel").addClass("hidden");

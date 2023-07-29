@@ -107,9 +107,9 @@
                     </div>
                         
                     <!-- Files list -->
-                    <div class="col-12" style="margin-bottom: 10px;">
+                    <div class="col-12" style="margin: -10px 0 10px 0; padding: 0;">
                         
-                        <div class="row" style="margin: 0;">
+                        <div class="row hidden" style="margin: 0;">
                             <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 2px;font-size: 12px;font-weight: normal;">
                                 Select a file from the list below to download a file to your computer. Downloading may take time to complete, so kindly be patient.
                             </p>
@@ -119,14 +119,14 @@
                         <div class="row" style="margin: 0; margin-top: 8px;">
                             
                             <!-- Up button -->
-                            <div class="col-auto go-up-button hidden" style="padding: 4px 10px;margin-right: 6px;background: #17171744;border-radius: 2px;height: 28px;">
+                            <div class="col-auto go-up-button hidden" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
                                 <p title="Go up a folder" style="color: #FFFFFF;margin-bottom: 0; font-size: 13px; transform: rotate3d(0, 1, 0, 180deg);">
                                     <i class="fa-solid fa-turn-up"></i>
                                 </p>
                             </div>
                             
                             <!-- Refresh list -->
-                            <div class="col-auto refresh-files-list-button" title="Refresh the list" style="padding: 4px 10px;margin-right: 6px;background: #17171744;border-radius: 2px;height: 28px;">
+                            <div class="col-auto refresh-files-list-button" title="Refresh the list" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
                                 <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                     <i class="fa-solid fa-arrows-rotate"></i>
                                 </p>
@@ -135,21 +135,37 @@
                             <!-- File options for selected file -->
                             <div class="col-auto file-options-parent hidden" state="no-file-selected" style="display: inline-flex; padding: 0;"> 
                                 
-                                <div class="download-file-button" title="Save file to computer" style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
+                                <div class="download-file-button" title="Save file to computer" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
                                     <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                         <i class="fa-regular fa-floppy-disk"></i>
                                     </p>
                                 </div>
                                 
-                                <div class="delete-file-button" title="Delete file on SD" style="padding: 4px 10px;margin-right: 6px;background: #4e4e4e44;border-radius: 2px;height: 28px;">
+                                <div class="delete-file-button" title="Delete file on SD" style="padding: 4px 10px;margin-right: 6px;background: #210a0aa6;border-radius: 2px;height: 28px;">
                                     <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                         <i class="fa-solid fa-trash"></i>
                                     </p>
                                 </div>
                             </div>
 
-                            <!-- Folder information -->
-                            <div class="col-auto" style="padding: 4px 10px;margin-right: 6px;background: #17171744;border-radius: 2px;height: 28px;">
+                            <!-- Folder options for selected folder -->
+                            <div class="col-auto folder-options-parent hidden" state="no-file-selected" style="display: inline-flex; padding: 0;"> 
+                                
+                                <div class="make-directory-button" title="Create folder" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
+                                    <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                        <i class="fa-solid fa-folder-plus"></i>
+                                    </p>
+                                </div>
+                                
+                                <div class="delete-directory-button" title="Delete folder" style="padding: 4px 10px;margin-right: 6px;background: #210a0aa6;border-radius: 2px;height: 28px;">
+                                    <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Breadcrumbs -->
+                            <div class="col-auto" style="padding: 4px 10px;margin-right: 6px;background: #3838389c;border-radius: 2px;height: 28px;">
                                 <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                     <i class="fa-solid fa-folder" style="margin-right: 6px;"></i>
                                     <span class="directory-name-text">/</span>
@@ -159,7 +175,7 @@
                         </div>
 
                         <!-- Files -->
-                        <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;background: #17171744;border-radius: 2px;padding: 10px;padding: 12px 14px 4px 14px;">
+                        <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;background: #101010a6;border-radius: 2px;padding: 10px;padding: 12px 14px 4px 14px;">
                             
                             <!-- Loading spinner -->
                             <div class="spinner-div hiddenz" style="overflow-y: auto; height: 100px; width: 100%;position: relative;">
@@ -608,7 +624,7 @@
                     </div>
                     
                     <!--! Update installation notification -->
-                    <div class="col-12 shadow-heavy update-installation-notification hidden" style="padding: 10px 12px; margin-right: 6px; background: #ababab; margin-top: 8px; cursor: pointer;">
+                    <div class="col-12 shadow-heavy update-installation-notification hidden" style="padding: 12px 12px; margin-right: 6px; background: #ababab; margin-top: 8px; cursor: pointer;">
                         <p style="color: rgb(29, 29, 29); font-size: 16px; text-align: justify; margin-bottom: -2px;">An update is ready to install</p>
                         <p style="color: rgb(68, 68, 68); font-size: 12px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
                             An update you recently downloaded is ready to install. Click here to close this app and perform installation to enjoy the new update. 
@@ -617,8 +633,17 @@
                         <i class="fa-solid fa-cloud-arrow-down" style="position: absolute; top: 12px; right: 18px; color: #069230; font-size: 10px;"></i>
                     </div>
                     
+                    <!--! Device not ready (setup not complete) notification -->
+                    <div class="col-12 shadow-heavy device-not-ready-notification hidden" style="padding: 12px 12px; margin-right: 6px; background: #ffd65a; margin-top: 8px;">
+                        <p style="color: rgb(29, 29, 29); font-size: 16px; text-align: justify; margin-bottom: -2px; font-weight: bold;">The GatorByte is initializing</p>
+                        <p style="color: rgb(68, 68, 68); font-size: 13px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
+                            Some options are disabled, but will be enabled once when the process completes.
+                        </p>
+                        <i class="fa-solid fa-pause" style="position: absolute; top: 12px; right: 18px; color: black; font-size: 12px;"></i>
+                    </div>
+                    
                     <!--! Big buttons -->
-                    <div class="col-12" style="padding: 10px 12px 0 12px;margin-right: 6px;margin-top: 8px;background: #2f2f2f;">
+                    <div class="col-12" style="padding: 10px 12px 0 12px;margin-right: 6px;margin-top: 12px;background: #2f2f2f;">
                         <div class="row" style="margin: 0;">
                             
                             <!-- Dashboard -->
@@ -1615,7 +1640,7 @@
 <script src="../js/ui.js"></script>
 <script src="../js/modules/ui/home.js"></script>
 <script src="../js/modules/ui/dashboard.js"></script>
-<script src="../js/modules/ui/download-files.js"></script>
+<script src="../js/modules/ui/fileexplorer.js"></script>
 <script src="../js/modules/ui/calibration.js"></script>
 <script src="../js/modules/ui/serialmonitor.js"></script>
 <script src="../js/modules/ui/config.js"></script>

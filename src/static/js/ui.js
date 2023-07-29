@@ -185,6 +185,7 @@ function uisubapp(){
                 global.states.follow = false;
                 $(".waiting-for-device-notification").addClass("hidden");
                 $(".device-not-available-overlay").slideUp(100);
+                $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
                 $(".waiting-for-pong-overlay").slideUp(100);
                 $(".share-online-overlay").addClass("hidden");
                 $(".session").remove();
