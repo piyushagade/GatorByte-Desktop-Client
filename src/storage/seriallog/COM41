@@ -7048,3 +7048,1701 @@ Getting RTC time -> 1690665054
 <br>##CL##gdc-cfg::rtc:1690665054#EOF#
 Command: bl:getconfig
 <br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:1690665107#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:36#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:770:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690665141
+<br>##CL##gdc-cfg::rtc:1690665141#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Syncing RTC time -> Jul 29 2023, 21:12:26
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 21:12:26 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690665146
+<br>##CL##gdc-cfg::rtc:1690665146#EOF#
+Getting RTC time -> 1690665249
+<br>##CL##gdc-cfg::rtc:1690665249#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time -> 1690665534
+<br>##CL##gdc-cfg::rtc:1690665534#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690665562#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:36#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690665810
+<br>##CL##gdc-cfg::rtc:1690665810#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690666206
+<br>##CL##gdc-cfg::rtc:1690666206#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config//config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:data
+ mode:read
+ readuntil:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ability
+device
+ devices:mcu,me#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:m,rtc,aht,sd,sntl,vst,rain,ead#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:c,relay,bl,booster,wlev,buzzer#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,rgb
+ id:gb-chmd-zero
+sleep
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:uration:30000
+ mode:shallow
+su#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rvey
+ date:04-19-2023
+ id:gb-l#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ry
+ location:Sarasota
+ mode:st#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:ation
+ realtime:true
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690666950#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:37#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:765:.:770:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Getting RTC time -> 1690666985
+<br>##CL##gdc-cfg::rtc:1690666985#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-db::power=awake#EOF#
+<br>##CL##gdc-db::modem=active#EOF#
+<br>##CL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CL##gdc-db::rssi=99#EOF#
+<br>##CL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+Getting RTC time -> 1690667101
+<br>##CL##gdc-cfg::rtc:1690667101#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:260<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690667131
+<br>##CL##gdc-cfg::rtc:1690667131#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Command: bl:getconfigupl:data~`mode:read~`readuntil:sta^0
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690667190
+<br>##CL##gdc-cfg::rtc:1690667190#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690667240
+<br>##CL##gdc-cfg::rtc:1690667240#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690667298
+<br>##CL##gdc-cfg::rtc:1690667298#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690667454#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:36#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:766:.:770:.:773:.:777#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:767:.:774:.:776:.:777#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:1.80#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-db::power=awake#EOF#
+<br>##CL##gdc-db::modem=active#EOF#
+<br>##CL##gdc-db::modem-fw=L0.0.00.00.05.06,A.02.01#EOF#
+<br>##CL##gdc-db::modem-imei=356726100636448#EOF#
+<br>##CL##gdc-db::sim-iccid=SIM failure#EOF#
+<br>##CL##gdc-db::rssi=99#EOF#
+<br>##CL##gdc-db::cops=+CME ERROR: SIM failure#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690667632
+<br>##CL##gdc-cfg::rtc:1690667632#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Syncing RTC time -> Jul 29 2023, 21:54:26
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 21:54:26 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690667666
+<br>##CL##gdc-cfg::rtc:1690667666#EOF#
+Syncing RTC time -> Jul 29 2023, 21:54:30
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 21:54:30 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690667670
+<br>##CL##gdc-cfg::rtc:1690667670#EOF#
+Syncing RTC time -> Jul 29 2023, 21:54:33
+Syncing RTC to the provided time time -> RTC set to 7/29/2023, 21:54:33 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690667673
+<br>##CL##gdc-cfg::rtc:1690667673#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:getconfigupl:data
+ mode:read
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl: readuntil:stability
+device
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:evices:mcu,mem,rtc,aht,sd,sntl#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,vst,rain,eadc,relay,bl,booste#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:r,wlev,buzzer,rgb
+ id:gb-chmd-#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:zero
+sleep
+ duration:30000
+ mo#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:de:shallow
+survey
+ date:04-19-#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:2023
+ id:gb-lry
+ location:Sara#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:sota
+ mode:station
+ realtime:t#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rue
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+Getting RTC time -> 1690668159
+<br>##CL##gdc-cfg::rtc:1690668159#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /queue
+<br>##CL##gdc-dfl::file:sent/:0<br>#EOF#
+Listing folder: /sent
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /calibration
+<br>##CL##gdc-dfl::error:nofile#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690668446
+<br>##CL##gdc-cfg::rtc:1690668446#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Getting RTC time -> 1690668453
+<br>##CL##gdc-cfg::rtc:1690668453#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690668475
+<br>##CL##gdc-cfg::rtc:1690668475#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Not detected
+Reading USS:  mm
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module##CL-GDC-PONG##
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Not detected
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690673231
+<br>##CL##gdc-cfg::rtc:1690673231#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:1690673273#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:33#EOF#
+<br>##CL##gdc-dgn::eadc:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+ -> Not detected -> Failed
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Not detected
+Reading USS: Invalid value
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing Sentinel##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL moduleInitializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS:  mm
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690682054
+<br>##CL##gdc-cfg::rtc:1690682054#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:OR;ERRO+PIN#EOF#
+Getting RTC time -> 1690682066
+<br>##CL##gdc-cfg::rtc:1690682066#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Getting RTC time -> 1690682096
+<br>##CL##gdc-cfg::rtc:1690682096#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS:  mm
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690682320#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:38#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:801:.:793:.:786:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:801:.:793:.:786:.:786#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:801:.:794:.:787:.:786#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:802:.:793:.:786:.:786#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690682363
+<br>##CL##gdc-cfg::rtc:1690682363#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:OR;ERRO+PIN#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:getconfigupl:data
+ mode:read
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl: readuntil:stability
+device
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:evices:mcu,mem,rtc,aht,sd,sntl#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,vst,rain,eadc,relay,bl,booste#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:r,wlev,buzzer,rgb
+ id:gb-chmd-#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:zero
+sleep
+ duration:30000
+ mo#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:de:shallow
+survey
+ date:04-19-#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:2023
+ id:gb-lry
+ location:Sara#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:sota
+ mode:station
+ realtime:t#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rue
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:getconfigupl:data
+ mode:read
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl: readuntil:stability
+device
+ d#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:evices:mcu,mem,rtc,aht,sd,sntl#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:,vst,rain,eadc,relay,bl,booste#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:r,wlev,buzzer,rgb
+ id:gb-chmd-#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:zero
+sleep
+ duration:30000
+ mo#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:de:shallow
+survey
+ date:04-19-#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:2023
+ id:gb-lry
+ location:Sara#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:sota
+ mode:station
+ realtime:t#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:rue
+#EOF#
+A request for config file has been received. File: /config/config.ini
+##CL##gdc-cfg::fdl:#EOF#
+Getting RTC time -> 1690682467
+<br>##CL##gdc-cfg::rtc:1690682467#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:E;123456#EOF#
+Getting RTC time -> 1690682473
+<br>##CL##gdc-cfg::rtc:1690682473#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690682835#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:812:.:803:.:791:.:788#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Reading USS:  mm
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Modbus sample code
+	������2557mm
+requested
+	�?�����2558mm
+requested
+  �D����0mm
+requested
+
+?%����2562mm
+requested
+	�?�����2558mm
+requested
+
+?%����2562mm
+requested
+	�?�����2558mm
+requested
+	�~V����2553mm
+requested
+
+?%����2562mm
+requested
+	�?�����2558mm
+requested
+  �D����0mm
+requested
+
+?%����2562mm
+requested
+	�?�����2558mm
+requested
+  �D����0mm
+requested
+  �D����0mm
+requested
+  �D����0mm
+requested
+  �D����0mm
+requested
+  �D����0mm
+requested
+	�?�����2558mm
+requested
+	�?�����2558mm
+requested
+  �D����0mm
+requested
+	�?�����2558mm
+requested
+
+�&����2567mm
+requested
+  �D����0mm
+requested
+	�>W����2554mm
+requested
+
+?%����2562mm
+requested
+�L����4127mm
+requested
+	�>W����2554mm
+requested
+4O����4122mm
+requested
+  �D����0mm
+requested
+5�����4126mm
+requested
+5�����4126mm
+requested
+Modbus sample code
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing Ultrasound distance sensor -> Distance: 559 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Getting RTC time -> not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time -> not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 560 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690696200
+<br>##CL##gdc-cfg::rtc:1690696200#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Getting RTC time -> 1690696207
+<br>##CL##gdc-cfg::rtc:1690696207#EOF#
+<br>##CL##gdc-dgn::rtc:1690696224#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:807:.:813:.:793:.:786#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690696286#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:40#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:813:.:813:.:792:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:1690696290#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Device not found in the 'getdevice' function.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 558 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 561 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690696543
+<br>##CL##gdc-cfg::rtc:1690696543#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 553 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690696647#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:40#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:808:.:815:.:794:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 553 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 550 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690696836#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:40#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:806:.:814:.:793:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+USS diagnostics: ##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 560 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690696994#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:805:.:812:.:792:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+USS diagnostics: ##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 545 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+
+memrtcaht
+<br>##CL##gdc-dgn::rtc:1690697130#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:39#EOF#
+sdsntlvsteadcrelay
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:805:.:811:.:791:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+buzzerrgbuss
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+USS diagnostics: USS diagnostics: USS diagnostics: ##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 543 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+
+memrtcaht
+<br>##CL##gdc-dgn::rtc:1690697267#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:39#EOF#
+sdsntlvsteadc
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:804:.:813:.:793:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+relaybuzzerrgbuss
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+USS diagnostics: USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+USS diagnostics: 
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 579 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+
+memrtcaht
+<br>##CL##gdc-dgn::rtc:1690697462#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:39#EOF#
+sdsntlvsteadcrelaybuzzerrgbuss
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:805:.:813:.:793:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:579#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:579#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:727#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:261#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:261#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:771#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:775#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:772#EOF#
+
+
+memrtcaht
+<br>##CL##gdc-dgn::rtc:1690697638#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:40#EOF#
+sdsntlvsteadcrelay
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:810:.:812:.:792:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+buzzerrgbuss
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:772#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:772#EOF#
+relay
+<br>##CL##gdc-dgn::relay:true#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:772#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:255#EOF#
+uss
+USS diagnostics: 1
+<br>##CL##gdc-dgn::uss:true:..:781#EOF#
+relay
+<br>##CL##gdc-dgn::relay:true#EOF#
+eadc
+<br>##CL##gdc-dgn::eadc:true:..:809:.:810:.:791:.:786#EOF#
+
+Getting RTC time -> 1690698156
+<br>##CL##gdc-cfg::rtc:1690698156#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 250 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690698301#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:806:.:812:.:793:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::uss:true:..:250#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690698339
+<br>##CL##gdc-cfg::rtc:1690698339#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690732958#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:805:.:800:.:788:.:785#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::uss:true:..:20306#EOF#
+<br>##CL##gdc-dgn::uss:true:..:65518#EOF#
+<br>##CL##gdc-dgn::uss:true:..:17746#EOF#
+<br>##CL##gdc-dgn::uss:true:..:21005#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 733 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690744241
+<br>##CL##gdc-cfg::rtc:1690744241#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;12356#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690744465
+<br>##CL##gdc-cfg::rtc:1690744465#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/lCk#k�+�{;123456#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 834 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 807 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 803 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 796 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 815 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+ -> Done
+Reading config file from SD -> Done
+Device ID: gb-chmd-zero
+Survey ID: gb-lry
+Survey date: 04-19-2023
+Survey location: Sarasota
+Survey mode: station
+Sleep duration: 0 min 30 seconds.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 786 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+ -> Done
+Device ID: gb-chmd-zero
+Survey ID: gb-lry
+Survey date: 04-19-2023
+Survey location: Sarasota
+Survey mode: station
+Sleep duration: 0 min 30 seconds.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 813 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690745273#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:42#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:803:.:801:.:790:.:787#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:808:.:801:.:790:.:786#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:42#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::uss:true:..:803#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690745289#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::uss:true:..:799#EOF#
+<br>##CL##gdc-dgn::uss:true:..:405#EOF#
+<br>##CL##gdc-dgn::uss:true:..:748#EOF#
+<br>##CL##gdc-dgn::uss:true:..:748#EOF#
+<br>##CL##gdc-dgn::uss:true:..:748#EOF#
+<br>##CL##gdc-dgn::uss:true:..:748#EOF#
+<br>##CL##gdc-dgn::uss:true:..:590#EOF#
+<br>##CL##gdc-dgn::uss:true:..:595#EOF#
+<br>##CL##gdc-dgn::uss:true:..:594#EOF#
+<br>##CL##gdc-dgn::uss:true:..:594#EOF#
+<br>##CL##gdc-dgn::uss:true:..:445#EOF#
+<br>##CL##gdc-dgn::uss:true:..:440#EOF#
+<br>##CL##gdc-dgn::uss:true:..:439#EOF#
+<br>##CL##gdc-dgn::uss:true:..:439#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /config
+<br>##CL##gdc-dfl::file:config.ini:277<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Getting RTC time -> 1690745417
+<br>##CL##gdc-cfg::rtc:1690745417#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+, Write: 319 ms -> R/W test: Passed
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 906 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.

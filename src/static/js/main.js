@@ -67,10 +67,20 @@ $(document).ready(function () {
 function setheight() {
 
     setTimeout(() => {
-        var headerheight = $(".header-panel").height();
-        var bodyheight = parseInt($(".container").css("height"));
-        var panelheight = bodyheight - headerheight - 40;
-        $(".panel").height(panelheight);
+
+        // Set serial monitor height
+        if (!$(".serial-monitor").hasClass("hidden")) {
+            global.accessors.uiserialmonitor.setheight();
+        }
+
+        // Default behaviour (other panels visible)
+        else {
+            
+            var headerheight = $(".header-panel").height();
+            var bodyheight = parseInt($(".container").css("height"));
+            var panelheight = bodyheight - headerheight - 40;
+            $(".panel").height(panelheight);
+        }
     }, 100);
 }
 

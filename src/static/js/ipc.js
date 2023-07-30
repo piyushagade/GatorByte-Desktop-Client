@@ -679,7 +679,7 @@ function ipcsubapp(){
                 $(".gb-config-header").removeClass("hidden"); setheight();
 
                 // Get config state
-                global.accessors.uiconfiggatorbyte.getconfigfrommainprocess();
+                global.accessors.uiconfiggatorbyte.request_config();
             }
             $(".waiting-for-device-notification").addClass("hidden");
             $(".device-not-available-overlay").slideUp(100);

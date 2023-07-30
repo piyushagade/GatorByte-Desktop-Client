@@ -26,6 +26,12 @@ function uiserialmonitorsubapp(){
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden");
 
+            self.setheight();
+
+            // self.timers.heightadjust = setInterval(() => {
+                
+            // }, 150);
+
             // if (global.states.windowtype == "main-window") {
             //     self.ipcr.send("ipc/open-serial-monitor/request", {
             //         data: global
@@ -37,16 +43,30 @@ function uiserialmonitorsubapp(){
             // }
         });
     }
+
+    self.setheight = function () {
+        // serial-monitor-text
+        
+        setTimeout(() => {
+            var headerheight = $(".header-panel").height();
+            var bodyheight = parseInt($(".container").css("height"));
+            var statusbarheight = parseInt($(".serial-monitor .status-bar-div").css("height"));
+            var panelheight = bodyheight - headerheight - statusbarheight - 60;
+            $(".serial-monitor-text").height(panelheight);
+
+            console.log(panelheight);
+        }, 100);
+    }
     
     self.addlinetoserialmonitor = function (lineid, line) {
         var sessionid = global.states.sessionid;
 
         // If the session doesn't exist, create it
-        if ($(".serial-monitor").find(".session[session-id='" + sessionid + "']").length == 0) {
-            $(".serial-monitor").find(".session .line").not(".hook-line").css("color", "#bbbbbb");
-            $(".serial-monitor").append(multiline(function() {/*
+        if ($(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").length == 0) {
+            $(".serial-monitor .serial-monitor-text").find(".session .line").not(".hook-line").css("color", "#bbbbbb");
+            $(".serial-monitor .serial-monitor-text").append(multiline(function() {/*
             
-                <div class="session" session-id="{{session-id}}" style="margin-bottom: 8px;padding: 8px 14px 8px 10px;background: #22222200; border-left: 3px solid #44444400;">
+                <div class="session" session-id="{{session-id}}" style="margin-bottom: 8px; border-left: 3px solid #44444400;">
                     <p style="color:#da6565; border-bottom: 1px solid #444444AA">
                         <span style="color:#da6565; font-size: 11px;">{{datetime}}</span>, 
                         <span style="color:#da6565; font-size: 11px;">{{devicename}}</span>
@@ -66,8 +86,8 @@ function uiserialmonitorsubapp(){
         if (hook && hook.show) {
 
             // Add line to the serial monitor display
-            if (line.trim().length > 0) $(".serial-monitor").find(".session[session-id='" + sessionid + "']").find(".line").not(".hook-line").css("color", "#38dd38");
-            $(".serial-monitor").find(".session[session-id='" + sessionid + "']").append(multiline(function() {/*
+            if (line.trim().length > 0) $(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").find(".line").not(".hook-line").css("color", "#38dd38");
+            $(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").append(multiline(function() {/*
                 <span class="line {{classname}}" hook-category="{{hook-category}}" line-id="{{line-id}}" session-id="{{session-id}}" style="color: {{color}}; background: {{background}}; word-break: break-word;">{{data}}</span>
             */},{ 
                 "classname": hook.category ? "hook-line" : "",
@@ -80,14 +100,14 @@ function uiserialmonitorsubapp(){
                 "font-weight": hook.style.fontweight,
                 "data": hook.line
             }));
-            setTimeout(() => { $(".serial-monitor").find(".session[session-id='" + sessionid + "']").find(".line[line-id='" + lineid + "']").not(".hook-line").css("color", "#38dd38"); }, 2000);
+            setTimeout(() => { $(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").find(".line[line-id='" + lineid + "']").not(".hook-line").css("color", "#38dd38"); }, 2000);
             
             //! Take hool actions
             if (hook.actions) self.process_hook_actions(hook.actions);
 
             //! Auto scroll to the bottom of the div
             if (global.states.autoscroll) { 
-                var elem = $(".serial-monitor")[0];
+                var elem = $(".serial-monitor .serial-monitor-text")[0];
                 elem.scrollTop = elem.scrollHeight;
             }
 
@@ -95,7 +115,7 @@ function uiserialmonitorsubapp(){
                 Line options
             */
 
-            $(".serial-monitor .session .line").off("click").click(function (event) {
+            $(".serial-monitor .serial-monitor-text .session .line").off("click").click(function (event) {
 
                 var mouse = { 
                     x: event.clientX,
@@ -155,7 +175,7 @@ function uiserialmonitorsubapp(){
                     starttimer();
                     
                     // Hide line options if no lines are selected
-                    if ($(".session .line.selected").length == 0) {
+                    if ($(".serial-monitor .serial-monitor-text .session .line.selected").length == 0) {
                         $(".line-options-overlay").attr("state", "hidden").attr("line-id" , null).attr("session-id", null).addClass("hidden");
                     
                         // Revert the state of autoscroll
@@ -165,7 +185,7 @@ function uiserialmonitorsubapp(){
 
                         // Clean-up
                         $(".line-options-overlay").attr("autoscroll-state", null);
-                        $(".serial-monitor .session .line.selected").removeClass("selected"); 
+                        $(".serial-monitor .serial-monitor-text .session .line.selected").removeClass("selected"); 
                     }
                     
                     return;
@@ -237,7 +257,7 @@ function uiserialmonitorsubapp(){
                     // Restart timer
                     starttimer();
 
-                    var text = $(".serial-monitor .session .line[line-id='" + lineid + "']").text();
+                    var text = $(".serial-monitor .serial-monitor-text .session .line[line-id='" + lineid + "']").text();
                     
                     // Get all selected lines
                     var html = "", text = "";

@@ -92,7 +92,7 @@ function uiconfiggatorbytesubapp() {
             "name": "USS sensor",
             "description": "Ultrasound distance sensor",
             "category": "sensor",
-            "test": false
+            "test": true
         },
         {
             "id": "gps",
@@ -237,7 +237,7 @@ function uiconfiggatorbytesubapp() {
             }, 2000);
             
             // Get config data from main process
-            self.getconfigfrommainprocess();
+            self.request_config();
 
         });
 
@@ -407,19 +407,13 @@ function uiconfiggatorbytesubapp() {
         });
     }
 
-    // Get config data from main process
-    self.getconfigfrommainprocess = function() {
-        self.ipcr.send("ipc/config-data-get/request", {
-            port: global.port
-        });
-    }
-
     /*
         Request config from the main process
     */
     self.request_config = function () {
 
         return new Promise(function (resolve, reject) {
+            
             // Get config data from main process
             self.ipcr.send("ipc/config-data-get/request", {
                 port: global.port
@@ -469,8 +463,11 @@ function uiconfiggatorbytesubapp() {
         else {
 
             // Update UI
+            $(".sync-status-heading").removeClass("disabled");
+            $(".connected-device-disconnect-button").removeClass("disabled");
             $(".upload-config-data-button").removeClass("disabled");
             $(".refresh-config-data-button").removeClass("disabled");
+            // $(".refresh-config-data-button").removeClass("disabled");
             $(".panel").removeClass("disabled");
 
             // If the file doesn't exist
@@ -547,6 +544,8 @@ function uiconfiggatorbytesubapp() {
             self.configobject["updateflag"] = false;
 
             // Update UI
+            $(".sync-status-heading").removeClass("disabled");
+            $(".connected-device-disconnect-button").removeClass("disabled");
             $(".upload-config-data-button").removeClass("disabled");
             $(".refresh-config-data-button").removeClass("disabled");
             $(".panel").removeClass("disabled");
@@ -598,6 +597,7 @@ function uiconfiggatorbytesubapp() {
             self.request_file_download(self.filedownloadname, self.filedownloadline);
             
             // Update UI
+            $(".sync-status-heading").addClass("disabled");
             $(".upload-config-data-button").addClass("disabled");
             $(".refresh-config-data-button").addClass("disabled");
             $(".panel").addClass("disabled");
@@ -615,6 +615,8 @@ function uiconfiggatorbytesubapp() {
         $(".gb-config-header").find(".upload-config-data-button").off("click").click(function () {
 
             // Update UI
+            $(".sync-status-heading").addClass("disabled");
+            $(".connected-device-disconnect-button").addClass("disabled");
             $(".upload-config-data-button").addClass("disabled");
             $(".refresh-config-data-button").addClass("disabled");
             $(".panel").addClass("disabled");

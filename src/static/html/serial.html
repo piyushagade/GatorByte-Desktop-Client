@@ -107,7 +107,7 @@
                         <i class="fa-solid fa-stop"></i>
                     </div>
                     
-                    <p class="sync-status-heading" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px; opacity: 1;padding: 4px 8px; background: #3d3d3d;">Using saved configuration.</p>
+                    <div class="sync-status-heading" style="color: #e4e4e4; border-radius: 2px; width: max-content; font-size: 14px;text-align: justify;margin-bottom: 0px; margin-right: 6px;padding: 4px 8px; background: #3d3d3d;">Unknown configuration state.</div>
                     
                     <!-- Re-fetch config data from SD -->
                     <div class="refresh-config-data-button shadow" title="Get configuration from GatorByte" style="margin-right: 6px; font-size: 14px;color: #CCC; padding: 4px 8px;background: #333;border-radius: 2px;">
@@ -825,11 +825,11 @@
                                 
                                 <div class="row" style="margin: 0; margin-top: 6px;">
                                     <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                        <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">Use this to sync the GatorByte's clock's time with your computer's time.</p>
+                                        <!-- <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">Use this to sync the GatorByte's clock's time with your computer's time.</p> -->
                                         
                                         <div class="row" style="margin: 0 0 10px;">
                                             <div class="col-auto" style="padding: 6px 10px; background:  #44444422; margin: 0 6px 6px 0;">
-                                                <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">GMT time</p>
+                                                <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Local time</p>
                                                 <p class="utc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
                                             </div>
                                             
@@ -856,13 +856,13 @@
                             </div>
 
                             <!--! Bluetooth configuration -->
-                            <div class="col-12 bluetooth-configuration-parent" style="margin-bottom: 10px;">
+                            <div class="col-12 bluetooth-configuration-parent" style="margin-bottom: 10px; padding: 0;">
                                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Bluetooth configuration</p>
                                     
                                 <div class="row" style="margin: 0px;">
                                     
                                     <div class="col-12" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                        <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">The following fields allow you to change the Bluetooth name and PIN of you GatorByte.</p>
+                                        <!-- <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">The following fields allow you to change the Bluetooth name and PIN of you GatorByte.</p> -->
                                         
                                         <div class="row" style="margin: 0 0 8px;">
 
@@ -892,7 +892,7 @@
                             </div>
 
                             <!--! Survey information -->
-                            <div class="col-12 survey-information-parent" style="margin-bottom: 10px;">
+                            <div class="col-12 survey-information-parent" style="margin-bottom: 10px; padding: 0;">
                                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Survey information</p>
                                     
                                 <div class="row" style="margin: 0px;">
@@ -936,7 +936,7 @@
                             </div>
                             
                             <!--! Sleep -->
-                            <div class="col-12 device-information-parent" style="margin-bottom: 10px;">
+                            <div class="col-12 device-information-parent" style="margin-bottom: 10px; padding: 0;">
                                 <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Sleep configuration</p>
 
                                 <div class="row" style="margin: 0; margin-top: 6px;">
@@ -961,7 +961,7 @@
                             </div>
 
                             <!--! Data -->
-                            <div class="col-12 data-information-parent" style="margin-bottom: 10px;">  
+                            <div class="col-12 data-information-parent" style="margin-bottom: 10px; padding: 0;">  
                                 <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Sensors configuration</p>
                                 
                                 <div class="row" style="margin: 0; margin-top: 6px;">
@@ -986,9 +986,8 @@
                                 </div>
                             </div>
 
-                            
                             <!--! Devices and states -->
-                            <div class="col-12 devices-information-parent" style="margin-bottom: 10px;">  
+                            <div class="col-12 devices-information-parent" style="margin-bottom: 10px; padding: 0;">  
                                 <!-- Enabled devices list -->
                                 <div class="row" style="margin: 0; margin-top: 10px;">
                                     <div class="col-12 config-item sd-config-item" type="devices" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
@@ -1115,7 +1114,7 @@
         </div>
         
         <!--! Serial monitor panel -->
-        <div class="panel serial-monitor content scrollbar-style hidden" style="background: #151515; borderz: 1px solid green; overflow-x: hidden; padding: 6px; margin-top: 6px; overflow-y: auto; line-height: 1.5; margin-bottom: 10px; bottom: 0; height: 100%; cursor: default; font-size: 13px; color: #38dd38;">
+        <div class="panel serial-monitor content hidden" style="overflow-x: hidden; padding: 6px; margin-top: 6px; overflow-y: hidden; line-height: 1.5; margin-bottom: 10px; bottom: 0; height: 100%; cursor: default; font-size: 13px; color: #38dd38;">
             
             <div class="skeleton-div" style="overflow-y: hidden;">
                 <div class="skeleton skeleton-text skeleton-text-one"></div>
@@ -1211,7 +1210,7 @@
 
                 <!-- Device/Port information -->
                 <div class="col-auto device-status-indicator" style="display: inline-flex; padding: 4px 10px 2px 10px; margin-right: 0px; transition: all 0.25s ease-in; -webkit-app-region: no-drag; cursor: default; background: #444444;">
-                    <div class="go-back-panel-button" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; margin-right: 6px; cursor: pointer;"><i class="fas fa-arrow-left" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
+                    <div class="go-back-panel-button hidden" target-panel="home-panel" style="-webkit-app-region: no-drag; -webkit-text-stroke: black;-webkit-text-stroke-width: thin; margin-right: 6px; cursor: pointer;"><i class="fas fa-arrow-left" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
                     <div class="connected-device-disconnect-buttonz hidden" style="margin-right: 6px; cursor: pointer;"><i class="fas fa-stop" style="color: #DDDDDD;margin: 3px 0px;font-size: 12px;" title="Close connection"></i></div>
                     <div class="connected-device-port" style="font-size: 12px; color: #FFFFFF; max-width: 80px;">N/A</div>
                 </div>
@@ -1259,10 +1258,14 @@
                 </div>
                 
             </div>
+
+            <div style="padding: 8px 10px 8px 10px; background: rgba(20, 20, 20, 0.32); border-radius: 2px;">
+                <div class="serial-monitor-text scrollbar-style" style="overflow-y: auto;"></div>
+            </div>
         </div>
         
         <!--! Update mode overlay -->
-        <div class="row update-mode-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #dfdfdfeb;border-radius: 4px;">
+        <div class="row update-mode-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #dfdfdfeb;border-radius: 4px; z-index: 2;">
             <div class="col">
 
                 <div class="row stage-1 enter-upload-mode-button" style="margin-top: 0px; cursor: pointer;">
@@ -1288,7 +1291,7 @@
         </div>
         
         <!--! Device not available overlay -->
-        <div class="row device-not-available-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #383838eb;border-radius: 4px;">
+        <div class="row device-not-available-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #383838eb;border-radius: 4px; z-index: 2;">
             <div class="col-auto">
                 <div class="row" style="margin-top: 0px;">
                     <div class="col-12" style="padding: 4px 8px;font-size: 26px;color: #ff2f2f;">
@@ -1310,7 +1313,7 @@
         </div>
         
         <!--! Waiting for PONG overlay -->
-        <div class="row waiting-for-pong-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #383838eb;border-radius: 4px;">
+        <div class="row waiting-for-pong-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #383838eb;border-radius: 4px; z-index: 2;">
             <div class="col-auto">
                 <div class="row" style="margin-top: 0px;">
                     <div class="col-12" style="padding: 4px 8px;font-size: 26px;color: #f1ff2f;">
@@ -1334,7 +1337,7 @@
         </div>
         
         <!--! Functionality locked overlay -->
-        <div class="row functionality-locked-overlay hidden shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: auto;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+        <div class="row functionality-locked-overlay hidden shadow scrollbar-style" style="z-index: 1; margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: auto;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px; z-index: 2;">
             <div class="col">
 
                 <div class="row" style="margin-top: 0px; cursor: default;">
@@ -1365,7 +1368,7 @@
         </div>
         
         <!--! Device info overlay -->
-        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px; overflow-y: auto;">
+        <div class="row device-info-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px; overflow-y: auto; z-index: 2;">
             <div class="col scrollbar-style" style="overflow-y: auto; max-height: -webkit-fill-available;">
 
                 <div class="row" style="margin-top: 0px; cursor: default;">
@@ -1449,7 +1452,7 @@
         </div>
         
         <!--! Flash firmware overlay -->
-        <div class="row flash-firmware-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;">
+        <div class="row flash-firmware-overlay hidden shadow scrollbar-style" style="margin: 8px;padding: 14px 12px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 0px;bottom: 0px;max-width: 550px;width: -webkit-fill-available;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px; z-index: 2;">
             <div class="col">
 
                 <div class="row file-selection-div" style="margin-top: 0px; cursor: default;">
@@ -1570,7 +1573,7 @@
         </div>
         
         <!--! Notification overlay -->
-        <div class="row notification-overlay hidden shadow scrollbar-style" style="position: absolute;left: 0px;bottom: 0px;top: 0px;right: 0px;z-index: 0;background: #232323c9;backdrop-filter: blur(3px);">
+        <div class="row notification-overlay hidden shadow scrollbar-style" style="position: absolute;left: 0px;bottom: 0px;top: 0px;right: 0px;z-index: 0;background: #232323c9;backdrop-filter: blur(3px); z-index: 2;">
             
             <div class="content-parent" style="margin: 8px;padding: 10px 6px;overflow: hidden auto;height: auto;cursor: default;position: absolute;left: 14px;bottom: 0px;max-width: 550px;background: rgba(240, 240, 240, 0.906);backdrop-filter: blur(4px);border-radius: 4px;right: 14px;">
                 <div class="col">
