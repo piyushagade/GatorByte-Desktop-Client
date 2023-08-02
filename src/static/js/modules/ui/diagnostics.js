@@ -241,6 +241,9 @@ function uidiagnosticsgatorbytesubapp() {
         if (response.startsWith("sd:")) {
             response = response.replace(/sd:/g, "");
 
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
             self.panel.find(".sd-text").html(multiline(function () {/* 
                 <span style="margin-right: 4px;">{{status}}</span>
             */}, {
@@ -248,6 +251,12 @@ function uidiagnosticsgatorbytesubapp() {
             }));
 
             if (response.indexOf("true") > -1) {
+                
+                self.panel.find(".sd-data").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{card-size}}</span>
+                */}, {
+                    "card-size": payload
+                }));
                 
                 self.setstatus({
                     ui: ".sd-status",
@@ -270,13 +279,22 @@ function uidiagnosticsgatorbytesubapp() {
         if (response.startsWith("bl:")) {
             response = response.replace(/bl:/g, "");
 
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
             self.panel.find(".bl-text").html(multiline(function () {/* 
                 <span style="margin-right: 4px;">{{status}}</span>
             */}, {
                 status: response.indexOf("true") > -1 ? "Device ready" : "Not detected"
             }));
 
-            if (response.indexOf("true") > -1) {
+            if (success) {
+                
+                self.panel.find(".bl-data").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{name}}</span>
+                */}, {
+                    name: payload
+                }));
                 
                 self.setstatus({
                     ui: ".bl-status",
@@ -327,6 +345,8 @@ function uidiagnosticsgatorbytesubapp() {
         
         if (response.startsWith("gps:")) {
             response = response.replace(/gps:/g, "");
+
+            console.log(response);
 
             var success = response.split(":..:")[0].indexOf("true") > -1;
             var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
@@ -551,6 +571,162 @@ function uidiagnosticsgatorbytesubapp() {
                 });
             }
         }
+        
+        if (response.startsWith("ph:")) {
+
+            response = response.replace(/ph:/g, "");
+            
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
+            self.panel.find(".ph-text").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{status}}</span>
+            */}, {
+                status: success ? "Device ready" : "Not detected"
+            }));
+
+            if (success) {
+                
+                self.panel.find(".ph-data").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{distance}}</span>
+                */}, {
+                    "distance": payload.split(":.:")[0],
+                }));
+
+                self.setstatus({
+                    ui: ".ph-status",
+                    font: "fa-check",
+                    color: "green",
+                    message: "OK"
+                });
+            }
+            else  {
+                
+                self.setstatus({
+                    ui: ".ph-status",
+                    font: "fa-triangle-exclamation",
+                    color: "crimson",
+                    message: "Error"
+                });
+            }
+        }
+        
+        if (response.startsWith("ec:")) {
+
+            response = response.replace(/ec:/g, "");
+            
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
+            self.panel.find(".ec-text").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{status}}</span>
+            */}, {
+                status: success ? "Device ready" : "Not detected"
+            }));
+
+            if (success) {
+                
+                self.panel.find(".ec-data").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{distance}}</span>
+                */}, {
+                    "distance": payload.split(":.:")[0],
+                }));
+
+                self.setstatus({
+                    ui: ".ec-status",
+                    font: "fa-check",
+                    color: "green",
+                    message: "OK"
+                });
+            }
+            else  {
+                
+                self.setstatus({
+                    ui: ".ec-status",
+                    font: "fa-triangle-exclamation",
+                    color: "crimson",
+                    message: "Error"
+                });
+            }
+        }
+        
+        if (response.startsWith("dox:")) {
+
+            response = response.replace(/dox:/g, "");
+            
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
+            self.panel.find(".dox-text").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{status}}</span>
+            */}, {
+                status: success ? "Device ready" : "Not detected"
+            }));
+
+            if (success) {
+                
+                self.panel.find(".dox-data").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{distance}}</span>
+                */}, {
+                    "distance": payload.split(":.:")[0],
+                }));
+
+                self.setstatus({
+                    ui: ".dox-status",
+                    font: "fa-check",
+                    color: "green",
+                    message: "OK"
+                });
+            }
+            else  {
+                
+                self.setstatus({
+                    ui: ".dox-status",
+                    font: "fa-triangle-exclamation",
+                    color: "crimson",
+                    message: "Error"
+                });
+            }
+        }
+        
+        if (response.startsWith("rtd:")) {
+
+            response = response.replace(/rtd:/g, "");
+            
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
+            self.panel.find(".rtd-text").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{status}}</span>
+            */}, {
+                status: success ? "Device ready" : "Not detected"
+            }));
+
+            if (success) {
+                
+                self.panel.find(".rtd-data").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{distance}}</span>
+                */}, {
+                    "distance": payload.split(":.:")[0],
+                }));
+
+                self.setstatus({
+                    ui: ".rtd-status",
+                    font: "fa-check",
+                    color: "green",
+                    message: "OK"
+                });
+            }
+            else  {
+                
+                self.setstatus({
+                    ui: ".rtd-status",
+                    font: "fa-triangle-exclamation",
+                    color: "crimson",
+                    message: "Error"
+                });
+            }
+        }
 
         // Test individual devices click listener
         $(".diagnostics-sub-panel-item").off("click").click(function () {
@@ -587,6 +763,11 @@ function uidiagnosticsgatorbytesubapp() {
                     <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
                         <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
                         <p class="sd-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                    
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Card size</p>
+                        <p class="sd-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
                     </div>
                 </div>
                     
@@ -681,31 +862,6 @@ function uidiagnosticsgatorbytesubapp() {
                 </div>
             </div>
             
-            <!--! Bluetooth -->
-            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="bl" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
-                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Bluetooth module</p>
-                
-                <!-- AT-09 -->
-                <div class="row" style="margin: 0px;">
-                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
-                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
-                        <p class="bl-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
-                    </div>
-
-                </div>
-                    
-                <!-- Status -->
-                <div class="row" style="margin: 0px;">
-                    
-                    <div class="col-auto bl-status"  style="padding: 3px 6px;margin: 0 -5px;">
-                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <!--! AHT -->
             <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="aht" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">AHT</p>
@@ -791,6 +947,35 @@ function uidiagnosticsgatorbytesubapp() {
                     </div>
                 </div>
             </div>
+            
+            <!--! BL -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="bl" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Bluetooth module</p>
+                
+                <!-- Neo-6M -->
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="bl-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">BT name</p>
+                        <p class="bl-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto bl-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!--! EADC -->
             <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="eadc" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
@@ -857,26 +1042,110 @@ function uidiagnosticsgatorbytesubapp() {
                 </div>
             </div>
 
-            <!--! USS -->
-            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="uss" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
-                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Ultrasound sensor</p>
+            <!--! pH -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="ph" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">pH sensor</p>
                 
                 <div class="row" style="margin: 0px;">
                     <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
                         <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
-                        <p class="uss-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                        <p class="ph-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
                     </div>
                     
                     <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
-                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Distance</p>
-                        <p class="uss-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Device info</p>
+                        <p class="ph-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
                     </div>
                 </div>
                     
                 <!-- Status -->
                 <div class="row" style="margin: 0px;">
                     
-                    <div class="col-auto uss-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                    <div class="col-auto ph-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--! EC -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="ec" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">EC sensor</p>
+                
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="ec-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                    
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Device info</p>
+                        <p class="ec-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto ec-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--! DOX -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="dox" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">DO sensor</p>
+                
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="dox-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                    
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Device info</p>
+                        <p class="dox-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto dox-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--! RTD -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="rtd" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">RTD sensor</p>
+                
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="rtd-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                    
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Device info</p>
+                        <p class="rtd-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto rtd-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
                             <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
                             <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>

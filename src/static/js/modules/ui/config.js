@@ -46,7 +46,7 @@ function uiconfiggatorbytesubapp() {
             "name": "Bluetooth module",
             "description": "AT-09 Bluetooth module",
             "category": "communication",
-            "test": false
+            "test": true
         },
         {
             "id": "rain",
@@ -61,7 +61,7 @@ function uiconfiggatorbytesubapp() {
             "description": "Atlas Scientific pH sensor",
             "category": "sensor",
             "calibration": true,
-            "test": false
+            "test": true
         },
         {
             "id": "ec",
@@ -69,7 +69,7 @@ function uiconfiggatorbytesubapp() {
             "description": "Atlas Scientific EC sensor",
             "category": "sensor",
             "calibration": true,
-            "test": false
+            "test": true
         },
         {
             "id": "dox",
@@ -77,7 +77,7 @@ function uiconfiggatorbytesubapp() {
             "description": "Atlas Scientific DO sensor",
             "category": "sensor",
             "calibration": true,
-            "test": false
+            "test": true
         },
         {
             "id": "rtd",
@@ -85,7 +85,7 @@ function uiconfiggatorbytesubapp() {
             "description": "Atlas Scientific RTD sensor",
             "category": "sensor",
             "calibration": true,
-            "test": false
+            "test": true
         },
         {
             "id": "uss",
@@ -99,14 +99,14 @@ function uiconfiggatorbytesubapp() {
             "name": "GPS",
             "description": "Neo-6M GPS module",
             "category": "peripheral",
-            "test": false
+            "test": true
         },
         {
             "id": "wlev",
             "name": "Water level",
             "description": "Pressure-based water level sensor",
             "category": "sensor",
-            "test": false
+            "test": true
         },
         {
             "id": "relay",
@@ -421,6 +421,9 @@ function uiconfiggatorbytesubapp() {
             
             setTimeout(() => {
                 resolve(self.configobject);
+
+                console.log("Configuration data");
+                console.log(self.configobject);
             }, 1000);
         });
 
@@ -532,7 +535,7 @@ function uiconfiggatorbytesubapp() {
             $(".header-panel").find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
 
             return new Promise(function (resolve, reject) {
-                self.sendcommand("upl" + ":" + datatosend + "^" + startingline);
+                self.sendcommand("upl:" + datatosend + "^" + startingline);
                 self.state = "wait-on-file-upload";
             });
         }
@@ -542,6 +545,9 @@ function uiconfiggatorbytesubapp() {
             console.log("Upload complete");
             self.fileuploadline = 0;
             self.configobject["updateflag"] = false;
+
+            // Send a request to update the config in GatorByte's memory
+            self.sendcommand("upd:config");
 
             // Update UI
             $(".sync-status-heading").removeClass("disabled");

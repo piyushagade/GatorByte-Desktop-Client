@@ -8746,3 +8746,3779 @@ Initializing Ultrasound distance sensor -> Distance: 906 -> Done
 Setup complete
 ##CL-GB-READY##
 GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690746956#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:41#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:825:.:821:.:803:.:798#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::uss:true:..:910#EOF#
+<br>##CL##gdc-dgn::uss:true:..:910#EOF#
+<br>##CL##gdc-dgn::uss:true:..:910#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::uss:true:..:910#EOF#
+Getting RTC time -> 1690747138
+<br>##CL##gdc-cfg::rtc:1690747138#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-cho|-zero;123456#EOF#
+Getting RTC time -> 1690747161
+<br>##CL##gdc-cfg::rtc:1690747161#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+<br>##CL##gdc-dgn::rtc:1690747732#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:816:.:809:.:795:.:792#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::uss:true:..:20306#EOF#
+<br>##CL##gdc-dgn::uss:true:..:20306#EOF#
+<br>##CL##gdc-dgn::uss:true:..:17746#EOF#
+<br>##CL##gdc-dgn::uss:true:..:21005#EOF#
+<br>##CL##gdc-dgn::uss:true:..:21074#EOF#
+<br>##CL##gdc-dgn::uss:true:..:3338#EOF#
+<br>##CL##gdc-dgn::uss:true:..:21071#EOF#
+<br>##CL##gdc-dgn::uss:true:..:2561#EOF#
+<br>##CL##gdc-dgn::uss:true:..:20306#EOF#
+<br>##CL##gdc-dgn::uss:true:..:259#EOF#
+<br>##CL##gdc-dgn::uss:true:..:21005#EOF#
+<br>##CL##gdc-dgn::uss:true:..:770#EOF#
+<br>##CL##gdc-dgn::uss:true:..:3338#EOF#
+<br>##CL##gdc-dgn::uss:true:..:3338#EOF#
+<br>##CL##gdc-dgn::uss:true:..:259#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Done
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor -> Distance: 870 -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690747834#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:812:.:810:.:795:.:791#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690752131#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:807:.:800:.:789:.:787#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690754869#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::eadc:true:..:806:.:800:.:788:.:786#EOF#
+<br>##CL##gdc-dgn::relay:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::uss:true:..:901#EOF#
+<br>##CL##gdc-dgn::uss:true:..:874#EOF#
+<br>##CL##gdc-dgn::uss:true:..:898#EOF#
+<br>##CL##gdc-dgn::uss:true:..:898#EOF#
+<br>##CL##gdc-dgn::uss:true:..:898#EOF#
+<br>##CL##gdc-dgn::uss:true:..:898#EOF#
+<br>##CL##gdc-dgn::uss:true:..:894#EOF#
+<br>##CL##gdc-dgn::uss:true:..:898#EOF#
+<br>##CL##gdc-dgn::uss:true:..:898#EOF#
+<br>##CL##gdc-dgn::uss:true:..:898#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Initializing Ultrasound distance sensor##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensorHere 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+Here 2
+Here 1
+Distance: -1
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690766149
+<br>##CL##gdc-cfg::rtc:1690766149#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690766338#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:46#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690767182#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:255#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690767348#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:46#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+Diagnosing DOX: 
+1
+0
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690767607#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:46#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690767698#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690767895#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:255#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690767930#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:44#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690768030
+<br>##CL##gdc-cfg::rtc:1690768030#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690768054#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+ -> Failed
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM moduleID: 1 v4
+ -> Done
+Initializing EC OEM moduleID: 4 v5
+ -> Done
+Initializing DO OEM moduleID: 3 v6
+ -> Done
+Initializing RTD OEM moduleID: 5 v5
+ -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690768242#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:44#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM moduleID: 1 v4 -> Done
+Initializing EC OEM moduleID: 4 v5 -> Done
+Initializing DO OEM moduleID: 3 v6 -> Done
+Initializing RTD OEM moduleID: 5 v5 -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690768416#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+0
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL moduleInitializing EEPROM module -> Done
+##CL-GDC-PONG##
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM moduleID: 1 v4 -> Done
+Initializing EC OEM moduleID: 4 v5 -> Done
+Initializing DO OEM moduleID: 3 v6 -> Done
+Initializing RTD OEM moduleID: 5 v5 -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690768750#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:255#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+0
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690768903#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+0
+http:Server API::mqtt:MQTT broker interface::ioe:74HC595::tca:TCA9548A::sermux:Virtual::rgb:RGB LED::powermeter:GatorByte Power meter::mem:AT24X EEPROM::usd:Level-shifting uSD card::rtc:Mini DS3231 Realtime clock::booster:5V booster::gps:Neo-6m GPS module::bl:AT-09::buzzer:Buzzer::relay:SPST relay::eadc:ADS1115 External ADC::uss:Ultrasound distance sensor::tpbck:Tipping bucket rain sensor::at-sci-dox:DO OEM module::at-sci-rtd:RTD OEM module::at-sci-ec:EC OEM module::at-sci-ph:pH OEM module::aht:AHT10 sensor::command:Command mode::configurator:GatorByte Configurator::gdc:GatorByte Desktop Client::sntl:Sentinel
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690769350#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:24:.:44#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+Diagnosing pH: 
+0
+http:Server API::mqtt:MQTT broker interface::ioe:74HC595::tca:TCA9548A::sermux:Virtual::rgb:RGB LED::powermeter:GatorByte Power meter::mem:AT24X EEPROM::usd:Level-shifting uSD card::rtc:Mini DS3231 Realtime clock::booster:5V booster::gps:Neo-6m GPS module::bl:AT-09::buzzer:Buzzer::relay:SPST relay::eadc:ADS1115 External ADC::uss:Ultrasound distance sensor::tpbck:Tipping bucket rain sensor::at-sci-dox:DO OEM module::at-sci-rtd:RTD OEM module::at-sci-ec:EC OEM module::at-sci-ph:pH OEM module::aht:AHT10 sensor::command:Command mode::configurator:GatorByte Configurator::gdc:GatorByte Desktop Client::sntl:Sentinel
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690769839#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690769924#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+0
+http:Server API::mqtt:MQTT broker interface::ioe:74HC595::tca:TCA9548A::sermux:Virtual::rgb:RGB LED::powermeter:GatorByte Power meter::mem:AT24X EEPROM::usd:Level-shifting uSD card::rtc:Mini DS3231 Realtime clock::booster:5V booster::gps:Neo-6m GPS module::bl:AT-09::buzzer:Buzzer::relay:SPST relay::eadc:ADS1115 External ADC::uss:Ultrasound distance sensor::tpbck:Tipping bucket rain sensor::dox:DO OEM module::rtd:RTD OEM module::ec:EC OEM module::ph:pH OEM module::aht:AHT10 sensor::command:Command mode::configurator:GatorByte Configurator::gdc:GatorByte Desktop Client::sntl:Sentinel
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690770297#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+0
+http:Server API::mqtt:MQTT broker interface::ioe:74HC595::tca:TCA9548A::sermux:Virtual::rgb:RGB LED::powermeter:GatorByte Power meter::mem:AT24X EEPROM::usd:Level-shifting uSD card::rtc:Mini DS3231 Realtime clock::booster:5V booster::gps:Neo-6m GPS module::bl:AT-09::buzzer:Buzzer::relay:SPST relay::eadc:ADS1115 External ADC::uss:Ultrasound distance sensor::tpbck:Tipping bucket rain sensor::dox:DO OEM module::rtd:RTD OEM module::ec:EC OEM module::ph:pH OEM module::aht:AHT10 sensor::command:Command mode::configurator:GatorByte Configurator::gdc:GatorByte Desktop Client::sntl:Sentinel
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690770484#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+Exception in hasdevice(ph): Device not specified in config.ini.
+Exception in hasdevice(ph): Device not specified in config.ini.
+0
+http:Server API::mqtt:MQTT broker interface::ioe:74HC595::tca:TCA9548A::sermux:Virtual::rgb:RGB LED::powermeter:GatorByte Power meter::mem:AT24X EEPROM::usd:Level-shifting uSD card::rtc:Mini DS3231 Realtime clock::booster:5V booster::gps:Neo-6m GPS module::bl:AT-09::buzzer:Buzzer::relay:SPST relay::eadc:ADS1115 External ADC::uss:Ultrasound distance sensor::tpbck:Tipping bucket rain sensor::dox:DO OEM module::rtd:RTD OEM module::ec:EC OEM module::ph:pH OEM module::aht:AHT10 sensor::command:Command mode::configurator:GatorByte Configurator::gdc:GatorByte Desktop Client::sntl:Sentinel
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+Exception in hasdevice(ec): Device not specified in config.ini.
+Exception in hasdevice(ec): Device not specified in config.ini.
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+Exception in hasdevice(dox): Device not specified in config.ini.
+Exception in hasdevice(dox): Device not specified in config.ini.
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+Exception in hasdevice(rtd): Device not specified in config.ini.
+Exception in hasdevice(rtd): Device not specified in config.ini.
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+Getting RTC time -> 1690770554
+<br>##CL##gdc-cfg::rtc:1690770554#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690770966#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+Device not found: ph
+Device not found: ph
+0
+http:Server API::mqtt:MQTT broker interface::ioe:74HC595::tca:TCA9548A::sermux:Virtual::rgb:RGB LED::powermeter:GatorByte Power meter::mem:AT24X EEPROM::usd:Level-shifting uSD card::rtc:Mini DS3231 Realtime clock::booster:5V booster::gps:Neo-6m GPS module::bl:AT-09::buzzer:Buzzer::relay:SPST relay::eadc:ADS1115 External ADC::uss:Ultrasound distance sensor::tpbck:Tipping bucket rain sensor::dox:DO OEM module::rtd:RTD OEM module::ec:EC OEM module::ph:pH OEM module::aht:AHT10 sensor::command:Command mode::configurator:GatorByte Configurator::gdc:GatorByte Desktop Client::sntl:Sentinel
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+Device not found: ec
+Device not found: ec
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+Device not found: dox
+Device not found: dox
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+Device not found: rtd
+Device not found: rtd
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:-1#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+Diagnosing pH: 
+Device not found: ph
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: ph
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+Device not found: ec
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: ec
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+Device not found: dox
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: dox
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+Device not found: rtd
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: rtd
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+Getting RTC time -> not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:-1#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+Device not found: ph
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: ph
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+Device not found: ec
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: ec
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+Device not found: dox
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: dox
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+Device not found: rtd
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+Device not found: rtd
+mcu,mem,rtc,aht,sd,sntl,vst,rain,eadc,relay,bl,booster,wlev,buzzer,rgb,uss
+0
+0
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:-1#EOF#
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+Diagnosing pH: 
+1
+1
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+1
+1
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+1
+1
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690771605#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690771758#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690771960#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:255#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+1
+1
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+1
+1
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+1
+1
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtc:1690772089#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+1
+1
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+1
+1
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+1
+1
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtc:1690772196#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+Diagnosing EC: 
+1
+1
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing pH: 
+1
+1
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+Diagnosing pH: 
+1
+1
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:255#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:41#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:41#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:41#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:41#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:41#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+Getting RTC time -> 1690772390
+<br>##CL##gdc-cfg::rtc:1690772390#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Syncing RTC time -> Jul 31 2023, 03:00:28
+Syncing RTC to the provided time time -> RTC set to 7/31/2023, 3:0:28 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690772432
+<br>##CL##gdc-cfg::rtc:1690772432#EOF#
+Syncing RTC time -> Jul 31 2023, 03:00:39
+Syncing RTC to the provided time time -> RTC set to 7/31/2023, 3:0:39 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690772442
+<br>##CL##gdc-cfg::rtc:1690772442#EOF#
+Getting RTC time -> 1690772446
+<br>##CL##gdc-cfg::rtc:1690772446#EOF#
+Syncing RTC time -> Jul 31 2023, 03:00:56
+Syncing RTC to the provided time time -> RTC set to 7/31/2023, 3:0:56 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690772460
+<br>##CL##gdc-cfg::rtc:1690772460#EOF#
+Getting RTC time -> 1690772601
+<br>##CL##gdc-cfg::rtc:1690772601#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+Listing folder: /
+<br>##CL##gdc-dfl::file:queue/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:calibration/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:config/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:debug/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:logs/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:readings/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:control/:0<br>#EOF#
+<br>##CL##gdc-dfl::file:update/:0<br>#EOF#
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::lpi:#EOF#
+Here 0: ph:status
+Processed calibration request for: ph
+Level: status
+0 No calibration.
+<br>##CL##gdc-cal::ack#EOF#
+<br>##CL##gdc-cal::result:ph:0#EOF#
+
+Reading 1 continuous values from ph
+<br>##CL##gdc-cal::cread:0:14.00#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1690772749
+<br>##CL##gdc-cfg::rtc:1690772749#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Command: bl:getconfigupl:device~`devices:mcu,mem,rtc,ah^0
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690822136#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:41#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+Diagnosing pH: 
+1
+1
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+1
+1
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+1
+1
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690822241#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+Diagnosing pH: 
+1
+1
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+Diagnosing EC: 
+1
+1
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+Diagnosing DOX: 
+1
+1
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+Diagnosing RTD: 
+1
+1
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+Getting RTC time -> 1690822259
+<br>##CL##gdc-cfg::rtc:1690822259#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Ultrasound distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL moduleReading config file from SD -> Done
+Device ID: gb-chmd-zero
+Survey ID: gb-lry
+Survey date: 04-19-2023
+Survey location: Sarasota
+Survey mode: station
+Sleep duration: 0 min 30 seconds.
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690831259#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM moduleID: 1 v4 -> Done
+Initializing EC OEM moduleID: 4 v5 -> Done
+Initializing DO OEM moduleID: 3 v6 -> Done
+Initializing RTD OEM moduleID: 5 v5 -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690831443#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::ph:false:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:false:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:ID: 5 v5#EOF#
+Getting RTC time -> 1690831648
+<br>##CL##gdc-cfg::rtc:1690831648#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+device~`devices:mcu,mem,rtc,ah
+ -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM moduleID: 1 v4 -> Done
+Initializing EC OEM moduleID: 4 v5 -> Done
+Initializing DO OEM moduleID: 3 v6 -> Done
+Initializing RTD OEM moduleID: 5 v5 -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690831838
+<br>##CL##gdc-cfg::rtc:1690831838#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+device~`devices:mcu,mem,rtc,ah
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+t,sd,sntl,vst,rain,bl,booster,
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+buzzer,rgb,ph,ec,dox,rtd,gps~`
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+id:gb-chmd-zero~getconfigupl:d
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ata~`mode:read~`readuntil:stab
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ility~sleep~`duration:30000~`m
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ode:shallow~survey~`date:03-19
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+-2023~`id:gb-lry~`location:Sar
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+asota~`mode:station~`realtime:
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+true~
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+t,sd,sntl,vst,rain,bl,booster,
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+buzzer,rgb,ph,ec,dox,rtd,gps~`
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+id:gb-chmd-zero~getconfigupl:d
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ata~`mode:read~`readuntil:stab
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ility~sleep~`duration:30000~`m
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ode:shallow~survey~`date:03-19
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+-2023~`id:gb-lry~`location:Sar
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+asota~`mode:station~`realtime:
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+true~
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+t,sd,sntl,vst,rain,bl,booster,
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+buzzer,rgb,ph,ec,dox,rtd,gps~`
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+id:gb-chmd-zero~getconfigupl:d
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ata~`mode:read~`readuntil:stab
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ility~sleep~`duration:30000~`m
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ode:shallow~survey~`date:03-19
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+-2023~`id:gb-lry~`location:Sar
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+asota~`mode:station~`realtime:
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+true~
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+t,sd,sntl,vst,rain,bl,booster,
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+buzzer,rgb,ph,ec,dox,rtd,gps~`
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+id:gb-chmd-zero~getconfigupl:d
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ata~`mode:read~`readuntil:stab
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ility~sleep~`duration:30000~`m
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ode:shallow~survey~`date:03-19
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+-2023~`id:gb-lry~`location:Sar
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+asota~`mode:station~`realtime:
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+true~
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+t,sd,sntl,vst,rain,bl,booster,
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+buzzer,rgb,ph,ec,dox,rtd,gps~`
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+id:gb-chmd-zero~getconfigupl:d
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ata~`mode:read~`readuntil:stab
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ility~sleep~`duration:30000~`m
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ode:shallow~survey~`date:03-19
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+-2023~`id:gb-lry~`location:Sar
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+asota~`mode:station~`realtime:
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+true~
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+t,sd,sntl,vst,rain,bl,booster,
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+buzzer,rgb,ph,ec,dox,rtd,gps~`
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+id:gb-chmd-zero~getconfigupl:d
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ata~`mode:read~`readuntil:stab
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ility~sleep~`duration:30000~`m
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ode:shallow~survey~`date:03-19
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+-2023~`id:gb-lry~`location:Sar
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+asota~`mode:station~`realtime:
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+true~
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+t,sd,sntl,vst,rain,bl,booster,
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+buzzer,rgb,ph,ec,dox,rtd,gps~`
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+id:gb-chmd-zero~getconfigupl:d
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ata~`mode:read~`readuntil:stab
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ility~sleep~`duration:30000~`m
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+ode:shallow~survey~`date:03-19
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+-2023~`id:gb-lry~`location:Sar
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+asota~`mode:station~`realtime:
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+true~
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM moduleID: 1 v4 -> Done
+Initializing EC OEM moduleID: 4 v5 -> Done
+Initializing DO OEM moduleID: 3 v6 -> Done
+Initializing RTD OEM moduleID: 5 v5 -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690831968
+<br>##CL##gdc-cfg::rtc:1690831968#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Getting RTC time -> 1690832014
+<br>##CL##gdc-cfg::rtc:1690832014#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Command: bl:getconfigupl:hallow~survey~`date:03-19-2023^180
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM moduleID: 1 v4 -> Done
+Initializing EC OEM moduleID: 4 v5 -> Done
+Initializing DO OEM moduleID: 3 v6 -> Done
+Initializing RTD OEM moduleID: 5 v5 -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1690832104
+<br>##CL##gdc-cfg::rtc:1690832104#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+<br>##CL##gdc-cfg::fupl:ack#EOF#
+Reading config file from SD -> Done
+<br>##CL##gdc-dgn::rtc:1690832135#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM moduleID: 4 v5 -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690832389#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:40#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+Getting RTC time -> 1690832688
+<br>##CL##gdc-cfg::rtc:1690832688#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:BT05;123456#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690832873#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1690832962#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+ -> Done
+Device ID: gb-chmd-zero
+Survey ID: gb-lry
+Survey date: 03-19-2023
+Survey location: Sarasota
+Survey mode: station
+Sleep duration: 0 min 30 seconds.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690833432#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:39#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690833530#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:38#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690844563#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:40#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690844859#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690845002#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690845139#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690845281#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:39#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690845428#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:false#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690845621#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:41#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690845908#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:39#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected -> Failed
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690912119#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:41#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690912396#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:-1#EOF#
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:-1#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+Getting RTC time -> not-detected
+<br>##CL##gdc-cfg::rtc:not-detected#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690917244#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rtc:1690917363#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::ec:true:..:ID: N/A vN/A#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690918096#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:37#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1690918145#EOF#
+<br>##CL##gdc-dgn::sd:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690918295#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::ph:true:..:ID: N/A vN/A#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Formatting EEPROM module -> Done
+
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+Invalid timestamp detected: 946684847
+Invalid timestamp detected: 946684849
+Invalid timestamp detected: 946684850
+<br>##CL##gdc-dgn::rtc:946684850#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+Getting RTC time -> ##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> Invalid timestamp detected: 946706298
+Invalid timestamp detected: 946706300
+Invalid timestamp detected: 946706302
+946706302
+<br>##CL##gdc-cfg::rtc:946706302#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Syncing RTC time -> Aug 02 2023, 01:06:41
+Syncing RTC to the provided time time -> RTC set to 8/2/2023, 1:6:41 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1690938405
+<br>##CL##gdc-cfg::rtc:1690938405#EOF#
+Getting RTC time -> 1690938412
+<br>##CL##gdc-cfg::rtc:1690938412#EOF#
+<br>##CL##gdc-dgn::rtc:1690938432#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690938580#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690939346#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::ph:true:..:ID: N/A vN/A#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: 0 -> Failed
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:1690939475#EOF#
+<br>##CL##gdc-dgn::sd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::ec:true:..:ID: N/A vN/A#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::mem:false#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Configuring MQTT client -> Done
+Initializing Sentinel -> Not detected
+Initializing Seedstudio distance sensor -> Distance: -1 -> Failed
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Initializing ADS1115 module -> Not detected
+Initializing Tipping Bucket sensor -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690939599#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:38#EOF#
+<br>##CL##gdc-dgn::bl:true:..:BT05#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+ -> SD R/W testInitializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD
