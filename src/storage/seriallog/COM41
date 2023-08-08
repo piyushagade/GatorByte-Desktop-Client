@@ -12521,4 +12521,1762 @@ GDC mode enabled. GatorByte is now locked in this mode.
  -> SD R/W testInitializing 74HC595 I/O expander -> Done
 Initializing TCA9548A -> Done
 Initializing SD card module -> SD R/W test -> Done
-Reading config file from SD
+Reading config file from SD##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:1690997061#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:35#EOF#
+<br>##CL##gdc-dgn::bl:true:..:$GPRMC,,V,,,,,,,,,,N*53#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:2313945348#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:34#EOF#
+<br>##CL##gdc-dgn::bl:true:..:$GPRMC,,V,,,,,,,,,,N*53#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690998024#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:36#EOF#
+<br>##CL##gdc-dgn::bl:true:..:���J�#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+ -> Done
+Reading config file from SD -> Done
+Device ID: gb-chmd-zero
+Survey ID: gb-lry
+Survey date: 03-19-2023
+Survey location: Sarasota
+Survey mode: station
+Sleep duration: 0 min 30 seconds.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Buzzer -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690998526#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:37#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::ec:true:..:ID: N/A vN/A#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690998643#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:255#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+ -> Done
+Device ID: gb-chmd-zero
+Survey ID: gb-lry
+Survey date: 03-19-2023
+Survey location: Sarasota
+Survey mode: station
+Sleep duration: 0 min 30 seconds.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing Buzzer -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690999159#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:36#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:1690999451#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:36#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1690999722#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:35#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:1690999879#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:36#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:2313941504#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:1691000164#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:36#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:255#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1691000386#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:36#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:2313941504#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ec:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:2072798289#EOF#
+<br>##CL##gdc-dgn::rtc:1927843702#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:37#EOF#
+<br>##CL##gdc-dgn::ph:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1691001121#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:27:.:37#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:2313941504#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtc:1691002362#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::rtd:true:..:ID: N/A vN/A#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::rtd:true:..:ID: N/A vN/A#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::rtd:true:..:ID: N/A vN/A#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::rtd:true:..:ID: N/A vN/A#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+Error reading device info.
+<br>##CL##gdc-dgn::rtd:true:..:ID: N/A vN/A#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> ID: 5 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:2072798289#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rtc:1691002561#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> ID: 5 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Not detected
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:2313945108#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Done
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:2313945104#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:0.00 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtc:1691003452#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Not detected
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+Getting RTC time -> 1691004492
+<br>##CL##gdc-cfg::rtc:1691004492#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Not detected
+Initializing RTD OEM module -> Not detected
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Done
+Initializing pH OEM module -> Not detected
+Initializing EC OEM module -> Done
+Initializing RTD OEM module -> Done
+Setup complete
+Invalid timestamp detected: 948604040
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1691266064#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.09#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:35#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.09#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1691266832#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:28:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtd:false:..:not-detected#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel209
+ -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel65535
+ -> Not detected
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel209
+ -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:2313941504#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel209
+ -> Done
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Not detected
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> Not detected
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Failed (1)
+Initializing AT-09 BL module -> Not detected
+Initializing GPS module -> Manufacturer: u-Blox -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691462006#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:255#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:1691462050#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691462296#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:48#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:0.01#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> Not detected
+Reading config file from SD -> Skipped
+ -> SD R/W testInitializing Buzzer -> Done
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691462535#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtc:1691462565#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rtc:2072798289#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1691462954#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:46#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+ -> SD R/W testInitializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691463095#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:46#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691463912#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::gps:true:..:-#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691464216#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:47#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+$GPTXT,01,01,02,u-blox ag - www.u-blox.com*50<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+$GPTXT,01,01,02,u-blox ag - www.u-blox.com*50<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1691464515#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691464926#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:47#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:2072798289#EOF#
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtc:1691465065#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:46#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:1691465348#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::rtc:2313941504#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:255#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::rtc:1691465893#EOF#
+<br>##CL##gdc-dgn::rtc:1691465898#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:48#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::mem:false#EOF#
+<br>##CL##gdc-dgn::rtc:1691465938#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:26:.:48#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::rtc:1691465953#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:47#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:47#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691466233#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::rtc:1691466249#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691466279#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:47#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::aht:true:..:255:.:255#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691466374#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+Getting RTC time -> 1691483609
+<br>##CL##gdc-cfg::rtc:1691483609#EOF#
+Command: bl:getconfig
+<br>##CL##gdc-cfg::bl:GB/gb-chmd-zero;123456#EOF#
+Syncing RTC time -> Aug 08 2023, 09:17:54
+Syncing RTC to the provided time time -> RTC set to 8/8/2023, 9:17:54 -> Done
+<br>##CL##gdc-cfg::ack#EOF#
+Getting RTC time -> 1691486277
+<br>##CL##gdc-cfg::rtc:1691486277#EOF#
+Getting RTC time -> 1691486286
+<br>##CL##gdc-cfg::rtc:1691486286#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691486309#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:47#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:false:..:not-detected#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::rtc:1691488823#EOF#
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+<br>##CL##gdc-dgn::buzzer:false#EOF#
+<br>##CL##gdc-dgn::ph:true:..:ID: 1 v4#EOF#
+<br>##CL##gdc-dgn::ec:true:..:ID: 4 v5#EOF#
+<br>##CL##gdc-dgn::dox:true:..:ID: 3 v6#EOF#
+<br>##CL##gdc-dgn::rtd:true:..:ID: 5 v5#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+ -> SD R/W testInitializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+GDC mode enabled. GatorByte is now locked in this mode.
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::mem:true#EOF#
+<br>##CL##gdc-dgn::rtc:1691489327#EOF#
+<br>##CL##gdc-dgn::sd:true:..:15.63 GB#EOF#
+<br>##CL##gdc-dgn::aht:true:..:25:.:255#EOF#
+<br>##CL##gdc-dgn::bl:true:..:GB/gb-chmd-zero#EOF#
+<br>##CL##gdc-dgn::gps:true:..:u-Blox#EOF#
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#
+<br>##CL##gdc-dgn::rgb:true#EOF#
+##CL-GDC-PONG##
+<br>##CL##gdc-db::power=awake#EOF#
+Initializing 74HC595 I/O expander -> Done
+Initializing TCA9548A -> Done
+Initializing SD card module -> SD R/W test -> Done
+Reading config file from SD -> Done
+Initializing Buzzer -> Done
+Initializing Sentinel -> Done
+Disabling beacon -> Done (0)
+Initializing AT-09 BL module -> Done
+Initializing GPS module -> Done
+Initializing EEPROM module -> Done
+
+Initializing AHT10 sensor -> Done
+Initializing RTC module -> Done
+Initializing DO OEM module -> ID: 3 v6
+Initializing RTD OEM module -> ID: 5 v5
+Initializing pH OEM module -> ID: 1 v4
+Initializing EC OEM module -> ID: 4 v5
+Setup complete
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+##CL-GDC-PONG##
+##CL-GB-READY##
+<br>##CL##gdc-dgn::sntl:true:..:2.10#EOF#

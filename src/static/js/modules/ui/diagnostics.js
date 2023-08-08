@@ -76,11 +76,50 @@ function uidiagnosticsgatorbytesubapp() {
                 path: global.port.path
             });
 
-            // Start diagnostics tests
-            setTimeout(() => {
-                self.starttests();
-            }, 250);
+            // Display panels of devices in the device config
+            self.displaypanels();
+
+        });
+
+        // Search input listener
+        self.panel.find(".diagnostics-sub-panels-list-parent .search-input").find("input").off("keyup").keyup(self.f.debounce(function () {
+            var value = $(this).val().toLowerCase();
             
+            var atleastonefound = false;
+            $(".diagnostics-sub-panel-item").addClass("hidden").each(function (ei, el) {
+                var devicename = $(el).find("p").first().text().toLowerCase();
+                var deviceid = $(el).attr("type").toLowerCase();
+
+                if (devicename.indexOf(value) > -1 || deviceid.indexOf(value) > -1) {
+
+                    // Show device only if it is specified in the device config
+                    if (self.enableddevices.indexOf(deviceid) > -1) {
+                        $(this).removeClass("hidden");
+                        atleastonefound = true;
+
+                        // Test individual devices click listener
+                        $(".diagnostics-sub-panel-item[type='" + deviceid + "']").off("click").click(function () {
+                            var deviceid = $(this).attr("type");
+                            self.testdevice(deviceid);
+                        });
+                    }
+                }   
+            });
+
+            if (atleastonefound) {
+                $(".diagnostics-sub-panels-list-parent .no-device-notification").addClass("hidden");
+            }
+            else {
+                $(".diagnostics-sub-panels-list-parent .no-device-notification").removeClass("hidden");
+            }
+
+        }, 250));
+
+        // Start diagnostics button
+        self.panel.find(".start-all-diagnostics-button").off("click").click(function () {
+            
+            // Start diagnostics tests
+            self.starttests();
         });
 
         // Back button
@@ -104,6 +143,23 @@ function uidiagnosticsgatorbytesubapp() {
                 path: global.port.path
             });
         });
+    }
+
+    self.displaypanels = function () {
+
+        if (!self.enableddevices) console.log("Configuration data (enableddevices) not initialized");
+        
+        // Show panels; Disable them
+        self.enableddevices.forEach(function (device) {
+            $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden").css("opacity", "0.5");
+
+            // Test individual devices click listener
+            $(".diagnostics-sub-panel-item[type='" + device + "']").off("click").click(function () {
+                var deviceid = $(this).attr("type");
+                self.testdevice(deviceid);
+            });
+        });
+        
     }
 
     self.starttests = function () {
@@ -134,7 +190,7 @@ function uidiagnosticsgatorbytesubapp() {
         // Return if the device doesn not require testing
         if (devicedata && devicedata.test == false) return;
         
-        $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden");
+        $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden").css("opacity", "1");
 
         self.sendcommand(device);
         self.setstatus({
@@ -728,11 +784,6 @@ function uidiagnosticsgatorbytesubapp() {
             }
         }
 
-        // Test individual devices click listener
-        $(".diagnostics-sub-panel-item").off("click").click(function () {
-            var deviceid = $(this).attr("type");
-            self.testdevice(deviceid);
-        })
     }
 
     self.setstatus = function (args) {
@@ -776,8 +827,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto sd-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -800,8 +851,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto fram-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -830,8 +881,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto rtc-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -855,8 +906,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto mem-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -883,8 +934,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto aht-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -912,8 +963,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto sntl-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -941,8 +992,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto gps-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -970,8 +1021,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto bl-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -1012,8 +1063,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto eadc-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -1035,8 +1086,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto relay-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -1063,8 +1114,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto ph-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -1091,8 +1142,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto ec-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -1119,8 +1170,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto dox-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>
@@ -1147,8 +1198,8 @@ function uidiagnosticsgatorbytesubapp() {
                     
                     <div class="col-auto rtd-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
-                            <i class="fa-regular fa-clock" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
-                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Waiting</div>
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
                         </div>
                     </div>
                 </div>

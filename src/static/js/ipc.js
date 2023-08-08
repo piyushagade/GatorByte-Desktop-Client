@@ -14,6 +14,8 @@ function ipcsubapp(){
         global.timers.portsrefresh = setInterval(() => { self.ipcr.send('get-available-ports-request'); }, 2000);
         
         self.ipcr.on('bootstrap-information-push', (event, data) => {
+            console.log("Bootstrap data")
+            console.log(data)
             self.process_bootstrap_data(event, data);
         });
 
