@@ -102,7 +102,7 @@ function uiserialmonitorsubapp(){
             }));
             setTimeout(() => { $(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").find(".line[line-id='" + lineid + "']").not(".hook-line").css("color", "#38dd38"); }, 2000);
             
-            //! Take hool actions
+            //! Take hook actions
             if (hook.actions) self.process_hook_actions(hook.actions);
 
             //! Auto scroll to the bottom of the div
@@ -448,7 +448,7 @@ function uiserialmonitorsubapp(){
                 }
 
                 // GatorByte configuration
-                if (category && category.indexOf("gdc-cfg") == 0) {
+                if (category && (category.indexOf("gdc-cfg") == 0)) {
 
                     if (filedata) self.a.uiconfiggatorbyte.process_file_download_data(line);
                     else self.a.uiconfiggatorbyte.process_response(data);

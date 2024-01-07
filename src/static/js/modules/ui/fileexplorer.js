@@ -8,7 +8,7 @@ function uidownloadfilessubapp(){
     self.pwrsv =  require('electron').remote.powerSaveBlocker;
     self.a = global.accessors;
     self.filedata = "";
-    self.panel = $(".download-files-panel");
+    self.panel = $(".sd-explorer-panel");
     self.currentfoldername = "/";
 
     self.init = function () {
@@ -20,7 +20,7 @@ function uidownloadfilessubapp(){
     }
 
     self.sendcommand = function (command) {
-        self.ipcr.send('send-command-request', {
+        self.ipcr.send('ipc/command/push', {
             command: command,
             windowid: global.states.windowid,
             path: global.port.path
@@ -31,31 +31,31 @@ function uidownloadfilessubapp(){
 
         // Big button
         $(".home-panel .download-files-button").off("click").click(function () {
-            $(".download-files-panel").removeClass("hidden");
+            $(".sd-explorer-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden");
         
             // Hide previous errors
-            $(".download-files-panel .download-files-list").find(".error-item").remove();
+            $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
             
             // Send request to get GatorByte to send sd files list
             self.open_directory("/");
         });
 
         //! Refresh list button listener
-        $(".download-files-panel .refresh-files-list-button").off("click").click(function () {
+        $(".sd-explorer-panel .refresh-files-list-button").off("click").click(function () {
             
             // Clear list
             self.panel.find(".download-files-list .files-list-item").remove();
 
             // Hide file options
-            $(".download-files-panel .file-options-parent").addClass("hidden");
+            $(".sd-explorer-panel .file-options-parent").addClass("hidden");
 
             // Hide previous errors
-            $(".download-files-panel .download-files-list").find(".error-item").remove();
+            $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
 
             // Show spinner
-            $(".download-files-panel .spinner-div").removeClass("hidden");
+            $(".sd-explorer-panel .spinner-div").removeClass("hidden");
 
             // Send request to get GatorByte to send sd files list
             self.request_file_list(self.currentfoldername, 1);
@@ -64,7 +64,7 @@ function uidownloadfilessubapp(){
 
     self.request_file_list = function (dir, page) {
         var prefix = "##GB##", suffix = "#EOF#";
-        self.ipcr.send('send-command-request', {
+        self.ipcr.send('ipc/command/push', {
             command: prefix + "fl:list," + dir + suffix,
             windowid: global.states.windowid,
             path: global.port.path
@@ -96,12 +96,12 @@ function uidownloadfilessubapp(){
         if (error == "nodevice") {
 
             // Hide spinner
-            $(".download-files-panel .spinner-div").addClass("hidden");
+            $(".sd-explorer-panel .spinner-div").addClass("hidden");
 
             // Hide previous errors
-            $(".download-files-panel .download-files-list").find(".error-item").remove();
+            $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
             
-            $(".download-files-panel .download-files-list").append(multiline(function () {/* 
+            $(".sd-explorer-panel .download-files-list").append(multiline(function () {/* 
                 <div class="error-item" style="margin-right: 10px; margin-bottom: 10px;">
                     <div class="shadow-heavy" style="color: #f1f1f1;">
                         <div style="color: #ffffff;font-size: 13px;padding: 4px 10px;background: #d22e0975;border-radius: 2px;">
@@ -121,12 +121,12 @@ function uidownloadfilessubapp(){
         if (error == "nofile") {
 
             // Hide spinner
-            $(".download-files-panel .spinner-div").addClass("hidden");
+            $(".sd-explorer-panel .spinner-div").addClass("hidden");
 
             // Hide previous errors
-            $(".download-files-panel .download-files-list").find(".error-item").remove();
+            $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
             
-            $(".download-files-panel .download-files-list").append(multiline(function () {/* 
+            $(".sd-explorer-panel .download-files-list").append(multiline(function () {/* 
                 <div class="error-item" style="margin-right: 10px; margin-bottom: 10px;">
                     <div style="color: #f1f1f1; margin-top: 8px;">
                         <div style="color: #ffffff;font-size: 13px;padding: 4px 10px; border-radius: 2px;">
@@ -144,13 +144,13 @@ function uidownloadfilessubapp(){
         if (file == "/:0") return;
         
         // If file already exists in the list, do not add
-        if ($(".download-files-panel .download-files-list .files-list-item[filename='" + file + "']").length == 0) {
+        if ($(".sd-explorer-panel .download-files-list .files-list-item[filename='" + file + "']").length == 0) {
             
             // Hide previous errors
-            $(".download-files-panel .download-files-list").find(".error-item").remove();
+            $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
 
             // Hide spinner
-            $(".download-files-panel .spinner-div").addClass("hidden");
+            $(".sd-explorer-panel .spinner-div").addClass("hidden");
 
             file.split(",").forEach(function (entry, ei) {
 
@@ -170,7 +170,7 @@ function uidownloadfilessubapp(){
                 var knownextensions = ["DIR", "CSV", "LOG", "INI"];
                 var extensioncolors = ["#c74b0f", "green", "#962020", "#1969cc"];
                 
-                $(".download-files-panel .download-files-list").append(multiline(function () {/* 
+                $(".sd-explorer-panel .download-files-list").append(multiline(function () {/* 
                     <div class="col-auto files-list-item shadow-heavy" filename="{{filename}}" filetype="{{filetype}}" style="text-align: center;position: relative;padding: 6px 8px;margin-right: 10px;margin-bottom: 10px;height: 100px;width: 85px;background: #ffffff1f;border-radius: 4px;">
                         <div style="color: #f1f1f1;font-size: 36px;">
                             {{fileicon}}
@@ -196,7 +196,7 @@ function uidownloadfilessubapp(){
         }
 
         //! When user clicks on an icon
-        $(".download-files-panel .files-list-item").off("click").click(function () {
+        $(".sd-explorer-panel .files-list-item").off("click").click(function () {
             var filename = $(this).attr("filename");
             var filetype = $(this).attr("filetype");
 
@@ -212,13 +212,13 @@ function uidownloadfilessubapp(){
                     // Hide folder options div
                     self.panel.find(".folder-options-parent").addClass("hidden");
                     
-                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                    $(".sd-explorer-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
                 }
 
                 //! Show file options and select the file
                 else {
                     
-                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                    $(".sd-explorer-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
                     $(this).css("background", "#355377").addClass("selected");
 
                     // Show file options div
@@ -230,8 +230,8 @@ function uidownloadfilessubapp(){
                 }
 
                 //! Save file button listener (Download file)
-                $(".download-files-panel .file-options-parent .download-file-button").off("click").click(function () {
-                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+                $(".sd-explorer-panel .file-options-parent .download-file-button").off("click").click(function () {
+                    var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
 
                     // Send download request
                     self.filedownloadname = filename;
@@ -250,8 +250,8 @@ function uidownloadfilessubapp(){
 
                 
                 //! Delete file button listener
-                $(".download-files-panel .file-options-parent .delete-file-button").off("click").click(function () {
-                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+                $(".sd-explorer-panel .file-options-parent .delete-file-button").off("click").click(function () {
+                    var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
 
                     // Send download request
                     self.filedownloadname = filename;
@@ -263,7 +263,7 @@ function uidownloadfilessubapp(){
 
                     // Update UI
                     setTimeout(() => {
-                        $(".download-files-panel .refresh-files-list-button").click();
+                        $(".sd-explorer-panel .refresh-files-list-button").click();
                     }, 1400);
                 });
             }
@@ -284,13 +284,13 @@ function uidownloadfilessubapp(){
                 else {
                     $(this).attr("state", "folder-selected").attr("selected-folder", filename);
                     
-                    $(".download-files-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
+                    $(".sd-explorer-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
                     $(this).css("background", "#355377").addClass("selected");
                 }
 
                 //! Save file button listener (Download file)
-                $(".download-files-panel .folder-options-parent .make-directory-button").off("click").click(function () {
-                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+                $(".sd-explorer-panel .folder-options-parent .make-directory-button").off("click").click(function () {
+                    var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
 
                     // Send download request
                     self.filedownloadname = filename;
@@ -306,8 +306,8 @@ function uidownloadfilessubapp(){
 
                 
                 //! Delete file button listener
-                $(".download-files-panel .folder-options-parent .delete-directory-button").off("click").click(function () {
-                    var filename = $(".download-files-panel .files-list-item.selected").attr("filename");
+                $(".sd-explorer-panel .folder-options-parent .delete-directory-button").off("click").click(function () {
+                    var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
 
                     // Send download request
                     self.filedownloadname = filename;
@@ -319,14 +319,14 @@ function uidownloadfilessubapp(){
 
                     // Update UI
                     setTimeout(() => {
-                        $(".download-files-panel .refresh-files-list-button").click();
+                        $(".sd-explorer-panel .refresh-files-list-button").click();
                     }, 1400);
                 });
             }
         });
 
         //! When user dblclicks on a folder
-        $(".download-files-panel .files-list-item").off("dblclick").dblclick(function () {
+        $(".sd-explorer-panel .files-list-item").off("dblclick").dblclick(function () {
 
             var foldername = "/" + $(this).attr("filename").replace("/", "");
             var filetype = $(this).attr("filetype");
@@ -415,7 +415,7 @@ function uidownloadfilessubapp(){
         }
 
         setTimeout(() => {
-            var parent = $(".download-files-panel .file-options-parent");
+            var parent = $(".sd-explorer-panel .file-options-parent");
 
             // Update UI
             parent.find(".file-options-home").removeClass("hidden");
@@ -440,7 +440,7 @@ function uidownloadfilessubapp(){
             self.panel.find(".go-up-button").attr("target-folder", self.currentfoldername).off("click").click(function () {
                 
                 // Hide previous errors
-                $(".download-files-panel .download-files-list").find(".error-item").remove();
+                $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
                 
                 self.open_directory($(this).attr("target-folder"));
             });
@@ -451,13 +451,13 @@ function uidownloadfilessubapp(){
         self.panel.find(".download-files-list .files-list-item").remove();
 
         // Hide file options
-        $(".download-files-panel .file-options-parent").addClass("hidden");
+        $(".sd-explorer-panel .file-options-parent").addClass("hidden");
 
         // Hide download information div
         self.panel.find(".file-options-download-information").addClass("hidden");
 
         // Show spinner
-        $(".download-files-panel .spinner-div").removeClass("hidden");
+        $(".sd-explorer-panel .spinner-div").removeClass("hidden");
 
         self.panel.find(".directory-name-text").text(foldername);
 

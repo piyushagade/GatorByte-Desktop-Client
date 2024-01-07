@@ -29,7 +29,7 @@ function uidiagnosticsgatorbytesubapp() {
 
     self.sendcommand = function (command) {
 
-        self.ipcr.send('send-command-request', {
+        self.ipcr.send('ipc/command/push', {
             command: command,
             windowid: global.states.windowid,
             path: global.port.path
@@ -58,9 +58,10 @@ function uidiagnosticsgatorbytesubapp() {
             });
         });
 
-        // Start diagnostics button
+        // Start peripherals diagnostics button
         self.panel.find(".start-peripherals-diagnostics-tests-button").off("click").click(function () {
-            
+            var category = $(this).attr("category") || "peripherals";
+
             $(".diagnostics-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden"); setheight();
@@ -70,14 +71,38 @@ function uidiagnosticsgatorbytesubapp() {
 
             // Enter diagnostics state
             var prefix = "##GB##", suffix = "#EOF#";
-            self.ipcr.send('send-command-request', {
+            self.ipcr.send('ipc/command/push', {
                 command: prefix + "dgn" + suffix,
                 windowid: global.states.windowid,
                 path: global.port.path
             });
 
             // Display panels of devices in the device config
-            self.displaypanels();
+            self.displaypanels(category.split(","));
+
+        });
+
+        // Start power diagnostics button
+        self.panel.find(".start-power-diagnostics-tests-button").off("click").click(function () {
+            var category = $(this).attr("category") || "peripherals";
+
+            $(".diagnostics-gb-panel").removeClass("hidden");
+            $(".home-panel").addClass("hidden");
+            $(".gb-config-header").addClass("hidden"); setheight();
+
+            self.panel.find(".diagnostics-button-parent").addClass("hidden");
+            self.panel.find(".diagnostics-sub-panels-list-parent").removeClass("hidden");
+
+            // Enter diagnostics state
+            var prefix = "##GB##", suffix = "#EOF#";
+            self.ipcr.send('ipc/command/push', {
+                command: prefix + "dgn" + suffix,
+                windowid: global.states.windowid,
+                path: global.port.path
+            });
+
+            // Display panels of devices in the device config
+            self.displaypanels(category.split(","));
 
         });
 
@@ -137,7 +162,7 @@ function uidiagnosticsgatorbytesubapp() {
 
             // Enter diagnostics state
             var prefix = "##GB##", suffix = "#EOF#";
-            self.ipcr.send('send-command-request', {
+            self.ipcr.send('ipc/command/push', {
                 command: prefix + "dgn" + suffix,
                 windowid: global.states.windowid,
                 path: global.port.path
@@ -145,12 +170,25 @@ function uidiagnosticsgatorbytesubapp() {
         });
     }
 
-    self.displaypanels = function () {
+    self.displaypanels = function (categories) {
 
         if (!self.enableddevices) console.log("Configuration data (enableddevices) not initialized");
+
+        var devicesmetadata = self.alldevices.filter(function (d) { return categories.indexOf(d.category) > -1; });
+        
+        console.log(devicesmetadata);
+
+        // Hide panels
+        $(".diagnostics-sub-panel-item").addClass("hidden");
         
         // Show panels; Disable them
         self.enableddevices.forEach(function (device) {
+
+            // Check if the device does not belong in the category
+            if (devicesmetadata.filter(function (d) { return d.id == device; }).length == 0) return;
+
+            console.log(device);
+
             $(".diagnostics-sub-panel-item[type='" + device + "']").removeClass("hidden").css("opacity", "0.5");
 
             // Test individual devices click listener
@@ -592,7 +630,7 @@ function uidiagnosticsgatorbytesubapp() {
         if (response.startsWith("uss:")) {
 
             response = response.replace(/uss:/g, "");
-            
+
             var success = response.split(":..:")[0].indexOf("true") > -1;
             var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
 
@@ -621,6 +659,82 @@ function uidiagnosticsgatorbytesubapp() {
                 
                 self.setstatus({
                     ui: ".uss-status",
+                    font: "fa-triangle-exclamation",
+                    color: "crimson",
+                    message: "Error"
+                });
+            }
+        }
+        
+        if (response.startsWith("rgb:")) {
+
+            response = response.replace(/rgb:/g, "");
+
+            console.log(response);
+            
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
+            self.panel.find(".rgb-text").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{status}}</span>
+            */}, {
+                status: success ? "Device ready" : "Not detected"
+            }));
+
+            if (success) {
+                
+                self.setstatus({
+                    ui: ".rgb-status",
+                    font: "fa-check",
+                    color: "green",
+                    message: "OK"
+                });
+            }
+            else  {
+                
+                self.setstatus({
+                    ui: ".rgb-status",
+                    font: "fa-triangle-exclamation",
+                    color: "crimson",
+                    message: "Error"
+                });
+            }
+        }
+        
+        if (response.startsWith("buzzer:")) {
+
+            response = response.replace(/buzzer:/g, "");
+
+            console.log(response);
+            
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+
+            self.panel.find(".buzzer-text").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{status}}</span>
+            */}, {
+                status: success ? "Device ready" : "Not detected"
+            }));
+
+            if (success) {
+                
+                self.panel.find(".buzzer-data").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{distance}}</span>
+                */}, {
+                    "distance": payload.split(":.:")[0],
+                }));
+
+                self.setstatus({
+                    ui: ".buzzer-status",
+                    font: "fa-check",
+                    color: "green",
+                    message: "OK"
+                });
+            }
+            else  {
+                
+                self.setstatus({
+                    ui: ".buzzer-status",
                     font: "fa-triangle-exclamation",
                     color: "crimson",
                     message: "Error"
@@ -784,6 +898,44 @@ function uidiagnosticsgatorbytesubapp() {
             }
         }
 
+        if (response.startsWith("lipo:")) {
+
+            response = response.replace(/lipo:/g, "");
+
+            var success = response.split(":..:")[0].indexOf("true") > -1;
+            var payload = response.split(":..:")[1].indexOf("not-detected") > -1 ? "-" : response.split(":..:")[1];
+            
+            self.panel.find(".lipo-text").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{status}}</span>
+            */}, {
+                status: success ? "Device ready" : "Not detected"
+            }));
+            
+            self.panel.find(".lipo-data").html(multiline(function () {/* 
+                <span style="margin-right: 4px;">{{voltage}}</span>
+            */}, {
+                voltage: success ? payload + " V" : "-"
+            }));
+
+            if (success) {
+                
+                self.setstatus({
+                    ui: ".lipo-status",
+                    font: "fa-check",
+                    color: "green",
+                    message: "OK"
+                });
+            }
+            else  {
+                
+                self.setstatus({
+                    ui: ".lipo-status",
+                    font: "fa-triangle-exclamation",
+                    color: "crimson",
+                    message: "Error"
+                });
+            }
+        }
     }
 
     self.setstatus = function (args) {
@@ -1197,6 +1349,109 @@ function uidiagnosticsgatorbytesubapp() {
                 <div class="row" style="margin: 0px;">
                     
                     <div class="col-auto rtd-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!--! USS -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="uss" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Ultrasound sensor</p>
+                
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="uss-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                    
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Distance</p>
+                        <p class="uss-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto uss-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--! RGB -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="rgb" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">RGB</p>
+                
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="rgb-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto rgb-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--! Buzzer -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="buzzer" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Buzzer</p>
+                
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="buzzer-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto buzzer-status"  style="padding: 3px 6px;margin: 0 -5px;">
+                        <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
+                            <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
+                            <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--! Battery -->
+            <div class="col-12 diagnostics-sub-panel-item shadow-medium hidden" type="lipo" style="margin-bottom: 12px;margin-right: 12px;background: #383838b8;padding: 5px 10px;">
+                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Li-Po battery</p>
+                
+                <div class="row" style="margin: 0px;">
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Status</p>
+                        <p class="lipo-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                    
+                    <div class="col-auto" style="padding: 3px 6px;margin: 0 6px 6px 0;border: 1px solid #4a4a4a;background: #4a4a4a;">
+                        <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Info</p>
+                        <p class="lipo-data" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                    </div>
+                </div>
+                    
+                <!-- Status -->
+                <div class="row" style="margin: 0px;">
+                    
+                    <div class="col-auto lipo-status"  style="padding: 3px 6px;margin: 0 -5px;">
                         <div style="display: inline-flex;color: white;background: white;border-radius: 2px;padding: 0 3px;">
                             <i class="fa-solid fa-vial" style="color: #716f6e; font-size: 13px; margin: 4px 4px 4px 4px;"></i>
                             <div style="color: #222; margin: 0 6px 0 4px; font-size: 13px;">Unknown</div>

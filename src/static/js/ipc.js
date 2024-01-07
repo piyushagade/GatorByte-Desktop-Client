@@ -43,7 +43,7 @@ function ipcsubapp(){
             self.process_update_installation_response(event, data);
         });
 
-        self.ipcr.on('new-serial-data-push', (event, arg) => {
+        self.ipcr.on('ipc/serial-data/new', (event, arg) => {
             self.process_new_serial_data(event, arg);
         });
 
@@ -90,7 +90,8 @@ function ipcsubapp(){
 
                 // Disable buttons that require the GatorByte to be ready (setup complete)
                 $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
-                $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
+                $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
+                $(".gb-config-header .action-button").addClass("disabled"); 
                 $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
                 
                 if ($(".flash-firmware-overlay").hasClass("hidden")) {
@@ -117,21 +118,45 @@ function ipcsubapp(){
             }
         });
 
+        // On setup complete; GB ready
         self.ipcr.on("ipc/gb-ready-notification/push", (event, response) => {
                 
             // Enable buttons that require the GatorByte to be ready (setup complete)
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             $(".gb-config-header").removeClass("disabled"); setheight();
+            $(".gb-config-header .action-button").removeClass("disabled"); 
 
-            var functions = [];
-            $(".home-panel").find(".big-button.requires-device-ready.disabled").each(function (ei, el) {
+            // Get config state and download confid from SD if required
+            global.accessors.uiconfiggatorbyte.request_config()
+                .then(function (configobject) {
 
-                functions.push(function () {
-                    $(el).removeClass("disabled");
+                    if (!configobject) {
+                        // Update UI
+                        $(".sync-status-heading").addClass("disabled");
+                        $(".upload-config-data-button").addClass("disabled");
+                        // $(".refresh-config-data-button").addClass("disabled");
+                        // $(".panel").addClass("disabled");
+                        $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
+                        $(".header-panel").find(".download-status-heading").text("Downloading configuration");
+                        $(".header-panel").find(".download-status-text").text("Initializing download");
+                        $(".header-panel").find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
+                        $(".header-panel").find(".progress").find(".progress-bar").css("width", "100%");
+                        return;
+                    }
+
+                    // Check config sync status
+                    global.accessors.uiconfiggatorbyte.checkconfigsync();
+
+                    // Enable big buttons in home UI
+                    var functions = [];
+                    $(".home-panel").find(".big-button.requires-device-ready.disabled").each(function (ei, el) {
+        
+                        functions.push(function () {
+                            $(el).removeClass("disabled");
+                        });
+                    });
+                    self.f.waterfall(functions, 150);
                 });
-            });
-            
-            self.f.waterfall(functions, 150);
         });
 
         self.ipcr.on("ipc/flash-firmware/response", (event, response) => {
@@ -190,7 +215,7 @@ function ipcsubapp(){
             $(".quick-connect-button").off("click").click(function () {
                 console.log("Requesting quick connection for: " + global.quickconnectport.path + " (" + global.quickconnectport.baud + " bps) on window ID: " + global.states.windowid);
 
-                self.ipcr.send('open-port-request', {
+                self.ipcr.send('ipc/port-open/request', {
                     path: global.quickconnectport.path,
                     ...global.quickconnectport
                 });
@@ -303,32 +328,6 @@ function ipcsubapp(){
             var elem = document.getElementsByClassName("serial-monitor")[0];
             elem.scrollTop = elem.scrollHeight;
         }
-        
-        // // Add line breaks
-        // if (!global.states.line) global.states.line = "";
-        // if (!global.states.linecomplete) {
-        //     global.states.line  += text;
-        //     $(".serial-monitor").find(".session[session-id='" + sessionid + "']").find(".line").last().text(global.states.line);
-
-        //     console.log(text, global.states.line);
-        // }
-        // else {
-        //     // $(".serial-monitor").find(".session[session-id='" + sessionid + "']").find(".line[line-id='" + lineid + "']").text(global.states.line);
-
-        //     // Add next line's placeholder
-        //     var lineid = moment.now();
-        //     if (arg.data.trim().length > 0) $(".serial-monitor").find(".session[session-id='" + sessionid + "']").find(".line").css("color", "#38dd38");
-        //     $(".serial-monitor").find(".session[session-id='" + sessionid + "']").append(multiline(function() {/*
-        //         <p class="line" line-id="{{line-id}}" session-id="{{session-id}}" style="color: {{color}}; word-break: break-word; margin-bottom: 2px;">{{data}}</p>
-        //     */},{ 
-        //         "session-id": sessionid,
-        //         "line-id": lineid,
-        //         "color": "gold",
-        //         "data": ""
-        //     }));
-        //     setTimeout(() => { $(".serial-monitor").find(".session[session-id='" + sessionid + "']").find(".line[line-id='" + lineid + "']").css("color", "#38dd38"); }, 2000);
-        //     global.states.line = "";
-        // }
 
         // Hide skeleton
         $(".serial-monitor .skeleton-div").addClass("hidden");
@@ -362,7 +361,7 @@ function ipcsubapp(){
                 
                 if (aport.path == port.path) {
                     console.log("Requesting reconnection for: " + port.path + " on window ID: " + global.states.windowid);
-                    self.ipcr.send('open-port-request', {
+                    self.ipcr.send('ipc/port-open/request', {
                         path: port.path,
                         baud: port.baud,
                         windowid: global.states.windowid,
@@ -419,7 +418,7 @@ function ipcsubapp(){
                             "port": port_original,
                             "manufacturer": port.manufacturer,
                             "uploaddelay": port.uploaddelay,
-                            "serial-number": port.serialNumber || "N/A",
+                            "serial-number": port.serialNumber.substring(0, 10) || "N/A",
                             "pnp-id": pnpid,
                             "title": title
                         }));
@@ -519,7 +518,7 @@ function ipcsubapp(){
                             parent.find(".device-selected-info-row").find(".selected-device-connect").off("click").click(function () {
                                 
                                 console.log("Requesting connection for: " + portnumber + " (" + parent.find(".device-selected-info-row").find(".selected-baud-rate").val() + " bps) on window ID: " + global.states.windowid);
-                                self.ipcr.send('open-port-request', {
+                                self.ipcr.send('ipc/port-open/request', {
                                     path: portnumber,
                                     ...port,
                                     windowid: global.states.windowid,
@@ -545,7 +544,7 @@ function ipcsubapp(){
                                 
                                 console.log("Setting port " + portnumber + " as " + (newstate == "favorited" ? "favorite." : "not favorite."));
 
-                                self.ipcr.send('set-favorite-request', {
+                                self.ipcr.send('ipc/set-favorite/request', {
                                     path: portnumber,
                                     baud: parseInt(parent.find(".device-selected-info-row").find(".selected-baud-rate").val()),
                                     windowid: global.states.windowid,
@@ -557,7 +556,7 @@ function ipcsubapp(){
 
                             parent.find(".device-selected-info-row").find(".selected-device-nickname").off("keyup").keyup(self.f.debounce(function () {
                                 console.log("Setting nickname to " + parent.find(".device-selected-info-row").find(".selected-device-nickname").val());
-                                self.ipcr.send('set-device-nickname', {
+                                self.ipcr.send('ipc/set-nickname/request', {
                                     path: portnumber,
                                     ...port,
                                     nickname: parent.find(".device-selected-info-row").find(".selected-device-nickname").val()
@@ -571,7 +570,7 @@ function ipcsubapp(){
                                 global.states.uploaddelay = value;
 
                                 console.log("Setting upload delay to " + value);
-                                self.ipcr.send('set-device-uploaddelay', {
+                                self.ipcr.send('ipc/set-uploaddelay/request', {
                                     path: portnumber,
                                     ...port,
                                     uploaddelay: value
@@ -580,7 +579,7 @@ function ipcsubapp(){
 
                             parent.find(".device-selected-info-row").find(".selected-baud-rate").off("change").change(self.f.debounce(function () {
                                 console.log("Changing baud rate to " + parent.find(".device-selected-info-row").find(".selected-baud-rate").val());
-                                self.ipcr.send('set-device-baud-rate', {
+                                self.ipcr.send('ipc/set-baud-rate/request', {
                                     path: portnumber,
                                     ...port,
                                     baud: parent.find(".device-selected-info-row").find(".selected-baud-rate").val()
@@ -642,7 +641,7 @@ function ipcsubapp(){
     self.on_port_selected = function (event, response) {
         
         // Get bootstap data and update UI
-        self.ipcr.send('bootstrap-data-request', {
+        self.ipcr.send('ipc/bootstrap-data/request', {
             windowid: global.states.windowid,
             windowtype: global.states.windowtype
         });
@@ -669,7 +668,7 @@ function ipcsubapp(){
             global.states.uploaddelay = global.port.uploaddelay;
 
             if (global.states.autoclear) {
-                $(".session").remove();
+                $(".serial-monitor .serial-monitor-text .session").remove();
                 $(".serial-monitor .skeleton-div").removeClass("hidden");
             }
 
@@ -680,8 +679,8 @@ function ipcsubapp(){
                 $(".home-panel").removeClass("disabled").removeClass("hidden").attr("first-load-done", "true");
                 $(".gb-config-header").removeClass("hidden"); setheight();
 
-                // Get config state
-                global.accessors.uiconfiggatorbyte.request_config();
+                // // Get config state
+                // global.accessors.uiconfiggatorbyte.request_config();
             }
             $(".waiting-for-device-notification").addClass("hidden");
             $(".device-not-available-overlay").slideUp(100);
@@ -719,7 +718,7 @@ function ipcsubapp(){
             });
 
             // Send ping to device
-            self.ipcr.send('send-command-request', {
+            self.ipcr.send('ipc/command/push', {
                 command: "gdc-ping",
                 windowid: global.states.windowid,
                 path: global.port.path
@@ -853,7 +852,7 @@ function ipcsubapp(){
                 $(".share-online-overlay .live-share-url").off("click").click(function () {
                     var url = $(this).attr("location");
 
-                    self.ipcr.send("open-url-request", {
+                    self.ipcr.send("ipc/open-url/request", {
                         windowid: global.states.windowid,
                         path: global.port.path,
                         url: url
@@ -909,7 +908,7 @@ function ipcsubapp(){
                     if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
                     global.timers.waitingforupload = setTimeout(() => {
                         console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
-                        self.ipcr.send('open-port-request', {
+                        self.ipcr.send('ipc/port-open/request', {
                             path: global.port.path,
                             baud: global.port.baud,
                             windowid: global.states.windowid,
@@ -935,7 +934,7 @@ function ipcsubapp(){
                     if (global.timers.waitingforuploadcounterclear) clearTimeout(global.timers.waitingforuploadcounterclear);
 
                     console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
-                    self.ipcr.send('open-port-request', {
+                    self.ipcr.send('ipc/port-open/request', {
                         path: global.port.path,
                         baud: global.port.baud,
                         windowid: global.states.windowid,
@@ -944,7 +943,7 @@ function ipcsubapp(){
                 });
 
                 // Close the port
-                self.ipcr.send('close-port-request', {
+                self.ipcr.send('ipc/port-close/request', {
                     path: global.port.path,
                     baud: global.port.baud,
                     windowid: global.states.windowid
@@ -987,8 +986,10 @@ function ipcsubapp(){
             $(".show-on-connected").addClass("hidden");
             $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            self.a.uiconfiggatorbyte.onconfigstateunknown();
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
-            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
+            $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
+            $(".gb-config-header .action-button").addClass("disabled"); 
             $(".waiting-for-pong-overlay").slideUp(0);
             
             // Hide all panels
@@ -996,13 +997,14 @@ function ipcsubapp(){
 
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
-            $(".gb-config-header").removeClass("hidden").addClass("hidden"); setheight();
+            $(".gb-config-header").removeClass("hidden").addClass("hiddenz"); setheight();
+            $(".gb-config-header .action-button").addClass("disabled"); 
             // $(".home-panel").addClass("hidden");
             // $(".serial-monitor").removeClass("hidden");
         }
 
         // GatorByte info
-        $(".gb-serial-number").text(global.port.serialNumber || "-");
+        $(".gb-serial-number").text(global.port.serialNumber.substring(0, 10) || "-");
         $(".gb-product-id").text(global.port.productId || "-");
         $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
         $(".gb-port-path").text(global.port.path);
@@ -1010,7 +1012,7 @@ function ipcsubapp(){
         $.ajax({
             url: "https://api.ezbean-lab.com/v3/gatorbyte/device/registration/get",
             type: "POST",
-            data: '{ "sn": "' + global.port.serialNumber + '" }',
+            data: '{ "sn": "' + global.port.serialNumber.substring(0, 10) + '" }',
             success: function (response) {
                 if (response.status == "success") {
                     $(".gb-registered-to").text(response.payload["REGISTERED_TO"]);
@@ -1042,6 +1044,7 @@ function ipcsubapp(){
 
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            self.a.uiconfiggatorbyte.onconfigstateunknown();            
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
 
             // Hide all panels
@@ -1051,7 +1054,8 @@ function ipcsubapp(){
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text((global.port.path || global.quickconnectport.path));
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
-            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
+            $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
+            $(".gb-config-header .action-button").addClass("disabled"); 
         }
         
         /* 
@@ -1063,10 +1067,12 @@ function ipcsubapp(){
             global.states.connected = false;
 
             $(".home-panel").addClass("hidden").removeClass("blur");
-            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
+            $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
+            $(".gb-config-header .action-button").addClass("disabled"); 
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            self.a.uiconfiggatorbyte.onconfigstateunknown();
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             
             // Hide all panels
@@ -1079,7 +1085,7 @@ function ipcsubapp(){
             // Initialize timer to reconnect after a delay
             global.timers.waitingforupload = setTimeout(() => {
                 console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
-                self.ipcr.send('open-port-request', {
+                self.ipcr.send('ipc/port-open/request', {
                     path: global.port.path,
                     baud: global.port.baud,
                     windowid: global.states.windowid,
@@ -1138,9 +1144,9 @@ function ipcsubapp(){
         $(".serial-monitor .skeleton-div").addClass("hidden");
 
         // If the session doesn't exist, create it
-        if ($(".serial-monitor").find(".session[session-id='" + sessionid + "']").length == 0) {
-            $(".serial-monitor").find(".session .line").css("color", "#bbbbbb");
-            $(".serial-monitor").append(multiline(function() {/*
+        if ($(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").length == 0) {
+            $(".serial-monitor .serial-monitor-text").find(".session .line").css("color", "#bbbbbb");
+            $(".serial-monitor .serial-monitor-text").append(multiline(function() {/*
             
                 <div class="session" session-id="{{session-id}}" style="margin-bottom: 8px;padding: 8px 14px 8px 10px;background: #22222200; border-left: 3px solid #44444400;">
                     <p style="color:#da6565; border-bottom: 1px solid #444444AA">
@@ -1157,7 +1163,7 @@ function ipcsubapp(){
 
         // Add line to the serial monitor display
         var lineid = moment.now();
-        $(".serial-monitor").find(".session[session-id='" + sessionid + "']").append(multiline(function() {/*
+        $(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").append(multiline(function() {/*
             <p class="message" line-id="{{line-id}}" style="color: {{color}}; font-size: 11px; margin-top: 4px;">{{data}}</p>
         */},{ 
             "session-id": sessionid,

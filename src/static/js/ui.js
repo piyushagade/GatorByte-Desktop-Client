@@ -138,7 +138,8 @@ function uisubapp(){
         $(".go-home-panel").off("click").click(function () {
             $(".panel").addClass("hidden");
             $(".home-panel").removeClass("hidden");
-            $(".gb-config-header").removeClass("hidden").addClass("disabled"); setheight();
+            $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
+            $(".gb-config-header .action-button").addClass("disabled"); 
         });
 
         // Close window button
@@ -169,7 +170,7 @@ function uisubapp(){
     
         // Clear serial monitor display
         $(".status-bar-div .clear-display-button").off("click").click(function () {
-            $(".serial-monitor .session").remove();
+            $(".serial-monitor .serial-monitor-text .session").remove();
             $(".serial-monitor .skeleton-div").removeClass("hidden");
         });
     
@@ -182,9 +183,9 @@ function uisubapp(){
 
         // Close port button listeners
         $(".connected-device-disconnect-button").removeClass("hidden");
-        $(".connected-device-disconnect-button")
-            .off("click").click(function () {
+        $(".connected-device-disconnect-button").off("click").click(function () {
                 global.states.follow = false;
+                self.a.uiconfiggatorbyte.onconfigstateunknown();
                 $(".waiting-for-device-notification").addClass("hidden");
                 $(".device-not-available-overlay").slideUp(100);
                 $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
@@ -192,8 +193,17 @@ function uisubapp(){
                 $(".share-online-overlay").addClass("hidden");
                 $(".session").remove();
                 $(".serial-monitor .skeleton-div").removeClass("hidden");
+                $(".config-sync-notification-parent").addClass("hidden");
+                
+                $(".sync-status-heading").removeClass("disabled");
+                $(".upload-config-data-button").removeClass("disabled");
+                $(".refresh-config-data-button").removeClass("disabled");
+                $(".panel").removeClass("disabled");
 
-                self.ipcr.send('close-port-request', {
+                global.accessors.uiconfiggatorbyte.filedownloaddata = "";
+                global.accessors.uiconfiggatorbyte.filedownloadline = 0;
+
+                self.ipcr.send('ipc/port-close/request', {
                     path: global.port.path,
                     baud: global.port.baud,
                     windowid: global.states.windowid
@@ -282,7 +292,7 @@ function uisubapp(){
         else if (code == "set-favorite-limit-reached") {
             explaination.removeClass("hidden").text("Trial version limits the number of favorite devices to 2. Unlock PRO to add as many favorite devices as you like.");
         }
-        else if (code == "set-device-uploaddelay-prevent") {
+        else if (code == "ipc/set-uploaddelay/request-prevent") {
             explaination.removeClass("hidden").text("The trial version doesn't allow changing the device upload delay. Please unlock PRO to perform this action.");
         }
         else if (code == "add-time-to-upload-delay") {

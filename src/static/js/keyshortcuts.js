@@ -81,7 +81,7 @@ Mousetrap.bind('enter', function(e) {
     if ($(".command-input-div").hasClass("hidden")) return false;
 
     // Send string as serial data
-    ipcRenderer.send('send-command-request', {
+    ipcRenderer.send('ipc/command/push', {
         command: $(".command-input-div input").val(),
         windowid: global.states.windowid,
         path: global.port.path

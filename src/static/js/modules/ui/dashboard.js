@@ -24,7 +24,7 @@ function uidashboardsubapp(){
 
     self.sendcommand = function (command) {
 
-        self.ipcr.send('send-command-request', {
+        self.ipcr.send('ipc/command/push', {
             command: command,
             windowid: global.states.windowid,
             path: global.port.path
@@ -41,7 +41,7 @@ function uidashboardsubapp(){
             
             // Send request to get GatorByte to send sd files list
             var prefix = "##GB##", suffix = "#EOF#";
-            self.ipcr.send('send-command-request', {
+            self.ipcr.send('ipc/command/push', {
                 command: prefix + "db:enter" + suffix,
                 windowid: global.states.windowid,
                 path: global.port.path
@@ -256,7 +256,7 @@ function uidashboardsubapp(){
             el.text(value);
         }
         if (key == "config-survey-id") {
-            var el = parent.find(".survey-id-text");
+            var el = parent.find(".project-id-text");
             el.text(value);
         }
         if (key == "config-sleep-mode") {
@@ -413,7 +413,7 @@ function uidashboardsubapp(){
                 el.text(value);
             }
             if (key == "config-survey-id") {
-                var el = parent.find(".survey-id-text");
+                var el = parent.find(".project-id-text");
                 el.text(value);
             }
             if (key == "config-sleep-mode") {
@@ -485,7 +485,7 @@ function uidashboardsubapp(){
             el = parent.find(".devices-list-text");
         }
         if (key == "config-survey-id") {
-            el = parent.find(".survey-id-text");
+            el = parent.find(".project-id-text");
         }
         if (key == "config-sleep-mode") {
             el = parent.find(".sleep-mode-text");

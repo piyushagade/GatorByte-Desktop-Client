@@ -5,6 +5,7 @@
   "description": "A modern desktop client for GatorByte, a serial monitor, and more!",
   "main": "./src/app.js",
   "scripts": {
+    "run": "npm start",
     "start": "electron .",
     "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --publish always",

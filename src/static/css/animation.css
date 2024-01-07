@@ -1,3 +1,6 @@
+.animate-pulse {
+  animation: pulse 2s ease infinite;
+}
 .animate-pulse-opacity {
   animation: pulse-opacity 2s ease infinite;
 }

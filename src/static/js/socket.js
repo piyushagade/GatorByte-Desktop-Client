@@ -155,7 +155,7 @@ function socketsubapp(){
             if (!global.states.sharedonline) return;
             console.log("A web-client has sent a command: " + obj.command);
             
-            self.ipcr.send('send-command-request', {
+            self.ipcr.send('ipc/command/push', {
                 command: obj.command,
                 windowid: global.states.windowid,
                 path: global.port.path

@@ -27,9 +27,12 @@ module.exports = {
             var windowid = obj.windowid;
             var path = obj.path;
 
-            console.log(obj);
-
             console.log("\nClosing window with ID: " + windowid);
+            if (!windowid) {
+                i.app.exit();
+                return;
+            }
+
             try {
                 var window = BrowserWindow.fromId(windowid);
                 if (window) window.close();
@@ -70,7 +73,7 @@ module.exports = {
             - Updating device attributes
         */
 
-        i.ipcm.on('set-device-nickname', (event, data) => {
+        i.ipcm.on('ipc/set-nickname/request', (event, data) => {
 
             // Get all devices
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
@@ -82,12 +85,12 @@ module.exports = {
             i.fs.writeFileSync(path.join(storagedir, "alldevices"), JSON.stringify(alldevices), "utf8");
         });
 
-        i.ipcm.on('set-device-uploaddelay', (event, data) => {
+        i.ipcm.on('ipc/set-uploaddelay/request', (event, data) => {
 
             // Check if full functionality is unlocked
             if (!i.g.var.fullfunctionality) {
                 event.sender.send("ipc/full-functionality-locked-notification/push", {
-                    code: "set-device-uploaddelay-prevent"
+                    code: "ipc/set-uploaddelay/request-prevent"
                 });
                 console.log("This feature is not available. Please begin trial, or buy the product.");
                 return;
@@ -103,7 +106,7 @@ module.exports = {
             i.fs.writeFileSync(path.join(storagedir, "alldevices"), JSON.stringify(alldevices), "utf8");
         });
 
-        i.ipcm.on('set-device-baud-rate', (event, data) => {
+        i.ipcm.on('ipc/set-baud-rate/request', (event, data) => {
 
             // Get all devices
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
@@ -115,7 +118,7 @@ module.exports = {
             i.fs.writeFileSync(path.join(storagedir, "alldevices"), JSON.stringify(alldevices), "utf8");
         });
 
-        i.ipcm.on('set-favorite-request', (event, data) => {
+        i.ipcm.on('ipc/set-favorite/request', (event, data) => {
 
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
 
@@ -159,11 +162,12 @@ module.exports = {
                     var acceptedproductid = ["8055", "0055"];
 
                     var gatorbytedevices = {}; gatorbytedevices[[i.g.var.machineid]] = {};
-                    gatorbytedevices[[i.g.var.machineid]] = ports.filter(function (device) { 
-                        return acceptedproductid.indexOf(device.productId) !== -1;
+                    gatorbytedevices[[i.g.var.machineid]] = ports.filter(function (device) {
+                        var found = acceptedproductid.indexOf(device.productId) !== -1;
+                        if (found) return acceptedproductid.indexOf(device.productId) !== -1;
                         return true;
                     });
-                    
+
                     // Write all GB devices to list
                     i.fs.writeFileSync(path.join(storagedir, "allgbdevices"), JSON.stringify(gatorbytedevices), "utf8");
 
@@ -220,7 +224,7 @@ module.exports = {
                 });
         });
 
-        i.ipcm.on('open-port-request', (event, obj) => {
+        i.ipcm.on('ipc/port-open/request', (event, obj) => {
 
             // Get port information from alldevices list
             var alldevices = JSON.parse(i.fs.readFileSync(path.join(storagedir, "alldevices"), "utf8"));
@@ -287,12 +291,11 @@ module.exports = {
                             catch (e) {}
                         });
                         
-                        // On new data event
+                        // On new data event / on new serial data
                         i.g.var.serports[result.port.settings.path].on('data', function (data) {
 
+                            // Extract text
                             data = new TextDecoder().decode(data);
-
-                            // console.log(data);
 
                             // Log data to file
                             if (!i.fs.existsSync(path.join(storagedir, "seriallog"))) i.fs.mkdirSync(path.join(storagedir, "seriallog"));
@@ -314,16 +317,21 @@ module.exports = {
                             // GatorByte is now in GDC mode
                             if (data.indexOf("##CL-GB-READY##") !== -1) {
                                 console.log("GB has completed setup");
+
                                 BrowserWindow.getAllWindows().forEach(function (window, wi) {
                                     window.webContents.send("ipc/gb-ready-notification/push", {
                                         path: result.port.settings.path,
                                         pnpId: result.port.settings.pnpId
                                     });
-                                })
+                                });
+
+                                // Request hash from config on SD
+                                i.g.var.serports[result.port.settings.path].write("cfg:hash");
                                 return;
                             }
 
-                            let filedata = data.indexOf("fdl:") > -1;
+                            // Check if the data being received is file data
+                            let filedata = data.indexOf("fdl:") !== -1;
 
                             if (!filedata) {
                                 while (data.indexOf("\r\n") > 0) {
@@ -341,7 +349,7 @@ module.exports = {
                             }
 
                             // Send data to renderer
-                            event.sender.send('new-serial-data-push', {
+                            event.sender.send('ipc/serial-data/new', {
                                 data: data,
                                 crlf: false,
                                 lastemptychar: false,
@@ -378,7 +386,7 @@ module.exports = {
                 });
         });
 
-        i.ipcm.on('close-port-request', (event, port) => {
+        i.ipcm.on('ipc/port-close/request', (event, port) => {
             var windowid = port.windowid;
 
             console.log("UI requested port close for: " + port.path);
@@ -439,7 +447,7 @@ module.exports = {
             - Miscellaneous operations
         */
 
-        i.ipcm.on('bootstrap-data-request', (event, data) => {
+        i.ipcm.on('ipc/bootstrap-data/request', (event, data) => {
 
             event.sender.send('bootstrap-information-push', {
                 remoteurl: i.g.LIVE_SHARE_URL,
@@ -454,7 +462,7 @@ module.exports = {
             });
         });
 
-        i.ipcm.on('send-command-request', (event, obj) => {
+        i.ipcm.on('ipc/command/push', (event, obj) => {
 
             var command = obj.command;
 
@@ -476,7 +484,7 @@ module.exports = {
             
         });
 
-        i.ipcm.on('open-url-request', (event, obj) => {
+        i.ipcm.on('ipc/open-url/request', (event, obj) => {
 
             console.log("Opening URL in browser: " + obj.url);
             
@@ -490,6 +498,8 @@ module.exports = {
         i.ipcm.on('ipc/save-file/request', (event, obj) => {
             var filedata = obj.filedata;
             var filename = obj.filename;
+
+            if (!filename) return;
 
             console.log("A request to save file received: " + filename);
             
