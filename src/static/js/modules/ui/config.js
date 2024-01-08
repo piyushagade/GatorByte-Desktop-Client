@@ -1,4 +1,3 @@
-const { cat } = require('shelljs');
 
 function uiconfiggatorbytesubapp() {
     var self;
@@ -327,6 +326,11 @@ function uiconfiggatorbytesubapp() {
             // Get config data from main process
             self.request_config();
 
+        });
+
+        // Request sync status check
+        $(".sync-status-heading").off("click").click(function () {
+            self.checkconfigsync();
         });
 
         // Get RTC time

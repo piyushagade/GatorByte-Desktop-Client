@@ -1032,8 +1032,8 @@
                                         <div class="row" style="margin: 0 0 10px;">
                                             
                                             <!-- Timezone -->
-                                            <div class="col-auto config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Local timezone</p>
+                                            <div class="col-auto config-item" style="padding: 6px 10px;  margin: 0 6px 6px 0; background: #44444422; min-width: 60px;">
+                                                <p style="color: #d0a190; font-size: 11px; text-align: justify; margin-bottom: 0px;">Local timezone</p>
                                                 <select class="timezone-dropdown" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;"></select>
                                             </div>
                                         </div>
@@ -1050,11 +1050,11 @@
                                             </div>
                                         </div>
                                         
-                                        <p class="rtc-sync-status" style="font-weight: bold; color: #888; font-size: 13px; text-align: justify; margin-bottom: 8px;"></p>
+                                        <p class="rtc-sync-status" style="margin-bottom: 8px;background: #3b3b3b;font-size: 13px;text-align: justify;margin: 4px 0px;border-radius: 2px;padding: 4px 8px;color: #cccccc; width: auto;"></p>
                                         <p style="color: #AAA; font-size: 12px; text-align: justify; margin-bottom: 8px;">Click on 'Fetch RTC' to get the latest time from the RTC on the GatorByte.</p>
                                         
                                         <div class="row" style="margin: 0 0 0px;">
-                                            <div class="col-auto get-rtc-button shadow-heavy disabled" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #414141;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                            <div class="col-auto get-rtc-button shadow-heavy disabled" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #2d2d2d;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
                                                 <p style="color: #DDDDDD;margin-bottom: 0;">Check sync</p>
                                             </div>
 
@@ -1089,7 +1089,7 @@
                                                 <input class="bl-pin-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                             </div>
 
-                                            <p class="bl-sync-status hidden" style="font-weight: bold; color: #888; font-size: 13px; text-align: justify; margin: 4px 0;"></p>
+                                            <p class="bl-sync-status hidden" style="background: #2d2d2d;font-size: 13px;text-align: justify;margin: 4px 0px;border-radius: 2px;padding: 4px 8px;color: #cccccc;"></p>
                                         </div>
                                         
                                         <div class="row" style="margin: 0 0 0px;">
@@ -1102,35 +1102,72 @@
                                 </div>
                             </div>
 
-                            <!--! Control variables -->
-                            <div class="col-12 control-variables-configuration-parent" style="margin-bottom: 10px; padding: 0;">
-                                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Control variables</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!--! Control variables panel -->
+        <div class="row scrollbar-style panel control-variables-panel hidden panel" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+            
+            <div class="col">
+                <div class="row">
+                    
+                    <div class="col-12 disabledz blurz control-variables-list-parent">
+                        
+                        <div class="row">
+                            
+                            <!--! Add control variable -->
+                            <div class="col-12" style="border-radius: 2px;padding: 6px 10px;margin-bottom: 6px;background: #56565657;">
+                                <div class="row" style="margin: 0;">
+                                    <p style="color: #d3d3d3; font-size: 11px; text-align: justify; margin-bottom: 4px;">Add variable</p>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col" style="margin-right: 6px; min-width: 60px; padding-right: 4px;">
+                                        <input class="add-cv-name-input" placeholder="Variable name" style="padding: 0 4px; width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
                                     
-                                <div class="row" style="margin: 0px;">
+                                    <div class="col-auto" style="margin-right: 6px; min-width: 60px; padding-right: 4px;">
+                                        <select class="add-cv-type-input" style="padding: 0 4px; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                            <option value="int" style="color: #222;">int</option>
+                                            <option value="float" style="color: #222;">float</option>
+                                            <option value="bool" style="color: #222;">bool</option>
+                                            <option value="string" style="color: #222;">string</option>
+                                        </select>
+                                    </div>
                                     
-                                    <div class="col-12" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
-                                        <!-- <p style="color: #bebebe; font-size: 13px; text-align: justify; margin-bottom: 8px;">The following fields allow you to change the Bluetooth name and PIN of you GatorByte.</p> -->
-                                        
-                                        <div class="row list" style="margin: 0 0 8px;">
+                                    <div class="col" style="margin-right: 6px; min-width: 60px;">
+                                        <input class="add-cv-value-input" placeholder="Value" style="padding: 0 4px; width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
+                                </div>
 
-                                            <!-- BL name -->
-                                            <div class="col config-item bl-config-item disabled" style="padding: 10px 12px; background:  #44444422; margin: 0 6px 6px 0; min-width: 60px;">
-                                                <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Bluetooth name</p>
-                                                <input class="bl-name-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
-                                            </div>
+                                <div class="row" style="margin: 8px 0 3px;">
+                                    <div class="col-auto add-control-variable-button shadow" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #494949;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Add</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                                            <p class="control-variable-sync-status-text hidden" style="font-weight: bold; color: #888; font-size: 13px; text-align: justify; margin: 4px 0;"></p>
-                                        </div>
-                                        
-                                        <div class="row" style="margin: 0 0 0px;">
-                                            <div class="col-auto control-variable-sync-button shadow-heavy disabled" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #414141; border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
-                                                <p style="color: #DDDDDD;margin-bottom: 0;">Fetch</p>
-                                            </div>
-                                            <div class="col-auto control-variable-sync-button shadow-heavy disabled" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #1b5782; border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
-                                                <p style="color: #DDDDDD;margin-bottom: 0;">Update</p>
-                                            </div>
-                                        </div>
+                            <!-- List -->
+                            <div class="col-12" style="border-radius: 2px;padding: 6px 10px;margin-bottom: 6px;background: #3d3d3d57;">
+                                <div class="row" style="margin: 0;">
+                                    <p style="color: #d3d3d3; font-size: 11px; text-align: justify; margin-bottom: 4px;">Control variables</p>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col" style="margin-right: 6px; min-width: 60px; padding-right: 4px;">
+                                        <div class="loading-notification" style="font-size: 13px; color: #AAAAAA;"><i class="fa-solid fa-download" style="color: coral; margin-right: 6px;"></i>Fetching control variables from GatorByte ...</div>
+                                        <div class="empty-notification hidden"><i class="fa-solid fa-triangle-exclamation" style="color: coral; margin-right: 6px;"></i>No control variables found</div>
+                                        <div class="list"></div>
+                                    </div>
+                                </div>
 
+                                <div class="row" style="margin: 8px 0 3px;">
+                                    <div class="col-auto sync-control-variable-button shadow" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #1b5782;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Sync changes</p>
                                     </div>
                                 </div>
                             </div>
@@ -1768,6 +1805,7 @@
 <script src="../js/modules/ui/calibration.js"></script>
 <script src="../js/modules/ui/serialmonitor.js"></script>
 <script src="../js/modules/ui/config.js"></script>
+<script src="../js/modules/ui/control.js"></script>
 <script src="../js/modules/ui/diagnostics.js"></script>
 
 <!-- Keyboard shortcuts -->

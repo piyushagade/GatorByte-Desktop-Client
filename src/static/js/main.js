@@ -50,6 +50,7 @@ $(document).ready(function () {
     global.accessors.uiserialmonitor = new uiserialmonitorsubapp().init();
     global.accessors.uisensorcalibration = new uisensorcalibrationsubapp().init();
     global.accessors.uiconfiggatorbyte = new uiconfiggatorbytesubapp().init();
+    global.accessors.uicontrolvariables = new uicontrolvariablessubapp().init();
     global.accessors.uidiagnosticsgatorbyte = new uidiagnosticsgatorbytesubapp().init();
 
     global.accessors.ipc = new ipcsubapp().init();

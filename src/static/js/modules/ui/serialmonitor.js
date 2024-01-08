@@ -53,8 +53,6 @@ function uiserialmonitorsubapp(){
             var statusbarheight = parseInt($(".serial-monitor .status-bar-div").css("height"));
             var panelheight = bodyheight - headerheight - statusbarheight - 60;
             $(".serial-monitor-text").height(panelheight);
-
-            console.log(panelheight);
         }, 100);
     }
     
@@ -452,6 +450,23 @@ function uiserialmonitorsubapp(){
 
                     if (filedata) self.a.uiconfiggatorbyte.process_file_download_data(line);
                     else self.a.uiconfiggatorbyte.process_response(data);
+                    
+                    hook = {
+                        category: category,
+                        show: false,
+                        line: data,
+                        style: {
+                            "color": "black",
+                            "background": "green"
+                        }
+                    }
+                }
+                
+                // Control variables
+                if (category && (category.indexOf("gdc-cv") == 0)) {
+
+                    if (filedata) self.a.uicontrolvariables.process_incoming_file(line);
+                    else self.a.uicontrolvariables.process_response(data);
                     
                     hook = {
                         category: category,
