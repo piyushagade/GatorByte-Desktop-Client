@@ -193,7 +193,7 @@ function uisubapp(){
                 $(".share-online-overlay").addClass("hidden");
                 $(".session").remove();
                 $(".serial-monitor .skeleton-div").removeClass("hidden");
-                $(".config-sync-notification-parent").addClass("hidden");
+                $(".progress-bar-overlay").addClass("hidden");
                 
                 $(".sync-status-heading").removeClass("disabled");
                 $(".upload-config-data-button").removeClass("disabled");

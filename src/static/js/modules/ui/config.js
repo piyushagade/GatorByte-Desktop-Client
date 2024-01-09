@@ -653,22 +653,21 @@ function uiconfiggatorbytesubapp() {
 
         // Replace prefix with nothing and <br> with \n
         data = data.replace(/<br>/g, "\n").replace(/gdc-cfg::fdl:/, "");
-        
         $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
 
         self.filedownloadline += self.lines_to_send;
 
         // Append file data
-        self.filedownloaddata += data;
+        self.filedownloaddata += data.replace(/#EOF#/g, "");
 
-        // Request next part of the data if available
-        if (data.length > 0) {
-            $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
-            return self.request_config_file_download(self.filedownloadname, self.filedownloadline);
-        }
+        // // Request next part of the data if available
+        // if (data.length > 0) {
+        //     $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
+        //     return self.request_config_file_download(self.filedownloadname, self.filedownloadline);
+        // }
         
         // On download complete
-        else {
+        if (data.indexOf("#EOF#") !== -1) {
 
             // Update UI
             $(".sync-status-heading").removeClass("disabled");
@@ -684,10 +683,6 @@ function uiconfiggatorbytesubapp() {
                 
                 self.on_config_data_acquired(false);
 
-                // Update UI
-                $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
-                self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
-                
                 setTimeout(() => {
                     $(".gb-config-header").find(".sync-status-heading").css("background", "#962e38").text("Initial configuration pending.");
                     $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled");
@@ -720,20 +715,27 @@ function uiconfiggatorbytesubapp() {
                 self.f.waterfall(functions, 150);
 
                 setTimeout(() => {
+                    self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
                     $(".sync-status-heading").removeClass("ui-disabled");
                     $(".upload-config-data-button").removeClass("ui-disabled");
                     $(".refresh-config-data-button").removeClass("ui-disabled");
                     $(".panel").removeClass("ui-disabled");
-                    $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
-                    $(".header-panel").find(".download-status-heading").text("");
-                    $(".header-panel").find(".download-status-text").text("");
-                    $(".header-panel").find(".progress").find(".progress-bar").css("width", "0%");
-                }, 1000);
+                }, 200);
+
+                // setTimeout(() => {
+                //     console.log("H 1");
+                //     $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+                //     $(".header-panel").find(".download-status-heading").text("");
+                //     $(".header-panel").find(".download-status-text").text("");
+                //     $(".header-panel").find(".progress").find(".progress-bar").css("width", "0%");
+                // }, 3000);
             
             }
 
             // If config data successfully downloaded
             else {
+                console.log("Configuration successfully downloaded from SD.");
+
                 $(".header-panel").find(".download-status-text").removeClass("hidden").text("Download complete");
                 $(".gb-config-header").find(".upload-config-data-button").find("i").removeClass("animate-pulse-opacity");
                 self.configdata = self.filedownloaddata;
@@ -798,7 +800,7 @@ function uiconfiggatorbytesubapp() {
             $(".panel").removeClass("disabled");
             // self.panel.find(".spinner-parent").addClass("hidden");
             // self.panel.find(".config-information-parent").removeClass("hidden");
-            $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
+            $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
             self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
             
             self.on_config_data_acquired();
@@ -853,7 +855,10 @@ function uiconfiggatorbytesubapp() {
         // Update UI
         // self.panel.find(".spinner-parent").addClass("hidden");
         // self.panel.find(".config-information-parent").removeClass("hidden");
-        $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
+
+        setTimeout(() => {
+            $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+        }, 3000);
         self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
 
         //! Download configuration button listener
@@ -886,7 +891,7 @@ function uiconfiggatorbytesubapp() {
                     $(".upload-config-data-button").addClass("disabled");
                     $(".refresh-config-data-button").addClass("disabled");
                     $(".panel").addClass("disabled");
-                    $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
+                    $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
                     self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
                     $(".header-panel").find(".download-status-heading").text("Downloading configuration");
                     $(".header-panel").find(".download-status-text").text("Initializing download");
@@ -917,7 +922,7 @@ function uiconfiggatorbytesubapp() {
                     $(".panel").addClass("disabled");
                     // self.panel.find(".spinner-parent").removeClass("hidden");
                     // self.panel.find(".config-information-parent").addClass("hidden");
-                    $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
+                    $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
                     self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
                     $(".header-panel").find(".download-status-heading").text("Uploading configuration");
                     $(".header-panel").find(".download-status-text").text("Initializing upload");
@@ -1067,7 +1072,7 @@ function uiconfiggatorbytesubapp() {
         // Update UI
         // self.panel.find(".spinner-parent").removeClass("hidden");
         // self.panel.find(".config-information-parent").addClass("hidden");
-        $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
+        $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
         self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
     }
 

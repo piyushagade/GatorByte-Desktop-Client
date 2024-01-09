@@ -56,6 +56,7 @@ function uicontrolvariablessubapp() {
             
             self.panel.find(".cv-list-item").remove();
             self.panel.find(".loading-notification").removeClass("hidden");
+            self.panel.find(".sync-error-notification").addClass("hidden");
             self.panel.find(".empty-notification").addClass("hidden");
             self.panel.find(".add-control-variable-button").addClass("disabled");
             self.panel.find(".sync-control-variable-button").addClass("disabled");
@@ -134,6 +135,7 @@ function uicontrolvariablessubapp() {
 
         self.panel.find(".add-control-variable-button").addClass("disabled");
         self.panel.find(".sync-control-variable-button").addClass("disabled");
+        self.panel.find(".sync-error-notification").addClass("hidden");
     }
 
     
@@ -214,6 +216,11 @@ function uicontrolvariablessubapp() {
 
     self.strtoobj = function () {
         self.datastring.split(/\r?\n/).forEach(row => {
+            if (!row || row.length == 0 || row.indexOf(":") === -1) {
+                self.panel.find(".sync-error-notification").removeClass("hidden");
+                return;
+            }
+
             var key = row.split(":")[0].trim();
             var value = row.split(":")[1].trim();
 
@@ -243,7 +250,6 @@ function uicontrolvariablessubapp() {
 
     self.process_incoming_file = function (data) {
 
-        
         // Replace prefix with nothing and <br> with \n
         data = data.replace(/<br>/g, "\n").replace(/gdc-cv::fdl:/, "");
         self.filedownloadline += self.lines_to_send;

@@ -136,7 +136,7 @@ function ipcsubapp(){
                         $(".upload-config-data-button").addClass("disabled");
                         // $(".refresh-config-data-button").addClass("disabled");
                         // $(".panel").addClass("disabled");
-                        $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
+                        $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
                         $(".header-panel").find(".download-status-heading").text("Downloading configuration");
                         $(".header-panel").find(".download-status-text").text("Initializing download");
                         $(".header-panel").find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
