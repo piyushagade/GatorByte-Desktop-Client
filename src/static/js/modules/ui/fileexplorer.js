@@ -351,15 +351,18 @@ function uidownloadfilessubapp(){
         self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(self.filedownloadline + " kB downloaded");
 
         // Append file data
-        self.filedownloaddata += data;
+        self.filedownloaddata += data.replace(/#EOF#/g, "");
         
         var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
 
-        // Request next part of the data if available
-        if (data.length > 0) return self.request_file_download(filepath, self.filedownloadline);
+        // // Request next part of the data if available
+        // if (data.length > 0) return self.request_file_download(filepath, self.filedownloadline);
         
         // On download complete
-        else {
+        if (data.indexOf("#EOF#") !== -1) {
+
+            console.log("File download complete");
+            console.log(self.filedownloaddata);
 
             // Update UI
             self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
