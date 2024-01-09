@@ -53,15 +53,36 @@ function uicontrolvariablessubapp() {
                 windowid: global.states.windowid,
                 path: global.port.path
             });
+            
+            self.panel.find(".cv-list-item").remove();
+            self.panel.find(".loading-notification").removeClass("hidden");
+            self.panel.find(".empty-notification").addClass("hidden");
+            self.panel.find(".add-control-variable-button").addClass("disabled");
+            self.panel.find(".sync-control-variable-button").addClass("disabled");
 
             // Get config data from main process
-            self.checkdatasync();
-            
             setTimeout(() => {
                 self.start_file_download();
             }, 500);
 
         });
+
+        self.panel.find(".add-cv-value-input").off("keyup").keyup(self.f.debounce(function () {
+            var value = $(this).val();
+
+            if (value.trim().toLowerCase() == "true" || value.trim().toLowerCase() == "false") {
+                self.panel.find(".add-cv-type-input").val("bool");
+            }
+            else if (!isNaN(parseFloat(value.trim())) && value.trim().indexOf(".") !== -1) {
+                self.panel.find(".add-cv-type-input").val("float");
+            }
+            else if (!isNaN(parseFloat(value.trim())) && value.trim().indexOf(".") === -1) {
+                self.panel.find(".add-cv-type-input").val("int");
+            }
+            else {
+                self.panel.find(".add-cv-type-input").val("string");
+            }
+        }, 100));
         
         self.panel.find(".add-control-variable-button").off("click").click(function () {
 
@@ -72,12 +93,13 @@ function uicontrolvariablessubapp() {
             // Send command
             self.sendcommand("add:" + name + ":" + type + ":" + value);
 
-            
             self.add_item_to_list({
                 key: name,
                 value: value,
                 type: type
             });
+
+            self.panel.find(".empty-notification").addClass("hidden");
 
             // Get sync status
             setTimeout(() => {
@@ -109,6 +131,9 @@ function uicontrolvariablessubapp() {
 
     self.checkdatasync = function () {
         self.sendcommand("cv:hash");
+
+        self.panel.find(".add-control-variable-button").addClass("disabled");
+        self.panel.find(".sync-control-variable-button").addClass("disabled");
     }
 
     
@@ -123,6 +148,9 @@ function uicontrolvariablessubapp() {
             if (hash > 0) self.hash["sd"] = hash;
 
             self.oncsyncstatusupdate();
+
+            self.panel.find(".add-control-variable-button").removeClass("disabled");
+            self.panel.find(".sync-control-variable-button").removeClass("disabled");
         }
 
         
@@ -136,29 +164,32 @@ function uicontrolvariablessubapp() {
 
     self.oncsyncstatusupdate = function () {
         
-        // Check if the configuration is out of sync
-        if (self.hash["local"] && self.hash["sd"]) {
-            if (self.hash["local"] != self.hash["sd"]) {
-                console.error("Control variables data out of sync.");
-            }
-            else {
-                console.log("Configuration in sync.");
-            }
-        }
-        else {
-            if (!self.hash["local"]) {
-                console.error("No local copy of control variables data found.");
-            }
-            if (!self.hash["sd"]) {
-                console.error("No control variables data found on SD.");
-            }
-        }
+        // // Check if the configuration is out of sync
+        // if (self.hash["local"] && self.hash["sd"]) {
+        //     if (self.hash["local"] != self.hash["sd"]) {
+        //         console.error("Control variables data out of sync.");
+        //     }
+        //     else {
+        //         console.log("Configuration in sync.");
+        //     }
+        // }
+        // else {
+        //     if (!self.hash["local"]) {
+        //         console.error("No local copy of control variables data found.");
+        //     }
+        //     if (!self.hash["sd"]) {
+        //         console.error("No control variables data found on SD.");
+        //     }
+        // }
     }
 
     // Download file from SD
     self.start_file_download = function () {
         console.log("Starting file download.");
         self.request_file_data(0)
+        
+        self.panel.find(".add-control-variable-button").addClass("disabled");
+        self.panel.find(".sync-control-variable-button").addClass("disabled");
     }
     
     // Request data from file from SD
@@ -226,6 +257,13 @@ function uicontrolvariablessubapp() {
             // If the file doesn't exist
             if (self.filedownloaddata.length == 0) {
                 console.log("The variables.ini file does not exist on the SD card.");
+                
+                self.panel.find(".add-control-variable-button").removeClass("disabled");
+                self.panel.find(".sync-control-variable-button").removeClass("disabled");
+
+                self.panel.find(".loading-notification").addClass("hidden");
+                self.panel.find(".empty-notification").removeClass("hidden");
+                self.panel.find(".cv-list-item").remove();
             }
 
             // If config data successfully downloaded
@@ -241,7 +279,6 @@ function uicontrolvariablessubapp() {
                 // UI updates
                 self.on_file_download_complete(self.dataobject);
 
-                // Check config data sync
                 self.checkdatasync(500);
                 
             }
@@ -253,6 +290,9 @@ function uicontrolvariablessubapp() {
     }
 
     self.on_file_download_complete = function (data) {
+        
+        self.panel.find(".add-control-variable-button").removeClass("disabled");
+        self.panel.find(".sync-control-variable-button").removeClass("disabled");
         
         // Generate list
         if (Object.keys(self.dataobject).length == 0) {
@@ -278,11 +318,17 @@ function uicontrolvariablessubapp() {
         }
     }
 
+    self.on_file_upload_complete = function (data) {
+        
+        self.panel.find(".add-control-variable-button").removeClass("disabled");
+        self.panel.find(".sync-control-variable-button").removeClass("disabled");
+    }
+
     self.add_item_to_list = function (args) {
         var key = args.key, value = args.value, type = args.type;
 
         self.panel.find(".list").append(multiline(function () {/*
-            <div class="row cv-list-item" controlvariablename="{{key}}" style="margin-top: 6px; margin-bottom: 6px;">
+            <div class="row cv-list-item" controlvariablename="{{key}}" style="margin: 6px 0 10px 0;">
                 <div class="col" style="margin-right: 6px; min-width: 60px; padding-right: 4px;">
                     <input class="cv-name-input" placeholder="Variable name" style="padding: 0 4px; width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;" value="{{key}}">
                 </div>
@@ -299,6 +345,10 @@ function uicontrolvariablessubapp() {
                 <div class="col" style="margin-right: 6px; min-width: 60px;">
                     <input class="cv-value-input" placeholder="value" style="padding: 0 4px; width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;" value="{{value}}">
                 </div>
+                
+                <div class="col-auto" controlvariablename="{{key}}" style="margin-right: 6px; color: crimson;font-size: 13px;margin-top: 4px;">
+                    <i class="fa-solid fa-trash-can delete-cv-item" title="Double click to delete"></i>
+                </div>
             </div>
         */}, {
             "key": key,
@@ -306,9 +356,18 @@ function uicontrolvariablessubapp() {
         }));
 
         self.panel.find(".cv-list-item[controlvariablename='" + key + "']").find(".cv-type-input").val(type);
+
+        self.panel.find(".delete-cv-item").off("dblclick").dblclick(function () {
+            var variablename = $(this).parent().attr("controlvariablename");
+            self.panel.find(".cv-list-item[controlvariablename='" + variablename + "']").remove();
+        });
     }
 
     self.upload_file = function (startingline) {
+        
+        self.panel.find(".add-control-variable-button").addClass("disabled");
+        self.panel.find(".sync-control-variable-button").addClass("disabled");
+
         var datatosend = self.datastring.substring(startingline, startingline + self.lines_to_send).replace(/\n/g, "~").replace(/ /g, "`");
         
         // If data is still not fully sent
@@ -331,24 +390,10 @@ function uicontrolvariablessubapp() {
             // Send a request to update the config in GatorByte's memory
             self.sendcommand("cvupd:done");
 
-            // // Update UI
-            // $(".sync-status-heading").removeClass("disabled");
-            // $(".connected-device-disconnect-button").removeClass("disabled");
-            // $(".upload-config-data-button").removeClass("disabled");
-            // $(".refresh-config-data-button").removeClass("disabled");
-            // $(".panel").removeClass("disabled");
-            // // self.panel.find(".spinner-parent").addClass("hidden");
-            // // self.panel.find(".config-information-parent").removeClass("hidden");
-            // $(".header-panel").find(".config-sync-notification-parent").addClass("hidden");
-            // self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
-            
-            // self.on_config_data_acquired();
-            
-            // // Save config data to main process
-            // self.save_config_in_storage();
-            
             // Check config data sync after 500 ms
             self.checkdatasync(500);
+
+            self.on_file_upload_complete();
         }
     }
 

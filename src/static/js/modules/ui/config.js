@@ -858,54 +858,76 @@ function uiconfiggatorbytesubapp() {
 
         //! Download configuration button listener
         $(".gb-config-header").find(".refresh-config-data-button").off("click").click(function () {
-            
-            // Reset global variables
-            self.filedownloaddata = "";
-            self.filedownloadline = 0;
 
-            // Ensure all base files/folders exist
-            self.sendcommand("sdf:cr:all");
+            self.a.ui.notification({
+                "contexttype": "success",
+                "overlaytype": "dialog",
+                "heading": "Download configuration",
+                "body": "Are you sure you want to download the configuration from the GatorByte?",
+                "okay": "Yes",
+                "dismiss": "Cancel",
+                "onokay": function () {
 
-            // Get config data from SD card
-            setTimeout(() => {
-                self.request_config_file_download(self.filedownloadname, self.filedownloadline);
-            }, 1500);
-            
-            // Update UI
-            self.onconfigstateunknown(0, "Downloading configuration");
-            $(".sync-status-heading").addClass("disabled");
-            $(".upload-config-data-button").addClass("disabled");
-            $(".refresh-config-data-button").addClass("disabled");
-            $(".panel").addClass("disabled");
-            $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
-            self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
-            $(".header-panel").find(".download-status-heading").text("Downloading configuration");
-            $(".header-panel").find(".download-status-text").text("Initializing download");
-            $(".header-panel").find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
-            $(".header-panel").find(".progress").find(".progress-bar").css("width", "100%");
+                    // Reset global variables
+                    self.filedownloaddata = "";
+                    self.filedownloadline = 0;
+
+                    // Ensure all base files/folders exist
+                    self.sendcommand("sdf:cr:all");
+
+                    // Get config data from SD card
+                    setTimeout(() => {
+                        self.request_config_file_download(self.filedownloadname, self.filedownloadline);
+                    }, 1500);
+                    
+                    // Update UI
+                    self.onconfigstateunknown(0, "Downloading configuration");
+                    $(".sync-status-heading").addClass("disabled");
+                    $(".upload-config-data-button").addClass("disabled");
+                    $(".refresh-config-data-button").addClass("disabled");
+                    $(".panel").addClass("disabled");
+                    $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
+                    self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
+                    $(".header-panel").find(".download-status-heading").text("Downloading configuration");
+                    $(".header-panel").find(".download-status-text").text("Initializing download");
+                    $(".header-panel").find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
+                    $(".header-panel").find(".progress").find(".progress-bar").css("width", "100%");
+                }
+            });
         });
 
         //! Upload config button listener
         $(".gb-config-header").find(".upload-config-data-button").off("click").click(function () {
 
-            // Update UI
-            self.onconfigstateunknown(0, "Uploading configuration");
-            $(".sync-status-heading").addClass("disabled");
-            // $(".connected-device-disconnect-button").addClass("disabled");
-            $(".upload-config-data-button").addClass("disabled");
-            $(".refresh-config-data-button").addClass("disabled");
-            $(".panel").addClass("disabled");
-            // self.panel.find(".spinner-parent").removeClass("hidden");
-            // self.panel.find(".config-information-parent").addClass("hidden");
-            $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
-            self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
-            $(".header-panel").find(".download-status-heading").text("Uploading configuration");
-            $(".header-panel").find(".download-status-text").text("Initializing upload");
-            $(".header-panel").find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
-            $(".header-panel").find(".progress").find(".progress-bar").css("width", "0px");
-            
-            // Upload config data to SD card
-            self.request_file_upload(self.fileuploadline);
+            self.a.ui.notification({
+                "contexttype": "success",
+                "overlaytype": "dialog",
+                "heading": "Upload configuration",
+                "body": "Do you want to upload the configuration to GatorByte?",
+                "okay": "Yes",
+                "dismiss": "Cancel",
+                "onokay": function () {
+                    
+                    // Update UI
+                    self.onconfigstateunknown(0, "Uploading configuration");
+                    $(".sync-status-heading").addClass("disabled");
+                    // $(".connected-device-disconnect-button").addClass("disabled");
+                    $(".upload-config-data-button").addClass("disabled");
+                    $(".refresh-config-data-button").addClass("disabled");
+                    $(".panel").addClass("disabled");
+                    // self.panel.find(".spinner-parent").removeClass("hidden");
+                    // self.panel.find(".config-information-parent").addClass("hidden");
+                    $(".header-panel").find(".config-sync-notification-parent").removeClass("hidden");
+                    self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
+                    $(".header-panel").find(".download-status-heading").text("Uploading configuration");
+                    $(".header-panel").find(".download-status-text").text("Initializing upload");
+                    $(".header-panel").find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
+                    $(".header-panel").find(".progress").find(".progress-bar").css("width", "0px");
+                    
+                    // Upload config data to SD card
+                    self.request_file_upload(self.fileuploadline);
+                }
+            });
         });
 
         if (self.configobject) self.configobject["updateflag"] = false;

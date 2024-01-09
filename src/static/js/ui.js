@@ -324,27 +324,27 @@ function uisubapp(){
         /*
             Context types: 'success', 'error'
         */
-            var contexttype = args.contexttype || "success";
+        var contexttype = args.contexttype || "success";
 
-            /*
-                Set heading icon
-            */
-            if (contexttype == "success") {
-                parent.find(".heading-icon").css("color", "#2b8a04").find("i").removeClass("fa-triangle-exclamation").addClass("fa-check");
-            }
-            else if (contexttype == "error") {
-                parent.find(".heading-icon").css("color", "#d65103").find("i").addClass("fa-triangle-exclamation").removeClass("fa-check");
-            }
-            
-            /*
-                Set heading
-            */
-            parent.find(".heading-text").html(args.heading || "");
-            
-            /*
-                Set body
-            */
-            parent.find(".body").html(args.body || "");
+        /*
+            Set heading icon
+        */
+        if (contexttype == "success") {
+            parent.find(".heading-icon").css("color", "#2b8a04").find("i").removeClass("fa-triangle-exclamation").addClass("fa-check");
+        }
+        else if (contexttype == "error") {
+            parent.find(".heading-icon").css("color", "#d65103").find("i").addClass("fa-triangle-exclamation").removeClass("fa-check");
+        }
+        
+        /*
+            Set heading
+        */
+        parent.find(".heading-text").html(args.heading || "");
+        
+        /*
+            Set body
+        */
+        parent.find(".body").html(args.body || "");
         
         /*
             Overlay types: 'dialog' (with button), 'notification' with timer-based dismissal
@@ -378,6 +378,12 @@ function uisubapp(){
                 if (args.onokay && typeof args.onokay == "function") args.onokay();
             }, args.hidetimeout || 3000);
         }
+
+        /*
+            Set button text
+        */
+        parent.find(".okay-button").text(args.okay || "Okay");
+        parent.find(".dismiss-button").text(args.dismiss || "Dismiss");
 
         /*
             Show overlay

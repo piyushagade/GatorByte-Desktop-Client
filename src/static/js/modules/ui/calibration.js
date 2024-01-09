@@ -135,7 +135,7 @@ function uisensorcalibrationsubapp(){
             
             // Send request to get GatorByte to send sd files list
             var prefix = "##GB##", suffix = "#EOF#";
-            self.ipcr.send('ipc/command/push', {
+            self.ipcr.send('send-command-request', {
                 command: prefix + "calibration" + suffix,
                 windowid: global.states.windowid,
                 path: global.port.path
@@ -230,7 +230,7 @@ function uisensorcalibrationsubapp(){
     }
 
     self.sendcommand = function (command) {
-        self.ipcr.send('ipc/command/push', {
+        self.ipcr.send('send-command-request', {
             command: command,
             windowid: global.states.windowid,
             path: global.port.path
