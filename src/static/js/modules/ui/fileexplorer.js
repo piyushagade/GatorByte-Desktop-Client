@@ -157,12 +157,13 @@ function uidownloadfilessubapp(){
                 // console.log(entry);
 
                 var filename = entry.split(":")[0];
-                var filesize = parseInt(entry.split(":")[1]);
+                var filesize = parseInt(entry.split(":")[1]); // Size in bytes
 
                 // Parse filesize
                 if (!isNaN(filesize)) {
-                    if (filesize >= 1024) filesize = (filesize / 1024).toFixed(2) + " MB";
-                    if (filesize >= 0) filesize = (filesize) + " kB";
+                    if (filesize >= 1024 * 1024) filesize = (filesize / 1024).toFixed(2) + " MB";
+                    if (filesize >= 1024) filesize = (filesize / 1024).toFixed(2) + " kB";
+                    if (filesize >= 0) filesize = (filesize) + " B";
                 }
                 
                 var isfolder = filename.endsWith("/");
@@ -344,25 +345,25 @@ function uidownloadfilessubapp(){
         // Replace prefix with nothing and <br> with \n
         data = data.replace(/<br>/g, "\n").replace(/gdc-dfl::fdl:/, "");
 
-        self.filedownloadline += 30;
+        self.filedownloadline += 40;
 
-        // Update UI
-        self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
-        self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(self.filedownloadline + " kB downloaded");
+        // Throttle UI updates
+        if ((self.filedownloadline / 40) % 5 == 0) {
+            var filesize = parseFloat(self.filedownloadline);
+            if (filesize > 1 * 1024 * 1024) filesize = (filesize / 1024 / 1024).toFixed(1) + " MB"
+            else if (filesize > 1 * 1024) filesize = (filesize / 1024).toFixed(1) + " kB"
+            else filesize = (filesize) + " B"
+            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
+            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(filesize + " downloaded");
+        }
 
         // Append file data
-        self.filedownloaddata += data.replace(/#EOF#/g, "");
-        
-        var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
-
-        // // Request next part of the data if available
-        // if (data.length > 0) return self.request_file_download(filepath, self.filedownloadline);
+        self.filedownloaddata += data.replace(/#DLEOF#/g, "");
         
         // On download complete
-        if (data.indexOf("#EOF#") !== -1) {
+        if (data.indexOf("#DLEOF#") !== -1) {
 
             console.log("File download complete");
-            console.log(self.filedownloaddata);
 
             // Update UI
             self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
@@ -375,10 +376,14 @@ function uidownloadfilessubapp(){
                 filename: self.filedownloadname
             });
             
-            
             // Reset global variables
             self.filedownloaddata = "";
             self.filedownloadline = 0;
+        }
+
+        // Download in progress
+        else {
+
         }
 
     }

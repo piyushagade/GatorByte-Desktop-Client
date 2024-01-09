@@ -684,7 +684,7 @@ function uiconfiggatorbytesubapp() {
                 self.on_config_data_acquired(false);
 
                 setTimeout(() => {
-                    $(".gb-config-header").find(".sync-status-heading").css("background", "#962e38").text("Initial configuration pending.");
+                    $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#962e38").text("Initial configuration pending.");
                     $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled");
                     $(".gb-config-header").find(".upload-config-data-button").addClass("disabled");
                     
@@ -820,7 +820,7 @@ function uiconfiggatorbytesubapp() {
 
         // Check if the saved configuration was updated and needs to be uploaded
         if (self.configobject && self.configobject["updateflag"]) {
-            $(".gb-config-header").find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
+            $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#865600").text("Configuration upload due");
             $(".gb-config-header").find(".upload-config-data-button").removeClass("disabled").css("background", "#865600");
             $(".gb-config-header").find(".refresh-config-data-button").removeClass("disabled").css("background", "#333333");
         }
@@ -948,7 +948,7 @@ function uiconfiggatorbytesubapp() {
 
         // Check if the saved configuration was updated and needs to be uploaded
         if (self.configobject && self.configobject["updateflag"]) {
-            $(".gb-config-header").find(".sync-status-heading").css("background", "#865600").text("Configuration upload due");
+            $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#865600").text("Configuration upload due");
             $(".gb-config-header").find(".upload-config-data-button").removeClass("disabled").css("background", "#865600");
         }
 
@@ -1013,7 +1013,7 @@ function uiconfiggatorbytesubapp() {
             catch (e) {
                 erroroccured = true;
                 console.log("Malformed config data on SD card.");
-                $(".gb-config-header").find(".sync-status-heading").css("background", "#962e38").text("Malformed configuration data on SD card.");
+                $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#962e38").text("Malformed configuration data on SD card.");
             }
         });
         currentcategory = null;
@@ -1048,7 +1048,7 @@ function uiconfiggatorbytesubapp() {
         
         if (!object) {
             self.getconfigdatafromsd();
-            $(".gb-config-header").find(".sync-status-heading").css("background", "#3d3d3d").text("Downloading configuration.");
+            $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#3d3d3d").text("Downloading configuration.");
             $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled").css("background", "#333333");
         }
         else {
@@ -1296,7 +1296,7 @@ function uiconfiggatorbytesubapp() {
     self.checkconfigsync = function (delay) {
         delay = delay ? delay : 0;
 
-        $(".gb-config-header").find(".sync-status-heading").css("background", "#3d3d3d").text("Checking sync status");
+        $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#3d3d3d").text("Checking sync status");
         setTimeout(() => {
             // Check config sync
             self.sendcommand("cfg:hash");
@@ -1306,7 +1306,7 @@ function uiconfiggatorbytesubapp() {
     self.onconfigstateunknown = function (delay, message) {
         delay = delay ? delay : 0;
 
-        $(".gb-config-header").find(".sync-status-heading").css("background", "#3d3d3d").text(message ? message : "Unknown sync status");
+        $(".gb-config-header").find(".sync-status-heading").addClass("disabled").css("background", "#3d3d3d").text(message ? message : "Unknown sync status");
         setTimeout(() => {
             // Check config sync
             self.sendcommand("cfg:hash");
@@ -1319,13 +1319,13 @@ function uiconfiggatorbytesubapp() {
         if (self.confighash["local"] && self.confighash["sd"]) {
             if (self.confighash["local"] != self.confighash["sd"]) {
                 console.error("Configuration out of sync.");
-                $(".gb-config-header").find(".sync-status-heading").css("background", "#962e38").text("Configuration out of sync.");
+                $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#962e38").text("Configuration out of sync.");
                 $(".gb-config-header").find(".upload-config-data-button").removeClass("disabled").css("background", "#333333");
                 $(".gb-config-header").find(".refresh-config-data-button").removeClass("disabled").css("background", "#333333");
             }
             else {
                 console.log("Configuration in sync.");
-                $(".gb-config-header").find(".sync-status-heading").css("background", "#104c09").text("Configuration in sync");
+                $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#104c09").text("Configuration in sync");
                 $(".gb-config-header").find(".upload-config-data-button").css("background", "#333333");
                 $(".gb-config-header").find(".refresh-config-data-button").css("background", "#333333");
             }
@@ -1337,7 +1337,7 @@ function uiconfiggatorbytesubapp() {
             }
             if (!self.confighash["sd"]) {
                 console.error("No configuration found on SD.");
-                $(".gb-config-header").find(".sync-status-heading").css("background", "#962e38").text("Initial configuration pending.");
+                $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#962e38").text("Initial configuration pending.");
                 $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled").css("background", "#333333");
                 $(".gb-config-header").find(".upload-config-data-button").addClass("disabled").css("background", "#333333");
                 $(".home-panel .initial-configuration-pending-notification").removeClass("hidden");
