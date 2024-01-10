@@ -577,63 +577,11 @@ module.exports = {
                         }
                     });
                 }
+            
+                console.log("Upload complete");
+                event.sender.send("ipc/upload-file/response", { "status": true }); 
             }, 500);
-            
-            console.log("Upload complete");
-            event.sender.send("ipc/upload-file/response", { "status": true }); 
 
-            return;
-
-            if (!filename) return;
-
-            
-            //renderer.js - renderer process example
-            var window = BrowserWindow.fromId(obj.windowid);
-
-            let options = {
-                window: window,
-                parent: window,
-                title: "Save the downloaded file",
-                defaultPath: obj.filename,
-                buttonLabel: "Save",
-                filters: [
-                    {
-                        name: 'All Files',
-                        extensions: ['*']
-                    }
-                ]
-            }
-
-            dialog.showSaveDialog(options).then(file => {
-                if (!file.canceled) {
-                    i.fs.writeFile(file.filePath.toString(), obj.filedata, function (err) {
-                        if (err) {
-                            event.sender.send("ipc/save-file/response", {
-                                ...obj,
-                                success: false,
-                                message: "Error saving file"
-                            });
-                            return;   
-                        }
-                        
-                        console.log('File saved.');
-                        event.sender.send("ipc/save-file/response", {
-                            ...obj,
-                            success: true,
-                            message: "Saved successfully"
-                        });
-                    });
-                }
-                else {
-                    event.sender.send("ipc/save-file/response", {
-                        ...obj,
-                        success: false,
-                        message: "Saving file cancelled"
-                    });
-                }
-            }).catch(err => {
-                console.log(err)
-            });
         });
 
         i.ipcm.on('ipc/flash-firmware/request', (event, obj) => {

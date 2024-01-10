@@ -40,6 +40,48 @@ function uidownloadfilessubapp(){
             
             // Send request to get GatorByte to send sd files list
             self.open_directory("/");
+
+            //! Upload file button listener
+            $(".sd-explorer-panel .upload-file-button").off("click").click(function (e) {
+                $(".sd-explorer-panel .upload-file-button-accessories").find(".file-input").click();
+            });
+            
+            //! On upload file selected listener
+            $(".sd-explorer-panel .upload-file-button-accessories").find(".file-input").off("change").on("change", function () {
+                
+                if (this.files) {
+                    $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+                    $(".header-panel").find(".download-status-heading").text("Uploading");
+                    $(".header-panel").find(".download-status-text").text("Sending " + (this.files.length + " files" + (this.files.length == 1 ? "" : "s")));
+                    $(".header-panel").find(".progress-bar-overlay").find(".progress").removeClass("progress-striped").addClass("progress-striped-infinite");
+                    $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
+
+                    var fileList = [];
+                    for (var i = 0; i < this.files.length; i++) {
+                        fileList.push(this.files[i]);
+                    }
+                    // For every selected file
+                    fileList.forEach(function (file, index) {
+                        var foldername = self.currentfoldername + (self.currentfoldername.endsWith("/") ? "" : "/")
+                        var filename = foldername + file.name;
+                        var filesize = file.size;
+                        var filepath = file.path;
+
+                        self.ipcr.send('ipc/upload-file/request', {
+                            ...global.port,
+                            windowid: global.states.windowid,
+                            filename: filename, 
+                            filesize: filesize, 
+                            filepath: filepath
+                        });
+                    });
+                }
+
+                // // Refresh UI
+                // setTimeout(() => {
+                //     $(".sd-explorer-panel .refresh-files-list-button").click();
+                // }, 1000);
+            });
         });
 
         //! Refresh list button listener
@@ -60,48 +102,6 @@ function uidownloadfilessubapp(){
             // Send request to get GatorByte to send sd files list
             self.request_file_list(self.currentfoldername, 1);
         });
-
-        //! Upload file button listener
-        $(".sd-explorer-panel .upload-file-button").off("click").click(function (e) {
-            $(".sd-explorer-panel .upload-file-button-accessories").find(".file-input").click();
-        });
-        
-        //! On upload file selected listener
-        $(".sd-explorer-panel .upload-file-button-accessories").find(".file-input").off("change").on("change", function () {
-            
-            if (this.files) {
-                $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
-                $(".header-panel").find(".download-status-heading").text("Uploading");
-                $(".header-panel").find(".download-status-text").text("Sending " + this.files.length + (this.files.length == 1 ? "" : "s"));
-                $(".header-panel").find(".progress-bar-overlay").find(".progress").removeClass("progress-striped").addClass("progress-striped-infinite");
-                $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
-
-                var fileList = [];
-                for (var i = 0; i < this.files.length; i++) {
-                    fileList.push(this.files[i]);
-                }
-                // For every selected file
-                fileList.forEach(function (file, index) {
-                    var foldername = self.currentfoldername + (self.currentfoldername.endsWith("/") ? "" : "/")
-                    var filename = foldername + file.name;
-                    var filesize = file.size;
-                    var filepath = file.path;
-
-                    self.ipcr.send('ipc/upload-file/request', {
-                        ...global.port,
-                        windowid: global.states.windowid,
-                        filename: filename, 
-                        filesize: filesize, 
-                        filepath: filepath
-                    });
-                });
-            }
-
-            // // Refresh UI
-            // setTimeout(() => {
-            //     $(".sd-explorer-panel .refresh-files-list-button").click();
-            // }, 1000);
-        });
     }
 
     self.request_file_list = function (dir, page) {
@@ -115,20 +115,29 @@ function uidownloadfilessubapp(){
         self.state = "wait-for-file-list";
     }
 
-    self.list_files = function (line) {
-        line = line.replace(/<br>/g, "");
+    self.process_response = function (response) {
 
-        if (self.state == "wait-for-file-list") {
-            if (line.startsWith("file:")) self.update_file_list_ui(line.replace(/file:/, ""));
-            else if (line.startsWith("error:")) {
-                var error = line.split(":")[1];
-                self.show_error(error);
+        if (response.startsWith("file:")) {
+            var line = response.replace(/<br>/g, "");
+
+            if (self.state == "wait-for-file-list") {
+                if (line.startsWith("file:")) self.update_file_list_ui(line.replace(/file:/, ""));
+                else if (line.startsWith("error:")) {
+                    var error = line.split(":")[1];
+                    self.show_error(error);
+                }
+            }
+            else if (self.state == "wait-on-file-download") {
+                
+                // Do nothing
+
             }
         }
-        else if (self.state == "wait-on-file-download") {
-            
-            // Do nothing
-
+        else if (response.startsWith("upl:ack")){
+            $(".header-panel").find(".download-status-heading").text("Uploading 🟢");
+            setTimeout(() => {
+                $(".header-panel").find(".download-status-heading").text("Uploading");
+            }, 400);
         }
     }
 
@@ -504,15 +513,15 @@ function uidownloadfilessubapp(){
     self.on_file_upload_response = function (data) {
         if (data.status) {
 
-            $(".header-panel").find(".download-status-text").text("File uploaded successfully");
+            $(".header-panel").find(".download-status-text").text("File uploaded successfully. Please refresh the list.");
             setTimeout(() => {
                 $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
             }, 2000);
 
-            // Update UI
-            setTimeout(() => {
-                $(".sd-explorer-panel .refresh-files-list-button").click();
-            }, 1000);
+            // // Update UI
+            // setTimeout(() => {
+            //     $(".sd-explorer-panel .refresh-files-list-button").click();
+            // }, 1500);
         }
         else {
             $(".header-panel").find(".download-status-text").text("Error encountered");

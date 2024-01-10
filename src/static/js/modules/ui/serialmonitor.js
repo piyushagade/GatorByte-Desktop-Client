@@ -432,7 +432,7 @@ function uiserialmonitorsubapp(){
                 if (category && category.indexOf("gdc-dfl") == 0) {
 
                     if (filedata) self.a.uidownloadfiles.process_file_download_data(line);
-                    else self.a.uidownloadfiles.list_files(data);
+                    else self.a.uidownloadfiles.process_response(data);
                     
                     hook = {
                         category: category,

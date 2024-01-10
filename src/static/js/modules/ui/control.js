@@ -138,7 +138,6 @@ function uicontrolvariablessubapp() {
         self.panel.find(".sync-error-notification").addClass("hidden");
     }
 
-    
     self.process_response = function (response) {
         response = response.replace(/<br>/g, "");
 
