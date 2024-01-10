@@ -60,6 +60,48 @@ function uidownloadfilessubapp(){
             // Send request to get GatorByte to send sd files list
             self.request_file_list(self.currentfoldername, 1);
         });
+
+        //! Upload file button listener
+        $(".sd-explorer-panel .upload-file-button").off("click").click(function (e) {
+            $(".sd-explorer-panel .upload-file-button-accessories").find(".file-input").click();
+        });
+        
+        //! On upload file selected listener
+        $(".sd-explorer-panel .upload-file-button-accessories").find(".file-input").off("change").on("change", function () {
+            
+            if (this.files) {
+                $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+                $(".header-panel").find(".download-status-heading").text("Uploading");
+                $(".header-panel").find(".download-status-text").text("Sending " + this.files.length + (this.files.length == 1 ? "" : "s"));
+                $(".header-panel").find(".progress-bar-overlay").find(".progress").removeClass("progress-striped").addClass("progress-striped-infinite");
+                $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
+
+                var fileList = [];
+                for (var i = 0; i < this.files.length; i++) {
+                    fileList.push(this.files[i]);
+                }
+                // For every selected file
+                fileList.forEach(function (file, index) {
+                    var foldername = self.currentfoldername + (self.currentfoldername.endsWith("/") ? "" : "/")
+                    var filename = foldername + file.name;
+                    var filesize = file.size;
+                    var filepath = file.path;
+
+                    self.ipcr.send('ipc/upload-file/request', {
+                        ...global.port,
+                        windowid: global.states.windowid,
+                        filename: filename, 
+                        filesize: filesize, 
+                        filepath: filepath
+                    });
+                });
+            }
+
+            // // Refresh UI
+            // setTimeout(() => {
+            //     $(".sd-explorer-panel .refresh-files-list-button").click();
+            // }, 1000);
+        });
     }
 
     self.request_file_list = function (dir, page) {
@@ -326,7 +368,7 @@ function uidownloadfilessubapp(){
                     $(this).css("background", "#355377").addClass("selected");
                 }
 
-                //! Save file button listener (Download file)
+                //! Create directory button listener
                 $(".sd-explorer-panel .folder-options-parent .make-directory-button").off("click").click(function () {
                     var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
 
@@ -342,7 +384,6 @@ function uidownloadfilessubapp(){
 
                 });
 
-                
                 //! Delete file button listener
                 $(".sd-explorer-panel .folder-options-parent .delete-directory-button").off("click").click(function () {
                     var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
@@ -376,6 +417,7 @@ function uidownloadfilessubapp(){
                 self.open_directory(foldername);
             }
         });
+        
     }
 
     self.process_file_download_data = function (data) {
@@ -457,6 +499,27 @@ function uidownloadfilessubapp(){
             self.sendcommand("rmd" + ":" + filename);
             self.state = "wait-for-file-list";
         });
+    }
+
+    self.on_file_upload_response = function (data) {
+        if (data.status) {
+
+            $(".header-panel").find(".download-status-text").text("File uploaded successfully");
+            setTimeout(() => {
+                $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+            }, 2000);
+
+            // Update UI
+            setTimeout(() => {
+                $(".sd-explorer-panel .refresh-files-list-button").click();
+            }, 1000);
+        }
+        else {
+            $(".header-panel").find(".download-status-text").text("Error encountered");
+            setTimeout(() => {
+                $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+            }, 3000);
+        }
     }
 
     self.on_file_save_response = function (data) {

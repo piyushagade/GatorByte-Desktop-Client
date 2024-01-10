@@ -77,6 +77,10 @@ function ipcsubapp(){
             self.a.ui.show_functionality_locked_overlay(response);
         });
 
+        self.ipcr.on('ipc/upload-file/response', (event, response) => {
+            self.a.uidownloadfiles.on_file_upload_response(response);
+        });
+
         self.ipcr.on('ipc/save-file/response', (event, response) => {
             self.a.uidownloadfiles.on_file_save_response(response);
         });

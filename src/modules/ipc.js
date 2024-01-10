@@ -552,6 +552,90 @@ module.exports = {
             });
         });
 
+        i.ipcm.on('ipc/upload-file/request', (event, obj) => {
+            var filename = obj.filename;
+            var filepath = obj.filepath;
+            var filedata = i.fs.readFileSync(filepath, "utf-8").replace(/\n/g, "~").replace(/ /g, "`");
+            
+            console.log("Uploading file to GatorByte: " + filename);
+
+            // Send filename
+            i.g.var.serports[obj.path].write("fuplm:" + filename, (err) => {
+                if (err) {
+                    console.log("Error uploading file chunk: " + count);
+                    event.sender.send("ipc/upload-file/response", { "status": false }); 
+                }
+            });
+
+            setTimeout(() => {
+                for (let count = 0; count < filedata.length; count += 30) {
+                    const chunk = "fupl:" + filedata.slice(count, count + 30);
+                    i.g.var.serports[obj.path].write(chunk, (err) => {
+                        if (err) {
+                            console.log("Error uploading file chunk: " + count);
+                            event.sender.send("ipc/upload-file/response", { "status": false }); 
+                        }
+                    });
+                }
+            }, 500);
+            
+            console.log("Upload complete");
+            event.sender.send("ipc/upload-file/response", { "status": true }); 
+
+            return;
+
+            if (!filename) return;
+
+            
+            //renderer.js - renderer process example
+            var window = BrowserWindow.fromId(obj.windowid);
+
+            let options = {
+                window: window,
+                parent: window,
+                title: "Save the downloaded file",
+                defaultPath: obj.filename,
+                buttonLabel: "Save",
+                filters: [
+                    {
+                        name: 'All Files',
+                        extensions: ['*']
+                    }
+                ]
+            }
+
+            dialog.showSaveDialog(options).then(file => {
+                if (!file.canceled) {
+                    i.fs.writeFile(file.filePath.toString(), obj.filedata, function (err) {
+                        if (err) {
+                            event.sender.send("ipc/save-file/response", {
+                                ...obj,
+                                success: false,
+                                message: "Error saving file"
+                            });
+                            return;   
+                        }
+                        
+                        console.log('File saved.');
+                        event.sender.send("ipc/save-file/response", {
+                            ...obj,
+                            success: true,
+                            message: "Saved successfully"
+                        });
+                    });
+                }
+                else {
+                    event.sender.send("ipc/save-file/response", {
+                        ...obj,
+                        success: false,
+                        message: "Saving file cancelled"
+                    });
+                }
+            }).catch(err => {
+                console.log(err)
+            });
+        });
+
         i.ipcm.on('ipc/flash-firmware/request', (event, obj) => {
             flashmode = true;
             console.log("Flashing firmware: " + obj["filepath"]);
