@@ -237,20 +237,42 @@ function uidownloadfilessubapp(){
                     var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
                     var filesize = $(".sd-explorer-panel .files-list-item.selected").attr("filesize");
 
-                    // Send download request
-                    self.filedownloadname = filename;
-                    self.filedownloaddata = "";
-                    self.filedownloadline = 0;
-                    self.filedownloadsize = filesize;
+                    if (filesize > 20000) {
+                        var time;
+                        if (filesize > 60000) time = (parseFloat(filesize) / 60000).toFixed(1) + " minutes";
+                        else time = (parseFloat(filesize) / 1000).toFixed(0) + " seconds";
+                        self.a.ui.notification({
+                            "contexttype": "success",
+                            "overlaytype": "dialog",
+                            "heading": "Download large file",
+                            "body": "This file will take " + time + " to download. Are you sure you want to download the file?",
+                            "okay": "Yes",
+                            "dismiss": "Cancel",
+                            "onokay": function () {
+                                onproceed();
+                            }
+                        });
+                    }
+                    else {
+                        onproceed();
+                    }
 
-                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
-                    self.request_file_download(filepath, self.filedownloadline);
+                    function onproceed() {
+                        // Send download request
+                        self.filedownloadname = filename;
+                        self.filedownloaddata = "";
+                        self.filedownloadline = 0;
+                        self.filedownloadsize = filesize;
 
-                    // Update UI
-                    self.panel.find(".file-options-home").addClass("hidden");
-                    // self.panel.find(".file-options-download-information").removeClass("hidden");
-                    // self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
-                    // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Starting download");
+                        var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
+                        self.request_file_download(filepath, self.filedownloadline);
+
+                        // Update UI
+                        self.panel.find(".file-options-home").addClass("hidden");
+                        // self.panel.find(".file-options-download-information").removeClass("hidden");
+                        // self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
+                        // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Starting download");
+                    }
                 });
 
                 
@@ -381,10 +403,7 @@ function uidownloadfilessubapp(){
             // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Download complete");
             
             $(".header-panel").find(".download-status-text").text("Download complete");
-            setTimeout(() => {
-                $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
-                $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
-            }, 2000);
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
 
             self.ipcr.send('ipc/save-file/request', {
                 ...global.port,
@@ -430,14 +449,24 @@ function uidownloadfilessubapp(){
     }
 
     self.on_file_save_response = function (data) {
-        // if (data.success) {
-        //     self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
-        //     self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
-        // }
-        // else {
-        //     self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c5160eeb").removeClass("rotate-animation");
-        //     self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
-        // }
+        if (data.success) {
+            // self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
+            // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
+            $(".header-panel").find(".download-status-text").text("File saved");
+            setTimeout(() => {
+                $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+                $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
+            }, 3000);
+        }
+        else {
+            // self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c5160eeb").removeClass("rotate-animation");
+            // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
+            $(".header-panel").find(".download-status-text").text("File saving cancelled");
+            setTimeout(() => {
+                $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+                $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
+            }, 3000);
+        }
 
         setTimeout(() => {
             var parent = $(".sd-explorer-panel .file-options-parent");
