@@ -774,7 +774,7 @@ function uiconfiggatorbytesubapp() {
         if (datatosend && datatosend.trim().length > 0) {
             var uploadedbyte = startingline + self.lines_to_send >= self.configdata.length ? self.configdata.length : startingline + self.lines_to_send;
             
-            $(".header-panel").find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.configdata.length) * self.panel.find(".progress").width());
+            $(".header-panel").find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.configdata.length) * $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
             $(".header-panel").find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
 
             return new Promise(function (resolve, reject) {

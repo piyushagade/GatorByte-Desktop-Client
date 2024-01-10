@@ -986,6 +986,8 @@ function ipcsubapp(){
             $(".show-on-connected").addClass("hidden");
             $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
             self.a.uiconfiggatorbyte.onconfigstateunknown();
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
@@ -1044,6 +1046,8 @@ function ipcsubapp(){
 
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
             self.a.uiconfiggatorbyte.onconfigstateunknown();            
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
 
@@ -1072,6 +1076,8 @@ function ipcsubapp(){
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
             self.a.uiconfiggatorbyte.onconfigstateunknown();
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             

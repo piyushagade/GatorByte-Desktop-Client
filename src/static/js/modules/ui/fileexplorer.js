@@ -158,21 +158,22 @@ function uidownloadfilessubapp(){
 
                 var filename = entry.split(":")[0];
                 var filesize = parseInt(entry.split(":")[1]); // Size in bytes
+                var filesizetext;
 
                 // Parse filesize
                 if (!isNaN(filesize)) {
-                    if (filesize >= 1024 * 1024) filesize = (filesize / 1024).toFixed(2) + " MB";
-                    if (filesize >= 1024) filesize = (filesize / 1024).toFixed(2) + " kB";
-                    if (filesize >= 0) filesize = (filesize) + " B";
+                    if (filesize >= 1024 * 1024) filesizetext = (filesize / 1024).toFixed(2) + " MB";
+                    else if (filesize >= 1024) filesizetext = (filesize / 1024).toFixed(2) + " kB";
+                    else if (filesize >= 0) filesizetext = (filesize) + " B";
                 }
                 
                 var isfolder = filename.endsWith("/");
                 var extension = (isfolder ? "dir" : (filename.split(".").length > 1 ? filename.split(".")[1] : "")).toUpperCase();
                 var knownextensions = ["DIR", "CSV", "LOG", "INI"];
                 var extensioncolors = ["#c74b0f", "green", "#962020", "#1969cc"];
-                
+
                 $(".sd-explorer-panel .download-files-list").append(multiline(function () {/* 
-                    <div class="col-auto files-list-item shadow-heavy" filename="{{filename}}" filetype="{{filetype}}" style="text-align: center;position: relative;padding: 6px 8px;margin-right: 10px;margin-bottom: 10px;height: 100px;width: 85px;background: #ffffff1f;border-radius: 4px;">
+                    <div class="col-auto files-list-item shadow-heavy" filesize="{{filesize}}" filename="{{filename}}" filetype="{{filetype}}" style="text-align: center;position: relative;padding: 6px 8px;margin-right: 10px;margin-bottom: 10px;height: 100px;width: 85px;background: #ffffff1f;border-radius: 4px;">
                         <div style="color: #f1f1f1;font-size: 36px;">
                             {{fileicon}}
                             <div style="color: #ffffff;font-size: 10px;position: absolute;top: 6px;left: 5px;margin: auto auto;background: {{filecolor}};padding: 0px 2px;border-radius: 2px;">
@@ -183,13 +184,14 @@ function uidownloadfilessubapp(){
                             {{filename}}
                         </div>
                         <div class="truncate" style="color: #88adff;font-size: 10px;">
-                            {{filesize}}
+                            {{filesizetext}}
                         </div>
                     </div>
                 */}, {
                     fileicon: isfolder ? '<i class="fa-solid fa-folder"></i>' : '<i class="fa-solid fa-file-lines"></i>',
                     filename: isfolder ? "/" + filename.replace("/", "") : filename,
-                    filesize: isfolder ? "N/A" : filesize,
+                    filesizetext: isfolder ? "N/A" : filesizetext,
+                    filesize: isfolder ? 1 : filesize,
                     filetype: extension.substring(0, 3),
                     filecolor: extensioncolors[knownextensions.indexOf(extension.substring(0, 3))]
                 }));
@@ -233,20 +235,22 @@ function uidownloadfilessubapp(){
                 //! Save file button listener (Download file)
                 $(".sd-explorer-panel .file-options-parent .download-file-button").off("click").click(function () {
                     var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
+                    var filesize = $(".sd-explorer-panel .files-list-item.selected").attr("filesize");
 
                     // Send download request
                     self.filedownloadname = filename;
                     self.filedownloaddata = "";
                     self.filedownloadline = 0;
+                    self.filedownloadsize = filesize;
 
                     var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
                     self.request_file_download(filepath, self.filedownloadline);
 
                     // Update UI
                     self.panel.find(".file-options-home").addClass("hidden");
-                    self.panel.find(".file-options-download-information").removeClass("hidden");
-                    self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
-                    self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Starting download");
+                    // self.panel.find(".file-options-download-information").removeClass("hidden");
+                    // self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
+                    // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Starting download");
                 });
 
                 
@@ -350,11 +354,18 @@ function uidownloadfilessubapp(){
         // Throttle UI updates
         if ((self.filedownloadline / 40) % 5 == 0) {
             var filesize = parseFloat(self.filedownloadline);
-            if (filesize > 1 * 1024 * 1024) filesize = (filesize / 1024 / 1024).toFixed(1) + " MB"
-            else if (filesize > 1 * 1024) filesize = (filesize / 1024).toFixed(1) + " kB"
-            else filesize = (filesize) + " B"
-            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
-            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(filesize + " downloaded");
+            var filesizetext;
+            if (filesize > 1 * 1024 * 1024) filesizetext = (filesize / 1024 / 1024).toFixed(1) + " MB"
+            else if (filesize > 1 * 1024) filesizetext = (filesize / 1024).toFixed(1) + " kB"
+            else filesizetext = (filesize) + " B"
+            // self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c55a0e").addClass("rotate-animation");
+            // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(filesize + " downloaded");
+
+            $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+            $(".header-panel").find(".download-status-heading").text("Downloading file");
+            $(".header-panel").find(".download-status-text").text(filesizetext + " downloaded");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", (parseFloat(filesize) / parseFloat(self.filedownloadsize)) * $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
         }
 
         // Append file data
@@ -366,8 +377,14 @@ function uidownloadfilessubapp(){
             console.log("File download complete");
 
             // Update UI
-            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
-            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Download complete");
+            // self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
+            // self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text("Download complete");
+            
+            $(".header-panel").find(".download-status-text").text("Download complete");
+            setTimeout(() => {
+                $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+                $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
+            }, 2000);
 
             self.ipcr.send('ipc/save-file/request', {
                 ...global.port,
@@ -413,14 +430,14 @@ function uidownloadfilessubapp(){
     }
 
     self.on_file_save_response = function (data) {
-        if (data.success) {
-            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
-            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
-        }
-        else {
-            self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c5160eeb").removeClass("rotate-animation");
-            self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
-        }
+        // if (data.success) {
+        //     self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#464444").removeClass("rotate-animation");
+        //     self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
+        // }
+        // else {
+        //     self.panel.find(".file-options-download-information .download-progress-icon").css("color", "#c5160eeb").removeClass("rotate-animation");
+        //     self.panel.find(".file-options-download-information .download-progress").css("color", "#464444").text(data.message);
+        // }
 
         setTimeout(() => {
             var parent = $(".sd-explorer-panel .file-options-parent");

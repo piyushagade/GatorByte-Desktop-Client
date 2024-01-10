@@ -14,6 +14,9 @@ module.exports = {
             
             var numberofwindows = BrowserWindow.getAllWindows().length;
 
+            console.log("Window location: " + winstate.x + ", " + winstate.y);
+            console.log("Window dimensions: " + winstate.width + ", " + winstate.height);
+
             var win = new BrowserWindow({
                 x: winstate.x + (numberofwindows - 1) % 3 * 40,
                 y: winstate.y + (numberofwindows - 1) % 3 * 40,
