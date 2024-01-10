@@ -1131,6 +1131,7 @@ function ipcsubapp(){
             // Show device selector panel
             $(".panel").addClass("hidden");
             $(".device-selector-panel").removeClass("hidden");
+            $(".device-selected-info-row").remove();
             $(".home-panel").removeAttr("first-load-done");
             $(".home-panel").addClass("disabled").addClass("hidden").addClass("blur");
             $(".gb-config-header").addClass("hidden"); setheight();

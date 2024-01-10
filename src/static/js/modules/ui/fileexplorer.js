@@ -242,7 +242,7 @@ function uidownloadfilessubapp(){
                         if (filesize > 60000) time = (parseFloat(filesize) / 60000).toFixed(1) + " minutes";
                         else time = (parseFloat(filesize) / 1000).toFixed(0) + " seconds";
                         self.a.ui.notification({
-                            "contexttype": "success",
+                            "contexttype": "error",
                             "overlaytype": "dialog",
                             "heading": "Download large file",
                             "body": "This file will take " + time + " to download. Are you sure you want to download the file?",
@@ -280,18 +280,29 @@ function uidownloadfilessubapp(){
                 $(".sd-explorer-panel .file-options-parent .delete-file-button").off("click").click(function () {
                     var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
 
-                    // Send download request
-                    self.filedownloadname = filename;
-                    self.filedownloaddata = "";
-                    self.filedownloadline = 0;
+                    self.a.ui.notification({
+                        "contexttype": "error",
+                        "overlaytype": "dialog",
+                        "heading": "Delete file?",
+                        "body": "Are you sure you want to delete this item?",
+                        "okay": "Delete",
+                        "dismiss": "Cancel",
+                        "onokay": function () {
+                            
+                            // Send download request
+                            self.filedownloadname = filename;
+                            self.filedownloaddata = "";
+                            self.filedownloadline = 0;
 
-                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
-                    self.request_file_deletion(filepath);
+                            var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
+                            self.request_file_deletion(filepath);
 
-                    // Update UI
-                    setTimeout(() => {
-                        $(".sd-explorer-panel .refresh-files-list-button").click();
-                    }, 1400);
+                            // Update UI
+                            setTimeout(() => {
+                                $(".sd-explorer-panel .refresh-files-list-button").click();
+                            }, 400);
+                        }
+                    });
                 });
             }
 

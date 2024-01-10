@@ -858,7 +858,7 @@ function uiconfiggatorbytesubapp() {
 
         setTimeout(() => {
             $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
-        }, 3000);
+        }, 500);
         self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
 
         //! Download configuration button listener

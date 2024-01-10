@@ -501,13 +501,14 @@ module.exports = {
 
             if (!filename) return;
 
-            console.log("A request to save file received: " + filename);
+            console.log("Saving file to computer: " + filename);
             
             //renderer.js - renderer process example
             var window = BrowserWindow.fromId(obj.windowid);
 
             let options = {
                 window: window,
+                parent: window,
                 title: "Save the downloaded file",
                 defaultPath: obj.filename,
                 buttonLabel: "Save",

@@ -14,6 +14,7 @@ function uisubapp(){
         //! Set UI
         $(".spinner-ui").addClass("hidden");
         $(".device-selector-panel").removeClass("hidden");
+        $(".device-selected-info-row").remove();
     
         // //! Auto-hide menu
         // setTimeout(() => { $(".menu-buttons-div").fadeOut(400).addClass("hidden").fadeIn(0); }, 1500);
@@ -353,6 +354,9 @@ function uisubapp(){
         
         /*
             Set overlay type
+            Options:
+                1. Dialog - w/ action buttons
+                2. Notification - Auto-hide notification
         */
         if (overlaytype == "dialog") {
             parent.find(".action-buttons").removeClass("hidden");
