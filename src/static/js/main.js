@@ -101,9 +101,9 @@ function newtworktest () {
                 global.states.internet = true;
                 resolve (global.states.internet);
             },
-            error: function () {
+            error: function (err) {
                 global.states.internet = false;
-                reject (global.states.internet);
+                reject (err);
             }
         });
     })

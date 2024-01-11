@@ -176,13 +176,14 @@ function uiloginsubapp(){
                 var accessibleprojects = response.payload.access;
 
                 window.global.data["projects"] = [];
+                $(".device-selector-panel .projects-list .projects-list-item").remove();
                 accessibleprojects.forEach(function (accessrow, ari) {
                     var projectuuid = accessrow["PROJECTUUID"];
                     var projectdata = self.f.grep(allprojects, "UUID", projectuuid, true);
                     window.global.data["projects"].push(projectdata);
 
                     $(".device-selector-panel .projects-list").append(multiline (function () {/*
-                        <div class="col-auto projects-list-item ui-truncate" style="background: #414141; padding: 1px 6px; border-radius: 1px; margin-right: 6px; font-size: 12px;" data-b64="{{data-b64}}" project-uuid="{{project-uuid}}" project-role="{{project-role}}" project-id="{{project-id}}" project-name="{{project-name}}">
+                        <div class="col-auto projects-list-item ui-truncate" style="background: #414141; padding: 1px 6px; border-radius: 1px; margin-right: 6px; margin-bottom: 6px; font-size: 12px;" data-b64="{{data-b64}}" project-uuid="{{project-uuid}}" project-role="{{project-role}}" project-id="{{project-id}}" project-name="{{project-name}}">
                             {{project-name}}
                         </div>
                     */},

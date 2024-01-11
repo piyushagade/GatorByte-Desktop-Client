@@ -1090,51 +1090,53 @@ function ipcsubapp(){
         $(".gb-port-path").text(global.port.path);
 
         newtworktest().then(function (online) {
-            $.ajax({
-                url: window.global.constants.api + "/gatorbyte/device/registration/get",
-                type: "POST",
-                data: '{ "sn": "' + global.port.serialNumber.substring(0, 10) + '" }',
-                success: function (response) {
-                    if (response.status == "success") {
-                        $(".gb-registration-status").text("Device registered.");
+            setTimeout(() => {
+                $.ajax({
+                    url: window.global.constants.api + "/gatorbyte/device/registration/get",
+                    type: "POST",
+                    data: '{ "sn": "' + global.port.serialNumber.substring(0, 10) + '" }',
+                    success: function (response) {
+                        if (response.status == "success") {
+                            $(".gb-registration-status").text("Device registered.");
+                            $(".register-gb-ui").addClass("hidden");
+                            $(".registered-gb-ui").removeClass("hidden");
+                            $(".device-not-registered-notification").addClass("hidden");
+    
+                            var projectdata = self.f.grep(window.global.data["projects"], "UUID", response.payload["PROJECTUUID"], true);
+                            var projectname = projectdata.NAME;
+    
+                            $(".registered-gb-ui .gb-registered-project-name-text").text(projectdata.ID);
+                            $(".registered-gb-ui .gb-registered-device-name-text").text(response.payload["NAME"]);
+    
+                            // Set global variable
+                            self.ls.setItem("device/registration/state", "true");
+                            self.ls.setItem("device/registration/project-uuid", response.payload["PROJECTUUID"]);
+                            self.ls.setItem("device/registration/project-id", projectdata.ID);
+                            self.ls.setItem("device/registration/device-name", response.payload["NAME"]);
+                            self.ls.setItem("device/registration/sn", response.payload["SN"]);
+                        }
+                        else if (response.status == "error" && response.code == 1) {
+                            $(".device-not-registered-notification").removeClass("hidden");
+                            self.ls.setItem("device/registration/state", "false");
+                            
+                            $(".gb-registration-status").text("Device not registered.");
+                            $(".register-gb-ui").removeClass("hidden");
+                            $(".registered-gb-ui").addClass("hidden");
+                        }
+                    },
+                    error: function (x, h, r) {
+                        $(".gb-registration-status").text("Status unknown.");
                         $(".register-gb-ui").addClass("hidden");
-                        $(".registered-gb-ui").removeClass("hidden");
-                        $(".device-not-registered-notification").addClass("hidden");
-
-                        var projectdata = self.f.grep(window.global.data["projects"], "UUID", response.payload["PROJECTUUID"], true);
-                        var projectname = projectdata.NAME;
-
-                        $(".registered-gb-ui .gb-registered-project-name-text").text(projectname);
-                        $(".registered-gb-ui .gb-registered-device-name-text").text(response.payload["NAME"]);
-
-                        // Set global variable
-                        self.ls.setItem("device/registration/state", "true");
-                        self.ls.setItem("device/registration/project-uuid", response.payload["PROJECTUUID"]);
-                        self.ls.setItem("device/registration/project-id", projectdata.ID);
-                        self.ls.setItem("device/registration/device-name", response.payload["NAME"]);
-                        self.ls.setItem("device/registration/sn", response.payload["SN"]);
-                    }
-                    else if (response.status == "error" && response.code == 1) {
-                        $(".device-not-registered-notification").removeClass("hidden");
-                        self.ls.setItem("device/registration/state", "false");
-                        
-                        $(".gb-registration-status").text("Device not registered.");
-                        $(".register-gb-ui").removeClass("hidden");
                         $(".registered-gb-ui").addClass("hidden");
+                        
+                        $(".registered-gb-ui .gb-registered-project-id-text").text("");
+                        $(".registered-gb-ui .gb-registered-device-name-text").text("");
                     }
-                },
-                error: function (x, h, r) {
-                    $(".gb-registration-status").text("Status unknown.");
-                    $(".register-gb-ui").addClass("hidden");
-                    $(".registered-gb-ui").addClass("hidden");
-                    
-                    $(".registered-gb-ui .gb-registered-project-id-text").text("");
-                    $(".registered-gb-ui .gb-registered-device-name-text").text("");
-                }
-            });
+                });
+            }, 2000);
         })
-        .catch(function () {
-            $(".gb-registration-status").text("Status unknown. Connect to the internet for current status.");
+        .catch(function (err) {
+            $(".gb-registration-status").text("Status unknown.");
             $(".register-gb-ui").addClass("hidden");
             $(".registered-gb-ui").addClass("hidden");
         });
