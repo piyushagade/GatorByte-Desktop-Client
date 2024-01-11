@@ -22,7 +22,7 @@ module.exports = {
             - Window operations
         */
        
-        i.ipcm.on('close-window-request', (event, obj) => {
+        i.ipcm.on('ipc/close-window/request', (event, obj) => {
 
             var windowid = obj.windowid;
             var path = obj.path;

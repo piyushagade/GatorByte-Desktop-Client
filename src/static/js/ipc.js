@@ -93,11 +93,14 @@ function ipcsubapp(){
             if (global.port && global.port.path == response.path) {
 
                 // Disable buttons that require the GatorByte to be ready (setup complete)
-                $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
                 $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
                 $(".gb-config-header .action-button").addClass("disabled"); 
                 $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
                 $(".home-panel").find(".big-button.requires-sd-ready").addClass("disabled");
+                
+                $(".home-panel").find(".sd-error-notification").addClass("hidden");
+                $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
+                $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
                 
                 if ($(".flash-firmware-overlay").hasClass("hidden")) {
                     $(".device-not-available-overlay").slideUp(50);
@@ -434,6 +437,7 @@ function ipcsubapp(){
                     var nickname = port.nickname || "";
                     var pnpid = encodeURI(port.pnpId)
                     var favorite = port.favorite || false;
+                    var sn = port.serialNumber.substring(0, 10);
 
                     var title = "";
                     if (port.path.length > 10) {
@@ -443,28 +447,31 @@ function ipcsubapp(){
 
                     //! Add device to the list if not already added
                     if (ui.find(".device-selector-list-item[pnp-id='" + pnpid + "']").length == 0) {
-                        ui.append(multiline(function () {/*
-                            <div class="col-auto shadow-heavy device-selector-list-item" name="{{name}}" nickname="{{nickname}}" favorited="{{favorited}}" baud="{{baud}}" port="{{port}}" manufacturer="{{manufacturer}}" uploaddelay="{{uploaddelay}}" serial-number="{{serial-number}}" pnp-id="{{pnp-id}}" title="{{title}}" 
-                                style="background: #AAAAAA66; color: #eee; border-radius: 0px; padding: 2px 8px; margin-right: 10px; cursor: pointer; margin-bottom: 10px;">
-                                <div style="font-size: 13px; color: #000">
-                                    <span class="text">{{displayname}}</span>
-                                    <i class="fas fa-link-slash broken-link-icon hidden" title="Device disconnected" style="color: #ffc10c; font-size: 11px; margin-left: 4px;"></i>
+                        if (devicename.indexOf(" bootloader") === -1) {
+                        
+                            ui.append(multiline(function () {/*
+                                <div class="col-auto shadow-heavy device-selector-list-item" name="{{name}}" nickname="{{nickname}}" favorited="{{favorited}}" baud="{{baud}}" port="{{port}}" manufacturer="{{manufacturer}}" uploaddelay="{{uploaddelay}}" serial-number="{{serial-number}}" pnp-id="{{pnp-id}}" title="{{title}}" 
+                                    style="background: #AAAAAA66; color: #eee; border-radius: 2px; padding: 2px 8px; margin-right: 10px; cursor: pointer; margin-bottom: 10px;">
+                                    <div style="font-size: 13px; color: #000">
+                                        <span class="text">{{displayname}}</span>
+                                        <i class="fas fa-link-slash broken-link-icon hidden" title="Device disconnected" style="color: #ffc10c; font-size: 11px; margin-left: 4px;"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        */},
-                        { 
-                            "name": devicename,
-                            "displayname": nickname.length > 0 ? nickname : devicename,
-                            "nickname": nickname,
-                            "favorited": favorite,
-                            "baud": baud || "null",
-                            "port": port_original,
-                            "manufacturer": port.manufacturer,
-                            "uploaddelay": port.uploaddelay,
-                            "serial-number": port.serialNumber.substring(0, 10) || "N/A",
-                            "pnp-id": pnpid,
-                            "title": title
-                        }));
+                            */},
+                            { 
+                                "name": devicename,
+                                "displayname": nickname.length > 0 ? nickname : devicename,
+                                "nickname": nickname,
+                                "favorited": favorite,
+                                "baud": baud || "null",
+                                "port": port_original,
+                                "manufacturer": port.manufacturer,
+                                "uploaddelay": port.uploaddelay,
+                                "serial-number": port.serialNumber.substring(0, 10) || "N/A",
+                                "pnp-id": pnpid,
+                                "title": title
+                            }));
+                        }
             
                         // Click listener
                         ui.find(".device-selector-list-item[port='" + port_original + "']").off("click").click(function () {
@@ -637,6 +644,20 @@ function ipcsubapp(){
                             });
             
                         });
+                        
+                        var listitem = ui.find(".device-selector-list-item[pnp-id='" + pnpid + "']");
+                        var devicename, projectname;
+                        if (nickname.length == 0 && window.global.data["devices"] && window.global.data["projects"]) {
+                            var devicedata = self.f.grep(window.global.data["devices"], "SN", sn, true);
+                            if (devicedata) {
+                                var projectdata = self.f.grep(window.global.data["projects"], "UUID", devicedata["PROJECTUUID"], true);
+                                projectname = projectdata.NAME;
+                                devicename = devicedata.NAME;
+
+                                listitem
+                                    .find(".text").text(projectname + " - " + devicename)
+                            }
+                        }
                     }
                     //! If the device is already in the list, update the item's ui
                     else {
@@ -648,6 +669,20 @@ function ipcsubapp(){
                             .attr("favorite", favorite)
                             .attr("baud", baud)
                             .find(".text").text(nickname.length > 0 ? nickname : devicename)
+
+                        var devicename, projectname;
+                        if (nickname.length == 0 && window.global.data["devices"] && window.global.data["projects"]) {
+                            var devicedata = self.f.grep(window.global.data["devices"], "SN", sn, true);
+                            if (devicedata) {
+                                var projectdata = self.f.grep(window.global.data["projects"], "UUID", devicedata["PROJECTUUID"], true);
+                                projectname = projectdata.NAME;
+                                devicename = devicedata.NAME;
+
+                                listitem
+                                    .find(".text").text(projectname + " - " + devicename)
+                            }
+                        }
+
                     }
                 });
                 
@@ -1054,20 +1089,54 @@ function ipcsubapp(){
         $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
         $(".gb-port-path").text(global.port.path);
 
-        $.ajax({
-            url: "https://api.ezbean-lab.com/v3/gatorbyte/device/registration/get",
-            type: "POST",
-            data: '{ "sn": "' + global.port.serialNumber.substring(0, 10) + '" }',
-            success: function (response) {
-                if (response.status == "success") {
-                    $(".gb-registered-to").text(response.payload["REGISTERED_TO"]);
+        newtworktest().then(function (online) {
+            $.ajax({
+                url: window.global.constants.api + "/gatorbyte/device/registration/get",
+                type: "POST",
+                data: '{ "sn": "' + global.port.serialNumber.substring(0, 10) + '" }',
+                success: function (response) {
+                    if (response.status == "success") {
+                        $(".gb-registration-status").text("Device registered.");
+                        $(".register-gb-ui").addClass("hidden");
+                        $(".registered-gb-ui").removeClass("hidden");
+                        $(".device-not-registered-notification").addClass("hidden");
+
+                        var projectdata = self.f.grep(window.global.data["projects"], "UUID", response.payload["PROJECTUUID"], true);
+                        var projectname = projectdata.NAME;
+
+                        $(".registered-gb-ui .gb-registered-project-name-text").text(projectname);
+                        $(".registered-gb-ui .gb-registered-device-name-text").text(response.payload["NAME"]);
+
+                        // Set global variable
+                        self.ls.setItem("device/registration/state", "true");
+                        self.ls.setItem("device/registration/project-uuid", response.payload["PROJECTUUID"]);
+                        self.ls.setItem("device/registration/project-id", projectdata.ID);
+                        self.ls.setItem("device/registration/device-name", response.payload["NAME"]);
+                        self.ls.setItem("device/registration/sn", response.payload["SN"]);
+                    }
+                    else if (response.status == "error" && response.code == 1) {
+                        $(".device-not-registered-notification").removeClass("hidden");
+                        self.ls.setItem("device/registration/state", "false");
+                        
+                        $(".gb-registration-status").text("Device not registered.");
+                        $(".register-gb-ui").removeClass("hidden");
+                        $(".registered-gb-ui").addClass("hidden");
+                    }
+                },
+                error: function (x, h, r) {
+                    $(".gb-registration-status").text("Status unknown.");
                     $(".register-gb-ui").addClass("hidden");
+                    $(".registered-gb-ui").addClass("hidden");
+                    
+                    $(".registered-gb-ui .gb-registered-project-id-text").text("");
+                    $(".registered-gb-ui .gb-registered-device-name-text").text("");
                 }
-            },
-            error: function (x, h, r) {
-                $(".gb-registered-to").text("Not registered.");
-                $(".register-gb-ui").removeClass("hidden");
-            }
+            });
+        })
+        .catch(function () {
+            $(".gb-registration-status").text("Status unknown. Connect to the internet for current status.");
+            $(".register-gb-ui").addClass("hidden");
+            $(".registered-gb-ui").addClass("hidden");
         });
 
         // Broadcast the port information to all live share clients

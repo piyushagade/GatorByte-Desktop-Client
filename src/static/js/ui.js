@@ -13,9 +13,20 @@ function uisubapp(){
         
         //! Set UI
         $(".spinner-ui").addClass("hidden");
-        $(".device-selector-panel").removeClass("hidden");
-        $(".device-selected-info-row").remove();
-    
+        
+        if (self.ls.getItem("login/state") == "true") {
+            self.a.uilogin.on_user_logged_in();
+
+            $(".device-selector-panel").removeClass("hidden");
+            $(".device-selected-info-row").remove();
+        }
+        else {
+            $(".login-panel").removeClass("hidden");
+        }
+        
+        // Hide back button
+        $(".go-back-panel-button").addClass("hidden");
+
         // //! Auto-hide menu
         // setTimeout(() => { $(".menu-buttons-div").fadeOut(400).addClass("hidden").fadeIn(0); }, 1500);
         // $(".container").off("mouseenter").mouseenter(function () {
@@ -64,6 +75,9 @@ function uisubapp(){
 
         // Hide line options
         $(".line-options-overlay").attr("state", "hidden").addClass("hidden");
+
+        // Hide back button
+        $(".go-back-panel-button").addClass("hidden");
         
     }
 
@@ -83,6 +97,9 @@ function uisubapp(){
         $(".status-bar-item.input-button").off("click").click(function () {
             self.toggle_command_input_ui();
         });
+        
+        // Show back button
+        $(".go-back-panel-button").removeClass("hidden");
 
         $(".waiting-for-device-panel").addClass("hidden");
         $(".device-selector-panel").addClass("hidden");
@@ -145,7 +162,7 @@ function uisubapp(){
 
         // Close window button
         $(".menu-buttons-div .close-app-button").off("click").click(function () {
-            self.ipcr.send('close-window-request', {
+            self.ipcr.send('ipc/close-window/request', {
                 windowid: global.states.windowid,
                 port: global.port ? global.port.path : null
             });
@@ -180,6 +197,34 @@ function uisubapp(){
             self.ipcr.send('enable-transparent-mode-request');
             global.states.compactmode = true;
             $(".status-bar-div").fadeOut(400);
+        });
+    
+        // Device registration
+        $(".device-info-overlay .gb-register-button").off("click").click(function () {
+            var sn = $(".device-info-overlay .gb-serial-number").text();
+            var projectuuid = $(".device-info-overlay .gb-register-project-select").val();
+            var devicename = $(".device-info-overlay .gb-register-device-name-input").val().trim().toLowerCase().replace(/\s/g, "-");
+            
+            $.ajax({
+                url: window.global.constants.api + "/gatorbyte/device/registration/set",
+                type: "POST",
+                data: JSON.stringify({
+                    "sn": sn,
+                    "project-uuid": projectuuid,
+                    "device-name": devicename,
+                }),
+                success: function (response) {
+                    console.log(response);
+                    if (response.status == "success") {
+                        $(".gb-registration-status").text("Device registered.");
+                        $(".register-gb-ui").addClass("hidden");
+                    }
+                },
+                error: function (x, h, r) {
+                    $(".gb-registration-status").text("Error registering device.");
+                    $(".register-gb-ui").removeClass("hidden");
+                }
+            });
         });
 
         // Close port button listeners
@@ -384,7 +429,7 @@ function uisubapp(){
                 }, 150);
 
                 if (args.onokay && typeof args.onokay == "function") args.onokay();
-            }, args.hidetimeout || 3000);
+            }, args.hidetimeout || 2000);
         }
 
         /*

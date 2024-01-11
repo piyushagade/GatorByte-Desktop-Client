@@ -1086,10 +1086,13 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".data-information-parent").find(".timezone-dropdown").removeClass("disabled").val(data.survey["tz"]);
 
         // Survey information
-        self.panel.find(".survey-information-parent").find(".project-id-text").removeClass("disabled").val(data.survey["id"]);
-        console.log(global.port.serialNumber.substring(0, 10));
-        self.panel.find(".survey-information-parent").find(".device-id-text").removeClass("disabled").text(global.port.serialNumber.substring(0, 10));
-        self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").val(data.device["name"]);
+        var projectid = self.ls.getItem("device/registration/project-id");
+        var devicename = self.ls.getItem("device/registration/device-name");
+        var sn = self.ls.getItem("device/registration/sn");
+
+        self.panel.find(".survey-information-parent").find(".project-id-text").removeClass("disabled").val(projectid ? projectid : data.survey["id"]).attr("readonly", "true");
+        self.panel.find(".survey-information-parent").find(".device-id-text").removeClass("disabled").text(sn ? sn : global.port.serialNumber.substring(0, 10));
+        self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").val(devicename ? devicename : data.device["name"]).attr("readonly", "true");
         self.panel.find(".survey-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
         
         if (data.survey["date"]) self.panel.find(".survey-information-parent").find(".survey-date").removeClass("disabled").val(data.survey["date"]);

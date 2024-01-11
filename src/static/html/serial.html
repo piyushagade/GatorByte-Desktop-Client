@@ -28,6 +28,10 @@
     <!-- MomentJS -->
     <script src='../js/lib/moment.min.js'></script>
 
+    <!-- AES -->
+    <script src="../js/lib/aes.js"></script>
+    <script src='../js/lib/crypto-js.min.js'></script>
+            
     <!-- Base64 -->
     <script src="../js/lib/base64.min.js"></script>
 
@@ -163,32 +167,32 @@
             
             <div class="col">
 
-                <div class="row" style="padding: 6px 10px; background: #2b2b2b9e;">
-                                        
-                    <!-- List devices button -->
+                <div class="row" style="padding: 6px 10px; background: #0f1d219e; margin-bottom: 0px;">
                     <div class="col-12" style="padding: 0px 2px;">
-                        <div class="header" style="position: relative; cursor: pointer;">
-                            <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Login</p>
-                            <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">Please login using your GatorByte credentials to proceed.</p>
-                        </div>
+                        <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Login</p>
+                    </div>
 
+                    <div class="col-12" style="padding: 0px 2px;">
+                        <p style="color: #888; font-size: 13px; text-align: justify; margin-bottom: 4px;">Thank you for using the GatorByte Desktop Client (GDC).</p>
+                        <p style="color: #888; font-size: 13px; text-align: justify; margin-bottom: 0px;">To proceed, please enter your GatorByte project credentials below. Your login state will be saved and hence you don't need to login every time you use this software.</p>
+                    </div>
+                </div>
+
+                <div class="row" style="padding: 6px 10px; background: #1D1D1DFA; margin-bottom: 10px">
+                    <div class="col-12" style="padding: 0px 2px;">
                         <div class="row" style="margin: 0;">
 
-                            <!-- Devices list -->
                             <div class="col-12" style="padding: 10px 12px;">
-                                <!-- <p style="font-size: 12px; color: rgb(123, 195, 121); margin-top: 0px; margin-bottom: 12px;">Favorite devices</p> -->
                                 <div class="row" style="display: inline-flex; padding: 2px 15px; width: 100%; overflow-x: hidden;">
                                     
-                                    <!-- Project ID -->
                                     <div class="col-12" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">User email</p>
                                         <input class="login-email-input" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
                                     </div>
 
-                                    <!-- Device ID -->
                                     <div class="col-12" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Password</p>
-                                        <input class="login-passord-input" type="password" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
+                                        <input class="login-password-input" type="password" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
                                     </div>
                                 </div>
                                 
@@ -202,6 +206,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row" style="padding: 6px 10px; background: #1D1D1DFA; margin-bottom: 0px;">
+                    <div class="col-12" style="padding: 0px 2px;">
+                        <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Request access</p>
+                    </div>
+
+                    <div class="col-12" style="padding: 0px 2px;">
+                        <p style="color: #888; font-size: 13px; text-align: justify; margin-bottom: 4px;">If you need access to a project or have forgotten your credentials, please email Dr. Eban Bean at <span style="color: #DDDDDD; user-select: all;">ezbean@ufl.edu</span>.</p>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -210,8 +224,27 @@
             
             <div class="col">
 
-                <div class="row device-list-row" style="padding: 6px 10px; background: #2b2b2b9e;">
+                <!-- User info -->
+                <div class="row user-info-row" style="padding: 10px 10px; background: #0f1d219e; margin-bottom: 0px;">
+                    <div class="col-12" style="margin-bottom: 0px; color: #AAA; font-size: 14px; padding: 0;">    
+                        <p class="ui-truncate" style="font-size: 18px; color: #888; margin: -6px 2px -8px 2px; font-weight: 100;">Hello, <span class="user-name-text" style="font-weight: 100; color: #cdcdcd">Guest</span></p>
+                        <p class="ui-truncate hidden" style="font-size: 15px;color: #888;margin: 6px 2px 2px 2px; font-weight: 100;"><span class="user-email-text" style="color: #909090; font-weight: 100;"></span></p>
+                    </div> 
+                </div> 
+
+                <div class="row" style="padding: 0px 10px 10px; background: #0f1d219e; margin-bottom: 10px;">
+                    <div class="col-12" style="margin-bottom: 0px; color: #AAA; font-size: 14px; padding: 0;">  
+                        <p class="ui-truncate" style="font-size: 13px;color: #888;margin: 0px 2px 2px 2px; font-weight: 100;"><span style="color: #909090; font-weight: 100;">You have access to the following GatorByte projects.</span></p>
+                        <div class="row projects-list" style="margin: 0;"></div>
+                    </div> 
+                </div> 
                     
+
+                <div class="row device-list-row" style="padding: 6px 10px; background: #1D1D1DFA;">
+                    <div class="col-12" style="margin-bottom: 0px; color: #AAA; font-size: 14px; padding: 0;">    
+                        <p class="ui-truncate" style="font-size: 13px;color: #888;margin: 0px 2px 2px 2px; font-weight: 100;"><span style="color: #909090; font-weight: 100;">Please connect your GatorByte to this computer using a USB cable. The device will be listed below; click on it and then click on 'Connect' to proceed.</span></p>
+                    </div> 
+
                     <!-- Quick connect button -->
                     <div class="col-12 shadow-heavy quick-connect-button hidden" style="margin: 5px 0 5px;">
                         <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Quick connect</p>
@@ -243,6 +276,11 @@
                                 
                                 <p style="font-size: 12px; color: rgb(123, 195, 121); margin-top: 6px; margin-bottom: 12px;">All connected devices</p>
                                 <div class="connecteddevices-device-selector-list row" style="display: inline-flex; padding: 2px 15px; width: 100%; overflow-x: hidden;">
+                                    <p class="empty-notification" style="color: #AAA; font-size: 13px; margin-left: 12px;">No devices connected</p>
+                                </div>
+                                
+                                <p style="font-size: 12px; color: rgb(123, 195, 121); margin-top: 6px; margin-bottom: 12px;">All devices</p>
+                                <div class="alldevices-device-selector-list row" style="display: inline-flex; padding: 2px 15px; width: 100%; overflow-x: hidden;">
                                     <p class="empty-notification" style="color: #AAA; font-size: 13px; margin-left: 12px;">No devices connected</p>
                                 </div>
                             </div>
@@ -284,7 +322,16 @@
                         <p style="color: rgb(68, 68, 68); font-size: 13px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
                             There was an error initializing the SD card module. Ensure SD card is properly inserted.
                         </p>
-                        <i class="fa-solid fa-pause animate-pulse-opacity" style="position: absolute; top: 12px; right: 18px; color: black; font-size: 12px;"></i>
+                        <i class="fa-solid fa-triangle-exclamation animate-pulse-opacity" style="position: absolute; top: 12px; right: 18px; color: black; font-size: 12px;"></i>
+                    </div>
+                    
+                    <!--! Device not registered notification -->
+                    <div class="col-12 shadow-heavy device-not-registered-notification hidden" style="padding: 12px 12px; margin-right: 6px; background: #ffa67b; margin-top: 8px;">
+                        <p style="color: rgb(29, 29, 29); font-size: 16px; text-align: justify; margin-bottom: -2px; font-weight: bold;">Regsitration not found</p>
+                        <p style="color: rgb(68, 68, 68); font-size: 13px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
+                            This GatorByte has not been registered yet. Please register the device by clicking on <b><i class="fa-solid fa-info"></i> GatorByte info</b> button below.
+                        </p>
+                        <i class="fa-solid fa-triangle-exclamation animate-pulse-opacity" style="position: absolute; top: 12px; right: 18px; color: black; font-size: 12px;"></i>
                     </div>
                     
                     <!--! Device not ready (setup not complete) notification -->
@@ -1631,22 +1678,56 @@
 
                         <div class="row" style="margin: 0 10px; padding: 4px 0;">
 
-                            <!-- Registered to -->
+                            <!-- Registration status -->
                             <div class="col-auto" style="padding: 0 4px;">
                                 <div style="padding: 4px 10px;background: white;border-radius: 2px;">
-                                    <p style="font-size: 12px;color: #095f4b;margin-right: 8px;margin-bottom: 4px;font-weight: 600;">Registered to</p>
-                                    <p class="gb-registered-to" style="font-size: 13px;color: #4e4e4eef;margin-top: -6px;margin-bottom: 0;font-weight: 600; user-select: all;">-</p>
+                                    <p style="font-size: 12px;color: #095f4b;margin-right: 8px;margin-bottom: 4px;font-weight: 600;">Registeration status</p>
+                                    <p class="gb-registration-status" style="font-size: 13px;color: #4e4e4eef;margin-top: -6px;margin-bottom: 0;font-weight: 600; user-select: all;">-</p>
                                 </div>
                             </div>
 
-                            <div class="register-gb-ui shadow hidden" style="margin-bottom: 0;padding: 14px 14px;margin: 8px 4px 0px;background: white;">
+                            <!-- Registration form -->
+                            <div class="col-auto register-gb-ui shadow hidden" style="margin-bottom: 0;padding: 14px 14px;margin: 8px 4px 0px;background: white;">
                                 <p style="font-size: 13px;color: #5f5f5fef;margin-top: -6px;margin-bottom: 4px;font-weight: bold;">
                                     Please register your GatorByte device before you use it.
                                 </p>
-    
-                                <p style="color: #000;font-size: 12px;text-align: justify;margin-bottom: 0px;">Registrant's email</p>
-                                <input class="gb-register-email" style="width: 100%;background: transparent;outline: 0;border: 0;border-bottom: 1px solid #bfbebe;color: rgb(32, 32, 32);font-size: 14px;font-weight: bold;text-align: justify;margin-bottom: 0px;padding: 0px 8px;" placeholder="albert.gator@ufl.edu">
-                                <div class="gb-register-button" style="padding: 4px 8px;font-size: 13px;color: rgb(255, 255, 255);background: #732e3a;width: fit-content;margin-right: 6px;margin-top: 10px;">Register now</div>
+                                
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <p style="color: #000;font-size: 12px;text-align: justify;margin-bottom: 0px;">Project ID</p>
+                                        <select class="gb-register-project-select" style="background: transparent; max-width: 120px; outline: 0; border: 0; border-bottom: 1px solid #bfbebe; color: #333; font-size: 14px;font-weight: 400; text-align: justify; margin-bottom: 0px;">
+                                            <option style="color: #222;"></option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-auto">
+                                        <p style="color: #000;font-size: 12px;text-align: justify;margin-bottom: 0px;">Device name</p>
+                                        <input class="gb-register-device-name-input" style="width: 100%; max-width: 120px;background: transparent;outline: 0;border: 0;border-bottom: 1px solid #bfbebe;color: #333;font-size: 14px;font-weight: 400;text-align: justify;margin-bottom: 0px;padding: 0px 8px;">
+                                    </div>
+                                </div>
+                                
+                                <div class="gb-register-button" style="padding: 4px 8px;font-size: 13px;color: rgb(255, 255, 255);background: #732e3a;width: fit-content;margin-right: 6px;margin-top: 10px;">Register</div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin: -8px 10px 0; padding: 4px 0;">
+                            <!-- Registered device info -->
+                            <div class="col-auto registered-gb-ui shadow hidden" style="margin-bottom: 0;padding: 14px 14px;margin: 8px 4px 0px;background: white;">
+                                <p style="font-size: 13px;color: #12b117ef;margin-top: -8px; margin-left: -2px; margin-bottom: 4px;font-weight: bold;">
+                                    You GatorByte is registered.
+                                </p>
+                                
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <p style="color: #000;font-size: 12px;text-align: justify;margin-bottom: 0px;">Project ID</p>
+                                        <div class="gb-registered-project-name-text" style="width: 100%; max-width: 120px;background: transparent;outline: 0;border: 0;border-bottom: 1px solid #bfbebe;color: #333;font-size: 14px;font-weight: 400;text-align: justify;margin-bottom: 0px;padding: 0px 8px;"></div>
+                                    </div>
+                                    
+                                    <div class="col-auto">
+                                        <p style="color: #000;font-size: 12px;text-align: justify;margin-bottom: 0px;">Device name</p>
+                                        <div class="gb-registered-device-name-text" style="width: 100%; max-width: 120px;background: transparent;outline: 0;border: 0;border-bottom: 1px solid #bfbebe;color: #333;font-size: 14px;font-weight: 400;text-align: justify;margin-bottom: 0px;padding: 0px 8px;"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -1862,10 +1943,12 @@
 <script src="../js/functions.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/ipc.js"></script>
+<script src="../js/storage.js"></script>
 <script src="../js/socket.js"></script>
 
 <!-- UI JavaScript modules -->
 <script src="../js/ui.js"></script>
+<script src="../js/modules/ui/user.js"></script>
 <script src="../js/modules/ui/home.js"></script>
 <script src="../js/modules/ui/dashboard.js"></script>
 <script src="../js/modules/ui/fileexplorer.js"></script>

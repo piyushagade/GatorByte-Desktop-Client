@@ -5,6 +5,26 @@ var global = {
         code: {}
     },
     timers: {},
+    constants: {
+        "fingerprint": null,
+        "server": "https://sapi.ezbean-lab.com/",
+        "api": "https://sapi.ezbean-lab.com/v3",
+        "hostname": location.hostname,
+        "socket": null,
+        "device": {}
+    },
+    data: {
+        "events": [],
+        "blogs": [],
+        "announcements": [],
+        "pictures": [],
+        "user": {},
+        "url-params": new URLSearchParams(window.location.search)
+    },
+    variables: {
+        "ls": window.sls,
+        "tz-offset": null
+    },
     accessors: {},
     dashboard: {},
     hook: null
@@ -43,6 +63,7 @@ var isOutOfBounds = function (elem, options) {
 $(document).ready(function () {
 
     // Init subapps
+    global.accessors.uilogin = new uiloginsubapp().init();
     global.accessors.ui = new uisubapp().init();
     global.accessors.uihome = new uihomesubapp().init();
     global.accessors.uidashboard = new uidashboardsubapp().init();
@@ -63,7 +84,30 @@ $(document).ready(function () {
     $(window).resize(function() {
         setheight();
     });
+
+    // Network test
+    newtworktest();
+    setInterval(() => {
+        newtworktest();
+    }, 30000);
 });
+
+function newtworktest () {
+    return new Promise(function (resolve, reject) {
+        $.ajax({
+            url: window.global.constants.api + "/time/utc",
+            method: "get",
+            success: function (response) {
+                global.states.internet = true;
+                resolve (global.states.internet);
+            },
+            error: function () {
+                global.states.internet = false;
+                reject (global.states.internet);
+            }
+        });
+    })
+}
 
 function setheight() {
 
