@@ -369,9 +369,8 @@
         
         <!--! SD Card explorer -->
         <div class="row scrollbar-style panel sd-explorer-panel hidden panel" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
-            <div class="col">
+            <div class="col shadow" style="background: #333333;border-radius: 2px;padding: 10px 24px;">
                 <div class="row">
-                        
                     <!-- Files list -->
                     <div class="col-12" style="margin: -10px 0 10px 0; padding: 0;">
                         
@@ -401,24 +400,30 @@
                             <!-- Upload file -->
                             <div class="col-auto upload-file-button" title="Upload file" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
                                 <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
-                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-file-circle-plus"></i>
                                 </p>
                             </div>
                             <div class="upload-file-button-accessories">
                                 <input class="hidden file-input" type='file' accept=".txt, .csv, .ini, .log">
                                 <p class="hidden b64-store"></p>
                             </div>
+                            
+                            <div class="col-auto make-directory-button" title="Create folder" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
+                                <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
+                                    <i class="fa-solid fa-folder-plus"></i>
+                                </p>
+                            </div>
 
                             <!-- File options for selected file -->
                             <div class="col-auto file-options-parent hidden" state="no-file-selected" style="display: inline-flex; padding: 0;"> 
                                 
-                                <div class="download-file-button" title="Save file to computer" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
+                                <div class="download-file-button" title="Save file to computer" style="padding: 4px 10px;margin-right: 6px;background: #58a12aa6;border-radius: 2px;height: 28px;">
                                     <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                         <i class="fa-regular fa-floppy-disk"></i>
                                     </p>
                                 </div>
                                 
-                                <div class="delete-file-button" title="Delete file on SD" style="padding: 4px 10px;margin-right: 6px;background: #210a0aa6;border-radius: 2px;height: 28px;">
+                                <div class="delete-file-button" title="Delete file" style="padding: 4px 10px;margin-right: 6px;background: #a33030a6;border-radius: 2px;height: 28px;">
                                     <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                         <i class="fa-solid fa-trash"></i>
                                     </p>
@@ -428,13 +433,7 @@
                             <!-- Folder options for selected folder -->
                             <div class="col-auto folder-options-parent hidden" state="no-file-selected" style="display: inline-flex; padding: 0;"> 
                                 
-                                <div class="make-directory-button" title="Create folder" style="padding: 4px 10px;margin-right: 6px;background: #101010a6;border-radius: 2px;height: 28px;">
-                                    <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
-                                        <i class="fa-solid fa-folder-plus"></i>
-                                    </p>
-                                </div>
-                                
-                                <div class="delete-directory-button" title="Delete folder" style="padding: 4px 10px;margin-right: 6px;background: #210a0aa6;border-radius: 2px;height: 28px;">
+                                <div class="delete-folder-button" title="Delete folder" style="padding: 4px 10px;margin-right: 6px;background: #a33030a6;border-radius: 2px;height: 28px;">
                                     <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                         <i class="fa-solid fa-trash"></i>
                                     </p>
@@ -442,7 +441,7 @@
                             </div>
 
                             <!-- Breadcrumbs -->
-                            <div class="col-auto" style="padding: 4px 10px;margin-right: 6px;background: #3838389c;border-radius: 2px;height: 28px;">
+                            <div class="col-auto" style="padding: 4px 10px;margin-right: 6px;background: #616161d1;border-radius: 2px;height: 28px;">
                                 <p style="color: #DDDDDD;margin-bottom: 0; font-size: 13px;">
                                     <i class="fa-solid fa-folder" style="margin-right: 6px;"></i>
                                     <span class="directory-name-text">/</span>

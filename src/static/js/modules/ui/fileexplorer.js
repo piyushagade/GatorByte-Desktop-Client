@@ -35,6 +35,9 @@ function uidownloadfilessubapp(){
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden");
         
+            // // Ensure all base files/folders exist
+            // self.sendcommand("sdf:cr:all");
+        
             // Hide previous errors
             $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
             
@@ -49,10 +52,10 @@ function uidownloadfilessubapp(){
             //! On upload file selected listener
             $(".sd-explorer-panel .upload-file-button-accessories").find(".file-input").off("change").on("change", function () {
                 
-                if (this.files) {
+                if (this.files && this.files.length > 0) {
                     $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
                     $(".header-panel").find(".download-status-heading").text("Uploading");
-                    $(".header-panel").find(".download-status-text").text("Sending " + (this.files.length + " files" + (this.files.length == 1 ? "" : "s")));
+                    $(".header-panel").find(".download-status-text").text("Sending " + (this.files.length + " file" + (this.files.length == 1 ? "" : "s")));
                     $(".header-panel").find(".progress-bar-overlay").find(".progress").removeClass("progress-striped").addClass("progress-striped-infinite");
                     $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
 
@@ -81,6 +84,13 @@ function uidownloadfilessubapp(){
                 // setTimeout(() => {
                 //     $(".sd-explorer-panel .refresh-files-list-button").click();
                 // }, 1000);
+            });
+
+            //! Create directory button listener
+            $(".sd-explorer-panel .make-directory-button").off("click").click(function () {
+
+                var path = self.currentfoldername.startsWith("/") ? self.currentfoldername.substring(1, self.currentfoldername.length) : self.currentfoldername;
+                self.request_folder_creation(path, "folder");
             });
         });
 
@@ -117,15 +127,17 @@ function uidownloadfilessubapp(){
 
     self.process_response = function (response) {
 
-        if (response.startsWith("file:")) {
+        console.log(response);
+
+        if (response.indexOf("error:") !== -1) {
+            var error = response.split(":")[1];
+            self.show_error(error);
+        }
+        else if (response.startsWith("file:")) {
             var line = response.replace(/<br>/g, "");
 
             if (self.state == "wait-for-file-list") {
-                if (line.startsWith("file:")) self.update_file_list_ui(line.replace(/file:/, ""));
-                else if (line.startsWith("error:")) {
-                    var error = line.split(":")[1];
-                    self.show_error(error);
-                }
+                self.update_file_list_ui(line.replace(/file:/, ""));
             }
             else if (self.state == "wait-on-file-download") {
                 
@@ -224,14 +236,14 @@ function uidownloadfilessubapp(){
                 var extensioncolors = ["#c74b0f", "green", "#962020", "#1969cc"];
 
                 $(".sd-explorer-panel .download-files-list").append(multiline(function () {/* 
-                    <div class="col-auto files-list-item shadow-heavy" filesize="{{filesize}}" filename="{{filename}}" filetype="{{filetype}}" style="text-align: center;position: relative;padding: 6px 8px;margin-right: 10px;margin-bottom: 10px;height: 100px;width: 85px;background: #ffffff1f;border-radius: 4px;">
+                    <div class="col-auto files-list-item" filesize="{{filesize}}" filename="{{filename}}" filetype="{{filetype}}" style="text-align: center;position: relative;padding: 6px 8px;margin-right: 10px;margin-bottom: 10px;height: 100px;width: 85px;background: #ffffff1f;border-radius: 4px;">
                         <div style="color: #f1f1f1;font-size: 36px;">
                             {{fileicon}}
                             <div style="color: #ffffff;font-size: 10px;position: absolute;top: 6px;left: 5px;margin: auto auto;background: {{filecolor}};padding: 0px 2px;border-radius: 2px;">
                                 {{filetype}}
                             </div>
                         </div>
-                        <div class="truncate" title="{{filename}}" style="color: #BBBBBB;font-size: 13px;">
+                        <div contenteditable class="truncate file-name-text" filename="{{filename}}" title="{{filename}}" style="color: #BBBBBB;font-size: 13px;">
                             {{filename}}
                         </div>
                         <div class="truncate" style="color: #88adff;font-size: 10px;">
@@ -248,6 +260,18 @@ function uidownloadfilessubapp(){
                 }));
             });
         }
+
+        //! Rename folder/file
+        $(".sd-explorer-panel .files-list-item .file-name-text").off("keyup").keyup(self.f.debounce(function () {
+            var oldname = $(this).attr("filename").trim();
+            var newname = $(this).text().trim();
+
+            // Only folder
+            if (!oldname.startsWith("/")) return;
+
+            self.request_rename(oldname.substring(1, oldname.length), newname.substring(1, newname.length));
+            $(this).blur();
+        }, 1000));
 
         //! When user clicks on an icon
         $(".sd-explorer-panel .files-list-item").off("click").click(function () {
@@ -326,7 +350,6 @@ function uidownloadfilessubapp(){
                     }
                 });
 
-                
                 //! Delete file button listener
                 $(".sd-explorer-panel .file-options-parent .delete-file-button").off("click").click(function () {
                     var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
@@ -351,6 +374,7 @@ function uidownloadfilessubapp(){
                             // Update UI
                             setTimeout(() => {
                                 $(".sd-explorer-panel .refresh-files-list-button").click();
+                                self.panel.find(".file-options-parent").addClass("hidden");
                             }, 400);
                         }
                     });
@@ -376,39 +400,30 @@ function uidownloadfilessubapp(){
                     $(".sd-explorer-panel .files-list-item").css("background", "#ffffff1f").removeClass("selected");
                     $(this).css("background", "#355377").addClass("selected");
                 }
+                
+                //! Delete folder button listener
+                $(".sd-explorer-panel .folder-options-parent .delete-folder-button").off("click").click(function () {
+                    var selectedfolder = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
 
-                //! Create directory button listener
-                $(".sd-explorer-panel .folder-options-parent .make-directory-button").off("click").click(function () {
-                    var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
+                    self.a.ui.notification({
+                        "contexttype": "error",
+                        "overlaytype": "dialog",
+                        "heading": "Delete folder?",
+                        "body": "Are you sure you want to delete the folder and all its contents?",
+                        "okay": "Delete",
+                        "dismiss": "Cancel",
+                        "onokay": function () {
+                            
+                            var folderpath = self.currentfoldername + selectedfolder.substring(1, selectedfolder.length);
+                            self.request_folder_deletion(folderpath);
 
-                    // Send download request
-                    self.filedownloadname = filename;
-                    self.filedownloaddata = "";
-                    self.filedownloadline = 0;
-
-                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername) + self.filedownloadname;
-                    console.log(filepath);
-
-                    // self.request_file_download(filepath, self.filedownloadline);
-
-                });
-
-                //! Delete file button listener
-                $(".sd-explorer-panel .folder-options-parent .delete-directory-button").off("click").click(function () {
-                    var filename = $(".sd-explorer-panel .files-list-item.selected").attr("filename");
-
-                    // Send download request
-                    self.filedownloadname = filename;
-                    self.filedownloaddata = "";
-                    self.filedownloadline = 0;
-
-                    var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername) + self.filedownloadname;
-                    self.request_folder_deletion(filepath);
-
-                    // Update UI
-                    setTimeout(() => {
-                        $(".sd-explorer-panel .refresh-files-list-button").click();
-                    }, 1400);
+                            // Update UI
+                            setTimeout(() => {
+                                $(".sd-explorer-panel .refresh-files-list-button").click();
+                                self.panel.find(".folder-options-parent").addClass("hidden");
+                            }, 400);
+                        }
+                    });
                 });
             }
         });
@@ -499,6 +514,32 @@ function uidownloadfilessubapp(){
         return new Promise(function (resolve, reject) {
             self.sendcommand("rm" + ":" + filename);
             self.state = "wait-for-file-list";
+        });
+    }
+
+    self.request_folder_creation = function (path, foldername) {
+
+        return new Promise(function (resolve, reject) {
+            self.sendcommand("crd" + ":" + path + foldername);
+            self.state = "wait-for-file-list";
+            
+            // Update UI
+            setTimeout(() => {
+                $(".sd-explorer-panel .refresh-files-list-button").click();
+            }, 1500);
+        });
+    }
+
+    self.request_rename = function (oldname, newname) {
+
+        return new Promise(function (resolve, reject) {
+            self.sendcommand("rnd:" + oldname + "#" + newname);
+            self.state = "wait-for-file-list";
+            
+            // Update UI
+            setTimeout(() => {
+                $(".sd-explorer-panel .refresh-files-list-button").click();
+            }, 1500);
         });
     }
 
