@@ -688,7 +688,7 @@ function uiconfiggatorbytesubapp() {
                     $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled");
                     $(".gb-config-header").find(".upload-config-data-button").addClass("disabled");
                     
-                    $(".home-panel .initial-configuration-pending-notification").removeClass("hidden");
+                    if (!$(".home-panel").find(".sd-error-notification").hasClass("hidden")) $(".home-panel .initial-configuration-pending-notification").removeClass("hidden");
 
                 }, 200);
 
@@ -1340,7 +1340,7 @@ function uiconfiggatorbytesubapp() {
                 $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#962e38").text("Initial configuration pending.");
                 $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled").css("background", "#333333");
                 $(".gb-config-header").find(".upload-config-data-button").addClass("disabled").css("background", "#333333");
-                $(".home-panel .initial-configuration-pending-notification").removeClass("hidden");
+                if (!$(".home-panel").find(".sd-error-notification").hasClass("hidden")) $(".home-panel .initial-configuration-pending-notification").removeClass("hidden");
             }
         }
     }

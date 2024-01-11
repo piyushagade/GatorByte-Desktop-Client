@@ -201,6 +201,10 @@ function uisubapp(){
                 $(".refresh-config-data-button").removeClass("disabled");
                 $(".panel").removeClass("disabled");
 
+                $(".home-panel").find(".sd-error-notification").addClass("hidden");
+                $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
+                $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
+
                 global.accessors.uiconfiggatorbyte.filedownloaddata = "";
                 global.accessors.uiconfiggatorbyte.filedownloadline = 0;
 

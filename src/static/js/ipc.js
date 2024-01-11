@@ -97,6 +97,7 @@ function ipcsubapp(){
                 $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
                 $(".gb-config-header .action-button").addClass("disabled"); 
                 $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
+                $(".home-panel").find(".big-button.requires-sd-ready").addClass("disabled");
                 
                 if ($(".flash-firmware-overlay").hasClass("hidden")) {
                     $(".device-not-available-overlay").slideUp(50);
@@ -153,7 +154,7 @@ function ipcsubapp(){
 
                     // Enable big buttons in home UI
                     var functions = [];
-                    $(".home-panel").find(".big-button.requires-device-ready.disabled").each(function (ei, el) {
+                    $(".home-panel").find(".big-button.requires-device-ready.disabled, .big-button.requires-sd-ready.disabled").each(function (ei, el) {
         
                         functions.push(function () {
                             $(el).removeClass("disabled");
@@ -161,6 +162,44 @@ function ipcsubapp(){
                     });
                     self.f.waterfall(functions, 150);
                 });
+        });
+
+        // On SD ready
+        self.ipcr.on("ipc/gb-sd-ready-notification/push", (event, response) => {
+                
+            // Enable big buttons in home UI
+            var functions = [];
+            $(".home-panel").find(".big-button.requires-sd-ready.disabled").removeClass("disabled");
+        });
+
+        // On SD uninitialized
+        self.ipcr.on("ipc/gb-sd-uint-notification/push", (event, response) => {
+                
+            $(".home-panel").find(".sd-error-notification").removeClass("hidden");
+            $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
+            $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
+            
+            $(".home-panel").find(".big-button.requires-sd-ready").addClass("disabled");
+        });
+
+        // On SD R/W test failed
+        self.ipcr.on("ipc/gb-sd-rwf-notification/push", (event, response) => {
+                
+            $(".home-panel").find(".sd-error-notification").removeClass("hidden");
+            $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
+            $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
+            
+            $(".home-panel").find(".big-button.requires-sd-ready").addClass("disabled");
+        });
+
+        // On SD R/W test failed
+        self.ipcr.on("ipc/gb-sd-rwf-notification/push", (event, response) => {
+                
+            $(".home-panel").find(".sd-error-notification").removeClass("hidden");
+            $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
+            $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
+            
+            $(".home-panel").find(".big-button.requires-sd-ready").addClass("disabled");
         });
 
         self.ipcr.on("ipc/flash-firmware/response", (event, response) => {

@@ -158,6 +158,53 @@
         </div>
 
         
+        <!--! Login panel -->
+        <div class="row scrollbar-style panel login-panel hidden panel" style="margin: 10px 0; padding: 2px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; cursor: default;">
+            
+            <div class="col">
+
+                <div class="row" style="padding: 6px 10px; background: #2b2b2b9e;">
+                                        
+                    <!-- List devices button -->
+                    <div class="col-12" style="padding: 0px 2px;">
+                        <div class="header" style="position: relative; cursor: pointer;">
+                            <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Login</p>
+                            <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">Please login using your GatorByte credentials to proceed.</p>
+                        </div>
+
+                        <div class="row" style="margin: 0;">
+
+                            <!-- Devices list -->
+                            <div class="col-12" style="padding: 10px 12px;">
+                                <!-- <p style="font-size: 12px; color: rgb(123, 195, 121); margin-top: 0px; margin-bottom: 12px;">Favorite devices</p> -->
+                                <div class="row" style="display: inline-flex; padding: 2px 15px; width: 100%; overflow-x: hidden;">
+                                    
+                                    <!-- Project ID -->
+                                    <div class="col-12" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">User email</p>
+                                        <input class="login-email-input" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
+                                    </div>
+
+                                    <!-- Device ID -->
+                                    <div class="col-12" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Password</p>
+                                        <input class="login-passord-input" type="password" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
+                                    </div>
+                                </div>
+                                
+                                <div class="row" style="margin: 0px 0px;">
+                                    <div class="col-auto login-submit-button shadow" style="padding: 3px 6px;margin-right: 6px;margin-top: 0px;background: #1b5782;border-radius: 2px;height: 25px;font-size: 13px;width: fit-content;">
+                                        <p style="color: #DDDDDD;margin-bottom: 0;">Login</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!--! Device selector -->
         <div class="row scrollbar-style panel device-selector-panel hidden panel" style="margin: 10px 0; padding: 2px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; cursor: default;">
             
@@ -231,6 +278,15 @@
                         <i class="fa-solid fa-cloud-arrow-down" style="position: absolute; top: 12px; right: 18px; color: #069230; font-size: 10px;"></i>
                     </div>
                     
+                    <!--! SD error notification -->
+                    <div class="col-12 shadow-heavy sd-error-notification hidden" style="padding: 12px 12px; margin-right: 6px; background: #ff7b7b; margin-top: 8px;">
+                        <p style="color: rgb(29, 29, 29); font-size: 16px; text-align: justify; margin-bottom: -2px; font-weight: bold;">A fatal error encountered</p>
+                        <p style="color: rgb(68, 68, 68); font-size: 13px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
+                            There was an error initializing the SD card module. Ensure SD card is properly inserted.
+                        </p>
+                        <i class="fa-solid fa-pause animate-pulse-opacity" style="position: absolute; top: 12px; right: 18px; color: black; font-size: 12px;"></i>
+                    </div>
+                    
                     <!--! Device not ready (setup not complete) notification -->
                     <div class="col-12 shadow-heavy device-not-ready-notification hidden" style="padding: 12px 12px; margin-right: 6px; background: #ffd65a; margin-top: 8px;">
                         <p style="color: rgb(29, 29, 29); font-size: 16px; text-align: justify; margin-bottom: -2px; font-weight: bold;">The GatorByte is initializing</p>
@@ -278,7 +334,7 @@
                             </div>
                             
                             <!-- Control variables -->
-                            <div class="col-auto shadow big-button control-variables-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                            <div class="col-auto shadow big-button control-variables-button requires-sd-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
                                 <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-subscript"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">Control variables</p>
@@ -294,7 +350,7 @@
                             </div>
                             
                             <!-- Download file -->
-                            <div class="col-auto shadow big-button download-files-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
+                            <div class="col-auto shadow big-button download-files-button  requires-sd-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
                                 <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-sd-card"></i></p>
                                     <p style="font-size: 14px; margin-bottom: 2px;">SD card explorer</p>

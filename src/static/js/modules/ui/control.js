@@ -101,6 +101,13 @@ function uicontrolvariablessubapp() {
             });
 
             self.panel.find(".empty-notification").addClass("hidden");
+            
+            $(".panel").addClass("disabled");
+            $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+            $(".header-panel").find(".download-status-heading").text("Updating control variables");
+            $(".header-panel").find(".download-status-text").text("In progress");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").removeClass("progress-striped").addClass("progress-striped-infinite");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", "100%");
 
             // Get sync status
             setTimeout(() => {
@@ -127,6 +134,14 @@ function uicontrolvariablessubapp() {
             
             // Upload file
             self.upload_file(0);
+
+            $(".panel").addClass("disabled");
+            $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+            $(".header-panel").find(".download-status-heading").text("Uploading control variables");
+            $(".header-panel").find(".download-status-text").text("In progress");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").removeClass("progress-striped").addClass("progress-striped-infinite");
+            $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", "0");
+
         });
     }
 
@@ -152,6 +167,9 @@ function uicontrolvariablessubapp() {
 
             self.panel.find(".add-control-variable-button").removeClass("disabled");
             self.panel.find(".sync-control-variable-button").removeClass("disabled");
+
+            $(".panel").removeClass("disabled");
+            $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
         }
 
         
@@ -191,6 +209,13 @@ function uicontrolvariablessubapp() {
         
         self.panel.find(".add-control-variable-button").addClass("disabled");
         self.panel.find(".sync-control-variable-button").addClass("disabled");
+
+        $(".panel").addClass("disabled");
+        $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+        $(".header-panel").find(".download-status-heading").text("Fetching control variables");
+        $(".header-panel").find(".download-status-text").text("In progress");
+        $(".header-panel").find(".progress-bar-overlay").find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
+        $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", "100%");
     }
     
     // Request data from file from SD
@@ -298,6 +323,8 @@ function uicontrolvariablessubapp() {
         
         self.panel.find(".add-control-variable-button").removeClass("disabled");
         self.panel.find(".sync-control-variable-button").removeClass("disabled");
+        $(".panel").removeClass("disabled");
+        $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
         
         // Generate list
         if (Object.keys(self.dataobject).length == 0) {
@@ -327,6 +354,9 @@ function uicontrolvariablessubapp() {
         
         self.panel.find(".add-control-variable-button").removeClass("disabled");
         self.panel.find(".sync-control-variable-button").removeClass("disabled");
+        
+        $(".panel").removeClass("disabled");
+        $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
     }
 
     self.add_item_to_list = function (args) {
@@ -380,7 +410,7 @@ function uicontrolvariablessubapp() {
             var uploadedbyte = startingline + self.lines_to_send >= self.datastring.length ? self.datastring.length : startingline + self.lines_to_send;
             
             $(".header-panel").find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.datastring.length) * $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
-            $(".header-panel").find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.datastring.length + " kB"));
+            $(".header-panel").find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.datastring.length + " B"));
 
             return new Promise(function (resolve, reject) {
                 self.sendcommand("cvupl:" + datatosend + "^" + startingline);

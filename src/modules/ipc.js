@@ -325,8 +325,66 @@ module.exports = {
                                     });
                                 });
 
+                                // // Request hash from config on SD
+                                // i.g.var.serports[result.port.settings.path].write("cfg:hash");
+                                return;
+                            }
+
+                            // SD is initialized and ready
+                            if (data.indexOf("##CL-GB-SD-READY##") !== -1) {
+                                console.log("SD is initialized");
+
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/gb-sd-ready-notification/push", {
+                                        path: result.port.settings.path,
+                                        pnpId: result.port.settings.pnpId
+                                    });
+                                });
+
                                 // Request hash from config on SD
                                 i.g.var.serports[result.port.settings.path].write("cfg:hash");
+                                return;
+                            }
+
+                            // SD is absent
+                            if (data.indexOf("##CL-GB-SD-ABS##") !== -1) {
+                                console.log("SD is absent");
+
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/gb-sd-absent-notification/push", {
+                                        path: result.port.settings.path,
+                                        pnpId: result.port.settings.pnpId
+                                    });
+                                });
+
+                                return;
+                            }
+
+                            // SD R/W test failed
+                            if (data.indexOf("##CL-GB-SD-RWF##") !== -1) {
+                                console.log("SD R/W test failed");
+
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/gb-sd-rwf-notification/push", {
+                                        path: result.port.settings.path,
+                                        pnpId: result.port.settings.pnpId
+                                    });
+                                });
+
+                                return;
+                            }
+
+                            // SD initialization failed
+                            if (data.indexOf("##CL-GB-SD-UINT##") !== -1) {
+                                console.log("SD couldn't initialize");
+
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/gb-sd-uint-notification/push", {
+                                        path: result.port.settings.path,
+                                        pnpId: result.port.settings.pnpId
+                                    });
+                                });
+
                                 return;
                             }
 
