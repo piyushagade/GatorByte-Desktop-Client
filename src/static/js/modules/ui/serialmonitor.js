@@ -45,7 +45,6 @@ function uiserialmonitorsubapp(){
     }
 
     self.setheight = function () {
-        // serial-monitor-text
         
         setTimeout(() => {
             var headerheight = $(".header-panel").height();

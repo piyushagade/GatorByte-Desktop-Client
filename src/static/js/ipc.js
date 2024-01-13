@@ -429,6 +429,9 @@ function ipcsubapp(){
                     ui.find(".device-selector-list-item").remove();
                 }
                 else ui.find(".empty-notification").addClass("hidden");
+
+                // Hide quick connect button if not devices are connected
+                if (!data["connecteddevices"] || data["connecteddevices"].length == 0) $(".latest-device-connect-button").addClass("hidden");
         
                 data[category].forEach(port => {
                     var port_original = port.path;
@@ -443,6 +446,33 @@ function ipcsubapp(){
                     if (port.path.length > 10) {
                         port.path = port.path.substring(0, 6) + " ... " + port.path.substring(port.path.length - 10, port.path.length);
                         title = port_original;
+                    }
+
+                    // Show latest device connect button
+                    if (category == "connecteddevices") {
+                        if (data[category].length != 0)  {
+                            $(".latest-device-connect-button").removeClass("hidden");
+                            $(".latest-device-connect-button").find(".last-device-name").text(devicename);
+                            $(".latest-device-connect-button").find(".last-device-baud-rate").text(baud);
+                            $(".latest-device-connect-button").off("click").click(function () {
+                                console.log("Requesting connection for: " + port.path + " (" + port.baud + " bps) on window ID: " + global.states.windowid);
+                
+                                self.ipcr.send('ipc/port-open/request', {
+                                    path: port.path,
+                                    ...port
+                                });
+                            });
+
+                            if (window.global.data["devices"] && window.global.data["projects"]) {
+                                var devicedata = self.f.grep(window.global.data["devices"], "SN", sn, true);
+                                if (devicedata) {
+                                    var projectdata = self.f.grep(window.global.data["projects"], "UUID", devicedata["PROJECTUUID"], true);
+                                    projectname = projectdata.NAME;
+                                    devicename = devicedata.NAME;
+                                    $(".latest-device-connect-button").find(".last-device-name").text(projectname + " - " + devicename)
+                                }
+                            }
+                        }
                     }
 
                     //! Add device to the list if not already added

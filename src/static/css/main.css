@@ -229,6 +229,19 @@ body {
     background: #094603;
 }
 
+.latest-device-connect-button {
+    padding: 10px 12px;
+    margin-right: 6px;
+    background: #073d02;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: 0.2s all ease-in;
+}
+
+.latest-device-connect-button:hover {
+    background: #094603;
+}
+
 .list-devices-button {
     padding: 10px 12px; 
     margin-right: 6px; 

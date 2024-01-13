@@ -80,10 +80,10 @@ $(document).ready(function () {
     global.accessors.sck = new socketsubapp().init();
 
     // On window resize
-    setheight();
-    $(window).resize(function() {
-        setheight();
-    });
+    // setheight();
+    // $(window).resize(function() {
+    //     setheight();
+    // });
 
     // Network test
     newtworktest();

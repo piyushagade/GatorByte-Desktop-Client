@@ -60,7 +60,10 @@ function uisubapp(){
         });
 
         // Window height adjustment on resize
-        global.timers.windowresize = setInterval(function () { self.update_ui_dimensions(false); }, 100);
+        global.timers.windowresize = setInterval(function () { 
+            setheight();
+            // self.update_ui_dimensions(false);
+        }, 100);
 
         // Start listeners
         self.listeners();

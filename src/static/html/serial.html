@@ -246,9 +246,16 @@
                     </div> 
 
                     <!-- Quick connect button -->
-                    <div class="col-12 shadow-heavy quick-connect-button hidden" style="margin: 5px 0 5px;">
+                    <div class="col shadow-heavy quick-connect-buttonz hidden" style="margin: 5px 0 5px;">
                         <p style="color: rgb(177, 177, 177); font-size: 16px; text-align: justify; margin-bottom: 0px;">Quick connect</p>
-                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;">Connect to the <span class="last-device-name">last connected device</span> at <span class="last-device-baud-rate">previously used baud rate</span>.</p>
+                        <p style="color: #888; font-size: 12px; text-align: justify; margin-bottom: 0px;"><span class="last-device-name">last connected device</span> at <span class="last-device-baud-rate">previously used baud rate</span>.</p>
+                        <i class="fa-solid fa-link" style="position: absolute; top: 12px; right: 18px; color: #dae0e5; font-size: 10px;"></i>
+                    </div>
+
+                    <!-- Last connected device button -->
+                    <div class="col shadow-heavy latest-device-connect-button hidden" style="margin: 5px 0 5px;">
+                        <p style="color: rgb(218, 218, 218); font-size: 16px; text-align: justify; margin-bottom: 0px;">Quick connect</p>
+                        <p style="color: #a2a2a2; font-size: 12px; text-align: justify; margin-bottom: 0px;"><span class="last-device-name" style="font-weight: bold;">Connect to the last connected device</span> at <span class="last-device-baud-rate" style="font-weight: bold;">previously used baud rate</span> bps.</p>
                         <i class="fa-solid fa-link" style="position: absolute; top: 12px; right: 18px; color: #dae0e5; font-size: 10px;"></i>
                     </div>
                     
@@ -471,8 +478,8 @@
         </div>
         
         <!--! SD Card explorer -->
-        <div class="row scrollbar-style panel sd-explorer-panel hidden panel" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
-            <div class="col shadow" style="background: #333333;border-radius: 2px;padding: 10px 24px;">
+        <div class="row scrollbar-style panel sd-explorer-panel hidden panel" style="margin: 10px 0; padding: 4px 1px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+            <div class="col shadow" style="background: #333333;border-radius: 2px;padding: 10px 24px; margin-bottom: 12px;">
                 <div class="row">
                     <!-- Files list -->
                     <div class="col-12" style="margin: -10px 0 10px 0; padding: 0;">
@@ -554,17 +561,7 @@
                         </div>
 
                         <!-- Files -->
-                        <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;border-radius: 2px;padding: 12px 0px 4px 0px;">
-                            
-                            <!-- Loading spinner -->
-                            <div class="spinner-div hiddenz" style="overflow-y: auto; height: 100px; width: 100%;position: relative;">
-                                <div class="absolute-center" style="margin-left: 0; margin-top: -5px;">
-                                    <svg class="spinner" viewBox="0 0 50 50">
-                                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;border-radius: 2px;padding: 12px 0px 4px 0px;"></div>
                     </div>
                         
                 </div>
@@ -1010,6 +1007,7 @@
                                             <option value="psm" style="color: #222;">PSM</option>
                                             <option value="reset" style="color: #222;">Reset</option>
                                             <option value="delay" style="color: #222;">Delay</option>
+                                            <option value="daydream" style="color: #222;">Daydream</option>
                                         </select>
                                     </div>
                                     

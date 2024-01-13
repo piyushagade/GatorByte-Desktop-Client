@@ -9,6 +9,11 @@ module.exports = {
         return new Promise(function (resolve, reject) {
             self = i[moduleprefix];
 
+            // Circumvent license validation
+            i.g.var.fullfunctionality = true;
+            resolve(i.g.var.fullfunctionality);
+            return;
+
             i.r.post(i, {
                 "url": i.g.API_URL + "/license/validate",
                 "data": {

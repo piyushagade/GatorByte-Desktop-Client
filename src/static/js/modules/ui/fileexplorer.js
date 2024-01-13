@@ -98,9 +98,6 @@ function uidownloadfilessubapp(){
         //! Refresh list button listener
         $(".sd-explorer-panel .refresh-files-list-button").off("click").click(function () {
             
-            // Clear list
-            self.panel.find(".download-files-list .files-list-item").remove();
-
             // Hide file options
             $(".sd-explorer-panel .file-options-parent").addClass("hidden");
 
@@ -108,11 +105,30 @@ function uidownloadfilessubapp(){
             $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
 
             // Show spinner
-            $(".sd-explorer-panel .spinner-div").removeClass("hidden");
+            self.show_progress_bar("Please wait", "Refreshing directory");
 
             // Send request to get GatorByte to send sd files list
             self.request_file_list(self.currentfoldername, 1);
         });
+    }
+
+    self.show_progress_bar = function (title, subtitle) {
+        title = title || "";
+        subtitle = subtitle || "";
+        $(".panel").addClass("disabled");
+        $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+        $(".header-panel").find(".download-status-heading").text(title);
+        $(".header-panel").find(".download-status-text").text(subtitle);
+        $(".header-panel").find(".progress-bar-overlay").find(".progress").removeClass("progress-striped").addClass("progress-striped-infinite");
+        $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
+    }
+
+    self.hide_progress_bar = function () {
+        $(".panel").removeClass("disabled");
+        $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+        $(".header-panel").find(".download-status-heading").text("");
+        $(".header-panel").find(".download-status-text").text("");
+        $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
     }
 
     self.request_file_list = function (dir, page) {
@@ -122,13 +138,14 @@ function uidownloadfilessubapp(){
             windowid: global.states.windowid,
             path: global.port.path
         });
+        
+        // Clear list
+        self.panel.find(".download-files-list .files-list-item").remove();
 
         self.state = "wait-for-file-list";
     }
 
     self.process_response = function (response) {
-
-        console.log(response);
 
         if (response.indexOf("error:") !== -1) {
             var error = response.split(":")[1];
@@ -160,7 +177,7 @@ function uidownloadfilessubapp(){
         if (error == "nodevice") {
 
             // Hide spinner
-            $(".sd-explorer-panel .spinner-div").addClass("hidden");
+            self.hide_progress_bar();
 
             // Hide previous errors
             $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
@@ -185,7 +202,7 @@ function uidownloadfilessubapp(){
         if (error == "nofile") {
 
             // Hide spinner
-            $(".sd-explorer-panel .spinner-div").addClass("hidden");
+            self.hide_progress_bar();
 
             // Hide previous errors
             $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
@@ -214,7 +231,7 @@ function uidownloadfilessubapp(){
             $(".sd-explorer-panel .download-files-list").find(".error-item").remove();
 
             // Hide spinner
-            $(".sd-explorer-panel .spinner-div").addClass("hidden");
+            self.hide_progress_bar();
 
             file.split(",").forEach(function (entry, ei) {
 
@@ -631,8 +648,8 @@ function uidownloadfilessubapp(){
 
         if (self.currentfoldername != foldername) self.currentfoldername = foldername;
 
-        // Clear list
-        self.panel.find(".download-files-list .files-list-item").remove();
+        // // Clear list
+        // self.panel.find(".download-files-list .files-list-item").remove();
 
         // Hide file options
         $(".sd-explorer-panel .file-options-parent").addClass("hidden");
@@ -641,7 +658,7 @@ function uidownloadfilessubapp(){
         self.panel.find(".file-options-download-information").addClass("hidden");
 
         // Show spinner
-        $(".sd-explorer-panel .spinner-div").removeClass("hidden");
+        self.show_progress_bar("Please wait", "Opening directory");
 
         self.panel.find(".directory-name-text").text(foldername);
 
