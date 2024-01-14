@@ -82,6 +82,9 @@ function uiserialmonitorsubapp(){
         // Show line only if specified hook object
         if (hook && hook.show) {
 
+            var colors = self.f.parse_ansi_color(hook.line);
+            hook.line = self.f.strip_ansi_codes(hook.line);
+
             // Add line to the serial monitor display
             if (line.trim().length > 0) $(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").find(".line").not(".hook-line").css("color", "#38dd38");
             $(".serial-monitor .serial-monitor-text").find(".session[session-id='" + sessionid + "']").append(multiline(function() {/*
@@ -346,8 +349,6 @@ function uiserialmonitorsubapp(){
             // If the string doesn't have a EOF indicator, return previous hook object
             if (!endhook) {
 
-                // console.log(global.hook);
-
                 if (global.hook) global.hook.line = (global.hook.line || "") + line.replace("##CL##", "");
                 else global.hook = hook;
 
@@ -410,6 +411,10 @@ function uiserialmonitorsubapp(){
                         ]
                     }
                 }
+
+                /*
+                    ! Forward responses to modules
+                */
 
                 // Dashboard
                 if (category && category.indexOf("gdc-db") == 0) {

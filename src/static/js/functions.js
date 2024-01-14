@@ -669,6 +669,58 @@ function functionsubapp(){
         return url;
     }
 
+    self.parse_ansi_color = function (colorCode) {
+        // Example: \033[1;37;42m
+        const regex = /\033\[(\d+);(\d+);(\d+)m/;
+        const match = colorCode.match(regex);
+
+        if (colorCode == "\x1b[0m") {
+            return {
+                "text": "white", 
+                "background": self.ansi_to_color("")
+            }
+        }
+
+        else if (match) {
+            const [something, fontStyle, textColor, bgColor] = match;
+
+            return {
+                "text": "black", 
+                "background": self.ansi_to_color(bgColor)
+            }
+        }
+        else {
+            return {
+                "text": "white", 
+                "background": self.ansi_to_color("")
+            }
+        }
+    }
+
+    // Function to convert ANSI color codes to RGB values
+    self.ansi_to_color = function (code) {
+        var code = parseInt(code);
+        var color = "transparent";
+        if (code == "" || isNaN(code)) color = "transparent";    
+        else if (code == "40") color = "black"; 
+        else if (code == "41") color = "red";    
+        else if (code == "42") color = "green";    
+        else if (code == "43") color = "yellow";    
+        else if (code == "44") color = "blue";    
+        else if (code == "45") color = "magenta";    
+        else if (code == "46") color = "cyan";    
+        else if (code == "47") color = "white"; 
+        return color;
+    }
+
+    self.strip_ansi_codes = function (inputString) {
+        // Regular expression to match ANSI escape codes
+        const ansiRegex = /\x1b\[[0-9;]*[a-zA-Z]/g;
+    
+        // Remove ANSI escape codes from the input string
+        return inputString.replace(ansiRegex, '');
+    }
+
     // Calculate distance between two coordinates in miles
     self.distance_between_coordinates = function (args) {
         function degreesToRadians(degrees) {

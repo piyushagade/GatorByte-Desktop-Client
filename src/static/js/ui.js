@@ -150,9 +150,22 @@ function uisubapp(){
 
         // Go back panel button
         $(".go-back-panel-button").off("click").click(function () {
-            $(".panel").addClass("hidden");
-            $("." + $(this).attr("target-panel")).removeClass("hidden");
-            if ($(this).attr("target-panel") == "home-panel") $(".gb-config-header").removeClass("hidden"); setheight();
+
+            // Hide file viewer
+            if (!$(".file-viewer-div").hasClass("hidden")) {
+                $(".file-list-parent").removeClass("hidden");
+                $(".file-viewer-div").addClass("hidden");
+                
+                // Clear text
+                self.a.uidownloadfiles.editor = null;
+                $(".file-viewer-div").html('<textarea class="codemirror-textarea"></textarea>');
+            }
+
+            else {
+                $(".panel").addClass("hidden");
+                $("." + $(this).attr("target-panel")).removeClass("hidden");
+                if ($(this).attr("target-panel") == "home-panel") $(".gb-config-header").removeClass("hidden"); setheight();
+            }
         });
 
         // Go home panel button

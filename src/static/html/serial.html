@@ -36,7 +36,7 @@
     <script src="../js/lib/base64.min.js"></script>
 
     <!-- SocketIO -->
-    <script src="https://api.piyushagade.xyz/socket.io/socket.io.js"></script>
+    <script src="../js/lib/socket.io.min.js"></script>
     
     <!-- Date time -->
     <script src='../js/lib/datetime.js'></script>
@@ -161,7 +161,7 @@
             </div>
         </div>
 
-        
+
         <!--! Login panel -->
         <div class="row scrollbar-style panel login-panel hidden panel" style="margin: 10px 0; padding: 2px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; cursor: default;">
             
@@ -479,10 +479,11 @@
         
         <!--! SD Card explorer -->
         <div class="row scrollbar-style panel sd-explorer-panel hidden panel" style="margin: 10px 0; padding: 4px 1px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
-            <div class="col shadow" style="background: #333333;border-radius: 2px;padding: 10px 24px; margin-bottom: 12px;">
-                <div class="row">
+            <div class="col shadow" style="margin-bottom: 0px;">
+                <div class="row" style="height: 100%;">
+                    
                     <!-- Files list -->
-                    <div class="col-12" style="margin: -10px 0 10px 0; padding: 0;">
+                    <div class="col-12 file-list-parent" style="margin: -10px 0 10px 0; padding: 0; background: #333333;border-radius: 2px;padding: 10px 12px; ">
                         
                         <div class="row hidden" style="margin: 0;">
                             <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 2px;font-size: 12px;font-weight: normal;">
@@ -564,6 +565,10 @@
                         <div class="row download-files-list" style="position: relative;margin: 0;margin-top: 0px;border-radius: 2px;padding: 12px 0px 4px 0px;"></div>
                     </div>
                         
+                    <!-- File viewer -->
+                    <div class="col-12 file-viewer-div hidden" style="margin: -10px 0 10px 0; padding: 0;">
+                        <textarea class="codemirror-textarea"></textarea>
+                    </div>
                 </div>
             </div>
             
@@ -1219,7 +1224,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!--! Control variables panel -->
         <div class="row scrollbar-style panel control-variables-panel hidden panel" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
@@ -1958,5 +1963,21 @@
 
 <!-- Keyboard shortcuts -->
 <script src='../js/keyshortcuts.js'></script>
+
+<!-- Codemirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/fold/foldgutter.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/addon/lint/lint.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/scroll/simplescrollbars.css' integrity='sha512-Qf2dMjL9OxCByi79V7hE0K8rdj8PwvG94HqgocfaMsmXKDAQmF358RlS9wCZ2TMFn/38Hz4gPZRnRSoSpArXKw==' crossorigin='anonymous'/>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/scroll/simplescrollbars.min.js' integrity='sha512-1Vc3i/yplqkVbJBGgEpx9odVj3SLHMx2EOsQOMJsHbM5LRPL2iaPH2sEE+8sZOCqvuXGignKEwmTqO6/b11RqQ==' crossorigin='anonymous'></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/addon/fold/foldcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/addon/fold/foldgutter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/addon/fold/brace-fold.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/addon/lint/json-lint.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/wrap/hardwrap.min.js' integrity='sha512-ZPPL1o5pyZOIF/+PL/pRRBdxrYENhEbcNas/6PJcXMM1aBu5wI2yeFzJY6Jv+fJjH8o48HBYomInIYsYvFlXig==' crossorigin='anonymous'></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/darcula.css' integrity='sha512-/eBxIjp/G113RcK3nwvaRCqqVjZ8QIy3+1d357l3QlenJjn2v+gBwg3WeqUayhw6q/KkggOey5iVig7kR+cU7A==' crossorigin='anonymous'/>
 
 </html>

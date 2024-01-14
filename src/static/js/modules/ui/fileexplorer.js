@@ -34,6 +34,8 @@ function uidownloadfilessubapp(){
             $(".sd-explorer-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden");
+            self.panel.find(".file-viewer-div").addClass("hidden");
+            self.panel.find(".file-list-parent").removeClass("hidden");
         
             // // Ensure all base files/folders exist
             // self.sendcommand("sdf:cr:all");
@@ -446,10 +448,11 @@ function uidownloadfilessubapp(){
             }
         });
 
-        //! When user dblclicks on a folder
+        //! When user dblclicks on a folder/file
         $(".sd-explorer-panel .files-list-item").off("dblclick").dblclick(function () {
 
             var foldername = "/" + $(this).attr("filename").replace("/", "");
+            var filename = $(this).attr("filename").replace("/", "");
             var filetype = $(this).attr("filetype");
 
 
@@ -457,6 +460,22 @@ function uidownloadfilessubapp(){
                 console.log("Directory clicked: " + foldername);
 
                 self.open_directory(foldername);
+            }
+
+            else {
+                console.log("File clicked: " + filename);
+
+                if (
+                    filename.toLowerCase().endsWith(".ini") ||
+                    filename.toLowerCase().endsWith(".txt") ||
+                    filename.toLowerCase().endsWith(".csv") ||
+                    filename.toLowerCase().endsWith(".queue") ||
+                    filename.toLowerCase().endsWith(".log") ||
+                    filename.toLowerCase().endsWith(".debug")
+                ) {
+                    self.open_file_viewer(filename);
+                }
+
             }
         });
         
@@ -501,12 +520,25 @@ function uidownloadfilessubapp(){
             $(".header-panel").find(".download-status-text").text("Download complete");
             $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
 
-            self.ipcr.send('ipc/save-file/request', {
-                ...global.port,
-                windowid: global.states.windowid,
-                filedata: self.filedownloaddata,
-                filename: self.filedownloadname
-            });
+            if (self.panel.find(".file-viewer-div").hasClass("hidden")) {
+                self.ipcr.send('ipc/save-file/request', {
+                    ...global.port,
+                    windowid: global.states.windowid,
+                    filedata: self.filedownloaddata,
+                    filename: self.filedownloadname
+                });
+            }
+
+            else {
+                self.editor.setValue(self.filedownloaddata);
+
+                $(".header-panel").find(".download-status-text").text("Opening file");
+                setTimeout(() => {
+                    $(".panel").removeClass("disabled");
+                    $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
+                    $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
+                }, 1000);
+            }
             
             // Reset global variables
             self.filedownloaddata = "";
@@ -664,5 +696,109 @@ function uidownloadfilessubapp(){
 
         // Send request to get GatorByte to send sd files list
         self.request_file_list(foldername, 1);
+    }
+
+    self.open_file_viewer = function (filename) {
+
+        var filesize = $(".sd-explorer-panel .files-list-item.selected").attr("filesize");
+
+        if (filesize > 20000) {
+            var time;
+            if (filesize > 60000) time = (parseFloat(filesize) / 60000).toFixed(1) + " minutes";
+            else time = (parseFloat(filesize) / 1000).toFixed(0) + " seconds";
+            self.a.ui.notification({
+                "contexttype": "error",
+                "overlaytype": "dialog",
+                "heading": "Download large file",
+                "body": "This file will take " + time + " to download. Are you sure you want to download the file?",
+                "okay": "Yes",
+                "dismiss": "Cancel",
+                "onokay": function () {
+                    onproceed();
+                }
+            });
+        }
+        else {
+            onproceed();
+        }
+
+        function onproceed() {
+            
+            // Send download request
+            self.filedownloadname = filename;
+            self.filedownloaddata = "";
+            self.filedownloadline = 0;
+            self.filedownloadsize = filesize;
+
+            var filepath = (self.currentfoldername == "/" ? "" : self.currentfoldername + "/") + self.filedownloadname;
+            self.request_file_download(filepath, self.filedownloadline);
+
+            // Update UI
+            self.panel.find(".file-options-home").addClass("hidden");
+        }
+
+        // Clear text
+        if (self.editor) self.editor.setValue("");
+        
+        self.panel.find(".file-list-parent").addClass("hidden");
+        self.panel.find(".file-viewer-div").removeClass("hidden").height($(".sd-explorer-panel").height());
+
+        if (!self.editor) {
+            self.editor = CodeMirror.fromTextArea($(".codemirror-textarea")[0], {
+                mode: { name: "javascript", json: true },
+                lineNumbers: true,
+                lineWrapping: false,
+                theme: "darcula",
+                lint: true,
+                scrollbarStyle: "overlay",
+                fontSize: 12,
+                autoIndent: true,
+                foldGutter: true,
+                gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+                foldOptions: {
+                    widget: (from, to) => {
+                        var count = undefined;
+                        var editor = window.globals.variables["configeditor"];
+
+                        // Get open / close token
+                        var startToken = '{', endToken = '}';
+                        var prevLine = editor.getLine(from.line);
+                        if (prevLine.lastIndexOf('[') > prevLine.lastIndexOf('{')) {
+                            startToken = '[', endToken = ']';
+                        }
+
+                        // Get json content
+                        var internal = editor.getRange(from, to);
+                        var toParse = startToken + internal + endToken;
+
+                        // Get key count
+                        try {
+                            var parsed = JSON.parse(toParse);
+                            count = Object.keys(parsed).length;
+                        } catch (e) { }
+
+                        // return count ? `\u21A4${count}\u21A6` : '\u2194';
+                        return " --- "
+                    },
+                },
+                readOnly: true 
+            });
+
+            resize ();
+            $(window).resize(self.f.debounce(function () {
+                resize ();
+            }, 100));
+
+            $(".CodeMirror-hscrollbar").addClass("scrollbar-style-horizontal");
+            $(".CodeMirror.cm-s-darcula.CodeMirror-overlayscroll").css("padding", "0").css("margin-top", "6px");
+            $(".CodeMirror-sizer").css("font-size", "13px");
+
+            function resize () {
+                // Set height of the editor
+                var height = $(".html-slidein-ui .html-placeholder").height() - $(".config-editor-header").height() - 30;
+                $(".site-config-div").height(height);
+                self.editor.setSize("100%", "100%");
+            }
+        }
     }
 }
