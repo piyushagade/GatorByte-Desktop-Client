@@ -314,6 +314,18 @@ module.exports = {
                                 return;
                             }
 
+                            // Device SN
+                            if (data.indexOf("##CL-GDC-SN::") !== -1) {
+                                var sn = data.replace(/##/g, "").split("::")[1];
+                                console.log("Serial number: " + sn);
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/device-sn-notification/push", {
+                                        sn: sn
+                                    });
+                                });
+                                return;
+                            }
+
                             // GatorByte is now in GDC mode
                             if (data.indexOf("##CL-GB-READY##") !== -1) {
                                 console.log("GB has completed setup");

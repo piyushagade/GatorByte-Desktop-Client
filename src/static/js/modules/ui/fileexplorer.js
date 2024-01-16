@@ -476,6 +476,12 @@ function uidownloadfilessubapp(){
                     self.open_file_viewer(filename);
                 }
 
+                else if (
+                    filename.toLowerCase().endsWith(".md")
+                ) {
+                    // Implement an MD viewer
+
+                }
             }
         });
         

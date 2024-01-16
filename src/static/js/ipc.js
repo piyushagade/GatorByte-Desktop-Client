@@ -126,6 +126,13 @@ function ipcsubapp(){
             }
         });
 
+        self.ipcr.on("ipc/device-sn-notification/push", (event, response) => {
+            console.log("Device SN: " + response.sn.trim());
+
+            // Set global variable
+            global.port.sn = response.sn.trim();
+        });
+
         // On setup complete; GB ready
         self.ipcr.on("ipc/gb-ready-notification/push", (event, response) => {
                 
@@ -440,7 +447,7 @@ function ipcsubapp(){
                     var nickname = port.nickname || "";
                     var pnpid = encodeURI(port.pnpId)
                     var favorite = port.favorite || false;
-                    var sn = port.serialNumber.substring(0, 10);
+                    var sn = port.sn;
 
                     var title = "";
                     if (port.path.length > 10) {
@@ -497,7 +504,7 @@ function ipcsubapp(){
                                 "port": port_original,
                                 "manufacturer": port.manufacturer,
                                 "uploaddelay": port.uploaddelay,
-                                "serial-number": port.serialNumber.substring(0, 10) || "N/A",
+                                "serial-number": port.sn || "N/A",
                                 "pnp-id": pnpid,
                                 "title": title
                             }));
@@ -1113,18 +1120,20 @@ function ipcsubapp(){
             // $(".serial-monitor").removeClass("hidden");
         }
 
-        // GatorByte info
-        $(".gb-serial-number").text(global.port.serialNumber.substring(0, 10) || "-");
-        $(".gb-product-id").text(global.port.productId || "-");
-        $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
-        $(".gb-port-path").text(global.port.path);
 
         newtworktest().then(function (online) {
             setTimeout(() => {
+                
+                // GatorByte info
+                $(".gb-serial-number").text(global.port.sn || "-");
+                $(".gb-product-id").text(global.port.productId || "-");
+                $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
+                $(".gb-port-path").text(global.port.path);
+                
                 $.ajax({
                     url: window.global.constants.api + "/gatorbyte/device/registration/get",
                     type: "POST",
-                    data: '{ "sn": "' + global.port.serialNumber.substring(0, 10) + '" }',
+                    data: '{ "sn": "' + global.port.sn + '" }',
                     success: function (response) {
                         if (response.status == "success") {
                             $(".gb-registration-status").text("Device registered.");

@@ -368,7 +368,7 @@ function uiconfiggatorbytesubapp() {
             if (!self.configobject["device"]) { self.configobject["device"] = {}; }
             if (value && value.length > 3) {
                 self.configobject["device"]["name"] = $(this).val();
-                self.configobject["device"]["id"] = global.port.serialNumber.substring(0, 10);
+                self.configobject["device"]["id"] = global.port.sn;
 
                 // Update flag
                 self.configobject["updateflag"] = true;
@@ -1091,7 +1091,7 @@ function uiconfiggatorbytesubapp() {
         var sn = self.ls.getItem("device/registration/sn");
 
         self.panel.find(".survey-information-parent").find(".project-id-text").removeClass("disabled").val(projectid ? projectid : data.survey["id"]).attr("readonly", "true");
-        self.panel.find(".survey-information-parent").find(".device-id-text").removeClass("disabled").text(sn ? sn : global.port.serialNumber.substring(0, 10));
+        self.panel.find(".survey-information-parent").find(".device-id-text").removeClass("disabled").text(sn ? sn : global.sn);
         self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").val(devicename ? devicename : data.device["name"]).attr("readonly", "true");
         self.panel.find(".survey-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
         
