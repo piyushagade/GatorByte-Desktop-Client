@@ -316,8 +316,8 @@ module.exports = {
 
                             // Device SN
                             if (data.indexOf("##CL-GDC-SN::") !== -1) {
-                                var sn = data.replace(/##/g, "").split("::")[1];
-                                console.log("Serial number: " + sn);
+                                var sn = data.replace(/##/g, "").split("::")[1].trim();
+                                console.log("Received SN: " + sn);
                                 BrowserWindow.getAllWindows().forEach(function (window, wi) {
                                     window.webContents.send("ipc/device-sn-notification/push", {
                                         sn: sn
@@ -404,17 +404,20 @@ module.exports = {
                             let filedata = data.indexOf("fdl:") !== -1;
 
                             if (!filedata) {
+
+                                // if (data.trim().length > 0) console.log("GB > " + data);
+
                                 while (data.indexOf("\r\n") > 0) {
                                     var index = data.indexOf("\r\n");
-                                    data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\r\n".length, data.length);
+                                    data = data.substring(0, index) + "#!CRL-SPL-STR#LINE-BRK##" + data.substring(index + "\r\n".length, data.length);
                                 }
                                 while (data.indexOf("\r") > 0) {
                                     var index = data.indexOf("\r");
-                                    data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\r".length, data.length);
+                                    data = data.substring(0, index) + "#!CRL-SPL-STR#LINE-BRK##" + data.substring(index + "\r".length, data.length);
                                 }
                                 while (data.indexOf("\n") > 0) {
                                     var index = data.indexOf("\n");
-                                    data = data.substring(0, index) + "#!cereal-special-string#line-break##" + data.substring(index + "\n".length, data.length);
+                                    data = data.substring(0, index) + "#!CRL-SPL-STR#LINE-BRK##" + data.substring(index + "\n".length, data.length);
                                 }
                             }
 
@@ -424,6 +427,7 @@ module.exports = {
                                 crlf: false,
                                 lastemptychar: false,
                             });
+
                             return;
                         });
 
@@ -548,7 +552,7 @@ module.exports = {
                     event.sender.send("send-command-response", { "status": false }); 
                     return console.log('Error on write: ', err.message);
                 }
-                console.log("Sent " + obj.path + " a command: " + command);
+                console.log("GB < " + command);
                 event.sender.send("send-command-response", { "status": true }); 
             });
             

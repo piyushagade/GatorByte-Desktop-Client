@@ -371,10 +371,10 @@ function ipcsubapp(){
         if(typeof arg.data == "string" && arg.data.length == 0) return;
 
         // Distinguish lines
-        if (arg.data.indexOf("#!cereal-special-string#line-break##") == -1) global.states.linecomplete = false;
+        if (arg.data.indexOf("#!CRL-SPL-STR#LINE-BRK##") == -1) global.states.linecomplete = false;
         else global.states.linecomplete = true;
 
-        var text = arg.data ? arg.data.replace(/#!cereal-special-string#line-break##/g, "<br>") : "";
+        var text = arg.data ? arg.data.replace(/#!CRL-SPL-STR#LINE-BRK##/g, "<br>") : "";
 
         //! Auto scroll to the bottom of the div
         if (global.states.autoscroll) { 
