@@ -325,7 +325,6 @@ function uiconfiggatorbytesubapp() {
             
             // Get config data from main process
             self.request_config();
-
         });
 
         // Request sync status check
@@ -643,7 +642,7 @@ function uiconfiggatorbytesubapp() {
     // Get RTC time from the GatorByte
     self.show_rtctime = function () {
         if (self.panel.hasClass("hidden")) clearInterval(self.timers.utctimeupdate);
-        self.panel.find(".rtc-sync-status").text("Fetching RTC time.").css("color", "#b17200");
+        self.panel.find(".rtc-sync-status").text("⚠️ Fetching RTC time.");
         setTimeout(() => {
             self.sendcommand("rtc:get");
         }, self.panel.find(".gatorbyte-rtc-time-text").text() == "-" ? 100 : 250);
@@ -694,7 +693,7 @@ function uiconfiggatorbytesubapp() {
 
                 // // Disable text boxes
                 // self.panel.find(".survey-information-parent").find(".project-id-text").addClass("disabled");
-                // self.panel.find(".survey-information-parent").find(".device-id-text").addClass("disabled");
+                // self.panel.find(".survey-information-parent").find(".device-sn-text").addClass("disabled");
                 // self.panel.find(".survey-information-parent").find(".device-name-text").addClass("disabled");
                 // self.panel.find(".survey-information-parent").find(".survey-location-text").addClass("disabled");
                 // self.panel.find(".survey-information-parent").find(".survey-date").addClass("disabled");
@@ -1090,9 +1089,9 @@ function uiconfiggatorbytesubapp() {
         var devicename = self.ls.getItem("device/registration/device-name");
         var sn = self.ls.getItem("device/registration/sn");
 
-        self.panel.find(".survey-information-parent").find(".project-id-text").removeClass("disabled").val(projectid ? projectid : data.survey["id"]).attr("readonly", "true");
-        self.panel.find(".survey-information-parent").find(".device-id-text").removeClass("disabled").text(sn ? sn : global.sn);
-        self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").val(devicename ? devicename : data.device["name"]).attr("readonly", "true");
+        self.panel.find(".survey-information-parent").find(".project-id-text").removeClass("disabled").text(projectid ? projectid : data.survey["id"]).attr("readonly", "true");
+        self.panel.find(".survey-information-parent").find(".device-sn-text").removeClass("disabled").text(sn ? sn : global.sn);
+        self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").text(devicename ? devicename : data.device["name"]).attr("readonly", "true");
         self.panel.find(".survey-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
         
         if (data.survey["date"]) self.panel.find(".survey-information-parent").find(".survey-date").removeClass("disabled").val(data.survey["date"]);
@@ -1183,16 +1182,16 @@ function uiconfiggatorbytesubapp() {
             if (response == "not-detected") {
 
                 self.panel.find(".get-rtc-button").addClass("disabled");
-                self.panel.find(".calibrate-rtc-button").addClass("disabled");
+                self.panel.find(".sync-rtc-button").addClass("disabled");
 
                 self.panel.find(".gatorbyte-rtc-time-text").html("Error");
-                self.panel.find(".rtc-sync-status").text("The RTC is either uninitialized or not connected to the GatorByte.").css("color", "#c75353");
+                self.panel.find(".rtc-sync-status").text("🛑 The RTC is either uninitialized or not connected to the GatorByte.");
             }
 
             else {
                 
                 self.panel.find(".get-rtc-button").removeClass("disabled");
-                self.panel.find(".calibrate-rtc-button").removeClass("disabled");
+                self.panel.find(".sync-rtc-button").removeClass("disabled");
 
                 console.log("Received RTC timestamp: " + response)
 
@@ -1207,15 +1206,17 @@ function uiconfiggatorbytesubapp() {
 
                 // Update RTC sync status
                 if (Math.abs(timestamp - moment.now()) > 1 * 60 * 1000) {
-                    self.panel.find(".rtc-sync-status").text("The RTC clock is out of sync. Please use the 'Sync RTC' button to sync the clocks.").css("color", "#c75353");
+                    self.panel.find(".rtc-sync-status").text("⛔ The GatorByte time is out of sync.");
+                    self.panel.find(".sync-rtc-button").removeClass("disabled");
                 }
                 else {
-                    self.panel.find(".rtc-sync-status").text("The clocks are in sync. No action required.").css("color", "#8dd21e");
+                    self.panel.find(".rtc-sync-status").text("✅ The clocks are in sync. No action required.");
+                    self.panel.find(".sync-rtc-button").addClass("disabled");
                 }
             }
 
             // Sync RTC time
-            self.panel.find(".calibrate-rtc-button").off("click").click(function () {
+            self.panel.find(".sync-rtc-button").off("click").click(function () {
                 var offset = self.timezone();
                 var date = moment(moment.now() - offset).format("MMM-DD-YYYY");
                 var time = moment(moment.now() - offset).format("HH-mm-ss");
@@ -1237,7 +1238,7 @@ function uiconfiggatorbytesubapp() {
             self.panel.find(".bl-pin-text").val("");
             
             if (response == "not-detected") {
-                self.panel.find(".bl-sync-status").removeClass("hidden").text("The AT-09 module is either uninitialized or not connected to the GatorByte.").css("color", "#c75353");
+                self.panel.find(".bl-sync-status").removeClass("hidden").text("⛔ The AT-09 module is either uninitialized or not connected to the GatorByte.");
                 self.panel.find(".update-bl-config-button").addClass("disabled").find("p").text("Update");
                 
                 self.panel.find(".bl-name-text").parent().addClass("disabled");

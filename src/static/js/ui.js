@@ -230,14 +230,13 @@ function uisubapp(){
                     "device-name": devicename,
                 }),
                 success: function (response) {
-                    console.log(response);
                     if (response.status == "success") {
-                        $(".gb-registration-status").text("Device registered.");
+                        $(".gb-registration-status").text("✅ Device registered.");
                         $(".register-gb-ui").addClass("hidden");
                     }
                 },
                 error: function (x, h, r) {
-                    $(".gb-registration-status").text("Error registering device.");
+                    $(".gb-registration-status").text("⛔ Error registering device.");
                     $(".register-gb-ui").removeClass("hidden");
                 }
             });

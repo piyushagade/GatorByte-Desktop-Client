@@ -1136,7 +1136,7 @@ function ipcsubapp(){
                     data: '{ "sn": "' + global.port.sn + '" }',
                     success: function (response) {
                         if (response.status == "success") {
-                            $(".gb-registration-status").text("Device registered.");
+                            $(".gb-registration-status").text("✅ Device registered.");
                             $(".register-gb-ui").addClass("hidden");
                             $(".registered-gb-ui").removeClass("hidden");
                             $(".device-not-registered-notification").addClass("hidden");
@@ -1158,7 +1158,7 @@ function ipcsubapp(){
                             $(".device-not-registered-notification").removeClass("hidden");
                             self.ls.setItem("device/registration/state", "false");
                             
-                            $(".gb-registration-status").text("Device not registered.");
+                            $(".gb-registration-status").text("⛔ Device not registered.");
                             $(".register-gb-ui").removeClass("hidden");
                             $(".registered-gb-ui").addClass("hidden");
                         }

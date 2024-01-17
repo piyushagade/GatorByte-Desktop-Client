@@ -171,9 +171,11 @@ module.exports = {
                     // Write all GB devices to list
                     i.fs.writeFileSync(path.join(storagedir, "allgbdevices"), JSON.stringify(gatorbytedevices), "utf8");
 
+                    if (!gatorbytedevices[[i.g.var.machineid]]) gatorbytedevices[[i.g.var.machineid]] = [];
                     gatorbytedevices[[i.g.var.machineid]].forEach(function (row) {
 
                         // Check if the port exists in alldevices list
+                        if (!alldevices[i.g.var.machineid]) alldevices[i.g.var.machineid] = [];
                         var filtered = alldevices[i.g.var.machineid].filter(function (device) {
                             return device.pnpId && device.pnpId == row.pnpId;
                         });
@@ -541,14 +543,15 @@ module.exports = {
             var command = obj.command;
 
             if (!i.g.var.serports[obj.path]) {
-                console.log("Error sending " + obj.path + " a command: " + command + ". Port not open.");
+                console.log("< X " + command + ": " + obj.path + " Port not open.");
                 event.sender.send("send-command-response", { "status": false });
                 return;
             }
             
             i.g.var.serports[obj.path].write(command + "\r\n", function(err) {
                 if (err) {
-                    console.log("Error sending " + obj.path + " a command: " + command + ". Unknown error.");
+                    console.log("< X " + command + ": " + obj.path + " See the log for error.");
+                    console.log(err);
                     event.sender.send("send-command-response", { "status": false }); 
                     return console.log('Error on write: ', err.message);
                 }
