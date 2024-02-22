@@ -1,20 +1,7 @@
-Mousetrap.bind(["ctrl+k", "command+k"], function(e) {
-    if ($(".serial-monitor.panel").hasClass("hidden")) return;
-
-    if (!global.states.connected) return;
-    if (
-        (!global.port || !global.port.path) &&
-        (!global.quickconnectport || !global.quickconnectport.path)
-    ) return;
-
-    $(".status-bar-item.input-button").trigger("click");
-    $(".command-input-div input").focus();
-    return false;
-});
 
 // Login as guest
 Mousetrap.bind(["alt+g"], function(e) {
-    if (!global.states.connected) return;
+    if (global.states.connected) return;
 
     $(".login-panel").addClass("hidden");
     $(".device-selector-panel").removeClass("hidden");
@@ -22,9 +9,9 @@ Mousetrap.bind(["alt+g"], function(e) {
     return false;
 });
 
-// Show login panel
+// Logout
 Mousetrap.bind(["alt+l"], function(e) {
-    if (!global.states.connected) return;
+    if (global.states.connected) return;
 
     $(".panel").addClass("hidden");
     $(".login-panel").removeClass("hidden");
@@ -50,6 +37,20 @@ Mousetrap.bind(["ctrl+s", "command+s"], function(e) {
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
     $(".big-button.serial-monitor-button").click();
+    return false;
+});
+
+Mousetrap.bind(["del"], function(e) {
+    if (!global.states.connected) return;
+    if (
+        (!global.port || !global.port.path) &&
+        (!global.quickconnectport || !global.quickconnectport.path)
+    ) return;
+
+    if (!$(".sd-explorer-panel").hasClass("hidden")) {
+        if ($(".sd-explorer-panel .files-list-item.selected").length == 0) return;
+        $(".sd-explorer-panel .delete-file-button").click();
+    }
     return false;
 });
 
@@ -103,9 +104,26 @@ Mousetrap.bind(["ctrl+f", "command+f"], function(e) {
     return false;
 });
 
+// SHow serial command sender text box
+Mousetrap.bind(["ctrl+k", "command+k"], function(e) {
+    if ($(".serial-monitor.panel").hasClass("hidden")) return;
+
+    if (!global.states.connected) return;
+    if (
+        (!global.port || !global.port.path) &&
+        (!global.quickconnectport || !global.quickconnectport.path)
+    ) return;
+
+    $(".status-bar-item.input-button").trigger("click");
+    $(".command-input-div input").focus();
+    return false;
+});
+
 // Clear serial monitor
 Mousetrap.bind(["ctrl+l", "command+l"], function(e) {
     if (!global.states.connected) return; 
+    
+    if ($(".serial-monitor.panel").hasClass("hidden")) return;
     if (
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
@@ -131,7 +149,7 @@ Mousetrap.bind("escape", function(e) {
     }
 
     // Hide dismissable panels
-    if ($(".dismissable-panel").not(".hidden").length > 0) {
+    else if ($(".dismissable-panel").not(".hidden").length > 0) {
         if (!global.states.connected) return;
         $(".go-back-panel-button").click();
     }
@@ -140,20 +158,33 @@ Mousetrap.bind("escape", function(e) {
 });
 
 Mousetrap.bind("enter", function(e) {
-    
     if (!global.states.connected) return;
 
-    var ipcRenderer = require("electron").ipcRenderer;
+    if (!$(".serial-monitor.panel").hasClass("hidden")) {
+        var ipcRenderer = require("electron").ipcRenderer;
 
-    // If command input is not open, return
-    if ($(".command-input-div").hasClass("hidden")) return false;
+        // If command input is not open, return
+        if ($(".command-input-div").hasClass("hidden")) return false;
 
-    // Send string as serial data
-    ipcRenderer.send("ipc/command/push", {
-        command: $(".command-input-div input").val(),
-        windowid: global.states.windowid,
-        path: global.port.path
-    });
+        // Send string as serial data
+        ipcRenderer.send("ipc/command/push", {
+            command: $(".command-input-div input").val(),
+            windowid: global.states.windowid,
+            path: global.port.path
+        });
+    }
+
+    else if (!$(".sd-explorer-panel.panel").hasClass("hidden")) {
+
+        if (!global.states.connected) return;
+        if (
+            (!global.port || !global.port.path) &&
+            (!global.quickconnectport || !global.quickconnectport.path)
+        ) return;
+
+        if ($(".dismissable-bottom-overlay").not(".hidden").length == 0) return;
+        $(".dismissable-bottom-overlay").find(".okay-button").click();
+    }
 
     return false;
 });

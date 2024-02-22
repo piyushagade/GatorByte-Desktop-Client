@@ -462,7 +462,8 @@ function uisubapp(){
         /*
             Show overlay
         */
-        parent.removeClass("hidden").find(".content-parent").slideUp(0).slideDown(150);
+        parent.removeClass("hidden");
+        self.show_overlay(parent);
 
         /*
             Listeners
@@ -470,18 +471,16 @@ function uisubapp(){
 
         // Dismiss button listener
         parent.find(".dismiss-button").off("click").click(() => {
-            parent.find(".content-parent").slideUp(100);
+            self.hide_overlay(parent, 100);
             setTimeout(() => {
-                parent.addClass("hidden");
                 if (args.oncancel && typeof args.oncancel == "function") args.oncancel();
             }, 100);
         });
 
         // Okay button listener
         parent.find(".okay-button").off("click").click(() => {
-            parent.find(".content-parent").slideUp(100);
+            self.hide_overlay(parent, 100);
             setTimeout(() => {
-                parent.addClass("hidden");
                 if (args.onokay && typeof args.onokay == "function") args.onokay();
             }, 100);
         });
