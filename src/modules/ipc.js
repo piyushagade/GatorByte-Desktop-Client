@@ -148,7 +148,7 @@ module.exports = {
             - Ports operations
         */
 
-        i.ipcm.on('get-available-ports-request', (event) => {
+        i.ipcm.on('ipc/available-ports-list/request', (event) => {
 
             SerialPort.list()
                 .then(function (ports) {
@@ -195,7 +195,6 @@ module.exports = {
                             if (AUTOCONNECT) {
 
                             }
-
                         }
 
                         // If the device didn't exist in the alldevices list, add it to the alldevices list
@@ -215,7 +214,7 @@ module.exports = {
                     // Get list of favorited devices
                     var favorites = alldevices[i.g.var.machineid].filter(function (device) { return device.favorite == true; });
 
-                    event.sender.send("get-available-ports-response", {
+                    event.sender.send("ipc/available-ports-list/response", {
                         alldevices: alldevices[i.g.var.machineid],
                         connecteddevices: connecteddevices,
                         favorites: favorites
@@ -257,7 +256,7 @@ module.exports = {
                     if (i.g.var.serports[port.path]) { 
                         
                         // Send response to sender process
-                        event.sender.send("select-port-response", {
+                        event.sender.send("ipc/select-port/response", {
                             ...port,
                             success: false,
                             error: "port-busy"
@@ -283,7 +282,7 @@ module.exports = {
                         i.g.var.serports[result.port.settings.path].on('close', function () {
                             console.log("Port closed: " + port.path + ". Number of open ports: " + Object.keys(i.g.var.serports).length);
                             try {
-                                event.sender.send("port-disconnected-notification-push ", {
+                                event.sender.send("ipc/port-disconnected/notification ", {
                                     port: result.port.settings.path,
                                     baud: result.port.settings.baudRate,
                                 });
@@ -434,7 +433,7 @@ module.exports = {
                         });
 
                         // Send response to sender process
-                        event.sender.send("select-port-response", {
+                        event.sender.send("ipc/select-port/response", {
                             ...port,
                             success: !result.error && connected,
                             error: null
@@ -452,7 +451,7 @@ module.exports = {
                         console.log("Device saved for quick connect. Port: " + port.path);
 
                         // Send response to sender process
-                        event.sender.send("select-port-response", {
+                        event.sender.send("ipc/select-port/response", {
                             ...port,
                             success: false,
                             error: null
@@ -473,7 +472,7 @@ module.exports = {
             }
             // else {
                 try {
-                    event.sender.send("port-disconnected-notification-push ", {
+                    event.sender.send("ipc/port-disconnected/notification ", {
                         port: port.path,
                         baud: port.baudRate,
                     });
@@ -544,7 +543,7 @@ module.exports = {
 
             if (!i.g.var.serports[obj.path]) {
                 console.log("GB < X " + command + ": " + obj.path + " Port not open.");
-                event.sender.send("send-command-response", { "status": false });
+                event.sender.send("ipc/send-command/response", { "status": false });
                 return;
             }
             
@@ -552,11 +551,11 @@ module.exports = {
                 if (err) {
                     console.log("GB < X " + command + ": " + obj.path + " See the log for error.");
                     console.log(err);
-                    event.sender.send("send-command-response", { "status": false }); 
+                    event.sender.send("ipc/send-command/response", { "status": false }); 
                     return console.log('Error on write: ', err.message);
                 }
                 console.log("GB < " + command);
-                event.sender.send("send-command-response", { "status": true }); 
+                event.sender.send("ipc/send-command/response", { "status": true }); 
             });
             
         });

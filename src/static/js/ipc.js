@@ -11,7 +11,7 @@ function ipcsubapp(){
     self.init = function () {
         
         // Get updated ports list every 2 seconds
-        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('get-available-ports-request'); }, 2000);
+        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 2000);
         
         self.ipcr.on('bootstrap-information-push', (event, data) => {
             console.log("Bootstrap data")
@@ -47,19 +47,19 @@ function ipcsubapp(){
             self.process_new_serial_data(event, arg);
         });
 
-        self.ipcr.on('get-available-ports-response', (event, data) => {
+        self.ipcr.on('ipc/available-ports-list/response', (event, data) => {
             self.process_available_ports_list(event, data)
         });
 
-        self.ipcr.on('select-port-response', (event, response) => {
+        self.ipcr.on('ipc/select-port/response', (event, response) => {
             self.on_port_selected(event, response);
         });
 
-        self.ipcr.on('port-disconnected-notification-push ', (event, response) => {
+        self.ipcr.on('ipc/port-disconnected/notification ', (event, response) => {
             self.on_port_disconnected(event, response);
         });
 
-        self.ipcr.on('send-command-response', (event, response) => {
+        self.ipcr.on('ipc/send-command/response', (event, response) => {
             if(response.status) {
                 $(".command-input-div input").val("");
                 $(".command-input-div .status-icon").html('<i class="fas fa-check" style="color: green;" title="Sent"></i>');
@@ -473,7 +473,8 @@ function ipcsubapp(){
         if (global.states.follow) {
             
             data.connecteddevices.forEach(aport => {
-                var port = global.quickconnectport || global.port;
+                var port = global.port || global.quickconnectport;
+                console.log(aport.path, port.path);
                 
                 if (aport.path == port.path) {
                     console.log("Requesting reconnection for: " + port.path + " on window ID: " + global.states.windowid);
@@ -1359,7 +1360,7 @@ function ipcsubapp(){
 
         // Restart the interval timer to get ports list from the main process
         if (global.timers.portsrefresh) clearInterval(global.timers.portsrefresh);
-        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('get-available-ports-request'); }, 2000);
+        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 2000);
 
         // Add a disconnection notification in the serial monitor
         var sessionid = global.states.sessionid;

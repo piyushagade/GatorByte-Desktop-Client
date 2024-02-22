@@ -288,6 +288,8 @@ function uiconfiggatorbytesubapp() {
 
     self.sendcommand = function (command) {
 
+        if (!global.states.connected) return;
+
         try {
             self.ipcr.send('ipc/command/push', {
                 command: command,
@@ -333,8 +335,13 @@ function uiconfiggatorbytesubapp() {
         });
 
         // Request sync status check
-        $(".sync-status-heading").off("click").click(function () {
+        $(".gb-config-header .sync-status-heading").off("click").click(function () {
             self.checkconfigsync();
+            self.getbattlevel(300);
+        });
+
+        // Request battery level check
+        $(".gb-config-header .battery-icon-parent").off("click").click(function () {
             self.getbattlevel(300);
         });
 
@@ -1347,7 +1354,7 @@ function uiconfiggatorbytesubapp() {
             */});
 
             // Set HTML
-            container.html(html).attr("title",  title="Battery at " + parseInt(level) + "%");
+            container.html(html).attr("title",  title="Battery at " + parseFloat(level).toFixed(1) + "%");
         }
     }
 
