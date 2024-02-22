@@ -67,6 +67,7 @@ $(document).keyup(function(e) {
         global.keys["ctrl"] = false;
 
         if (!global.states.upload) {
+            $(".home-panel").removeClass("disabled").removeClass("blur");
             $(".update-mode-overlay").addClass("hidden");
             $(".update-mode-overlay .stage-1").removeClass("hidden");
             $(".update-mode-overlay .stage-2").addClass("hidden");
@@ -86,6 +87,7 @@ $(document).keydown(function(e) {
         global.keys["alt"] = true;
         global.keys["ctrl"] = true;
 
+        $(".home-panel").addClass("disabled").addClass("blur");
         $(".update-mode-overlay").removeClass("hidden");
         $(".update-mode-overlay .stage-1").removeClass("hidden")
             .find(".delay-text").text((global.port.uploaddelay) + " seconds");

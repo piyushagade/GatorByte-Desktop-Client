@@ -93,8 +93,8 @@ function ipcsubapp(){
             if (global.port && global.port.path == response.path) {
 
                 // Disable buttons that require the GatorByte to be ready (setup complete)
-                $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
-                $(".gb-config-header .action-button").addClass("disabled"); 
+                $(".gb-config-header").removeClass("hidden"); setheight();
+                $(".gb-config-header .battery-icon-parent").addClass("disabled")
                 $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
                 $(".home-panel").find(".big-button.requires-sd-ready").addClass("disabled");
                 
@@ -1192,6 +1192,7 @@ function ipcsubapp(){
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
             $(".gb-config-header .action-button").addClass("disabled"); 
+            $(".gb-config-header .battery-icon-parent").addClass("disabled")
             // $(".waiting-for-pong-overlay").slideUp(0);
             self.a.ui.hide_overlay($(".waiting-for-pong-overlay"), 100);
             
@@ -1200,8 +1201,7 @@ function ipcsubapp(){
 
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
-            $(".gb-config-header").removeClass("hidden").addClass("hiddenz"); setheight();
-            $(".gb-config-header .action-button").addClass("disabled"); 
+            $(".gb-config-header").removeClass("hidden"); setheight();
             // $(".home-panel").addClass("hidden");
             // $(".serial-monitor").removeClass("hidden");
         }
@@ -1238,8 +1238,9 @@ function ipcsubapp(){
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text((global.port.path || global.quickconnectport.path));
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
-            $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
+            $(".gb-config-header").removeClass("hidden"); setheight();
             $(".gb-config-header .action-button").addClass("disabled"); 
+            $(".gb-config-header .battery-icon-parent").addClass("disabled"); 
         }
         
         /* 
@@ -1250,8 +1251,9 @@ function ipcsubapp(){
             // Set connection state
             global.states.connected = false;
 
-            $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
+            $(".gb-config-header").removeClass("hidden"); setheight();
             $(".gb-config-header .action-button").addClass("disabled"); 
+            $(".gb-config-header .battery-icon-parent").addClass("disabled")
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
             $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
