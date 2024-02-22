@@ -1,8 +1,8 @@
 Mousetrap.bind(["ctrl+k", "command+k"], function(e) {
     if ($(".serial-monitor.panel").hasClass("hidden")) return;
 
+    if (!global.states.connected) return;
     if (
-        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -34,8 +34,8 @@ Mousetrap.bind(["alt+l"], function(e) {
 
 // Disconnect a device
 Mousetrap.bind(["alt+d"], function(e) {
+    if (!global.states.connected) return;
     if (
-        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -44,8 +44,8 @@ Mousetrap.bind(["alt+d"], function(e) {
 });
 
 Mousetrap.bind(["ctrl+s", "command+s"], function(e) {
+    if (!global.states.connected) return;
     if (
-        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -56,8 +56,8 @@ Mousetrap.bind(["ctrl+s", "command+s"], function(e) {
 $(document).keyup(function(e) {
 
     if (global.keys["alt"] && global.keys["ctrl"]) {
+        if (!global.states.connected) return;
         if (
-            global.states.connected && 
             (!global.port || !global.port.path) &&
             (!global.quickconnectport || !global.quickconnectport.path)
         ) return;
@@ -73,11 +73,12 @@ $(document).keyup(function(e) {
     }
 });
 
+// Enter upload mode
 $(document).keydown(function(e) {
     if (e.altKey && e.ctrlKey) {
+        if (!global.states.connected) return;
         if (global.keys["alt"] && global.keys["ctrl"]) return;
         if (
-            global.states.connected && 
             (!global.port || !global.port.path) &&
             (!global.quickconnectport || !global.quickconnectport.path)
         ) return;
@@ -92,8 +93,8 @@ $(document).keydown(function(e) {
 });
 
 Mousetrap.bind(["ctrl+f", "command+f"], function(e) {
+    if (!global.states.connected) return;
     if (
-        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -104,8 +105,8 @@ Mousetrap.bind(["ctrl+f", "command+f"], function(e) {
 
 // Clear serial monitor
 Mousetrap.bind(["ctrl+l", "command+l"], function(e) {
+    if (!global.states.connected) return; 
     if (
-        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -141,7 +142,7 @@ Mousetrap.bind("escape", function(e) {
 Mousetrap.bind("enter", function(e) {
     
     if (!global.states.connected) return;
-    
+
     var ipcRenderer = require("electron").ipcRenderer;
 
     // If command input is not open, return

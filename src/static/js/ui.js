@@ -487,4 +487,12 @@ function uisubapp(){
         });
     }
 
+    self.show_overlay = function (container, duration = 150) {
+        container.slideUp(0).removeClass("hidden").slideDown(duration);
+    }
+
+    self.hide_overlay = function (container, duration = 50) {
+        container.slideUp(duration);
+    }
+
 }

@@ -103,16 +103,19 @@ function ipcsubapp(){
                 $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
                 
                 if ($(".flash-firmware-overlay").hasClass("hidden")) {
-                    $(".device-not-available-overlay").slideUp(50);
+                    // $(".device-not-available-overlay").slideUp(50);
+                    self.a.ui.hide_overlay($(".device-not-available-overlay"), 100);
                     $(".home-panel").removeClass("disabled").removeClass("blur");
                 }
                 
-                $(".waiting-for-pong-overlay").slideUp(0);
+                // $(".waiting-for-pong-overlay").slideUp(0);
+                self.a.ui.hide_overlay($(".waiting-for-pong-overlay", 100));
                 $(".waiting-for-pong-overlay").addClass("hidden");
 
                 // Flash firmware dismiss button
                 $(".flash-firmware-overlay .dismiss-button").off("click").click(function () {
-                    $(".flash-firmware-overlay").slideUp(200);
+                    // $(".flash-firmware-overlay").slideUp(200);
+                    self.a.ui.hide_overlay($(".flash-firmware-overlay"), 100);
                     setTimeout(() => {
                         $(".flash-firmware-overlay").addClass("hidden");
                         
@@ -221,9 +224,11 @@ function ipcsubapp(){
                 console.log("Flashing successful");
                 var parent = $(".flash-firmware-overlay");
 
-                parent.find(".flash-in-progress-notification-div").slideUp(100);
+                // parent.find(".flash-in-progress-notification-div").slideUp(100);
+                self.a.ui.hide_overlay(parent.find(".flash-in-progress-notification-div"), 100);
                 setTimeout(() => { parent.find(".flash-in-progress-notification-div").addClass("hidden");}, 100);
-                parent.find(".flash-success-div").removeClass("hidden").slideUp(0).slideDown(200);
+                // parent.find(".flash-success-div").removeClass("hidden").slideUp(0).slideDown(200);
+                self.a.ui.show_overlay(parent.find(".flash-success-div"), 200);
                 parent.find(".flash-failure-div").addClass("hidden");
             }
 
@@ -231,9 +236,11 @@ function ipcsubapp(){
                 console.log("Flashing failed");
                 var parent = $(".flash-firmware-overlay");
 
-                parent.find(".flash-in-progress-notification-div").slideUp(100);
+                // parent.find(".flash-in-progress-notification-div").slideUp(100);
+                self.a.ui.hide_overlay(parent.find(".flash-in-progress-notification-div"), 100);
                 setTimeout(() => { parent.find(".flash-in-progress-notification-div").addClass("hidden");}, 100);
-                parent.find(".flash-failure-div").removeClass("hidden").slideUp(0).slideDown(200);
+                // parent.find(".flash-failure-div").removeClass("hidden").slideUp(0).slideDown(200);
+                self.a.ui.show_overlay(parent.find(".flash-failure-div"), 200);
                 parent.find(".flash-success-div").addClass("hidden");
             }
         });
@@ -829,6 +836,7 @@ function ipcsubapp(){
         if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
         if (global.timers.waitingforuploadcounter) clearInterval(global.timers.waitingforuploadcounter);
         if (global.timers.waitingforuploadcounterclear) clearInterval(global.timers.waitingforuploadcounterclear);
+        if (global.timers.delaytextcolor) clearInterval(global.timers.delaytextcolor);
 
         // If the port was available and a connection is established
         if(response.success && response.error == null) {
@@ -862,8 +870,10 @@ function ipcsubapp(){
                 // global.accessors.uiconfiggatorbyte.request_config();
             }
             $(".waiting-for-device-notification").addClass("hidden");
-            $(".device-not-available-overlay").slideUp(100);
-            $(".waiting-for-pong-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            // $(".device-not-available-overlay").slideUp(100);
+            self.a.ui.hide_overlay($(".device-not-available-overlay"), 100);
+            // $(".waiting-for-pong-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            self.a.ui.show_overlay($(".waiting-for-pong-overlay"), 150);
             $(".home-panel").addClass("disabled").addClass("blur");
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#1c65ca");
             $(".status-bar-div .device-status-indicator .connected-device-port").text(response.path);
@@ -944,7 +954,7 @@ function ipcsubapp(){
                 }
 
                 // If functionality is locked
-                if (!global.states.subscription["computed-states"]["full-functionality"]) {
+                if (!global.states["fullfunctionality"]) {
                     var timeout = 10 * 60 * 1000;
 
                     if (!global.timers.livesharefiveminutetimer) {
@@ -1062,19 +1072,27 @@ function ipcsubapp(){
                 var uploaddelay = global.states.uploaddelay;
                 var counter = uploaddelay;
 
+                // Update UI timer
                 global.timers.waitingforuploadcounter = setInterval(() => {
                     $(".update-mode-overlay .stage-2").find(".delay-text").text((--counter) + " seconds");
                 }, 1000);
 
+                // Clear timers timer
                 global.timers.waitingforuploadcounterclear = setTimeout(() => {
                     clearInterval(global.timers.waitingforuploadcounter);
                 }, global.states.uploaddelay * 1000);
 
-                // Add 5 seconds
+                // Add 5 seconds listener
                 $(".update-mode-overlay .add-time-button").off("click").click(function () {
+
+                    var originalcolor = $(".update-mode-overlay .delay-text").css("color");
+                    $(".update-mode-overlay .delay-text").css("color", "green");
+                    global.timers.delaytextcolor = setTimeout(() => {
+                        $(".update-mode-overlay .delay-text").css("color", originalcolor);
+                    }, 800);
                     
                     // If functionality is locked
-                    if (!global.states.subscription["computed-states"]["full-functionality"]) {
+                    if (!global.states["fullfunctionality"]) {
                         self.a.ui.show_functionality_locked_overlay({
                             "code": "add-time-to-upload-delay"
                         });
@@ -1085,8 +1103,9 @@ function ipcsubapp(){
                     counter += 6;
 
                     if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
+                    console.log("Setting the reconnect counter to " + counter + " seconds.");
                     global.timers.waitingforupload = setTimeout(() => {
-                        console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
+                        console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid + " after an extended delay.");
                         self.ipcr.send('ipc/port-open/request', {
                             path: global.port.path,
                             baud: global.port.baud,
@@ -1098,6 +1117,7 @@ function ipcsubapp(){
                         if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
                         if (global.timers.waitingforuploadcounter) clearInterval(global.timers.waitingforuploadcounter);
                         if (global.timers.waitingforuploadcounterclear) clearInterval(global.timers.waitingforuploadcounterclear);
+                        if (global.timers.delaytextcolor) clearInterval(global.timers.delaytextcolor);
                     }, counter * 1000);
 
                     if (global.timers.waitingforuploadcounterclear) clearTimeout(global.timers.waitingforuploadcounterclear);
@@ -1106,7 +1126,7 @@ function ipcsubapp(){
                     }, counter * 1000);
                 });
 
-                // Connect right now
+                // Connect right now listener
                 $(".update-mode-overlay .connect-now-button").off("click").click(function () {
                     counter += 0;
                     if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
@@ -1164,14 +1184,16 @@ function ipcsubapp(){
 
             $(".show-on-connected").addClass("hidden");
             $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
-            $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            // $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            self.a.ui.show_overlay($(".device-not-available-overlay"), 150);
             $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
             $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
             self.a.uiconfiggatorbyte.onconfigstateunknown();
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
             $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
             $(".gb-config-header .action-button").addClass("disabled"); 
-            $(".waiting-for-pong-overlay").slideUp(0);
+            // $(".waiting-for-pong-overlay").slideUp(0);
+            self.a.ui.hide_overlay($(".waiting-for-pong-overlay"), 100);
             
             // Hide all panels
             $(".panel").addClass("hidden");
@@ -1183,65 +1205,6 @@ function ipcsubapp(){
             // $(".home-panel").addClass("hidden");
             // $(".serial-monitor").removeClass("hidden");
         }
-
-        // newtworktest().then(function (online) {
-        //     setTimeout(() => {
-                
-        //         // GatorByte info
-        //         $(".gb-serial-number").text(global.port.sn || "-");
-        //         $(".gb-product-id").text(global.port.productId || "-");
-        //         $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
-        //         $(".gb-port-path").text(global.port.path);
-                
-        //         $.ajax({
-        //             url: window.global.constants.api + "/gatorbyte/device/registration/get",
-        //             type: "POST",
-        //             data: '{ "sn": "' + global.port.sn + '" }',
-        //             success: function (response) {
-        //                 if (response.status == "success") {
-        //                     $(".gb-registration-status").text("✅ Device registered.");
-        //                     $(".register-gb-ui").addClass("hidden");
-        //                     $(".registered-gb-ui").removeClass("hidden");
-        //                     $(".device-not-registered-notification").addClass("hidden");
-    
-        //                     var projectdata = self.f.grep(window.global.data["projects"], "UUID", response.payload["PROJECTUUID"], true);
-        //                     var projectname = projectdata.NAME;
-    
-        //                     $(".registered-gb-ui .gb-registered-project-name-text").text(projectdata.ID);
-        //                     $(".registered-gb-ui .gb-registered-device-name-text").text(response.payload["NAME"]);
-    
-        //                     // Set global variable
-        //                     self.ls.setItem("device/registration/state", "true");
-        //                     self.ls.setItem("device/registration/project-uuid", response.payload["PROJECTUUID"]);
-        //                     self.ls.setItem("device/registration/project-id", projectdata.ID);
-        //                     self.ls.setItem("device/registration/device-name", response.payload["NAME"]);
-        //                     self.ls.setItem("device/registration/sn", response.payload["SN"]);
-        //                 }
-        //                 else if (response.status == "error" && response.code == 1) {
-        //                     $(".device-not-registered-notification").removeClass("hidden");
-        //                     self.ls.setItem("device/registration/state", "false");
-                            
-        //                     $(".gb-registration-status").text("⛔ Device not registered.");
-        //                     $(".register-gb-ui").removeClass("hidden");
-        //                     $(".registered-gb-ui").addClass("hidden");
-        //                 }
-        //             },
-        //             error: function (x, h, r) {
-        //                 $(".gb-registration-status").text("Status unknown.");
-        //                 $(".register-gb-ui").addClass("hidden");
-        //                 $(".registered-gb-ui").addClass("hidden");
-                        
-        //                 $(".registered-gb-ui .gb-registered-project-id-text").text("");
-        //                 $(".registered-gb-ui .gb-registered-device-name-text").text("");
-        //             }
-        //         });
-        //     }, 2000);
-        // })
-        // .catch(function (err) {
-        //     $(".gb-registration-status").text("Status unknown.");
-        //     $(".register-gb-ui").addClass("hidden");
-        //     $(".registered-gb-ui").addClass("hidden");
-        // });
 
         // Broadcast the port information to all live share clients
         self.a.sck.on_port_selected(response); 
@@ -1261,7 +1224,7 @@ function ipcsubapp(){
             console.log("Disconnected port " + (global.port.path || global.quickconnectport.path) + ". Waiting for reconnection.");
 
             $(".waiting-for-device-notification").removeClass("hidden");
-            $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
+            self.a.ui.show_overlay($(".device-not-available-overlay"), 150);
             $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
             $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
             self.a.uiconfiggatorbyte.onconfigstateunknown();            
@@ -1270,7 +1233,8 @@ function ipcsubapp(){
             // Hide all panels
             $(".panel").addClass("hidden");
             
-            $(".waiting-for-pong-overlay").slideUp(0);
+            // $(".waiting-for-pong-overlay").slideUp(0);
+            self.a.ui.hide_overlay($(".waiting-for-pong-overlay"), 100);
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text((global.port.path || global.quickconnectport.path));
             $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
@@ -1286,25 +1250,27 @@ function ipcsubapp(){
             // Set connection state
             global.states.connected = false;
 
-            $(".home-panel").addClass("hidden").removeClass("blur");
             $(".gb-config-header").removeClass("hidden").addClass("disabledz"); setheight();
             $(".gb-config-header .action-button").addClass("disabled"); 
             $(".serial-monitor").removeClass("hidden");
             $(".waiting-for-device-notification").removeClass("hidden");
-            $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
             $(".header-panel").find(".progress-bar-overlay").addClass("hidden");
             $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", 0);
             self.a.uiconfiggatorbyte.onconfigstateunknown();
             $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
+            $(".home-panel").addClass("disabled").removeClass("hidden").addClass("blur");
             
             // Hide all panels
-            $(".panel").addClass("hidden");
+            $(".dismissable-panel").addClass("hidden");
 
-            $(".waiting-for-pong-overlay").slideUp(0);
+            self.a.ui.hide_overlay($(".device-not-available-overlay"), 150);
+            self.a.ui.hide_overlay($(".waiting-for-pong-overlay"), 100);
             $(".status-bar-div .device-status-indicator").attr("prev-background-color", $(".status-bar-div .device-status-indicator").css("background-color")).css("background-color", "#af8302");
             $(".status-bar-div .device-status-indicator .connected-device-port").text(global.port.path);
 
             // Initialize timer to reconnect after a delay
+            if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
+            else console.log("Starting a reconnection timer");
             global.timers.waitingforupload = setTimeout(() => {
                 console.log("Requesting reconnection for: " + global.port.path + " on window ID: " + global.states.windowid);
                 self.ipcr.send('ipc/port-open/request', {

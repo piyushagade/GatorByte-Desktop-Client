@@ -1544,25 +1544,51 @@
         </div>
         
         <!--! Update mode overlay -->
-        <div class="row update-mode-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #dfdfdfeb;border-radius: 4px; z-index: 2;">
+        <div class="row update-mode-overlay shadow scrollbar-style hidden" style="margin: 8px;padding: 14px 12px;overflow-y: auto;overflow-x: hidden;height: auto;cursor: default;position: absolute;left: 0;bottom: 0px;max-width: 550px;width: auto;background: #dfdfdffb;border-radius: 4px; z-index: 2;">
+
             <div class="col">
 
                 <div class="row stage-1 enter-upload-mode-button" style="margin-top: 0px; cursor: pointer;">
-                    <div class="col-12" style="padding: 4px 6px;">
-                        <p style="font-size: 14px;color: #365316;margin-top: 0px;margin-bottom: 0px;">Click anywhere on this popup to enter 'Upload mode'.</p>
-                        <p style="font-size: 14px; color: #365316; margin-top: 0px; margin-bottom: 6px;">The desktop client will close connection to the device so that you can upload your code.</p>
-                        <p style="font-size: 13px; color: #2b2b2b; margin-top: 0px; margin-bottom: 4px;">The desktop client will attempt reconnection in <span class="delay-text">10 seconds</span>.</p>
+                    <div class="col-auto">
+                        <div class="row" style="margin-top: 0px;">
+                            <div class="col-12" style="padding: 4px 8px;font-size: 26px;color: #4c4c4c;">
+                                <i class="fa-brands fa-usb"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="margin-top: 0px;">
+                            <div class="col-12" style="padding: 4px 6px;">
+                                <p style="font-size: 14px;color: #0f0f0f;margin-top: 0px;margin-bottom: 0px; font-weight: bold;">Click anywhere on this popup to enter 'Upload mode'.</p>
+                                <p style="font-size: 14px; color: #1e1e1e; margin-top: 0px; margin-bottom: 6px;">The desktop client will close the connection to the device so that you can upload your code.</p>
+                                <p style="font-size: 14px; color: #1e1e1e; margin-top: 0px; margin-bottom: 6px;">The desktop client will attempt reconnection in <span class="delay-text" style="font-weight: bold;">10 seconds</span>.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row stage-2 hidden exit-upload-mode-button" style="margin-top: 0px;">
-                    <div class="col-12" style="padding: 4px 6px;">
-                        <p style="font-size: 14px; color: #365316; margin-top: 0px; margin-bottom: 0px;">The desktop client has been put to in 'Upload mode'.</p>
-                        <p style="font-size: 14px; color: #365316; margin-top: 0px; margin-bottom: 6px;">You can now update the firmware on the device.</p>
-                        <p style="font-size: 13px; color: #2b2b2b; margin-top: 0px; margin-bottom: 4px;">Reconnecting the device in <span class="delay-text">10 seconds</span></p>
-                        <div class="action-buttons" style="margin-top: 6px; display: inline-flex;">
-                            <div class="add-time-button" style="padding: 4px 8px; font-size: 13px; color: #cecece; background: #233372; width: fit-content; margin-right: 6px;" title="Add 5 seconds">+5 seconds</div>
-                            <div class="connect-now-button" style="padding: 4px 8px; font-size: 13px; color: #cecece; background: #233372; width: fit-content; margin-right: 6px;">Connect now</div>
+                    <div class="col-auto">
+                        <div class="row" style="margin-top: 0px;">
+                            <div class="col-12" style="padding: 4px 8px;font-size: 26px;color: #f13558;">
+                                <i class="fa-brands fa-usb"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row" style="margin-top: 0px;">
+                            <div class="col-12" style="padding: 4px 6px;">
+                                <p style="font-size: 14px;color: #0f0f0f;margin-top: 0px;margin-bottom: 0px; font-weight: bold;">The desktop client has been put to in 'Upload mode'.</p>
+                                <p style="font-size: 14px; color: #1e1e1e; margin-top: 0px; margin-bottom: 6px;">You can now update the firmware on the device.</p>
+                                <p style="font-size: 14px; color: #1e1e1e; margin-top: 0px; margin-bottom: -2px;"><span class="delay-text" style="font-weight: bold;">10 seconds</span> to reconnection.</p>
+                            </div>
+
+                            <div class="col-12" style="padding: 4px 6px;">
+                                <div class="action-buttons" style="margin-top: 6px; display: inline-flex;">
+                                    <div class="add-time-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: #cecece; background: #333333; width: fit-content; margin-right: 6px;" title="Add 5 seconds">+5 seconds</div>
+                                    <div class="connect-now-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: #cecece; background: #33549e; width: fit-content; margin-right: 6px;">Connect now</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1585,7 +1611,7 @@
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">Please connect the GatorByte to the computer and ensure the connection is proper.</p>
                         
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">To connect to a different device, click below.</p>
-                        <div class="connected-device-disconnect-button" title="Select another device" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
+                        <div class="connected-device-disconnect-button" title="Select another device" style="border-radius: 2px; cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
                     </div>
                 </div>
             </div>
@@ -1637,8 +1663,8 @@
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
-                            <div class="unlock-pro-button" style="padding: 4px 8px;font-size: 13px;color: #f3f3f3;background: #40ad99;width: fit-content;margin-right: 6px;margin-top: 0px;">Unlock PRO</div>
-                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            <div class="unlock-pro-button" style="border-radius: 2px; padding: 4px 8px;font-size: 13px;color: #f3f3f3;background: #40ad99;width: fit-content;margin-right: 6px;margin-top: 0px;">Unlock PRO</div>
+                            <div class="dismiss-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
                 </div>
@@ -1752,7 +1778,7 @@
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
-                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            <div class="dismiss-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
                 </div>
@@ -1778,7 +1804,7 @@
 
                         <div class="row" style="margin: 0;">
                             <div class="col-auto" style="padding: 0;">
-                                <div class="select-file-button" state="file-select" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
+                                <div class="select-file-button" state="file-select" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
                             </div>
                             <div class="col" style="padding: 0;">
                                 <div class="selected-file-info" style="font-size: 13px; margin-top: 4px; color: #556; font-weight: bold;">No file selected</div>
@@ -1790,7 +1816,7 @@
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
-                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            <div class="dismiss-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
                 </div>
@@ -1815,7 +1841,7 @@
 
                         <div class="row disabled hidden" style="margin: 0; opacity: 0.25">
                             <div class="col-auto" style="padding: 0;">
-                                <div class="select-file-button" state="file-select" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
+                                <div class="select-file-button" state="file-select" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 10px; margin-top: 0px;">Select file</div>
                             </div>
                             <div class="col" style="padding: 0;">
                                 <div class="selected-file-info" style="font-size: 13px; margin-top: 4px; color: #556; font-weight: bold;">No file selected</div>
@@ -1849,8 +1875,8 @@
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
-                            <div class="reconnect-button hidden" style="padding: 4px 8px; font-size: 13px; color: #eaeaea; background: #2d68a0; width: fit-content; margin-right: 6px; margin-top: 0px;">Quick connect</div>
-                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            <div class="reconnect-button hidden" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: #eaeaea; background: #2d68a0; width: fit-content; margin-right: 6px; margin-top: 0px;">Quick connect</div>
+                            <div class="dismiss-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
                 </div>
@@ -1872,8 +1898,8 @@
 
                         <!-- Action buttons -->
                         <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
-                            <div class="try-again-button" style="padding: 4px 8px; font-size: 13px; color: rgb(230, 230, 230); background: #0b7ddf; width: fit-content; margin-right: 6px; margin-top: 0px;">Retry</div>
-                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(212, 212, 212); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            <div class="try-again-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(230, 230, 230); background: #0b7ddf; width: fit-content; margin-right: 6px; margin-top: 0px;">Retry</div>
+                            <div class="dismiss-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(212, 212, 212); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
                 </div>
@@ -1900,8 +1926,8 @@
                         
                         <!-- Action buttons -->
                         <div class="col-12 action-buttons" style="padding: 0px 6px; margin: 2px 0 0 0; display: inline-flex;">
-                            <div class="okay-button" style="padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 6px; margin-top: 0px;">Okay</div>
-                            <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                            <div class="okay-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #1683c3; width: fit-content; margin-right: 6px; margin-top: 0px;">Okay</div>
+                            <div class="dismiss-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(192, 192, 192); background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                         </div>
                     </div>
 
@@ -1922,8 +1948,8 @@
 
                             <!-- Action buttons -->
                             <div class="action-buttons" style="margin: 2px 0 0 0; display: inline-flex;">
-                                <div class="reconnect-button hidden" style="padding: 4px 8px; font-size: 13px; color: #eaeaea; background: #2d68a0; width: fit-content; margin-right: 6px; margin-top: 0px;">Quick connect</div>
-                                <div class="dismiss-button" style="padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
+                                <div class="reconnect-button hidden" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: #eaeaea; background: #2d68a0; width: fit-content; margin-right: 6px; margin-top: 0px;">Quick connect</div>
+                                <div class="dismiss-button" style="border-radius: 2px; padding: 4px 8px; font-size: 13px; color: #c0c0c0; background: #313131; width: fit-content; margin-right: 6px; margin-top: 0px;">Dismiss</div>
                             </div>
                         </div>
                     </div>
