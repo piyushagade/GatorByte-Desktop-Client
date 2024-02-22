@@ -131,6 +131,9 @@ function ipcsubapp(){
 
             // Set global variable
             global.port.sn = response.sn.trim();
+
+            // Check registration and set device SN in view
+            self.checkregistration();
         });
 
         // On setup complete; GB ready
@@ -235,6 +238,65 @@ function ipcsubapp(){
         });
         
         return self;
+    }
+
+    self.checkregistration = function () {
+        newtworktest().then(function (online) {
+                
+            // GatorByte info
+            $(".gb-serial-number").text(global.port.sn || "-");
+            $(".gb-product-id").text(global.port.productId || "-");
+            $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
+            $(".gb-port-path").text(global.port.path);
+            
+            $.ajax({
+                url: window.global.constants.api + "/gatorbyte/device/registration/get",
+                type: "POST",
+                data: '{ "sn": "' + global.port.sn + '" }',
+                success: function (response) {
+                    if (response.status == "success") {
+                        $(".gb-registration-status").text("✅ Device registered.");
+                        $(".register-gb-ui").addClass("hidden");
+                        $(".registered-gb-ui").removeClass("hidden");
+                        $(".device-not-registered-notification").addClass("hidden");
+
+                        var projectdata = self.f.grep(window.global.data["projects"], "UUID", response.payload["PROJECTUUID"], true);
+                        var projectname = projectdata.NAME;
+
+                        $(".registered-gb-ui .gb-registered-project-name-text").text(projectdata.ID);
+                        $(".registered-gb-ui .gb-registered-device-name-text").text(response.payload["NAME"]);
+
+                        // Set global variable
+                        self.ls.setItem("device/registration/state", "true");
+                        self.ls.setItem("device/registration/project-uuid", response.payload["PROJECTUUID"]);
+                        self.ls.setItem("device/registration/project-id", projectdata.ID);
+                        self.ls.setItem("device/registration/device-name", response.payload["NAME"]);
+                        self.ls.setItem("device/registration/sn", response.payload["SN"]);
+                    }
+                    else if (response.status == "error" && response.code == 1) {
+                        $(".device-not-registered-notification").removeClass("hidden");
+                        self.ls.setItem("device/registration/state", "false");
+                        
+                        $(".gb-registration-status").text("⛔ Device not registered.");
+                        $(".register-gb-ui").removeClass("hidden");
+                        $(".registered-gb-ui").addClass("hidden");
+                    }
+                },
+                error: function (x, h, r) {
+                    $(".gb-registration-status").text("Status unknown.");
+                    $(".register-gb-ui").addClass("hidden");
+                    $(".registered-gb-ui").addClass("hidden");
+                    
+                    $(".registered-gb-ui .gb-registered-project-id-text").text("");
+                    $(".registered-gb-ui .gb-registered-device-name-text").text("");
+                }
+            });
+        })
+        .catch(function (err) {
+            $(".gb-registration-status").text("Status unknown.");
+            $(".register-gb-ui").addClass("hidden");
+            $(".registered-gb-ui").addClass("hidden");
+        });
     }
 
     self.process_bootstrap_data = function (event, data) {
@@ -1120,65 +1182,64 @@ function ipcsubapp(){
             // $(".serial-monitor").removeClass("hidden");
         }
 
-
-        newtworktest().then(function (online) {
-            setTimeout(() => {
+        // newtworktest().then(function (online) {
+        //     setTimeout(() => {
                 
-                // GatorByte info
-                $(".gb-serial-number").text(global.port.sn || "-");
-                $(".gb-product-id").text(global.port.productId || "-");
-                $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
-                $(".gb-port-path").text(global.port.path);
+        //         // GatorByte info
+        //         $(".gb-serial-number").text(global.port.sn || "-");
+        //         $(".gb-product-id").text(global.port.productId || "-");
+        //         $(".gb-product-manufacturer").text(global.port.manufacturer || "-");
+        //         $(".gb-port-path").text(global.port.path);
                 
-                $.ajax({
-                    url: window.global.constants.api + "/gatorbyte/device/registration/get",
-                    type: "POST",
-                    data: '{ "sn": "' + global.port.sn + '" }',
-                    success: function (response) {
-                        if (response.status == "success") {
-                            $(".gb-registration-status").text("✅ Device registered.");
-                            $(".register-gb-ui").addClass("hidden");
-                            $(".registered-gb-ui").removeClass("hidden");
-                            $(".device-not-registered-notification").addClass("hidden");
+        //         $.ajax({
+        //             url: window.global.constants.api + "/gatorbyte/device/registration/get",
+        //             type: "POST",
+        //             data: '{ "sn": "' + global.port.sn + '" }',
+        //             success: function (response) {
+        //                 if (response.status == "success") {
+        //                     $(".gb-registration-status").text("✅ Device registered.");
+        //                     $(".register-gb-ui").addClass("hidden");
+        //                     $(".registered-gb-ui").removeClass("hidden");
+        //                     $(".device-not-registered-notification").addClass("hidden");
     
-                            var projectdata = self.f.grep(window.global.data["projects"], "UUID", response.payload["PROJECTUUID"], true);
-                            var projectname = projectdata.NAME;
+        //                     var projectdata = self.f.grep(window.global.data["projects"], "UUID", response.payload["PROJECTUUID"], true);
+        //                     var projectname = projectdata.NAME;
     
-                            $(".registered-gb-ui .gb-registered-project-name-text").text(projectdata.ID);
-                            $(".registered-gb-ui .gb-registered-device-name-text").text(response.payload["NAME"]);
+        //                     $(".registered-gb-ui .gb-registered-project-name-text").text(projectdata.ID);
+        //                     $(".registered-gb-ui .gb-registered-device-name-text").text(response.payload["NAME"]);
     
-                            // Set global variable
-                            self.ls.setItem("device/registration/state", "true");
-                            self.ls.setItem("device/registration/project-uuid", response.payload["PROJECTUUID"]);
-                            self.ls.setItem("device/registration/project-id", projectdata.ID);
-                            self.ls.setItem("device/registration/device-name", response.payload["NAME"]);
-                            self.ls.setItem("device/registration/sn", response.payload["SN"]);
-                        }
-                        else if (response.status == "error" && response.code == 1) {
-                            $(".device-not-registered-notification").removeClass("hidden");
-                            self.ls.setItem("device/registration/state", "false");
+        //                     // Set global variable
+        //                     self.ls.setItem("device/registration/state", "true");
+        //                     self.ls.setItem("device/registration/project-uuid", response.payload["PROJECTUUID"]);
+        //                     self.ls.setItem("device/registration/project-id", projectdata.ID);
+        //                     self.ls.setItem("device/registration/device-name", response.payload["NAME"]);
+        //                     self.ls.setItem("device/registration/sn", response.payload["SN"]);
+        //                 }
+        //                 else if (response.status == "error" && response.code == 1) {
+        //                     $(".device-not-registered-notification").removeClass("hidden");
+        //                     self.ls.setItem("device/registration/state", "false");
                             
-                            $(".gb-registration-status").text("⛔ Device not registered.");
-                            $(".register-gb-ui").removeClass("hidden");
-                            $(".registered-gb-ui").addClass("hidden");
-                        }
-                    },
-                    error: function (x, h, r) {
-                        $(".gb-registration-status").text("Status unknown.");
-                        $(".register-gb-ui").addClass("hidden");
-                        $(".registered-gb-ui").addClass("hidden");
+        //                     $(".gb-registration-status").text("⛔ Device not registered.");
+        //                     $(".register-gb-ui").removeClass("hidden");
+        //                     $(".registered-gb-ui").addClass("hidden");
+        //                 }
+        //             },
+        //             error: function (x, h, r) {
+        //                 $(".gb-registration-status").text("Status unknown.");
+        //                 $(".register-gb-ui").addClass("hidden");
+        //                 $(".registered-gb-ui").addClass("hidden");
                         
-                        $(".registered-gb-ui .gb-registered-project-id-text").text("");
-                        $(".registered-gb-ui .gb-registered-device-name-text").text("");
-                    }
-                });
-            }, 2000);
-        })
-        .catch(function (err) {
-            $(".gb-registration-status").text("Status unknown.");
-            $(".register-gb-ui").addClass("hidden");
-            $(".registered-gb-ui").addClass("hidden");
-        });
+        //                 $(".registered-gb-ui .gb-registered-project-id-text").text("");
+        //                 $(".registered-gb-ui .gb-registered-device-name-text").text("");
+        //             }
+        //         });
+        //     }, 2000);
+        // })
+        // .catch(function (err) {
+        //     $(".gb-registration-status").text("Status unknown.");
+        //     $(".register-gb-ui").addClass("hidden");
+        //     $(".registered-gb-ui").addClass("hidden");
+        // });
 
         // Broadcast the port information to all live share clients
         self.a.sck.on_port_selected(response); 

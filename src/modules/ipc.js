@@ -543,14 +543,14 @@ module.exports = {
             var command = obj.command;
 
             if (!i.g.var.serports[obj.path]) {
-                console.log("< X " + command + ": " + obj.path + " Port not open.");
+                console.log("GB < X " + command + ": " + obj.path + " Port not open.");
                 event.sender.send("send-command-response", { "status": false });
                 return;
             }
             
             i.g.var.serports[obj.path].write(command + "\r\n", function(err) {
                 if (err) {
-                    console.log("< X " + command + ": " + obj.path + " See the log for error.");
+                    console.log("GB < X " + command + ": " + obj.path + " See the log for error.");
                     console.log(err);
                     event.sender.send("send-command-response", { "status": false }); 
                     return console.log('Error on write: ', err.message);

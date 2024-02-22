@@ -288,11 +288,16 @@ function uiconfiggatorbytesubapp() {
 
     self.sendcommand = function (command) {
 
-        self.ipcr.send('ipc/command/push', {
-            command: command,
-            windowid: global.states.windowid,
-            path: global.port.path
-        });
+        try {
+            self.ipcr.send('ipc/command/push', {
+                command: command,
+                windowid: global.states.windowid,
+                path: global.port.path
+            });
+        }
+        catch (e) {
+            console.error("Error sending command: " + command);
+        }
     }
     
     self.listeners = function () {
@@ -311,10 +316,10 @@ function uiconfiggatorbytesubapp() {
                 path: global.port.path
             });
 
-            // Show UTC time
+            // Show UTC time from the computer/phone
             self.show_utctime();
 
-            // Get RTC time
+            // Get RTC time from the GatorByte
             self.show_rtctime();
 
             // Get BL information
@@ -434,7 +439,7 @@ function uiconfiggatorbytesubapp() {
             var value = $(this).val();
             if (!self.configobject) self.configobject = {};
             if (!self.configobject["server"]) self.configobject["server"] = {};
-            if (value && value.length > 3) self.configobject["server"]["port"] = $(this).val();
+            if (value && value.length > 0) self.configobject["server"]["port"] = $(this).val();
             else {
                 $(this).css("border-bottom", "1px solid red");
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
@@ -541,7 +546,7 @@ function uiconfiggatorbytesubapp() {
             var value = parseInt($(this).val());
             if (!self.configobject) self.configobject = {};
             if (!self.configobject["sleep"]) self.configobject["sleep"] = {};
-            if (value && value >= 3 && !isNaN(parseInt(value))) self.configobject["sleep"]["duration"] = value * 1000;
+            if (value && value >= 1 && !isNaN(parseInt(value))) self.configobject["sleep"]["duration"] = value * 1000;
             else {
                 $(this).css("border-bottom", "1px solid red");
                 setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
@@ -642,7 +647,7 @@ function uiconfiggatorbytesubapp() {
     // Get RTC time from the GatorByte
     self.show_rtctime = function () {
         if (self.panel.hasClass("hidden")) clearInterval(self.timers.utctimeupdate);
-        self.panel.find(".rtc-sync-status").text("⚠️ Fetching RTC time.");
+        self.panel.find(".rtc-sync-status").text("⏲️ Fetching RTC time.");
         setTimeout(() => {
             self.sendcommand("rtc:get");
         }, self.panel.find(".gatorbyte-rtc-time-text").text() == "-" ? 100 : 250);
@@ -817,6 +822,8 @@ function uiconfiggatorbytesubapp() {
 
     self.on_config_data_acquired = function (stale) {
 
+        if (!self.configdata) return;
+
         // Check if the saved configuration was updated and needs to be uploaded
         if (self.configobject && self.configobject["updateflag"]) {
             $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#865600").text("Configuration upload due");
@@ -927,7 +934,35 @@ function uiconfiggatorbytesubapp() {
                     $(".header-panel").find(".download-status-text").text("Initializing upload");
                     $(".header-panel").find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
                     $(".header-panel").find(".progress").find(".progress-bar").css("width", "0px");
+
+                    // Append mandatory fields
+                    self.configobject["survey"]["id"] = self.get_content(self, "project-id-text");
+                    delete self.configobject["survey"]["location"];
+                    delete self.configobject["survey"]["date"];
+                    self.configobject["device"]["name"] = self.get_content(self, "device-name-text");
+                    self.configobject["device"]["id"] = global.port.sn;
+                    self.configobject["server"]["url"] = self.get_value(self, "server-address-text");
+                    self.configobject["server"]["port"] = self.get_value(self, "server-port-number-text");
+                    self.configobject["server"]["port"] = self.get_value(self, "server-port-number-text");
+                    self.configobject["server"]["enabled"] = self.get_value(self, "server-upload-enabled-selector select");
+                    self.configobject["server"]["tz"] = self.get_value(self, "timezone-dropdown");
+                    self.configobject["server"]["type"] = self.get_value(self, "server-type-selector select");
+                    self.configobject["sim"]["rat"] = self.get_value(self, "rat-dropdown");
+                    self.configobject["sim"]["apn"] = self.get_value(self, "apn-text");
+                    self.configobject["sleep"]["duration"] = parseInt(self.get_value(self, "sleep-duration-text")) * 1000;
+                    self.configobject["sleep"]["mode"] = self.get_value(self, "sleep-mode-text");
+                    self.configobject["data"]["mode"] = self.get_value(self, "data-mode-text");
+                    self.configobject["data"]["readuntil"] = self.get_value(self, "sensor-read-mode-text");
                     
+                    // Save config data to main process
+                    self.save_config_in_storage();
+
+                    // Update config data
+                    self.configdata = self.objecttostring(self.configobject);
+                    
+                    console.log("Uploading config:");
+                    console.log(self.configobject);
+
                     // Upload config data to SD card
                     self.request_file_upload(self.fileuploadline);
                 }
@@ -941,6 +976,16 @@ function uiconfiggatorbytesubapp() {
 
         // Save config data to main process
         self.save_config_in_storage();
+    }
+
+    self.get_value = function (self, classstr) {
+        var value = self.panel.find("." + classstr).val();
+        return value;
+    }
+
+    self.get_content = function (self, classstr) {
+        var value = self.panel.find("." + classstr).text();
+        return value;
     }
 
     self.save_config_in_storage = function () {
@@ -1094,32 +1139,6 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").text(devicename ? devicename : data.device["name"]).attr("readonly", "true");
         self.panel.find(".survey-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
         
-        if (data.survey["date"]) self.panel.find(".survey-information-parent").find(".survey-date").removeClass("disabled").val(data.survey["date"]);
-        self.panel.find(".survey-information-parent").find(".survey-date-picker").removeClass("disabled").datetimepicker({
-            datepicker: true,
-            timepicker: false,
-            defaultDate: data.survey["date"] ? moment(data.survey["date"], "MM-DD-YYYY").format("YYYY/MM/DD") : moment(moment.now()).format("YYYY/MM/DD"),
-            onChangeDateTime: function (dp, input) {
-                var date = input.val().split(" ")[0];
-                var timestamp = moment(date + " 12:00AM", "YYYY/MM/DD").valueOf();
-                $(input).find("input").attr("utc", timestamp);
-                $(input).find("input").attr("date", moment(timestamp).format("MM-DD-YYYY"));
-                $(input).find("input").val(moment(timestamp).format("MM-DD-YYYY"));
-
-                // Update the object
-                self.configobject["survey"]["date"] = moment(timestamp).format("MM-DD-YYYY");
-
-                // Update flag
-                self.configobject["updateflag"] = true;
-
-                // Save config data to main process
-                self.save_config_in_storage();
-
-                // Update config data
-                self.configdata = self.objecttostring(self.configobject);
-            }
-        });
-
         // Sleep information
         self.panel.find(".device-information-parent").find(".sleep-mode-text").removeClass("disabled").val(data.sleep["mode"]);
         self.panel.find(".device-information-parent").find(".sleep-duration-text").removeClass("disabled").val(parseInt(data.sleep["duration"]) / 1000);
@@ -1179,6 +1198,7 @@ function uiconfiggatorbytesubapp() {
             response = response.replace(/rtc:/g, "");
             var offset = self.timezone();
 
+
             if (response == "not-detected") {
 
                 self.panel.find(".get-rtc-button").addClass("disabled");
@@ -1190,12 +1210,25 @@ function uiconfiggatorbytesubapp() {
 
             else {
                 
+                var timestamp = response.split("-")[0];
+                var source = response.split("-")[1];
+
                 self.panel.find(".get-rtc-button").removeClass("disabled");
                 self.panel.find(".sync-rtc-button").removeClass("disabled");
 
-                console.log("Received RTC timestamp: " + response)
+                console.log("Received GatorByte timestamp: " + timestamp + ", source: " + source);
+                
+                // if (source == "modem") {
+                //     var offset = self.timezone();
+                //     var oldtimestamp = parseInt(timestamp);
+                //     var timestamp = (parseInt(timestamp) * 1000 + offset) / 1000;
+                //     console.log("Adjusting MODEM timestamp to timezone.");
+                //     console.log("Offset: " + offset / 1000 + " seconds, or " + offset / 1000 / 3600 + " hours.");
+                //     console.log("Old time: " + moment(oldtimestamp * 1000).format("LLL") + ", " + oldtimestamp);
+                //     console.log("New time: " +  moment(timestamp * 1000).format("LLL") + ", " + timestamp);
+                // }
 
-                var timestamp = parseInt(response) * 1000;
+                var timestamp = parseInt(timestamp) * 1000;
                 self.panel.find(".gatorbyte-rtc-time-text").attr("title", timestamp).html(multiline(function () {/* 
                     <span style="margin-right: 4px;">{{date}}</span>
                     <span>{{time}}</span>
@@ -1210,8 +1243,14 @@ function uiconfiggatorbytesubapp() {
                     self.panel.find(".sync-rtc-button").removeClass("disabled");
                 }
                 else {
-                    self.panel.find(".rtc-sync-status").text("✅ The clocks are in sync. No action required.");
-                    self.panel.find(".sync-rtc-button").addClass("disabled");
+                    if (source == "rtc") {
+                        self.panel.find(".rtc-sync-status").text("✅ The clocks are in sync. No action required.");
+                        self.panel.find(".sync-rtc-button").addClass("disabled");
+                    }
+                    else if (source == "modem") {
+                        self.panel.find(".rtc-sync-status").text("⚠️ The clocks are in sync. However, the RTC is likely unoperational. The time has been acquired from the MODEM.");
+                        self.panel.find(".sync-rtc-button").addClass("disabled");
+                    }
                 }
             }
 
