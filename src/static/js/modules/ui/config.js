@@ -335,6 +335,7 @@ function uiconfiggatorbytesubapp() {
         // Request sync status check
         $(".sync-status-heading").off("click").click(function () {
             self.checkconfigsync();
+            self.getbattlevel(300);
         });
 
         // Get RTC time
@@ -751,6 +752,7 @@ function uiconfiggatorbytesubapp() {
 
                 // Check config data sync
                 self.checkconfigsync(500);
+                self.getbattlevel(800);
                 
             }
 
@@ -814,6 +816,7 @@ function uiconfiggatorbytesubapp() {
             
             // Check config data sync after 500 ms
             self.checkconfigsync(500);
+            self.getbattlevel(800);
 
             // Update config data
             self.configdata = self.objecttostring(self.configobject);
@@ -1321,6 +1324,31 @@ function uiconfiggatorbytesubapp() {
             // Update UI
             self.onconfigsyncstatusupdate();
         }
+
+        //! Battery level
+        else if (response.startsWith("cfgbatt:")) {
+            response = response.replace(/cfgbatt:/, "");
+            var level = response;
+            
+            console.log("Battery level: " + level);
+
+            var container = $(".gb-config-header .battery-icon-parent");
+            if (level > 85) html = multiline(function() {/* 
+                <i class="fa-solid fa-battery-full" style="opacity: 1;"></i>
+            */});
+            else if (level > 60) html = multiline(function() {/* 
+                <i class="fa-solid fa-battery-three-quarters" style="opacity: 1;"></i>
+            */});
+            else if (level > 20) html = multiline(function() {/* 
+                <i class="fa-solid fa-battery-half" style="opacity: 1;"></i>
+            */});
+            else if (level > 0) html = multiline(function() {/* 
+                <i class="fa-solid fa-battery-empty" style="opacity: 1;"></i>
+            */});
+
+            // Set HTML
+            container.html(html).attr("title",  title="Battery at " + parseInt(level) + "%");
+        }
     }
 
     self.timezone = function () {
@@ -1334,6 +1362,15 @@ function uiconfiggatorbytesubapp() {
 
         var milliseconds = sign * (hours * 3600 + minutes * 60) * 1000;
         return milliseconds;
+    }
+
+    self.getbattlevel = function (delay) {
+        delay = delay ? delay : 0;
+
+        setTimeout(() => {
+            // Check config sync
+            self.sendcommand("cfg:batt");
+        }, delay);
     }
 
     self.checkconfigsync = function (delay) {
