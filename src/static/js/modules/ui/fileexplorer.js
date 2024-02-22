@@ -29,8 +29,12 @@ function uidownloadfilessubapp(){
     
     self.listeners = function () {
 
-        // Big button
-        $(".home-panel .download-files-button").off("click").click(function () {
+        // Big button click handler
+        $(".home-panel .big-button.download-files-button").off("click").click(function () {
+
+            // Show back button
+            $(".go-back-panel-button").removeClass("hidden");
+
             $(".sd-explorer-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden");

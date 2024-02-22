@@ -34,7 +34,11 @@ function uidashboardsubapp(){
     self.listeners = function () {
 
         // Dashboard big button
-        $(".home-panel .dashboard-button").off("click").click(function () {
+        $(".home-panel .big-button.dashboard-button").off("click").click(function () {
+
+            // Show back button
+            $(".go-back-panel-button").removeClass("hidden");
+            
             $(".dashboard-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").removeClass("hidden");

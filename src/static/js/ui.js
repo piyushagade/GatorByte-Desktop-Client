@@ -101,8 +101,8 @@ function uisubapp(){
             self.toggle_command_input_ui();
         });
         
-        // Show back button
-        $(".go-back-panel-button").removeClass("hidden");
+        // // Show back button
+        // $(".go-back-panel-button").removeClass("hidden");
 
         $(".waiting-for-device-panel").addClass("hidden");
         $(".device-selector-panel").addClass("hidden");
@@ -161,10 +161,16 @@ function uisubapp(){
                 $(".file-viewer-div").html('<textarea class="codemirror-textarea"></textarea>');
             }
 
+            // Show home panel
             else {
                 $(".panel").addClass("hidden");
                 $("." + $(this).attr("target-panel")).removeClass("hidden");
-                if ($(this).attr("target-panel") == "home-panel") $(".gb-config-header").removeClass("hidden"); setheight();
+                if ($(this).attr("target-panel") == "home-panel") {
+                    $(".gb-config-header").removeClass("hidden"); setheight();
+
+                    // Hide the back button
+                    $(".go-back-panel-button").addClass("hidden");
+                }
             }
         });
 

@@ -39,7 +39,11 @@ function uidiagnosticsgatorbytesubapp() {
     self.listeners = function () {
 
         // Dashboard big button
-        $(".home-panel .gb-diagnostics-button").off("click").click(function () {
+        $(".home-panel .big-button.gb-diagnostics-button").off("click").click(function () {
+
+            // Show back button
+            $(".go-back-panel-button").removeClass("hidden");
+            
             $(".diagnostics-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").removeClass("hidden"); setheight();

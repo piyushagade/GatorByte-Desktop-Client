@@ -20,27 +20,16 @@ function uiserialmonitorsubapp(){
     self.listeners = function () {
 
         // Dashboard big button
-        $(".home-panel .serial-monitor-button").off("click").click(function () {
+        $(".home-panel .big-button.serial-monitor-button").off("click").click(function () {
+
+            // Show back button
+            $(".go-back-panel-button").removeClass("hidden");
 
             $(".serial-monitor").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden");
 
             self.setheight();
-
-            // self.timers.heightadjust = setInterval(() => {
-                
-            // }, 150);
-
-            // if (global.states.windowtype == "main-window") {
-            //     self.ipcr.send("ipc/open-serial-monitor/request", {
-            //         data: global
-            //     });
-            // }
-            // else {
-            //     $(".serial-monitor").removeClass("hidden");
-            //     $(".home-panel").addClass("hidden");
-            // }
         });
     }
 

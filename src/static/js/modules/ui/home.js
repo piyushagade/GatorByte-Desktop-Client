@@ -39,7 +39,7 @@ function uihomesubapp(){
         });
 
         // Show flash firmware UI big button in home panel
-        $(".home-panel .flash-firmware-button").off("click").click(function () {
+        $(".home-panel .big-button.flash-firmware-button").off("click").click(function () {
             $(".flash-firmware-overlay").removeClass("hidden").slideUp(0);
             $(".home-panel").addClass("blur").addClass("disabled");
             $(".flash-firmware-overlay").slideDown(200);
@@ -191,10 +191,14 @@ function uihomesubapp(){
         });
 
         
-        // Dashboard big button
-        $(".home-panel .dashboard-button").off("click").click(function () {
-            $(".dashboard-panel").removeClass("hidden");
-            $(".home-panel").addClass("hidden");
-        });
+        // // Dashboard big button
+        // $(".home-panel .big-button.dashboard-button").off("click").click(function () {
+
+        //     // Show back button
+        //     $(".go-back-panel-button").removeClass("hidden");
+            
+        //     $(".dashboard-panel").removeClass("hidden");
+        //     $(".home-panel").addClass("hidden");
+        // });
     }
 }

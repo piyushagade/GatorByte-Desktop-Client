@@ -1,5 +1,8 @@
 Mousetrap.bind(["ctrl+k", "command+k"], function(e) {
+    if ($(".serial-monitor.panel").hasClass("hidden")) return;
+
     if (
+        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -9,22 +12,30 @@ Mousetrap.bind(["ctrl+k", "command+k"], function(e) {
     return false;
 });
 
+// Login as guest
 Mousetrap.bind(["alt+g"], function(e) {
+    if (!global.states.connected) return;
+
     $(".login-panel").addClass("hidden");
     $(".device-selector-panel").removeClass("hidden");
     $(".device-selected-info-row").remove();
     return false;
 });
 
+// Show login panel
 Mousetrap.bind(["alt+l"], function(e) {
+    if (!global.states.connected) return;
+
     $(".panel").addClass("hidden");
     $(".login-panel").removeClass("hidden");
     localStorage.clear();
     return false;
 });
 
+// Disconnect a device
 Mousetrap.bind(["alt+d"], function(e) {
     if (
+        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -34,10 +45,11 @@ Mousetrap.bind(["alt+d"], function(e) {
 
 Mousetrap.bind(["ctrl+s", "command+s"], function(e) {
     if (
+        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
-    $(".serial-monitor-button").click();
+    $(".big-button.serial-monitor-button").click();
     return false;
 });
 
@@ -45,10 +57,10 @@ $(document).keyup(function(e) {
 
     if (global.keys["alt"] && global.keys["ctrl"]) {
         if (
+            global.states.connected && 
             (!global.port || !global.port.path) &&
             (!global.quickconnectport || !global.quickconnectport.path)
         ) return;
-        if (!global.states.connected) return;
 
         global.keys["alt"] = false;
         global.keys["ctrl"] = false;
@@ -65,10 +77,10 @@ $(document).keydown(function(e) {
     if (e.altKey && e.ctrlKey) {
         if (global.keys["alt"] && global.keys["ctrl"]) return;
         if (
+            global.states.connected && 
             (!global.port || !global.port.path) &&
             (!global.quickconnectport || !global.quickconnectport.path)
         ) return;
-        if (!global.states.connected) return;
         global.keys["alt"] = true;
         global.keys["ctrl"] = true;
 
@@ -81,6 +93,7 @@ $(document).keydown(function(e) {
 
 Mousetrap.bind(["ctrl+f", "command+f"], function(e) {
     if (
+        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -89,8 +102,10 @@ Mousetrap.bind(["ctrl+f", "command+f"], function(e) {
     return false;
 });
 
+// Clear serial monitor
 Mousetrap.bind(["ctrl+l", "command+l"], function(e) {
     if (
+        global.states.connected && 
         (!global.port || !global.port.path) &&
         (!global.quickconnectport || !global.quickconnectport.path)
     ) return;
@@ -101,12 +116,32 @@ Mousetrap.bind(["ctrl+l", "command+l"], function(e) {
 
 Mousetrap.bind("escape", function(e) {
 
+    // Hide command text box
     if (!$(".command-input-div").hasClass("hidden")) $(".status-bar-item.input-button").trigger("click");
+
+    // Hide dismissable overlays
+    if ($(".dismissable-bottom-overlay").not(".hidden").length > 0) {
+        var parent = $(".dismissable-bottom-overlay").not(".hidden");
+        parent.slideUp(200);
+        setTimeout(() => {
+            $(".home-panel").removeClass("disabled").removeClass("blur");
+            parent.addClass("hidden");
+        }, 200);
+    }
+
+    // Hide dismissable panels
+    if ($(".dismissable-panel").not(".hidden").length > 0) {
+        if (!global.states.connected) return;
+        $(".go-back-panel-button").click();
+    }
 
     return false;
 });
 
 Mousetrap.bind("enter", function(e) {
+    
+    if (!global.states.connected) return;
+    
     var ipcRenderer = require("electron").ipcRenderer;
 
     // If command input is not open, return

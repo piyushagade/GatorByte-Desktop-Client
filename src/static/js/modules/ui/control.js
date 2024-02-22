@@ -41,7 +41,11 @@ function uicontrolvariablessubapp() {
     self.listeners = function () {
 
         // Dashboard big button
-        $(".home-panel .control-variables-button").off("click").click(function () {
+        $(".home-panel .big-button.control-variables-button").off("click").click(function () {
+
+            // Show back button
+            $(".go-back-panel-button").removeClass("hidden");
+            
             $(".control-variables-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").removeClass("hidden");

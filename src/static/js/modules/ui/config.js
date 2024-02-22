@@ -305,7 +305,11 @@ function uiconfiggatorbytesubapp() {
     self.listeners = function () {
 
         // Dashboard big button
-        $(".home-panel .configure-gb-button").off("click").click(function () {
+        $(".home-panel .big-button.configure-gb-button").off("click").click(function () {
+
+            // Show back button
+            $(".go-back-panel-button").removeClass("hidden");
+            
             $(".configure-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").removeClass("hidden");

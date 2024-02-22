@@ -304,7 +304,7 @@ function ipcsubapp(){
 
         if (data.windowtype == "serial-monitor") {
             global.port = data.global.data.port;
-            $(".home-panel .serial-monitor-button").click();
+            $(".home-panel .big-button.serial-monitor-button").click();
         }
                 
         // Print info just the first time
