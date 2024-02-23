@@ -932,7 +932,7 @@ function uiconfiggatorbytesubapp() {
                 "okay": "Yes",
                 "dismiss": "Cancel",
                 "onokay": function () {
-                    
+
                     // Update UI
                     self.onconfigstateunknown(0, "Uploading configuration");
                     $(".sync-status-heading").addClass("disabled");
@@ -950,6 +950,14 @@ function uiconfiggatorbytesubapp() {
                     $(".header-panel").find(".progress").find(".progress-bar").css("width", "0px");
 
                     // Append mandatory fields
+                    if (!self.configobject["survey"]) self.configobject["survey"] = {};
+                    if (!self.configobject["device"]) self.configobject["device"] = {};
+                    if (!self.configobject["server"]) self.configobject["server"] = {};
+                    if (!self.configobject["sim"]) self.configobject["sim"] = {};
+                    if (!self.configobject["sleep"]) self.configobject["sleep"] = {};
+                    if (!self.configobject["survey"]) self.configobject["survey"] = {};
+                    if (!self.configobject["data"]) self.configobject["data"] = {};
+
                     self.configobject["survey"]["id"] = self.get_content(self, "project-id-text");
                     delete self.configobject["survey"]["location"];
                     delete self.configobject["survey"]["date"];
