@@ -291,13 +291,31 @@ function uicontrolvariablessubapp() {
             // If the file doesn't exist
             if (self.filedownloaddata.length == 0) {
                 console.log("The variables.ini file does not exist on the SD card.");
+
+                // Populate the last used control variables
+                self.datastring = self.ls.getItem("/cv/lastused");
+
+                // Convert to JSON
+                if (self.datastring.length > 0) self.dataobject = self.strtoobj();
                 
                 self.panel.find(".add-control-variable-button").removeClass("disabled");
                 self.panel.find(".sync-control-variable-button").removeClass("disabled");
 
                 self.panel.find(".loading-notification").addClass("hidden");
-                self.panel.find(".empty-notification").removeClass("hidden");
                 self.panel.find(".cv-list-item").remove();
+                setTimeout(() => {
+                    self.panel.find(".empty-notification").removeClass("hidden").html(multiline(function () {/* 
+                        <div style="padding: 6px 8px; background: #00000052; border-radius: 4px;">
+                            <i class="fa-solid fa-triangle-exclamation" style="color: coral; margin-right: 6px;"></i>
+                            <span>No control variables found. </span>
+                            <span class="{{notice-visibility}}">Using the variables used in the last GatorByte you uploaded the variables to.<br>Please click on "Sync Changes" to upload the variables.</span>
+                        </div>
+                    */}, {
+                        "notice-visibility": self.datastring.length > 0 ? "" : "hidden"
+                    }));
+                }, 300);
+                // UI updates
+                self.on_file_download_complete(self.dataobject);
             }
 
             // If config data successfully downloaded
@@ -312,6 +330,9 @@ function uicontrolvariablessubapp() {
 
                 // UI updates
                 self.on_file_download_complete(self.dataobject);
+
+                // Persist to browser storage
+                self.ls.setItem("/cv/lastused", self.datastring);
 
                 self.checkdatasync(500);
                 

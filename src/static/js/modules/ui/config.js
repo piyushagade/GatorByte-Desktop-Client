@@ -669,7 +669,7 @@ function uiconfiggatorbytesubapp() {
 
         // Replace prefix with nothing and <br> with \n
         data = data.replace(/<br>/g, "\n").replace(/gdc-cfg::fdl:/, "");
-        $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
+        $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " B downloaded");
 
         self.filedownloadline += self.lines_to_send;
 
@@ -678,7 +678,7 @@ function uiconfiggatorbytesubapp() {
 
         // // Request next part of the data if available
         // if (data.length > 0) {
-        //     $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " kB downloaded");
+        //     $(".header-panel").find(".download-status-text").removeClass("hidden").text(self.filedownloadline + " B downloaded");
         //     return self.request_config_file_download(self.filedownloadname, self.filedownloadline);
         // }
         
@@ -792,7 +792,7 @@ function uiconfiggatorbytesubapp() {
             var uploadedbyte = startingline + self.lines_to_send >= self.configdata.length ? self.configdata.length : startingline + self.lines_to_send;
             
             $(".header-panel").find(".progress").find(".progress-bar").css("width", (uploadedbyte / self.configdata.length) * $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
-            $(".header-panel").find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " kB"));
+            $(".header-panel").find(".download-status-text").text("Uploaded " + (uploadedbyte + " / " + self.configdata.length + " B"));
 
             return new Promise(function (resolve, reject) {
                 self.sendcommand("cfgupl:" + datatosend + "^" + startingline);
