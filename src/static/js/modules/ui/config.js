@@ -624,6 +624,23 @@ function uiconfiggatorbytesubapp() {
             // Update config data
             self.configdata = self.objecttostring(self.configobject);
         });
+
+        // Device environment change listener
+        self.panel.find(".device-environemnt-selector").off("change").on("change", function() {
+            var readmode = self.panel.find(".device-environemnt-selector").val();
+            if (!self.configobject) self.configobject = {};
+            if (!self.configobject["device"]) self.configobject["device"] = {};
+            self.configobject["device"]["env"] = readmode;
+            
+            // Update flag
+            self.configobject["updateflag"] = true;
+
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+        });
     }
 
     /*
@@ -691,7 +708,7 @@ function uiconfiggatorbytesubapp() {
             $(".upload-config-data-button").removeClass("disabled");
             $(".refresh-config-data-button").removeClass("disabled");
             // $(".refresh-config-data-button").removeClass("disabled");
-            $(".panel").removeClass("disabled");
+            self.panel.removeClass("disabled");
 
             // If the file doesn't exist
             if (self.filedownloaddata.length == 0) {
@@ -722,13 +739,19 @@ function uiconfiggatorbytesubapp() {
 
                 // Enable big buttons in home UI
                 var functions = [];
-                $(".home-panel").find(".big-button.requires-device-ready.disabled").each(function (ei, el) {
+                $(".home-panel").find(".requires-device-ready.disabled").each(function (ei, el) {
 
                     functions.push(function () {
                         $(el).removeClass("disabled");
                     });
                 });
                 self.f.waterfall(functions, 150);
+
+                // Enable panels
+                $(".panel.requires-device-ready.disabled").each(function (ei, el) {
+        
+                    $(el).removeClass("disabled");
+                });
 
                 setTimeout(() => {
                     self.panel.find(".config-information-parent").removeClass("disabled").removeClass("blur");
@@ -864,13 +887,19 @@ function uiconfiggatorbytesubapp() {
 
         // Enable big buttons in home UI
         var functions = [];
-        $(".home-panel").find(".big-button.requires-device-ready.disabled").each(function (ei, el) {
+        $(".home-panel").find(".requires-device-ready.disabled").each(function (ei, el) {
 
             functions.push(function () {
                 $(el).removeClass("disabled");
             });
         });
         self.f.waterfall(functions, 150);
+
+        // Enable panels
+        $(".panel.requires-device-ready.disabled").each(function (ei, el) {
+
+            $(el).removeClass("disabled");
+        });
             
         // Update UI
         // self.panel.find(".spinner-parent").addClass("hidden");
@@ -975,6 +1004,7 @@ function uiconfiggatorbytesubapp() {
                     self.configobject["sleep"]["mode"] = self.get_value(self, "sleep-mode-text");
                     self.configobject["data"]["mode"] = self.get_value(self, "data-mode-text");
                     self.configobject["data"]["readuntil"] = self.get_value(self, "sensor-read-mode-text");
+                    self.configobject["device"]["env"] = self.get_value(self, "device-environemnt-selector");
                     
                     // Save config data to main process
                     self.save_config_in_storage();
@@ -1156,10 +1186,16 @@ function uiconfiggatorbytesubapp() {
         var devicename = self.ls.getItem("device/registration/device-name");
         var sn = self.ls.getItem("device/registration/sn");
 
+        // Device information
         self.panel.find(".survey-information-parent").find(".project-id-text").removeClass("disabled").text(projectid ? projectid : data.survey["id"]).attr("readonly", "true");
         self.panel.find(".survey-information-parent").find(".device-sn-text").removeClass("disabled").text(sn ? sn : global.sn);
         self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").text(devicename ? devicename : data.device["name"]).attr("readonly", "true");
         self.panel.find(".survey-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
+        self.panel.find(".environment-configuration-parent").find(".device-environemnt-selector").removeClass("disabled").val(data.device["env"] || "development");
+        
+        // Sensor/data information
+        self.panel.find(".data-information-parent").find(".data-mode-text").removeClass("disabled").val(data.data["mode"]);
+        self.panel.find(".data-information-parent").find(".sensor-read-mode-text").removeClass("disabled").val(data.data["readuntil"]);
         
         // Sleep information
         self.panel.find(".device-information-parent").find(".sleep-mode-text").removeClass("disabled").val(data.sleep["mode"]);

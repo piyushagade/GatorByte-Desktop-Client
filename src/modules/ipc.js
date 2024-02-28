@@ -327,6 +327,18 @@ module.exports = {
                                 return;
                             }
 
+                            // Device environment
+                            if (data.indexOf("##CL-GDC-ENV::") !== -1) {
+                                var env = data.replace(/##/g, "").split("::")[1].trim();
+                                console.log("Device environment: " + env);
+                                BrowserWindow.getAllWindows().forEach(function (window, wi) {
+                                    window.webContents.send("ipc/device-env-notification/push", {
+                                        env: env
+                                    });
+                                });
+                                return;
+                            }
+
                             // GatorByte is now in GDC mode
                             if (data.indexOf("##CL-GB-READY##") !== -1) {
                                 console.log("GB has completed setup");

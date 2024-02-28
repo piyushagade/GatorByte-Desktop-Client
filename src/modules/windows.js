@@ -35,7 +35,7 @@ module.exports = {
                 icon: './src/static/icons/cereal-icon.ico',
                 maximizable: false,
                 fullscreenable: false,
-                alwaysOnTop: true,
+                alwaysOnTop: false,
                 webPreferences: { nodeIntegration: true, contextIsolation: false } 
             });
             

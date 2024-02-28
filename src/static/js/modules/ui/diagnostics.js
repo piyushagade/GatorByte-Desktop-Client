@@ -52,6 +52,7 @@ function uidiagnosticsgatorbytesubapp() {
 
             self.panel.find(".diagnostics-button-parent").removeClass("hidden");
             self.panel.find(".diagnostics-sub-panels-list-parent").addClass("hidden");
+            self.panel.find(".communication-diagnostics-sub-panel").addClass("hidden");
             
             // Get config data
             global.accessors.uiconfiggatorbyte.request_config().then(function (configdata) {
@@ -72,6 +73,9 @@ function uidiagnosticsgatorbytesubapp() {
 
             self.panel.find(".diagnostics-button-parent").addClass("hidden");
             self.panel.find(".diagnostics-sub-panels-list-parent").removeClass("hidden");
+            self.panel.find(".communication-diagnostics-sub-panel").addClass("hidden");
+
+            self.initui();
 
             // Enter diagnostics state
             var prefix = "##GB##", suffix = "#EOF#";
@@ -90,9 +94,9 @@ function uidiagnosticsgatorbytesubapp() {
         self.panel.find(".start-power-diagnostics-tests-button").off("click").click(function () {
             var category = $(this).attr("category") || "peripherals";
 
-            $(".diagnostics-gb-panel").removeClass("hidden");
             $(".home-panel").addClass("hidden");
             $(".gb-config-header").addClass("hidden"); setheight();
+            $(".diagnostics-gb-panel").removeClass("hidden");
 
             self.panel.find(".diagnostics-button-parent").addClass("hidden");
             self.panel.find(".diagnostics-sub-panels-list-parent").removeClass("hidden");
@@ -108,6 +112,31 @@ function uidiagnosticsgatorbytesubapp() {
             // Display panels of devices in the device config
             self.displaypanels(category.split(","));
 
+        });
+
+        // Start communications diagnostics button
+        self.panel.find(".start-communications-diagnostics-tests-button").off("click").click(function () {
+            var category = $(this).attr("category");
+
+            $(".home-panel").addClass("hidden");
+            $(".gb-config-header").addClass("hidden"); setheight();
+            $(".diagnostics-gb-panel").removeClass("hidden");
+
+            self.panel.find(".diagnostics-button-parent").addClass("hidden");
+            self.panel.find(".communication-diagnostics-sub-panel").removeClass("hidden");
+
+            // Enter diagnostics state
+            var prefix = "##GB##", suffix = "#EOF#";
+            self.ipcr.send('ipc/command/push', {
+                command: prefix + "dgn" + suffix,
+                windowid: global.states.windowid,
+                path: global.port.path
+            });
+
+            // Start initial tests
+            setTimeout(() => {
+                self.sendcommand("comm:all");
+            }, 250);
         });
 
         // Search input listener
@@ -160,6 +189,12 @@ function uidiagnosticsgatorbytesubapp() {
 
             self.panel.find(".diagnostics-button-parent").removeClass("hidden");
             self.panel.find(".diagnostics-sub-panels-list-parent").addClass("hidden");
+            self.panel.find(".communication-diagnostics-sub-panel").addClass("hidden");
+            
+            self.initui();
+            
+            // Disable communication diagnostics refresh button
+            self.panel.find(".communication-diagnostics-sub-panel .refresh-button").addClass("disabled");
 
             // Hide test panel items
             $(".diagnostics-sub-panel-item").addClass("hidden");
@@ -171,6 +206,53 @@ function uidiagnosticsgatorbytesubapp() {
                 windowid: global.states.windowid,
                 path: global.port.path
             });
+        });
+
+        // comm-diagnostics-item click handler
+        self.panel.find(".comm-diagnostics-item").off("click").click(function () {
+            var type = $(this).attr("type");
+            self.panel.find(".comm-diagnostics-item[type='" + type + "']").find(".text").text("-");
+            self.sendcommand("comm:" + type);
+        });
+
+        // Refresh communication status button
+        self.panel.find(".communication-diagnostics-sub-panel .refresh-button").off("click").click(function () {
+
+            $(this).addClass("disabled");
+            self.panel.find(".modem-activity-text").text("-");
+            self.panel.find(".power-status-text").text("-");
+            self.panel.find(".cellular-status-text").text("-");
+            self.panel.find(".mqtt-status-text").text("-");
+            self.panel.find(".modem-firmware-text").text("-");
+            self.panel.find(".modem-imei-text").text("-");
+            self.panel.find(".sim-iccid-text").text("-");
+            self.panel.find(".cell-operator-text").text("-");
+            self.panel.find(".cell-rssi-text").text("-");
+
+            // Start initial tests
+            setTimeout(() => {
+                self.sendcommand("comm:all");
+            }, 250);
+        });
+
+        // Reboot MODEM button
+        self.panel.find(".communication-diagnostics-sub-panel .reboot-modem-button").off("click").click(function () {
+
+            $(this).addClass("disabled");
+            self.panel.find(".modem-activity-text").text("-");
+            self.panel.find(".power-status-text").text("-");
+            self.panel.find(".cellular-status-text").text("-");
+            self.panel.find(".mqtt-status-text").text("-");
+            self.panel.find(".modem-firmware-text").text("-");
+            self.panel.find(".modem-imei-text").text("-");
+            self.panel.find(".sim-iccid-text").text("-");
+            self.panel.find(".cell-operator-text").text("-");
+            self.panel.find(".cell-rssi-text").text("-");
+
+            // Start initial tests
+            setTimeout(() => {
+                self.sendcommand("comm:modem:rb");
+            }, 250);
         });
     }
 
@@ -940,6 +1022,105 @@ function uidiagnosticsgatorbytesubapp() {
                 });
             }
         }
+
+        /*! Communication peripheral */
+
+        // Is the data fresh?
+        var fresh = true;
+        var key = response.split("=")[0];
+        var value = response.split("=")[1];
+        var parent = self.panel.find(".communication-diagnostics-sub-panel");
+
+        // Set device in awake state
+        if (fresh && key == "modem") {
+            var el = parent.find(".modem-activity-text");
+            var modemstatus;
+            if (value == "active") {
+                el.parent().css("border-left", "4px solid #94bb34");
+                modemstatus = "Active";
+            }
+            if (value == "not-responding") {
+                el.parent().css("border-left", "4px solid orange");
+                modemstatus = "Error";
+            }
+            if (value == "off") {
+                el.parent().css("border-left", "4px solid red");
+                modemstatus = "Off";
+            }
+            el.text(modemstatus);
+        }
+        if (fresh && key == "power") {
+            var el = parent.find(".power-status-text");
+            var status;
+            if (value == "awake") {
+                status = "Awake";
+                el.parent().css("border-left", "4px solid #94bb34");
+                $(".dashboard-item").css("opacity", 1);
+            }
+            if (value == "asleep") {
+                status = "Sleeping";
+                el.parent().css("border-left", "4px solid red");
+                $(".dashboard-item").css("opacity", 0.2);
+            }
+            el.text(status).css("opacity", 1);
+        }
+        if (fresh && key == "cell") {
+            var el = parent.find(".cellular-status-text");
+
+            var status;
+            if (value == "connected") {
+                status = "Connected";
+                el.parent().css("border-left", "4px solid #94bb34");
+                $(".dashboard-item").css("opacity", 1);
+            }
+            if (value == "disconnected") {
+                status = "Disconnected";
+                el.parent().css("border-left", "4px solid red");
+            }
+            if (value == "upload-success") {
+                status = "Uploaded";
+                el.parent().css("border-left", "4px solid #0066ff");
+            }
+            if (value == "upload-failed") {
+                status = "Upload fail";
+                el.parent().css("border-left", "4px solid #ff8d00");
+            }
+            el.text(status).css("opacity", 1);
+        }
+        if (fresh && key == "mqtt") {
+            var el = parent.find(".mqtt-status-text");
+            var status = value == "1" ? "Connected" : "Disconnected";
+            el.parent().css("border-left", "4px solid " + (value == "1" ? "#94bb34" : "red"));
+            el.text(status);
+        }
+        if (key == "modem-fw") {
+            var el = parent.find(".modem-firmware-text");
+            var modemfirmware = value;
+            el.text(modemfirmware);
+        }
+        if (key == "modem-imei") {
+            var el = parent.find(".modem-imei-text");
+            var modemimei = value;
+            el.text(modemimei);
+        }
+        if (key == "sim-iccid") {
+            var el = parent.find(".sim-iccid-text");
+            var iccid = value;
+            el.text(iccid);
+        }
+        if (key == "cops") {
+            var el = parent.find(".cell-operator-text");
+            var cops = value;
+            el.text(cops);
+        }
+        if (fresh && key == "rssi") {
+            var el = parent.find(".cell-rssi-text");
+            var rssi = value;
+            el.text(rssi);
+
+            // Enable communication diagnostics refresh button
+            self.panel.find(".communication-diagnostics-sub-panel .refresh-button").removeClass("disabled");
+        }
     }
 
     self.setstatus = function (args) {
@@ -1464,5 +1645,18 @@ function uidiagnosticsgatorbytesubapp() {
                 </div>
             </div>
         */}));
+
+        // Disable communication diagnostics refresh button
+        self.panel.find(".communication-diagnostics-sub-panel .refresh-button").addClass("disabled");
+
+        self.panel.find(".modem-activity-text").text("-");
+        self.panel.find(".power-status-text").text("-");
+        self.panel.find(".cellular-status-text").text("-");
+        self.panel.find(".mqtt-status-text").text("-");
+        self.panel.find(".modem-firmware-text").text("-");
+        self.panel.find(".modem-imei-text").text("-");
+        self.panel.find(".sim-iccid-text").text("-");
+        self.panel.find(".cell-operator-text").text("-");
+        self.panel.find(".cell-rssi-text").text("-");
     }
 }

@@ -333,6 +333,16 @@
                         <p class="caution-text" style="color: rgb(77, 34, 34); font-size: 13px; text-align: justify; margin-top: 6px; margin-bottom: -2px;">CAUTION: This action will close this app.</p>
                         <i class="fa-solid fa-cloud-arrow-down" style="position: absolute; top: 12px; right: 18px; color: #069230; font-size: 10px;"></i>
                     </div>
+
+                    <!--! Non-production environment notification -->
+                    <div class="col-12 shadow-heavy device-environemnt-notification hidden" style="padding: 12px 12px;margin-right: 6px;background: #4c4c4c;margin-top: 8px;">
+                        <p style="color: rgb(219, 219, 219); font-size: 16px; text-align: justify; margin-bottom: -2px;">Device environment: <span class="environment-text">-</span></p>
+                        <p style="color: rgb(176, 176, 176); font-size: 12px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
+                            The device environment is set to <span class="environment-text">-</span>. Please change it to "Field-ready" before deployments.
+                        </p>
+                        <p class="caution-text" style="color: rgb(172, 172, 172); font-size: 13px; text-align: justify; margin-top: 6px; margin-bottom: -2px;">You can change the environment by clicking on the 'Configure GatorByte' button below.</p>
+                        <i class="fa-solid fa-screwdriver-wrench" style="position: absolute; top: 12px; right: 18px; color: rgb(234, 115, 51); font-size: 10px;"></i>
+                    </div>
                     
                     <!--! SD error notification -->
                     <div class="col-12 shadow-heavy sd-error-notification hidden" style="padding: 12px 12px; margin-right: 6px; background: #ff7b7b; margin-top: 8px;">
@@ -949,7 +959,7 @@
         </div>
         
         <!--! Configure GatorByte area -->
-        <div class="row scrollbar-style panel dismissable-panel configure-gb-panel hidden" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
+        <div class="row scrollbar-style panel dismissable-panel configure-gb-panel hidden requires-device-ready" style="margin: 10px 0; padding: 4px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; height: 100%; cursor: default;">
             
             <div class="col">
                 <div class="row">
@@ -980,6 +990,26 @@
                                     <div class="col config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Device name</p>
                                         <div class="device-name-text" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #44444400; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom:- 2px; user-select: all;">-</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!--! Environment information -->
+                            <div class="col-12 environment-configuration-parent" style="margin-bottom: 10px; padding: 0;">
+                                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Device environment</p>
+                                    
+                                <div class="row" style="margin: 0px;">
+
+                                    <!-- Environment -->
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Environment</p>
+                                        <select class="device-environemnt-selector" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                            <option value="development" style="color: #222;">Development</option>
+                                            <option value="trial" style="color: #222;">Trial run</option>
+                                            <option value="field" style="color: #222;">Field-ready</option>
+                                        </select>
                                     </div>
 
                                 </div>
@@ -1325,7 +1355,7 @@
                                 <p style="color: #c5c5c5;font-size: 14px;text-align: justify;margin-bottom: 0px;line-height: 18px;">
                                     Click below to test cellular communication and connection to the server.
                                 </p>
-                                <div class="start-communication-diagnostics-tests-button" category="communication" style="cursor: pointer; margin-bottom: 2px; margin-top: 6px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffffdb;border-radius: 0px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-signal" style="margin-right: 4px;"></i> Enter</div>
+                                <div class="start-communications-diagnostics-tests-button" category="communication" style="cursor: pointer; margin-bottom: 2px; margin-top: 6px; padding: 4px 10px;font-size: 13px;color: #222222;background: #ffffffdb;border-radius: 0px;width: fit-content;margin-right: 6px; backdrop-filter: blur(4px);"><i class="fa-solid fa-signal" style="margin-right: 4px;"></i> Enter</div>
                             </div>
                             
                             <!--! Battery and charging -->
@@ -1338,7 +1368,7 @@
 
                         </div>
 
-                        <!-- Diagnostics test panels -->
+                        <!--! Diagnostics test panels -->
                         <div class="row diagnostics-sub-panels-list-parent hidden" style="padding: 5px 10px;margin-bottom: 12px;border-radius: 2px;">
                             
                             <div class="col-12 search-input shadow" style="padding: 0px; display: inline-flex; margin-bottom: 10px; position: relative;">
@@ -1367,6 +1397,85 @@
                             <div class="col-12 no-device-notification hidden" style="padding: 0px; display: inline-flex;">
                                 <div class="row" style="margin: 0;">
                                     <div style="display: inline-flex;color: #cecece;font-size: 14px;background: #dc4c4c54;padding: 4px 10px;">No devices found that match your filter criteria. Or, no devices were enabled in the GatorByte's configuration.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--! Communications test panel -->
+                        <div class="row communication-diagnostics-sub-panel hidden" style="padding: 5px 10px;margin-bottom: 12px;border-radius: 2px;">
+                            
+                            <div class="col-12" style="margin-bottom: 10px; padding: 0;">
+                                <div class="row" style="margin: 0;">
+
+                                    <!-- Refresh button -->
+                                    <div class="col-auto refresh-button disabled" style="padding: 5px 8px;margin-right: 6px;margin-bottom: 6px;background: #014661;min-width: 60px; border-radius: 2px;">
+                                        <p style="color: #e5e5e5;font-size: 12px;text-align: justify;margin-bottom: 0px;">Refresh status</p>
+                                    </div>
+
+                                    <!-- Reboot MODEM button -->
+                                    <div class="col-auto reboot-modem-button" style="padding: 5px 8px;margin-right: 6px;margin-bottom: 6px;background: #4c4c4c;min-width: 60px; border-radius: 2px;">
+                                        <p style="color: #e5e5e5;font-size: 12px;text-align: justify;margin-bottom: 0px;">Reboot MODEM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12" style="margin-bottom: 10px; padding: 0;">
+                                <div class="row" style="margin: 0;">
+
+                                    <!-- MODEM activity -->
+                                    <div class="col-auto comm-diagnostics-item" type="modem" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-left: 4px solid gray; border-radius: 2px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">MODEM status</p>
+                                        <p class="modem-activity-text text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+
+                                    <!-- IoT status -->
+                                    <div class="col-auto comm-diagnostics-item hidden" type="nw" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-left: 4px solid gray; border-radius: 2px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">IoT status</p>
+                                        <p class="cellular-status-text text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+
+                                    <!-- MQTT status -->
+                                    <div class="col-auto comm-diagnostics-item hidden" type="nw" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-left: 4px solid gray; border-radius: 2px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">MQTT status</p>
+                                        <p class="mqtt-status-text text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+
+                                    <!-- Singal strength -->
+                                    <div class="col-auto comm-diagnostics-item" type="nw" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #13120f63; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Signal (dB)</p>
+                                        <p class="cell-rssi-text truncate text" style="max-width: 60px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                    
+                                    <!-- COPS -->
+                                    <div class="col-auto comm-diagnostics-item" type="nw" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #44444422; min-width: 60px; border-radius: 2px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Operator</p>
+                                        <p class="cell-operator-text truncate text" style="max-width: 80px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                </div>
+                            </div>
+                                    
+                            <div class="col-12" style="margin-bottom: 10px; padding: 0;">
+
+                                <div class="row" style="margin: 0;">
+
+                                    <div class="col-auto comm-diagnostics-item" type="modem" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #1d1d1de3; min-width: 60px; border-radius: 2px;">
+                                        
+                                        <!-- MODEM firmware -->
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">F/W version</p>
+                                        <p class="modem-firmware-text truncate text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                        
+                                    <div class="col-auto comm-diagnostics-item" type="modem" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #1d1d1de3; min-width: 60px; border-radius: 2px;">
+                                        <!-- MODEM IMEI -->
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">IMEI</p>
+                                        <p class="modem-imei-text truncate text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
+                                        
+                                    <div class="col-auto comm-diagnostics-item" type="sim" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #1d1d1de3; min-width: 60px; border-radius: 2px;">
+                                        <!-- SIM ICCID -->
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">ICCID</p>
+                                        <p class="sim-iccid-text truncate text" style="color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">-</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

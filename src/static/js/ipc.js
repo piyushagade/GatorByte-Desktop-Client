@@ -95,8 +95,9 @@ function ipcsubapp(){
                 // Disable buttons that require the GatorByte to be ready (setup complete)
                 $(".gb-config-header").removeClass("hidden"); setheight();
                 $(".gb-config-header .battery-icon-parent").addClass("disabled")
-                $(".home-panel").find(".big-button.requires-device-ready").addClass("disabled");
-                $(".home-panel").find(".big-button.requires-sd-ready").addClass("disabled");
+                $(".home-panel").find(".requires-device-ready").addClass("disabled");
+                $(".panel.requires-device-ready").addClass("disabled");
+                $(".home-panel").find(".requires-sd-ready").addClass("disabled");
                 
                 $(".home-panel").find(".sd-error-notification").addClass("hidden");
                 $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
@@ -139,6 +140,19 @@ function ipcsubapp(){
             self.checkregistration();
         });
 
+        self.ipcr.on("ipc/device-env-notification/push", (event, response) => {
+            console.log("Device environment: " + response.env.trim());
+
+            // Set global variable
+            global.port.env = response.env.trim();
+
+            if (global.port.env != "field") {
+                $(".panel.home-panel .device-environemnt-notification").find(".environment-text").text(global.port.env);
+                $(".panel.home-panel .device-environemnt-notification").removeClass("hidden");
+            }
+            else $(".panel.home-panel .device-environemnt-notification").addClass("hidden");
+        });
+
         // On setup complete; GB ready
         self.ipcr.on("ipc/gb-ready-notification/push", (event, response) => {
                 
@@ -178,6 +192,12 @@ function ipcsubapp(){
                         });
                     });
                     self.f.waterfall(functions, 150);
+                    
+                    // Enable panels
+                    $(".panel.requires-device-ready.disabled").each(function (ei, el) {
+
+                        $(el).removeClass("disabled");
+                    });
                 });
         });
 
