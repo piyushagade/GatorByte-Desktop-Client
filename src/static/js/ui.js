@@ -239,6 +239,8 @@ function uisubapp(){
                     if (response.status == "success") {
                         $(".gb-registration-status").text("✅ Device registered.");
                         $(".register-gb-ui").addClass("hidden");
+
+                        $(".device-not-registered-notification").addClass("hidden");
                     }
                 },
                 error: function (x, h, r) {
@@ -268,6 +270,7 @@ function uisubapp(){
                 $(".panel").removeClass("disabled");
 
                 $(".home-panel").find(".sd-error-notification").addClass("hidden");
+                $(".home-panel").find(".device-environemnt-notification").addClass("hidden");
                 $(".home-panel").find(".device-not-ready-notification").addClass("hidden");
                 $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
 

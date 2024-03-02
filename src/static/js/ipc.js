@@ -100,6 +100,7 @@ function ipcsubapp(){
                 $(".home-panel").find(".requires-sd-ready").addClass("disabled");
                 
                 $(".home-panel").find(".sd-error-notification").addClass("hidden");
+                $(".home-panel").find(".device-environemnt-notification").addClass("hidden");
                 $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
                 $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
                 
