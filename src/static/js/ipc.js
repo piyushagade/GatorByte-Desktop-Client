@@ -11,7 +11,7 @@ function ipcsubapp(){
     self.init = function () {
         
         // Get updated ports list every 2 seconds
-        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 2000);
+        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 500);
         
         self.ipcr.on('bootstrap-information-push', (event, data) => {
             console.log("Bootstrap data")
@@ -148,7 +148,7 @@ function ipcsubapp(){
             global.port.env = response.env.trim();
 
             if (global.port.env != "field") {
-                $(".panel.home-panel .device-environemnt-notification").find(".environment-text").text(global.port.env);
+                $(".panel.home-panel .device-environemnt-notification").find(".environment-text").text(global.port.env.length == 0 ? "unknown" : global.port.env);
                 $(".panel.home-panel .device-environemnt-notification").removeClass("hidden");
             }
             else $(".panel.home-panel .device-environemnt-notification").addClass("hidden");
@@ -163,7 +163,8 @@ function ipcsubapp(){
             $(".gb-config-header .action-button").removeClass("disabled"); 
 
             // Get config state and download confid from SD if required
-            global.accessors.uiconfiggatorbyte.request_config()
+            setTimeout(() => {
+                global.accessors.uiconfiggatorbyte.request_config()
                 .then(function (configobject) {
 
                     if (!configobject) {
@@ -177,7 +178,6 @@ function ipcsubapp(){
                         $(".header-panel").find(".download-status-text").text("Initializing download");
                         $(".header-panel").find(".progress").addClass("progress-striped-infinite").removeClass("progress-striped");
                         $(".header-panel").find(".progress").find(".progress-bar").css("width", "100%");
-                        return;
                     }
 
                     // Check config sync status
@@ -200,6 +200,7 @@ function ipcsubapp(){
                         $(el).removeClass("disabled");
                     });
                 });
+            }, 1500);
         });
 
         // On SD ready
@@ -1349,7 +1350,7 @@ function ipcsubapp(){
 
         // Restart the interval timer to get ports list from the main process
         if (global.timers.portsrefresh) clearInterval(global.timers.portsrefresh);
-        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 2000);
+        global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 500);
 
         // Add a disconnection notification in the serial monitor
         var sessionid = global.states.sessionid;

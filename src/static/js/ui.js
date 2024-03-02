@@ -222,10 +222,18 @@ function uisubapp(){
         });
     
         // Device registration
+        $(".panel.home-panel .device-not-registered-notification").off("click").click(function () {
+            $(".big-button.gb-info-button").click();
+        });
         $(".device-info-overlay .gb-register-button").off("click").click(function () {
             var sn = $(".device-info-overlay .gb-serial-number").text();
             var projectuuid = $(".device-info-overlay .gb-register-project-select").val();
             var devicename = $(".device-info-overlay .gb-register-device-name-input").val().trim().toLowerCase().replace(/\s/g, "-");
+
+            if (projectuuid.length == 0 || devicename.length == 0) {
+                $(".gb-registration-status").text("⚠️ Do not leave any fields empty.");
+                return;
+            }
             
             $.ajax({
                 url: window.global.constants.api + "/gatorbyte/device/registration/set",
@@ -240,7 +248,12 @@ function uisubapp(){
                         $(".gb-registration-status").text("✅ Device registered.");
                         $(".register-gb-ui").addClass("hidden");
 
+                        // Hide notification
                         $(".device-not-registered-notification").addClass("hidden");
+
+                        // Clear fields
+                        $(".device-info-overlay .gb-register-project-select").val("");
+                        $(".device-info-overlay .gb-register-device-name-input").val("");
                     }
                 },
                 error: function (x, h, r) {

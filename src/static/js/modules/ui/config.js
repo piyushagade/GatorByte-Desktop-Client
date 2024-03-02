@@ -647,6 +647,7 @@ function uiconfiggatorbytesubapp() {
         Request config from the main process
     */
     self.request_config = function () {
+        console.log("Requesting config from the main process.");
 
         return new Promise(function (resolve, reject) {
             
@@ -658,7 +659,6 @@ function uiconfiggatorbytesubapp() {
             setTimeout(() => {
 
                 resolve(self.configobject);
-
                 console.log("Configuration data");
                 console.log(self.configobject);
             }, 1000);
@@ -798,10 +798,11 @@ function uiconfiggatorbytesubapp() {
     }
 
     // Download config from SD
-    self.request_config_file_download = function (filename, startingline) {
+    self.request_config_file_download = function () {
+        console.log("Requesting config download from  SD.");
 
         return new Promise(function (resolve, reject) {
-            self.sendcommand("cfgdl" + ":" + filename + "," + startingline);
+            self.sendcommand("cfgdl" + ":" + self.filedownloadname + "," + self.filedownloadline);
             self.state = "wait-on-file-download";
         });
     }
@@ -1143,7 +1144,7 @@ function uiconfiggatorbytesubapp() {
     self.setconfigdata = function (object) {
         
         if (!object) {
-            self.getconfigdatafromsd();
+            self.request_config_file_download();
             $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#3d3d3d").find(".text").text("Downloading configuration.");
             $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled").css("background", "#333333");
         }
@@ -1155,22 +1156,23 @@ function uiconfiggatorbytesubapp() {
         }
     }
 
-    self.getconfigdatafromsd = function () {
+    // self.getconfigdatafromsd = function () {
+    //     console.log("Requesting config download from  SD II.");
         
-        // Ensure all base files/folders exist
-        self.sendcommand("sdf:cr:all");
+    //     // Ensure all base files/folders exist
+    //     self.sendcommand("sdf:cr:all");
 
-        // Get config data from SD card
-        setTimeout(() => {
-            self.request_config_file_download(self.filedownloadname, 0);
-        }, 1500);
+    //     // Get config data from SD card
+    //     setTimeout(() => {
+    //         self.request_config_file_download(self.filedownloadname, 0);
+    //     }, 1500);
         
-        // Update UI
-        // self.panel.find(".spinner-parent").removeClass("hidden");
-        // self.panel.find(".config-information-parent").addClass("hidden");
-        $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
-        self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
-    }
+    //     // Update UI
+    //     // self.panel.find(".spinner-parent").removeClass("hidden");
+    //     // self.panel.find(".config-information-parent").addClass("hidden");
+    //     $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+    //     self.panel.find(".config-information-parent").addClass("disabled").addClass("blur");
+    // }
 
     self.update_panel_ui = function () {
 
