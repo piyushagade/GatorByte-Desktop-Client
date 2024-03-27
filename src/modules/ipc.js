@@ -21,7 +21,7 @@ module.exports = {
         /* 
             - Window operations
         */
-       
+        
         i.ipcm.on('ipc/close-window/request', (event, obj) => {
 
             var windowid = obj.windowid;
@@ -809,6 +809,19 @@ module.exports = {
 
             // Send command to the GatorByte            
             i.g.var.serports[port.path].write("##CL-GDC-LOCK##");
+        });
+        
+        i.ipcm.on('ipc/devtools-toggle/request', (event, obj) => {
+            var windowid = obj.windowid;
+            var path = obj.path;
+
+            try {
+                var window = BrowserWindow.fromId(windowid);
+                window.webContents.toggleDevTools();
+            }
+            catch (e) {
+                console.log("Couldn't toggle developer tools");
+            }
         });
     }
 }

@@ -82,6 +82,14 @@ function uisensorcalibrationsubapp(){
             ],
             "solutions": [
                 {
+                    "id": "0",
+                    "description": "Dry"
+                },
+                {
+                    "id": "83",
+                    "description": "83 uS"
+                },
+                {
                     "id": "100",
                     "description": "100 uS"
                 },
@@ -139,7 +147,7 @@ function uisensorcalibrationsubapp(){
             
             // Send request to get GatorByte to send sd files list
             var prefix = "##GB##", suffix = "#EOF#";
-            self.ipcr.send('send-command-request', {
+            self.ipcr.send('ipc/command/push', {
                 command: prefix + "calibration" + suffix,
                 windowid: global.states.windowid,
                 path: global.port.path
@@ -198,6 +206,8 @@ function uisensorcalibrationsubapp(){
                 self.panel.find(".sensor-list-parent .calibrate-sensor-item").off("click").click(function () {
                     var sensorname = $(this).attr("sensorname");
                     var sensor = $(this).attr("sensorid");
+
+                    console.log("Entering calibration mode: " + sensorname);
                     
                     // Send request to get GatorByte to send sd files list
                     self.state = "enter";
@@ -234,7 +244,7 @@ function uisensorcalibrationsubapp(){
     }
 
     self.sendcommand = function (command) {
-        self.ipcr.send('send-command-request', {
+        self.ipcr.send('ipc/command/push', {
             command: command,
             windowid: global.states.windowid,
             path: global.port.path
@@ -460,7 +470,7 @@ function uisensorcalibrationsubapp(){
                         }
                         else {
                             self.calibrationdevices[sensor].calibration.levels.forEach(function (level, li) {
-                                newparent.find(".calibration-levels-list").append(multiline(function () {/* 
+                                newparent.find(".calibration-levels-list").removeClass("hidden").append(multiline(function () {/* 
                                     <div class="col-auto calibration-level-option sensor-specific shadow-heavy" type="{{option}}" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #5a5a5ab0;border-radius: 2px;height: 28px;">
                                         <p style="color: #b4b4b4;margin-bottom: 0;">{{description}}</p>
                                     </div>

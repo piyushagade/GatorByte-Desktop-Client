@@ -140,7 +140,7 @@ Mousetrap.bind("escape", function(e) {
     // Hide command text box
     if (!$(".command-input-div").hasClass("hidden")) $(".status-bar-item.input-button").trigger("click");
 
-    // Hide dismissable overlays
+    // Hide dismissable overlays/notification/dialog
     if ($(".dismissable-bottom-overlay").not(".hidden").length > 0) {
         var parent = $(".dismissable-bottom-overlay").not(".hidden");
         parent.slideUp(200);
@@ -188,5 +188,27 @@ Mousetrap.bind("enter", function(e) {
         $(".dismissable-bottom-overlay").find(".okay-button").click();
     }
 
+    // Hide dismissable overlays/notification/dialog
+    else if ($(".dismissable-bottom-overlay").not(".hidden").length > 0) {
+        if (!$(".dismissable-bottom-overlay").find(".okay-button").hasClass("hidden")) {
+            $(".dismissable-bottom-overlay").find(".okay-button").click();
+        }
+    }
+
+    return false;
+});
+
+Mousetrap.bind(["ctrl+\\", "command+\\"], function(e) {
+    var ipcRenderer = require("electron").ipcRenderer;
+
+    // Send command
+    ipcRenderer.send("ipc/devtools-toggle/request", {
+        windowid: global.states.windowid,
+    });
+
+    return false;
+});
+Mousetrap.bind(['ctrl+shift+i', 'command+shift+i'], function(e) {
+    e.preventDefault();
     return false;
 });

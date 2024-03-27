@@ -152,8 +152,6 @@ function uiloginsubapp(){
         });
     }
 
-    
-        
     self.get_all_projects = function(callback) {
 
         console.log({
@@ -177,9 +175,13 @@ function uiloginsubapp(){
 
                 window.global.data["projects"] = [];
                 $(".device-selector-panel .projects-list .projects-list-item").remove();
+
                 accessibleprojects.forEach(function (accessrow, ari) {
                     var projectuuid = accessrow["PROJECTUUID"];
                     var projectdata = self.f.grep(allprojects, "UUID", projectuuid, true);
+
+                    // Add logged in users access information
+                    projectdata["ROLE"] = accessrow["ROLE"];
                     window.global.data["projects"].push(projectdata);
 
                     $(".device-selector-panel .projects-list").append(multiline (function () {/*
@@ -227,6 +229,7 @@ function uiloginsubapp(){
         });
     }
 
+    // Get project and device info using the device SN
     self.sntoprojectanddevice = function (sn) {
         $.ajax({
             url: window.global.constants.api + "/gatorbyte/sites/info/get",

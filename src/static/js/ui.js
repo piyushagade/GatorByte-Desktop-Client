@@ -448,15 +448,17 @@ function uisubapp(){
             parent.find(".action-buttons").removeClass("hidden");
             parent.find(".dismiss-button").removeClass("hidden");
             parent.find(".okay-button").removeClass("hidden");
+
         }
 
-        else {
+        else if (overlaytype == "notification" || true) {
             parent.find(".action-buttons").addClass("hidden");
             parent.find(".dismiss-button").addClass("hidden");
             parent.find(".okay-button").addClass("hidden");
 
+            // Auto-hide popup after the specified delay
             setTimeout(() => {
-                parent.find(".content-parent").slideUp(100);
+                parent.slideUp(100);
                 setTimeout(() => {
                     parent.addClass("hidden");
                 }, 100);
