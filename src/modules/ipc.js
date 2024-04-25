@@ -536,14 +536,14 @@ module.exports = {
 
         i.ipcm.on('ipc/bootstrap-data/request', (event, data) => {
 
-            event.sender.send('bootstrap-information-push', {
+            event.sender.send('ipc/bootstrap-data/response', {
                 remoteurl: i.g.LIVE_SHARE_URL,
                 appname: i.g.APP_NAME,
                 appversion: i.g.APP_VERSION,
                 machineid: i.g.var.machineid,
                 fullfunctionality: i.g.var.fullfunctionality,
-                windowid: data.windowid,
-                windowtype: data.windowtype,
+                windowid: data && data.windowid ? data.windowid : BrowserWindow.getAllWindows().length,
+                windowtype: data && data.windowtype ? data.windowtype : null,
                 windowscountid: BrowserWindow.getAllWindows().length,
                 quickconnectport: i.s.getSync("quickconnect-" + "windowid-" + BrowserWindow.getAllWindows().length)
             });

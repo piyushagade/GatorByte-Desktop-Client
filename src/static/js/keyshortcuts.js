@@ -198,6 +198,7 @@ Mousetrap.bind("enter", function(e) {
     return false;
 });
 
+// Open dev tools
 Mousetrap.bind(["ctrl+\\", "command+\\"], function(e) {
     var ipcRenderer = require("electron").ipcRenderer;
 

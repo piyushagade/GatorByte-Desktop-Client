@@ -10,6 +10,18 @@ function uisubapp(){
 
 
     self.init = function () {
+
+        // This will happen when the window is reloaded/refreshed
+        setTimeout(() => {
+            if (window.global.states && !window.global.states.windowid) {
+                
+                // Get bootstap data and update UI
+                self.ipcr.send('ipc/bootstrap-data/request', {
+                    windowid: global.states.windowid,
+                    windowtype: global.states.windowtype
+                });
+            }
+        }, 1500);
         
         //! Set UI
         $(".spinner-ui").addClass("hidden");
@@ -188,6 +200,10 @@ function uisubapp(){
                 windowid: global.states.windowid,
                 port: global.port ? global.port.path : null
             });
+            
+            // Save state to localStorage
+            self.ls.removeItem("persist/global.states");
+            self.ls.removeItem("persist/global.port");
         });
     
         // New window button

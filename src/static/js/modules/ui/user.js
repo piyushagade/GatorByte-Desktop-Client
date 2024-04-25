@@ -126,13 +126,19 @@ function uiloginsubapp(){
     }
 
     self.on_user_logged_in = function () {
-
+        
         // Set variables
         window.global.data.user[self.ls.functions.hash("email")] = self.ls.functions.encrypt(self.ls.getItem("login/email"));
         window.global.data.user[self.ls.functions.hash("password")] = self.ls.functions.encrypt(self.ls.getItem("login/password"));
         window.global.data.user[self.ls.functions.hash("role")] = self.ls.functions.encrypt(self.ls.getItem("login/role"));
         window.global.data.user[self.ls.functions.hash("position")] = self.ls.functions.encrypt(self.ls.getItem("login/position"));
         window.global.data.user[self.ls.functions.hash("id")] = self.ls.functions.encrypt(self.ls.getItem("login/uuid"));
+        
+        console.log("User data\n" + JSON.stringify({
+            "email": self.ls.functions.decrypt(window.global.data.user[self.ls.functions.hash("email")]),
+            "user-email": JSON.parse(self.ls.getItem("user/data")).EMAIL,
+            "user-id": JSON.parse(self.ls.getItem("user/data")).UUID
+        }));
         
         // Set UI
         $(".device-selector-panel .user-info-row").find(".user-name-text").text(self.ls.getItem("login/name"));
@@ -153,12 +159,6 @@ function uiloginsubapp(){
     }
 
     self.get_all_projects = function(callback) {
-
-        console.log({
-            "email": self.ls.functions.decrypt(window.global.data.user[self.ls.functions.hash("email")]),
-            "user-email": JSON.parse(self.ls.getItem("user/data")).EMAIL,
-            "user-id": JSON.parse(self.ls.getItem("user/data")).UUID
-        });
         
         $.ajax({
             url: self.f.url({ path: "/gatorbyte/projects/get/all" }), 
