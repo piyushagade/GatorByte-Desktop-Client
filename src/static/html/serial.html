@@ -623,8 +623,15 @@
                             </p>
 
                             <!-- List of sensors in the config file that can be calibrated -->
-                            <div class="col-12">
-                                <div class="row calibration-sensor-list"></div>
+                            <div class="col-12" style="margin-top: -6px;">
+                                <div class="row calibration-sensor-list">
+                                    <div class="col-12 loading-notification" style="padding: 2px;margin-right: 6px;margin-bottom: 6px; border-radius: 0px;">
+                                        <p style="color: #efefef;margin-bottom: 0;font-size: 14px; margin-top: -4px;">
+                                            <i class="fa-solid fa-triangle-exclamation" style="color: coral; margin-right: 6px;"></i>
+                                            Please wait while we read the device configuration.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             
                             <!-- Loading spinner -->
@@ -719,23 +726,47 @@
                                         <p style="color: #bbbbbb;margin-bottom: 6px;">Before we perform the calibration on the <span class="sensor-name">ph</span> sensor, we need to ensure the readings are stable. Click on the button below to fetch continous readings.</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="30" title="30 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;width: 28px; text-align: center;">
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="1000" title="1000 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">1000</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="100" title="100 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">100</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="40" title="40 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">50</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="30" title="30 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">30</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="10" title="10 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;width: 28px; text-align: center;">
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="20" title="20 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">20</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="15" title="15 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">15</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="10" title="10 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">10</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="5" title="5 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;width: 28px; text-align: center;">
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="5" title="5 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">5</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="1" title="1 reading" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px; width: 28px; text-align: center;">
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="3" title="3 readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px; min-width: 28px; text-align: center;">
+                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">3</p>
+                                    </div>
+
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="1" title="1 reading" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px; min-width: 28px; text-align: center;">
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">1</p>
                                     </div>
 
-                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
+                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-medium hidden" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
                                         <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
                                     </div>
 
