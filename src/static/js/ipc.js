@@ -13,9 +13,8 @@ function ipcsubapp(){
         // Get updated ports list every 2 seconds
         global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 500);
         
-        self.ipcr.on('bootstrap-information-push', (event, data) => {
-            console.log("Bootstrap data")
-            console.log(data)
+        self.ipcr.on('ipc/bootstrap-data/response', (event, data) => {
+            console.log("Bootstrap data\n" + JSON.stringify(data));
             self.process_bootstrap_data(event, data);
         });
 
@@ -334,6 +333,9 @@ function ipcsubapp(){
         if (data.windowtype == "serial-monitor") {
             global.port = data.global.data.port;
             $(".home-panel .big-button.serial-monitor-button").click();
+            
+            // Save state to localStorage
+            self.ls.setItem("persist/global.port", JSON.stringify(global.port));
         }
                 
         // Print info just the first time
@@ -380,6 +382,34 @@ function ipcsubapp(){
             console.log("Window ID: " + global.states.windowid);
             console.log("Window count ID: " + global.states.windowscountid);
         }
+
+        // Save state to localStorage
+        self.ls.setItem("persist/global.states", JSON.stringify(global.states));
+
+        setTimeout(() => {
+            if(self.ls.getItem("persist/global.port")) {
+                global.states = JSON.parse(self.ls.getItem("persist/global.states"));
+                global.port = JSON.parse(self.ls.getItem("persist/global.port"));
+                
+                console.log("Window refresh detected. Requesting UI update for: " + global.port.path);
+
+                // // Close the port
+                // self.ipcr.send('ipc/port-close/request', {
+                //     path: global.port.path,
+                //     baud: global.port.baud,
+                //     windowid: global.states.windowid
+                // });
+
+                // // Open the port
+                // self.ipcr.send('ipc/port-open/request', {
+                //     ...global.port,
+                //     windowid: global.states.windowid,
+                // });
+
+                self.on_port_selected(null, global.port)
+            }
+        }, 2000);
+        console.log("Bootstrap data processed");
     }
 
     self.process_subscription_data = function (event, data) {
@@ -506,7 +536,7 @@ function ipcsubapp(){
                 console.log(aport.path, port.path);
                 
                 if (aport.path == port.path) {
-                    console.log("Requesting reconnection for: " + port.path + " on window ID: " + global.states.windowid);
+                    console.log("Requesting re-connection for: " + port.path + " on window ID: " + global.states.windowid);
                     self.ipcr.send('ipc/port-open/request', {
                         path: port.path,
                         baud: port.baud,
@@ -848,11 +878,12 @@ function ipcsubapp(){
 
     self.on_port_selected = function (event, response) {
         
-        // Get bootstap data and update UI
-        self.ipcr.send('ipc/bootstrap-data/request', {
-            windowid: global.states.windowid,
-            windowtype: global.states.windowtype
-        });
+        // NOTE: Moved to user.js
+        // // Get bootstap data and update UI
+        // self.ipcr.send('ipc/bootstrap-data/request', {
+        //     windowid: global.states.windowid,
+        //     windowtype: global.states.windowtype
+        // });
 
         // Clear intervals
         if (global.timers.waitingforupload) clearInterval(global.timers.waitingforupload);
@@ -867,6 +898,7 @@ function ipcsubapp(){
 
             global.states.connected = true;
             global.port = response;
+            
             if (!global.states.follow) {
                 console.log("Setting autoscroll to on");
                 self.a.ui.toggleautoscroll("on");
@@ -916,6 +948,10 @@ function ipcsubapp(){
                 response.path = response.path.substring(0, 3) + " ... " + response.path.substring(response.path.length - 4, response.path.length)
             }
 
+            // Save state to localStorage
+            self.ls.setItem("persist/global.states", JSON.stringify(global.states));
+            self.ls.setItem("persist/global.port", JSON.stringify(global.port));
+
             $(".follow-device-button").off("click").click(function () {
                 if ($(this).attr("state") == "false") {
                     $(this).attr("state", "true").css("background", "#005c8a");
@@ -926,6 +962,9 @@ function ipcsubapp(){
                     $(this).attr("state", "false").css("background", "#333");
                 }
                 if (global.states.sharedonline) self.a.sck.share_state();
+                
+                // Save state to localStorage
+                self.ls.setItem("persist/global.states", JSON.stringify(global.states));
             });
 
             // Send ping to device
@@ -973,6 +1012,9 @@ function ipcsubapp(){
                     $(".share-online-overlay").addClass("hidden");
                     $(".share-online-overlay .live-share-code").addClass("hidden");
                     $(".share-online-button .connected-clients-info-div").addClass("hidden").find(".connected-clients-text").text("0");
+                
+                    // Save state to localStorage
+                    self.ls.setItem("persist/global.states", JSON.stringify(global.states));
                 }
 
                 // If functionality is locked
@@ -1009,6 +1051,9 @@ function ipcsubapp(){
                 // Turn on live share and set UI
                 $(this).attr("state", "true").css("background", "#773447");
                 global.states.sharedonline = true;
+                
+                // Save state to localStorage
+                self.ls.setItem("persist/global.states", JSON.stringify(global.states));
 
                 // Join socketIO room in 'source' role
                 self.a.sck.join_source_room();
@@ -1085,6 +1130,9 @@ function ipcsubapp(){
                 global.states.follow = true;
                 global.states.upload = true;
                 global.states.connected = false;
+                
+                // Save state to localStorage
+                self.ls.setItem("persist/global.states", JSON.stringify(global.states));
 
                 // Set UI
                 $(".update-mode-overlay .stage-1").addClass("hidden");
@@ -1192,6 +1240,9 @@ function ipcsubapp(){
             $(".update-mode-overlay").addClass("hidden");
             $(".update-mode-overlay .stage-1").removeClass("hidden");
             $(".update-mode-overlay .stage-2").addClass("hidden");
+            
+            // Save state to localStorage
+            self.ls.setItem("persist/global.port", JSON.stringify(global.port));
         }
         
         // If port is not avaialble (but device not connected to the PC)
@@ -1200,6 +1251,10 @@ function ipcsubapp(){
             global.port = response;
             global.states.connected = false;
             global.states.follow = true;
+            
+            // Save state to localStorage
+            self.ls.setItem("persist/global.states", JSON.stringify(global.states));
+            self.ls.setItem("persist/global.port", JSON.stringify(global.port));
 
             // Set port name and baud rate in view
             $(".connected-device-port").text(response.path).attr("title", response.path + " at " + response.baud + " bps");
@@ -1345,7 +1400,6 @@ function ipcsubapp(){
             $(".connected-device-port").text("N/A").attr("title", "");
             setTimeout(() => { $(".connected-device-port").parent().css("background", "#444"); }, 100);
             $(".device-selector-panel .device-list-row").removeClass("hidden");
-            
         }
 
         // Restart the interval timer to get ports list from the main process
@@ -1390,6 +1444,10 @@ function ipcsubapp(){
         
         // Broadcast the port information to all live share clients
         self.a.sck.on_port_disconnected(); 
+        
+        // Save state to localStorage
+        self.ls.setItem("persist/global.states", JSON.stringify(global.states));
+        self.ls.removeItem("persist/global.port");
     }
 
     self.process_update_data = function (event, data) {

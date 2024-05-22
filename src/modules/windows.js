@@ -54,7 +54,7 @@ module.exports = {
 
                 // Push bootstrap information
                 setTimeout(() => {
-                    win.webContents.send('bootstrap-information-push', {
+                    win.webContents.send('ipc/bootstrap-data/response', {
                         windowtype: "main-window",
                         remoteurl: i.g.LIVE_SHARE_URL,
                         appname: i.g.APP_NAME,
@@ -126,7 +126,7 @@ module.exports = {
 
                 // Push bootstrap information
                 setTimeout(() => {
-                    win.webContents.send('bootstrap-information-push', {
+                    win.webContents.send('ipc/bootstrap-data/response', {
                         windowtype: "serial-monitor",
                         remoteurl: i.g.LIVE_SHARE_URL,
                         appname: i.g.APP_NAME,
