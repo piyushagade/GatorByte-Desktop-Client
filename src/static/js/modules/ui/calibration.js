@@ -155,83 +155,95 @@ function uisensorcalibrationsubapp(){
             
             // Remove previous sensor list items
             self.panel.find(".calibration-sensor-list").find(".calibrate-sensor-item").remove();
-            self.panel.find(".calibration-sensor-list").find(".empty-notification").remove();
+
+            // Show loading notification
+            self.panel.find(".calibration-sensor-list").find(".loading-notification").removeClass("hidden");
 
             // Get config data
-            global.accessors.uiconfiggatorbyte.request_config().then(function (configdata) {
-                self.configdata = configdata;
-                self.alldevices = global.accessors.uiconfiggatorbyte.devices;
-                self.enableddevices = configdata.device.devices;
-                self.enableddevices = (self.enableddevices || "").split(",");
-                self.calibrationdevices = {};
-                var atleastonefound = false;
+            setTimeout(() => {
+                global.accessors.uiconfiggatorbyte.request_config().then(function (configdata) {
 
-                self.alldevices.forEach(function (device) {
-
-                    // Check if the device is enabled
-                    if (self.enableddevices.indexOf(device.id) == -1) return;
-
-                    // If found, and allows calibration
-                    if (device.calibration) {
-                        atleastonefound = true;
-                        self.calibrationdevices[device.id] = {...device};
-                        self.calibrationdevices[device.id].calibration = self.options[device.id];
-
-                        // Show item in the sensors list
+                    // Hide loading notification
+                    self.panel.find(".calibration-sensor-list").find(".loading-notification").addClass("hidden");
+    
+                    self.configdata = configdata;
+                    self.alldevices = global.accessors.uiconfiggatorbyte.devices;
+                    self.enableddevices = configdata.device.devices;
+                    self.enableddevices = (self.enableddevices || "").split(",");
+                    self.calibrationdevices = {};
+                    var atleastonefound = false;
+    
+                    self.alldevices.forEach(function (device) {
+    
+                        // Check if the device is enabled
+                        if (self.enableddevices.indexOf(device.id) == -1) return;
+    
+                        // If found, and allows calibration
+                        if (device.calibration) {
+                            atleastonefound = true;
+                            self.calibrationdevices[device.id] = {...device};
+                            self.calibrationdevices[device.id].calibration = self.options[device.id];
+    
+                            // Show item in the sensors list
+                            self.panel.find(".calibration-sensor-list").append(multiline(function () {/* 
+                                <div class="col-auto calibrate-sensor-item shadow-heavy" sensorname="{{sensor.name}}" sensorid="{{sensor.id}}" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px; cursor: pointer;">
+                                    <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">{{sensor.name}}</p>
+                                </div>
+                            */}, {
+                                "sensor": {
+                                    "id": device.id,
+                                    "name": device.name
+                                }
+                            }));
+                        }
+                    });
+    
+                    // If no calibrate-able devices/sensors were found
+                    if (!atleastonefound) {
                         self.panel.find(".calibration-sensor-list").append(multiline(function () {/* 
-                            <div class="col-auto calibrate-sensor-item shadow-heavy" sensorname="{{sensor.name}}" sensorid="{{sensor.id}}" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 0px;">
-                                <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">{{sensor.name}}</p>
+                            <div class="col-12 empty-notification" style="padding: 2px;margin-right: 6px;margin-bottom: 6px; border-radius: 0px;">
+                                <p style="color: #dcd5d5;margin-bottom: 0;font-size: 14px; margin-top: -2px;">
+                                    The GatorByte's configuration doesn't specify any sensors that can be calibrated. If this is unexpected, please ensure that the sensor(s) are enabled in the <span style="font-weight: bold;"><i class="fa-solid fa-gears"></i> Configure GatorByte</span> page.
+                                </p>
                             </div>
-                        */}, {
-                            "sensor": {
-                                "id": device.id,
-                                "name": device.name
-                            }
-                        }));
+                        */}));
                     }
-                });
-
-                // If no calibrate-able devices/sensors were found
-                if (!atleastonefound) {
-                    self.panel.find(".calibration-sensor-list").append(multiline(function () {/* 
-                        <div class="col-12 empty-notification" style="padding: 2px;margin-right: 6px;margin-bottom: 6px; border-radius: 0px;">
-                            <p style="color: #dcd5d5;margin-bottom: 0;font-size: 14px; margin-top: -2px;">
-                                The GatorByte's configuration doesn't specify any sensors that can be calibrated. If this is unexpected, please ensure that the sensor(s) are enabled in the <span style="font-weight: bold;"><i class="fa-solid fa-gears"></i> Configure GatorByte</span> page.
-                            </p>
-                        </div>
-                    */}));
-                }
-
-                // Select sensor from the sensor list
-                self.panel.find(".sensor-list-parent .calibrate-sensor-item").off("click").click(function () {
-                    var sensorname = $(this).attr("sensorname");
-                    var sensor = $(this).attr("sensorid");
-
-                    console.log("Entering calibration mode: " + sensorname);
-                    
-                    // Send request to get GatorByte to send sd files list
-                    self.state = "enter";
-                    self.selectedsensor = sensor;
-                    self.sendcommand(sensor + ":enter");
-
-                    $(".calibration-info-div").attr("sensor", sensor);
-                    $(".calibration-perform-div").attr("sensor", sensor);
-                    $(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
-
-                    self.panel.find(".calibration-stabalization-div").removeClass("hidden");
-                    self.panel.find(".calibration-options-div").addClass("hidden");
-
-                    // Show spinner
-                    self.panel.find("-parent .spinner-div").removeClass("hidden");
-                    
-                    // Add blur
-                    self.panel.find(".calibrations-found-item").addClass("blur");
-                    // self.panel.find(".calibration-data-info-div").addClass("blur");
-
-                    // Set sensor name in GUI
-                    self.panel.find(".sensor-name").text(sensorname);
-                });
-            });
+                    else {
+                        self.panel.find(".calibration-sensor-list").find(".empty-notification").addClass("hidden");
+                    }
+    
+                    // Select sensor from the sensor list
+                    self.panel.find(".sensor-list-parent .calibrate-sensor-item").off("click").click(function () {
+                        var sensorname = $(this).attr("sensorname");
+                        var sensor = $(this).attr("sensorid");
+    
+                        console.log("Entering calibration mode: " + sensorname);
+                        
+                        // Send request to get GatorByte to send sd files list
+                        self.state = "enter";
+                        self.selectedsensor = sensor;
+                        self.sendcommand(sensor + ":enter");
+    
+                        $(".calibration-info-div").attr("sensor", sensor);
+                        $(".calibration-perform-div").attr("sensor", sensor);
+                        $(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+    
+                        self.panel.find(".calibration-stabalization-div").removeClass("hidden");
+                        self.panel.find(".calibration-options-div").addClass("hidden");
+    
+                        // Show spinner
+                        self.panel.find("-parent .spinner-div").removeClass("hidden");
+                        
+                        // Add blur
+                        self.panel.find(".calibrations-found-item").addClass("blur");
+                        // self.panel.find(".calibration-data-info-div").addClass("blur");
+    
+                        // Set sensor name in GUI
+                        self.panel.find(".sensor-name").text(sensorname);
+                    });
+                });  
+            }, 2000);
+            
         });
         
         // Update the list of calibrations found
