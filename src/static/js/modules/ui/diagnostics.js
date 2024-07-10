@@ -254,6 +254,15 @@ function uidiagnosticsgatorbytesubapp() {
                 self.sendcommand("comm:modem:rb");
             }, 250);
         });
+
+        // Connection test button
+        self.panel.find(".communication-diagnostics-sub-panel .conn-test-button").off("click").click(function () {
+
+            // Start initial tests
+            setTimeout(() => {
+                self.sendcommand("##GB##dgncomm:conn");
+            }, 250);
+        });
     }
 
     self.displaypanels = function (categories) {

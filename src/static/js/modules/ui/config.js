@@ -328,6 +328,9 @@ function uiconfiggatorbytesubapp() {
             // Get RTC time from the GatorByte
             self.show_rtctime();
 
+            // Get sentinel fuse status
+            self.get_sentinel_fuse_status();
+
             // Get BL information
             self.panel.find(".bl-sync-status").addClass("hidden");
             setTimeout(() => {
@@ -353,6 +356,14 @@ function uiconfiggatorbytesubapp() {
         self.panel.find(".get-rtc-button").off("click").click(function () {
             self.show_rtctime();
             self.show_utctime();
+        });
+
+        // Set Sentinel fuse
+        self.panel.find(".set-fuse-button").off("click").click(function () {
+            self.sentinel_fuse("set");
+        });
+        self.panel.find(".reset-fuse-button").off("click").click(function () {
+            self.sentinel_fuse("reset");
         });
 
         // Survey ID change listener
@@ -680,6 +691,25 @@ function uiconfiggatorbytesubapp() {
         setTimeout(() => {
             self.sendcommand("rtc:get");
         }, self.panel.find(".gatorbyte-rtc-time-text").text() == "-" ? 100 : 250);
+    }
+
+    // Set/reset sentinel fuse
+    self.sentinel_fuse = function (state) {
+        self.panel.find(".sentinel-fuse-status").text("⌛ Updating fuse status.");
+        setTimeout(() => {
+            self.sendcommand("sntl:sf:set:" + state);
+            setTimeout(() => {
+                self.sendcommand("sntl:sf:get");
+            }, 1500);
+        }, 150);
+    }
+
+    // Get sentinel fuse status
+    self.get_sentinel_fuse_status = function (state) {
+        self.panel.find(".sentinel-fuse-status").text("📖 Fetching fuse status.");
+        setTimeout(() => {
+            self.sendcommand("sntl:sf:get");
+        }, 150);
     }
 
     self.process_file_download_data = function (data) {
@@ -1244,7 +1274,7 @@ function uiconfiggatorbytesubapp() {
     self.process_response = function (response) {
         response = response.replace(/<br>/g, "");
 
-        // console.log("Response received: " + response);
+        console.log("Response received: " + response);
 
         if (response == "fupl:ack") {
             self.fileuploadline += self.lines_to_send;
@@ -1380,6 +1410,34 @@ function uiconfiggatorbytesubapp() {
 
             // Update UI
             self.onconfigsyncstatusupdate();
+        }
+
+        //! Sentinel fuse status get response
+        else if (response.startsWith("sf:get")) {
+            response = response.replace(/sf:get:/, "");
+            
+            if (response == "true") {
+                self.panel.find(".sentinel-fuse-status").text("🔥 The fuse is blown.");
+                self.panel.find(".reset-fuse-button").addClass("disabled");
+                self.panel.find(".set-fuse-button").removeClass("disabled");
+            }
+            else {
+                self.panel.find(".sentinel-fuse-status").text("✅ The fuse is set.");
+                self.panel.find(".set-fuse-button").addClass("disabled");
+                self.panel.find(".reset-fuse-button").removeClass("disabled");
+            }
+        }
+
+        //! Sentinel fuse set/result result
+        else if (response.startsWith("sf:")) {
+            response = response.replace(/sf:/, "");
+            
+            if (response == "true") {
+                self.panel.find(".sentinel-fuse-status").text("⚠️ The fuse status changed.");
+            }
+            else {
+                self.panel.find(".sentinel-fuse-status").text("⛔ Error changing state.");
+            }
         }
 
         //! Battery level
