@@ -186,8 +186,8 @@ function uisensorcalibrationsubapp(){
     
                             // Show item in the sensors list
                             self.panel.find(".calibration-sensor-list").append(multiline(function () {/* 
-                                <div class="col-auto calibrate-sensor-item shadow-heavy" sensorname="{{sensor.name}}" sensorid="{{sensor.id}}" style="padding: 7px 8px 4px 8px;margin-right: 6px;margin-bottom: 6px;background: #ffffffbf;border-radius: 2px; cursor: pointer;">
-                                    <p style="color: #101010;margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">{{sensor.name}}</p>
+                                <div class="col-auto calibrate-sensor-item" sensorname="{{sensor.name}}" sensorid="{{sensor.id}}" style="padding: 7px 8px 4px 8px; margin-right: 6px; margin-bottom: 6px;background: #131313bf; border-radius: 2px; cursor: pointer;">
+                                    <p style="color: #d4d4d4; margin-bottom: 0;font-size: 14px;text-align: center;margin-top: -2px;">{{sensor.name}}</p>
                                 </div>
                             */}, {
                                 "sensor": {
@@ -236,6 +236,7 @@ function uisensorcalibrationsubapp(){
                         
                         // Add blur
                         self.panel.find(".calibrations-found-item").addClass("blur");
+                        self.panel.find(".one-reading-info-item .value").addClass("blur");
                         // self.panel.find(".calibration-data-info-div").addClass("blur");
     
                         // Set sensor name in GUI
@@ -243,6 +244,12 @@ function uisensorcalibrationsubapp(){
                     });
                 });  
             }, 2000);
+
+            self.panel.find(".sensor-name").off("click").click (function () {
+                self.panel.find(".sensor-list-parent").removeClass("hidden");
+                self.panel.find(".calibration-info-parent").addClass("hidden");
+                self.panel.find(".calibration-perform-parent").addClass("hidden");
+            })
             
         });
         
@@ -299,7 +306,6 @@ function uisensorcalibrationsubapp(){
                 // Get last calibration last perform info
                 self.sendcommand(sensor + ":lpi");
                 self.state = "wait-on-lpi";
-
             }
 
             if (self.state == "wait-on-status") {
@@ -335,6 +341,8 @@ function uisensorcalibrationsubapp(){
             if (!isNaN(lastperformedinfo)) {
                 self.panel.find(".last-calibrated-date-text").text(moment(lastperformedinfo).format("MM/DD/YY hh:mm a"));;
                 
+                console.log("Milliseconds since last calibration: " + (moment.now() - lastperformedinfo));
+                console.log("Last calibration on: " + (moment(lastperformedinfo).format("LLL")));
                 if (moment.now() - lastperformedinfo > 86400 * 30 * 6) self.panel.find(".calibration-recommendation-text").text("Overdue");
                 else if (moment.now() - lastperformedinfo > 86400 * 30 * 2) self.panel.find(".calibration-recommendation-text").text("Recommended");
                 else if (moment.now() - lastperformedinfo < 86400 * 30 * 1) self.panel.find(".calibration-recommendation-text").text("Not needed");
@@ -549,6 +557,7 @@ function uisensorcalibrationsubapp(){
             $(".lpi-item").addClass("blur");
         }
 
+
         // If the response is continuous readings
         if (line.indexOf("cread:") != -1) {
             var sensor = self.selectedsensor;
@@ -572,10 +581,11 @@ function uisensorcalibrationsubapp(){
             }
 
             self.panel.find(".number-continous-readings .text").text(count);
-            
             self.panel.find(".previous-continous-readings .text").text(parseFloat(self.previouscontinuousreading).toFixed(2));
             self.panel.find(".latest-continous-readings .text").text(parseFloat(reading).toFixed(2));
             self.panel.find(".delta-continous-readings .text").text(parseFloat(self.deltacontinousreading).toFixed(3));
+            self.panel.find(".one-reading-info-item .value").removeClass("blur").text(parseFloat(reading).toFixed(2));
+            self.panel.find(".one-reading-refresh-button").removeClass("rotate-animation");
 
             // Set previous reading value
             if (reading) self.previouscontinuousreading = reading;
@@ -592,6 +602,15 @@ function uisensorcalibrationsubapp(){
             var parent = $(".calibration-info-div[sensor='" + sensor + "']");
 
             parent.find(".calibration-status-refresh-button").removeClass("rotate-animation");
+            
+            // Get one reading
+            self.sendcommand(sensor + ":cread:1");
+            self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
+            parent.find(".one-reading-refresh-button").addClass("rotate-animation").off("click").click(function () { 
+                parent.find(".one-reading-refresh-button").addClass("rotate-animation");
+                self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
+                self.sendcommand(sensor + ":cread:1"); 
+            });
 
             if (calibrations > 0) parent.find(".calibration-data-info-item[type='calibrations-found'] .list").html("");
             else {

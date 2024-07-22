@@ -358,6 +358,11 @@ function uiconfiggatorbytesubapp() {
             self.show_utctime();
         });
 
+        // Sentinel fuse status refresh button
+        self.panel.find(".sentinel-fuse-status-refresh-button").off("click").click(function () {
+            self.get_sentinel_fuse_status();
+        });
+
         // Set Sentinel fuse
         self.panel.find(".set-fuse-button").off("click").click(function () {
             self.sentinel_fuse("set");
@@ -705,7 +710,7 @@ function uiconfiggatorbytesubapp() {
     }
 
     // Get sentinel fuse status
-    self.get_sentinel_fuse_status = function (state) {
+    self.get_sentinel_fuse_status = function () {
         self.panel.find(".sentinel-fuse-status").text("📖 Fetching fuse status.");
         setTimeout(() => {
             self.sendcommand("sntl:sf:get");
@@ -1433,7 +1438,7 @@ function uiconfiggatorbytesubapp() {
             response = response.replace(/sf:/, "");
             
             if (response == "true") {
-                self.panel.find(".sentinel-fuse-status").text("⚠️ The fuse status changed.");
+                self.panel.find(".sentinel-fuse-status").text("❓ The fuse status changed.");
             }
             else {
                 self.panel.find(".sentinel-fuse-status").text("⛔ Error changing state.");

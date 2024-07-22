@@ -614,20 +614,32 @@
                 <div class="row">
                     
                     <div class="col-12 sensor-list-parent" style="margin-bottom: 10px; padding: 0;">
-                        
+
+                        <!-- Sensors list description -->
+                        <div class="row shadow" style="margin: 0 0 10px 0; background: #443041; border-radius: 2px; padding: 4px 10px;">
+                            
+                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                                We recommend frequent calibration and validation of the sensor readings against standard solutions before a survey.
+                            </p>
+                            
+                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                                The GatorByte stores the last date of calibration on the SD card and makes a recommendation regarding the calibration. Please see sensor manufacturer's recommendations for sensor maintainence.
+                            </p>
+                        </div>
+
                         <!-- Sensors list -->
                         <div class="row shadow" style="margin: 0 0 10px 0; background: #383838; border-radius: 2px; padding: 4px 10px;">
                             
-                            <p class="col-12" style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
+                            <div class="col-12" style="color: #dddddd;padding: 0; margin-right: 6px; margin-bottom: 12px; font-size: 13px; font-weight: normal;">
                                 Select a sensor from the list below below to get started.
-                            </p>
+                            </div>
 
                             <!-- List of sensors in the config file that can be calibrated -->
                             <div class="col-12" style="margin-top: -6px;">
                                 <div class="row calibration-sensor-list">
-                                    <div class="col-12 loading-notification" style="padding: 2px;margin-right: 6px;margin-bottom: 6px; border-radius: 0px;">
-                                        <p style="color: #efefef;margin-bottom: 0;font-size: 14px; margin-top: -4px;">
-                                            <i class="fa-solid fa-triangle-exclamation" style="color: coral; margin-right: 6px;"></i>
+                                    <div class="col-12 loading-notification" style="padding: 2px; margin-right: 6px; margin-bottom: 6px; border-radius: 0px;">
+                                        <p style="color: #efefef; margin-bottom: 0; font-size: 14px; margin-top: -4px;">
+                                            <i class="fa-solid fa-triangle-exclamation animate-pulse-opacity" style="color: coral; margin-right: 6px;"></i>
                                             Please wait while we read the device configuration.
                                         </p>
                                     </div>
@@ -642,19 +654,6 @@
                                     </svg>
                                 </div>
                             </div>
-
-                        </div>
-
-                        <!-- Sensors list description -->
-                        <div class="row shadow" style="margin: 0 0 10px 0; background: #443041; border-radius: 2px; padding: 4px 10px;">
-                            
-                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
-                                We recommend frequent calibration and validation of the sensor readings against standard solutions before a survey.
-                            </p>
-                            
-                            <p style="color: #dddddd;padding: 0;margin-right: 6px;margin-bottom: 10px;font-size: 13px;font-weight: normal;">
-                                The GatorByte stores the last date of calibration on the SD card and makes a recommendation regarding the calibration. Please see sensor manufacturer's recommendations for sensor maintainence.
-                            </p>
                         </div>
                     </div>
                         
@@ -695,6 +694,20 @@
                                     <div class="col-auto calibration-data-info-item" type="calibrations-found" style="padding: 0; margin: 4px 6px;">
                                         <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Calibrations found</p>
                                         <div class="list" style="color: #dfdfdf;margin-top: 8px; margin-bottom: 0; display: inline-flex;">-</div>
+                                    </div>
+                                </div>
+
+                                <!-- One reading -->
+                                <div class="row one-reading-div shadow-medium" style="position: relative; margin: 0; padding: 6px 8px;margin-bottom: 10px;background: #42424245;border-radius: 2px;">
+                                    
+                                    <!-- Refersh status -->
+                                    <div class="one-reading-refresh-button" title="Get new value" style="position: absolute;top: 10px;right: 12px;">
+                                        <p style="color: #a5a5a5;margin-bottom: 0;"><i class="fa-solid fa-arrows-rotate"></i></p>
+                                    </div>
+
+                                    <div class="col-auto one-reading-info-item" type="calibrations-found" style="padding: 0; margin: 4px 6px;">
+                                        <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Sensor reading</p>
+                                        <div class="value" style="color: #dfdfdf;margin-top: 2px; margin-bottom: 0; display: inline-flex;">-</div>
                                     </div>
                                 </div>
                                 
@@ -1197,8 +1210,11 @@
                                     <div class="col-12 dashboard-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; min-width: 60px;">
                                         
                                         <div class="row" style="margin: 0 0 10px;">
-                                            <div class="col-12" style="padding: 0;">
+                                            <div class="col" style="padding: 0;">
                                                 <p class="sentinel-fuse-status" style="margin-bottom: 12px;background: #313131;font-size: 13px;text-align: justify;margin: 4px 0px;border-radius: 2px;padding: 4px 8px;color: #cccccc; width: auto;">Status unknown</p>
+                                            </div>
+                                            <div class="col-auto" style="padding: 0;">
+                                                <div class="sentinel-fuse-status-refresh-button" title="Get status" style="margin-bottom: 12px;background: #313131;font-size: 13px;text-align: justify;margin: 4px 0px;border-radius: 2px;padding: 4px 8px;color: #cccccc; width: auto; cursor: pointer;"><i class="fa-solid fa-arrows-rotate"></i></div>
                                             </div>
                                         </div>
 
