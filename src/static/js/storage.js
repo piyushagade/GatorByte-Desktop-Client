@@ -20,7 +20,10 @@ var sls = function () {
         self.storage = localStorage;
 
         self.setItem = function (key, data) {
-            if (!data) console.log(key);
+            if (!data) {
+                console.warn("Skipping writing to SLS. No data provided for: " + key + ".");
+                return;
+            }
             self.storage.setItem(self.functions.hash(key), self.functions.encrypt(data.toString()));
         }
 

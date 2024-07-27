@@ -1,13 +1,12 @@
 .vscode
 node_modules/
-/storage/*
-/storage/seriallog
 COM*
 GatorByte-win32-x64/
-src/storage/*
-src/storage/seriallog/*
 logs/*
 main.log
 alldevices
 allgbdevices
 config
+
+src/storage/*
+src/storage/config
