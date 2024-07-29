@@ -1,12 +1,16 @@
+# Hide IDE config files
 .vscode
-node_modules/
-COM*
-GatorByte-win32-x64/
-logs/*
-main.log
-alldevices
-allgbdevices
-config
+.hintrc
 
+# Hide node_modules
+node_modules/
+
+# Hide setup packs
+GatorByte-win32-x64/
+
+# Hide logs
+logs/*
+
+# Hide machine-specific storage files
 src/storage/*
 src/storage/config
