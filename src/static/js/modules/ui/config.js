@@ -462,6 +462,48 @@ function uiconfiggatorbytesubapp() {
 
         }, 150));
         
+        // Broker username change listener
+        self.panel.find(".mqtt-broker-username-text").off("keyup").on("keyup", self.f.debounce(function() {
+            var value = $(this).val();
+            if (!self.configobject) self.configobject = {};
+            if (!self.configobject["server"]) self.configobject["server"] = {};
+            if (value && value.length > 0) self.configobject["server"]["mqur"] = $(this).val();
+            else {
+                $(this).css("border-bottom", "1px solid red");
+                setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
+            }
+
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+        }, 150));
+        
+        // Broker password change listener
+        self.panel.find(".mqtt-broker-password-text").off("keyup").on("keyup", self.f.debounce(function() {
+            var value = $(this).val();
+            if (!self.configobject) self.configobject = {};
+            if (!self.configobject["server"]) self.configobject["server"] = {};
+            if (value && value.length > 0) self.configobject["server"]["mqpw"] = $(this).val();
+            else {
+                $(this).css("border-bottom", "1px solid red");
+                setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
+            }
+
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+        }, 150));
+
         // Server port number change listener
         self.panel.find(".server-port-number-text").off("keyup").on("keyup", self.f.debounce(function() {
             var value = $(this).val();
@@ -558,6 +600,8 @@ function uiconfiggatorbytesubapp() {
             if (!self.configobject) self.configobject = {};
             if (!self.configobject["server"]) self.configobject["server"] = {};
             self.configobject["server"]["type"] = servertype;
+
+            if (servertype == "mqtt") self.panel.find(".mqtt-broker-information-parent").removeClass("hidden");
 
             // Update flag
             self.configobject["updateflag"] = true;
@@ -1031,6 +1075,8 @@ function uiconfiggatorbytesubapp() {
                     self.configobject["server"]["url"] = self.get_value(self, "server-address-text");
                     self.configobject["server"]["port"] = self.get_value(self, "server-port-number-text");
                     self.configobject["server"]["port"] = self.get_value(self, "server-port-number-text");
+                    self.configobject["server"]["mqur"] = self.get_value(self, "mqtt-broker-username-text");
+                    self.configobject["server"]["mqpw"] = self.get_value(self, "mqtt-broker-password-text");
                     self.configobject["server"]["enabled"] = self.get_value(self, "server-upload-enabled-selector select");
                     self.configobject["server"]["tz"] = self.get_value(self, "timezone-dropdown");
                     self.configobject["server"]["type"] = self.get_value(self, "server-type-selector select");
@@ -1244,6 +1290,10 @@ function uiconfiggatorbytesubapp() {
             self.panel.find(".server-information-parent").find(".server-port-number-text").removeClass("disabled").val(data.server["port"] ? data.server["port"] : "");
             self.panel.find(".server-information-parent").find(".server-upload-enabled-dropdown").removeClass("disabled").val(data.server["enabled"]);
             self.panel.find(".server-information-parent").find(".server-type-dropdown").removeClass("disabled").val(data.server["type"]);
+            
+            if (data.server["type"] == "mqtt") self.panel.find(".mqtt-broker-information-parent").removeClass("hidden");
+            self.panel.find(".mqtt-broker-information-parent").find(".mqtt-broker-username-text").removeClass("disabled").val(data.server["mqur"] ? data.server["mqur"] : "");
+            self.panel.find(".mqtt-broker-information-parent").find(".mqtt-broker-password-text").removeClass("disabled").val(data.server["mqpw"] ? data.server["mqpw"] : "");
         }
 
         // SIM information

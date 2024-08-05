@@ -1072,10 +1072,10 @@
                                         <select class="sleep-mode-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                             <option value="shallow" style="color: #222;">Shallow</option>
                                             <option value="deep" style="color: #222;">Deep</option>
-                                            <option value="psm" style="color: #222;">PSM</option>
                                             <option value="reset" style="color: #222;">Reset</option>
                                             <option value="delay" style="color: #222;">Delay</option>
                                             <option value="daydream" style="color: #222;">Daydream</option>
+                                            <option value="skip" style="color: #222;">Skip</option>
                                         </select>
                                     </div>
                                     
@@ -1129,9 +1129,9 @@
                                         </select>
                                     </div>
 
-                                    <!-- Upload mode -->
+                                    <!-- Server type -->
                                     <div class="col-auto config-item server-type-selector" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; min-width: 70px;">
-                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Upload mode</p>
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Server type</p>
                                         <select class="server-type-dropdown" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                             <option value="mqtt" style="color: #222;">MQTT</option>
                                             <option value="http" style="color: #222;">HTTP</option>
@@ -1143,7 +1143,7 @@
                                 <div class="row" style="margin: 0; margin-top: 6px;">
                                     
                                     <!-- IP/server DNS -->
-                                    <div class="col- config-item sd-config-item" style="max-width: 300px; min-width: 60px; height: fit-content; padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822;">
+                                    <div class="col-auto config-item sd-config-item" style="max-width: 300px; min-width: 60px; height: fit-content; padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: -2px;">Server/broker address</p>
                                         <p style="color: #727272; font-size: 10px; text-align: justify; margin-bottom: 2px;">Enter the IP address for the MQTT broker or the URL for the HTTP/s server.</p>
                                         <input class="server-address-text" style="width: 100%; padding: 0 4px; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
@@ -1153,6 +1153,25 @@
                                     <div class="col-auto config-item sd-config-item" style="height: fit-content; padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; min-width: 60px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Port number</p>
                                         <input class="server-port-number-text" style="width: 85px; padding: 0 4px; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 mqtt-broker-information-parent hidden" style="margin-bottom: 10px; padding: 0;">      
+                                <p style="margin-top: 6px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">MQTT broker</p>
+                                <div class="row" style="margin: 0; margin-top: 6px;">
+                                    
+                                    <!-- Username -->
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; width: fit-content;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px; width: auto;">Username</p>
+                                        <input class="mqtt-broker-username-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; width: 100px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
+
+                                    
+                                    <!-- Password -->
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; width: fit-content;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px; width: auto;">Password</p>
+                                        <input class="mqtt-broker-password-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; width: 100px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
                                     </div>
                                 </div>
                             </div>

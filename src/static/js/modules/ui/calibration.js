@@ -62,8 +62,42 @@ function uisensorcalibrationsubapp(){
             "solutions": []
         },
         "rtd": {
-            "levels": [],
-            "solutions": []
+            "levels": [
+                {
+                "id": "single",
+                "description": "Single-point"
+                }
+            ],
+            "solutions": [
+                {
+                    "id": "22",
+                    "description": "22 C"
+                },
+                {
+                    "id": "23",
+                    "description": "23 C"
+                },
+                {
+                    "id": "24",
+                    "description": "24 C"
+                },
+                {
+                    "id": "25",
+                    "description": "25 C"
+                },
+                {
+                    "id": "26",
+                    "description": "26 C"
+                },
+                {
+                    "id": "27",
+                    "description": "27 C"
+                },
+                {
+                    "id": "28",
+                    "description": "28 C"
+                }
+            ]
         },
         "ec": {
             "levels": [
