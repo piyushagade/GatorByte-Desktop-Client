@@ -293,7 +293,7 @@ function uicontrolvariablessubapp() {
                 console.log("The variables.ini file does not exist on the SD card.");
 
                 // Populate the last used control variables
-                self.datastring = self.ls.getItem("/cv/lastused");
+                self.datastring = self.ls.getItem("/cv/lastused") || "";
 
                 // Convert to JSON
                 if (self.datastring.length > 0) self.dataobject = self.strtoobj();
