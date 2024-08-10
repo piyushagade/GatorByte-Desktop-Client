@@ -662,8 +662,10 @@
                         <!-- Sensor calibration procedure/information -->
                         <div class="row calibration-info-parent hidden" style="position: relative;margin: 0;margin-top: 2px;">
 
-                            <div class="col-12" style="font-size: 20px; padding: 0;">
-                                <p style="color: #f19e38;margin-bottom: -4px;">Calibrate <span class="sensor-name">-</span> sensor</p>
+                            <div class="col-12" style="font-size: 20px; padding: 0; display: inline-flex; color: #f19e38;">
+                                <div>Calibrate</div>
+                                <div class="sensor-name change-sensor-button" style="margin-left: 6px;">-</div>
+                                <div style="margin-top: -2px;"><span class="fa fa-caret-down" style="font-size: 12px; margin-left: 6px;"></span></div>
                             </div>
                             
                             <div class="col calibration-info-div" style="font-size: 14px; padding: 4px 8px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
@@ -700,7 +702,7 @@
                                 <!-- One reading -->
                                 <div class="row one-reading-div shadow-medium" style="position: relative; margin: 0; padding: 6px 8px;margin-bottom: 10px;background: #42424245;border-radius: 2px;">
                                     
-                                    <!-- Refersh status -->
+                                    <!-- Refresh status -->
                                     <div class="one-reading-refresh-button" title="Get new value" style="position: absolute;top: 10px;right: 12px;">
                                         <p style="color: #a5a5a5;margin-bottom: 0;"><i class="fa-solid fa-arrows-rotate"></i></p>
                                     </div>
@@ -708,6 +710,18 @@
                                     <div class="col-auto one-reading-info-item" type="calibrations-found" style="padding: 0; margin: 4px 6px;">
                                         <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Sensor reading</p>
                                         <div class="value" style="color: #dfdfdf;margin-top: 2px; margin-bottom: 0; display: inline-flex;">-</div>
+                                    </div>
+                                </div>
+
+                                <!-- Power control -->
+                                <div class="row power-control-div shadow-medium" style="position: relative; margin: 0; padding: 6px 8px;margin-bottom: 10px;background: #42424245;border-radius: 2px;">
+                                    
+                                    <div class="col-auto one-reading-info-item" type="calibrations-found" style="padding: 0; margin: 4px 6px;">
+                                        <p style="color: #a2e41f; font-size: 12px; margin-bottom: -2px;">Power control</p>
+                                        <div style="display: inline-flex; margin: 6px 0 0;">
+                                            <div class="power-on-button disabled" state="on" style="background: #4e4e4e; padding: 2px 8px; font-size: 12px; margin: 0 6px 6px 0; color: #CCC;" title="Turn on the device">On</div>
+                                            <div class="power-off-button disabled" state="off" style="background: #4e4e4e; padding: 2px 8px; font-size: 12px; margin: 0 6px 6px 0; color: #CCC;" title="Turn off the device">Off</div>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -725,11 +739,12 @@
                         </div>
 
                         <div class="row calibration-perform-parent hidden" style="position: relative;margin: 0;margin-top: 2px;">
-
-                            <div class="col-12" style="font-size: 20px; padding: 0;">
-                                <p style="color: #f19e38;margin-bottom: -4px;">Calibrate <span class="sensor-name">-</span> sensor</p>
-                            </div>
                             
+                            <div class="col-12" style="font-size: 20px; padding: 0; display: inline-flex; color: #f19e38;">
+                                <div>Calibrate</div>
+                                <div class="sensor-name change-sensor-button" style="margin-left: 6px;">-</div>
+                                <div style="margin-top: -2px;"><span class="fa fa-caret-down" style="font-size: 12px; margin-left: 6px;"></span></div>
+                            </div>
                             
                             <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
                                 

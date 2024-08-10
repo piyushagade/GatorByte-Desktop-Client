@@ -279,7 +279,7 @@ function uisensorcalibrationsubapp(){
                 });  
             }, 2000);
 
-            self.panel.find(".sensor-name").off("click").click (function () {
+            self.panel.find(".sensor-name.change-sensor-button").add($(".sensor-name.change-sensor-button").next()).off("click").click (function () {
                 self.panel.find(".sensor-list-parent").removeClass("hidden");
                 self.panel.find(".calibration-info-parent").addClass("hidden");
                 self.panel.find(".calibration-perform-parent").addClass("hidden");
@@ -289,7 +289,7 @@ function uisensorcalibrationsubapp(){
         
         // Update the list of calibrations found
         self.panel.find(".calibration-status-refresh-button").off("click").click(function () {
-            self.sendcommand(sensor + ":calibrate:status");
+            self.sendcommand(self.selectedsensor + ":calibrate:status");
             self.state = "wait-on-result";
             $(this).addClass("rotate-animation");
             $(".calibrations-found-item").addClass("blur");
@@ -340,6 +340,22 @@ function uisensorcalibrationsubapp(){
                 // Get last calibration last perform info
                 self.sendcommand(sensor + ":lpi");
                 self.state = "wait-on-lpi";
+
+                // One reading refresh listener
+                parent.find(".one-reading-refresh-button").addClass("rotate-animation").off("click").click(function () { 
+                    parent.find(".one-reading-refresh-button").addClass("rotate-animation");
+                    self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
+                    self.sendcommand(sensor + ":cread:1"); 
+                });
+
+                // Power control listener
+                parent.find(".power-on-button, .power-off-button").addClass("disabled").off("click").click(function () {
+                    var state = $(this).attr("state");
+                    self.sendcommand(sensor + ":pcon:" + state);
+
+                    if (state == "off") parent.find(".power-on-button").removeClass("disabled");
+                    if (state == "on") parent.find(".power-off-button").removeClass("disabled");
+                });
             }
 
             if (self.state == "wait-on-status") {
@@ -373,7 +389,7 @@ function uisensorcalibrationsubapp(){
             var lastperformedinfo = parseInt(line.replace("lpi:", "")) * 1000;
 
             if (!isNaN(lastperformedinfo)) {
-                self.panel.find(".last-calibrated-date-text").text(moment(lastperformedinfo).format("MM/DD/YY hh:mm a"));;
+                self.panel.find(".last-calibrated-date-text").text(moment(lastperformedinfo).format("MM/DD/YY hh:mm a")).attr("title", moment(lastperformedinfo).calendar());
                 
                 console.log("Milliseconds since last calibration: " + (moment.now() - lastperformedinfo));
                 console.log("Last calibration on: " + (moment(lastperformedinfo).format("LLL")));
@@ -589,11 +605,20 @@ function uisensorcalibrationsubapp(){
             // Add blur
             $(".calibrations-found-item").addClass("blur");
             $(".lpi-item").addClass("blur");
-        }
 
+            // Get one reading
+            setTimeout(() => {
+                self.sendcommand(sensor + ":cread:1");
+                self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
+            }, 1000);
+        }
 
         // If the response is continuous readings
         if (line.indexOf("cread:") != -1) {
+            
+            // Enable power off button
+            self.panel.find(".power-off-button").removeClass("disabled");
+
             var sensor = self.selectedsensor;
             line = line.replace("cread:", "");
 
@@ -636,15 +661,6 @@ function uisensorcalibrationsubapp(){
             var parent = $(".calibration-info-div[sensor='" + sensor + "']");
 
             parent.find(".calibration-status-refresh-button").removeClass("rotate-animation");
-            
-            // Get one reading
-            self.sendcommand(sensor + ":cread:1");
-            self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
-            parent.find(".one-reading-refresh-button").addClass("rotate-animation").off("click").click(function () { 
-                parent.find(".one-reading-refresh-button").addClass("rotate-animation");
-                self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
-                self.sendcommand(sensor + ":cread:1"); 
-            });
 
             if (calibrations > 0) parent.find(".calibration-data-info-item[type='calibrations-found'] .list").html("");
             else {
