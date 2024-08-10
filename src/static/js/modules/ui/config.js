@@ -1453,6 +1453,9 @@ function uiconfiggatorbytesubapp() {
             // Fetch BL config
             self.panel.find(".get-bl-config-button").off("click").click(function () {
                 $(this).addClass("disabled");
+                self.panel.find(".bl-name-text").parent().addClass("disabled");
+                self.panel.find(".bl-pin-text").parent().addClass("disabled");
+                
                 self.panel.find(".bl-sync-status").text("⚠️ Fetching BL information.");
                 self.panel.find(".update-bl-config-button").addClass("disabled");
                 self.sendcommand("bl:getconfig");
@@ -1461,6 +1464,8 @@ function uiconfiggatorbytesubapp() {
             // Update BL config
             self.panel.find(".update-bl-config-button").off("click").click(function () {
                 $(this).addClass("disabled");
+                self.panel.find(".bl-name-text").parent().addClass("disabled");
+                self.panel.find(".bl-pin-text").parent().addClass("disabled");
                 
                 self.panel.find(".bl-sync-status").text("⚒️ Updating BL information.");
                 
@@ -1468,8 +1473,11 @@ function uiconfiggatorbytesubapp() {
                 var pin = self.panel.find(".bl-pin-text").val();
 
                 console.log("Updating BL name and pin: "  + name + ", " + pin);
-
                 self.sendcommand("bl:setconfig" + name + ";" + pin);
+
+                setTimeout(() => {
+                    self.sendcommand("bl:getconfig");
+                }, 2500);
             });
 
         }
