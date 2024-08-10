@@ -406,8 +406,8 @@ function uicontrolvariablessubapp() {
                     <input class="cv-value-input" placeholder="value" style="padding: 0 4px; width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;" value="{{value}}">
                 </div>
                 
-                <div class="col-auto" controlvariablename="{{key}}" style="margin-right: 6px; color: crimson;font-size: 13px;margin-top: 4px;">
-                    <i class="fa-solid fa-trash-can delete-cv-item" title="Double click to delete"></i>
+                <div class="col-auto delete-cv-item" title="Double click to delete" controlvariablename="{{key}}" style="margin-right: 6px; color: #d03653; font-size: 13px; background: #d0d0d029; height: 30px; width: 30px; border-radius: 50%; padding: 6px 9px; margin-top: -5px;">
+                    <i class="fa-solid fa-trash-can"></i>
                 </div>
             </div>
         */}, {

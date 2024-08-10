@@ -332,7 +332,7 @@ function uiconfiggatorbytesubapp() {
             self.get_sentinel_fuse_status();
 
             // Get BL information
-            self.panel.find(".bl-sync-status").addClass("hidden");
+            self.panel.find(".bl-sync-status").text("⚠️ Please wait.");
             setTimeout(() => {
                 self.sendcommand("bl:getconfig");
             }, 2000);
@@ -1422,15 +1422,17 @@ function uiconfiggatorbytesubapp() {
             self.panel.find(".bl-pin-text").val("");
             
             if (response == "not-detected") {
-                self.panel.find(".bl-sync-status").removeClass("hidden").text("⛔ The AT-09 module is either uninitialized or not connected to the GatorByte.");
-                self.panel.find(".update-bl-config-button").addClass("disabled").find("p").text("Update");
+                self.panel.find(".bl-sync-status").text("⛔ The BL did not respond.");
+                self.panel.find(".get-bl-config-button").addClass("disabled");
+                self.panel.find(".update-bl-config-button").addClass("disabled");
                 
                 self.panel.find(".bl-name-text").parent().addClass("disabled");
                 self.panel.find(".bl-pin-text").parent().addClass("disabled");
+                        
             }
             else {
-                self.panel.find(".update-bl-config-button").removeClass("disabled").find("p").text("Update");
-                self.panel.find(".bl-sync-status").addClass("hidden");
+                self.panel.find(".get-bl-config-button").removeClass("disabled");
+                self.panel.find(".update-bl-config-button").removeClass("disabled");
 
                 var blname = response.split(";")[0];
                 var blpin = response.split(";")[1];
@@ -1439,11 +1441,28 @@ function uiconfiggatorbytesubapp() {
 
                 self.panel.find(".bl-name-text").val(blname).parent().removeClass("disabled");
                 self.panel.find(".bl-pin-text").val(blpin).parent().removeClass("disabled");
+
+                if (blname.length > 0) {
+                    self.panel.find(".bl-sync-status").text("✅ BL information fetched.");
+                }
+                else {
+                    self.panel.find(".bl-sync-status").text("❓ Information seems incorrect. Try refetching.");
+                }
             }
+            
+            // Fetch BL config
+            self.panel.find(".get-bl-config-button").off("click").click(function () {
+                $(this).addClass("disabled");
+                self.panel.find(".bl-sync-status").text("⚠️ Fetching BL information.");
+                self.panel.find(".update-bl-config-button").addClass("disabled");
+                self.sendcommand("bl:getconfig");
+            });
             
             // Update BL config
             self.panel.find(".update-bl-config-button").off("click").click(function () {
-                $(this).addClass("disabled").find("p").html("Updating. Please wait.");
+                $(this).addClass("disabled");
+                
+                self.panel.find(".bl-sync-status").text("⚒️ Updating BL information.");
                 
                 var name = self.panel.find(".bl-name-text").val();
                 var pin = self.panel.find(".bl-pin-text").val();

@@ -123,7 +123,7 @@ function setheight() {
             
             var headerheight = $(".header-panel").height();
             var bodyheight = parseInt($(".container").css("height"));
-            var panelheight = bodyheight - headerheight - 40;
+            var panelheight = bodyheight - headerheight - 45;
             $(".panel").height(panelheight);
         }
     }, 100);
