@@ -181,7 +181,7 @@ function ipcsubapp(){
 
                     // Check config sync status
                     global.accessors.uiconfiggatorbyte.checkconfigsync();
-                    global.accessors.uiconfiggatorbyte.getbattlevel(300);
+                    global.accessors.uiconfiggatorbyte.getbattlevel(1500);
 
                     // Enable big buttons in home UI
                     var functions = [];

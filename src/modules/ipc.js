@@ -435,11 +435,16 @@ module.exports = {
                             }
 
                             // Send data to renderer
-                            event.sender.send('ipc/serial-data/new', {
-                                data: data,
-                                crlf: false,
-                                lastemptychar: false,
-                            });
+                            try {
+                                event.sender.send('ipc/serial-data/new', {
+                                    data: data,
+                                    crlf: false,
+                                    lastemptychar: false,
+                                });
+                            }
+                            catch (e) {
+                                console.log("Cannot send IPC message. Port has been closed.");
+                            }
 
                             return;
                         });

@@ -332,7 +332,7 @@ function uiconfiggatorbytesubapp() {
             self.get_sentinel_fuse_status();
 
             // Get BL information
-            self.panel.find(".bl-sync-status").text("⚠️ Please wait.");
+            self.panel.find(".bl-sync-status").text("⏲️ Fetching BL information.");
             setTimeout(() => {
                 self.sendcommand("bl:getconfig");
             }, 2000);
@@ -856,6 +856,7 @@ function uiconfiggatorbytesubapp() {
 
                 $(".header-panel").find(".download-status-text").removeClass("hidden").text("Download complete");
                 $(".gb-config-header").find(".upload-config-data-button").find("i").removeClass("animate-pulse-opacity");
+                $(".home-panel").removeClass("disabled");
                 self.configdata = self.filedownloaddata;
 
                 self.on_config_data_acquired(false);
@@ -865,7 +866,7 @@ function uiconfiggatorbytesubapp() {
 
                 // Check config data sync
                 self.checkconfigsync(500);
-                self.getbattlevel(800);
+                self.getbattlevel(1200);
                 
             }
 
@@ -930,7 +931,7 @@ function uiconfiggatorbytesubapp() {
             
             // Check config data sync after 500 ms
             self.checkconfigsync(500);
-            self.getbattlevel(800);
+            self.getbattlevel(1200);
 
             // Update config data
             self.configdata = self.objecttostring(self.configobject);
@@ -1384,7 +1385,7 @@ function uiconfiggatorbytesubapp() {
 
                 // Update RTC sync status
                 if (Math.abs(timestamp - moment.now()) > 1 * 60 * 1000) {
-                    self.panel.find(".rtc-sync-status").text("⛔ The GatorByte time is out of sync.");
+                    self.panel.find(".rtc-sync-status").text("⛔ The GatorByte " + source + "'s time is out of sync.");
                     self.panel.find(".sync-rtc-button").removeClass("disabled");
                 }
                 else {
@@ -1456,7 +1457,7 @@ function uiconfiggatorbytesubapp() {
                 self.panel.find(".bl-name-text").parent().addClass("disabled");
                 self.panel.find(".bl-pin-text").parent().addClass("disabled");
                 
-                self.panel.find(".bl-sync-status").text("⚠️ Fetching BL information.");
+                self.panel.find(".bl-sync-status").text("⏲️ Fetching BL information.");
                 self.panel.find(".update-bl-config-button").addClass("disabled");
                 self.sendcommand("bl:getconfig");
             });
