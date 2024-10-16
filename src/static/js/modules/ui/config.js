@@ -634,6 +634,27 @@ function uiconfiggatorbytesubapp() {
             self.configdata = self.objecttostring(self.configobject);
         }, 150));
 
+        // Survey ID listener
+        self.panel.find(".survey-uid-text").off("keyup").on("keyup", self.f.debounce(function() {
+            var value = parseInt($(this).val());
+            if (!self.configobject) self.configobject = {};
+            if (!self.configobject["survey"]) self.configobject["survey"] = {};
+            if (value && value.length > 0) self.configobject["survey"]["uid"] = value;
+            else {
+                $(this).css("border-bottom", "1px solid red");
+                setTimeout(() => { $(this).css("border-bottom", "1px solid #444444"); }, 2000);
+            }
+            
+            // Update flag
+            self.configobject["updateflag"] = true;
+            
+            // Save config data to main process
+            self.save_config_in_storage();
+
+            // Update config data
+            self.configdata = self.objecttostring(self.configobject);
+        }, 150));
+
         // Sleep mode change listener
         self.panel.find(".sleep-mode-text").off("change").on("change", function() {
             var sleepmode = self.panel.find(".sleep-mode-text").val();
@@ -805,12 +826,12 @@ function uiconfiggatorbytesubapp() {
                 }, 200);
 
                 // // Disable text boxes
-                // self.panel.find(".survey-information-parent").find(".project-id-text").addClass("disabled");
-                // self.panel.find(".survey-information-parent").find(".device-sn-text").addClass("disabled");
-                // self.panel.find(".survey-information-parent").find(".device-name-text").addClass("disabled");
-                // self.panel.find(".survey-information-parent").find(".survey-location-text").addClass("disabled");
-                // self.panel.find(".survey-information-parent").find(".survey-date").addClass("disabled");
-                // self.panel.find(".survey-information-parent").find(".survey-date-picker").addClass("disabled");
+                // self.panel.find(".device-project-information-parent").find(".project-id-text").addClass("disabled");
+                // self.panel.find(".device-project-information-parent").find(".device-sn-text").addClass("disabled");
+                // self.panel.find(".device-project-information-parent").find(".device-name-text").addClass("disabled");
+                // self.panel.find(".device-project-information-parent").find(".survey-location-text").addClass("disabled");
+                // self.panel.find(".device-project-information-parent").find(".survey-date").addClass("disabled");
+                // self.panel.find(".device-project-information-parent").find(".survey-date-picker").addClass("disabled");
                 // self.panel.find(".device-information-parent").find(".sleep-mode-text").addClass("disabled");
                 // self.panel.find(".device-information-parent").find(".sleep-duration-text").addClass("disabled");
                 // self.panel.find(".device-information-parent").find(".data-mode-text").addClass("disabled");
@@ -1069,6 +1090,7 @@ function uiconfiggatorbytesubapp() {
                     if (!self.configobject["data"]) self.configobject["data"] = {};
 
                     self.configobject["survey"]["id"] = self.get_content(self, "project-id-text");
+                    self.configobject["survey"]["uid"] = self.get_value(self, "survey-uid-text");
                     delete self.configobject["survey"]["location"];
                     delete self.configobject["survey"]["date"];
                     self.configobject["device"]["name"] = self.get_content(self, "device-name-text");
@@ -1259,7 +1281,7 @@ function uiconfiggatorbytesubapp() {
     self.update_panel_ui = function () {
 
         var data = self.configobject;
-        
+
         var allstates = ["realtime"];
         
         // Timezone information
@@ -1269,13 +1291,16 @@ function uiconfiggatorbytesubapp() {
         var projectid = self.ls.getItem("device/registration/project-id");
         var devicename = self.ls.getItem("device/registration/device-name");
         var sn = self.ls.getItem("device/registration/sn");
-
+        
         // Device information
-        self.panel.find(".survey-information-parent").find(".project-id-text").removeClass("disabled").text(projectid ? projectid : data.survey["id"]).attr("readonly", "true");
-        self.panel.find(".survey-information-parent").find(".device-sn-text").removeClass("disabled").text(sn ? sn : global.sn);
-        self.panel.find(".survey-information-parent").find(".device-name-text").removeClass("disabled").text(devicename ? devicename : data.device["name"]).attr("readonly", "true");
-        self.panel.find(".survey-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
+        self.panel.find(".device-project-information-parent").find(".project-id-text").removeClass("disabled").text(projectid ? projectid : data.survey["id"]).attr("readonly", "true");
+        self.panel.find(".device-project-information-parent").find(".device-sn-text").removeClass("disabled").text(sn ? sn : global.sn);
+        self.panel.find(".device-project-information-parent").find(".device-name-text").removeClass("disabled").text(devicename ? devicename : data.device["name"]).attr("readonly", "true");
+        self.panel.find(".device-project-information-parent").find(".survey-location-text").removeClass("disabled").val(data.survey["location"]);
         self.panel.find(".environment-configuration-parent").find(".device-environemnt-selector").removeClass("disabled").val(data.device["env"] || "development");
+        
+        // Survey configuration
+        self.panel.find(".survey-configuration-parent").find(".survey-uid-text").removeClass("disabled").val(data.survey["uid"] || "-");
         
         // Sensor/data information
         self.panel.find(".data-information-parent").find(".data-mode-text").removeClass("disabled").val(data.data["mode"]);

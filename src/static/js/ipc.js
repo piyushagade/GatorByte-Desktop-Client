@@ -527,7 +527,11 @@ function ipcsubapp(){
 
     self.process_available_ports_list = function (event, data) {
         if (global.states.connected || global.states.upload) return;
-            
+
+        // Hide quick connect button if no devices are connected
+        if (!data["connecteddevices"] || data["connecteddevices"].length == 0) $(".latest-device-connect-button").addClass("hidden");
+        else $(".latest-device-connect-button").removeClass("hidden");
+
         // If follow mode is on, connect to the device directly
         if (global.states.follow) {
             
@@ -542,6 +546,28 @@ function ipcsubapp(){
                         baud: port.baud,
                         windowid: global.states.windowid,
                         ...port
+                    });
+                }
+
+                else {
+                    var port_original = aport.path;
+                    var baud = aport.baud;
+                    var devicename = aport.friendlyName;
+                    var nickname = aport.nickname || "";
+                    var pnpid = encodeURI(aport.pnpId)
+                    var favorite = aport.favorite || false;
+                    var sn = aport.sn;
+
+                    $(".latest-device-connect-button").removeClass("hidden");
+                    $(".latest-device-connect-button").find(".last-device-name").text(devicename);
+                    $(".latest-device-connect-button").find(".last-device-baud-rate").text(baud);
+                    $(".latest-device-connect-button").off("click").click(function () {
+                        console.log("Requesting connection for: " + aport.path + " (" + aport.baud + " bps) on window ID: " + global.states.windowid);
+        
+                        self.ipcr.send('ipc/port-open/request', {
+                            path: aport.path,
+                            ...aport
+                        });
                     });
                 }
             });
@@ -559,9 +585,6 @@ function ipcsubapp(){
                     ui.find(".device-selector-list-item").remove();
                 }
                 else ui.find(".empty-notification").addClass("hidden");
-
-                // Hide quick connect button if not devices are connected
-                if (!data["connecteddevices"] || data["connecteddevices"].length == 0) $(".latest-device-connect-button").addClass("hidden");
         
                 data[category].forEach(port => {
                     var port_original = port.path;
@@ -1259,6 +1282,10 @@ function ipcsubapp(){
             // Set port name and baud rate in view
             $(".connected-device-port").text(response.path).attr("title", response.path + " at " + response.baud + " bps");
 
+            // Restart the interval timer to get ports list from the main process
+            if (global.timers.portsrefresh) clearInterval(global.timers.portsrefresh);
+            global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 500);
+
             $(".show-on-connected").addClass("hidden");
             $(".serial-monitor .waiting-for-device-notification").removeClass("hidden");
             // $(".device-not-available-overlay").slideUp(0).removeClass("hidden").slideDown(150);
@@ -1299,6 +1326,10 @@ function ipcsubapp(){
             global.states.connected = false;
             
             console.log("Disconnected port " + (global.port.path || global.quickconnectport.path) + ". Waiting for reconnection.");
+
+            // Restart the interval timer to get ports list from the main process
+            if (global.timers.portsrefresh) clearInterval(global.timers.portsrefresh);
+            global.timers.portsrefresh = setInterval(() => { self.ipcr.send('ipc/available-ports-list/request'); }, 500);
 
             $(".waiting-for-device-notification").removeClass("hidden");
             self.a.ui.show_overlay($(".device-not-available-overlay"), 150);

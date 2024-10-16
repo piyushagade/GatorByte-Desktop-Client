@@ -335,13 +335,12 @@
                     </div>
 
                     <!--! Non-production environment notification -->
-                    <div class="col-12 shadow-heavy device-environemnt-notification hidden" style="padding: 12px 12px;margin-right: 6px;background: #4c4c4c;margin-top: 8px;">
-                        <p style="color: rgb(219, 219, 219); font-size: 16px; text-align: justify; margin-bottom: -2px;">Device environment: <span class="environment-text">-</span></p>
-                        <p style="color: rgb(176, 176, 176); font-size: 12px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
+                    <div class="col-12 shadow-heavy device-environemnt-notification hidden" style="padding: 12px 12px;margin-right: 6px;background: #6365a9;margin-top: 8px;">
+                        <p style="color: #fab5ff; font-size: 16px; text-align: justify; margin-bottom: -2px;">Device environment: <span class="environment-text">-</span></p>
+                        <p style="color: rgb(236, 236, 236); font-size: 12px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
                             The device environment is set to <span class="environment-text">-</span>. Please change it to "Field-ready" before deployments.
                         </p>
-                        <p class="caution-text" style="color: rgb(172, 172, 172); font-size: 13px; text-align: justify; margin-top: 6px; margin-bottom: -2px;">You can change the environment by clicking on the 'Configure GatorByte' button below.</p>
-                        <i class="fa-solid fa-screwdriver-wrench" style="position: absolute; top: 12px; right: 18px; color: rgb(234, 115, 51); font-size: 10px;"></i>
+                        <i class="fa-solid fa-screwdriver-wrench" style="position: absolute; top: 12px; right: 18px; color: #deaaff; font-size: 12px;"></i>
                     </div>
                     
                     <!--! SD error notification -->
@@ -420,7 +419,7 @@
                             <div class="col-auto shadow big-button sensor-calibration-button requires-device-ready" style="cursor: pointer; margin: 0 10px 10px 0; padding: 0;">
                                 <div class="content">
                                     <p style="font-size: 32px; margin-bottom: 2px;"><i class="fa-solid fa-scale-balanced"></i></p>
-                                    <p style="font-size: 14px; margin-bottom: 2px;">Calibrate sensors</p>
+                                    <p style="font-size: 14px; margin-bottom: 2px;">Manage sensors</p>
                                 </div>
                             </div>
                             
@@ -702,9 +701,14 @@
                                 <!-- One reading -->
                                 <div class="row one-reading-div shadow-medium" style="position: relative; margin: 0; padding: 6px 8px;margin-bottom: 10px;background: #42424245;border-radius: 2px;">
                                     
-                                    <!-- Refresh status -->
+                                    <!-- Get one reading -->
                                     <div class="one-reading-refresh-button" title="Get new value" style="position: absolute;top: 10px;right: 12px;">
                                         <p style="color: #a5a5a5;margin-bottom: 0; cursor: pointer;"><i class="fa-solid fa-arrows-rotate"></i></p>
+                                    </div>
+                                    
+                                    <!-- Get one stable reading -->
+                                    <div class="one-stable-reading-refresh-button" title="Get a stable reading" style="position: absolute;top: 10px; right: 40px;">
+                                        <p style="color: #a5a5a5;margin-bottom: 0; cursor: pointer;"><i class="fa-solid fa-lines-leaning"></i></p>
                                     </div>
 
                                     <div class="col-auto one-reading-info-item" type="calibrations-found" style="padding: 0; margin: 4px 6px;">
@@ -748,26 +752,35 @@
                             
                             <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
                                 
+                                <!--! Compensation div -->
+                                <div class="row shadow calibration-compensation-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
+                                    <div class="col-auto compensation-input" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; max-width: 120px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Temperature</p>
+                                        <input class="temperature-compensation" placeholder="25 C" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
+                                    </div>
+                                    
+                                    <div class="col-auto compensation-input" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; max-width: 120px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Conductivity</p>
+                                        <input class="salinity-compensation" placeholder="0 uS/cm" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
+                                    </div>
+                                </div>
+
                                 <!--! Stabilization div -->
                                 <div class="row shadow calibration-stabalization-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
                                     <div class="col-12" style="padding: 0;">
                                         <p style="color: #bbbbbb;margin-bottom: 6px;">Before we perform the calibration on the <span class="sensor-name">ph</span> sensor, we need to ensure the readings are stable. Click on the button below to fetch continous readings.</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="1000" title="1000 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
-                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">1000</p>
+                                    <div class="col-auto start-continous-readings-input shadow-medium" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #f1f1f1;border-radius: 2px;height: 28px; min-width: 28px; text-align: center;">
+                                        <input class="count-text" style="background: transparent; outline: 0; border: 0; color: black; font-weight: bold; max-width: 30px; text-align: center;" placeholder="25">
                                     </div>
 
                                     <div class="col-auto start-continous-readings-button shadow-medium" count="100" title="100 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">100</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="40" title="40 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
+                                    <div class="col-auto start-continous-readings-button shadow-medium" count="50" title="50 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">50</p>
-                                    </div>
-
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="30" title="30 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
-                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">30</p>
                                     </div>
 
                                     <div class="col-auto start-continous-readings-button shadow-medium" count="20" title="20 consecutive readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px;min-width: 28px; text-align: center;">
@@ -786,16 +799,8 @@
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">5</p>
                                     </div>
 
-                                    <div class="col-auto start-continous-readings-button shadow-medium" count="3" title="3 readings" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px; min-width: 28px; text-align: center;">
-                                        <p style="color: #424242;margin-bottom: 0;font-weight: bold;">3</p>
-                                    </div>
-
                                     <div class="col-auto start-continous-readings-button shadow-medium" count="1" title="1 reading" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #dabb0f;border-radius: 2px;height: 28px; min-width: 28px; text-align: center;">
                                         <p style="color: #424242;margin-bottom: 0;font-weight: bold;">1</p>
-                                    </div>
-
-                                    <div class="col-auto go-back-sensor-calibration-status-button shadow-medium hidden" style="padding: 4px 6px;margin-right: 6px;margin-bottom: 6px;background: #3e444c;border-radius: 2px;height: 28px;">
-                                        <p style="color: #DDDDDD;margin-bottom: 0;">Back</p>
                                     </div>
 
                                     <div class="col-12 continous-readings-div" style="margin: 0;margin-top: 4px;padding: 4px 8px;border-radius: 2px;">
@@ -1027,8 +1032,8 @@
                     <div class="col-12 disabled blur config-information-parent">
                         <div class="row">
 
-                            <!--! Survey information -->
-                            <div class="col-12 survey-information-parent" style="margin-bottom: 10px; padding: 0;">
+                            <!--! Device and Project information -->
+                            <div class="col-12 device-project-information-parent" style="margin-bottom: 10px; padding: 0;">
                                 <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Device information</p>
                                     
                                 <div class="row" style="margin: 0px;">
@@ -1052,6 +1057,21 @@
                                     </div>
 
                                 </div>
+                            </div>
+                            
+                            <!--! Survey information -->
+                            <div class="col-12 survey-configuration-parent" style="margin-bottom: 10px; padding: 0;">
+                                <p style="margin-top: 2px; color: #b8e274; font-size: 12px; text-align: justify; margin-bottom: 4px;">Survey information</p>
+                                    
+                                <div class="row" style="margin: 0px;">
+
+                                    <!-- Identifier -->
+                                    <div class="col-auto config-item sd-config-item" style="padding: 10px 12px; margin-right: 6px; margin-bottom: 6px; background: #58585822; min-width: 60px;">
+                                        <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Unique identifier</p>
+                                        <input class="survey-uid-text" style="background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; width: 100px; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px;">
+                                    </div>
+
+                                </div>
 
                             </div>
 
@@ -1068,11 +1088,11 @@
                                             <option value="development" style="color: #222;">Development</option>
                                             <option value="trial" style="color: #222;">Trial run</option>
                                             <option value="field" style="color: #222;">Field-ready</option>
+                                            <option value="lab" style="color: #222;">Lab</option>
                                         </select>
                                     </div>
 
                                 </div>
-
                             </div>
                             
                             <!--! Sleep -->
@@ -1812,7 +1832,7 @@
                     <div class="col">
                         <div class="row" style="margin-top: 0px;">
                             <div class="col-12" style="padding: 4px 6px;">
-                                <p style="font-size: 14px;color: #0f0f0f;margin-top: 0px;margin-bottom: 0px; font-weight: bold;">The desktop client has been put to in 'Upload mode'.</p>
+                                <p style="font-size: 14px;color: #0f0f0f;margin-top: 0px;margin-bottom: 0px; font-weight: bold;">The desktop client has been put in 'Upload mode'.</p>
                                 <p style="font-size: 14px; color: #1e1e1e; margin-top: 0px; margin-bottom: 6px;">You can now update the firmware on the device.</p>
                                 <p style="font-size: 14px; color: #1e1e1e; margin-top: 0px; margin-bottom: -2px;"><span class="delay-text" style="font-weight: bold;">10 seconds</span> to reconnection.</p>
                             </div>
@@ -1845,7 +1865,10 @@
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">Please connect the GatorByte to the computer and ensure the connection is proper.</p>
                         
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">To connect to a different device, click below.</p>
-                        <div class="connected-device-disconnect-button" title="Select another device" style="border-radius: 2px; cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
+                        <div style="display: inline-flex;">
+                            <div class="connected-device-disconnect-button" title="Select another device" style="border-radius: 2px; cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
+                            <div class="latest-device-connect-button hidden" title="Quick connect" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #126b6f; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Connect <span class="last-device-name" style="font-weight: bold;"></span></div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1866,7 +1889,9 @@
                         <p style="font-size: 14px;color: #DDDDDD;margin-top: 0px;margin-bottom: 0px;">The GatorByte is connected. Waiting for it to enter GDC mode.</p>
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">If nothing changes in the next 60 seconds, please restart the microcontroller.</p>
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 0px; margin-bottom: 6px;">To connect to a different device, click below.</p>
-                        <div class="connected-device-disconnect-button" title="Select another device" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
+                        <div style="display: inline-flex;">
+                            <div class="connected-device-disconnect-button" title="Select another device" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #545454; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Exit</div>
+                        </div>
 
                         <p style="font-size: 14px; color: #a7a7a7; margin-top: 8px; margin-bottom: 6px;">Or, if you want to flash GatorByte firmware, please click on the button below.</p>
                         <div class="flash-firmware-button" title="Flash firmware" style="cursor: pointer; padding: 4px 8px; font-size: 13px; color: rgb(255, 255, 255); background: #126b6f; width: fit-content; margin-right: 10px; margin-top: 10px; margin-left: -1px;">Flash firmware</div>

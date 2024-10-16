@@ -347,6 +347,11 @@ function uisensorcalibrationsubapp(){
                     self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
                     self.sendcommand(sensor + ":cread:1"); 
                 });
+                parent.find(".one-stable-reading-refresh-button").off("click").click(function () { 
+                    parent.find(".one-reading-refresh-button").addClass("rotate-animation");
+                    self.panel.find(".one-reading-info-item .value").text("-").addClass("blur");
+                    self.sendcommand(sensor + ":sread"); 
+                });
 
                 // Power control listener
                 parent.find(".power-on-button, .power-off-button").addClass("disabled").off("click").click(function () {
@@ -499,7 +504,7 @@ function uisensorcalibrationsubapp(){
                 // Enable/disable perform calibration buttons
                 function shouldenableperformbutton () {
                     if (newparent.find(".calibration-level-option.active").length > 0 && (self.calibrationdevices[sensor].calibration.solutions.length == 0 || (self.calibrationdevices[sensor].calibration.solutions.length > 0 && newparent.find(".calibration-solution-option.active").length > 0))) {
-                        newparent.find(".perform-calibration-button").removeClass("disabled");         
+                        newparent.find(".perform-calibration-button").removeClass("disabled");
                     }
                     else {
                         newparent.find(".perform-calibration-button").addClass("disabled");        
@@ -508,8 +513,12 @@ function uisensorcalibrationsubapp(){
 
                 // Get continuous readings
                 newparent.find(".start-continous-readings-button").off("click").on("click", function () {
+
+                    // Send compensation values
+                     
                     var count = $(this).attr("count");
-                    $(".start-continous-readings-button").css("opacity", "0.3").addClass("disabled");
+                    $(".start-continous-readings-button, .start-continous-readings-input").css("opacity", "0.3").addClass("disabled").blur();
+                    $(this).css("opacity", "1");
                     newparent.find(".show-calibration-options-button").css("opacity", "0.3").addClass("disabled");
 
                     self.selectedcreadcount = count;
@@ -519,8 +528,32 @@ function uisensorcalibrationsubapp(){
                     parent.find(".continuous-read-status-div").addClass("rotate-animation");
                 });
 
+                newparent.find(".start-continous-readings-input input").off("keydown").on("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        var count = $(this).val();
+                        
+                        // Check if the input value is a valid number
+                        if (count.trim() !== "") {
+                            $(".start-continous-readings-button, .start-continous-readings-input").css("opacity", "0.3").addClass("disabled").blur();
+                            $(this).css("opacity", "1")
+                            newparent.find(".show-calibration-options-button").css("opacity", "0.3").addClass("disabled");
+
+                            self.selectedcreadcount = count;
+                            
+                            // Send request to GB for continuous readings
+                            self.sendcommand(sensor + ":cread:" + self.selectedcreadcount);
+                            parent.find(".continuous-read-status-div").addClass("rotate-animation");
+                        }
+                    }
+                });
+
+                // Allow only numbers
+                newparent.find(".start-continous-readings-input input").on('input', function() {
+                    $(this).val($(this).val().replace(/[^0-9]/g, ''));
+                });
+
                 self.panel.find(".show-calibration-options-button").off("click").click(function () {
-                    self.panel.find(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+                    self.panel.find(".start-continous-readings-button, .start-continous-readings-input").css("opacity", "1").removeClass("disabled");
                     
                     self.panel.find(".calibration-stabalization-div").addClass("hidden");
                     self.panel.find(".calibration-options-div").removeClass("hidden");
@@ -635,7 +668,7 @@ function uisensorcalibrationsubapp(){
             }
             else if (count == self.selectedcreadcount) {
                 self.panel.find(".continuous-read-status-div").addClass("rotate-animation");
-                self.panel.find(".start-continous-readings-button").css("opacity", "1").removeClass("disabled");
+                self.panel.find(".start-continous-readings-button, .start-continous-readings-input").css("opacity", "1").removeClass("disabled");
                 self.panel.find(".show-calibration-options-button").css("opacity", "1").removeClass("disabled");
             }
 
