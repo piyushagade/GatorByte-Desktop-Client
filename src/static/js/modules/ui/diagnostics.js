@@ -316,9 +316,9 @@ function uidiagnosticsgatorbytesubapp() {
     }
 
     self.testdevice = function (device) {
-        console.log("Testing device: " + device);
+        console.log("Testing device: " + device.split("dgn:")[1]);
 
-        var devicedata = self.f.grep(self.alldevices, "id", device, true);
+        var devicedata = self.f.grep(self.alldevices, "id", device.split("dgn:")[1], true);
 
         // Return if the device doesn not require testing
         if (devicedata && devicedata.test == false) return;
@@ -401,29 +401,36 @@ function uidiagnosticsgatorbytesubapp() {
         if (response.startsWith("mem:")) {
             response = response.replace(/mem:/g, "");
 
-            self.panel.find(".mem-text").html(multiline(function () {/* 
-                <span style="margin-right: 4px;">{{status}}</span>
-            */}, {
-                status: response.indexOf("true") > -1 ? "Device ready" : "Device may require formatting"
-            }));
+            if (!self.panel.hasClass("hidden")) {
 
-            if (response.indexOf("true") > -1) {
-                
-                self.setstatus({
-                    ui: ".mem-status",
-                    font: "fa-check",
-                    color: "green",
-                    message: "OK"
-                });
+                self.panel.find(".mem-text").html(multiline(function () {/* 
+                    <span style="margin-right: 4px;">{{status}}</span>
+                */}, {
+                    status: response.indexOf("true") > -1 ? "Device ready" : "Device may require formatting"
+                }));
+
+                if (response.indexOf("true") > -1) {
+                    
+                    self.setstatus({
+                        ui: ".mem-status",
+                        font: "fa-check",
+                        color: "green",
+                        message: "OK"
+                    });
+                }
+                else  {
+                    
+                    self.setstatus({
+                        ui: ".mem-status",
+                        font: "fa-triangle-exclamation",
+                        color: "crimson",
+                        message: "Error"
+                    });
+                }
             }
-            else  {
-                
-                self.setstatus({
-                    ui: ".mem-status",
-                    font: "fa-triangle-exclamation",
-                    color: "crimson",
-                    message: "Error"
-                });
+
+            else if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) {
+                $(".pre-survey-tests-results-parent .mem-test .test-result").text(response.indexOf("true") > -1 ? "✅ Working." : "⛔ Communication error.");
             }
         }
 

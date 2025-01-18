@@ -64,30 +64,6 @@
     <!-- Panels -->
     <div class="container panel-parent" state="transparent" style="overflow: hidden; max-width: unset; margin: 0px; border-radius: 0px; padding: 10px 14px 10px 14px; position: absolute; top: 0; bottom: 0; right: 0; left: 0; cursor: default; -webkit-app-region: no-drag; border: 2px solid #424242;">
         
-        <!--! Top menu -->
-        <div class="menu-buttons-div row" style="-webkit-app-region: no-drag; padding: 2px 4px 0 4px;background: #9c9c9c6b; backdrop-filter: blur(4px); border-radius: 0px;z-index: 1;font-size: 11px;position: absolute;top: 8px;right: 10px;margin: 0px 0px 12px 0px;color: #AAA;pointer-events: all; z-index: 2;">
-
-            <!-- Always on top -->
-            <!-- <div class="col-auto" style="float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
-                <i class="fas fa-thumbtack" style="color: #DDDDDD; font-size: 13px;"></i>
-            </div> -->
-
-            <!-- New window -->
-            <div class="col-auto hidden new-window-button" style="float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
-                <i class="fas fa-plus" style="color: #DDDDDD; font-size: 13px;"></i>
-            </div>
-
-            <!-- Move -->
-            <div class="col-auto" style="-webkit-app-region: drag; float: right; background: #44444400; border-radius: 20px; padding: 6px 8px; margin-right: 0px; cursor: pointer; margin-right: 5px;">
-                <i class="fas fa-arrows-alt" style="color: #DDDDDD; font-size: 13px;"></i>
-            </div>
-
-            <!-- Close -->
-            <div class="col-auto close-app-button" style="border-radius: 20px; padding: 6px 8px; cursor: pointer;">
-                <i class="fas fa-times" style="color: #DDDDDD; font-size: 13px;"></i>
-            </div>
-        </div>
-        
         <!--! Loading spinner -->
         <div class="spinner-ui" style="overflow-y: auto; height: 100%; width: 100%;">
             <div class="absolute-center" style="margin-left: 0; margin-top: -15px;">
@@ -172,6 +148,30 @@
             </div>
         </div>
 
+
+        <!--! Top menu -->
+        <div class="menu-buttons-div row" style="-webkit-app-region: no-drag; padding: 4px; background: transparent; border-radius: 0px; z-index: 1; font-size: 11px; position: absolute; top: 5px; right: 0px; margin: 0px 0px 12px 0px; color: #AAA; pointer-events: all; z-index: 2;">
+
+            <!-- Move -->
+            <div class="col-auto window-menu-button no-hover" style="float: right;-webkit-app-region: drag; padding: 6px 10px;">
+                <i class="fas fa-arrows-alt" style="color: #DDDDDD; font-size: 13px;"></i>
+            </div>
+
+            <!-- Always on top -->
+            <div class="col-auto hidden window-menu-button" style="float: right;">
+                <i class="fas fa-thumbtack" style="color: #DDDDDD; font-size: 13px;"></i>
+            </div>
+
+            <!-- New window -->
+            <div class="col-auto hidden new-window-button window-menu-button" style="float: right;">
+                <i class="fas fa-plus" style="color: #DDDDDD; font-size: 13px;"></i>
+            </div>
+
+            <!-- Close -->
+            <div class="col-auto close-app-button window-menu-button" style="float: right; cursor: pointer;">
+                <i class="fas fa-times" style="color: #DDDDDD; font-size: 13px;"></i>
+            </div>
+        </div>
 
         <!--! Login panel -->
         <div class="row scrollbar-style panel login-panel hidden" style="margin: 10px 0; padding: 2px 10px 4px 2px; overflow-y: auto; overflow-x: hidden; cursor: default;">
@@ -335,11 +335,13 @@
                     </div>
 
                     <!--! Non-production environment notification -->
-                    <div class="col-12 shadow-heavy device-environemnt-notification hidden" style="padding: 12px 12px;margin-right: 6px;background: #6365a9;margin-top: 8px;">
+                    <div class="col-12 shadow-heavy device-environment-notification hidden" style="padding: 12px 12px;margin-right: 6px;background: #6365a9;margin-top: 8px;">
                         <p style="color: #fab5ff; font-size: 16px; text-align: justify; margin-bottom: -2px;">Device environment: <span class="environment-text">-</span></p>
                         <p style="color: rgb(236, 236, 236); font-size: 12px; text-align: justify; margin-top: 4px; margin-bottom: -2px;">
                             The device environment is set to <span class="environment-text">-</span>. Please change it to "Field-ready" before deployments.
                         </p>
+                        <div class="set-field-ready-button" title='Set to "Field-ready"' style="border-radius: 2px;cursor: pointer;padding: 4px 8px;font-size: 13px;color: rgb(239, 239, 239);background: #e0e0e057;width: fit-content;margin-right: 10px;margin-top: 10px;margin-left: -1px;">Set to "Field-ready"</div>
+
                         <i class="fa-solid fa-screwdriver-wrench" style="position: absolute; top: 12px; right: 18px; color: #deaaff; font-size: 12px;"></i>
                     </div>
                     
@@ -474,7 +476,27 @@
                         <p style="color: #adadad;font-size: 12px;text-align: justify;margin-bottom: 0px;">For more information, please read the docs bundled with this software.</p>
                     </div>
 
-                    <!--! Inactive subscription notifcation -->
+                    <!--! Documentation -->
+                    <div class="col-12" style="background: #313131;padding: 10px 12px;margin-right: 6px;margin-bottom: 10px;">
+                        <p style="color: #adadad;font-size: 12px;text-align: justify;margin-bottom: 0px;">Perform a pre-survey check to ensure essential accessories are working and configured correctly.</p>
+                        <div class="pre-survey-tests-results-parent hidden">
+                            <div class="rtc-test" style="margin-top: 8px; border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(239, 239, 239); background: #202020c9; margin-left: -1px;">
+                                <p style="margin-bottom: 2px;">RTC</p>
+                                <p class="test-result" style="margin-bottom: 2px; color:#AAA;">-</p>
+                            </div>
+                            <div class="sntl-test" style="margin-top: 8px; border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(239, 239, 239); background: #202020c9; margin-left: -1px;">
+                                <p style="margin-bottom: 2px;">Fuse</p>
+                                <p class="test-result" style="margin-bottom: 2px; color:#AAA;">-</p>
+                            </div>
+                            <div class="sd-test" style="margin-top: 8px; border-radius: 2px; padding: 4px 8px; font-size: 13px; color: rgb(239, 239, 239); background: #202020c9; margin-left: -1px;">
+                                <p style="margin-bottom: 2px;">SD</p>
+                                <p class="test-result" style="margin-bottom: 2px; color:#AAA;">-</p>
+                            </div>
+                        </div>
+                        <div class="pre-survey-test-button requires-device-ready" title='Perform tests' style="border-radius: 2px;cursor: pointer;padding: 4px 8px;font-size: 13px;color: rgb(239, 239, 239);background: #2d6d86;width: fit-content;margin-right: 10px;margin-top: 10px;margin-left: -1px;">Test</div>
+                    </div>
+
+                    <!--! Inactive subscription notification -->
                     <div class="col-12 shadow-heavy inactive-subscription-notification hidden" style="padding: 10px 12px; margin-right: 6px; background: #d3c612; max-width: 500px;">
                         <div class="row">
                             <div class="col">
@@ -753,13 +775,13 @@
                             <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
                                 
                                 <!--! Compensation div -->
-                                <div class="row shadow calibration-compensation-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 4px 10px;border-radius: 2px;">
-                                    <div class="col-auto compensation-input" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; max-width: 120px;">
+                                <div class="row shadow calibration-compensation-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 10px 10px;border-radius: 2px;">
+                                    <div class="col-auto compensation-input" style="padding: 10px 12px; background: #44444422; max-width: 120px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Temperature</p>
                                         <input class="temperature-compensation" placeholder="25 C" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
                                     </div>
                                     
-                                    <div class="col-auto compensation-input" style="padding: 10px 12px; margin-bottom: 6px; background: #44444422; max-width: 120px;">
+                                    <div class="col-auto compensation-input" style="padding: 10px 12px; background: #44444422; max-width: 120px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Conductivity</p>
                                         <input class="salinity-compensation" placeholder="0 uS/cm" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
                                     </div>
@@ -1315,6 +1337,11 @@
                                             <div class="col-auto" style="padding: 6px 10px; background:  #313131; margin: 0 6px 6px 0;">
                                                 <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">GatorByte time</p>
                                                 <p class="gatorbyte-rtc-time-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
+                                            </div>
+                                            
+                                            <div class="col-auto" style="padding: 6px 10px; background:  #313131; margin: 0 6px 6px 0;">
+                                                <p style="color: #d0a190; font-size: 12px; text-align: justify; margin-bottom: 0px;">Delta</p>
+                                                <p class="gatorbyte-rtc-delta-text" style="color: #bbbbbb; font-size: 13px; text-align: justify; margin-bottom: 0px;">-</p>
                                             </div>
                                         </div>
                                         

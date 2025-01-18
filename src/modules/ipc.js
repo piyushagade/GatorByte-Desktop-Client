@@ -174,6 +174,8 @@ module.exports = {
                     if (!gatorbytedevices[[i.g.var.machineid]]) gatorbytedevices[[i.g.var.machineid]] = [];
                     gatorbytedevices[[i.g.var.machineid]].forEach(function (row) {
 
+                        if (row && row.friendlyName && row.friendlyName.toLowerCase().startsWith("Standard Serial over Bluetooth link".toLowerCase())) return;
+
                         // Check if the port exists in alldevices list
                         if (!alldevices[i.g.var.machineid]) alldevices[i.g.var.machineid] = [];
                         var filtered = alldevices[i.g.var.machineid].filter(function (device) {
@@ -312,6 +314,15 @@ module.exports = {
                                     });
                                 })
                                 clearInterval(i.g.var.timers.gbdetector);
+                                return;
+                            }
+
+                            // Heartbeat check
+                            if (data.indexOf("##CL-GDC-DFIB##") !== -1) {
+
+                                // Send heartbeat
+                                i.g.var.serports[result.port.settings.path].write("##CL-GDC-HB##");
+                                
                                 return;
                             }
 
@@ -481,22 +492,37 @@ module.exports = {
         i.ipcm.on('ipc/port-close/request', (event, port) => {
             var windowid = port.windowid;
 
-            console.log("UI requested port close for: " + port.path);
+            console.log("UI requested port close for: " + i.g.var.serports[port.path]);
 
-            if (i.g.var.serports[port.path]) {
-                i.g.var.serports[port.path].close();
-                delete i.g.var.serports[port.path];
-            }
-            // else {
-                try {
-                    event.sender.send("ipc/port-disconnected/notification ", {
-                        port: port.path,
-                        baud: port.baudRate,
-                    });
+            var on_close = function () {
+                if (i.g.var.serports[port.path]) {
+                    i.g.var.serports[port.path].close();
+                    delete i.g.var.serports[port.path];
                 }
-                catch (e) {}
-            // }
+                // else {
+                    try {
+                        event.sender.send("ipc/port-disconnected/notification ", {
+                            port: port.path,
+                            baud: port.baudRate,
+                        });
+                    }
+                    catch (e) {
+                        console.log(e);
+                    }
+                // }
+            }
 
+            // Send exit command to GatorByte
+            if (i.g.var.serports[port.path]) i.g.var.serports[port.path].write("##GB##GDC-EXIT##", function(err) {
+                if (err) {
+                    console.log("GB < X " + command + ": " + obj.path + " See the log for error.");
+                    console.log(err);
+                    return console.log('Error on write: ', err.message);
+                }
+
+                on_close();
+            });
+            else on_close();
         });
 
         

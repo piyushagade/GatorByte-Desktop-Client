@@ -1,3 +1,4 @@
+const moment = require('moment');
 
 function uiconfiggatorbytesubapp() {
     var self;
@@ -756,10 +757,11 @@ function uiconfiggatorbytesubapp() {
 
     // Get RTC time from the GatorByte
     self.show_rtctime = function () {
-        if (self.panel.hasClass("hidden")) clearInterval(self.timers.utctimeupdate);
+        if (self.panel.hasClass("hidden") && self.timers && self.timers.utctimeupdate) clearInterval(self.timers.utctimeupdate);
         self.panel.find(".rtc-sync-status").text("⏲️ Fetching RTC time.");
+        if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .rtc-test .test-result").text("⏲️ Fetching RTC time.");
         setTimeout(() => {
-            self.sendcommand("rtc:get");
+            self.sendcommand("cfg:rtc:get");
         }, self.panel.find(".gatorbyte-rtc-time-text").text() == "-" ? 100 : 250);
     }
 
@@ -767,9 +769,9 @@ function uiconfiggatorbytesubapp() {
     self.sentinel_fuse = function (state) {
         self.panel.find(".sentinel-fuse-status").text("⌛ Updating fuse status.");
         setTimeout(() => {
-            self.sendcommand("sntl:sf:set:" + state);
+            self.sendcommand("cfg:sntl:sf:set:" + state);
             setTimeout(() => {
-                self.sendcommand("sntl:sf:get");
+                self.sendcommand("cfg:sntl:sf:get");
             }, 1500);
         }, 150);
     }
@@ -777,8 +779,9 @@ function uiconfiggatorbytesubapp() {
     // Get sentinel fuse status
     self.get_sentinel_fuse_status = function () {
         self.panel.find(".sentinel-fuse-status").text("📖 Fetching fuse status.");
+        if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sntl-test .test-result").text("📖 Fetching fuse status.");
         setTimeout(() => {
-            self.sendcommand("sntl:sf:get");
+            self.sendcommand("cfg:sntl:sf:get");
         }, 150);
     }
 
@@ -1377,6 +1380,7 @@ function uiconfiggatorbytesubapp() {
 
                 self.panel.find(".gatorbyte-rtc-time-text").html("Error");
                 self.panel.find(".rtc-sync-status").text("🛑 The RTC is either uninitialized or not connected to the GatorByte.");
+                if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .rtc-test .test-result").text("🛑 RTC uninitialized/not connected.");
             }
 
             else {
@@ -1400,26 +1404,35 @@ function uiconfiggatorbytesubapp() {
                 // }
 
                 var timestamp = parseInt(timestamp) * 1000;
+                var delta = moment.now() - timestamp;
                 self.panel.find(".gatorbyte-rtc-time-text").attr("title", timestamp).html(multiline(function () {/* 
                     <span style="margin-right: 4px;">{{date}}</span>
                     <span>{{time}}</span>
                 */}, {
                     date: moment(timestamp).format("MM/DD/YY"),
-                    time: moment(timestamp).format("hh:mm a").toUpperCase()
+                    time: moment(timestamp).format("hh:mm a").toUpperCase(),
+                }));
+                self.panel.find(".gatorbyte-rtc-delta-text").attr("title", "This represents the difference between computer time and GatorByte's time.").html(multiline(function () {/* 
+                    <span>{{delta}}</span>
+                */}, {
+                    delta: parseInt(delta / 1000) + " seconds."
                 }));
 
                 // Update RTC sync status
                 if (Math.abs(timestamp - moment.now()) > 1 * 60 * 1000) {
                     self.panel.find(".rtc-sync-status").text("⛔ The GatorByte " + source + "'s time is out of sync.");
+                    if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .rtc-test .test-result").text("⛔ " + source + "'s time is out of sync.");
                     self.panel.find(".sync-rtc-button").removeClass("disabled");
                 }
                 else {
                     if (source == "rtc") {
                         self.panel.find(".rtc-sync-status").text("✅ The clocks are in sync. No action required.");
-                        self.panel.find(".sync-rtc-button").addClass("disabled");
+                        if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .rtc-test .test-result").text(`✅ The clocks are in sync (Δ ${parseInt(delta / 1000)} seconds).`);
+                        // self.panel.find(".sync-rtc-button").addClass("disabled");
                     }
                     else if (source == "modem") {
                         self.panel.find(".rtc-sync-status").text("⚠️ The clocks are in sync. However, the RTC is likely unoperational. The time has been acquired from the MODEM.");
+                        if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .rtc-test .test-result").text("⚠️ Out of sync. Using MODEM time.");
                         self.panel.find(".sync-rtc-button").addClass("disabled");
                     }
                 }
@@ -1428,12 +1441,15 @@ function uiconfiggatorbytesubapp() {
             // Sync RTC time
             self.panel.find(".sync-rtc-button").off("click").click(function () {
                 var offset = self.timezone();
-                var date = moment(moment.now() - offset).format("MMM-DD-YYYY");
-                var time = moment(moment.now() - offset).format("HH-mm-ss");
+                var syncdelay = 4 * 1000;
+                var synctimestamp = moment.now() - offset + syncdelay;
+                var date = moment(synctimestamp).format("MMM-DD-YYYY");
+                var time = moment(synctimestamp).format("HH-mm-ss");
 
                 console.log("Syncing RTC date and time to: "  + date + " " + time);
+                console.log("Syncing delay: "  + (syncdelay / 1000) + " seconds.");
 
-                self.sendcommand("rtc:sync" + date + time);
+                self.sendcommand("cfg:rtc:sync" + date + time);
                 setTimeout(() => {
                     self.show_rtctime();
                 }, 0);
@@ -1526,13 +1542,21 @@ function uiconfiggatorbytesubapp() {
             
             if (response == "true") {
                 self.panel.find(".sentinel-fuse-status").text("🔥 The fuse is blown.");
+                if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sntl-test .test-result").text("🔥 The fuse is blown.");
                 self.panel.find(".reset-fuse-button").addClass("disabled");
                 self.panel.find(".set-fuse-button").removeClass("disabled");
             }
-            else {
+            else if (response == "false") {
                 self.panel.find(".sentinel-fuse-status").text("✅ The fuse is set.");
+                if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sntl-test .test-result").text("✅ The fuse is set.");
                 self.panel.find(".set-fuse-button").addClass("disabled");
                 self.panel.find(".reset-fuse-button").removeClass("disabled");
+            }
+            else if (response == "error") {
+                self.panel.find(".sentinel-fuse-status").text("⛔ Communication error");
+                if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sntl-test .test-result").text("⛔ Communication error.");
+                self.panel.find(".set-fuse-button").addClass("disabled");
+                self.panel.find(".reset-fuse-button").addClass("disabled");
             }
         }
 
@@ -1615,6 +1639,7 @@ function uiconfiggatorbytesubapp() {
         delay = delay ? delay : 0;
 
         $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#3d3d3d").find(".text").text("Checking sync status");
+        if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sd-test .test-result").text("⏳ Checking sync status");
         setTimeout(() => {
             // Check config sync
             self.sendcommand("cfg:hash");
@@ -1625,6 +1650,7 @@ function uiconfiggatorbytesubapp() {
         delay = delay ? delay : 0;
 
         $(".gb-config-header").find(".sync-status-heading").addClass("disabled").css("background", "#3d3d3d").find(".text").text(message ? message : "Unknown sync status");
+        if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sd-test .test-result").text("⚠️ Unknown sync status");
         setTimeout(() => {
             // Check config sync
             self.sendcommand("cfg:hash");
@@ -1638,12 +1664,14 @@ function uiconfiggatorbytesubapp() {
             if (self.confighash["local"] != self.confighash["sd"]) {
                 console.error("Configuration out of sync.");
                 $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#962e38").find(".text").text("Configuration out of sync.");
+                if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sd-test .test-result").text("⛔ Out of sync.");
                 $(".gb-config-header").find(".upload-config-data-button").removeClass("disabled").css("background", "#333333");
                 $(".gb-config-header").find(".refresh-config-data-button").removeClass("disabled").css("background", "#333333");
             }
             else {
                 console.log("Configuration in sync.");
                 $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#104c09").find(".text").text("Configuration in sync");
+                if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sd-test .test-result").text("✅ Configuration in sync.");
                 $(".gb-config-header").find(".upload-config-data-button").css("background", "#333333");
                 $(".gb-config-header").find(".refresh-config-data-button").css("background", "#333333");
             }
@@ -1656,6 +1684,7 @@ function uiconfiggatorbytesubapp() {
             if (!self.confighash["sd"]) {
                 console.error("No configuration found on SD.");
                 $(".gb-config-header").find(".sync-status-heading").removeClass("disabled").css("background", "#962e38").find(".text").text("Initial configuration pending.");
+                if (!$(".pre-survey-tests-results-parent").hasClass("hidden")) $(".pre-survey-tests-results-parent .sd-test .test-result").text("⛔ Needs initial configuration.");
                 $(".gb-config-header").find(".refresh-config-data-button").addClass("disabled").css("background", "#333333");
                 $(".gb-config-header").find(".upload-config-data-button").addClass("disabled").css("background", "#333333");
                 if (!$(".home-panel").find(".sd-error-notification").hasClass("hidden")) $(".home-panel .initial-configuration-pending-notification").removeClass("hidden");

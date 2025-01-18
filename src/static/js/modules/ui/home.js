@@ -38,6 +38,21 @@ function uihomesubapp(){
             }, 200);
         });
 
+        // Pre-syrvey test button listener
+        $(".pre-survey-test-button").off("click").click(function () {
+            $(".pre-survey-tests-results-parent").removeClass("hidden");
+
+            global.accessors.uiconfiggatorbyte.show_rtctime();
+            
+            setTimeout(() => {
+                global.accessors.uiconfiggatorbyte.get_sentinel_fuse_status();
+            }, 50);
+
+            setTimeout(() => {
+                global.accessors.uiconfiggatorbyte.checkconfigsync();
+            }, 1800);
+        });
+
         // Show flash firmware UI big button in home panel
         $(".home-panel .big-button.flash-firmware-button").off("click").click(function () {
             $(".flash-firmware-overlay").removeClass("hidden").slideUp(0);

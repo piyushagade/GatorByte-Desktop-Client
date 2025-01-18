@@ -86,9 +86,13 @@ $(document).ready(function () {
     // });
 
     // Network test
-    newtworktest();
+    newtworktest().catch((e) => {
+        console.log("Couldn't reach the GB AWS server.");
+    });
     setInterval(() => {
-        newtworktest();
+        newtworktest().catch((e) => {
+            console.log("Couldn't reach the GB AWS server.");
+        });
     }, 30000);
 });
 

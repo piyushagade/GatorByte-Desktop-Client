@@ -254,3 +254,21 @@ body {
 .list-devices-button:hover {
     background: #3a3a3a;
 }
+
+.window-menu-button {
+    background: #44444400; 
+    border-radius: 2px; 
+    padding: 6px 12px !important;
+    margin-right: 0px; 
+    cursor: pointer; 
+    margin-right: 5px;
+    height: 25px;
+}
+
+.window-menu-button:hover {
+    background: #b9b9b96b;
+}
+
+.window-menu-button.no-hover:hover {
+    background: #44444400;
+}

@@ -99,10 +99,12 @@ function ipcsubapp(){
                 $(".home-panel").find(".requires-sd-ready").addClass("disabled");
                 
                 $(".home-panel").find(".sd-error-notification").addClass("hidden");
-                $(".home-panel").find(".device-environemnt-notification").addClass("hidden");
+                $(".home-panel").find(".device-environment-notification").addClass("hidden");
                 $(".home-panel").find(".device-not-ready-notification").removeClass("hidden");
                 $(".home-panel").find(".initial-configuration-pending-notification").addClass("hidden");
                 
+                $(".home-panel").find(".pre-survey-tests-results-parent").addClass("hidden");
+
                 if ($(".flash-firmware-overlay").hasClass("hidden")) {
                     // $(".device-not-available-overlay").slideUp(50);
                     self.a.ui.hide_overlay($(".device-not-available-overlay"), 100);
@@ -147,10 +149,16 @@ function ipcsubapp(){
             global.port.env = response.env.trim();
 
             if (global.port.env != "field") {
-                $(".panel.home-panel .device-environemnt-notification").find(".environment-text").text(global.port.env.length == 0 ? "unknown" : global.port.env);
-                $(".panel.home-panel .device-environemnt-notification").removeClass("hidden");
+                $(".panel.home-panel .device-environment-notification").find(".environment-text").text(global.port.env.length == 0 ? "unknown" : global.port.env);
+                $(".panel.home-panel .device-environment-notification").removeClass("hidden");
+                $(".panel.home-panel .device-environment-notification").find(".set-field-ready-button").off("click").click(function () {
+                    $("select.device-environemnt-selector").val("field");
+                    setTimeout(() => {
+                        $(".upload-config-data-button").click();
+                    }, 250);
+                });
             }
-            else $(".panel.home-panel .device-environemnt-notification").addClass("hidden");
+            else $(".panel.home-panel .device-environment-notification").addClass("hidden");
         });
 
         // On setup complete; GB ready
@@ -537,7 +545,6 @@ function ipcsubapp(){
             
             data.connecteddevices.forEach(aport => {
                 var port = global.port || global.quickconnectport;
-                console.log(aport.path, port.path);
                 
                 if (aport.path == port.path) {
                     console.log("Requesting re-connection for: " + port.path + " on window ID: " + global.states.windowid);
@@ -831,14 +838,17 @@ function ipcsubapp(){
                         var listitem = ui.find(".device-selector-list-item[pnp-id='" + pnpid + "']");
                         var devicename, projectname;
                         if (nickname.length == 0 && window.global.data["devices"] && window.global.data["projects"]) {
-                            var devicedata = self.f.grep(window.global.data["devices"], "SN", sn, true);
-                            if (devicedata) {
-                                var projectdata = self.f.grep(window.global.data["projects"], "UUID", devicedata["PROJECTUUID"], true);
-                                projectname = projectdata.NAME;
-                                devicename = devicedata.NAME;
 
-                                listitem
-                                    .find(".text").text(projectname + " - " + devicename)
+                            if (window.global.data["devices"]) {
+                                var devicedata = self.f.grep(window.global.data["devices"], "SN", sn, true);
+                                if (devicedata) {
+                                    var projectdata = self.f.grep(window.global.data["projects"], "UUID", devicedata["PROJECTUUID"], true);
+                                    projectname = projectdata.NAME;
+                                    devicename = devicedata.NAME;
+
+                                    listitem
+                                        .find(".text").text(projectname + " - " + devicename)
+                                }
                             }
                         }
                     }

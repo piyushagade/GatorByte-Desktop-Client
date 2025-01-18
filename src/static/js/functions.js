@@ -288,7 +288,7 @@ function functionsubapp(){
     self.grep = function (data, key, value, return_first_result_only) {
         var res = [];
         data.forEach(function (item) {
-            if (item[key] == value) res.push(item);
+            if (item && key && value && item[key] == value) res.push(item);
         });
         return return_first_result_only ? res[0] : res;
     }

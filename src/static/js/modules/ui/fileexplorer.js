@@ -100,6 +100,26 @@ function uidownloadfilessubapp(){
                 self.request_folder_creation(path, "folder");
             });
         });
+        
+        // Big button click handler
+        $(".home-panel .big-button.download-files-button").off("contextmenu").contextmenu(function () {
+            
+            // Send request to get GatorByte to send sd files list
+            self.request_file_list("/", 1);
+
+            setTimeout(() => {
+                self.filedownloaddata = "";
+                self.filedownloadname = moment(moment.now()).format("YYYYMMDD") + "-readings.csv";
+
+                $(".panel").addClass("disabled");
+                $(".header-panel").find(".progress-bar-overlay").removeClass("hidden");
+                $(".header-panel").find(".download-status-heading").text("Downloading file");
+                $(".header-panel").find(".progress-bar-overlay").find(".progress").addClass("progress-striped").removeClass("progress-striped-infinite");
+                $(".header-panel").find(".download-status-text").text("Downloading " + self.filedownloadname);
+            
+                self.request_file_download("/readings/" + moment(moment.now()).format("YYYYMMDD") + "-readings.csv", 0);
+            }, 1000);
+        });
 
         //! Refresh list button listener
         $(".sd-explorer-panel .refresh-files-list-button").off("click").click(function () {
@@ -530,7 +550,8 @@ function uidownloadfilessubapp(){
             $(".header-panel").find(".download-status-text").text("Download complete");
             $(".header-panel").find(".progress-bar-overlay").find(".progress").find(".progress-bar").css("width", $(".header-panel").find(".progress-bar-overlay").find(".progress").width());
 
-            if (self.panel.find(".file-viewer-div").hasClass("hidden")) {
+            console.log(self.panel.hasClass("hidden"));
+            if (self.panel.hasClass("hidden") || self.panel.find(".file-viewer-div").hasClass("hidden")) {
                 self.ipcr.send('ipc/save-file/request', {
                     ...global.port,
                     windowid: global.states.windowid,
@@ -539,6 +560,7 @@ function uidownloadfilessubapp(){
                 });
             }
 
+            // Open file viewer
             else {
                 self.editor.setValue(self.filedownloaddata);
 
