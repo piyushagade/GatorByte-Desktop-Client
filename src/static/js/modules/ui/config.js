@@ -9,6 +9,7 @@ function uiconfiggatorbytesubapp() {
     self.ipcr = require('electron').ipcRenderer;
     self.pwrsv =  require('electron').remote.powerSaveBlocker;
     self.a = global.accessors;
+    self.timers = {};
     
     self.filedownloadname = "config.ini";
     self.filedownloaddata = "";
@@ -218,7 +219,6 @@ function uiconfiggatorbytesubapp() {
         self.listeners();
 
         // Construct base devices list UI
-        
         var alldevicesnames = self.devices.map(function (device) { return device.name });
         var alldevicesdescription = self.devices.map(function (device) { return device.description });
         var alldevicesids = self.devices.map(function (device) { return device.id });
@@ -274,7 +274,6 @@ function uiconfiggatorbytesubapp() {
 
         // Set timezones in the dropdown
         var timezoneoffsets = [{"timezone":"ACST","offset":1,"hours":9,"minutes":30},{"timezone":"AEST","offset":1,"hours":10,"minutes":0},{"timezone":"ART","offset":-1,"hours":3,"minutes":0},{"timezone":"AST","offset":-1,"hours":4,"minutes":0},{"timezone":"AWST","offset":1,"hours":8,"minutes":0},{"timezone":"BRT","offset":-1,"hours":3,"minutes":0},{"timezone":"CDT","offset":-1,"hours":5,"minutes":0},{"timezone":"CEST","offset":1,"hours":2,"minutes":0},{"timezone":"CET","offset":1,"hours":1,"minutes":0},{"timezone":"CLT","offset":-1,"hours":4,"minutes":0},{"timezone":"CST","offset":-1,"hours":6,"minutes":0},{"timezone":"CST","offset":1,"hours":8,"minutes":0},{"timezone":"EET","offset":1,"hours":2,"minutes":0},{"timezone":"EEST","offset":1,"hours":3,"minutes":0},{"timezone":"EDT","offset":-1,"hours":4,"minutes":0},{"timezone":"EST","offset":-1,"hours":5,"minutes":0},{"timezone":"GMT","offset":1,"hours":0,"minutes":0},{"timezone":"HKT","offset":1,"hours":8,"minutes":0},{"timezone":"HST","offset":-1,"hours":10,"minutes":0},{"timezone":"ICT","offset":1,"hours":7,"minutes":0},{"timezone":"IST","offset":1,"hours":5,"minutes":30},{"timezone":"JST","offset":1,"hours":9,"minutes":0},{"timezone":"KST","offset":1,"hours":9,"minutes":0},{"timezone":"MDT","offset":-1,"hours":6,"minutes":0},{"timezone":"MST","offset":-1,"hours":7,"minutes":0},{"timezone":"MYT","offset":1,"hours":8,"minutes":0},{"timezone":"NZDT","offset":1,"hours":13,"minutes":0},{"timezone":"NZST","offset":1,"hours":12,"minutes":0},{"timezone":"PDT","offset":-1,"hours":7,"minutes":0},{"timezone":"PHT","offset":1,"hours":8,"minutes":0},{"timezone":"PKT","offset":1,"hours":5,"minutes":0},{"timezone":"PST","offset":-1,"hours":8,"minutes":0},{"timezone":"SGT","offset":1,"hours":8,"minutes":0},{"timezone":"UYT","offset":-1,"hours":3,"minutes":0},{"timezone":"VET","offset":-1,"hours":4,"minutes":0},{"timezone":"WIB","offset":1,"hours":7,"minutes":0},{"timezone":"WITA","offset":1,"hours":8,"minutes":0}];
-
         timezoneoffsets.forEach(function (tzrow, tzi) {
             $(".data-information-parent").find(".timezone-dropdown").append(multiline(function () {/* 
                 <option value="{{tz-id}}" style="color: #222;">{{tz-name}}</option>
@@ -323,23 +322,53 @@ function uiconfiggatorbytesubapp() {
                 path: global.port.path
             });
 
-            // Show UTC time from the computer/phone
-            self.show_utctime();
+            const wf = new Waterfall({
+                options: {
+                    synchronous: true,
+                    verbose: false
+                },
+            });
 
-            // Get RTC time from the GatorByte
-            self.show_rtctime();
+            wf.setTasks([
+                (next, skip, variables, taskid) => {
 
-            // Get sentinel fuse status
-            self.get_sentinel_fuse_status();
+                    // Show UTC time from the computer/phone
+                    self.show_utctime();
 
-            // Get BL information
-            self.panel.find(".bl-sync-status").text("⏲️ Fetching BL information.");
-            setTimeout(() => {
-                self.sendcommand("bl:getconfig");
-            }, 2000);
-            
-            // Get config data from main process
-            self.request_config();
+                    setTimeout(() => { 
+                        
+                        // Get RTC time from the GatorByte 
+                        self.show_rtctime();
+
+                        setTimeout(() => { next(); }, 200);
+                    }, 200);
+                },
+                (next, skip, variables, taskid) => {
+
+                    // Get sentinel fuse status
+                    self.get_sentinel_fuse_status();
+
+                    setTimeout(() => { next(); }, 200);
+                },
+                (next, skip, variables, taskid) => {
+
+                    // Get BL information
+                    self.panel.find(".bl-sync-status").text("⏲️ Fetching BL information.");
+                    self.panel.find(".bl-name-text").val("");
+                    self.panel.find(".bl-pin-text").val("");
+
+                    self.sendcommand("bl:getconfig");
+
+                    setTimeout(() => { next(); }, 200);
+                },
+            ]);
+
+            wf.executeTasks()
+                .then(() => {
+                    
+                    // Get config data from main process
+                    self.request_config();
+                });
         });
 
         // Request sync status check

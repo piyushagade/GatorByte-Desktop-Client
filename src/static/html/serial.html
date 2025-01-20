@@ -16,6 +16,9 @@
     <!-- Matrix animation background -->
     <script src='../js/lib/matrix.js'></script>
     
+    <!-- Waterfall -->
+    <script src="../js/lib/waterfall.js"></script>
+    
     <!-- Multiline -->
     <script src='../js/lib/multiline.js'></script>
     
@@ -775,7 +778,10 @@
                             <div class="col calibration-perform-div" style="font-size: 14px; padding: 4px;margin-right: 6px;margin-bottom: 6px;background: transparent;border-radius: 2px;">
                                 
                                 <!--! Compensation div -->
-                                <div class="row shadow calibration-compensation-div" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 10px 10px;border-radius: 2px;">
+                                <div class="row shadow calibration-compensation-div hidden" style="margin: 0;margin-top: 10px;background: #1d1b12;padding: 10px 10px;border-radius: 2px;">
+                                    <div class="col-12" style="padding: 0;">
+                                        <p style="color: #bbbbbb;margin-bottom: 6px;">Perform compensation on pH and DO sesnors.</p>
+                                    </div>
                                     <div class="col-auto compensation-input" style="padding: 10px 12px; background: #44444422; max-width: 120px;">
                                         <p style="color: #888; font-size: 11px; text-align: justify; margin-bottom: 0px;">Temperature</p>
                                         <input class="temperature-compensation" placeholder="25 C" style="width: 100%; background: transparent; outline: 0; border: 0; border-bottom: 1px solid #444; color: rgb(197, 197, 197); font-size: 14px; text-align: justify; margin-bottom: 0px; padding: 2px 4px;">
